@@ -1,0 +1,3 @@
+# 打包出來的語言包，可用 ror2_s2t.py --zip 重新產生
+*.zip
+__pycache__/
