@@ -5,7 +5,7 @@
 """Risk of Rain 2：把內建的簡體中文語言資料夾 (zh-CN) 轉成繁體中文 (zh-TW)。
 
 用法：
-    uv run ror2_s2t.py                              # 自動尋找 Steam 上的遊戲
+    uv run ror2_s2t.py                              # 自動尋找 Steam 或 Epic 上的遊戲
     uv run ror2_s2t.py --game-dir "D:\\Games\\Risk of Rain 2"
     uv run ror2_s2t.py --zip RoR2_zh-TW.zip          # 另外打包成 zip 分享給別人
     uv run ror2_s2t.py --profile Purist_v4           # 模組翻譯只裝進這個 r2modman 設定檔
@@ -183,14 +183,15 @@ FIXES: dict[str, str] = {
 FIX_PATTERNS = [(re.compile(wrong), right) for wrong, right in FIXES.items()]
 
 
-def find_game_dir() -> Path | None:
+def steam_install_dirs() -> list[Path]:
+    """Steam 每個收藏庫裡這款遊戲會在的位置。"""
     try:
         import winreg
 
         with winreg.OpenKey(winreg.HKEY_CURRENT_USER, r"Software\Valve\Steam") as key:
             steam = Path(winreg.QueryValueEx(key, "SteamPath")[0])
     except (ImportError, OSError):
-        return None
+        return []
 
     libraries = [steam]
     vdf = steam / "steamapps" / "libraryfolders.vdf"
@@ -198,9 +199,22 @@ def find_game_dir() -> Path | None:
         text = vdf.read_text(encoding="utf-8", errors="replace")
         for match in re.finditer(r'"path"\s+"([^"]+)"', text):
             libraries.append(Path(match.group(1).replace("\\\\", "\\")))
+    return [library / "steamapps" / "common" / APP_DIR for library in libraries]
 
-    for library in libraries:
-        game = library / "steamapps" / "common" / APP_DIR
+
+def epic_install_dirs(program_data: Path) -> list[Path]:
+    """Epic Games Launcher 記錄的安裝位置，每款裝好的遊戲一個；r2modman 找 Epic 版也是讀這個檔案。"""
+    record = program_data / "Epic" / "UnrealEngineLauncher" / "LauncherInstalled.dat"
+    try:
+        installs = json.loads(record.read_text(encoding="utf-8-sig"))["InstallationList"]
+        return [Path(install["InstallLocation"]) for install in installs]
+    except (OSError, ValueError, KeyError, TypeError):
+        return []
+
+
+def find_game_dir() -> Path | None:
+    program_data = Path(os.environ.get("ProgramData", r"C:\ProgramData"))
+    for game in [*steam_install_dirs(), *epic_install_dirs(program_data)]:
         if (game / LANG_SUBDIR).is_dir():
             return game
     return None

@@ -19,7 +19,7 @@
 
 拿到 zip 的人照這三步做，不需要安裝其他東西：
 
-1. 在 Steam 收藏庫對 Risk of Rain 2 按右鍵 →「管理」→「瀏覽本機檔案」。
+1. 在 Steam 收藏庫對 Risk of Rain 2 按右鍵 →「管理」→「瀏覽本機檔案」（Epic 版則開啟遊戲的安裝資料夾）。
 2. 把 zip 解壓縮到打開的那個資料夾。
 3. 開遊戲，在主選單右上角的國旗選單拉到最下面，選「繁體中文」。
 
@@ -44,14 +44,14 @@ uv run make_bundle.py "D:\python_embeded_v3.13.15.7z"
 
 ## 自己產生語言包
 
-需要 Steam 版的 Risk of Rain 2 和 [uv](https://docs.astral.sh/uv/)。
+需要 Steam 或 Epic 版的 Risk of Rain 2 和 [uv](https://docs.astral.sh/uv/)。
 OpenCC 會由 uv 自動安裝。在這個資料夾執行：
 
 ```bash
 uv run ror2_s2t.py
 ```
 
-腳本會自動找到 Steam 上的遊戲，在語言資料夾裡建立 `zh-TW`；有用 r2modman 的話，也會自動把[模組翻譯](#模組翻譯)裝進每個設定檔。接著到遊戲的國旗選單選「繁體中文」即可。
+腳本會自動找到用 Steam 或 Epic Games 安裝的遊戲，在語言資料夾裡建立 `zh-TW`；有用 r2modman 的話，也會自動把[模組翻譯](#模組翻譯)裝進每個設定檔。接著到遊戲的國旗選單選「繁體中文」即可。
 
 也可以用一般的 Python：`pip install OpenCC` 後執行 `python ror2_s2t.py`（開發時只用 uv 測過）。
 
@@ -198,5 +198,6 @@ uv run --with pytest --with "OpenCC>=1.1.9" pytest
 - **模組文字**：只有 `mods/` 裡的模組有翻譯，其他模組顯示英文。模組自帶的簡體翻譯不會套用到 `zh-TW`。
 - **模組翻譯未實測**：token 名稱是從模組的 DLL 靜態分析出來的，譯文的標籤也經過腳本檢查，但還沒有在遊戲裡逐條確認顯示。
 - **安裝包**：只在製作它的電腦上試過（解壓縮後執行 `安裝.bat`，結果和直接跑腳本相同），沒有在別台電腦上試過。從網路下載的 `.bat` 第一次執行時，Windows 可能會跳出安全性警告。
+- **Epic 版**：尋找遊戲的方式和 r2modman 相同（讀 Epic Games Launcher 的安裝記錄 `LauncherInstalled.dat`），只用模擬的記錄檔測過，沒有在裝了 Epic 版的電腦上實測。找不到時用 `--game-dir` 指定。
 - **測試範圍**：在遊戲 1.5.0（Steam 版）測試，未裝模組與使用 r2modman 模組設定檔兩種情況都正常顯示。多人連線沒有測過。
 - **文字來源**：內容是官方簡體中文翻譯轉換而來，公開散布前請自行斟酌。

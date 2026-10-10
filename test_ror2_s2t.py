@@ -167,6 +167,58 @@ def make_game(root: Path) -> Path:
     return root
 
 
+def write_epic_record(program_data: Path, *locations: Path) -> Path:
+    """Epic Games Launcher 的安裝記錄，每款裝好的遊戲一筆。"""
+    record = program_data / "Epic" / "UnrealEngineLauncher" / "LauncherInstalled.dat"
+    record.parent.mkdir(parents=True)
+    installs = [{"InstallLocation": str(location), "AppName": "app"} for location in locations]
+    record.write_text(json.dumps({"InstallationList": installs}, indent="\t"), encoding="utf-8")
+    return record
+
+
+def use_stores(monkeypatch, steam: list, program_data: Path) -> None:
+    monkeypatch.setattr(ror2_s2t, "steam_install_dirs", lambda: steam)
+    monkeypatch.setenv("ProgramData", str(program_data))
+
+
+def test_epic_install_dirs_lists_every_location_the_launcher_recorded(tmp_path):
+    write_epic_record(tmp_path, tmp_path / "Fortnite", tmp_path / "RiskOfRain2")
+
+    assert ror2_s2t.epic_install_dirs(tmp_path) == [tmp_path / "Fortnite", tmp_path / "RiskOfRain2"]
+
+
+def test_epic_install_dirs_is_empty_without_the_epic_launcher(tmp_path):
+    assert ror2_s2t.epic_install_dirs(tmp_path) == []
+
+
+def test_epic_install_dirs_is_empty_when_the_record_cannot_be_parsed(tmp_path):
+    write_epic_record(tmp_path).write_text("{", encoding="utf-8")
+
+    assert ror2_s2t.epic_install_dirs(tmp_path) == []
+
+
+def test_find_game_dir_finds_a_game_installed_through_epic(tmp_path, monkeypatch):
+    game = make_game(tmp_path / "Epic Games" / "RiskOfRain2")
+    write_epic_record(tmp_path / "ProgramData", tmp_path / "Epic Games" / "Fortnite", game)
+    use_stores(monkeypatch, [], tmp_path / "ProgramData")
+
+    assert ror2_s2t.find_game_dir() == game
+
+
+def test_find_game_dir_finds_a_game_installed_through_steam(tmp_path, monkeypatch):
+    game = make_game(tmp_path / "SteamLibrary" / "steamapps" / "common" / "Risk of Rain 2")
+    use_stores(monkeypatch, [tmp_path / "Steam" / "steamapps" / "common" / "Risk of Rain 2", game], tmp_path)
+
+    assert ror2_s2t.find_game_dir() == game
+
+
+def test_find_game_dir_is_none_when_no_store_has_the_game(tmp_path, monkeypatch):
+    write_epic_record(tmp_path / "ProgramData", tmp_path / "Epic Games" / "Fortnite")
+    use_stores(monkeypatch, [], tmp_path / "ProgramData")
+
+    assert ror2_s2t.find_game_dir() is None
+
+
 def run_main(tmp_path: Path, monkeypatch, *options: str) -> int:
     monkeypatch.setattr(ror2_s2t, "MODS_DIR", tmp_path / "mods")
     monkeypatch.setattr(ror2_s2t, "PROFILES_DIR", tmp_path / "profiles")

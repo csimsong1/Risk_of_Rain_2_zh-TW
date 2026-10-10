@@ -68,7 +68,7 @@ Risk of Rain 2 繁體中文語言包（含模組翻譯）
     BepInEx\\plugins\\RoR2_zh-TW 資料夾；設定檔沒有安裝的模組會略過。
 
 找不到遊戲或設定檔
-  遊戲不是用 Steam 安裝，或 r2modman 的資料不在預設位置時，要自己指定路徑。
+  遊戲不是用 Steam 或 Epic Games 安裝，或 r2modman 的資料不在預設位置時，要自己指定路徑。
   在這個資料夾的網址列輸入 cmd 按 Enter，再執行（路徑換成自己的）：
       {LAUNCHER} --game-dir "D:\\Games\\Risk of Rain 2"
       {LAUNCHER} --profile "D:\\r2modman\\RiskOfRain2\\profiles\\設定檔名稱"
