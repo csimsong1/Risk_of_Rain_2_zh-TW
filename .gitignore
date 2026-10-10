@@ -1,4 +1,6 @@
 # 打包出來的語言包，可用 ror2_s2t.py --zip 重新產生
 *.zip
+# 安裝包解壓縮出來的資料夾（make_bundle.py 打包的內容，裡面有整份 Python）
+RoR2_zh-TW/
 __pycache__/
 .pytest_cache/
