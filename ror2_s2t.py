@@ -8,6 +8,7 @@
     uv run ror2_s2t.py                              # 自動尋找 Steam 上的遊戲
     uv run ror2_s2t.py --game-dir "D:\\Games\\Risk of Rain 2"
     uv run ror2_s2t.py --zip RoR2_zh-TW.zip          # 另外打包成 zip 分享給別人
+    uv run ror2_s2t.py --profile Purist_v4           # 另外把模組翻譯裝進 r2modman 設定檔
 
 遊戲更新後重跑一次即可；之後在遊戲的語言選單選「繁體中文」。
 """
@@ -15,10 +16,13 @@ from __future__ import annotations
 
 import argparse
 import codecs
+import json
+import os
 import re
 import shutil
 import sys
 import zipfile
+from collections import Counter
 from pathlib import Path
 
 import opencc
@@ -31,6 +35,18 @@ OVERRIDES_DIR = Path(__file__).resolve().parent / "overrides"
 HAN = re.compile(
     "[\u2e80-\u2fdf\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0003ffff]"
 )
+# \u8b6f\u6587\u5fc5\u9808\u539f\u6a23\u4fdd\u7559\u7684\u6a19\u8a18\uff1a<style=...> \u9019\u985e\u6a19\u7c64\u8207 {0} \u4f54\u4f4d\u7b26
+MARKUP = re.compile(r"<[^<>]*>|\{\d+[^{}]*\}")
+
+# \u6a21\u7d44\u7684\u82f1\u6587\u6587\u5b57\u6c92\u6709\u7c21\u9ad4\u4f86\u6e90\u53ef\u8f49\uff0c\u8b6f\u6587\u662f\u4eba\u5de5\u7ffb\u7684\uff0c\u4e00\u500b\u6a21\u7d44\u4e00\u500b\u6a94\u6848\u653e\u5728\u9019\u88e1
+MODS_DIR = Path(__file__).resolve().parent / "mods"
+PROFILES_DIR = (
+    Path(os.environ.get("APPDATA", "")) / "r2modmanPlus-local" / "RiskOfRain2" / "profiles"
+)
+MOD_TEXT = "zh-TW"  # \u6a21\u7d44\u7ffb\u8b6f\u6a94\u88e1\u8b6f\u6587\u7684\u9375\u540d
+# R2API \u6703\u8b80\u53d6 plugins \u5e95\u4e0b\u6240\u6709 *.language \u6a94\uff0c\u6211\u5011\u7684\u6a94\u6848\u96c6\u4e2d\u653e\u5728\u9019\u500b\u8cc7\u6599\u593e
+MOD_PLUGIN_DIR = "RoR2_zh-TW"
+MOD_FILE_PREFIX = "mod_"  # \u653e\u9032\u904a\u6232\u8a9e\u8a00\u8cc7\u6599\u593e\u7684\u6a21\u7d44\u7ffb\u8b6f\u6a94\u540d\u958b\u982d
 
 # 大陸用語 -> 臺灣用語，套用在已轉成繁體字的文字上（較長的詞優先）。
 # 不用 OpenCC 內建的 s2twp 詞庫，因為它在遊戲文本會誤轉，
@@ -221,6 +237,78 @@ def changed_skeleton_lines(source: str, converted: str) -> list[int]:
     ]
 
 
+def markup_diff(source: str, translated: str) -> list[str]:
+    """回傳譯文比原文少（-）或多（+）的標籤與佔位符；翻譯會調動語序，所以不比較順序。"""
+    before = Counter(MARKUP.findall(source))
+    after = Counter(MARKUP.findall(translated))
+    return sorted(
+        [f"-{mark}" for mark in (before - after).elements()]
+        + [f"+{mark}" for mark in (after - before).elements()]
+    )
+
+
+def find_profile(name: str, profiles_dir: Path = PROFILES_DIR) -> Path | None:
+    """name 可以是 r2modman 的設定檔名稱，或設定檔資料夾的完整路徑。"""
+    for candidate in (Path(name), profiles_dir / name):
+        if (candidate / "BepInEx" / "plugins").is_dir():
+            return candidate
+    return None
+
+
+def stale_files(source_dir: Path, target_dir: Path) -> list[Path]:
+    """回傳輸出資料夾裡來源已經沒有的檔案；我們自己裝進去的模組翻譯不算。"""
+    return sorted(
+        relative
+        for relative in (p.relative_to(target_dir) for p in target_dir.rglob("*") if p.is_file())
+        if not (source_dir / relative).exists() and not relative.name.startswith(MOD_FILE_PREFIX)
+    )
+
+
+def install_mods(mods_dir: Path, profile_dir: Path, target_dir: Path, language: str) -> bool:
+    """把模組翻譯裝進模組設定檔；設定檔沒裝的模組會略過。有譯文未通過檢查時回傳 False。"""
+    plugins = profile_dir / "BepInEx" / "plugins"
+    ok = True
+    for path in sorted(mods_dir.glob("*.json")):
+        mod = json.loads(path.read_text(encoding="utf-8"))
+        name = mod["mod"]
+        if not (plugins / name).is_dir():
+            print(f"  {name}: 設定檔沒有安裝這個模組，略過")
+            continue
+
+        strings = {
+            token: entry[MOD_TEXT] for token, entry in mod["strings"].items() if entry.get(MOD_TEXT)
+        }
+        broken = False
+        for token, text in strings.items():
+            diff = markup_diff(mod["strings"][token]["en"], text)
+            if diff:
+                print(f"  {name}: {token} 的標籤或佔位符與原文不一致 {diff}")
+                broken = True
+        if broken:
+            print(f"  {name}: 未安裝")
+            ok = False
+            continue
+
+        manifest = plugins / name / "manifest.json"
+        if manifest.is_file():
+            installed = json.loads(manifest.read_text(encoding="utf-8-sig")).get("version_number")
+            if installed != mod["version"]:
+                print(f"  {name}: 注意：翻譯依 {mod['version']} 版製作，安裝的是 {installed} 版，可能有缺漏")
+
+        if mod["loader"] == "r2api":
+            # R2API 裡語言專屬的字串優先於模組寫死的英文，頂層的鍵就是語言名稱
+            output, root = plugins / MOD_PLUGIN_DIR / f"{name}.language", language
+        else:
+            # 模組直接查遊戲語言資料夾載入的內容（例如 LookingGlass），不經過 R2API
+            output, root = target_dir / f"{MOD_FILE_PREFIX}{name}.json", "strings"
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(
+            json.dumps({root: strings}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        )
+        print(f"  {name}: 已安裝 {len(strings)} 條翻譯 -> {output}")
+    return ok
+
+
 def write_zip(game: Path, target_dir: Path, zip_path: Path) -> None:
     """打包語言資料夾；壓縮檔內保留遊戲資料夾底下的路徑，解壓縮到遊戲安裝資料夾即可。"""
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as archive:
@@ -241,6 +329,9 @@ def main() -> int:
     parser.add_argument("--target", default="zh-TW", help="輸出語言資料夾（預設 zh-TW）")
     parser.add_argument("--name", default="繁體中文", help="語言選單上顯示的名稱")
     parser.add_argument("--zip", type=Path, metavar="檔案", help="另外打包成 zip 方便分享")
+    parser.add_argument(
+        "--profile", metavar="設定檔", help="r2modman 設定檔名稱或路徑；另外安裝 mods 資料夾裡的模組翻譯"
+    )
     args = parser.parse_args()
 
     game = args.game_dir or find_game_dir()
@@ -254,6 +345,10 @@ def main() -> int:
         return 1
     if source_dir.resolve() == target_dir.resolve():
         print("來源與輸出不能是同一個資料夾。")
+        return 1
+    profile = find_profile(args.profile) if args.profile else None
+    if args.profile and profile is None:
+        print(f"找不到模組設定檔：{args.profile}（在 {PROFILES_DIR} 底下也沒有）")
         return 1
 
     # s2tw：簡體 -> 繁體（臺灣字形），只換字不換詞；用語另由 TERMS 處理
@@ -296,13 +391,13 @@ def main() -> int:
         changed = sum(a != b for a, b in zip(text.split("\n"), converted.split("\n")))
         print(f"  {relative}: 已轉換，{changed} 行有變動")
 
-    stale = sorted(
-        p.relative_to(target_dir)
-        for p in target_dir.rglob("*")
-        if p.is_file() and not (source_dir / p.relative_to(target_dir)).exists()
-    )
-    for relative in stale:
+    for relative in stale_files(source_dir, target_dir):
         print(f"  注意：{relative} 在來源已不存在，可能是舊版遺留的檔案")
+
+    if profile is not None:
+        print(f"模組翻譯 -> {profile}")
+        if not install_mods(MODS_DIR, profile, target_dir, args.target):
+            failed = True
 
     if failed:
         print("有檔案未通過檢查，請見上方訊息。")

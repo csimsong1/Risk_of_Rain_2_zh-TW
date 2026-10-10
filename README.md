@@ -3,10 +3,14 @@
 把 Risk of Rain 2 內建的簡體中文（`zh-CN`）轉成繁體中文（`zh-TW`）的腳本。
 產生的是遊戲原生的語言資料夾，不需要 BepInEx 或任何模組，有沒有裝模組都能用。
 
+有用 r2modman 玩模組的話，腳本還能另外安裝幾個模組的繁體中文翻譯，見[模組翻譯](#模組翻譯)。
+
 | 檔案 | 用途 |
 |---|---|
 | `ror2_s2t.py` | 轉換腳本 |
 | `overrides/icon.png` | 語言選單上的國旗圖示（中華民國國旗） |
+| `mods/` | 模組的繁體中文翻譯，一個模組一個檔案 |
+| `test_ror2_s2t.py` | 模組翻譯功能的測試 |
 | `RoR2_zh-TW_1.5.0.zip` | 打包好的語言包，可直接分享給別人 |
 
 ## 安裝打包好的語言包
@@ -39,6 +43,7 @@ uv run ror2_s2t.py
 |---|---|
 | `--game-dir 路徑` | 遊戲安裝資料夾，自動尋找失敗時使用 |
 | `--zip 檔案` | 轉換後另外打包成 zip，方便分享 |
+| `--profile 設定檔` | r2modman 設定檔的名稱或路徑，另外安裝[模組翻譯](#模組翻譯) |
 | `--name 名稱` | 語言選單上顯示的名稱，預設「繁體中文」 |
 | `--source` / `--target` | 來源與輸出的語言資料夾，預設 `zh-CN` / `zh-TW` |
 
@@ -50,6 +55,71 @@ uv run ror2_s2t.py
 ```bash
 uv run ror2_s2t.py --zip RoR2_zh-TW_1.5.1.zip
 ```
+
+## 模組翻譯
+
+模組的文字大多只有英文，沒有簡體可以轉，所以這部分是人工翻譯，放在 `mods/` 資料夾。加上 `--profile` 就會裝進指定的 r2modman 設定檔：
+
+```bash
+uv run ror2_s2t.py --profile Purist_v4
+```
+
+設定檔沒有安裝的模組會自動略過。目前有這三個模組：
+
+| 模組 | 版本 | 翻譯內容 | 條數 |
+|---|---|---|---|
+| Insurgent | 1.0.2 | 角色、技能、關鍵字、成就、造型名稱 | 31 |
+| LunarDragon | 1.2.3 | 角色、技能、關鍵字、成就、背景故事 | 36 |
+| LookingGlass | 1.16.0 | buff 圖示提示的名稱與說明（83 個 buff） | 165 |
+
+安裝時會寫入兩個地方：
+
+- `設定檔\BepInEx\plugins\RoR2_zh-TW\*.language`：Insurgent 與 LunarDragon。R2API 會自動讀取，並蓋過模組寫死的英文。
+- 遊戲的 `Language\zh-TW\mod_*.json`：LookingGlass。它直接查語言資料夾的內容，不經過 R2API。
+
+要移除就刪掉這些檔案。模組更新後版本對不上時，腳本會提醒，新增或改過的文字會顯示英文，其餘照常。
+
+### 翻不到的部分
+
+這些文字寫死在模組的程式裡，不經過語言表，語言檔沒辦法翻：
+
+- LookingGlass 的物品數值標籤（`Proc Coefficient:` 這類）
+- PlayerRespawnSystem 的聊天訊息與復活倒數
+- Risk of Options 選單，以及各模組的設定名稱與說明
+
+LookingGlass 的屬性面板是例外，它的文字存在設定裡，可以自己改。關閉遊戲後，用 r2modman 的 Config editor 開啟 `droppod.lookingglass.cfg`（或直接編輯設定檔的 `BepInEx\config\droppod.lookingglass.cfg`），把 `[Stats Display]` 底下這兩個設定值換成下面的內容：
+
+`Stats Display String`
+
+```text
+<margin-left=0.6em><size=115%>屬性</size>\n傷害：[damage]\n攻擊速度：[attackSpeed]\n暴擊率：[critWithLuck]\n生命值再生：[regen]\n護甲：[armor] | [armorDamageReduction]\n移動速度：[speed]\n跳躍：[availableJumps] / [maxJumps]\n擊敗：[killCount]\nDPS：[dps]\n連擊：[combo]\n</margin>
+```
+
+`Secondary Stats Display String`
+
+```text
+<margin-left=0.6em><size=115%>屬性</size>\n傷害：[damage]\n攻擊速度：[attackSpeed]\n暴擊率：[critWithLuck]\n流血機率：[bleedChanceWithLuck]\n生命值再生：[regen]\n護甲：[armor] | [armorDamageReduction]\n移動速度：[speed]\n跳躍：[availableJumps] / [maxJumps]\n總擊敗：[killCountRun]\n最高連擊：[maxComboThisRun]\n山之神龕：[mountainShrines]\n傳送門：[portals] \n</margin>
+```
+
+### 修改或新增翻譯
+
+`mods/` 裡每個檔案對應一個模組，`en` 是從模組擷取的英文原文，`zh-TW` 是譯文，改完重跑腳本即可：
+
+```json
+{
+  "mod": "mwmw-LunarDragon",
+  "version": "1.2.3",
+  "loader": "r2api",
+  "strings": {
+    "MIYOWI_LUNAR_DRAGON_NAME": { "en": "Lunar Dragon", "zh-TW": "月球巨龍" }
+  }
+}
+```
+
+- `mod` 是模組在 `plugins` 底下的資料夾名稱，`version` 是翻譯所依據的版本。
+- `loader` 填 `r2api`（模組用 R2API 註冊文字，絕大多數是這種）或 `language-folder`（模組自己查語言資料夾，例如 LookingGlass）。
+- 沒有 `zh-TW` 的條目會略過，遊戲顯示英文。
+- 譯文裡的 `<style=...>` 標籤和 `{0}` 佔位符要和原文一致，順序可以不同；不一致時腳本不會安裝那個模組。
 
 ## 自訂
 
@@ -80,10 +150,19 @@ uv run ror2_s2t.py --zip RoR2_zh-TW_1.5.1.zip
 
 遊戲的 JSON 不是標準格式，所以腳本只做文字替換，不會用 JSON 函式庫重新輸出。
 
+## 測試
+
+模組翻譯的安裝與檢查邏輯有測試，改腳本之後可以跑：
+
+```bash
+uv run --with pytest --with "OpenCC>=1.1.9" pytest
+```
+
 ## 已知限制
 
 - **用語**：沒列在 `TERMS` 裡的詞仍是大陸用語（例如「循環」「類型」「綁定」）。
 - **校對**：錯字是用規則掃描找的，沒有逐句讀過全部文字，背景故事裡可能還有漏掉的。
-- **模組文字**：模組自帶的簡體翻譯不會套用到 `zh-TW`，那些文字會顯示英文。
+- **模組文字**：只有 `mods/` 裡的模組有翻譯，其他模組顯示英文。模組自帶的簡體翻譯不會套用到 `zh-TW`。
+- **模組翻譯未實測**：token 名稱是從模組的 DLL 靜態分析出來的，譯文的標籤也經過腳本檢查，但還沒有在遊戲裡逐條確認顯示。
 - **測試範圍**：在遊戲 1.5.0（Steam 版）測試，未裝模組與使用 r2modman 模組設定檔兩種情況都正常顯示。多人連線沒有測過。
 - **文字來源**：內容是官方簡體中文翻譯轉換而來，公開散布前請自行斟酌。

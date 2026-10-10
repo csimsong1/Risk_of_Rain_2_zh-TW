@@ -1,0 +1,139 @@
+{
+  "mod": "DragonycksModdingComms-Insurgent",
+  "version": "1.0.2",
+  "loader": "r2api",
+  "notes": [
+    "SYLAS__SPEC_DESCRIPTION 的 180 秒是設定 Steal Duration 的預設值；模組的英文會跟著設定變，譯文是固定的，改過設定請一併修改。",
+    "SYLAS_INSURGENT_DESCRIPTION 的原文只有空白的提示格式，沒有可翻譯的內容，所以不翻。",
+    "INSURGENTBODY_SKIN* 是英雄聯盟的造型名稱，譯名盡量比照臺版用語，未逐一查證。"
+  ],
+  "strings": {
+    "SYLAS__PASSIVE_NAME": {
+      "en": "Petricite Burst",
+      "zh-TW": "禁魔石爆發"
+    },
+    "SYLAS__PASSIVE_DESCRIPTION": {
+      "en": "Skills are upgraded by stealing abilities from <style=cIsDamage>Bosses</style> and <style=cIsDamage>Elite</style> aspects.",
+      "zh-TW": "竊取<style=cIsDamage>首領</style>的能力與<style=cIsDamage>精英</style>的象徵，即可強化技能。"
+    },
+    "SYLAS__M1": {
+      "en": "Chain Slash",
+      "zh-TW": "鎖鏈斬擊"
+    },
+    "SYLAS__M1_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile</style>. Whip forward for <style=cIsDamage>220% damage</style>. Every 3rd hit slams the ground in the aim direction for <style=cIsDamage>340% damage</style>. <style=cIsUtility>The slam effect changes based on the chained element</style>. Recharges the <style=cIsUtility>cooldown</style> of Chain Lash on hit by <style=cIsUtility>0.5s</style>.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。向前甩鞭，造成<style=cIsDamage>220%傷害</style>。每第3次攻擊會朝瞄準方向猛擊地面，造成<style=cIsDamage>340%傷害</style>。<style=cIsUtility>猛擊效果會依鎖鏈附帶的元素而改變</style>。命中時使鎖鏈鞭笞的<style=cIsUtility>冷卻時間</style>縮短<style=cIsUtility>0.5秒</style>。"
+    },
+    "SYLAS__M1_KEYWORD": {
+      "en": "<style=cKeywordName>Blazing</style><style=cSub><style=cIsDamage>Ignite</style>. Fire explosion that deals <style=cIsDamage>400% damage</style>.\r\n\r\n<style=cKeywordName>Glacial</style><style=cSub><style=cIsUtility>Freezing</style>. Ice explosion that deals <style=cIsDamage>350% damage</style>.\r\n\r\n<style=cKeywordName>Mending</style><style=cSub><style=cIsUtility>Entangle</style> enemies for <style=cIsUtility>3s</style> and <style=cIsHealing>heal</style> for <style=cIsHealing>10%</style> of the damage dealt.\r\n\r\n<style=cKeywordName>Overloading</style><style=cSub>Shock explosion that <style=cIsDamage>stuns</style> and deals <style=cIsDamage>65% damage</style> per second for <style=cIsUtility>5s</style>.\r\n\r\n<style=cKeywordName>Malachite</style><style=cSub>An explosion that deals <style=cIsDamage>200% damage</style> and releases <style=cIsDamage>4</style> spiked balls.\r\n\r\n<style=cKeywordName>Celestine</style><style=cSub>Spawn a Celestine zone that <style=cIsUtility>cloaks</style> allies. Enemies are <style=cIsUtility>slowed</style> and have their damage <style=cIsHealth>reduced</style> by <style=cIsHealth>20%</style>.\r\n\r\n<style=cKeywordName>Void</style><style=cSub><style=cIsDamage>Collapse</style> and <style=cIsUtility>entangle</style> on hit, and deals <style=cIsHealth>10%</style> of the targets <style=cIsHealth>health</style>.\r\n\r\n<style=cKeywordName>Perfected</style><style=cSub>Leave a pool of blue flames that deals <style=cIsHealth>2.5%</style> of the targets <style=cIsHealth>health</style> per second for <style=cIsUtility>10s</style>.\r\n\r\n<style=cKeywordName>Gilded</style><style=cSub>Gain <style=cIsDamage>Aurelionite’s Blessing</style> for <style=cIsUtility>5s</style>, which grants <style=cIsHealing>30 armor</style> <style=cIsDamage>+10% gold</style>.\r\n\r\n<style=cKeywordName>Twisted</style><style=cSub>Deflect nearby projectiles, dealing damage equal to <style=cIsHealth>2.5%</style> of the attackers <style=cIsHealth>health</style>.\r\n\r\n",
+      "zh-TW": "<style=cKeywordName>燃燒</style><style=cSub><style=cIsDamage>點燃</style>。產生火焰爆炸，造成<style=cIsDamage>400%傷害</style>。\r\n\r\n<style=cKeywordName>結冰</style><style=cSub><style=cIsUtility>冰凍</style>。產生寒冰爆炸，造成<style=cIsDamage>350%傷害</style>。\r\n\r\n<style=cKeywordName>修補</style><style=cSub><style=cIsUtility>纏繞</style>敵人<style=cIsUtility>3秒</style>，並<style=cIsHealing>恢復</style>相當於所造成傷害<style=cIsHealing>10%</style>的生命值。\r\n\r\n<style=cKeywordName>超載</style><style=cSub>產生電擊爆炸，<style=cIsDamage>眩暈</style>敵人，並在<style=cIsUtility>5秒</style>內每秒造成<style=cIsDamage>65%傷害</style>。\r\n\r\n<style=cKeywordName>孔雀石</style><style=cSub>產生爆炸，造成<style=cIsDamage>200%傷害</style>，並釋放<style=cIsDamage>4</style>顆尖刺球。\r\n\r\n<style=cKeywordName>天青石</style><style=cSub>生成一片天青石區域，使盟友<style=cIsUtility>隱身</style>。區域內的敵人會被<style=cIsUtility>減速</style>，且傷害<style=cIsHealth>降低</style><style=cIsHealth>20%</style>。\r\n\r\n<style=cKeywordName>虛空</style><style=cSub>命中時<style=cIsDamage>瓦解</style>並<style=cIsUtility>纏繞</style>目標，並造成相當於目標<style=cIsHealth>10%</style><style=cIsHealth>生命值</style>的傷害。\r\n\r\n<style=cKeywordName>無懈可擊</style><style=cSub>留下一片藍色火焰，在<style=cIsUtility>10秒</style>內每秒造成相當於目標<style=cIsHealth>2.5%</style><style=cIsHealth>生命值</style>的傷害。\r\n\r\n<style=cKeywordName>黃金</style><style=cSub>獲得<style=cIsDamage>奧利雷奧尼特的祝福</style>，持續<style=cIsUtility>5秒</style>，提供<style=cIsHealing>30護甲</style>與<style=cIsDamage>+10%金錢</style>。\r\n\r\n<style=cKeywordName>扭曲</style><style=cSub>偏轉附近的投射物，造成相當於攻擊者<style=cIsHealth>2.5%</style><style=cIsHealth>生命值</style>的傷害。\r\n\r\n"
+    },
+    "SYLAS__M2": {
+      "en": "Chain Lash",
+      "zh-TW": "鎖鏈鞭笞"
+    },
+    "SYLAS__M2_DESCRIPTION": {
+      "en": "Whirl around, dealing <style=cIsDamage>250% damage</style>. <style=cIsUtility>The whirl effect changes based on the chained element</style>. Gain <style=cIsDamage>20 armor</style> for <style=cIsUtility>2s</style> if you have no elite aspect.",
+      "zh-TW": "旋轉揮擊，造成<style=cIsDamage>250%傷害</style>。<style=cIsUtility>旋擊效果會依鎖鏈附帶的元素而改變</style>。若未持有精英象徵，則獲得<style=cIsDamage>20護甲</style>，持續<style=cIsUtility>2秒</style>。"
+    },
+    "SYLAS__M2_KEYWORD": {
+      "en": "<style=cKeywordName>Blazing</style><style=cSub>Release a fire tornado, dealing <style=cIsDamage>400% damage</style> per second for up to <style=cIsUtility>3s</style>.\r\n\r\n<style=cKeywordName>Glacial</style><style=cSub><style=cIsUtility>Freeze</style> on hit. Enemies are <style=cIsHealth>instantly killed</style> if below <style=cIsHealth>40%</style> health.\r\n\r\n<style=cKeywordName>Mending</style><style=cSub><style=cIsHealing>Heal</style> for <style=cIsHealing>10%</style> of the damage dealt and reduce the damage of enemies hit by <style=cIsDamage>50%</style>.\r\n\r\n<style=cKeywordName>Overloading</style><style=cSub>Call down a lightning strike at a nearby enemy with the highest health for <style=cIsDamage>600% damage</style>.\r\n\r\n<style=cKeywordName>Malachite</style><style=cSub>Leave a pit that deals <style=cIsDamage>150% damage</style> per second and applies <style=cIsHealth>healing disabled</style>.\r\n\r\n<style=cKeywordName>Celestine</style><style=cSub>Slow enemies hit for <style=cIsUtility>50%</style> movement speed and attack speed. Gain <style=cIsUtility>5% movement speed</style> for each hit.\r\n\r\n<style=cKeywordName>Void</style><style=cSub>Gain a bubble shield that <style=cIsUtility>blocks one hit</style> for <style=cIsUtility>4s</style>.\r\n\r\n<style=cKeywordName>Perfected</style><style=cSub>Spawn <style=cIsDamage>3</style> bomb projectiles that fire on hit for <style=cIsDamage>200% damage</style>.\r\n\r\n<style=cKeywordName>Gilded</style><style=cSub>Damage is increased by <style=cIsUtility>15%</style> of your <style=cIsUtility>gold</style>.\r\n\r\n<style=cKeywordName>Twisted</style><style=cSub>Enemies hit receive additional damage for <style=cIsHealth>5%</style> of their <style=cIsHealth>health</style>.\r\n\r\n",
+      "zh-TW": "<style=cKeywordName>燃燒</style><style=cSub>釋放一道火焰龍捲風，每秒造成<style=cIsDamage>400%傷害</style>，最多持續<style=cIsUtility>3秒</style>。\r\n\r\n<style=cKeywordName>結冰</style><style=cSub>命中時<style=cIsUtility>冰凍</style>敵人。敵人生命值低於<style=cIsHealth>40%</style>時將被<style=cIsHealth>一擊斃命</style>。\r\n\r\n<style=cKeywordName>修補</style><style=cSub><style=cIsHealing>恢復</style>相當於所造成傷害<style=cIsHealing>10%</style>的生命值，並使命中的敵人傷害降低<style=cIsDamage>50%</style>。\r\n\r\n<style=cKeywordName>超載</style><style=cSub>對附近生命值最高的敵人降下一道閃電，造成<style=cIsDamage>600%傷害</style>。\r\n\r\n<style=cKeywordName>孔雀石</style><style=cSub>留下一個坑洞，每秒造成<style=cIsDamage>150%傷害</style>，並施加<style=cIsHealth>禁止治療</style>。\r\n\r\n<style=cKeywordName>天青石</style><style=cSub>使命中的敵人移動速度與攻擊速度降低<style=cIsUtility>50%</style>。每次命中可獲得<style=cIsUtility>5%移動速度</style>。\r\n\r\n<style=cKeywordName>虛空</style><style=cSub>獲得一層泡泡護盾，可<style=cIsUtility>格擋一次攻擊</style>，持續<style=cIsUtility>4秒</style>。\r\n\r\n<style=cKeywordName>無懈可擊</style><style=cSub>生成<style=cIsDamage>3</style>枚炸彈投射物，命中時發射，造成<style=cIsDamage>200%傷害</style>。\r\n\r\n<style=cKeywordName>黃金</style><style=cSub>傷害提高，增加量相當於你持有<style=cIsUtility>金錢</style>的<style=cIsUtility>15%</style>。\r\n\r\n<style=cKeywordName>扭曲</style><style=cSub>命中的敵人會額外受到相當於自身<style=cIsHealth>5%</style><style=cIsHealth>生命值</style>的傷害。\r\n\r\n"
+    },
+    "SYLAS__UTIL": {
+      "en": "Abscond",
+      "zh-TW": "潛逃"
+    },
+    "SYLAS__UTIL_DESCRIPTION": {
+      "en": "Dash forward a short distance. Can be recast to whip out the chains in the targeted direction for <style=cIsDamage>200% damage</style>, pulling yourself to the hit location. If an enemy is hit, perform Chain Lash on arrival, or knock them down if they're airborne.",
+      "zh-TW": "向前衝刺一小段距離。可以再次施放，朝目標方向甩出鎖鏈，造成<style=cIsDamage>200%傷害</style>，並把自己拉向命中位置。若命中敵人，抵達時會施展鎖鏈鞭笞；若敵人在空中，則將其擊落。"
+    },
+    "SYLAS__SPEC": {
+      "en": "Hijack",
+      "zh-TW": "劫奪"
+    },
+    "SYLAS__SPECKEYWORD": {
+      "en": "<style=cKeywordName>Beetle Queen</style><style=cSub>Spawn <style=cIsUtility>2 Beetle Guards</style> that <style=cIsUtility>inherit all you items and siphoned element</style>.\r\n\r\n<style=cKeywordName>Stone Titan</style><style=cSub>Fire a laser at the nearest enemy, dealing <style=cIsDamage>1000% damage</style> for up to <style=cIsUtility>10s</style>.\r\n\r\n<style=cKeywordName>Wandering Vagrant</style><style=cSub>Channel for <style=cIsUtility>3s</style>, then explode for <style=cIsDamage>2000% damage</style>.\r\n\r\n<style=cKeywordName>Clay Dunestrider</style><style=cSub>Channel for <style=cIsUtility>10s</style>, <style=cIsHealing>siphoning</style> nearby enemies, dealing <style=cIsDamage>200% damage</style>, applying <style=cIsDamage>tar</style>, and <style=cIsHealing>healing</style> you for <style=cIsHealing>50%</style> of the damage dealt.\r\n\r\n<style=cKeywordName>Magma Worm</style><style=cSub>Release <style=cIsDamage>5</style> waves of fireballs, dealing <style=cIsDamage>12x150% damage</style>.\r\n\r\n<style=cKeywordName>Overloading Worm</style><style=cSub>Release <style=cIsDamage>5</style> waves of lightning orbs, dealing <style=cIsDamage>8x300% damage</style>.\r\n\r\n<style=cKeywordName>Imp Overlord</style><style=cSub>Teleport to the targeted location, and then explode for <style=cIsDamage>500% damage</style> and inflicting <style=cIsDamage>bleed</style> for <style=cIsDamage>380% damage</style>.\r\n\r\n<style=cKeywordName>Grovetender</style><style=cSub>Fire chains toward nearby enemies, dealing <style=cIsDamage>300% damage</style> and pulling them towards you.\r\n\r\n<style=cKeywordName>Xi Construct</style><style=cSub>For up to <style=cIsUtility>30s</style>, killing enemies spawns an <style=cIsDamage>Alpha Construct</style> with bonus <style=cIsDamage>300% damage</style> and <style=cIsHealing>300% health</style>.\r\n\r\n<style=cKeywordName>Solus Control Unit</style><style=cSub>Spawn up to <style=cIsUtility>5 Solus Probes</style> that gain <style=cIsDamage>+100% damage</style> per <style=cIsUtility>ally on your team</style>.\r\n\r\n<style=cKeywordName>Grandparent</style><style=cSub>Create a sun on your that inflicts <style=cIsDamage>Overheat</style> over time to all nearby entities.\r\n\r\n<style=cKeywordName>Scavenger</style><style=cSub>Summon a <style=cIsUtility>bag</style> that spawns <style=cIsDamage>2</style> <style=cMono>common</style> items and <style=cIsDamage>1</style> <style=cIsHealing>uncommon</style> item.\r\n\r\n<style=cKeywordName>Mithrix</style><style=cSub>Fire <style=cIsDamage>5</style> waves of rotating pillars around you for <style=cIsDamage>8x1000% damage</style>.\r\n\r\n<style=cKeywordName>Void Devastator</style><style=cSub>Fire void missiles for <style=cIsDamage>30x150% damage</style>.\r\n\r\n<style=cKeywordName>Voidling</style><style=cSub>Fire a massive beam that circles around you, dealing <style=cIsDamage>2500% damage</style> per second.\r\n\r\n",
+      "zh-TW": "<style=cKeywordName>甲殼蟲女王</style><style=cSub>召喚<style=cIsUtility>2隻甲殼蟲守衛</style>，牠們會<style=cIsUtility>繼承你所有的物品與汲取的元素</style>。\r\n\r\n<style=cKeywordName>石巨人</style><style=cSub>對最近的敵人發射雷射，造成<style=cIsDamage>1000%傷害</style>，最多持續<style=cIsUtility>10秒</style>。\r\n\r\n<style=cKeywordName>漫遊者</style><style=cSub>引導<style=cIsUtility>3秒</style>後爆炸，造成<style=cIsDamage>2000%傷害</style>。\r\n\r\n<style=cKeywordName>黏土沙丘行者</style><style=cSub>引導<style=cIsUtility>10秒</style>，<style=cIsHealing>汲取</style>附近的敵人，造成<style=cIsDamage>200%傷害</style>並施加<style=cIsDamage>焦油</style>，同時為你<style=cIsHealing>恢復</style>相當於所造成傷害<style=cIsHealing>50%</style>的生命值。\r\n\r\n<style=cKeywordName>岩漿蠕蟲</style><style=cSub>釋放<style=cIsDamage>5</style>波火球，造成<style=cIsDamage>12x150%傷害</style>。\r\n\r\n<style=cKeywordName>超載蠕蟲</style><style=cSub>釋放<style=cIsDamage>5</style>波閃電球，造成<style=cIsDamage>8x300%傷害</style>。\r\n\r\n<style=cKeywordName>小惡魔霸主</style><style=cSub>傳送到目標位置後爆炸，造成<style=cIsDamage>500%傷害</style>，並施加<style=cIsDamage>流血</style>，造成<style=cIsDamage>380%傷害</style>。\r\n\r\n<style=cKeywordName>森林守護者</style><style=cSub>向附近的敵人射出鎖鏈，造成<style=cIsDamage>300%傷害</style>並將其拉向你。\r\n\r\n<style=cKeywordName>克西結構體</style><style=cSub>最多持續<style=cIsUtility>30秒</style>，期間擊敗敵人會生成一個<style=cIsDamage>阿爾法結構體</style>，並擁有額外的<style=cIsDamage>300%傷害</style>與<style=cIsHealing>300%生命值</style>。\r\n\r\n<style=cKeywordName>單獨控制單元</style><style=cSub>生成最多<style=cIsUtility>5個獨一探針</style>，<style=cIsUtility>你隊伍中每有一名盟友</style>，探針便獲得<style=cIsDamage>+100%傷害</style>。\r\n\r\n<style=cKeywordName>元祖</style><style=cSub>在你身上創造一顆太陽，持續對附近所有單位施加<style=cIsDamage>過熱</style>。\r\n\r\n<style=cKeywordName>清道夫</style><style=cSub>召喚一個<style=cIsUtility>袋子</style>，產生<style=cIsDamage>2</style>件<style=cMono>普通</style>物品與<style=cIsDamage>1</style>件<style=cIsHealing>罕見</style>物品。\r\n\r\n<style=cKeywordName>米斯歷克斯</style><style=cSub>在你周圍發射<style=cIsDamage>5</style>波旋轉的石柱，造成<style=cIsDamage>8x1000%傷害</style>。\r\n\r\n<style=cKeywordName>虛空毀滅者</style><style=cSub>發射虛空導彈，造成<style=cIsDamage>30x150%傷害</style>。\r\n\r\n<style=cKeywordName>虛靈</style><style=cSub>發射一道環繞你旋轉的巨大光束，每秒造成<style=cIsDamage>2500%傷害</style>。\r\n\r\n"
+    },
+    "SYLAS_INSURGENT_NAME": {
+      "en": "Insurgent",
+      "zh-TW": "起義者"
+    },
+    "INSURGENTBODY_DEFAULT_SKIN_NAME": {
+      "en": "Default",
+      "zh-TW": "預設"
+    },
+    "INSURGENTBODY_MASTERY_NAME": {
+      "en": "Mastery",
+      "zh-TW": "精通"
+    },
+    "INSURGENTBODY_SKIN00_NAME": {
+      "en": "Original",
+      "zh-TW": "經典"
+    },
+    "INSURGENTBODY_SKIN01_NAME": {
+      "en": "Lunar Wraith",
+      "zh-TW": "月神幽魂"
+    },
+    "INSURGENTBODY_SKIN08_NAME": {
+      "en": "Freljord",
+      "zh-TW": "弗雷爾卓德"
+    },
+    "INSURGENTBODY_SKIN13_NAME": {
+      "en": "PROJECT",
+      "zh-TW": "未來戰士"
+    },
+    "INSURGENTBODY_SKIN14_NAME": {
+      "en": "Prestige PROJECT",
+      "zh-TW": "尊爵不凡 未來戰士"
+    },
+    "INSURGENTBODY_SKIN24_NAME": {
+      "en": "Battle Wolf",
+      "zh-TW": "戰狼"
+    },
+    "INSURGENTBODY_SKIN34_NAME": {
+      "en": "Ashen Slayer",
+      "zh-TW": "灰燼殺戮者"
+    },
+    "INSURGENTBODY_SKIN36_NAME": {
+      "en": "Winterblessed",
+      "zh-TW": "冬境神佑"
+    },
+    "INSURGENTBODY_SKIN46_NAME": {
+      "en": "Dark Star",
+      "zh-TW": "闇星"
+    },
+    "INSURGENTBODY_SKIN53_NAME": {
+      "en": "Prestige T1",
+      "zh-TW": "尊爵不凡 T1"
+    },
+    "SYLAS_INSURGENT_DESCRIPTION": {
+      "en": " <style=cSub>\r\n\r\n< ! > \r\n\r\n< ! > \r\n\r\n< ! > \r\n\r\n< ! > \r\n\r\n"
+    },
+    "SYLAS_INSURGENT_SUBTITLE": {
+      "en": "Unbound",
+      "zh-TW": "掙脫枷鎖之人"
+    },
+    "SYLAS_INSURGENT_OUTRO": {
+      "en": "..and so he left, free at last.",
+      "zh-TW": "……於是他走了，終於獲得了自由。"
+    },
+    "SYLAS_INSURGENT_FAIL": {
+      "en": "..and so he vanished, salvation beyond his reach.",
+      "zh-TW": "……於是他就這樣消逝了，救贖終究遙不可及。"
+    },
+    "SYLAS__SPEC_DESCRIPTION": {
+      "en": "Siphon the target's <style=cIsDamage>Boss</style> ability or <style=cIsDamage>Elite</style> element for <style=cIsUtility>180s</style>. <style=cIsDamage>Elite Equipment</style> grants the element permanently.",
+      "zh-TW": "汲取目標的<style=cIsDamage>首領</style>能力或<style=cIsDamage>精英</style>元素，持續<style=cIsUtility>180秒</style>。<style=cIsDamage>精英裝備</style>可永久提供該元素。"
+    },
+    "ACHIEVEMENT_SYLAS__MASTERY_NAME": {
+      "en": "INSURGENT: Mastery",
+      "zh-TW": "起義者：精通"
+    },
+    "ACHIEVEMENT_SYLAS__MASTERY_DESCRIPTION": {
+      "en": "As Insurgent, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為起義者，在季風難度下通關遊戲或抹除自己。"
+    }
+  }
+}

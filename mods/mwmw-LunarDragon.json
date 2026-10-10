@@ -1,0 +1,154 @@
+{
+  "mod": "mwmw-LunarDragon",
+  "version": "1.2.3",
+  "loader": "r2api",
+  "notes": [
+    "元素調和的四個環名稱（血、意圖、大眾、靈魂）沿用遊戲裡月球四根柱子的官方譯名。"
+  ],
+  "strings": {
+    "MIYOWI_LUNAR_DRAGON_NAME": {
+      "en": "Lunar Dragon",
+      "zh-TW": "月球巨龍"
+    },
+    "MIYOWI_LUNAR_DRAGON_DESCRIPTION": {
+      "en": "An almost perfect design. The Lunar Dragon is a monstrous survivor that tears down foes from the skies.<color=#CCD3E0>\r\n\r\n< ! > While strong, the Lunar Dragon is also an easy target. Prioritize enemies who can exploit this weakness.\r\n\r\n< ! > Elemental Blitz is slow, but fires unique, powerful blasts. Switch targets between attacks to maximize your advantage.\r\n\r\n< ! > Burst Thrusters can be charged on the ground to increase its duration and damage, additionally gaining a flaming trail at high charge. Use the skill while hovering in the air instead for a hasty, low-cooldown dash.\r\n\r\n< ! > Draco Ambush is the Lunar Dragon's flagship attack. Keep it for the right moment to utterly devastate a target of choice.\r\n\r\n",
+      "zh-TW": "近乎完美的設計。月球巨龍是一名能從空中撕碎敵人的怪物級倖存者。<color=#CCD3E0>\r\n\r\n< ! > 月球巨龍雖然強大，卻也是個容易被命中的目標。請優先處理能利用這項弱點的敵人。\r\n\r\n< ! > 元素閃擊的攻擊節奏緩慢，但能發射獨特而強力的爆破。在每次攻擊之間切換目標，可以發揮最大優勢。\r\n\r\n< ! > 爆發推進器可以在地面蓄力，延長持續時間並提高傷害，蓄力夠高時還會留下火焰軌跡。改在空中懸浮時使用，則會變成冷卻時間短的快速衝刺。\r\n\r\n< ! > 巨龍伏擊是月球巨龍的招牌攻擊。把它留到關鍵時刻，徹底摧毀你選定的目標。\r\n\r\n"
+    },
+    "MIYOWI_LUNAR_DRAGON_SUBTITLE": {
+      "en": "Forsaken Apostate",
+      "zh-TW": "被遺棄的叛教者"
+    },
+    "MIYOWI_LUNAR_DRAGON_LORE": {
+      "en": "Indeed, brother. With more materials, we can compose fitter guardians. Allow me to demonstrate a more sophisticated design.\r\n\r\nStone, silver, fire. This is the basis of any sentinel.\r\n\r\nWith a delicate hand, we can introduce more elements. Ice and charge offer versatility.\r\n\r\nTriple cannons, doubling as thrusters. Speed is war.\r\n\r\nHigh firepower requires high maneuverability. Recall what I said about quadrupeds.\r\n\r\nObserve the ratios. Despite the further complexity, they remain recognisable. Now it is your turn, dear brother. I trust you understand how to complete this design.",
+      "zh-TW": "確實如此，兄弟。有了更多材料，我們就能造出更合適的守護者。讓我示範一個更精巧的設計。\r\n\r\n石、銀、火。這是所有哨兵的基礎。\r\n\r\n只要手法夠細膩，就能加入更多元素。冰與電荷能帶來多樣性。\r\n\r\n三門火炮，同時充當推進器。速度就是戰爭。\r\n\r\n強大的火力需要高機動性。回想一下我說過的四足生物。\r\n\r\n觀察這些比例。儘管更加複雜，它們依然清晰可辨。現在輪到你了，親愛的兄弟。我相信你明白該如何完成這個設計。"
+    },
+    "MIYOWI_LUNAR_DRAGON_OUTRO_FLAVOR": {
+      "en": "..and so it left, with aspirations anew.",
+      "zh-TW": "……於是它走了，懷抱著全新的志向。"
+    },
+    "MIYOWI_LUNAR_DRAGON_OUTRO_FAILURE": {
+      "en": "..and so it vanished, its purpose fulfilled.",
+      "zh-TW": "……於是它就這樣消逝了，使命已然完成。"
+    },
+    "MIYOWI_LUNAR_DRAGON_MASTERY_SKIN_NAME": {
+      "en": "Dark Demise",
+      "zh-TW": "黑暗終焉"
+    },
+    "MIYOWI_LUNAR_DRAGON_PASSIVE_NAME": {
+      "en": "Lunar Wings",
+      "zh-TW": "月球之翼"
+    },
+    "MIYOWI_LUNAR_DRAGON_PASSIVE_DESCRIPTION": {
+      "en": "The Lunar Dragon can hover.",
+      "zh-TW": "月球巨龍可以懸浮。"
+    },
+    "MIYOWI_LUNAR_DRAGON_PRIMARY_ELEMENTAL_BLITZ_NAME": {
+      "en": "Elemental Blitz",
+      "zh-TW": "元素閃擊"
+    },
+    "MIYOWI_LUNAR_DRAGON_PRIMARY_ELEMENTAL_BLITZ_DESCRIPTION": {
+      "en": "Fire heavy elemental blasts for <style=cIsDamage>400% damage</style> each. Every third attack fires a piercing bolt for <style=cIsDamage>600% damage</style>.",
+      "zh-TW": "發射沉重的元素爆破，每發造成<style=cIsDamage>400%傷害</style>。每第三次攻擊會發射一枚穿透彈，造成<style=cIsDamage>600%傷害</style>。"
+    },
+    "MIYOWI_LUNAR_DRAGON_SECONDARY_ERUPTION_NAME": {
+      "en": "Lunar Eruption",
+      "zh-TW": "月球噴發"
+    },
+    "MIYOWI_LUNAR_DRAGON_SECONDARY_ERUPTION_DESCRIPTION": {
+      "en": "Launch a huge lunar fireball for <style=cIsDamage>800% damage</style>, causing an eruption of blazing rings if detonated on the ground.",
+      "zh-TW": "發射一顆巨大的月球火球，造成<style=cIsDamage>800%傷害</style>；若在地面引爆，會噴發出數道烈焰之環。"
+    },
+    "MIYOWI_LUNAR_DRAGON_SECONDARY_SURGE_NAME": {
+      "en": "Surge",
+      "zh-TW": "電湧"
+    },
+    "MIYOWI_LUNAR_DRAGON_SECONDARY_SURGE_DESCRIPTION": {
+      "en": "<style=cIsDamage>Stunning.</style> Launch a huge plasmaball for <style=cIsDamage>1200% damage</style>. Use the skill again before collision to detonate the projectile early.",
+      "zh-TW": "<style=cIsDamage>眩暈。</style>發射一顆巨大的等離子球，造成<style=cIsDamage>1200%傷害</style>。在命中前再次使用技能，可提前引爆投射物。"
+    },
+    "MIYOWI_LUNAR_DRAGON_SECONDARY_GLACIATE_NAME": {
+      "en": "Glaciate",
+      "zh-TW": "冰封"
+    },
+    "MIYOWI_LUNAR_DRAGON_SECONDARY_GLACIATE_DESCRIPTION": {
+      "en": "Launch a huge ice chunk for <style=cIsDamage>600% damage</style>, expanding on impact and inflicting <style=cIsUtility>Slow</style> to all nearby enemies caught in the glacier.",
+      "zh-TW": "發射一塊巨大的冰塊，造成<style=cIsDamage>600%傷害</style>，命中時會擴張，並對附近所有被冰川困住的敵人施加<style=cIsUtility>減速</style>。"
+    },
+    "MIYOWI_LUNAR_DRAGON_UTILITY_BURST_THRUSTERS_NAME": {
+      "en": "Burst Thrusters",
+      "zh-TW": "爆發推進器"
+    },
+    "MIYOWI_LUNAR_DRAGON_UTILITY_BURST_THRUSTERS_DESCRIPTION": {
+      "en": "<style=cIsUtility>Heavy</style>. Overcharge the cannons to <style=cIsUtility>speed</style> forward, dealing up to <style=cIsDamage>500% damage</style>, and <style=cIsDamage>stunning</style> at maximum charge.",
+      "zh-TW": "<style=cIsUtility>重型</style>。使火炮超載並向前<style=cIsUtility>高速衝刺</style>，最多造成<style=cIsDamage>500%傷害</style>，蓄力至最大時還會<style=cIsDamage>眩暈</style>敵人。"
+    },
+    "MIYOWI_LUNAR_DRAGON_UTILITY_FLOW_THRUSTERS_NAME": {
+      "en": "Flow Thrusters",
+      "zh-TW": "穩流推進器"
+    },
+    "MIYOWI_LUNAR_DRAGON_UTILITY_FLOW_THRUSTERS_DESCRIPTION": {
+      "en": "Steadily discharge the cannons to <style=cIsUtility>take flight</style>. You can continue to attack for the duration.",
+      "zh-TW": "讓火炮穩定放電以<style=cIsUtility>起飛</style>。持續期間仍可繼續攻擊。"
+    },
+    "MIYOWI_LUNAR_DRAGON_SPECIAL_AMBUSH_NAME": {
+      "en": "Draco Ambush",
+      "zh-TW": "巨龍伏擊"
+    },
+    "MIYOWI_LUNAR_DRAGON_SPECIAL_AMBUSH_DESCRIPTION": {
+      "en": "<style=cIsUtility>Take aim</style>, and confirm a target to <style=cIsUtility>soar into the sky</style>. <style=cIsUtility>Attune elements</style> to unleash a devastating strike for upwards of <style=cIsDamage>7000% damage</style>.",
+      "zh-TW": "<style=cIsUtility>進行瞄準</style>，確認目標後<style=cIsUtility>直衝天際</style>。<style=cIsUtility>調和元素</style>以發動毀滅性的一擊，造成<style=cIsDamage>7000%以上的傷害</style>。"
+    },
+    "MIYOWI_LUNAR_DRAGON_SPECIAL_AMBUSH_AIM_NAME": {
+      "en": "Confirm",
+      "zh-TW": "確認"
+    },
+    "MIYOWI_LUNAR_DRAGON_SPECIAL_AMBUSH_AIM_DESCRIPTION": {
+      "en": "<style=cIsUtility>Take flight</style>, and start <style=cIsUtility>elemental attunement</style>.",
+      "zh-TW": "<style=cIsUtility>起飛</style>，並開始<style=cIsUtility>元素調和</style>。"
+    },
+    "MIYOWI_LUNAR_DRAGON_SPECIAL_AMBUSH_CANCEL_NAME": {
+      "en": "Cancel",
+      "zh-TW": "取消"
+    },
+    "MIYOWI_LUNAR_DRAGON_SPECIAL_AMBUSH_CANCEL_DESCRIPTION": {
+      "en": "Cancel aiming. No stocks are consumed.",
+      "zh-TW": "取消瞄準。不會消耗技能次數。"
+    },
+    "MIYOWI_LUNAR_DRAGON_KEYWORD_ATTUNEMENT": {
+      "en": "<style=cKeywordName>Elemental Attunement</style><style=cSub>Complete the minigame to enhance the skill. Tap the primary button when the elemental rings shrink to overlap with the center ring. Different elements provide bonus effects in different proportions (100% of their primary effect, 20% of all other ring effects). Missing a hit slightly reduces all current bonuses.</style>\n\n<b><color=#FF4949>Blood</color></b>\n<style=cSub>Increases <style=cIsDamage>explosion damage</style> by <style=cIsDamage>1000%</style>.</style>\n\n<b><color=#78B2DB>Des</color><color=#4187E2>ign</color></b>\n<style=cSub>Reduces <style=cIsUtility>skill cooldown</style> by <style=cIsUtility>5s</style>.</style>\n\n<b><color=#4E88E2>Mass</color></b>\n<style=cSub>Increases <style=cIsDamage>explosion radius</style> by <style=cIsDamage>10m</style>.</style>\n\n<b><color=#CABA52>Soul</color></b>\n<style=cSub><style=cIsUtility>100% of all previous ring effects</style>, plus health recovery proportional to how many rings were hit, up to <style=cIsHealing>25% max health</style>.</style>",
+      "zh-TW": "<style=cKeywordName>元素調和</style><style=cSub>完成小遊戲以強化技能。當元素環收縮到與中心環重疊時，按下主要技能鍵。不同元素會以不同比例提供加成效果（自身主要效果的100%，以及其他所有環效果的20%）。每失誤一次，會略微降低目前所有的加成。</style>\n\n<b><color=#FF4949>血</color></b>\n<style=cSub>使<style=cIsDamage>爆炸傷害</style>提高<style=cIsDamage>1000%</style>。</style>\n\n<b><color=#78B2DB>意</color><color=#4187E2>圖</color></b>\n<style=cSub>使<style=cIsUtility>技能冷卻時間</style>縮短<style=cIsUtility>5秒</style>。</style>\n\n<b><color=#4E88E2>大眾</color></b>\n<style=cSub>使<style=cIsDamage>爆炸半徑</style>增加<style=cIsDamage>10米</style>。</style>\n\n<b><color=#CABA52>靈魂</color></b>\n<style=cSub><style=cIsUtility>先前所有環效果的100%</style>，並依命中的環數恢復生命值，最多恢復<style=cIsHealing>最大生命值的25%</style>。</style>"
+    },
+    "ACHIEVEMENT_MIYOWI_LUNAR_DRAGON_MASTERY_ACHIEVEMENT_NAME": {
+      "en": "Lunar Dragon: Mastery",
+      "zh-TW": "月球巨龍：精通"
+    },
+    "ACHIEVEMENT_MIYOWI_LUNAR_DRAGON_MASTERY_ACHIEVEMENT_DESCRIPTION": {
+      "en": "As Lunar Dragon, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為月球巨龍，在季風難度下通關遊戲或抹除自己。"
+    },
+    "MIYOWI_LUNAR_DRAGON_BROTHER_SEE_DRAGON_1": {
+      "en": "The Grand Chimera. But of course.",
+      "zh-TW": "大喀邁拉。果然如此。"
+    },
+    "MIYOWI_LUNAR_DRAGON_BROTHER_SEE_DRAGON_2": {
+      "en": "The Grand Chimera. Predictable.",
+      "zh-TW": "大喀邁拉。不出所料。"
+    },
+    "MIYOWI_LUNAR_DRAGON_BROTHER_KILL_DRAGON_1": {
+      "en": "Wasted elements.",
+      "zh-TW": "白白浪費了元素。"
+    },
+    "MIYOWI_LUNAR_DRAGON_BROTHER_KILL_DRAGON_2": {
+      "en": "Return to dust, Chimera.",
+      "zh-TW": "回歸塵土吧，喀邁拉。"
+    },
+    "MIYOWI_LUNAR_DRAGON_BROTHERHURT_KILL_DRAGON_1": {
+      "en": "KNOW YOUR PLACE, CHIMERA.",
+      "zh-TW": "認清你的位置，喀邁拉。"
+    },
+    "MIYOWI_LUNAR_DRAGON_BROTHERHURT_KILL_DRAGON_2": {
+      "en": "YOU CANNOT SURPASS YOUR CREATOR, CHIMERA.",
+      "zh-TW": "你無法超越你的創造者，喀邁拉。"
+    }
+  }
+}

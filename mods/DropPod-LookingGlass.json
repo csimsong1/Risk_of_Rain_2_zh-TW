@@ -1,0 +1,676 @@
+{
+  "mod": "DropPod-LookingGlass",
+  "version": "1.16.0",
+  "loader": "language-folder",
+  "notes": [
+    "只包含 buff 圖示提示的名稱與說明；物品數值標籤和設定選單寫死在程式裡，語言檔翻不到。",
+    "token 是 LG_TOKEN_NAME_ / LG_TOKEN_DESCRIPTION_ 加上 buff 資產名稱（\"bd\" + 欄位名稱）。",
+    "原文的 <style=\"cIsUtility> 多了一個引號，是模組本身的寫法，譯文照原樣保留。",
+    "bdSharedSuffering 的說明原文是空字串。"
+  ],
+  "strings": {
+    "LG_TOKEN_NAME_bdAffixRed": {
+      "en": "Blazing",
+      "zh-TW": "燃燒"
+    },
+    "LG_TOKEN_DESCRIPTION_bdAffixRed": {
+      "en": "Leave a fire trail that hurts enemies, and apply a 50% total damage <style=\"cIsDamage>burn</style> on hit.",
+      "zh-TW": "留下會傷害敵人的火焰軌跡，命中時施加總傷害50%的<style=\"cIsDamage>燃燒</style>。"
+    },
+    "LG_TOKEN_NAME_bdAffixBlue": {
+      "en": "Overloading",
+      "zh-TW": "超載"
+    },
+    "LG_TOKEN_DESCRIPTION_bdAffixBlue": {
+      "en": "Attacks leave overloading orbs that explode for 50% TOTAL damage in a 3m radius after a short delay. 50% of <style=\"cIsHealing>health</style> is replaced by <style=\"cIsUtility>shield</style>.",
+      "zh-TW": "攻擊會留下超載球體，短暫延遲後在半徑3米內爆炸，造成總傷害的50%。50%的<style=\"cIsHealing>生命值</style>會被<style=\"cIsUtility>護盾</style>取代。"
+    },
+    "LG_TOKEN_NAME_bdAffixWhite": {
+      "en": "Glacial",
+      "zh-TW": "結冰"
+    },
+    "LG_TOKEN_DESCRIPTION_bdAffixWhite": {
+      "en": "Leave an ice explosion on death, and apply an 80% <style=\"cIsUtility>slow</style> on hit.",
+      "zh-TW": "死亡時留下寒冰爆炸，命中時施加80%的<style=\"cIsUtility>減速</style>。"
+    },
+    "LG_TOKEN_NAME_bdAffixPoison": {
+      "en": "Malachite",
+      "zh-TW": "孔雀石"
+    },
+    "LG_TOKEN_DESCRIPTION_bdAffixPoison": {
+      "en": "Shoot occassional urchins and apply <style=\"cIsHealth>disable healing for 8s</style> on hit.",
+      "zh-TW": "偶爾射出海膽，命中時施加<style=\"cIsHealth>禁止治療，持續8秒</style>。"
+    },
+    "LG_TOKEN_NAME_bdAffixHaunted": {
+      "en": "Celestine",
+      "zh-TW": "天青石"
+    },
+    "LG_TOKEN_DESCRIPTION_bdAffixHaunted": {
+      "en": "<style=\"cIsUtility>Cloak</style> nearby allies, and apply an 80% <style=\"cIsUtility>slow</style> on hit.",
+      "zh-TW": "使附近的盟友<style=\"cIsUtility>隱身</style>，命中時施加80%的<style=\"cIsUtility>減速</style>。"
+    },
+    "LG_TOKEN_NAME_bdAffixLunar": {
+      "en": "Perfected",
+      "zh-TW": "無懈可擊"
+    },
+    "LG_TOKEN_DESCRIPTION_bdAffixLunar": {
+      "en": "<style=\"cIsUtility>Cripple</style> on hit. Occasionally fire 4 bomb projectiles at enemies. Gain 30% increased <style=\"cIsUtility>movement speed</style>, and gain 25% <style=\"cIsHealth>max health</style>. All health will be replaced with <style=\"cIsUtility>shields</style>.",
+      "zh-TW": "命中時使目標<style=\"cIsUtility>殘廢</style>。偶爾向敵人發射4枚炸彈投射物。<style=\"cIsUtility>移動速度</style>提高30%，<style=\"cIsHealth>最大生命值</style>提高25%。所有生命值都會被<style=\"cIsUtility>護盾</style>取代。"
+    },
+    "LG_TOKEN_NAME_bdAffixHauntedRecipient": {
+      "en": "Celestine Cloak",
+      "zh-TW": "天青石隱身"
+    },
+    "LG_TOKEN_DESCRIPTION_bdAffixHauntedRecipient": {
+      "en": "You are <style=\"cIsUtility>cloaked</style> due to a Celestine Ally.",
+      "zh-TW": "附近有天青石盟友，你處於<style=\"cIsUtility>隱身</style>狀態。"
+    },
+    "LG_TOKEN_NAME_bdStrongerBurn": {
+      "en": "Wild Burn",
+      "zh-TW": "猛烈燃燒"
+    },
+    "LG_TOKEN_DESCRIPTION_bdStrongerBurn": {
+      "en": "A deadly burn with at least 4x effectiveness of regular Ignite. Health regeneration is disabled. ",
+      "zh-TW": "致命的燃燒，效果至少是一般點燃的4倍。生命值再生會被停用。"
+    },
+    "LG_TOKEN_NAME_bdVoidSurvivorCorruptMode": {
+      "en": "Void Corruption",
+      "zh-TW": "虛空腐化"
+    },
+    "LG_TOKEN_DESCRIPTION_bdVoidSurvivorCorruptMode": {
+      "en": "+100 Armor and your skills are <style=\"cIsVoid>Corrupted.</style>",
+      "zh-TW": "+100護甲，且你的技能已被<style=\"cIsVoid>腐化。</style>"
+    },
+    "LG_TOKEN_NAME_bdOutOfCombatArmorBuff": {
+      "en": "Opal Armor",
+      "zh-TW": "蛋白石護甲"
+    },
+    "LG_TOKEN_DESCRIPTION_bdOutOfCombatArmorBuff": {
+      "en": "Gain <style=\"cShrine>+100 armor</style>. Removed on hit.",
+      "zh-TW": "獲得<style=\"cShrine>+100護甲</style>。被擊中時移除。"
+    },
+    "LG_TOKEN_NAME_bdKillMoveSpeed": {
+      "en": "Harpoon Kill",
+      "zh-TW": "魚叉擊敗加速"
+    },
+    "LG_TOKEN_DESCRIPTION_bdKillMoveSpeed": {
+      "en": "Gain <style=\"cIsUtility>+25% movement speed</style>.",
+      "zh-TW": "獲得<style=\"cIsUtility>+25%移動速度</style>。"
+    },
+    "LG_TOKEN_NAME_bdPrimarySkillShurikenBuff": {
+      "en": "Shuriken",
+      "zh-TW": "手裡劍"
+    },
+    "LG_TOKEN_DESCRIPTION_bdPrimarySkillShurikenBuff": {
+      "en": "Your next primary attack launches a high damage Shuriken.",
+      "zh-TW": "你的下一次主要技能攻擊會發射一枚高傷害的手裡劍。"
+    },
+    "LG_TOKEN_NAME_bdPermanentDebuff": {
+      "en": "Scorpion Armor Reduction",
+      "zh-TW": "共生蠍護甲削減"
+    },
+    "LG_TOKEN_DESCRIPTION_bdPermanentDebuff": {
+      "en": "Reduces <style=\"cIsUtility>armor</style> by 2 per stack for the remainder of the stage, or until killed. ",
+      "zh-TW": "每層降低2點<style=\"cIsUtility>護甲</style>，持續到本關結束或被擊敗為止。"
+    },
+    "LG_TOKEN_NAME_bdImmuneToDebuffReady": {
+      "en": "Debuff Immunity",
+      "zh-TW": "減益免疫"
+    },
+    "LG_TOKEN_DESCRIPTION_bdImmuneToDebuffReady": {
+      "en": "Will <style=\"cIsUtility>prevent</style> the next debuff and add 10% Barrier.",
+      "zh-TW": "將<style=\"cIsUtility>防止</style>下一個減益效果，並增加10%屏障。"
+    },
+    "LG_TOKEN_NAME_bdImmuneToDebuffCooldown": {
+      "en": "Debuff Immunity Cooldown",
+      "zh-TW": "減益免疫冷卻中"
+    },
+    "LG_TOKEN_DESCRIPTION_bdImmuneToDebuffCooldown": {
+      "en": "Ben's Raincoat is on cooldown",
+      "zh-TW": "本的雨衣正在冷卻"
+    },
+    "LG_TOKEN_NAME_bdFracture": {
+      "en": "Collapse",
+      "zh-TW": "瓦解"
+    },
+    "LG_TOKEN_DESCRIPTION_bdFracture": {
+      "en": "3 seconds after the first stack is applied, deals 400% <style=\"cIsDamage>damage</style> per stack and removes all stacks. ",
+      "zh-TW": "施加第一層的3秒後，每層造成400%<style=\"cIsDamage>傷害</style>，並移除所有層數。"
+    },
+    "LG_TOKEN_NAME_bdMushroomVoidActive": {
+      "en": "Weeping Fungus Regeneration",
+      "zh-TW": "哭泣真菌恢復"
+    },
+    "LG_TOKEN_DESCRIPTION_bdMushroomVoidActive": {
+      "en": "<style=\"cIsHealing>Heal</style> while sprinting.",
+      "zh-TW": "奔跑期間<style=\"cIsHealing>恢復生命值</style>。"
+    },
+    "LG_TOKEN_NAME_bdBearVoidReady": {
+      "en": "Safer Spaces Ready",
+      "zh-TW": "更安全的空間就緒"
+    },
+    "LG_TOKEN_DESCRIPTION_bdBearVoidReady": {
+      "en": "Negates the next source of damage, then goes on cooldown.",
+      "zh-TW": "抵銷下一次傷害，隨後進入冷卻。"
+    },
+    "LG_TOKEN_NAME_bdBearVoidCooldown": {
+      "en": "Safer Spaces Cooldown",
+      "zh-TW": "更安全的空間冷卻中"
+    },
+    "LG_TOKEN_DESCRIPTION_bdBearVoidCooldown": {
+      "en": "Damage negation is on cooldown.",
+      "zh-TW": "傷害抵銷正在冷卻。"
+    },
+    "LG_TOKEN_NAME_bdElementalRingVoidReady": {
+      "en": "Singularity Band Ready",
+      "zh-TW": "奇點手環就緒"
+    },
+    "LG_TOKEN_DESCRIPTION_bdElementalRingVoidReady": {
+      "en": "Singularity Band can be activated.",
+      "zh-TW": "奇點手環可以觸發。"
+    },
+    "LG_TOKEN_NAME_bdElementalRingVoidCooldown": {
+      "en": "Singularity Band Cooldown",
+      "zh-TW": "奇點手環冷卻中"
+    },
+    "LG_TOKEN_DESCRIPTION_bdElementalRingVoidCooldown": {
+      "en": "Singularity Band is on cooldown",
+      "zh-TW": "奇點手環正在冷卻"
+    },
+    "LG_TOKEN_NAME_bdEliteEarth": {
+      "en": "Mending",
+      "zh-TW": "修補"
+    },
+    "LG_TOKEN_DESCRIPTION_bdEliteEarth": {
+      "en": "<style=\"cIsHealing>Heal</style> nearby non-mending allies. Produce a <style=\"cIsHealing>healing core</style> on death, which detonates and heals all nearby allies. ",
+      "zh-TW": "<style=\"cIsHealing>治療</style>附近非修補的盟友。死亡時產生一顆<style=\"cIsHealing>治療核心</style>，引爆後治療附近所有盟友。"
+    },
+    "LG_TOKEN_NAME_bdEliteVoid": {
+      "en": "Voidtouched",
+      "zh-TW": "虛空觸碰"
+    },
+    "LG_TOKEN_DESCRIPTION_bdEliteVoid": {
+      "en": "<style=\"cIsDamage>Collapse</style> on hit and <style=\"cIsUtility>block one hit</style> every 15 seconds.",
+      "zh-TW": "命中時<style=\"cIsDamage>瓦解</style>目標，並且每15秒<style=\"cIsUtility>格擋一次攻擊</style>。"
+    },
+    "LG_TOKEN_NAME_bdVoidRaidCrabWardWipeFog": {
+      "en": "Voidling Fog",
+      "zh-TW": "虛靈迷霧"
+    },
+    "LG_TOKEN_DESCRIPTION_bdVoidRaidCrabWardWipeFog": {
+      "en": "Deals a small amount of <style=\"cIsDamage>damage</style> multiple times per second, <style=\"cIsHealth>increasing with each tick</style>. Until you return to Voidling. ",
+      "zh-TW": "每秒多次造成少量<style=\"cIsDamage>傷害</style>，<style=\"cIsHealth>每次都會提高</style>。持續到你回到虛靈身邊為止。"
+    },
+    "LG_TOKEN_NAME_bdChakraBuff": {
+      "en": "Tranquility",
+      "zh-TW": "寧靜"
+    },
+    "LG_TOKEN_DESCRIPTION_bdChakraBuff": {
+      "en": "Improves Seekers skills in various ways.",
+      "zh-TW": "以各種方式強化探尋者的技能。"
+    },
+    "LG_TOKEN_NAME_bdRevitalizeBuff": {
+      "en": "Saving Grace",
+      "zh-TW": "救贖賜福"
+    },
+    "LG_TOKEN_DESCRIPTION_bdRevitalizeBuff": {
+      "en": "Increase your stats by 7%. Seeker can revive you using Meditate.",
+      "zh-TW": "屬性提高7%。探尋者可以用冥想復活你。"
+    },
+    "LG_TOKEN_NAME_bdSeekerRevivedOnce": {
+      "en": "Consumed Grace",
+      "zh-TW": "已消耗的賜福"
+    },
+    "LG_TOKEN_DESCRIPTION_bdSeekerRevivedOnce": {
+      "en": "You were revived by Seeker and cannot be revived by her again until the next stage.",
+      "zh-TW": "你已被探尋者復活過，到下一關之前無法再被她復活。"
+    },
+    "LG_TOKEN_NAME_bdBoosted": {
+      "en": "Yes, CHEF!",
+      "zh-TW": "遵命，大廚！"
+    },
+    "LG_TOKEN_DESCRIPTION_bdBoosted": {
+      "en": "CHEFs next attack will be upgraded.",
+      "zh-TW": "大廚的下一次攻擊將獲得強化。"
+    },
+    "LG_TOKEN_NAME_bdOiled": {
+      "en": "Oily",
+      "zh-TW": "淋油"
+    },
+    "LG_TOKEN_DESCRIPTION_bdOiled": {
+      "en": "You take +300% Burn damage",
+      "zh-TW": "你受到的燃燒傷害+300%"
+    },
+    "LG_TOKEN_NAME_bdFrost": {
+      "en": "Frost",
+      "zh-TW": "冰霜"
+    },
+    "LG_TOKEN_DESCRIPTION_bdFrost": {
+      "en": "Slows you by stacking amounts. Freeze upon getting 6 stacks or if Oiled.",
+      "zh-TW": "依層數使你減速。疊到6層或處於淋油狀態時會被冰凍。"
+    },
+    "LG_TOKEN_NAME_bdCookingChopped": {
+      "en": "Cooking",
+      "zh-TW": "烹飪"
+    },
+    "LG_TOKEN_DESCRIPTION_bdCookingChopped": {
+      "en": "Enemies with 2 Cooking buffs drop Food. Food heals for 2hp + 4% max hp for each unique cooking buff",
+      "zh-TW": "帶有2種烹飪效果的敵人會掉落食物。每有一種不同的烹飪效果，食物便恢復2點生命值 + 4%最大生命值"
+    },
+    "LG_TOKEN_NAME_bdCookingRoasted": {
+      "en": "Cooking",
+      "zh-TW": "烹飪"
+    },
+    "LG_TOKEN_DESCRIPTION_bdCookingRoasted": {
+      "en": "Enemies with 2 Cooking buffs drop Food. Food heals for 2hp + 4% max hp for each unique cooking buff",
+      "zh-TW": "帶有2種烹飪效果的敵人會掉落食物。每有一種不同的烹飪效果，食物便恢復2點生命值 + 4%最大生命值"
+    },
+    "LG_TOKEN_NAME_bdCookingChilled": {
+      "en": "Cooking",
+      "zh-TW": "烹飪"
+    },
+    "LG_TOKEN_DESCRIPTION_bdCookingChilled": {
+      "en": "Enemies with 2 Cooking buffs drop Food. Food heals for 2hp + 4% max hp for each unique cooking buff",
+      "zh-TW": "帶有2種烹飪效果的敵人會掉落食物。每有一種不同的烹飪效果，食物便恢復2點生命值 + 4%最大生命值"
+    },
+    "LG_TOKEN_NAME_bdCookingRolled": {
+      "en": "Cooking",
+      "zh-TW": "烹飪"
+    },
+    "LG_TOKEN_DESCRIPTION_bdCookingRolled": {
+      "en": "Enemies with 2 Cooking buffs drop Food. Food heals for 2hp + 4% max hp for each unique cooking buff",
+      "zh-TW": "帶有2種烹飪效果的敵人會掉落食物。每有一種不同的烹飪效果，食物便恢復2點生命值 + 4%最大生命值"
+    },
+    "LG_TOKEN_NAME_bdCookingOiled": {
+      "en": "Cooking",
+      "zh-TW": "烹飪"
+    },
+    "LG_TOKEN_DESCRIPTION_bdCookingOiled": {
+      "en": "Enemies with 2 Cooking buffs drop Food. Food heals for 2hp + 4% max hp for each unique cooking buff",
+      "zh-TW": "帶有2種烹飪效果的敵人會掉落食物。每有一種不同的烹飪效果，食物便恢復2點生命值 + 4%最大生命值"
+    },
+    "LG_TOKEN_NAME_bdEnergizedCore": {
+      "en": "Energized Core",
+      "zh-TW": "充能核心"
+    },
+    "LG_TOKEN_DESCRIPTION_bdEnergizedCore": {
+      "en": "Lunar Tampering stat changes will be three times as effective.",
+      "zh-TW": "月之淬鍊的屬性變化效果變為三倍。"
+    },
+    "LG_TOKEN_NAME_bdlunarruin": {
+      "en": "Lunar Ruin",
+      "zh-TW": "毀滅之月"
+    },
+    "LG_TOKEN_DESCRIPTION_bdlunarruin": {
+      "en": "Increase damage taken by 10% per buff. Decrease healing by 20%",
+      "zh-TW": "每層使受到的傷害提高10%。治療效果降低20%"
+    },
+    "LG_TOKEN_NAME_bdDisableAllSkills": {
+      "en": "Skills Disabled",
+      "zh-TW": "技能停用"
+    },
+    "LG_TOKEN_DESCRIPTION_bdDisableAllSkills": {
+      "en": "Your skills and equipment are disabled.",
+      "zh-TW": "你的技能與裝備已被停用。"
+    },
+    "LG_TOKEN_NAME_bdExtraLifeBuff": {
+      "en": "Extra Life",
+      "zh-TW": "額外生命"
+    },
+    "LG_TOKEN_DESCRIPTION_bdExtraLifeBuff": {
+      "en": "Revive if you die this stage.",
+      "zh-TW": "若在本關死亡，將會復活。"
+    },
+    "LG_TOKEN_NAME_bdSoulCost": {
+      "en": "Soul Cost",
+      "zh-TW": "靈魂代價"
+    },
+    "LG_TOKEN_DESCRIPTION_bdSoulCost": {
+      "en": "Reduce health by 10%",
+      "zh-TW": "生命值降低10%"
+    },
+    "LG_TOKEN_NAME_bdAttackSpeedPerNearbyAllyOrEnemyBuff": {
+      "en": "Bolstering Lantern",
+      "zh-TW": "強化提燈"
+    },
+    "LG_TOKEN_DESCRIPTION_bdAttackSpeedPerNearbyAllyOrEnemyBuff": {
+      "en": "Gain a attack speed boost because a ally is nearby",
+      "zh-TW": "附近有盟友，攻擊速度獲得提升"
+    },
+    "LG_TOKEN_NAME_bdDelayedDamageBuff": {
+      "en": "Warped Echo",
+      "zh-TW": "扭曲迴音"
+    },
+    "LG_TOKEN_DESCRIPTION_bdDelayedDamageBuff": {
+      "en": "Warped Echo is ready to split damage.",
+      "zh-TW": "扭曲迴音已就緒，可以分攤傷害。"
+    },
+    "LG_TOKEN_NAME_bdDelayedDamageDebuff": {
+      "en": "Damage Echo",
+      "zh-TW": "傷害迴音"
+    },
+    "LG_TOKEN_DESCRIPTION_bdDelayedDamageDebuff": {
+      "en": "Instances of Echoed split damage.",
+      "zh-TW": "被迴音分攤、尚未結算的傷害。"
+    },
+    "LG_TOKEN_NAME_bdElusiveAntlersBuff": {
+      "en": "Elusive Antler",
+      "zh-TW": "難以捉摸的鹿角"
+    },
+    "LG_TOKEN_DESCRIPTION_bdElusiveAntlersBuff": {
+      "en": "Temporarily increase speed by 12% for 12s. Refreshes stack duration when reapplied",
+      "zh-TW": "暫時使速度提高12%，持續12秒。再次獲得時會刷新層數的持續時間"
+    },
+    "LG_TOKEN_NAME_bdIncreaseDamageBuff": {
+      "en": "Chronic Expansion",
+      "zh-TW": "慢性擴張"
+    },
+    "LG_TOKEN_DESCRIPTION_bdIncreaseDamageBuff": {
+      "en": "Increase your damage.",
+      "zh-TW": "提高你的傷害。"
+    },
+    "LG_TOKEN_NAME_bdKnockBackAvailable": {
+      "en": "Breaching Fin Ready",
+      "zh-TW": "盈溢魚鰭就緒"
+    },
+    "LG_TOKEN_DESCRIPTION_bdKnockBackAvailable": {
+      "en": "Breaching Fin is Ready",
+      "zh-TW": "盈溢魚鰭已就緒"
+    },
+    "LG_TOKEN_NAME_bdKnockBackUnavailable": {
+      "en": "Breaching Fin Cooldown",
+      "zh-TW": "盈溢魚鰭冷卻中"
+    },
+    "LG_TOKEN_DESCRIPTION_bdKnockBackUnavailable": {
+      "en": "Breaching Fin is on cooldown for 15s",
+      "zh-TW": "盈溢魚鰭正在冷卻，需15秒"
+    },
+    "LG_TOKEN_NAME_bdExtraStatsOnLevelUpBuff": {
+      "en": "Prayer Beads XP",
+      "zh-TW": "祈禱唸珠經驗值"
+    },
+    "LG_TOKEN_DESCRIPTION_bdExtraStatsOnLevelUpBuff": {
+      "en": "Stored Experience that will grant the stats of 0.2 (+0.05 per Prayer Beads) levels upon removal of a Prayer Bead",
+      "zh-TW": "儲存的經驗值；移除一個祈禱唸珠時，會提供相當於0.2級（每個祈禱唸珠+0.05）的屬性"
+    },
+    "LG_TOKEN_NAME_bdIncreasePrimaryDamageBuff": {
+      "en": "Luminous Charge",
+      "zh-TW": "發光充能"
+    },
+    "LG_TOKEN_DESCRIPTION_bdIncreasePrimaryDamageBuff": {
+      "en": "Stored Lightning for your next primary attack. Can only be used at 3 stacks or higher.",
+      "zh-TW": "為你的下一次主要技能攻擊儲存的閃電。需要3層以上才能使用。"
+    },
+    "LG_TOKEN_NAME_bdTeleportOnLowHealthActive": {
+      "en": "Unstable Aura",
+      "zh-TW": "不穩定光環"
+    },
+    "LG_TOKEN_DESCRIPTION_bdTeleportOnLowHealthActive": {
+      "en": "Unstable Transmitter has activated a dimensional Aura. Enemies that touch it and die will increase duration by 1s.",
+      "zh-TW": "不穩定傳輸器已啟動次元光環。碰到光環後死亡的敵人會使持續時間延長1秒。"
+    },
+    "LG_TOKEN_NAME_bdBoostAllStatsBuff": {
+      "en": "Growth Nectar",
+      "zh-TW": "成長花蜜"
+    },
+    "LG_TOKEN_DESCRIPTION_bdBoostAllStatsBuff": {
+      "en": "Increase all stats by 4%",
+      "zh-TW": "全屬性提高4%"
+    },
+    "LG_TOKEN_NAME_bdExtraBossMissile": {
+      "en": "War Missile",
+      "zh-TW": "戰爭導彈"
+    },
+    "LG_TOKEN_DESCRIPTION_bdExtraBossMissile": {
+      "en": "Stored Missiles dealing 2.5% max Hp damage, for the next boss or Scavenger encounter",
+      "zh-TW": "儲存的導彈，會在下一次遭遇首領或清道夫時發射，造成2.5%最大生命值的傷害"
+    },
+    "LG_TOKEN_NAME_bdFreeUnlocks": {
+      "en": "Free Purchase",
+      "zh-TW": "免費購買"
+    },
+    "LG_TOKEN_DESCRIPTION_bdFreeUnlocks": {
+      "en": "Your next purchase is free",
+      "zh-TW": "你的下一次購買免費"
+    },
+    "LG_TOKEN_NAME_bdEliteAurelionite": {
+      "en": "Gilded",
+      "zh-TW": "黃金"
+    },
+    "LG_TOKEN_DESCRIPTION_bdEliteAurelionite": {
+      "en": "Fire out a Gilded Spike every 10-15s. Doing damage has a chance to produce extra Gold.",
+      "zh-TW": "每10至15秒發射一根黃金尖刺。造成傷害時有機率產生額外金錢。"
+    },
+    "LG_TOKEN_NAME_bdEliteBead": {
+      "en": "Twisted",
+      "zh-TW": "扭曲"
+    },
+    "LG_TOKEN_DESCRIPTION_bdEliteBead": {
+      "en": "Give nearby allies 300 Armor. Unleash a Twisted Spike after nearby allies are hurt 10 times. This ability has a 10s cooldown.",
+      "zh-TW": "為附近的盟友提供300護甲。附近的盟友受傷10次後，釋放一根扭曲尖刺。此能力有10秒冷卻時間。"
+    },
+    "LG_TOKEN_NAME_bdBeadArmor": {
+      "en": "Twisted Armor",
+      "zh-TW": "扭曲護甲"
+    },
+    "LG_TOKEN_DESCRIPTION_bdBeadArmor": {
+      "en": "Gain 300 Armor",
+      "zh-TW": "獲得300護甲"
+    },
+    "LG_TOKEN_NAME_bdStimShot": {
+      "en": "Stim-Shot",
+      "zh-TW": "興奮劑"
+    },
+    "LG_TOKEN_DESCRIPTION_bdStimShot": {
+      "en": "Increase <style=cIsDamage>attack speed</style> and <style=cIsDamage>movement speed</style> by <style=cIsDamage>25%</style>.",
+      "zh-TW": "使<style=cIsDamage>攻擊速度</style>與<style=cIsDamage>移動速度</style>提高<style=cIsDamage>25%</style>。"
+    },
+    "LG_TOKEN_NAME_bdNanoBug": {
+      "en": "Nano Bugged",
+      "zh-TW": "奈米蟲感染"
+    },
+    "LG_TOKEN_DESCRIPTION_bdNanoBug": {
+      "en": "Nano Bugged",
+      "zh-TW": "已被奈米蟲感染"
+    },
+    "LG_TOKEN_NAME_bdEliteCollective": {
+      "en": "Collective",
+      "zh-TW": "集體"
+    },
+    "LG_TOKEN_DESCRIPTION_bdEliteCollective": {
+      "en": "Gain a 30m dome that protects you from outside attacks. All allies within gain 25% cooldown reduction.",
+      "zh-TW": "獲得一個30米的穹頂，保護你不受外部攻擊。範圍內所有盟友獲得25%冷卻縮減。"
+    },
+    "LG_TOKEN_NAME_bdCollectiveShareBuff": {
+      "en": "Part Collective",
+      "zh-TW": "集體的一員"
+    },
+    "LG_TOKEN_DESCRIPTION_bdCollectiveShareBuff": {
+      "en": "Gain 25% cooldown reduction.",
+      "zh-TW": "獲得25%冷卻縮減。"
+    },
+    "LG_TOKEN_NAME_bdInventoryDisable": {
+      "en": "Items Disabled",
+      "zh-TW": "物品停用"
+    },
+    "LG_TOKEN_DESCRIPTION_bdInventoryDisable": {
+      "en": "All your items are temporarily disabled.",
+      "zh-TW": "你的所有物品暫時被停用。"
+    },
+    "LG_TOKEN_NAME_bdAccelerant": {
+      "en": "Greased",
+      "zh-TW": "沾滿油脂"
+    },
+    "LG_TOKEN_DESCRIPTION_bdAccelerant": {
+      "en": "Being ignited or hit by fire-like attacks causes you to explode.",
+      "zh-TW": "被點燃或被火焰類攻擊命中時，你會爆炸。"
+    },
+    "LG_TOKEN_NAME_bdPowerCubeBuff": {
+      "en": "Prison Matrix",
+      "zh-TW": "監獄矩陣"
+    },
+    "LG_TOKEN_DESCRIPTION_bdPowerCubeBuff": {
+      "en": "Increase base armor by 50%",
+      "zh-TW": "基礎護甲提高50%"
+    },
+    "LG_TOKEN_NAME_bdPowerPyramidBuff": {
+      "en": "Sentry Key",
+      "zh-TW": "哨兵金鑰"
+    },
+    "LG_TOKEN_DESCRIPTION_bdPowerPyramidBuff": {
+      "en": "Increase movement speed by 15%",
+      "zh-TW": "移動速度提高15%"
+    },
+    "LG_TOKEN_NAME_bdTrashToTreasureWhite": {
+      "en": "Common Trash to Treasure",
+      "zh-TW": "變廢為寶（普通）"
+    },
+    "LG_TOKEN_DESCRIPTION_bdTrashToTreasureWhite": {
+      "en": "Increase movement speed by 6%",
+      "zh-TW": "移動速度提高6%"
+    },
+    "LG_TOKEN_NAME_bdTrashToTreasureGreen": {
+      "en": "Uncommon Trash to Treasure",
+      "zh-TW": "變廢為寶（罕見）"
+    },
+    "LG_TOKEN_DESCRIPTION_bdTrashToTreasureGreen": {
+      "en": "Increase base health regen speed by 3 hp/s.",
+      "zh-TW": "基礎生命值再生速度提高3點/秒。"
+    },
+    "LG_TOKEN_NAME_bdTrashToTreasureRed": {
+      "en": "Legendary Trash to Treasure",
+      "zh-TW": "變廢為寶（傳奇）"
+    },
+    "LG_TOKEN_DESCRIPTION_bdTrashToTreasureRed": {
+      "en": "Increase attack speed by 30%",
+      "zh-TW": "攻擊速度提高30%"
+    },
+    "LG_TOKEN_NAME_bdTrashToTreasureYellow": {
+      "en": "Boss Trash to Treasure",
+      "zh-TW": "變廢為寶（首領）"
+    },
+    "LG_TOKEN_DESCRIPTION_bdTrashToTreasureYellow": {
+      "en": "Reduce skill cooldowns by 15%",
+      "zh-TW": "技能冷卻時間縮短15%"
+    },
+    "LG_TOKEN_NAME_bdJumpDamageStrikeCharge": {
+      "en": "Faraday Charge",
+      "zh-TW": "法拉第充能"
+    },
+    "LG_TOKEN_DESCRIPTION_bdJumpDamageStrikeCharge": {
+      "en": "Increase movement speed by 1.6% and jump height by 2%",
+      "zh-TW": "移動速度提高1.6%，跳躍高度提高2%"
+    },
+    "LG_TOKEN_NAME_bdSpeedOnPickup": {
+      "en": "Collectors Compulsion",
+      "zh-TW": "收藏者的衝動"
+    },
+    "LG_TOKEN_DESCRIPTION_bdSpeedOnPickup": {
+      "en": "Increases all stats by 3%",
+      "zh-TW": "全屬性提高3%"
+    },
+    "LG_TOKEN_NAME_bdSharedSuffering": {
+      "en": "Networked Suffering",
+      "zh-TW": "苦難互聯"
+    },
+    "LG_TOKEN_DESCRIPTION_bdSharedSuffering": {
+      "en": ""
+    },
+    "LG_TOKEN_NAME_bdSharedSufferingStock": {
+      "en": "Network Capacity",
+      "zh-TW": "網路容量"
+    },
+    "LG_TOKEN_DESCRIPTION_bdSharedSufferingStock": {
+      "en": "Your network of suffering is at max capacity",
+      "zh-TW": "你的苦難網路已達最大容量"
+    },
+    "LG_TOKEN_NAME_bdSharedSufferingStockEmpty": {
+      "en": "Network Full",
+      "zh-TW": "網路已滿"
+    },
+    "LG_TOKEN_DESCRIPTION_bdSharedSufferingStockEmpty": {
+      "en": "Your network of suffering is at max capacity",
+      "zh-TW": "你的苦難網路已達最大容量"
+    },
+    "LG_TOKEN_NAME_bdShockDamageEnergized": {
+      "en": "Conductor Energized",
+      "zh-TW": "導體充能"
+    },
+    "LG_TOKEN_DESCRIPTION_bdShockDamageEnergized": {
+      "en": "Increase attack and movement speed by 30%. All Electrical attacks deal crtical damage.",
+      "zh-TW": "攻擊速度與移動速度提高30%。所有電屬性攻擊都會造成暴擊傷害。"
+    },
+    "LG_TOKEN_NAME_bdBrittle": {
+      "en": "Cooled",
+      "zh-TW": "降溫"
+    },
+    "LG_TOKEN_DESCRIPTION_bdBrittle": {
+      "en": "Instantly remove all overheat and burn effects",
+      "zh-TW": "立即移除所有過熱與燃燒效果"
+    },
+    "LG_TOKEN_NAME_bdUltimateMealBoost": {
+      "en": "Ultimate Meal",
+      "zh-TW": "終極大餐"
+    },
+    "LG_TOKEN_DESCRIPTION_bdUltimateMealBoost": {
+      "en": "+2 Luck per Ultimate Meal",
+      "zh-TW": "每份終極大餐+2幸運值"
+    },
+    "LG_TOKEN_NAME_bdCritChanceAndDamage": {
+      "en": "Hiking",
+      "zh-TW": "登山"
+    },
+    "LG_TOKEN_DESCRIPTION_bdCritChanceAndDamage": {
+      "en": "+1% Crit chance and damage",
+      "zh-TW": "+1%暴擊率與傷害"
+    },
+    "LG_TOKEN_NAME_bdParrying": {
+      "en": "Parrying",
+      "zh-TW": "招架中"
+    },
+    "LG_TOKEN_DESCRIPTION_bdParrying": {
+      "en": "Blocks incoming damage once and turns it into a blessing.",
+      "zh-TW": "格擋一次來襲的傷害，並將其轉化為祝福。"
+    },
+    "LG_TOKEN_NAME_bdSureProc": {
+      "en": "God's Blessing",
+      "zh-TW": "神之祝福"
+    },
+    "LG_TOKEN_DESCRIPTION_bdSureProc": {
+      "en": "Your next attack triggers all chance based on-hit and on-kill effects.",
+      "zh-TW": "你的下一次攻擊會觸發所有依機率發動的命中與擊敗效果。"
+    },
+    "LG_TOKEN_NAME_bdSlow10Stacking": {
+      "en": "10% Slow",
+      "zh-TW": "10%減速"
+    },
+    "LG_TOKEN_DESCRIPTION_bdSlow10Stacking": {
+      "en": "Decrease movement speed by 10%",
+      "zh-TW": "移動速度降低10%"
+    },
+    "LG_TOKEN_NAME_bdHealNovaRegen": {
+      "en": "Emergency Nova Regeneration",
+      "zh-TW": "緊急新星再生"
+    },
+    "LG_TOKEN_DESCRIPTION_bdHealNovaRegen": {
+      "en": "Gain <style=\"cIsHealing>health regeneration</style> equal to 2.5% of your <style=\"cIsHealing>maximum health</style>. ",
+      "zh-TW": "獲得相當於<style=\"cIsHealing>最大生命值</style>2.5%的<style=\"cIsHealing>生命值再生</style>。"
+    },
+    "LG_TOKEN_NAME_bdTransferDebuffOnHit": {
+      "en": "Weighted",
+      "zh-TW": "負重"
+    },
+    "LG_TOKEN_DESCRIPTION_bdTransferDebuffOnHit": {
+      "en": "Netronium Weight is decreasing all your stats.",
+      "zh-TW": "中子重量正在降低你的全屬性。"
+    },
+    "LG_TOKEN_NAME_bdJailed": {
+      "en": "Jailed",
+      "zh-TW": "被囚禁"
+    },
+    "LG_TOKEN_DESCRIPTION_bdJailed": {
+      "en": "Jailed",
+      "zh-TW": "被囚禁"
+    }
+  }
+}
