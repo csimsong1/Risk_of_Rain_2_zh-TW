@@ -1,0 +1,2060 @@
+{
+  "mod": "rob-HUNK",
+  "version": "1.5.3",
+  "loader": "r2api",
+  "notes": [
+    "有五條文字會依模組設定而不同（Sidearm Shotgun、Disable Nemesis），這裡收錄的是預設設定的版本。",
+    "ROB_HUNK_WEAPON_*_NAME/_DESC 是每把武器的名稱與說明。",
+    "鍵是英文句子的條目：模組直接把那段英文當語言 token 使用，沒有另外註冊，所以用英文原文當鍵來翻譯；原文改一個字就會對不上。技能欄位標籤、專長、任務目標、補給箱屬於這一類。",
+    "彈藥名稱、畫面中央的提示訊息（背包已滿、需要鑰匙卡等）與無線電對話是直接寫到畫面上的，不經過語言表，翻不到。"
+  ],
+  "strings": {
+    "ROB_HUNK_WEAPON_ADDON_SPARKSHOT_NAME": {
+      "en": "High Voltage Condenser (Spark Shot)",
+      "zh-TW": "高壓電容器（Spark Shot）"
+    },
+    "ROB_HUNK_WEAPON_ADDON_SPARKSHOT_DESC": {
+      "en": "A custom part for the Spark Shot. Makes it possible to store a large amount of high-voltage electricity, reducing the time between shots.",
+      "zh-TW": "Spark Shot專用的改造零件。可儲存大量高壓電，縮短每次射擊的間隔。"
+    },
+    "ROB_HUNK_WEAPON_ADDON_SMG_NAME": {
+      "en": "Laser Sight (LE 5)",
+      "zh-TW": "雷射瞄準器（LE 5）"
+    },
+    "ROB_HUNK_WEAPON_ADDON_SMG_DESC": {
+      "en": "A custom part for the LE 5 that boosts its effectiveness at long range and when striking weak points.",
+      "zh-TW": "LE 5專用的改造零件，可提升遠距離及命中弱點時的效果。"
+    },
+    "ROB_HUNK_WEAPON_ADDON2_SMG_NAME": {
+      "en": "Extended Magazine (LE 5)",
+      "zh-TW": "加長彈匣（LE 5）"
+    },
+    "ROB_HUNK_WEAPON_ADDON2_SMG_DESC": {
+      "en": "A custom part for the LE 5 that greatly boosts its magazine capacity.",
+      "zh-TW": "LE 5專用的改造零件，可大幅提升彈匣容量。"
+    },
+    "ROB_HUNK_WEAPON_ADDON3_SMG_NAME": {
+      "en": "Moderator (LE 5)",
+      "zh-TW": "射速調節器（LE 5）"
+    },
+    "ROB_HUNK_WEAPON_ADDON3_SMG_DESC": {
+      "en": "A custom part for the LE 5 that limits its rate of fire, but converts that bonus to damage instead.",
+      "zh-TW": "LE 5專用的改造零件，會限制射速，但將該加成轉換為傷害。"
+    },
+    "ROB_HUNK_WEAPON_ADDON_SHOTGUN_NAME": {
+      "en": "Dragon's Breath Rounds (Shotgun)",
+      "zh-TW": "龍息彈（霰彈槍）"
+    },
+    "ROB_HUNK_WEAPON_ADDON_SHOTGUN_DESC": {
+      "en": "A custom part for all Shotguns. Replaces shells with incendiary rounds that deal more damage and ignite.",
+      "zh-TW": "所有霰彈槍通用的改造零件。將霰彈換成燃燒彈，可造成更多傷害並點燃敵人。"
+    },
+    "ROB_HUNK_WEAPON_ADDON_SG09_NAME": {
+      "en": "High-Capacity Mag (SG-09 R)",
+      "zh-TW": "大容量彈匣（SG-09 R）"
+    },
+    "ROB_HUNK_WEAPON_ADDON_SG09_DESC": {
+      "en": "A custom part for the SG-09 R that extends clip capacity to 32 rounds.",
+      "zh-TW": "SG-09 R專用的改造零件，可將彈匣容量擴充至32發。"
+    },
+    "ROB_HUNK_WEAPON_ADDON2_SG09_NAME": {
+      "en": "Muzzle Brake (SG-09 R)",
+      "zh-TW": "槍口制退器（SG-09 R）"
+    },
+    "ROB_HUNK_WEAPON_ADDON2_SG09_DESC": {
+      "en": "A custom part for the SG-09 R that boosts its damage to 900%.",
+      "zh-TW": "SG-09 R專用的改造零件，可將傷害提升至900%。"
+    },
+    "ROB_HUNK_WEAPON_ADDON3_SG09_NAME": {
+      "en": "Laser Sight (SG-09 R)",
+      "zh-TW": "雷射瞄準器（SG-09 R）"
+    },
+    "ROB_HUNK_WEAPON_ADDON3_SG09_DESC": {
+      "en": "A custom part for the SG-09 R. Adds a sight that boosts its effectiveness at long range and when striking weak points",
+      "zh-TW": "SG-09 R專用的改造零件。加裝瞄準器，可提升遠距離及命中弱點時的效果。"
+    },
+    "ROB_HUNK_WEAPON_ADDON_REVOLVER_NAME": {
+      "en": "Speedloader (Quickdraw Army)",
+      "zh-TW": "快速裝彈器（Quickdraw Army）"
+    },
+    "ROB_HUNK_WEAPON_ADDON_REVOLVER_DESC": {
+      "en": "A custom part for the Quickdraw Army, allowing you to fill your chamber faster when empty.",
+      "zh-TW": "Quickdraw Army專用的改造零件，彈巢打空時可以更快地裝填。"
+    },
+    "ROB_HUNK_WEAPON_ADDON_MUP_NAME": {
+      "en": "Gun Stock (MUP)",
+      "zh-TW": "槍托（MUP）"
+    },
+    "ROB_HUNK_WEAPON_ADDON_MUP_DESC": {
+      "en": "A custom part for the MUP that allows the gun to fire 3 rounds per pull of the trigger.",
+      "zh-TW": "MUP專用的改造零件，每扣一次扳機可射出3發子彈。"
+    },
+    "ROB_HUNK_WEAPON_ADDON2_MUP_NAME": {
+      "en": "Dot Sight (MUP)",
+      "zh-TW": "紅點瞄準器（MUP）"
+    },
+    "ROB_HUNK_WEAPON_ADDON2_MUP_DESC": {
+      "en": "A custom part for the MUP. Adds a sight that boosts its effectiveness at long range and when striking weak points.",
+      "zh-TW": "MUP專用的改造零件。加裝瞄準器，可提升遠距離及命中弱點時的效果。"
+    },
+    "ROB_HUNK_WEAPON_ADDON3_MUP_NAME": {
+      "en": "High-Capacity Mag (MUP)",
+      "zh-TW": "大容量彈匣（MUP）"
+    },
+    "ROB_HUNK_WEAPON_ADDON3_MUP_DESC": {
+      "en": "A custom part for the MUP that extends clip capacity to 33 rounds and shortens reload time.",
+      "zh-TW": "MUP專用的改造零件，可將彈匣容量擴充至33發，並縮短上彈時間。"
+    },
+    "ROB_HUNK_WEAPON_ADDON4_MUP_NAME": {
+      "en": "Muzzle Brake (MUP)",
+      "zh-TW": "槍口制退器（MUP）"
+    },
+    "ROB_HUNK_WEAPON_ADDON4_MUP_DESC": {
+      "en": "A custom part for the MUP that boosts its damage to 600%.",
+      "zh-TW": "MUP專用的改造零件，可將傷害提升至600%。"
+    },
+    "ROB_HUNK_WEAPON_ADDON_MGL_NAME": {
+      "en": "Refurbished Cylinder (MGL)",
+      "zh-TW": "翻新彈巢（MGL）"
+    },
+    "ROB_HUNK_WEAPON_ADDON_MGL_DESC": {
+      "en": "A custom part for the MGL. Replaces the broken cylinder with a working one, allowing semi-automatic fire.",
+      "zh-TW": "MGL專用的改造零件。將損壞的彈巢換成可正常運作的彈巢，使其能夠半自動射擊。"
+    },
+    "ROB_HUNK_WEAPON_ADDON_MAGNUM_NAME": {
+      "en": "Long Barrel (Lightning Hawk)",
+      "zh-TW": "長槍管（Lightning Hawk）"
+    },
+    "ROB_HUNK_WEAPON_ADDON_MAGNUM_DESC": {
+      "en": "A custom part for the Lightning Hawk that boosts its damage to 3000%.",
+      "zh-TW": "Lightning Hawk專用的改造零件，可將傷害提升至3000%。"
+    },
+    "ROB_HUNK_WEAPON_ADDON2_MAGNUM_NAME": {
+      "en": "Laser Sight (Lightning Hawk)",
+      "zh-TW": "雷射瞄準器（Lightning Hawk）"
+    },
+    "ROB_HUNK_WEAPON_ADDON2_MAGNUM_DESC": {
+      "en": "A custom part for the Lightning Hawk. Adds a sight that boosts its effectiveness when striking weak points.",
+      "zh-TW": "Lightning Hawk專用的改造零件。加裝瞄準器，可提升命中弱點時的效果。"
+    },
+    "ROB_HUNK_WEAPON_ADDON3_MAGNUM_NAME": {
+      "en": "Spare Rounds (Lightning Hawk)",
+      "zh-TW": "備用子彈（Lightning Hawk）"
+    },
+    "ROB_HUNK_WEAPON_ADDON3_MAGNUM_DESC": {
+      "en": "A custom part for the Lightning Hawk that greatly boosts the amount of MAG rounds picked up.",
+      "zh-TW": "Lightning Hawk專用的改造零件，可大幅增加拾取到的麥格農子彈數量。"
+    },
+    "ROB_HUNK_WEAPON_ADDON_M19_NAME": {
+      "en": "Suppressor (M19)",
+      "zh-TW": "滅音器（M19）"
+    },
+    "ROB_HUNK_WEAPON_ADDON_M19_DESC": {
+      "en": "A custom part for the M19 that suppresses the sound of gunfire and acts as a counterweight to greatly reduce muzzle rise and boost bullet velocity.",
+      "zh-TW": "M19專用的改造零件，可抑制槍聲，同時作為配重大幅減少槍口上揚並提升子彈初速。"
+    },
+    "ROB_HUNK_WEAPON_ADDON2_M19_NAME": {
+      "en": "High-Capacity Mag (M19)",
+      "zh-TW": "大容量彈匣（M19）"
+    },
+    "ROB_HUNK_WEAPON_ADDON2_M19_DESC": {
+      "en": "A custom part for the M19 that extends clip capacity to 15 rounds.",
+      "zh-TW": "M19專用的改造零件，可將彈匣容量擴充至15發。"
+    },
+    "ROB_HUNK_WEAPON_ADDON_GRENADELAUNCHER_NAME": {
+      "en": "Shoulder Stock (GM-79)",
+      "zh-TW": "肩托（GM-79）"
+    },
+    "ROB_HUNK_WEAPON_ADDON_GRENADELAUNCHER_DESC": {
+      "en": "A custom part for the GM-79 that greatly reduces kickback and gives each shot more stable trajectory.",
+      "zh-TW": "GM-79專用的改造零件，可大幅降低後座力，讓每一發的彈道更加穩定。"
+    },
+    "ROB_HUNK_WEAPON_ADDON_FLAMETHROWER_NAME": {
+      "en": "Regulator (Chemical Flamethrower)",
+      "zh-TW": "調節器（化學火焰噴射器）"
+    },
+    "ROB_HUNK_WEAPON_ADDON_FLAMETHROWER_DESC": {
+      "en": "A custom part for the flamethrower. Restricts liquid fuel and compressed gas usage, making it possible to fire for much longer.",
+      "zh-TW": "火焰噴射器專用的改造零件。限制液態燃料與壓縮氣體的用量，可大幅延長噴射時間。"
+    },
+    "ROB_HUNK_WEAPON_ADDON2_FLAMETHROWER_NAME": {
+      "en": "High-Grade Fuel Tank (Chemical Flamethrower)",
+      "zh-TW": "高級燃料罐（化學火焰噴射器）"
+    },
+    "ROB_HUNK_WEAPON_ADDON2_FLAMETHROWER_DESC": {
+      "en": "A custom part for the flamethrower. Boosts the potency of the flames, leaving trails of fire on the ground.",
+      "zh-TW": "火焰噴射器專用的改造零件。提升火焰的威力，並在地面留下火焰軌跡。"
+    },
+    "ROB_HUNK_WEAPON_ADDON_COLT_NAME": {
+      "en": "Long Barrel (Colt)",
+      "zh-TW": "長槍管（Colt）"
+    },
+    "ROB_HUNK_WEAPON_ADDON_COLT_DESC": {
+      "en": "A custom part for the Colt that boosts its damage to 4800%.",
+      "zh-TW": "Colt專用的改造零件，可將傷害提升至4800%。"
+    },
+    "ROB_HUNK_WEAPON_GOLDGUN_NAME": {
+      "en": "Golden Gun",
+      "zh-TW": "黃金槍"
+    },
+    "ROB_HUNK_WEAPON_SLUGGER_NAME": {
+      "en": "Slugger",
+      "zh-TW": "Slugger"
+    },
+    "ROB_HUNK_WEAPON_SSG_NAME": {
+      "en": "SSG",
+      "zh-TW": "SSG"
+    },
+    "ROB_HUNK_WEAPON_SSG_DESC": {
+      "en": "A compact break-action shotgun with high spread.",
+      "zh-TW": "擴散範圍大的緊湊型折開式霰彈槍。"
+    },
+    "ROB_HUNK_WEAPON_GOLDGUN_DESC": {
+      "en": "1-round capacity handgun able to kill anything in only one shot.",
+      "zh-TW": "裝彈數1發的手槍，只需一槍就能擊敗任何目標。"
+    },
+    "ROB_HUNK_WEAPON_SLUGGER_DESC": {
+      "en": "4-round capacity 12-gauge pump-action shotgun that fires heavy slugs.",
+      "zh-TW": "裝彈數4發的12號口徑泵動式霰彈槍，可發射重型獨頭彈。"
+    },
+    "ROB_HUNK_WEAPON_ADDON_AR_NAME": {
+      "en": "Bayonet (CQBR)",
+      "zh-TW": "刺刀（CQBR）"
+    },
+    "ROB_HUNK_WEAPON_ADDON_AR_DESC": {
+      "en": "A custom part for the CQBR that replaces your Combat Knife and deals 600% damage.",
+      "zh-TW": "CQBR專用的改造零件，會取代你的戰鬥小刀，並造成600%傷害。"
+    },
+    "ROB_HUNK_PARASITE_BODY_NAME": {
+      "en": "G-Young",
+      "zh-TW": "G幼體"
+    },
+    "ROB_HUNK_HELICOPTER_BODY_NAME": {
+      "en": "Attack Helicopter",
+      "zh-TW": "攻擊直升機"
+    },
+    "ROB_HUNK_BODY_NAME": {
+      "en": "Specialist",
+      "zh-TW": "特戰專家"
+    },
+    "ROB_HUNK_BODY_DESCRIPTION": {
+      "en": "Specialist is an elite infiltrator who carries a large arsenal of weapons claimed via OSP (on-site procurement).<color=#CCD3E0>\r\n\r\n< ! > Use your Combat Knife against weaker foes to conserve ammo.\r\n\r\n< ! > Securing the G-Virus Sample will net you a keycard, allowing you to access weapon cases on each stage.\r\n\r\n< ! > Quickstep near an attacking enemy or projectile to Perfect Dodge, then perform a Counterattack with Primary.\r\n\r\n< ! > Ammo is scarce, but can be found in opened chests. Secondary stocks and cooldown reduction also affect ammo.\r\n\r\n< ! > This is war. Survival is your responsibility.\r\n\r\n",
+      "zh-TW": "特戰專家是一名精英滲透者，攜帶著透過OSP（就地取材）取得的大量武器。<color=#CCD3E0>\r\n\r\n< ! >對付較弱的敵人時請使用戰鬥小刀，以節省彈藥。\r\n\r\n< ! >取得G病毒樣本可獲得一張鑰匙卡，讓你能打開每個關卡中的武器箱。\r\n\r\n< ! >在發動攻擊的敵人或投射物附近使用疾步可觸發完美閃避，接著用主要技能發動反擊。\r\n\r\n< ! >彈藥相當稀少，但可以在已打開的寶箱中找到。次要技能的充能次數與冷卻時間縮減也會影響彈藥。\r\n\r\n< ! >這是戰爭，活下去是你自己的責任。\r\n\r\n"
+    },
+    "ROB_HUNK_BODY_SUBTITLE": {
+      "en": "Elite Agent",
+      "zh-TW": "精英特工"
+    },
+    "ROB_HUNK_BODY_LORE": {
+      "en": "**INT. ABANDONED UMBRELLA FACILITY - NIGHT**\r\n\r\n\r\n(HUNK, the silent and deadly operative, is locked in a fierce battle with a towering B.O.W. (Bio-Organic Weapon). He deftly dodges a swipe of the creature's massive claw, rolling to his feet and aiming his submachine gun. The B.O.W. roars, charging at HUNK with reckless abandon.)\r\n\r\nHUNK: (grunts) Just another day at the office.\r\n\r\n(HUNK pulls out a flashbang, tossing it expertly into the B.O.W.'s face. The creature recoils, blinded by the intense light. Taking advantage of the moment, HUNK rushes in, climbing up the B.O.W.'s leg with surprising agility. As he reaches the creature's midsection, he draws his combat knife.)\r\n\r\n(Camera cuts to a closeup of the B.O.W.'s horrified face as a loud 'slice!' is heard.)\r\n\r\nB.O.W.: RAAAAGHHHHH!!\r\n\r\n(A comical slide whistle plays as the B.O.W. crumples to the ground, clutching its crotch. The screen shakes with the impact, and we hear a series of exaggerated sound effects: a car horn honking, a cat yowling, and glass breaking.)\r\n\r\nSPECTRE (Voice over comm): (Wincing) I think I felt that one.\r\n\r\n(Camera cuts to HUNK, who looks directly into the camera with his signature cold stare.)\r\n\r\nHUNK: (deadpan) And they said I'd never make the cut.\r\n\r\n(The B.O.W. whimpers, rolling on the ground in agony. A classic 'boing' sound effect is heard.)\r\n\r\nB.O.W.: MY... MY REGENERATOR MODULES!!!\r\n\r\n(Cut to COMMANDER watching from the command center, his expression one of mixed amusement and exasperation.)\r\n\r\nCOMMANDER: (sighing) No matter the mission, HUNK always knows how to hit where it hurts.",
+      "zh-TW": "**內景．廢棄的保護傘公司設施－夜**\r\n\r\n\r\n（沉默而致命的特工HUNK，正與一頭高大的B.O.W.（生化兵器）激烈交戰。他靈巧地閃過那怪物巨爪的一揮，翻滾起身，舉起衝鋒槍瞄準。B.O.W.發出怒吼，不顧一切地朝HUNK衝了過來。）\r\n\r\nHUNK：（悶哼）不過是又一個平凡的上班日。\r\n\r\n（HUNK掏出一枚閃光彈，熟練地扔到B.O.W.臉上。怪物被強光刺得睜不開眼，連連後退。HUNK抓準時機衝上前，以驚人的敏捷身手沿著B.O.W.的腿往上爬。爬到怪物的腰腹部時，他拔出了戰鬥小刀。）\r\n\r\n（鏡頭切到B.O.W.驚恐的臉部特寫，同時傳來響亮的「唰！」一聲。）\r\n\r\nB.O.W.：嗚啊啊啊啊啊啊！！\r\n\r\n（滑稽的滑哨音效響起，B.O.W.捂著胯下癱倒在地。畫面隨著撞擊而震動，接著傳來一連串誇張的音效：汽車喇叭聲、貓的慘叫聲，還有玻璃碎裂聲。）\r\n\r\nSPECTRE（通訊語音）：（皺眉）我好像也跟著痛了一下。\r\n\r\n（鏡頭切到HUNK，他以招牌的冷酷眼神直視鏡頭。）\r\n\r\nHUNK：（面無表情）他們還說我不夠「犀利」呢。\r\n\r\n（B.O.W.嗚咽著，痛苦地在地上打滾。此時響起經典的「boing」彈簧音效。）\r\n\r\nB.O.W.：我的……我的再生模組！！！\r\n\r\n（切到在指揮中心觀看的司令官，他的表情既好笑又無奈。）\r\n\r\n司令官：（嘆氣）不管是什麼任務，HUNK總是知道該怎麼直擊「要害」。"
+    },
+    "ROB_HUNK_BODY_OUTRO_FLAVOR": {
+      "en": "..and so he left, fine.",
+      "zh-TW": "……於是他走了，安然無恙。"
+    },
+    "ROB_HUNK_BODY_OUTRO_FAILURE": {
+      "en": "..and so he vanished, human unit now killed.",
+      "zh-TW": "……於是他就這樣消逝了，人類單位如今已陣亡（Human Unit Now Killed）。"
+    },
+    "ROB_ARTIFACT_PURSUER_NAME": {
+      "en": "Artifact of the Pursuer",
+      "zh-TW": "追跡者神器"
+    },
+    "ROB_ARTIFACT_PURSUER_DESC": {
+      "en": "Players start the run with a S.T.A.R.S. Badge.",
+      "zh-TW": "玩家開局時持有一枚S.T.A.R.S.徽章。"
+    },
+    "ROB_ARTIFACT_CONTAMINATION_NAME": {
+      "en": "Artifact of Contamination",
+      "zh-TW": "汙染神器"
+    },
+    "ROB_ARTIFACT_CONTAMINATION_DESC": {
+      "en": "Each player gets a random Virus event each stage.",
+      "zh-TW": "每個關卡中，每位玩家都會遭遇一次隨機的病毒事件。"
+    },
+    "ROB_ARTIFACT_STRIKETEAM_NAME": {
+      "en": "Artifact of the Poopfart",
+      "zh-TW": "屎屁神器"
+    },
+    "ROB_ARTIFACT_STRIKETEAM_DESC": {
+      "en": "Players will occasionally have Strike Teams sent in to neutralize them.",
+      "zh-TW": "偶爾會有突擊小隊被派來消滅玩家。"
+    },
+    "ROB_NEMESIS_BODY_NAME": {
+      "en": "Nemesis T-Type",
+      "zh-TW": "追跡者T型"
+    },
+    "ROB_NEMESIS_BODY_DESCRIPTION": {
+      "en": "The Nemesis T-Type is an unstoppable bioweapon made to withstand any amount of punishment and neutralize its targets with ease.<color=#CCD3E0>\r\n\r\n< ! > Jumps can be charged for greater distance.\r\n\r\n< ! > Consuming enemies leaves you vulnerable so be sure to find a safe place before doing so.\r\n\r\n< ! > Biomass boosts your damage when full,\r\n\r\n< ! > \r\n\r\n",
+      "zh-TW": "追跡者T型是勢不可擋的生化兵器，能承受任何程度的打擊，並輕鬆消滅目標。<color=#CCD3E0>\r\n\r\n< ! >跳躍可以蓄力，跳得更遠。\r\n\r\n< ! >吞噬敵人時你會毫無防備，動手前務必先找個安全的地方。\r\n\r\n< ! >生物質儲滿時會提升你的傷害，\r\n\r\n< ! > \r\n\r\n"
+    },
+    "ROB_NEMESIS_BODY_SUBTITLE": {
+      "en": "Invincible Bioweapon",
+      "zh-TW": "無敵生化兵器"
+    },
+    "ROB_NEMESIS_BODY_LORE": {
+      "en": "**INT. ABANDONED UMBRELLA FACILITY - NIGHT**\r\n\r\n\r\n(HUNK, the silent and deadly operative, is locked in a fierce battle with a towering B.O.W. (Bio-Organic Weapon). He deftly dodges a swipe of the creature's massive claw, rolling to his feet and aiming his submachine gun. The B.O.W. roars, charging at HUNK with reckless abandon.)\r\n\r\nHUNK: (grunts) Just another day at the office.\r\n\r\n(HUNK pulls out a flashbang, tossing it expertly into the B.O.W.'s face. The creature recoils, blinded by the intense light. Taking advantage of the moment, HUNK rushes in, climbing up the B.O.W.'s leg with surprising agility. As he reaches the creature's midsection, he draws his combat knife.)\r\n\r\n(Camera cuts to a closeup of the B.O.W.'s horrified face as a loud 'slice!' is heard.)\r\n\r\nB.O.W.: RAAAAGHHHHH!!\r\n\r\n(A comical slide whistle plays as the B.O.W. crumples to the ground, clutching its crotch. The screen shakes with the impact, and we hear a series of exaggerated sound effects: a car horn honking, a cat yowling, and glass breaking.)\r\n\r\nSPECTRE (Voice over comm): (Wincing) I think I felt that one.\r\n\r\n(Camera cuts to HUNK, who looks directly into the camera with his signature cold stare.)\r\n\r\nHUNK: (deadpan) And they said I'd never make the cut.\r\n\r\n(The B.O.W. whimpers, rolling on the ground in agony. A classic 'boing' sound effect is heard.)\r\n\r\nB.O.W.: MY... MY REGENERATOR MODULES!!!\r\n\r\n(Cut to COMMANDER watching from the command center, his expression one of mixed amusement and exasperation.)\r\n\r\nCOMMANDER: (sighing) No matter the mission, HUNK always knows how to hit where it hurts.",
+      "zh-TW": "**內景．廢棄的保護傘公司設施－夜**\r\n\r\n\r\n（沉默而致命的特工HUNK，正與一頭高大的B.O.W.（生化兵器）激烈交戰。他靈巧地閃過那怪物巨爪的一揮，翻滾起身，舉起衝鋒槍瞄準。B.O.W.發出怒吼，不顧一切地朝HUNK衝了過來。）\r\n\r\nHUNK：（悶哼）不過是又一個平凡的上班日。\r\n\r\n（HUNK掏出一枚閃光彈，熟練地扔到B.O.W.臉上。怪物被強光刺得睜不開眼，連連後退。HUNK抓準時機衝上前，以驚人的敏捷身手沿著B.O.W.的腿往上爬。爬到怪物的腰腹部時，他拔出了戰鬥小刀。）\r\n\r\n（鏡頭切到B.O.W.驚恐的臉部特寫，同時傳來響亮的「唰！」一聲。）\r\n\r\nB.O.W.：嗚啊啊啊啊啊啊！！\r\n\r\n（滑稽的滑哨音效響起，B.O.W.捂著胯下癱倒在地。畫面隨著撞擊而震動，接著傳來一連串誇張的音效：汽車喇叭聲、貓的慘叫聲，還有玻璃碎裂聲。）\r\n\r\nSPECTRE（通訊語音）：（皺眉）我好像也跟著痛了一下。\r\n\r\n（鏡頭切到HUNK，他以招牌的冷酷眼神直視鏡頭。）\r\n\r\nHUNK：（面無表情）他們還說我不夠「犀利」呢。\r\n\r\n（B.O.W.嗚咽著，痛苦地在地上打滾。此時響起經典的「boing」彈簧音效。）\r\n\r\nB.O.W.：我的……我的再生模組！！！\r\n\r\n（切到在指揮中心觀看的司令官，他的表情既好笑又無奈。）\r\n\r\n司令官：（嘆氣）不管是什麼任務，HUNK總是知道該怎麼直擊「要害」。"
+    },
+    "ROB_NEMESIS_BODY_OUTRO_FLAVOR": {
+      "en": "..and so he left, fine.",
+      "zh-TW": "……於是他走了，安然無恙。"
+    },
+    "ROB_NEMESIS_BODY_OUTRO_FAILURE": {
+      "en": "..and so he vanished, human unit now killed.",
+      "zh-TW": "……於是他就這樣消逝了，人類單位如今已陣亡（Human Unit Now Killed）。"
+    },
+    "ROB_HUNK_BODY_DEFAULT_SKIN_NAME": {
+      "en": "Default",
+      "zh-TW": "預設"
+    },
+    "ROB_HUNK_BODY_CLASSIC_SKIN_NAME": {
+      "en": "RE2make",
+      "zh-TW": "RE2重製版"
+    },
+    "ROB_HUNK_BODY_TOFU_SKIN_NAME": {
+      "en": "Tofu",
+      "zh-TW": "豆腐"
+    },
+    "ROB_HUNK_BODY_SUPER_SKIN_NAME": {
+      "en": "<color=#FFFF00>Early Supporter</color>",
+      "zh-TW": "<color=#FFFF00>早期支持者</color>"
+    },
+    "ROB_HUNK_BODY_LIGHTWEIGHT_SKIN_NAME": {
+      "en": "Lightweight",
+      "zh-TW": "輕裝"
+    },
+    "ROB_HUNK_BODY_GUERRILLA_SKIN_NAME": {
+      "en": "Trooper",
+      "zh-TW": "士兵"
+    },
+    "ROB_HUNK_BODY_ROOKIE_SKIN_NAME": {
+      "en": "Rookie",
+      "zh-TW": "菜鳥"
+    },
+    "ROB_HUNK_BODY_SWAT_SKIN_NAME": {
+      "en": "Peacekeeper",
+      "zh-TW": "和平守護者"
+    },
+    "ROB_HUNK_BODY_LEON_SKIN_NAME": {
+      "en": "Specialist",
+      "zh-TW": "特戰專家"
+    },
+    "ROB_HUNK_BODY_LEONSHIRT_SKIN_NAME": {
+      "en": "Specialist EX",
+      "zh-TW": "特戰專家EX"
+    },
+    "ROB_HUNK_BODY_ENFORCER_SKIN_NAME": {
+      "en": "Bulldozer",
+      "zh-TW": "推土機"
+    },
+    "ROB_HUNK_BODY_WESKER_SKIN_NAME": {
+      "en": "Mastermind",
+      "zh-TW": "幕後主腦"
+    },
+    "ROB_HUNK_BODY_DOOM_SKIN_NAME": {
+      "en": "Slayer",
+      "zh-TW": "殺戮者"
+    },
+    "ROB_HUNK_BODY_COMMANDO_SKIN_NAME": {
+      "en": "Commando",
+      "zh-TW": "指揮官"
+    },
+    "ROB_HUNK_BODY_JACKET_SKIN_NAME": {
+      "en": "Jacket",
+      "zh-TW": "夾克"
+    },
+    "ROB_HUNK_BODY_PPASSIVE_NAME": {
+      "en": "OSP (On-Site Procurement)",
+      "zh-TW": "OSP（就地取材）"
+    },
+    "ROB_HUNK_BODY_PPASSIVE_DESCRIPTION": {
+      "en": "HUNK can collect <color=#FFFF00>U.C. Keycards</color> to open <style=cIsDamage>weapon cases</style> and expand his arsenal.",
+      "zh-TW": "HUNK可以收集<color=#FFFF00>U.C.鑰匙卡</color>來打開<style=cIsDamage>武器箱</style>，擴充他的軍火庫。"
+    },
+    "ROB_HUNK_BODY_PPASSIVE2_NAME": {
+      "en": "Forgotten Soldier",
+      "zh-TW": "被遺忘的士兵"
+    },
+    "ROB_HUNK_BODY_PPASSIVE2_DESCRIPTION": {
+      "en": "The first <style=cIsHealth>boss</style> to die on every stage drops a <style=cIsDamage>supply pack</style> containing one weapon or attachment.",
+      "zh-TW": "每個關卡中第一個被擊敗的<style=cIsHealth>首領</style>會掉落一個<style=cIsDamage>補給包</style>，內含一件武器或配件。"
+    },
+    "ROB_HUNK_BODY_PASSIVE_NAME": {
+      "en": "Grim Struggle",
+      "zh-TW": "殊死掙扎"
+    },
+    "ROB_HUNK_BODY_PASSIVE_DESCRIPTION": {
+      "en": "Start with a <style=cIsDamage>LE 5</style> and <style=cIsDamage>sidearm</style>. You can <style=cIsDamage>rummage</style> through <style=cIsUtility>chests</style> for ammo.",
+      "zh-TW": "初始擁有<style=cIsDamage>LE 5</style>與<style=cIsDamage>副武器</style>。你可以<style=cIsDamage>翻找</style><style=cIsUtility>寶箱</style>來取得彈藥。"
+    },
+    "ROB_HUNK_BODY_PASSIVE2_NAME": {
+      "en": "Looming Dread",
+      "zh-TW": "逼近的恐懼"
+    },
+    "ROB_HUNK_BODY_PASSIVE2_DESCRIPTION": {
+      "en": "Start with a <style=cIsDamage>full arsenal</style>, <style=cIsHealth>BUT</style> you are now <style=cIsHealth>unable to gain any more ammo</style>.",
+      "zh-TW": "初始擁有<style=cIsDamage>完整的軍火庫</style>，<style=cIsHealth>但</style>你將<style=cIsHealth>無法再獲得任何彈藥</style>。"
+    },
+    "ROB_HUNK_BODY_RANDOMPASSIVE_NAME": {
+      "en": "New Game+",
+      "zh-TW": "新遊戲+"
+    },
+    "ROB_HUNK_BODY_RANDOMPASSIVE_DESCRIPTION": {
+      "en": "Start with a <style=cIsDamage>LE 5</style> and <style=cIsDamage>sidearm</style>. You can <style=cIsDamage>rummage</style> through <style=cIsUtility>chests</style> for ammo. <style=cIsHealth>All weapon case contents are randomized.</style>",
+      "zh-TW": "初始擁有<style=cIsDamage>LE 5</style>與<style=cIsDamage>副武器</style>。你可以<style=cIsDamage>翻找</style><style=cIsUtility>寶箱</style>來取得彈藥。<style=cIsHealth>所有武器箱的內容物皆為隨機。</style>"
+    },
+    "ROB_HUNK_BODY_SHOTGUNPASSIVE_NAME": {
+      "en": "Supreme Authority",
+      "zh-TW": "最高權威"
+    },
+    "ROB_HUNK_BODY_SHOTGUNPASSIVE_DESCRIPTION": {
+      "en": "Start with <style=cIsHealth>ONLY</style> a <style=cIsDamage>W-870</style>. You can <style=cIsDamage>rummage</style> through <style=cIsUtility>chests</style> for ammo.",
+      "zh-TW": "初始<style=cIsHealth>只</style>擁有一把<style=cIsDamage>W-870</style>。你可以<style=cIsDamage>翻找</style><style=cIsUtility>寶箱</style>來取得彈藥。"
+    },
+    "ROB_HUNK_BODY_SMGPASSIVE_NAME": {
+      "en": "Ultimate Mercenary",
+      "zh-TW": "終極傭兵"
+    },
+    "ROB_HUNK_BODY_SMGPASSIVE_DESCRIPTION": {
+      "en": "Start with <style=cIsHealth>ONLY</style> a <style=cIsDamage>fully upgraded LE 5</style>. You can <style=cIsDamage>rummage</style> through <style=cIsUtility>chests</style> for ammo. <style=cIsDamage>Special</style> is replaced with <color=#C80202>Mayhem Mode</color>.",
+      "zh-TW": "初始<style=cIsHealth>只</style>擁有一把<style=cIsDamage>完全升級的LE 5</style>。你可以<style=cIsDamage>翻找</style><style=cIsUtility>寶箱</style>來取得彈藥。<style=cIsDamage>特殊技能</style>會被替換為<color=#C80202>狂暴模式</color>。"
+    },
+    "ROB_HUNK_BODY_WPASSIVE_NAME": {
+      "en": "Complete Global Saturation",
+      "zh-TW": "全球全面飽和"
+    },
+    "ROB_HUNK_BODY_WPASSIVE_DESCRIPTION": {
+      "en": "Start with <style=cIsHealth>ONLY</style> a <style=cIsDamage>sidearm</style>. You can <style=cIsDamage>rummage</style> through <style=cIsUtility>chests</style> for ammo. <style=cIsDamage>Utility</style> is replaced with <color=#C80202>Uroboros</color>.",
+      "zh-TW": "初始<style=cIsHealth>只</style>擁有<style=cIsDamage>副武器</style>。你可以<style=cIsDamage>翻找</style><style=cIsUtility>寶箱</style>來取得彈藥。<style=cIsDamage>輔助技能</style>會被替換為<color=#C80202>銜尾蛇</color>。"
+    },
+    "ROB_HUNK_BODY_FLAMERPASSIVE_NAME": {
+      "en": "Pyromania",
+      "zh-TW": "縱火癖"
+    },
+    "ROB_HUNK_BODY_FLAMERPASSIVE_DESCRIPTION": {
+      "en": "Start with <style=cIsHealth>ONLY</style> a <style=cIsDamage>Chemical Flamethrower</style>. You can <style=cIsDamage>rummage</style> through <style=cIsUtility>chests</style> for ammo. <style=cIsHealth>Only ONE weapon case spawns per stage.</style>",
+      "zh-TW": "初始<style=cIsHealth>只</style>擁有一把<style=cIsDamage>化學火焰噴射器</style>。你可以<style=cIsDamage>翻找</style><style=cIsUtility>寶箱</style>來取得彈藥。<style=cIsHealth>每個關卡只會生成一個武器箱。</style>"
+    },
+    "ROB_HUNK_BODY_CONFIRM_NAME": {
+      "en": "Confirm",
+      "zh-TW": "確認"
+    },
+    "ROB_HUNK_BODY_CONFIRM_DESCRIPTION": {
+      "en": "Proceed with the current skill.",
+      "zh-TW": "繼續使用目前的技能。"
+    },
+    "ROB_HUNK_BODY_CANCEL_NAME": {
+      "en": "Cancel",
+      "zh-TW": "取消"
+    },
+    "ROB_HUNK_BODY_CANCEL_DESCRIPTION": {
+      "en": "Cancel the current skill.",
+      "zh-TW": "取消目前的技能。"
+    },
+    "ROB_HUNK_BODY_PRIMARY_KNIFE_NAME": {
+      "en": "Combat Knife",
+      "zh-TW": "戰鬥小刀"
+    },
+    "ROB_HUNK_BODY_PRIMARY_KNIFE_DESCRIPTION": {
+      "en": "<style=cIsUtility>Looting.</style> <style=cIsDamage>Slash</style> close-range combatants for <style=cIsDamage>200% damage</style>, inflicting <style=cIsHealth>Mangled</style>.",
+      "zh-TW": "<style=cIsUtility>搜刮。</style><style=cIsDamage>揮砍</style>近距離的敵人，造成<style=cIsDamage>200%傷害</style>，並施加<style=cIsHealth>撕裂</style>。"
+    },
+    "ROB_HUNK_BODY_PRIMARY_CQC_NAME": {
+      "en": "CQC (Close-Quarters Combat)",
+      "zh-TW": "CQC（近身格鬥）"
+    },
+    "ROB_HUNK_BODY_PRIMARY_CQC_DESCRIPTION": {
+      "en": "<style=cIsUtility>Looting.</style> <style=cIsDamage>Kick twice</style> for <style=cIsDamage>200% and 250% damage</style>. If the <style=cIsUtility>second kick</style> connects, follow up with a <style=cIsDamage>Counterattack</style>.",
+      "zh-TW": "<style=cIsUtility>搜刮。</style><style=cIsDamage>連踢兩腳</style>，造成<style=cIsDamage>200%與250%傷害</style>。若<style=cIsUtility>第二腳</style>命中，可接著發動<style=cIsDamage>反擊</style>。"
+    },
+    "ROB_HUNK_BODY_SHOOT_SCANNER_NAME": {
+      "en": "Scan",
+      "zh-TW": "掃描"
+    },
+    "ROB_HUNK_BODY_SHOOT_SCANNER_DESCRIPTION": {
+      "en": "Scan for <style=cIsUtility>unopened weapon cases</style>.",
+      "zh-TW": "掃描<style=cIsUtility>尚未打開的武器箱</style>。"
+    },
+    "ROB_HUNK_BODY_SHOOT_HOOKSHOT_NAME": {
+      "en": "Grapple",
+      "zh-TW": "鉤索"
+    },
+    "ROB_HUNK_BODY_SHOOT_HOOKSHOT_DESCRIPTION": {
+      "en": "Shoot a hook to a <style=cIsUtility>distant point</style>, then <style=cIsUtility>reel yourself in</style>. <style=cIsDamage>You can counterattack after landing.</style>",
+      "zh-TW": "向<style=cIsUtility>遠處的定點</style>射出鉤爪，然後<style=cIsUtility>把自己拉過去</style>。<style=cIsDamage>落地後可以發動反擊。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_ATM_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_ATM_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>8000% damage</style>. <style=cIsUtility>Deals most damage on direct hits.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>8000%傷害</style>。<style=cIsUtility>直接命中時傷害最高。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_ATM2_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_ATM2_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>8000% damage</style>. <style=cIsUtility>Deals most damage on direct hits.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>8000%傷害</style>。<style=cIsUtility>直接命中時傷害最高。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_RPG_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_RPG_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>8000% damage</style>. <style=cIsUtility>Deals most damage on direct hits.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>8000%傷害</style>。<style=cIsUtility>直接命中時傷害最高。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_ROCKETLAUNCHER_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_ROCKETLAUNCHER_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>12000% damage</style>. <style=cIsDamage>Igniting.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>12000%傷害</style>。<style=cIsDamage>點燃。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_GRENADELAUNCHER_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_GRENADELAUNCHER_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>3200% damage</style>. <style=cIsDamage>Igniting.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>3200%傷害</style>。<style=cIsDamage>點燃。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_MGL_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_MGL_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>2400% damage</style>.",
+      "zh-TW": "射擊造成<style=cIsDamage>2400%傷害</style>。"
+    },
+    "ROB_HUNK_BODY_SHOOT_RAILGUN_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_RAILGUN_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>20000% damage</style>.",
+      "zh-TW": "射擊造成<style=cIsDamage>20000%傷害</style>。"
+    },
+    "ROB_HUNK_BODY_SHOOT_FLAMETHROWER_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_FLAMETHROWER_DESCRIPTION": {
+      "en": "Shoot a stream of flame for <style=cIsDamage>tons of damage</style>. <style=cIsUtility>Ignites.</style>",
+      "zh-TW": "噴射火焰造成<style=cIsDamage>大量傷害</style>。<style=cIsUtility>點燃。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_M19_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_M19_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>500% damage</style>. <style=cIsUtility>100% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>500%傷害</style>。<style=cIsUtility>爆頭加成100%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_SG09_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_SG09_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>500% damage</style>. <style=cIsUtility>50% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>500%傷害</style>。<style=cIsUtility>爆頭加成50%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_BROOMHC_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_BROOMHC_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>180% damage</style>. <style=cIsUtility>25% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>180%傷害</style>。<style=cIsUtility>爆頭加成25%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_MAGNUM_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_MAGNUM_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>1500% damage</style>. <style=cIsUtility>50% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>1500%傷害</style>。<style=cIsUtility>爆頭加成50%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_GOLDGUN_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_GOLDGUN_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>99999% damage</style>. <style=cIsUtility>50% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>99999%傷害</style>。<style=cIsUtility>爆頭加成50%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_MUP_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_MUP_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>320% damage</style>. <style=cIsUtility>25% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>320%傷害</style>。<style=cIsUtility>爆頭加成25%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_REVOLVER_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_REVOLVER_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>1200% damage</style>. <style=cIsUtility>50% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>1200%傷害</style>。<style=cIsUtility>爆頭加成50%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_COLT_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_COLT_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>2000% damage</style>. <style=cIsUtility>50% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>2000%傷害</style>。<style=cIsUtility>爆頭加成50%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_SPARKSHOT_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_SPARKSHOT_DESCRIPTION": {
+      "en": "Shoot an electrified needle for <style=cIsDamage>1000% damage</style>. <style=cIsUtility>Arcs to up to 3 enemies for <style=cIsDamage>2000% damage</style>.</style>",
+      "zh-TW": "射出一根帶電的針，造成<style=cIsDamage>1000%傷害</style>。<style=cIsUtility>電弧最多可跳躍至3名敵人，造成<style=cIsDamage>2000%傷害</style>。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_BLUEROSE_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_BLUEROSE_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>2x3800% damage</style>. <style=cIsUtility>50% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>2x3800%傷害</style>。<style=cIsUtility>爆頭加成50%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_SHOTGUN_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_SHOTGUN_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>14x150% damage</style>. <style=cIsUtility>50% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>14x150%傷害</style>。<style=cIsUtility>爆頭加成50%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_M3_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_M3_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>10x130% damage</style>. <style=cIsUtility>50% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>10x130%傷害</style>。<style=cIsUtility>爆頭加成50%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_SSG_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_SSG_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>16x200% damage</style>. <style=cIsUtility>50% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>16x200%傷害</style>。<style=cIsUtility>爆頭加成50%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_STREETSWEEPER_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_STREETSWEEPER_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>14x24% damage</style>. <style=cIsUtility>25% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>14x24%傷害</style>。<style=cIsUtility>爆頭加成25%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_SLUGGER_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_SLUGGER_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>3000% damage</style>. <style=cIsUtility>50% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>3000%傷害</style>。<style=cIsUtility>爆頭加成50%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_SMG_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_SMG_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>110% damage</style>. <style=cIsUtility>25% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>110%傷害</style>。<style=cIsUtility>爆頭加成25%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_AR_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_AR_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>385% damage</style>. <style=cIsUtility>50% headshot bonus.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>385%傷害</style>。<style=cIsUtility>爆頭加成50%。</style>"
+    },
+    "ROB_HUNK_BODY_SHOOT_MINIGUN_NAME": {
+      "en": "Fire",
+      "zh-TW": "開火"
+    },
+    "ROB_HUNK_BODY_SHOOT_MINIGUN_DESCRIPTION": {
+      "en": "Shoot for <style=cIsDamage>2x250% damage</style>. <style=cIsUtility>Damage scales with attack speed.</style>",
+      "zh-TW": "射擊造成<style=cIsDamage>2x250%傷害</style>。<style=cIsUtility>傷害隨攻擊速度提升。</style>"
+    },
+    "ROB_HUNK_BODY_SECONDARY_AIM_NAME": {
+      "en": "Steady Aim",
+      "zh-TW": "穩定瞄準"
+    },
+    "ROB_HUNK_BODY_SECONDARY_AIM_DESCRIPTION": {
+      "en": "Take aim, <style=cIsUtility>exposing enemy weak points</style>. <style=cIsDamage>Using primary while aiming fires your held gun.</style>",
+      "zh-TW": "舉槍瞄準，<style=cIsUtility>暴露敵人的弱點</style>。<style=cIsDamage>瞄準時使用主要技能可用手上的槍開火。</style>"
+    },
+    "ROB_HUNK_BODY_UTILITY_DODGE_NAME": {
+      "en": "Quickstep",
+      "zh-TW": "疾步"
+    },
+    "ROB_HUNK_BODY_UTILITY_DODGE_DESCRIPTION": {
+      "en": "<style=cIsUtility>Dash</style> a short distance. If used preemptively to <style=cIsUtility>avoid an attack</style>, perform a <style=cIsDamage>Perfect Dodge</style>.",
+      "zh-TW": "<style=cIsUtility>衝刺</style>一小段距離。若搶先使用並<style=cIsUtility>躲開攻擊</style>，則發動<style=cIsDamage>完美閃避</style>。"
+    },
+    "ROB_HUNK_BODY_UTILITY_DODGE_SCEPTER_NAME": {
+      "en": "Uroboros",
+      "zh-TW": "銜尾蛇"
+    },
+    "ROB_HUNK_BODY_UTILITY_DODGE_SCEPTER_DESCRIPTION": {
+      "en": "<style=cIsUtility>Dash</style> a short distance. If used preemptively to <style=cIsUtility>avoid an attack</style>, perform a <style=cIsDamage>Perfect Dodge</style>.\n<color=#d299ff>SCEPTER: The power of Uroboros flows through you.</color>",
+      "zh-TW": "<style=cIsUtility>衝刺</style>一小段距離。若搶先使用並<style=cIsUtility>躲開攻擊</style>，則發動<style=cIsDamage>完美閃避</style>。\n<color=#d299ff>權杖：銜尾蛇的力量在你體內流動。</color>"
+    },
+    "ROB_HUNK_BODY_UTILITY_PARRY_NAME": {
+      "en": "Parry",
+      "zh-TW": "招架"
+    },
+    "ROB_HUNK_BODY_UTILITY_PARRY_DESCRIPTION": {
+      "en": "<style=cIsUtility>Block</style> an attack, <style=cIsDamage>negating</style> damage and <style=cIsUtility>refunding the cooldown</style>. If used preemptively, perform a <style=cIsDamage>Perfect Parry</style>.",
+      "zh-TW": "<style=cIsUtility>格擋</style>一次攻擊，<style=cIsDamage>抵銷</style>傷害並<style=cIsUtility>返還冷卻時間</style>。若搶先使用，則發動<style=cIsDamage>完美招架</style>。"
+    },
+    "ROB_HUNK_BODY_UTILITY_BASH_NAME": {
+      "en": "Shoulder Bash",
+      "zh-TW": "肩撞"
+    },
+    "ROB_HUNK_BODY_UTILITY_BASH_DESCRIPTION": {
+      "en": "<style=cIsUtility>Bash</style> nearby enemies, <style=cIsUtility>stunning them</style> for <style=cIsDamage>400% damage</style>. If used preemptively to <style=cIsUtility>cancel an attack</style>, perform a <style=cIsDamage>Perfect Bash</style>.",
+      "zh-TW": "<style=cIsUtility>衝撞</style>附近的敵人，<style=cIsUtility>使其眩暈</style>並造成<style=cIsDamage>400%傷害</style>。若搶先使用並<style=cIsUtility>打斷攻擊</style>，則發動<style=cIsDamage>完美肩撞</style>。"
+    },
+    "ROB_HUNK_BODY_SPECIAL_SWAP_NAME": {
+      "en": "Legion",
+      "zh-TW": "軍團"
+    },
+    "ROB_HUNK_BODY_SPECIAL_SWAP_DESCRIPTION": {
+      "en": "<style=cIsUtility>Swap</style> to a different <style=cIsDamage>gun</style>. Tap to swap to your <style=cIsUtility>last held gun</style>.",
+      "zh-TW": "<style=cIsUtility>切換</style>至另一把<style=cIsDamage>槍</style>。輕按可切換至<style=cIsUtility>上一把手持的槍</style>。"
+    },
+    "ROB_HUNK_BODY_KNIFE_DEFAULT_NAME": {
+      "en": "Combat Knife",
+      "zh-TW": "戰鬥小刀"
+    },
+    "ROB_HUNK_BODY_KNIFE_DEFAULT_DESCRIPTION": {
+      "en": "A standard military-grade knife. Sure to come in handy in a pinch.",
+      "zh-TW": "標準的軍用小刀。緊要關頭肯定派得上用場。"
+    },
+    "ROB_HUNK_BODY_KNIFE_INFINITE_NAME": {
+      "en": "Combat Knife EX",
+      "zh-TW": "戰鬥小刀EX"
+    },
+    "ROB_HUNK_BODY_KNIFE_INFINITE_DESCRIPTION": {
+      "en": "A specially-treated military-grade knife that's been hardened to an unbelievable degree. They say it's been made to really last.",
+      "zh-TW": "經過特殊處理的軍用小刀，硬度強化到令人難以置信的程度。據說做得非常耐用。"
+    },
+    "ROB_HUNK_BODY_KNIFE_HIDDEN_NAME": {
+      "en": "Hidden Blade",
+      "zh-TW": "袖劍"
+    },
+    "ROB_HUNK_BODY_KNIFE_HIDDEN_DESCRIPTION": {
+      "en": "A low profile retractable blade hidden in the sleeve. Ideal for stealth operations.",
+      "zh-TW": "藏在袖子裡的低調伸縮刀刃。非常適合潛行任務。"
+    },
+    "ROB_HUNK_BODY_KNIFE_WESKER_NAME": {
+      "en": "Customized Knife",
+      "zh-TW": "改造小刀"
+    },
+    "ROB_HUNK_BODY_KNIFE_WESKER_DESCRIPTION": {
+      "en": "A vicious blade with a serrated edge to aid in tearing up your opponents.",
+      "zh-TW": "帶有鋸齒刀鋒的兇狠利刃，有助於將對手撕成碎片。"
+    },
+    "ROB_HUNK_BODY_KNIFE_MACHETE_NAME": {
+      "en": "Machete",
+      "zh-TW": "開山刀"
+    },
+    "ROB_HUNK_BODY_KNIFE_MACHETE_DESCRIPTION": {
+      "en": "A huge blade meant primarily for guerrilla tactics.",
+      "zh-TW": "主要用於遊擊戰術的巨大刀刃。"
+    },
+    "ROB_HUNK_BODY_KNIFE_RE4_NAME": {
+      "en": "Primal Knife",
+      "zh-TW": "原始小刀"
+    },
+    "ROB_HUNK_BODY_KNIFE_RE4_DESCRIPTION": {
+      "en": "A knife forged with infinite possibilities.",
+      "zh-TW": "以無限可能性鍛造而成的小刀。"
+    },
+    "ROB_HUNK_BODY_KNIFE_BLOODY_NAME": {
+      "en": "Soiled Blade",
+      "zh-TW": "染血之刃"
+    },
+    "ROB_HUNK_BODY_KNIFE_BLOODY_DESCRIPTION": {
+      "en": "A bloodied blade with a serrated edge that has torn up many opponents.",
+      "zh-TW": "沾滿鮮血的鋸齒利刃，曾將許多對手撕成碎片。"
+    },
+    "ROB_HUNK_BODY_KNIFE_HOTDOGGER_NAME": {
+      "en": "HOT DOGGER",
+      "zh-TW": "HOT DOGGER"
+    },
+    "ROB_HUNK_BODY_KNIFE_HOTDOGGER_DESCRIPTION": {
+      "en": "As its name implies, this Umbrella-developed anti-bioweapon knife is used by those who like to show off.",
+      "zh-TW": "顧名思義，這把由保護傘公司開發的反生化兵器小刀，是給愛現的人用的。"
+    },
+    "ROB_HUNK_BODY_KNIFE_STUNROD_NAME": {
+      "en": "Stun Rod",
+      "zh-TW": "電擊棒"
+    },
+    "ROB_HUNK_BODY_KNIFE_STUNROD_DESCRIPTION": {
+      "en": "DISCLAIMER: Does not actually stun.",
+      "zh-TW": "免責聲明：實際上並不會造成眩暈。"
+    },
+    "ROB_HUNK_BODY_KNIFE_KITCHEN_NAME": {
+      "en": "Kitchen Knife",
+      "zh-TW": "菜刀"
+    },
+    "ROB_HUNK_BODY_KNIFE_KITCHEN_DESCRIPTION": {
+      "en": "A knife made for cooking. Its edge chips easily.",
+      "zh-TW": "烹飪用的刀。刀刃很容易缺角。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_COMPLETION_UNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Grim Reaper",
+      "zh-TW": "HUNK：死神"
+    },
+    "ACHIEVEMENT_ROB_HUNK_COMPLETION_UNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, beat the game or obliterate.",
+      "zh-TW": "作為HUNK，通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_MONSOON_UNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Mastery",
+      "zh-TW": "HUNK：精通"
+    },
+    "ACHIEVEMENT_ROB_HUNK_MONSOON_UNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為HUNK，在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_TYPHOON_UNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Grand Mastery",
+      "zh-TW": "HUNK：大師級精通"
+    },
+    "ACHIEVEMENT_ROB_HUNK_TYPHOON_UNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, beat the game or obliterate on Typhoon or Eclipse.\n<color=#8888>(Counts any difficulty Typhoon or higher)</color>",
+      "zh-TW": "作為HUNK，在颱風或日食難度下通關遊戲或抹除自己。\n<color=#8888>（颱風以上的任何難度皆計入）</color>"
+    },
+    "ACHIEVEMENT_ROB_HUNK_SUPPORTER_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Early Supporter",
+      "zh-TW": "HUNK：早期支持者"
+    },
+    "ACHIEVEMENT_ROB_HUNK_SUPPORTER_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "Play HUNK before his official release.",
+      "zh-TW": "在HUNK正式發佈前使用他遊玩。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_LIGHTWEIGHT_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Minimalist",
+      "zh-TW": "HUNK：極簡主義者"
+    },
+    "ACHIEVEMENT_ROB_HUNK_LIGHTWEIGHT_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, clear stage 1 with no items.\n<color=#8888>(Guns and tools are not counted against you)</color>",
+      "zh-TW": "作為HUNK，在沒有任何物品的情況下通過第1關。\n<color=#8888>（槍枝與工具不列入計算）</color>"
+    },
+    "ACHIEVEMENT_ROB_HUNK_GUERRILLA_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Locked and Loaded",
+      "zh-TW": "HUNK：全副武裝"
+    },
+    "ACHIEVEMENT_ROB_HUNK_GUERRILLA_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, obtain a full arsenal.",
+      "zh-TW": "作為HUNK，取得完整的軍火庫。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_ROOKIE_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: First Day on the Job",
+      "zh-TW": "HUNK：上工第一天"
+    },
+    "ACHIEVEMENT_ROB_HUNK_ROOKIE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, obtain a new weapon.",
+      "zh-TW": "作為HUNK，取得一把新武器。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_SWAT_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Keeper of Peace",
+      "zh-TW": "HUNK：守護和平之人"
+    },
+    "ACHIEVEMENT_ROB_HUNK_SWAT_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, fully upgrade the MUP.",
+      "zh-TW": "作為HUNK，將MUP完全升級。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_CQC_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: CQC (Close-Quarters Combat)",
+      "zh-TW": "HUNK：CQC（近身格鬥）"
+    },
+    "ACHIEVEMENT_ROB_HUNK_CQC_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, perform 10 successful counterattacks on one stage.",
+      "zh-TW": "作為HUNK，在單一關卡中成功發動10次反擊。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_INFINITEKNIFE_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Ace of Spades",
+      "zh-TW": "HUNK：黑桃A"
+    },
+    "ACHIEVEMENT_ROB_HUNK_INFINITEKNIFE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, carry two Spade Keycards at once.",
+      "zh-TW": "作為HUNK，同時攜帶兩張黑桃鑰匙卡。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_WESKERKNIFE_UNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Firearms Enthusiast",
+      "zh-TW": "HUNK：槍械愛好者"
+    },
+    "ACHIEVEMENT_ROB_HUNK_WESKERKNIFE_UNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, upgrade a weapon with a new attachment.",
+      "zh-TW": "作為HUNK，用新的配件升級一把武器。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_MACHETE_UNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Don't Need No Stinkin' Gun",
+      "zh-TW": "HUNK：誰還需要什麼臭槍"
+    },
+    "ACHIEVEMENT_ROB_HUNK_MACHETE_UNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, complete a stage without firing any guns.",
+      "zh-TW": "作為HUNK，在一槍都沒開的情況下完成一個關卡。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_RE4KNIFE_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: The Road Ahead",
+      "zh-TW": "HUNK：前方之路"
+    },
+    "ACHIEVEMENT_ROB_HUNK_RE4KNIFE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, reach stage 6.",
+      "zh-TW": "作為HUNK，抵達第6關。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_HOTDOGGER_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Basic Chemistry",
+      "zh-TW": "HUNK：基礎化學"
+    },
+    "ACHIEVEMENT_ROB_HUNK_HOTDOGGER_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, obtain the Chemical Flamethrower.",
+      "zh-TW": "作為HUNK，取得化學火焰噴射器。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_STUNROD_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Three For One Deal",
+      "zh-TW": "HUNK：買一送二"
+    },
+    "ACHIEVEMENT_ROB_HUNK_STUNROD_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, obtain the Spark Shot.",
+      "zh-TW": "作為HUNK，取得Spark Shot。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_SSG_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Dominator",
+      "zh-TW": "HUNK：支配者"
+    },
+    "ACHIEVEMENT_ROB_HUNK_SSG_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, obtain the SSG.",
+      "zh-TW": "作為HUNK，取得SSG。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_FLAMER_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Pyromaniac",
+      "zh-TW": "HUNK：縱火狂"
+    },
+    "ACHIEVEMENT_ROB_HUNK_FLAMER_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, fully upgrade the Chemical Flamethrower.",
+      "zh-TW": "作為HUNK，將化學火焰噴射器完全升級。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_SURVIVALKIT_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Shit out of Luck",
+      "zh-TW": "HUNK：衰到爆"
+    },
+    "ACHIEVEMENT_ROB_HUNK_SURVIVALKIT_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, run out of ammo on Commencement.",
+      "zh-TW": "作為HUNK，在開端耗盡彈藥。"
+    },
+    "ACHIEVEMENT_ROB_HUNK_JUMPPACK_ACHIEVEMENT_ID_NAME": {
+      "en": "HUNK: Nowhere to Go but Up",
+      "zh-TW": "HUNK：只能往上了"
+    },
+    "ACHIEVEMENT_ROB_HUNK_JUMPPACK_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As HUNK, fall victim to a skydiving accident.",
+      "zh-TW": "作為HUNK，不幸遭遇跳傘意外。"
+    },
+    "ROB_HUNK_GHOST_UNLOCKABLE_NAME": {
+      "en": ""
+    },
+    "ROB_HUNK_GHOST_ACHIEVEMENT_NAME": {
+      "en": "HUNK: The Forgotten Soldier",
+      "zh-TW": "HUNK：被遺忘的士兵"
+    },
+    "ROB_HUNK_GHOST_ACHIEVEMENT_DESC": {
+      "en": ""
+    },
+    "ROB_HUNK_CONTAMINATION_UNLOCKABLE_NAME": {
+      "en": "Ground Zero",
+      "zh-TW": "原爆點"
+    },
+    "ROB_HUNK_CONTAMINATION_ACHIEVEMENT_NAME": {
+      "en": "Ground Zero",
+      "zh-TW": "原爆點"
+    },
+    "ROB_HUNK_CONTAMINATION_ACHIEVEMENT_DESC": {
+      "en": "Turn in a virus sample to Umbrella Corporation.",
+      "zh-TW": "向保護傘公司繳交一份病毒樣本。"
+    },
+    "ROB_HUNK_PURSUER_UNLOCKABLE_NAME": {
+      "en": "Nemesis Down",
+      "zh-TW": "追跡者倒地"
+    },
+    "ROB_HUNK_PURSUER_ACHIEVEMENT_NAME": {
+      "en": "Nemesis Down",
+      "zh-TW": "追跡者倒地"
+    },
+    "ROB_HUNK_PURSUER_ACHIEVEMENT_DESC": {
+      "en": "Knock down the Nemesis T-Type.",
+      "zh-TW": "擊倒追跡者T型。"
+    },
+    "ROB_HUNK_NEMESIS_UNLOCKABLE_NAME": {
+      "en": "A Dream Of Armageddon",
+      "zh-TW": "末日之夢"
+    },
+    "ROB_HUNK_NEMESIS_ACHIEVEMENT_NAME": {
+      "en": "A Dream Of Armageddon",
+      "zh-TW": "末日之夢"
+    },
+    "ROB_HUNK_NEMESIS_ACHIEVEMENT_DESC": {
+      "en": "Kill the Nemesis T-Type.",
+      "zh-TW": "擊敗追跡者T型。"
+    },
+    "ROB_NEMESIS_BODY_PASSIVE_NAME": {
+      "en": "Ultimate Lifeform",
+      "zh-TW": "究極生命體"
+    },
+    "ROB_NEMESIS_BODY_PASSIVE_DESCRIPTION": {
+      "en": "<style=cIsDamage>Dealing damage</style> stores <style=cIsHealth>Biomass</style>, boosting your <style=cIsDamage>damage</style> when full. Jumps can be <style=cIsDamage>charged</style> for <style=cIsUtility>mighty leaps</style>.",
+      "zh-TW": "<style=cIsDamage>造成傷害</style>可儲存<style=cIsHealth>生物質</style>，儲滿時提升你的<style=cIsDamage>傷害</style>。跳躍可以<style=cIsDamage>蓄力</style>，進行<style=cIsUtility>強力飛躍</style>。"
+    },
+    "ROB_NEMESIS_BODY_PASSIVE2_NAME": {
+      "en": "Biological Weaponry",
+      "zh-TW": "生化兵器"
+    },
+    "ROB_NEMESIS_BODY_PASSIVE2_DESCRIPTION": {
+      "en": "The Nemesis T-Type can <style=cIsHealth>mutate</style> by consuming <style=cIsDamage>persons of interest</style>, gaining <style=cIsDamage>new and upgraded abilities</style>.",
+      "zh-TW": "追跡者T型可以透過吞噬<style=cIsDamage>關鍵人物</style>來<style=cIsHealth>突變</style>，獲得<style=cIsDamage>全新與強化的能力</style>。"
+    },
+    "ROB_NEMESIS_BODY_PASSIVE22_NAME": {
+      "en": "Muscle Mass Boost",
+      "zh-TW": "肌肉量強化"
+    },
+    "ROB_NEMESIS_BODY_PASSIVE22_DESCRIPTION": {
+      "en": "<style=cIsUtility>Melee attacks</style> deal <style=cIsDamage>20%</style> more damage, <style=isHealth>BUT allies can take damage</style>.",
+      "zh-TW": "<style=cIsUtility>近戰攻擊</style>造成的傷害提高<style=cIsDamage>20%</style>，<style=isHealth>但盟友也會受到傷害</style>。"
+    },
+    "ROB_NEMESIS_BODY_MELEE_NAME": {
+      "en": "Brutal Assault",
+      "zh-TW": "殘暴猛襲"
+    },
+    "ROB_NEMESIS_BODY_MELEE_DESCRIPTION": {
+      "en": "Punch for <style=cIsDamage>350% damage</style>. Use while <style=cIsUtility>standing still</style> to stomp for <style=cIsDamage>800% damage</style>. Use while <style=cIsUtility>sprinting</style> to tackle for <style=cIsDamage>600% damage</style>.",
+      "zh-TW": "揮拳造成<style=cIsDamage>350%傷害</style>。<style=cIsUtility>站立不動</style>時使用會改為踐踏，造成<style=cIsDamage>800%傷害</style>。<style=cIsUtility>奔跑</style>時使用會改為衝撞，造成<style=cIsDamage>600%傷害</style>。"
+    },
+    "ROB_NEMESIS_BODY_GRAB_NAME": {
+      "en": "Deadly Reach",
+      "zh-TW": "奪命之手"
+    },
+    "ROB_NEMESIS_BODY_GRAB_DESCRIPTION": {
+      "en": "Grab an enemy. Use Primary to consume them and heal 10% max health, or Secondary to charge a throw for up to 2400% damage.",
+      "zh-TW": "抓住一名敵人。使用主要技能可將其吞噬並恢復10%最大生命值，使用次要技能則可蓄力投擲，最多造成2400%傷害。"
+    },
+    "ROB_NEMESIS_BODY_DASH_NAME": {
+      "en": "Biohazard Rush",
+      "zh-TW": "生化突進"
+    },
+    "ROB_NEMESIS_BODY_DASH_DESCRIPTION": {
+      "en": "Use while <style=cIsUtility>airborne</style> to airdash <style=cIsDamage>once</style>.",
+      "zh-TW": "在<style=cIsUtility>空中</style>使用可進行<style=cIsDamage>一次</style>空中衝刺。"
+    },
+    "ROB_NEMESIS_BODY_ULTIMATE_NAME": {
+      "en": "Critical Mass",
+      "zh-TW": "臨界質量"
+    },
+    "ROB_NEMESIS_BODY_ULTIMATE_DESCRIPTION": {
+      "en": "Hold to slowly consume <style=cIsHealth>Biomass</style>, restoring up to <style=cIsHealing>100% max health</style>.",
+      "zh-TW": "按住可緩慢消耗<style=cIsHealth>生物質</style>，最多恢復<style=cIsHealing>100%最大生命值</style>。"
+    },
+    "ROB_NEMESIS_BODY_DEFAULT_SKIN_NAME": {
+      "en": "Default",
+      "zh-TW": "預設"
+    },
+    "ROB_NEMESIS_BODY_CLASSIC_SKIN_NAME": {
+      "en": "Classic",
+      "zh-TW": "經典"
+    },
+    "ROB_NEMESIS_BODY_VENOM_SKIN_NAME": {
+      "en": "Symbiote",
+      "zh-TW": "共生體"
+    },
+    "ROB_NEMESIS_BODY_SUPER_SKIN_NAME": {
+      "en": "<color=#FFFF00>Early Supporter</color>",
+      "zh-TW": "<color=#FFFF00>早期支持者</color>"
+    },
+    "ROB_NEMESIS_BODY_MAHORAGA_SKIN_NAME": {
+      "en": "Big Raga The Opp Stoppa",
+      "zh-TW": "仇家剋星大魔虛羅"
+    },
+    "ROB_NEMESIS_BODY_MINOS_SKIN_NAME": {
+      "en": "King of Men",
+      "zh-TW": "人類之王"
+    },
+    "ROB_HUNK_ITEM_EFFECT_TITLE": {
+      "en": "Bonus Effect",
+      "zh-TW": "額外效果"
+    },
+    "ROB_HUNK_ITEM_EFFECT_BACKUPMAG": {
+      "en": "Gain <color=#00FF66>Fake Ammo</color> after a successful reload.",
+      "zh-TW": "成功上彈後獲得<color=#00FF66>虛擬彈藥</color>。"
+    },
+    "ROB_HUNK_ITEM_EFFECT_BANDOLIER": {
+      "en": "Ammo packs refill your magazine with <color=#00FF66>Fake Ammo</color>.",
+      "zh-TW": "彈藥包會以<color=#00FF66>虛擬彈藥</color>補滿你的彈匣。"
+    },
+    "ROB_HUNK_ITEM_EFFECT_ALIENHEAD": {
+      "en": "Gain <style=cIsUtility>more ammo</style> when picking any up.",
+      "zh-TW": "拾取彈藥時可獲得<style=cIsUtility>更多彈藥</style>。"
+    },
+    "ROB_HUNK_ITEM_EFFECT_BRAINSTALKS": {
+      "en": "While active, firing your gun <style=cIsUtility>consumes no ammo</style>.",
+      "zh-TW": "效果持續期間，開槍<style=cIsUtility>不消耗彈藥</style>。"
+    },
+    "ROB_HUNK_ITEM_EFFECT_LYSATECELL": {
+      "en": "Gain <color=#00FF66>Fake Ammo</color> when equipping a weapon.",
+      "zh-TW": "裝備武器時獲得<color=#00FF66>虛擬彈藥</color>。"
+    },
+    "ROB_HUNK_ITEM_EFFECT_PURITY": {
+      "en": "Double your <style=cIsUtility>magazine size</style>. Ammo consumption is unchanged.",
+      "zh-TW": "<style=cIsUtility>彈匣容量</style>加倍。彈藥消耗量不變。"
+    },
+    "ROB_HUNK_ITEM_EFFECT_LUMINOUSSHOT": {
+      "en": "Gain a stack after aiming for <style=cIsUtility>1 second</style>. <style=cIsHealth>Lose all stacks when you shoot or stop aiming.</style>",
+      "zh-TW": "瞄準<style=cIsUtility>1秒</style>後獲得一層。<style=cIsHealth>射擊或停止瞄準時會失去所有層數。</style>"
+    },
+    "ROB_NEMESIS_ITEM_EFFECT_TITLE": {
+      "en": "Bonus Effect",
+      "zh-TW": "額外效果"
+    },
+    "ROB_NEMESIS_ITEM_EFFECT_BANDOLIER": {
+      "en": "Ammo packs restore <style=cIsHealth>10% Biomass</style>.",
+      "zh-TW": "彈藥包可恢復<style=cIsHealth>10%生物質</style>。"
+    },
+    "ROB_NEMESIS_ITEM_EFFECT_ALIENHEAD": {
+      "en": "Boost <style=cIsHealth>Biomass</style> gained when <style=cIsDamage>consuming</style> enemies.",
+      "zh-TW": "提升<style=cIsDamage>吞噬</style>敵人時獲得的<style=cIsHealth>生物質</style>。"
+    },
+    "ROB_NEMESIS_ITEM_EFFECT_BRAINSTALKS": {
+      "en": "While active, <style=cIsHealth>Biomass</style> is <style=cIsUtility>unlimited</style>.",
+      "zh-TW": "效果持續期間，<style=cIsHealth>生物質</style><style=cIsUtility>無限</style>。"
+    },
+    "ROB_NEMESIS_ITEM_EFFECT_PURITY": {
+      "en": "Boost <style=cIsHealth>Biomass</style> gained <style=cIsDamage>on hit</style>.",
+      "zh-TW": "提升<style=cIsDamage>命中時</style>獲得的<style=cIsHealth>生物質</style>。"
+    },
+    "ROB_HUNK_JETPACK_NAME": {
+      "en": "Experimental Jump Pack",
+      "zh-TW": "實驗型跳躍背包"
+    },
+    "ROB_HUNK_JETPACK_DESC": {
+      "en": "An Umbrella-made tool that allows you to boost yourself in any direction by pressing jump while midair.",
+      "zh-TW": "保護傘公司製造的工具，在空中按下跳躍鍵即可朝任意方向推進。"
+    },
+    "ROB_HUNK_SURVIVALKIT_NAME": {
+      "en": "Emergency Survival Kit",
+      "zh-TW": "緊急求生包"
+    },
+    "ROB_HUNK_SURVIVALKIT_DESC": {
+      "en": "A survival kit that boosts both your ability to rummage for ammo and the effectiveness of your knife.",
+      "zh-TW": "一組求生包，可同時提升你翻找彈藥的能力與小刀的威力。"
+    },
+    "ROB_HUNK_TRANSCEIVER_NAME": {
+      "en": "Worn Transceiver",
+      "zh-TW": "老舊的無線電收發器"
+    },
+    "ROB_HUNK_TRANSCEIVER_DESC": {
+      "en": "Calls in a squadmate to help you on your operation.",
+      "zh-TW": "呼叫一名隊友前來協助你的行動。"
+    },
+    "ROB_HUNK_INFROCKET_NAME": {
+      "en": "ATM-4",
+      "zh-TW": "ATM-4"
+    },
+    "ROB_HUNK_INFROCKET_DESC": {
+      "en": "A rocket launcher with <style=cIsHealing>infinite ammo</style>. Reward for the <color=#FFFF00>Early Supporter</color> achievement.",
+      "zh-TW": "擁有<style=cIsHealing>無限彈藥</style>的火箭筒。<color=#FFFF00>早期支持者</color>成就的獎勵。"
+    },
+    "ROB_HUNK_SPADE_KEYCARD_NAME": {
+      "en": "U.C. Keycard (Spade)",
+      "zh-TW": "U.C.鑰匙卡（黑桃）"
+    },
+    "ROB_HUNK_CLUB_KEYCARD_NAME": {
+      "en": "U.C. Keycard (Club)",
+      "zh-TW": "U.C.鑰匙卡（梅花）"
+    },
+    "ROB_HUNK_HEART_KEYCARD_NAME": {
+      "en": "U.C. Keycard (Heart)",
+      "zh-TW": "U.C.鑰匙卡（紅心）"
+    },
+    "ROB_HUNK_DIAMOND_KEYCARD_NAME": {
+      "en": "U.C. Keycard (Diamond)",
+      "zh-TW": "U.C.鑰匙卡（方塊）"
+    },
+    "ROB_HUNK_GOLD_KEYCARD_NAME": {
+      "en": "U.C. Keycard (Star)",
+      "zh-TW": "U.C.鑰匙卡（星星）"
+    },
+    "ROB_HUNK_MASTER_KEYCARD_NAME": {
+      "en": "U.C. Keycard (Master)",
+      "zh-TW": "U.C.鑰匙卡（萬能）"
+    },
+    "ROB_HUNK_KEYCARD_DESC": {
+      "en": "Used to open <color=#C80202>Umbrella Corporation</color> <style=cIsUtility>weapon cases</style>.",
+      "zh-TW": "用來打開<color=#C80202>保護傘公司</color>的<style=cIsUtility>武器箱</style>。"
+    },
+    "ROB_HUNK_KEYCARD_MASTER_DESC": {
+      "en": "Used to open <color=#C80202>Umbrella Corporation</color> <style=cIsUtility>weapon cases</style>. Opens <style=cIsHealing>all cases</style>, and turns other keycards into <style=cIsUtility>scrap</style>.",
+      "zh-TW": "用來打開<color=#C80202>保護傘公司</color>的<style=cIsUtility>武器箱</style>。可打開<style=cIsHealing>所有武器箱</style>，並將其他鑰匙卡變成<style=cIsUtility>碎片</style>。"
+    },
+    "ROB_HUNK_WRISTBAND_NAME": {
+      "en": "I.D. Wristband",
+      "zh-TW": "I.D.手環"
+    },
+    "ROB_HUNK_WRISTBAND_DESC": {
+      "en": "An electronic key for use in <color=#C80202>Umbrella Corporation</color> facilities. Used to open a <style=cIsUtility>special weapon case</style>.",
+      "zh-TW": "在<color=#C80202>保護傘公司</color>設施內使用的電子鑰匙。用來打開<style=cIsUtility>特殊武器箱</style>。"
+    },
+    "ROB_HUNK_TYPEWRITER_NAME": {
+      "en": "Typewriter",
+      "zh-TW": "打字機"
+    },
+    "ROB_HUNK_TYPEWRITER_DESC": {
+      "en": "Gain <style=cIsUtility>2</style> additional <color=#C80202>Umbrella Corporation</color> <style=cIsUtility>weapon cases</style> per stage.",
+      "zh-TW": "每個關卡額外獲得<style=cIsUtility>2</style>個<color=#C80202>保護傘公司</color>的<style=cIsUtility>武器箱</style>。"
+    },
+    "ROB_HUNK_CRYSTALSKULL_NAME": {
+      "en": "Crystal Skull",
+      "zh-TW": "水晶骷髏"
+    },
+    "ROB_HUNK_CRYSTALSKULL_DESC": {
+      "en": "A rare treasure. Can be turned into any <style=cIsUtility>Cauldron</style> to receive one item.",
+      "zh-TW": "稀有的寶物。可交給任意一口<style=cIsUtility>大鍋</style>以換取一件物品。"
+    },
+    "ROB_HUNK_STARSBADGE_NAME": {
+      "en": "S.T.A.R.S. Badge",
+      "zh-TW": "S.T.A.R.S.徽章"
+    },
+    "ROB_HUNK_STARSBADGE2_NAME": {
+      "en": "USB Dongle Key",
+      "zh-TW": "USB硬體鎖"
+    },
+    "ROB_HUNK_STARSBADGE_DESC": {
+      "en": "A special badge for R.P.D.'s special forces division, <color=#F20443>S.T.A.R.S.</color> <style=cIsHealth>Maybe picking this up was a bad idea?</style>",
+      "zh-TW": "R.P.D.特種部隊<color=#F20443>S.T.A.R.S.</color>的特殊徽章。<style=cIsHealth>撿起這個說不定是個壞主意？</style>"
+    },
+    "ROB_HUNK_STARSBADGE_DESCFULL": {
+      "en": "Each stage, a special <color=#F20443>S.T.A.R.S.</color> box spawns that can only be opened using this badge. However, the <style=cIsHealth>Nemesis T-Type</style> will relentlessly hunt you down.",
+      "zh-TW": "每個關卡會生成一個只能用這枚徽章打開的特殊<color=#F20443>S.T.A.R.S.</color>裝備箱。然而，<style=cIsHealth>追跡者T型</style>將會對你窮追不捨。"
+    },
+    "ROB_HUNK_STARSBADGE2_DESC": {
+      "en": "Used to access a <style=cIsUtility>special chest</style> on each stage.",
+      "zh-TW": "用來打開每個關卡中的<style=cIsUtility>特殊寶箱</style>。"
+    },
+    "ROB_HUNK_STARSBADGE2_DESCFULL": {
+      "en": "Each stage, a special <color=#F20443>S.T.A.R.S.</color> box spawns that can only be opened using this badge. However, the <style=cIsHealth>Nemesis T-Type</style> will relentlessly hunt you down.",
+      "zh-TW": "每個關卡會生成一個只能用這枚徽章打開的特殊<color=#F20443>S.T.A.R.S.</color>裝備箱。然而，<style=cIsHealth>追跡者T型</style>將會對你窮追不捨。"
+    },
+    "ROB_HUNK_G_VIRUS_SAMPLE_NAME": {
+      "en": "G-Virus Sample",
+      "zh-TW": "G病毒樣本"
+    },
+    "ROB_HUNK_G_VIRUS_SAMPLE_DESC": {
+      "en": "Volatile sample of the <color=#C678B4>Golgotha Virus</color>. <style=cIsHealth>Handle with care.</style>",
+      "zh-TW": "不穩定的<color=#C678B4>Golgotha病毒</color>樣本。<style=cIsHealth>請小心處理。</style>"
+    },
+    "ROB_HUNK_T_VIRUS_SAMPLE_NAME": {
+      "en": "T-Virus Sample",
+      "zh-TW": "T病毒樣本"
+    },
+    "ROB_HUNK_T_VIRUS_SAMPLE_DESC": {
+      "en": "Volatile sample of the <color=#0066FF>Tyrant Virus</color>. <style=cIsHealth>Handle with care.</style>",
+      "zh-TW": "不穩定的<color=#0066FF>暴君病毒</color>樣本。<style=cIsHealth>請小心處理。</style>"
+    },
+    "ROB_HUNK_C_VIRUS_SAMPLE_NAME": {
+      "en": "C-Virus Sample",
+      "zh-TW": "C病毒樣本"
+    },
+    "ROB_HUNK_C_VIRUS_SAMPLE_DESC": {
+      "en": "Volatile sample of the <color=#FF0033>Chrysalid Virus</color>. <style=cIsHealth>Handle with care.</style>",
+      "zh-TW": "不穩定的<color=#FF0033>Chrysalid病毒</color>樣本。<style=cIsHealth>請小心處理。</style>"
+    },
+    "ROB_HUNK_URO_SAMPLE_NAME": {
+      "en": "Uroboros Sample",
+      "zh-TW": "銜尾蛇樣本"
+    },
+    "ROB_HUNK_URO_SAMPLE_DESC": {
+      "en": "Volatile sample of the <color=#140E0E>Uroboros Virus</color>. <style=cIsHealth>Handle with care.</style>",
+      "zh-TW": "不穩定的<color=#140E0E>銜尾蛇病毒</color>樣本。<style=cIsHealth>請小心處理。</style>"
+    },
+    "ROB_HUNK_PLAGAS_SAMPLE_NAME": {
+      "en": "Plagas Sample",
+      "zh-TW": "普拉卡樣本"
+    },
+    "ROB_HUNK_PLAGAS_SAMPLE_DESC": {
+      "en": "Volatile sample of the <color=#C678B4>Plagas</color>. <style=cIsHealth>Handle with care.</style>",
+      "zh-TW": "不穩定的<color=#C678B4>普拉卡</color>樣本。<style=cIsHealth>請小心處理。</style>"
+    },
+    "ROB_HUNK_HEARTCHEST_NAME": {
+      "en": "Heart-Key Weapon Case",
+      "zh-TW": "紅心鑰匙武器箱"
+    },
+    "ROB_HUNK_HEARTCHEST_CONTEXT": {
+      "en": "Open Heart-Key weapon case",
+      "zh-TW": "打開紅心鑰匙武器箱"
+    },
+    "ROB_HEARTCOST": {
+      "en": "Heart Keycard",
+      "zh-TW": "紅心鑰匙卡"
+    },
+    "ROB_HUNK_SPADECHEST_NAME": {
+      "en": "Spade-Key Weapon Case",
+      "zh-TW": "黑桃鑰匙武器箱"
+    },
+    "ROB_HUNK_SPADECHEST_CONTEXT": {
+      "en": "Open Spade-Key Weapon Case",
+      "zh-TW": "打開黑桃鑰匙武器箱"
+    },
+    "ROB_SPADECOST": {
+      "en": "Spade Keycard",
+      "zh-TW": "黑桃鑰匙卡"
+    },
+    "ROB_HUNK_CLUBCHEST_NAME": {
+      "en": "Club-Key Weapon Case",
+      "zh-TW": "梅花鑰匙武器箱"
+    },
+    "ROB_HUNK_CLUBCHEST_CONTEXT": {
+      "en": "Open Club-Key weapon case",
+      "zh-TW": "打開梅花鑰匙武器箱"
+    },
+    "ROB_CLUBCOST": {
+      "en": "Club Keycard",
+      "zh-TW": "梅花鑰匙卡"
+    },
+    "ROB_HUNK_DIAMONDCHEST_NAME": {
+      "en": "Diamond-Key Weapon Case",
+      "zh-TW": "方塊鑰匙武器箱"
+    },
+    "ROB_HUNK_DIAMONDCHEST_CONTEXT": {
+      "en": "Open Diamond-Key weapon case",
+      "zh-TW": "打開方塊鑰匙武器箱"
+    },
+    "ROB_DIAMONDCOST": {
+      "en": "Diamond Keycard",
+      "zh-TW": "方塊鑰匙卡"
+    },
+    "ROB_HUNK_STARCHEST_NAME": {
+      "en": "Star-Key Weapon Case",
+      "zh-TW": "星星鑰匙武器箱"
+    },
+    "ROB_HUNK_STARCHEST_CONTEXT": {
+      "en": "Open Star-Key weapon case",
+      "zh-TW": "打開星星鑰匙武器箱"
+    },
+    "ROB_STARCOST": {
+      "en": "Star Keycard",
+      "zh-TW": "星星鑰匙卡"
+    },
+    "ROB_HUNK_WRISTBANDCHEST_NAME": {
+      "en": "Special Weapon Case",
+      "zh-TW": "特殊武器箱"
+    },
+    "ROB_HUNK_WRISTBANDCHEST_CONTEXT": {
+      "en": "Open special weapon case",
+      "zh-TW": "打開特殊武器箱"
+    },
+    "ROB_WRISTBANDCOST": {
+      "en": "I.D. Wristband",
+      "zh-TW": "I.D.手環"
+    },
+    "ROB_HUNK_STARSBADGECHEST_NAME": {
+      "en": "S.T.A.R.S. Box",
+      "zh-TW": "S.T.A.R.S.裝備箱"
+    },
+    "ROB_HUNK_STARSBADGECHEST_CONTEXT": {
+      "en": "Open S.T.A.R.S. box",
+      "zh-TW": "打開S.T.A.R.S.裝備箱"
+    },
+    "ROB_STARSBADGECOST": {
+      "en": "S.T.A.R.S. Badge",
+      "zh-TW": "S.T.A.R.S.徽章"
+    },
+    "ROB_HUNK_TERMINAL_NAME": {
+      "en": "Umbrella Terminal",
+      "zh-TW": "保護傘終端"
+    },
+    "ROB_HUNK_TERMINAL_CONTEXT": {
+      "en": "Insert sample",
+      "zh-TW": "插入樣本"
+    },
+    "ROB_SAMPLECOST": {
+      "en": "Virus Sample",
+      "zh-TW": "病毒樣本"
+    },
+    "ROB_HUNK_CHEST_NAME": {
+      "en": "Weapon Case: ",
+      "zh-TW": "武器箱："
+    },
+    "ROB_HUNK_CHEST_CONTEXT": {
+      "en": "Open weapon case",
+      "zh-TW": "打開武器箱"
+    },
+    "ROB_HUNK_CASE_INSPECT_NAME": {
+      "en": "Weapon Case",
+      "zh-TW": "武器箱"
+    },
+    "ROB_HUNK_CASE_INSPECT_DESC": {
+      "en": "Case containing a new weapon for HUNK. Requires a specific keycard to open.",
+      "zh-TW": "裝有HUNK新武器的箱子。需要特定的鑰匙卡才能打開。"
+    },
+    "ROB_HUNK_SPECIALCASE_INSPECT_NAME": {
+      "en": "Special Weapon Case",
+      "zh-TW": "特殊武器箱"
+    },
+    "ROB_HUNK_SPECIALCASE_INSPECT_DESC": {
+      "en": "Special case containing a powerful new weapon for HUNK. Requires a certain level of security clearance to open.",
+      "zh-TW": "裝有HUNK強力新武器的特殊箱子。需要一定等級的安全權限才能打開。"
+    },
+    "ROB_HUNK_STARSBOX_INSPECT_NAME": {
+      "en": "S.T.A.R.S. Box",
+      "zh-TW": "S.T.A.R.S.裝備箱"
+    },
+    "ROB_HUNK_STARSBOX_INSPECT_DESC": {
+      "en": "Special box containing powerful gear for S.T.A.R.S. members. Requires a badge to open.",
+      "zh-TW": "裝有S.T.A.R.S.隊員專用強力裝備的特殊箱子。需要徽章才能打開。"
+    },
+    "ROB_HUNK_WEAPONBOX_INSPECT_NAME": {
+      "en": "Supply Case",
+      "zh-TW": "補給箱"
+    },
+    "ROB_HUNK_WEAPONBOX_INSPECT_DESC": {
+      "en": "A weapon case with useful stuff inside.",
+      "zh-TW": "裡面裝著實用物資的武器箱。"
+    },
+    "ROB_HUNK_LOOTBOX_INSPECT_NAME": {
+      "en": "Supply Case",
+      "zh-TW": "補給箱"
+    },
+    "ROB_HUNK_LOOTBOX_INSPECT_DESC": {
+      "en": "An Umbrella-branded case with useful stuff inside.",
+      "zh-TW": "印有保護傘公司標誌的箱子，裡面裝著實用物資。"
+    },
+    "ROB_HUNK_TERMINAL_INSPECT_NAME": {
+      "en": "Umbrella Terminal",
+      "zh-TW": "保護傘終端"
+    },
+    "ROB_HUNK_TERMINAL_INSPECT_DESC": {
+      "en": "Used to send virus samples to Umbrella Corporation. Turned in samples are rewarded appropriately.",
+      "zh-TW": "用來將病毒樣本傳送給保護傘公司。繳交樣本可獲得相應的獎勵。"
+    },
+    "ROB_HUNK_AMMO_NAME": {
+      "en": "Ammo",
+      "zh-TW": "彈藥"
+    },
+    "ROB_HUNK_AMMO_CONTEXT": {
+      "en": "Pick up ammo",
+      "zh-TW": "拾取彈藥"
+    },
+    "ROB_HUNK_GRENADE_NAME": {
+      "en": "Grenade",
+      "zh-TW": "手雷"
+    },
+    "ROB_HUNK_GRENADE_CONTEXT": {
+      "en": "Pick up grenade",
+      "zh-TW": "拾取手雷"
+    },
+    "ROB_HUNK_BADGE_NAME": {
+      "en": "Corpse",
+      "zh-TW": "屍體"
+    },
+    "ROB_HUNK_BADGE_CONTEXT": {
+      "en": "Inspect corpse",
+      "zh-TW": "查看屍體"
+    },
+    "ROB_HUNK_BADGE_CONTEXT2": {
+      "en": "Take badge?",
+      "zh-TW": "拿走徽章？"
+    },
+    "ROB_HUNK_C4_NAME": {
+      "en": "C4",
+      "zh-TW": "C4"
+    },
+    "ROB_HUNK_C4_CONTEXT": {
+      "en": "Activate detonator",
+      "zh-TW": "啟動引爆器"
+    },
+    "ROB_HUNK_KEYWORD_LOOTING": {
+      "en": "<style=cKeywordName>Looting</style><style=cSub>Enemies slain with this skill have a small chance to drop ammo.",
+      "zh-TW": "<style=cKeywordName>搜刮</style><style=cSub>以此技能擊敗的敵人有小機率掉落彈藥。"
+    },
+    "ROB_HUNK_KEYWORD_MANGLED": {
+      "en": "<style=cKeywordName>Mangled</style><style=cSub>Upon reaching 6 stacks of this debuff, enemies suffer an instant <style=cIsDamage>2200% damage</style>.",
+      "zh-TW": "<style=cKeywordName>撕裂</style><style=cSub>此減益效果疊加至6層時，敵人會立即受到<style=cIsDamage>2200%傷害</style>。"
+    },
+    "ROB_HUNK_KEYWORD_PERFECTDODGE": {
+      "en": "<style=cKeywordName>Perfect Dodge</style><style=cSub><style=cIsUtility>Refund cooldown</style> and become briefly invulnerable. Allows you to perform a <style=cIsDamage>Counterattack</style>.",
+      "zh-TW": "<style=cKeywordName>完美閃避</style><style=cSub><style=cIsUtility>返還冷卻時間</style>並短暫無敵。可讓你發動<style=cIsDamage>反擊</style>。"
+    },
+    "ROB_HUNK_KEYWORD_PERFECTPARRY": {
+      "en": "<style=cKeywordName>Perfect Parry</style><style=cSub>Deal <style=cIsDamage>800% damage</style> and become briefly invulnerable. Allows you to perform a <style=cIsDamage>Counterattack</style>.",
+      "zh-TW": "<style=cKeywordName>完美招架</style><style=cSub>造成<style=cIsDamage>800%傷害</style>並短暫無敵。可讓你發動<style=cIsDamage>反擊</style>。"
+    },
+    "ROB_HUNK_KEYWORD_PERFECTBASH": {
+      "en": "<style=cKeywordName>Perfect Bash</style><style=cSub><style=cIsUtility>Refund cooldown</style> and become briefly invulnerable. Allows you to perform a <style=cIsDamage>Counterattack</style>.",
+      "zh-TW": "<style=cKeywordName>完美肩撞</style><style=cSub><style=cIsUtility>返還冷卻時間</style>並短暫無敵。可讓你發動<style=cIsDamage>反擊</style>。"
+    },
+    "ROB_HUNK_KEYWORD_COUNTER": {
+      "en": "<style=cKeywordName>Counterattack</style><style=cSub>Pressing <style=cIsDamage>primary</style> lunges and performs a lethal <style=cIsDamage>counterattack</style> on a nearby enemy.",
+      "zh-TW": "<style=cKeywordName>反擊</style><style=cSub>按下<style=cIsDamage>主要技能</style>會向前突進，並對附近一名敵人發動致命的<style=cIsDamage>反擊</style>。"
+    },
+    "ROB_HUNK_KEYWORD_VIRUS": {
+      "en": "<style=cKeywordName>G-Virus</style><style=cSub>Once every stage, a random monster becomes <color=#C678B4>Infected</color>. It mutates, <style=cIsHealth>growing stronger over time</style>, and killing it drops a <color=#FFFF00>G-Virus Sample</color>.\n\n<style=cKeywordName>T-Virus</style><style=cSub>Once every stage, several monsters become <color=#0066FF>Infected</color>. This <style=cIsHealth>revives</style> them twice, and killing all of them nets you a <color=#FFFF00>T-Virus Sample</color>.\n\n<style=cKeywordName>C-Virus</style><style=cSub>Once every stage, several monsters become <color=#FF0033>Infected</color>. Upon death these monsters go on a <style=cIsDamage>frenzy</style> for <style=cIsUtility>5</style> seconds and then <style=cIsHealth>explode</style>, and killing all of them nets you a <color=#FFFF00>C-Virus Sample</color>.",
+      "zh-TW": "<style=cKeywordName>G病毒</style><style=cSub>每個關卡一次，隨機一隻怪物會遭到<color=#C678B4>感染</color>。它會發生突變，<style=cIsHealth>隨時間不斷變強</style>，擊敗它會掉落一份<color=#FFFF00>G病毒樣本</color>。\n\n<style=cKeywordName>T病毒</style><style=cSub>每個關卡一次，數隻怪物會遭到<color=#0066FF>感染</color>。這會使它們<style=cIsHealth>復活</style>兩次，將它們全數擊敗即可獲得一份<color=#FFFF00>T病毒樣本</color>。\n\n<style=cKeywordName>C病毒</style><style=cSub>每個關卡一次，數隻怪物會遭到<color=#FF0033>感染</color>。這些怪物死亡時會陷入<style=cIsDamage>狂熱狀態</style>，<style=cIsUtility>5</style>秒後<style=cIsHealth>爆炸</style>，將它們全數擊敗即可獲得一份<color=#FFFF00>C病毒樣本</color>。"
+    },
+    "ROB_HUNK_KEYWORD_GVIRUS": {
+      "en": "<style=cKeywordName>G-Virus</style><style=cSub>Once every stage, a random monster becomes <color=#C678B4>Infected</color>. It mutates, <style=cIsHealth>growing stronger over time</style>, and killing it drops a <color=#FFFF00>G-Virus Sample</color>.",
+      "zh-TW": "<style=cKeywordName>G病毒</style><style=cSub>每個關卡一次，隨機一隻怪物會遭到<color=#C678B4>感染</color>。它會發生突變，<style=cIsHealth>隨時間不斷變強</style>，擊敗它會掉落一份<color=#FFFF00>G病毒樣本</color>。"
+    },
+    "ROB_HUNK_KEYWORD_TVIRUS": {
+      "en": "<style=cKeywordName>T-Virus</style><style=cSub>Once every stage, several monsters become <color=#0066FF>Infected</color>. This <style=cIsHealth>revives</style> them twice, and killing all of them nets you a <color=#FFFF00>T-Virus Sample</color>.",
+      "zh-TW": "<style=cKeywordName>T病毒</style><style=cSub>每個關卡一次，數隻怪物會遭到<color=#0066FF>感染</color>。這會使它們<style=cIsHealth>復活</style>兩次，將它們全數擊敗即可獲得一份<color=#FFFF00>T病毒樣本</color>。"
+    },
+    "ROB_HUNK_KEYWORD_CVIRUS": {
+      "en": "<style=cKeywordName>C-Virus</style><style=cSub>Once every stage, several monsters become <color=#FF0033>Infected</color>. Upon death these monsters go on a <style=cIsDamage>frenzy</style> for <style=cIsUtility>5</style> seconds and then <style=cIsHealth>explode</style>, and killing all of them nets you a <color=#FFFF00>C-Virus Sample</color>.",
+      "zh-TW": "<style=cKeywordName>C病毒</style><style=cSub>每個關卡一次，數隻怪物會遭到<color=#FF0033>感染</color>。這些怪物死亡時會陷入<style=cIsDamage>狂熱狀態</style>，<style=cIsUtility>5</style>秒後<style=cIsHealth>爆炸</style>，將它們全數擊敗即可獲得一份<color=#FFFF00>C病毒樣本</color>。"
+    },
+    "ROB_HUNK_WEAPON_ROCKETLAUNCHER_NAME": {
+      "en": "Anti-tank Rocket",
+      "zh-TW": "反戰車火箭"
+    },
+    "ROB_HUNK_WEAPON_RPG_NAME": {
+      "en": "RPG",
+      "zh-TW": "RPG"
+    },
+    "ROB_HUNK_WEAPON_STICKYBOMB_NAME": {
+      "en": "Sticky Bomb",
+      "zh-TW": "黏彈"
+    },
+    "ROB_HUNK_WEAPON_FLAMETHROWER_NAME": {
+      "en": "Chemical Flamethrower",
+      "zh-TW": "化學火焰噴射器"
+    },
+    "ROB_HUNK_WEAPON_M19_NAME": {
+      "en": "M19",
+      "zh-TW": "M19"
+    },
+    "ROB_HUNK_WEAPON_MGL_NAME": {
+      "en": "MGL",
+      "zh-TW": "MGL"
+    },
+    "ROB_HUNK_WEAPON_PRL_NAME": {
+      "en": "PRL 412",
+      "zh-TW": "PRL 412"
+    },
+    "ROB_HUNK_WEAPON_STREET_SWEEPER_NAME": {
+      "en": "Street Sweeper",
+      "zh-TW": "Street Sweeper"
+    },
+    "ROB_HUNK_WEAPON_M3_NAME": {
+      "en": "M3",
+      "zh-TW": "M3"
+    },
+    "ROB_HUNK_WEAPON_FRAG_NAME": {
+      "en": "Frag Grenade",
+      "zh-TW": "破片手榴彈"
+    },
+    "ROB_HUNK_WEAPON_GRAPPLEGUN_NAME": {
+      "en": "Hookshot",
+      "zh-TW": "鉤索槍"
+    },
+    "ROB_HUNK_WEAPON_MUP_NAME": {
+      "en": "MUP",
+      "zh-TW": "MUP"
+    },
+    "ROB_HUNK_WEAPON_SMG_NAME": {
+      "en": "LE 5",
+      "zh-TW": "LE 5"
+    },
+    "ROB_HUNK_WEAPON_GRENADELAUNCHER_NAME": {
+      "en": "GM-79",
+      "zh-TW": "GM-79"
+    },
+    "ROB_HUNK_WEAPON_AR_NAME": {
+      "en": "CQBR",
+      "zh-TW": "CQBR"
+    },
+    "ROB_HUNK_WEAPON_ATM4_NAME": {
+      "en": "ATM-4",
+      "zh-TW": "ATM-4"
+    },
+    "ROB_HUNK_WEAPON_SHIELD_NAME": {
+      "en": "Riot Shield",
+      "zh-TW": "鎮暴盾牌"
+    },
+    "ROB_HUNK_WEAPON_MINIGUN_NAME": {
+      "en": "Minigun",
+      "zh-TW": "轉輪機槍"
+    },
+    "ROB_HUNK_WEAPON_SHOTGUN_NAME": {
+      "en": "W-870",
+      "zh-TW": "W-870"
+    },
+    "ROB_HUNK_WEAPON_BROOMHC_NAME": {
+      "en": "Broom HC",
+      "zh-TW": "Broom HC"
+    },
+    "ROB_HUNK_WEAPON_SCANNER_NAME": {
+      "en": "EMF Scanner",
+      "zh-TW": "EMF掃描器"
+    },
+    "ROB_HUNK_WEAPON_COLT_NAME": {
+      "en": "Colt Single Action Army",
+      "zh-TW": "Colt Single Action Army"
+    },
+    "ROB_HUNK_WEAPON_REVOLVER_NAME": {
+      "en": "Quickdraw Army",
+      "zh-TW": "Quickdraw Army"
+    },
+    "ROB_HUNK_WEAPON_SG09_NAME": {
+      "en": "SG-09 R",
+      "zh-TW": "SG-09 R"
+    },
+    "ROB_HUNK_WEAPON_SPARKSHOT_NAME": {
+      "en": "Spark Shot",
+      "zh-TW": "Spark Shot"
+    },
+    "ROB_HUNK_WEAPON_RAILGUN_NAME": {
+      "en": "Ferromagnetic Infantry-use Next Generation Railgun",
+      "zh-TW": "鐵磁式步兵用次世代磁軌炮"
+    },
+    "ROB_HUNK_WEAPON_NOWEAPON_NAME": {
+      "en": ""
+    },
+    "ROB_HUNK_WEAPON_BEHEMOTH_NAME": {
+      "en": "Brilliant Behemoth",
+      "zh-TW": "完美巨獸"
+    },
+    "ROB_HUNK_WEAPON_MAGNUM_NAME": {
+      "en": "Lightning Hawk",
+      "zh-TW": "Lightning Hawk"
+    },
+    "ROB_HUNK_WEAPON_ATM_NAME": {
+      "en": "ATM-4",
+      "zh-TW": "ATM-4"
+    },
+    "ROB_HUNK_WEAPON_ATM2_NAME": {
+      "en": "ATM-4 Prototype",
+      "zh-TW": "ATM-4原型"
+    },
+    "ROB_HUNK_WEAPON_BLUEROSE_NAME": {
+      "en": "Blue Rose",
+      "zh-TW": "湛藍玫瑰"
+    },
+    "ROB_HUNK_WEAPON_FLASHBANG_NAME": {
+      "en": "Flashbang",
+      "zh-TW": "閃光彈"
+    },
+    "ROB_HUNK_WEAPON_SMG2_NAME": {
+      "en": "LE 5",
+      "zh-TW": "LE 5"
+    },
+    "ROB_HUNK_WEAPON_BEHEMOTH_DESC": {
+      "en": ""
+    },
+    "ROB_HUNK_WEAPON_ATM2_DESC": {
+      "en": "A recoilless rocket launcher that fires 84mm projectiles. The piercing power of the rocket causes more damage than the explosion.",
+      "zh-TW": "發射84mm彈藥的無後座力火箭筒。火箭的穿透力造成的傷害比爆炸本身更高。"
+    },
+    "ROB_HUNK_WEAPON_FLAMETHROWER_DESC": {
+      "en": "An Umbrella-made weapon that uses pressurized gas to produce red-hot flames. Portable and refuellable, it's always ready for the long haul.",
+      "zh-TW": "保護傘公司製造的武器，利用加壓氣體噴出熾熱的火焰。便於攜帶又可補充燃料，隨時能應付持久戰。"
+    },
+    "ROB_HUNK_WEAPON_SHIELD_DESC": {
+      "en": "Blocks the bullshit fuck ass laser.",
+      "zh-TW": "用來擋那道該死的破雷射。"
+    },
+    "ROB_HUNK_WEAPON_FRAG_DESC": {
+      "en": ""
+    },
+    "ROB_HUNK_WEAPON_MUP_DESC": {
+      "en": "A well-balanced handgun.",
+      "zh-TW": "效能均衡的手槍。"
+    },
+    "ROB_HUNK_WEAPON_SPARKSHOT_DESC": {
+      "en": "A high-voltage gun for use on test animals. Charging takes a while and the needles' wires snap easily, but it also really packs a punch.",
+      "zh-TW": "用於實驗動物的高壓電擊槍。充電需要一段時間，針上的導線也容易斷，不過威力十足。"
+    },
+    "ROB_HUNK_WEAPON_FLASHBANG_DESC": {
+      "en": ""
+    },
+    "ROB_HUNK_WEAPON_AR_DESC": {
+      "en": "A rifle capable of fully automatic fire.",
+      "zh-TW": "可全自動射擊的步槍。"
+    },
+    "ROB_HUNK_WEAPON_ATM_DESC": {
+      "en": "An unlimited recoilless rocket launcher. Lightweight and easy to handle, this weapon has a lot of power.",
+      "zh-TW": "彈藥無限的無後座力火箭筒。輕巧又容易操控，而且威力強大。"
+    },
+    "ROB_HUNK_WEAPON_PRL_DESC": {
+      "en": ""
+    },
+    "ROB_HUNK_WEAPON_STREET_SWEEPER_DESC": {
+      "en": "A fully automatic shotgun.",
+      "zh-TW": "全自動霰彈槍。"
+    },
+    "ROB_HUNK_WEAPON_GRAPPLEGUN_DESC": {
+      "en": "Shoots a grapple hook attached to a zip-line that allows you to propel yourself to any desired location.",
+      "zh-TW": "射出連著滑索的鉤爪，讓你把自己拉往任何想去的位置。"
+    },
+    "ROB_HUNK_WEAPON_M3_DESC": {
+      "en": "A semi-automatic shotgun.",
+      "zh-TW": "半自動霰彈槍。"
+    },
+    "ROB_HUNK_WEAPON_MGL_DESC": {
+      "en": "A semi-auto grenade launcher prototype capable of firing explosive rounds.",
+      "zh-TW": "半自動榴彈發射器的原型，可發射爆裂彈。"
+    },
+    "ROB_HUNK_WEAPON_RPG_DESC": {
+      "en": "A rocket launcher with devastating power.",
+      "zh-TW": "擁有毀滅性威力的火箭筒。"
+    },
+    "ROB_HUNK_WEAPON_SHOTGUN_DESC": {
+      "en": "A 12-gauge pump-action shotgun.",
+      "zh-TW": "12號口徑的泵動式霰彈槍。"
+    },
+    "ROB_HUNK_WEAPON_GRENADELAUNCHER_DESC": {
+      "en": "A single-round break-action grenade launcher capable of firing flame rounds.",
+      "zh-TW": "單發折開式榴彈發射器，可發射燃燒彈。"
+    },
+    "ROB_HUNK_WEAPON_REVOLVER_DESC": {
+      "en": "An old-fashioned revolver that uses magnum rounds.",
+      "zh-TW": "使用麥格農子彈的老式左輪手槍。"
+    },
+    "ROB_HUNK_WEAPON_STICKYBOMB_DESC": {
+      "en": ""
+    },
+    "ROB_HUNK_WEAPON_RAILGUN_DESC": {
+      "en": "A portable rail cannon developed by Cornell Garner and the U.S. military in order to eliminate bioweapons in case of an outbreak.",
+      "zh-TW": "由Cornell Garner與美軍共同開發的可攜式磁軌炮，用來在疫情爆發時消滅生化兵器。"
+    },
+    "ROB_HUNK_WEAPON_BROOMHC_DESC": {
+      "en": "A compact, high-performance handgun.",
+      "zh-TW": "小巧的高效能手槍。"
+    },
+    "ROB_HUNK_WEAPON_BLUEROSE_DESC": {
+      "en": "A six-chamber revolver that fires two shots at a time? What kinda whackjob thinks up something like that?",
+      "zh-TW": "一次發射兩發子彈的六發左輪？到底是哪個瘋子想出這種東西？"
+    },
+    "ROB_HUNK_WEAPON_ROCKETLAUNCHER_DESC": {
+      "en": "A rocket launcher with devastating power.",
+      "zh-TW": "擁有毀滅性威力的火箭筒。"
+    },
+    "ROB_HUNK_WEAPON_MAGNUM_DESC": {
+      "en": "An easy-to-handle magnum with high power.",
+      "zh-TW": "容易操控的高威力麥格農手槍。"
+    },
+    "ROB_HUNK_WEAPON_MINIGUN_DESC": {
+      "en": "A six-barrel motorized minigun that fires 7.62mm NATO rounds. Incredibly fast rate of fire and deals a lot of damage.",
+      "zh-TW": "六管電動轉輪機槍，發射7.62mm北約彈。射速快得驚人，傷害也非常高。"
+    },
+    "ROB_HUNK_WEAPON_SG09_DESC": {
+      "en": "An easy-to-use handgun with a high ammo capacity.",
+      "zh-TW": "容易上手、載彈量高的手槍。"
+    },
+    "ROB_HUNK_WEAPON_COLT_DESC": {
+      "en": "The greatest handgun ever made.",
+      "zh-TW": "有史以來最棒的手槍。"
+    },
+    "ROB_HUNK_WEAPON_SMG_DESC": {
+      "en": "A high-performance submachine gun.",
+      "zh-TW": "高效能衝鋒槍。"
+    },
+    "ROB_HUNK_WEAPON_M19_DESC": {
+      "en": "A powerful handgun with a built-in laser sight.",
+      "zh-TW": "內建雷射瞄準器的強力手槍。"
+    },
+    "ROB_HUNK_WEAPON_NOWEAPON_DESC": {
+      "en": ""
+    },
+    "ROB_HUNK_WEAPON_SCANNER_DESC": {
+      "en": "A device capable of locating certain electronics.",
+      "zh-TW": "能夠定位特定電子設備的裝置。"
+    },
+    "ROB_HUNK_WEAPON_ATM4_DESC": {
+      "en": "A recoilless rocket launcher that fires 84mm projectiles. The piercing power of the rocket causes more damage than the explosion.",
+      "zh-TW": "發射84mm彈藥的無後座力火箭筒。火箭的穿透力造成的傷害比爆炸本身更高。"
+    },
+    "ROB_HUNK_WEAPON_SMG2_DESC": {
+      "en": "A high-performance submachine gun.",
+      "zh-TW": "高效能衝鋒槍。"
+    },
+    "Solid <style=cIsDamage>all-rounder</style> with a <style=cIsUtility>good ammo economy</style>.": {
+      "en": "Solid <style=cIsDamage>all-rounder</style> with a <style=cIsUtility>good ammo economy</style>.",
+      "zh-TW": "可靠的<style=cIsDamage>全能型</style>武器，<style=cIsUtility>彈藥消耗划算</style>。"
+    },
+    "<style=cIsDamage>Heavy hits</style>, but <style=cIsHealth>poor ammo economy</style>. <style=cIsUtility>Comes with a built-in Laser Sight.</style>": {
+      "en": "<style=cIsDamage>Heavy hits</style>, but <style=cIsHealth>poor ammo economy</style>. <style=cIsUtility>Comes with a built-in Laser Sight.</style>",
+      "zh-TW": "<style=cIsDamage>威力強大</style>，但<style=cIsHealth>彈藥消耗不划算</style>。<style=cIsUtility>內建雷射瞄準器。</style>"
+    },
+    "<style=cIsDamage>Medium damage</style> with an average <style=cIsUtility>ammo economy</style>.": {
+      "en": "<style=cIsDamage>Medium damage</style> with an average <style=cIsUtility>ammo economy</style>.",
+      "zh-TW": "<style=cIsDamage>傷害中等</style>，<style=cIsUtility>彈藥消耗</style>普通。"
+    },
+    "<style=cIsDamage>Unlimited ammo</style>, but <style=cIsHealth>pitiful damage</style>.": {
+      "en": "<style=cIsDamage>Unlimited ammo</style>, but <style=cIsHealth>pitiful damage</style>.",
+      "zh-TW": "<style=cIsDamage>彈藥無限</style>，但<style=cIsHealth>傷害少得可憐</style>。"
+    },
+    "Definitely not a <style=cIsDamage>Desert Eagle</style>.": {
+      "en": "Definitely not a <style=cIsDamage>Desert Eagle</style>.",
+      "zh-TW": "絕對不是<style=cIsDamage>沙漠之鷹</style>。"
+    },
+    "Mag dump legend.": {
+      "en": "Mag dump legend.",
+      "zh-TW": "清空彈匣的傳奇。"
+    },
+    "Ol' reliable.": {
+      "en": "Ol' reliable.",
+      "zh-TW": "可靠的老夥伴。"
+    },
+    "That bastard called me <style=cIsHealth>dead weight</style>": {
+      "en": "That bastard called me <style=cIsHealth>dead weight</style>",
+      "zh-TW": "那個混帳說我是<style=cIsHealth>累贅</style>"
+    },
+    "Basically <style=cIsHealth>cheating</style>, but whatever floats your boat, buddy.": {
+      "en": "Basically <style=cIsHealth>cheating</style>, but whatever floats your boat, buddy.",
+      "zh-TW": "這基本上算<style=cIsHealth>作弊</style>了，不過你高興就好，老兄。"
+    },
+    "Transceiver (Experimental)": {
+      "en": "Transceiver (Experimental)",
+      "zh-TW": "無線電收發器（實驗性）"
+    },
+    "No Perk": {
+      "en": "No Perk",
+      "zh-TW": "無專長"
+    },
+    "Play without a perk.": {
+      "en": "Play without a perk.",
+      "zh-TW": "不使用任何專長。"
+    },
+    "Marathon Runner": {
+      "en": "Marathon Runner",
+      "zh-TW": "馬拉松跑者"
+    },
+    "Sprint with <style=cIsUtility>incredible speed</style> after <style=cIsDamage>1 second</style>.": {
+      "en": "Sprint with <style=cIsUtility>incredible speed</style> after <style=cIsDamage>1 second</style>.",
+      "zh-TW": "持續奔跑<style=cIsDamage>1秒</style>後，以<style=cIsUtility>驚人的速度</style>奔跑。"
+    },
+    "Peak Physique": {
+      "en": "Peak Physique",
+      "zh-TW": "巔峰體魄"
+    },
+    "Counterattacks '<style=cIsDamage>Critically Strike</style>' and restore <style=cIsHealing>5% max health</style>.": {
+      "en": "Counterattacks '<style=cIsDamage>Critically Strike</style>' and restore <style=cIsHealing>5% max health</style>.",
+      "zh-TW": "反擊必定<style=cIsDamage>暴擊</style>，並恢復<style=cIsHealing>5%最大生命值</style>。"
+    },
+    "For Glory": {
+      "en": "For Glory",
+      "zh-TW": "為了榮耀"
+    },
+    "Counterattacks restore 20% of your max health.": {
+      "en": "Counterattacks restore 20% of your max health.",
+      "zh-TW": "反擊可恢復20%最大生命值。"
+    },
+    "Evasive Expert": {
+      "en": "Evasive Expert",
+      "zh-TW": "閃避專家"
+    },
+    "Boost <style=cIsUtility>Perfect Dodge</style> window and range by <style=cIsDamage>50%</style> and <style=cIsHealing>invincibility</style> duration by <style=cIsDamage>100%</style>.": {
+      "en": "Boost <style=cIsUtility>Perfect Dodge</style> window and range by <style=cIsDamage>50%</style> and <style=cIsHealing>invincibility</style> duration by <style=cIsDamage>100%</style>.",
+      "zh-TW": "<style=cIsUtility>完美閃避</style>的判定時間與距離提高<style=cIsDamage>50%</style>，<style=cIsHealing>無敵</style>持續時間提高<style=cIsDamage>100%</style>。"
+    },
+    "Seasoned Bombardier": {
+      "en": "Seasoned Bombardier",
+      "zh-TW": "老練的爆破手"
+    },
+    "Boost damage and radius of all explosions by 50%.": {
+      "en": "Boost damage and radius of all explosions by 50%.",
+      "zh-TW": "所有爆炸的傷害與半徑提高50%。"
+    },
+    "Siege Ready": {
+      "en": "Siege Ready",
+      "zh-TW": "攻堅準備"
+    },
+    "Boost <style=cIsUtility>reload speed</style> by <style=cIsDamage>75%</style> and <style=cIsUtility>weapon swap</style> speed by <style=cIsDamage>50%</style>.": {
+      "en": "Boost <style=cIsUtility>reload speed</style> by <style=cIsDamage>75%</style> and <style=cIsUtility>weapon swap</style> speed by <style=cIsDamage>50%</style>.",
+      "zh-TW": "<style=cIsUtility>上彈速度</style>提高<style=cIsDamage>75%</style>，<style=cIsUtility>切換武器</style>的速度提高<style=cIsDamage>50%</style>。"
+    },
+    "Extreme Focus": {
+      "en": "Extreme Focus",
+      "zh-TW": "極度專注"
+    },
+    "All <style=cIsDamage>ammo</style> picked up is for your <style=cIsUtility>currently equipped gun</style>.": {
+      "en": "All <style=cIsDamage>ammo</style> picked up is for your <style=cIsUtility>currently equipped gun</style>.",
+      "zh-TW": "拾取的所有<style=cIsDamage>彈藥</style>都會是<style=cIsUtility>目前裝備的槍</style>所用的彈藥。"
+    },
+    "Supply Case": {
+      "en": "Supply Case",
+      "zh-TW": "補給箱"
+    },
+    "Open supply case": {
+      "en": "Open supply case",
+      "zh-TW": "打開補給箱"
+    },
+    "Supply Backpack": {
+      "en": "Supply Backpack",
+      "zh-TW": "補給背包"
+    },
+    "Open supply pack": {
+      "en": "Open supply pack",
+      "zh-TW": "打開補給背包"
+    },
+    "S.T.A.R.S. Box": {
+      "en": "S.T.A.R.S. Box",
+      "zh-TW": "S.T.A.R.S.裝備箱"
+    },
+    "Open S.T.A.R.S. box": {
+      "en": "Open S.T.A.R.S. box",
+      "zh-TW": "打開S.T.A.R.S.裝備箱"
+    },
+    "Passive": {
+      "en": "Passive",
+      "zh-TW": "被動"
+    },
+    "Sidearm": {
+      "en": "Sidearm",
+      "zh-TW": "副武器"
+    },
+    "Tool": {
+      "en": "Tool",
+      "zh-TW": "工具"
+    },
+    "Perk": {
+      "en": "Perk",
+      "zh-TW": "專長"
+    },
+    "Knife": {
+      "en": "Knife",
+      "zh-TW": "小刀"
+    },
+    "Biomass": {
+      "en": "Biomass",
+      "zh-TW": "生物質"
+    },
+    "Eradicate the <color=#FF0033>C-Virus</color>": {
+      "en": "Eradicate the <color=#FF0033>C-Virus</color>",
+      "zh-TW": "根除<color=#FF0033>C病毒</color>"
+    },
+    "Expel the <color=#C678B4>Plagas Virus</color>": {
+      "en": "Expel the <color=#C678B4>Plagas Virus</color>",
+      "zh-TW": "驅除<color=#C678B4>普拉卡病毒</color>"
+    },
+    "Stop the <color=#0066FF>T-Virus</color> outbreak": {
+      "en": "Stop the <color=#0066FF>T-Virus</color> outbreak",
+      "zh-TW": "阻止<color=#0066FF>T病毒</color>爆發"
+    },
+    "Suppress the <color=#140E0E>Uroboros</color> carrier": {
+      "en": "Suppress the <color=#140E0E>Uroboros</color> carrier",
+      "zh-TW": "鎮壓<color=#140E0E>銜尾蛇</color>帶原者"
+    },
+    "Neutralize the <color=#C678B4>G-Virus</color>": {
+      "en": "Neutralize the <color=#C678B4>G-Virus</color>",
+      "zh-TW": "消滅<color=#C678B4>G病毒</color>"
+    },
+    "Take the <color=#FF0033>C-Virus Sample</color> to the extraction point": {
+      "en": "Take the <color=#FF0033>C-Virus Sample</color> to the extraction point",
+      "zh-TW": "將<color=#FF0033>C病毒樣本</color>帶到撤離點"
+    },
+    "Take the <color=#C678B4>Plagas Sample</color> to the extraction point": {
+      "en": "Take the <color=#C678B4>Plagas Sample</color> to the extraction point",
+      "zh-TW": "將<color=#C678B4>普拉卡樣本</color>帶到撤離點"
+    },
+    "Take the <color=#C678B4>G-Virus Sample</color> to the extraction point": {
+      "en": "Take the <color=#C678B4>G-Virus Sample</color> to the extraction point",
+      "zh-TW": "將<color=#C678B4>G病毒樣本</color>帶到撤離點"
+    },
+    "Take the <color=#0066FF>T-Virus Sample</color> to the extraction point": {
+      "en": "Take the <color=#0066FF>T-Virus Sample</color> to the extraction point",
+      "zh-TW": "將<color=#0066FF>T病毒樣本</color>帶到撤離點"
+    },
+    "Take the <color=#140E0E>Uroboros Sample</color> to the extraction point": {
+      "en": "Take the <color=#140E0E>Uroboros Sample</color> to the extraction point",
+      "zh-TW": "將<color=#140E0E>銜尾蛇樣本</color>帶到撤離點"
+    },
+    "Strike Team": {
+      "en": "Strike Team",
+      "zh-TW": "突擊小隊"
+    },
+    "Critical Mass Boost": {
+      "en": "Critical Mass Boost",
+      "zh-TW": "臨界質量強化"
+    },
+    "Greatly boost the healing rate of Critical Mass.": {
+      "en": "Greatly boost the healing rate of Critical Mass.",
+      "zh-TW": "大幅提高臨界質量的治療速度。"
+    },
+    "Long and High Jump": {
+      "en": "Long and High Jump",
+      "zh-TW": "遠跳與高跳"
+    },
+    "Release a charged jump with no movement input to perform a High Jump. Moving during the squat performs a Long Jump instead.": {
+      "en": "Release a charged jump with no movement input to perform a High Jump. Moving during the squat performs a Long Jump instead.",
+      "zh-TW": "放開蓄力跳躍時若沒有輸入移動，會施展高跳。蹲伏期間移動則改為施展遠跳。"
+    },
+    "Wall Latch": {
+      "en": "Wall Latch",
+      "zh-TW": "攀附牆面"
+    },
+    "Latch onto walls by moving into them.": {
+      "en": "Latch onto walls by moving into them.",
+      "zh-TW": "朝牆面移動即可攀附在牆上。"
+    },
+    "Air Dash Double": {
+      "en": "Air Dash Double",
+      "zh-TW": "二段空中衝刺"
+    },
+    "Gain a second Air Dash.": {
+      "en": "Gain a second Air Dash.",
+      "zh-TW": "獲得第二次空中衝刺。"
+    },
+    "Tendril Barrage Devastator": {
+      "en": "Tendril Barrage Devastator",
+      "zh-TW": "毀滅觸鬚彈幕"
+    },
+    "Use Special with full Biomass to consume it all for a devastating barrage of tendrils.": {
+      "en": "Use Special with full Biomass to consume it all for a devastating barrage of tendrils.",
+      "zh-TW": "在生物質全滿時使用特殊技能，會耗盡所有生物質，釋放毀滅性的觸鬚彈幕。"
+    },
+    "Tentacle Grab": {
+      "en": "Tentacle Grab",
+      "zh-TW": "觸手抓取"
+    },
+    "Double tap Grab to instead perform a ranged grab with your Tentacle.": {
+      "en": "Double tap Grab to instead perform a ranged grab with your Tentacle.",
+      "zh-TW": "連按兩下抓取，會改用觸手進行遠距離抓取。"
+    },
+    "Adrenaline Surge": {
+      "en": "Adrenaline Surge",
+      "zh-TW": "腎上腺素激增"
+    },
+    "When Biomass is full, lethal damage will be survived.": {
+      "en": "When Biomass is full, lethal damage will be survived.",
+      "zh-TW": "生物質全滿時，可以撐過致命傷害。"
+    },
+    "Consume Boost": {
+      "en": "Consume Boost",
+      "zh-TW": "吞噬強化"
+    },
+    "All enemies can now be consumed at full health.": {
+      "en": "All enemies can now be consumed at full health.",
+      "zh-TW": "現在可以吞噬生命值全滿的任何敵人。"
+    }
+  }
+}

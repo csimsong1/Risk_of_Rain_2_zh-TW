@@ -1,0 +1,187 @@
+{
+  "mod": "tsuyoikenko-Seamstress",
+  "version": "1.7.3",
+  "loader": "r2api",
+  "notes": [
+    "技能說明裡的數字（傷害%、冷卻秒數等）來自模組設定的預設值；模組的英文會跟著設定變，譯文是固定的，改過設定請一併修改。",
+    "鍵是英文句子的條目：模組直接把那段英文當語言 token 使用，沒有另外註冊，所以用英文原文當鍵來翻譯；原文改一個字就會對不上。關鍵字說明（無情、粉碎、共生等）屬於這一類。"
+  ],
+  "strings": {
+    "KENKO_SEAMSTRESS_NAME": {
+      "en": "Seamstress",
+      "zh-TW": "裁縫師"
+    },
+    "KENKO_SEAMSTRESS_DESCRIPTION": {
+      "en": "The Seamstress is a mobile survivor that uses her health for damage. She gains less base damage per level so stack health items to take advantage her health to damage conversion.<color=#CCD3E0>\r\n\r\n< ! > Needles are a great source of extra damage. Use them wisely for damage and mobility.\r\n\r\n< ! > Make sure to use Clip with as many needles as you can. It can rapidly apply bleed during Insatiable.\r\n\r\n< ! > Heal as much as you can during Insatiable. The barrier it provides could be life or death.\r\n\r\n< ! > Brutalize is a great way to boost your damage but be wary of your health.\r\n\r\n< ! > Use and retrieve your Symbiotic scissors to gain needles outside of Insatiable.\r\n\r\n",
+      "zh-TW": "裁縫師是一名機動性高的倖存者，以自己的生命值換取傷害。她每級獲得的基礎傷害較少，所以請多堆疊生命值物品，善用她把生命值轉換為傷害的能力。<color=#CCD3E0>\r\n\r\n< ! > 針是絕佳的額外傷害來源。善加運用，可以兼顧傷害與機動性。\r\n\r\n< ! > 使用剪斷時，身上的針越多越好。在不知饜足期間，它能快速施加流血。\r\n\r\n< ! > 在不知饜足期間盡可能多恢復生命值。它提供的屏障可能就是生死關鍵。\r\n\r\n< ! > 殘虐是提高傷害的好方法，但要留意自己的生命值。\r\n\r\n< ! > 丟出並收回共生剪刀，就能在不知饜足以外的時間獲得針。\r\n\r\n"
+    },
+    "KENKO_SEAMSTRESS_SUBTITLE": {
+      "en": "The Tattered Maiden",
+      "zh-TW": "殘破的少女"
+    },
+    "KENKO_SEAMSTRESS_LORE": {
+      "en": "Pale skin and fatigue. Signs of a disease spreading within children of the high court. How unfortunate they are.\r\n\r\nA sickly infant, frail and weak, cries as her parents do too. A tragic fate for these aging nobles as she is their only heir. With a shaky future, her <style=cIsHealth>heart</style> still beats.\r\n\r\nCurable with an artificial heart but a dangerous procedure on the young. Only few are old enough to be eligible.\r\n\r\nA bedridden teen, her health quickly fading. She holds on for dear life. She needs to survive one more week. Hanging on by a thread, her <color=#292525>heart</color> still beats.\r\n\r\nAlthough cured, a patients life remains the same as before. With frequent maintenance and risks of malfunctioning, venturing far from home could spell death. Many take up slower hobbies like baking and sewing but not everyone is content.\r\n\r\nA restless seamstress, with synthetic vitality, despises the walls she resides in. She wants nothing to do with her nobility. It's monotonous. As darkness settles, she stows away in a civilian ship. Filled with adrenaline her <style=cIsUtility>heart</style> still beats. \r\n\r\nMany who run away are shown the reality. The galaxy outside of the high court isn't the wonderland they read as a child. It's more akin to a tragic fairytale. \r\n\r\nA corrupted creature, on borrowed time. How did it go so wrong? The ship she chose -swallowed by a rift made by imps who desired the same escape as her. Suddenly, a wave of blood blended with the crimson sky, every human and imp alike was cut clean. As her vision began to fade, a figure lept away as another one quietly approached. A whisper, a target, a new life. Her <color=#9B3737>heart</color> still beats.",
+      "zh-TW": "蒼白的皮膚與倦怠。這是一種在宮廷孩童之間蔓延的疾病徵兆。他們是多麼不幸。\r\n\r\n一名體弱多病的嬰兒，虛弱無力地哭泣著，她的雙親也跟著落淚。對這對年邁的貴族而言，這是悲慘的命運，因為她是他們唯一的繼承人。儘管前途未卜，她的<style=cIsHealth>心臟</style>依然跳動著。\r\n\r\n這種病可以靠人工心臟治癒，但對年幼者來說是危險的手術。只有少數人年紀夠大，符合資格。\r\n\r\n一名臥病在床的少女，健康迅速衰退。她拼命撐著。她必須再多活一個星期。命懸一線，她的<color=#292525>心臟</color>依然跳動著。\r\n\r\n即使痊癒了，病人的生活仍和從前一樣。需要頻繁維護，又有故障的風險，離家太遠就可能喪命。許多人培養了烘焙、縫紉這類步調緩慢的嗜好，但並非每個人都甘於如此。\r\n\r\n一名坐立難安的裁縫師，擁有人造的生命力，厭惡著困住自己的四面牆。她不想和自己的貴族身分有任何瓜葛。那太單調了。夜幕低垂時，她偷偷躲上一艘民用船。腎上腺素奔流，她的<style=cIsUtility>心臟</style>依然跳動著。\r\n\r\n許多逃家的人都被迫看清了現實。宮廷之外的銀河，並不是他們兒時讀到的仙境。那更像是一則悲慘的童話。\r\n\r\n一個被腐化的生物，苟延殘喘。事情怎麼會變成這樣？她選的那艘船——被小惡魔製造的裂縫吞沒，而那些小惡魔和她一樣渴望逃離。突然間，一道血浪與緋紅的天空融為一體，所有人類與小惡魔都被俐落地切斷。視線開始模糊時，一個身影躍離，另一個身影則悄悄靠近。一聲低語、一個目標、一段新的人生。她的<color=#9B3737>心臟</color>依然跳動著。"
+    },
+    "KENKO_SEAMSTRESS_OUTRO_FLAVOR": {
+      "en": "..and so she left, yearning to stitch more than just fabric.",
+      "zh-TW": "……於是她走了，渴望縫補的不再只是布料。"
+    },
+    "KENKO_SEAMSTRESS_OUTRO_FAILURE": {
+      "en": "..and so she vanished, with seams unsewn.",
+      "zh-TW": "……於是她就這樣消逝了，留下未縫完的針腳。"
+    },
+    "KENKO_SEAMSTRESS_MASTERY_SKIN_NAME": {
+      "en": "Alternate",
+      "zh-TW": "替代"
+    },
+    "KENKO_SEAMSTRESS_MASTERY_SKIN_NAME2": {
+      "en": "Alternate2",
+      "zh-TW": "替代2"
+    },
+    "KENKO_SEAMSTRESS_MASTERY_SKIN_NAME3": {
+      "en": "Raven",
+      "zh-TW": "渡鴉"
+    },
+    "KENKO_SEAMSTRESS_MASTERY_SKIN_NAME4": {
+      "en": "Raven Alternate",
+      "zh-TW": "渡鴉替代"
+    },
+    "KENKO_SEAMSTRESS_PASSIVE_NAME": {
+      "en": "It Hungers",
+      "zh-TW": "它渴望著"
+    },
+    "KENKO_SEAMSTRESS_PASSIVE_DESCRIPTION": {
+      "en": "Gain <style=cIsDamage>base damage</style> and <style=cIsHealing>healing</style> based on <style=cIsHealth>missing health</style>.",
+      "zh-TW": "依<style=cIsHealth>已損失的生命值</style>獲得<style=cIsDamage>基礎傷害</style>與<style=cIsHealing>治療</style>。"
+    },
+    "KENKO_SEAMSTRESS_NEEDLE_NAME": {
+      "en": "Imp Touched Heart",
+      "zh-TW": "小惡魔觸碰之心"
+    },
+    "KENKO_SEAMSTRESS_PRIMARY_TRIM_NAME": {
+      "en": "Trim",
+      "zh-TW": "修剪"
+    },
+    "KENKO_SEAMSTRESS_PRIMARY_FLURRY_NAME": {
+      "en": "Flurry",
+      "zh-TW": "亂舞"
+    },
+    "KENKO_SEAMSTRESS_SECONDARY_CLIP_NAME": {
+      "en": "Clip",
+      "zh-TW": "剪斷"
+    },
+    "KENKO_SEAMSTRESS_SECONDARY_PLANMAN_NAME": {
+      "en": "Planar Manipulation",
+      "zh-TW": "位面操控"
+    },
+    "KENKO_SEAMSTRESS_UTILITY_HEARTDASH_NAME": {
+      "en": "Brutalize",
+      "zh-TW": "殘虐"
+    },
+    "KENKO_SEAMSTRESS_UTILITY_PARRY_NAME": {
+      "en": "Retaliate",
+      "zh-TW": "反擊"
+    },
+    "KENKO_SEAMSTRESS_SPECIAL_FIRE_NAME": {
+      "en": "Skewer",
+      "zh-TW": "穿刺"
+    },
+    "KENKO_SEAMSTRESS_SPECIAL_SCEPTER_NAME": {
+      "en": "Rampage",
+      "zh-TW": "暴走"
+    },
+    "ACHIEVEMENT_KENKO_SEAMSTRESS_MASTERYACHIEVEMENT_NAME": {
+      "en": "Seamstress: Mastery",
+      "zh-TW": "裁縫師：精通"
+    },
+    "ACHIEVEMENT_KENKO_SEAMSTRESS_MASTERYACHIEVEMENT_DESCRIPTION": {
+      "en": "As Seamstress, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為裁縫師，在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_KENKO_SEAMSTRESS_TYPHOONMASTERYACHIEVEMENT_NAME": {
+      "en": "Raven: Unlocked",
+      "zh-TW": "渡鴉：已解鎖"
+    },
+    "ACHIEVEMENT_KENKO_SEAMSTRESS_TYPHOONMASTERYACHIEVEMENT_DESCRIPTION": {
+      "en": "As Seamstress, beat the game or obliterate on Eclipse or higher.",
+      "zh-TW": "作為裁縫師，在日食或更高難度下通關遊戲或抹除自己。"
+    },
+    "KENKO_SEAMSTRESS_KEYWORD_PLANE_BOUND": {
+      "en": "<style=cKeywordName>Plane Bound</style><style=cSub>Gain <style=cIsDamage>0.05 base damage</style> per <style=cIsHealth>1 missing health</style>. Heal up to <style=cIsHealing>10%</style> of your <style=cIsHealth>missing health</style> on hit.</style>",
+      "zh-TW": "<style=cKeywordName>位面束縛</style><style=cSub>每損失<style=cIsHealth>1點生命值</style>，獲得<style=cIsDamage>0.05基礎傷害</style>。命中時最多恢復<style=cIsHealth>已損失生命值</style>的<style=cIsHealing>10%</style>。</style>"
+    },
+    "KENKO_SEAMSTRESS_NEEDLE_DESCRIPTION": {
+      "en": "Consume <color=#9B3737>Needles</color> by jumping in mid-air letting you <color=#9B3737>Blink</color> and fire out a projectile dealing <style=cIsDamage>40% damage</style>.",
+      "zh-TW": "在空中跳躍會消耗<color=#9B3737>針</color>，讓你<color=#9B3737>閃現</color>並射出一枚投射物，造成<style=cIsDamage>40%傷害</style>。"
+    },
+    "KENKO_SEAMSTRESS_PRIMARY_TRIM_DESCRIPTION": {
+      "en": "<color=#9B3737>Ruthless</color>. Slash in front for <style=cIsDamage>120% + 200% damage</style>. Every 3rd hit deals <style=cIsDamage>150% + 200% damage</style>.",
+      "zh-TW": "<color=#9B3737>無情</color>。向前方揮砍，造成<style=cIsDamage>120% + 200%傷害</style>。每第3次命中造成<style=cIsDamage>150% + 200%傷害</style>。"
+    },
+    "KENKO_SEAMSTRESS_PRIMARY_FLURRY_DESCRIPTION": {
+      "en": "<color=#9B3737>Ruthless</color>. Slash in front for <style=cIsDamage>140% + 200% damage</style>.",
+      "zh-TW": "<color=#9B3737>無情</color>。向前方揮砍，造成<style=cIsDamage>140% + 200%傷害</style>。"
+    },
+    "KENKO_SEAMSTRESS_SECONDARY_CLIP_DESCRIPTION": {
+      "en": "Snip for <style=cIsDamage>2x70% damage</style>. Snip an additional time per <color=#9B3737>Needle</color>.",
+      "zh-TW": "剪擊造成<style=cIsDamage>2x70%傷害</style>。每有一根<color=#9B3737>針</color>，便額外剪擊一次。"
+    },
+    "KENKO_SEAMSTRESS_SECONDARY_PLANMAN_DESCRIPTION": {
+      "en": "<color=#9B3737>Crush</color>. Hold to grab enemies. Slamming the enemy deals <style=cIsDamage>200 - 1200% damage</style> in an area based on <color=#9B3737>Needle</color> count. <style=cIsUtility>6 second cooldown</style> on the same target.",
+      "zh-TW": "<color=#9B3737>粉碎</color>。按住以抓取敵人。將敵人砸下時，依<color=#9B3737>針</color>的數量造成<style=cIsDamage>200 - 1200%範圍傷害</style>。對同一目標有<style=cIsUtility>6秒冷卻時間</style>。"
+    },
+    "KENKO_SEAMSTRESS_UTILITY_HEARTDASH_DESCRIPTION": {
+      "en": "Dash for <style=cIsDamage>250% damage</style> and become <color=#9B3737>Insatiable</color>, draining <style=cIsHealth>5% of health and shield</style> every 0.2s. Recast to convert <style=cIsHealing>barrier</style> into <style=cIsHealth>health</style> and explode for <style=cIsDamage>300%-1200% damage</style>, scaling with barrier converted.",
+      "zh-TW": "衝刺造成<style=cIsDamage>250%傷害</style>，並進入<color=#9B3737>不知饜足</color>狀態，每0.2秒流失<style=cIsHealth>5%的生命值與護盾</style>。再次施放可將<style=cIsHealing>屏障</style>轉換為<style=cIsHealth>生命值</style>並引發爆炸，造成<style=cIsDamage>300%-1200%傷害</style>，傷害隨轉換的屏障量提高。"
+    },
+    "KENKO_SEAMSTRESS_UTILITY_PARRY_DESCRIPTION": {
+      "en": "Prepare a <style=cIsUtility>parry</style>. When hit, immediately gain <color=#9B3737>Insatiable</color> and dash through enemies. After a short delay, deal <style=cIsDamage>400% damage</style> to hit enemies and tug non-boss enemies toward you.",
+      "zh-TW": "準備<style=cIsUtility>招架</style>。被擊中時，立即進入<color=#9B3737>不知饜足</color>狀態並衝刺穿過敵人。短暫延遲後，對被穿過的敵人造成<style=cIsDamage>400%傷害</style>，並將非首領敵人拉向你。"
+    },
+    "KENKO_SEAMSTRESS_SPECIAL_FIRE_DESCRIPTION": {
+      "en": "<style=cIsHealth>15% HP</style>. Fire a <color=#9B3737>Symbiotic</color> scissor dealing <style=cIsDamage>400% damage</style>. Pick up <color=#9B3737>Symbiotic</color> scissors to slash for <style=cIsDamage>200% damage</style>.",
+      "zh-TW": "<style=cIsHealth>15%生命值</style>。射出一把<color=#9B3737>共生</color>剪刀，造成<style=cIsDamage>400%傷害</style>。撿起<color=#9B3737>共生</color>剪刀時揮砍，造成<style=cIsDamage>200%傷害</style>。"
+    },
+    "KENKO_SEAMSTRESS_SPECIAL_SCEPTER_DESCRIPTION": {
+      "en": "<style=cIsHealth>15% HP</style>. Fire a <color=#9B3737>Symbiotic</color> scissor dealing <style=cIsDamage>400% damage</style>. Pick up <color=#9B3737>Symbiotic</color> scissors to slash for <style=cIsDamage>200% damage</style>.\n<color=#d299ff>SCEPTER: Your <color=#9B3737>Symbiotic</color> weapon only has a <style=cIsUtility>1.5 second pickup time</style>.</color>",
+      "zh-TW": "<style=cIsHealth>15%生命值</style>。射出一把<color=#9B3737>共生</color>剪刀，造成<style=cIsDamage>400%傷害</style>。撿起<color=#9B3737>共生</color>剪刀時揮砍，造成<style=cIsDamage>200%傷害</style>。\n<color=#d299ff>權杖：你的<color=#9B3737>共生</color>武器只需<style=cIsUtility>1.5秒即可撿回</style>。</color>"
+    },
+    "Expunge": {
+      "en": "Expunge",
+      "zh-TW": "剔除"
+    },
+    "Expunge your core.": {
+      "en": "Expunge your core.",
+      "zh-TW": "剔除你的核心。"
+    },
+    "<style=cKeywordName>Agile</style><style=cSub>The skill can be used while sprinting.</style>": {
+      "en": "<style=cKeywordName>Agile</style><style=cSub>The skill can be used while sprinting.</style>",
+      "zh-TW": "<style=cKeywordName>靈巧</style><style=cSub>該技能可在奔跑時使用。</style>"
+    },
+    "<style=cKeywordName>Crush</style><style=cSub>Deal bonus damage to an enemy based on their velocity and <style=cIsHealth>max health</style>.</style>": {
+      "en": "<style=cKeywordName>Crush</style><style=cSub>Deal bonus damage to an enemy based on their velocity and <style=cIsHealth>max health</style>.</style>",
+      "zh-TW": "<style=cKeywordName>粉碎</style><style=cSub>依敵人的速度與<style=cIsHealth>最大生命值</style>對其造成額外傷害。</style>"
+    },
+    "<style=cKeywordName>Symbiotic</style><style=cSub>Gain <style=cIsDamage>attack speed</style> and <style=cIsUtility>move speed</style> for each stock missing. Additional stocks are converted into missing stock.</style>": {
+      "en": "<style=cKeywordName>Symbiotic</style><style=cSub>Gain <style=cIsDamage>attack speed</style> and <style=cIsUtility>move speed</style> for each stock missing. Additional stocks are converted into missing stock.</style>",
+      "zh-TW": "<style=cKeywordName>共生</style><style=cSub>每缺少一次充能，便獲得<style=cIsDamage>攻擊速度</style>與<style=cIsUtility>移動速度</style>。額外的充能會轉換為缺少的充能。</style>"
+    },
+    "<style=cKeywordName>Ruthless</style><style=cSub>When your <color=#9B3737>Symbiotic</color> scissors are available, hit for an additional strike.</style>": {
+      "en": "<style=cKeywordName>Ruthless</style><style=cSub>When your <color=#9B3737>Symbiotic</color> scissors are available, hit for an additional strike.</style>",
+      "zh-TW": "<style=cKeywordName>無情</style><style=cSub><color=#9B3737>共生</color>剪刀可用時，會額外攻擊一次。</style>"
+    },
+    "<style=cKeywordName>Insatiable</style><style=cSub>Attacks <style=cIsHealth>bleed</style> and grant <color=#9B3737>Needles</color>. <style=cIsHealing>Healing</style> is converted into <style=cIsHealing>Barrier</style>.</style>": {
+      "en": "<style=cKeywordName>Insatiable</style><style=cSub>Attacks <style=cIsHealth>bleed</style> and grant <color=#9B3737>Needles</color>. <style=cIsHealing>Healing</style> is converted into <style=cIsHealing>Barrier</style>.</style>",
+      "zh-TW": "<style=cKeywordName>不知饜足</style><style=cSub>攻擊會使敵人<style=cIsHealth>流血</style>並獲得<color=#9B3737>針</color>。<style=cIsHealing>治療</style>會轉換為<style=cIsHealing>屏障</style>。</style>"
+    },
+    "<style=cKeywordName>Lost and Found</style><style=cSub>Slash and gain a <color=#9B3737>Needle</color> when picking up a scissor. Scissors return to you when their target dies.</style>": {
+      "en": "<style=cKeywordName>Lost and Found</style><style=cSub>Slash and gain a <color=#9B3737>Needle</color> when picking up a scissor. Scissors return to you when their target dies.</style>",
+      "zh-TW": "<style=cKeywordName>失而復得</style><style=cSub>撿起剪刀時會揮砍並獲得一根<color=#9B3737>針</color>。目標死亡時，剪刀會回到你身邊。</style>"
+    },
+    "<style=cKeywordName>Needles</style><style=cSub>Gain <color=#9B3737>Needles</color> by picking up your <color=#9B3737>Symbiotic</color> weapons or hitting enemies during <color=#9B3737>Insatiable</color>.</style>": {
+      "en": "<style=cKeywordName>Needles</style><style=cSub>Gain <color=#9B3737>Needles</color> by picking up your <color=#9B3737>Symbiotic</color> weapons or hitting enemies during <color=#9B3737>Insatiable</color>.</style>",
+      "zh-TW": "<style=cKeywordName>針</style><style=cSub>撿起你的<color=#9B3737>共生</color>武器，或在<color=#9B3737>不知饜足</color>期間命中敵人，即可獲得<color=#9B3737>針</color>。</style>"
+    }
+  }
+}

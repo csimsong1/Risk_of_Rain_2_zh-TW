@@ -1,0 +1,707 @@
+{
+  "mod": "rob-Dante",
+  "version": "0.0.89",
+  "loader": "r2api",
+  "notes": [
+    "模組自帶部分簡體翻譯（language/zh-CN/dante.txt，73 條），那些條目以它轉成繁體後對照英文修訂；其餘由英文翻譯。",
+    "ROB_DANTE_WEAPON_*_NAME/_DESC 是模組在程式裡註冊的武器文字。",
+    "鍵是英文句子的條目：模組直接把那段英文當語言 token 使用，沒有另外註冊，所以用英文原文當鍵來翻譯；原文改一個字就會對不上。"
+  ],
+  "strings": {
+    "ROB_DANTE_BODY_NAME": {
+      "en": "<color=#B70027>Dante</color>",
+      "zh-TW": "<color=#B70027>但丁</color>"
+    },
+    "ROB_NERO_BODY_NAME": {
+      "en": "<color=#2150AF>Nero</color>",
+      "zh-TW": "<color=#2150AF>尼祿</color>"
+    },
+    "ROB_VERGIL_BODY_NAME": {
+      "en": "<color=#32D2FF>Vergil</color>",
+      "zh-TW": "<color=#32D2FF>維吉爾</color>"
+    },
+    "ROB_DANTE_BODY_DESCRIPTION": {
+      "en": "<color=#B70027>Dante</color> is a legendary devil hunter who fights with a pair of pistols and a sword.<color=#CCD3E0>\n\n< ! > Ebony & Ivory is a reliable, consistent source of damage.\n\n< ! > Each Devil Arm has a unique moveset, experiment with directional inputs to make the most of them.\n\n< ! > Use Trick to cancel actions and dodge incoming blows.\n\n< ! > Devil Trigger does stuff and things.",
+      "zh-TW": "<color=#B70027>但丁</color>是一名傳奇惡魔獵人，以雙槍和一把劍作戰。<color=#CCD3E0>\n\n< ! >黑檀木與白象牙是可靠而穩定的傷害來源。\n\n< ! >每把惡魔兵器都有獨特的招式，試著搭配方向輸入來充分發揮它們的威力。\n\n< ! >使用詭步可取消動作並閃避來襲的攻擊。\n\n< ! >魔人化會做些有的沒的。"
+    },
+    "ROB_DANTE_BODY_SUBTITLE": {
+      "en": "Legendary Devil Hunter",
+      "zh-TW": "傳奇惡魔獵人"
+    },
+    "ROB_DANTE_BODY_LORE": {
+      "en": "Y'kno, I really should scout my jobs better before taking them.\n\nGuy walks into my shop talking about monsters needed killing. Real stiff and proper, probably military. Shotgun where his left arm oughta be. Must mean business.\n\nHe throws a bag of money and a ship ticket on the table. This'll have me sitting pretty for months!\n\nBut I gotta stay cool, play hard to get.\n\n'Long term job means long term pay.'\n\n'I believe this will change your mind.'\n\nPhoto lands on the table. Shows a man trapped in... glass? I can't make out his face, but that pendant I'd know from anywhere.\n\nThis guy did his homework. Guess I gotta get on this ship.\n\n'Deal.'\n\nNow I get to hike across the planet cleaning up the trash.\n\nWeeks of searching, killing, surviving.\n\nBut I've gotta find <color=#32D2FF>him</color>.\n\nJob's a job, right?\n\n<color=#B70027>Let's rock.</color>",
+      "zh-TW": "說真的，我接工作之前真該先好好打聽清楚。\n\n有個男的走進我的店裡，說有怪物需要解決。一板一眼、正經八百的，八成是軍人。本該是左臂的地方裝了把霰彈槍。看來是玩真的。\n\n他把一袋錢和一張船票丟到桌上。這夠我逍遙好幾個月了！\n\n不過我得沉住氣，先吊吊他的胃口。\n\n「長期的工作，就要有長期的報酬。」\n\n「我相信這個會讓你改變心意。」\n\n一張照片落在桌上。上面是個男人，被困在……玻璃裡？我看不清他的臉，但那個墜飾我到哪都認得。\n\n這位老兄做足了功課。看來這艘船我是非上不可了。\n\n「成交。」\n\n現在我得徒步橫越這顆星球，一路清理垃圾。\n\n好幾個星期的搜尋、殺戮、求生。\n\n但我非找到<color=#32D2FF>他</color>不可。\n\n工作就是工作，對吧？\n\n<color=#B70027>來搖滾吧。</color>"
+    },
+    "ROB_DANTE_BODY_OUTRO_FLAVOR": {
+      "en": "..and so he left.",
+      "zh-TW": "……於是他走了。"
+    },
+    "ROB_DANTE_BODY_OUTRO_FAILURE": {
+      "en": "..and so he vanished.",
+      "zh-TW": "……於是他就這樣消逝了。"
+    },
+    "ROB_DANTE_BODY_DEFAULT_SKIN_NAME": {
+      "en": "<color=#B70027>Default</color>",
+      "zh-TW": "<color=#B70027>預設</color>"
+    },
+    "ROB_DANTE_BODY_MASTERY_SKIN_NAME": {
+      "en": "<color=#B70027>Classic</color>",
+      "zh-TW": "<color=#B70027>經典</color>"
+    },
+    "ROB_DANTE_BODY_TYPHOON_SKIN_NAME": {
+      "en": "<color=#B70027>idk</color>",
+      "zh-TW": "<color=#B70027>不知道</color>"
+    },
+    "ROB_DANTE_BODY_PRESTIGE_SKIN_NAME": {
+      "en": "<color=#B70027>Prestige</color>",
+      "zh-TW": "<color=#B70027>尊爵</color>"
+    },
+    "ROB_DANTE_BODY_AC_SKIN_NAME": {
+      "en": "<color=#B70027>Rebooted</color>",
+      "zh-TW": "<color=#B70027>重啟</color>"
+    },
+    "ROB_DANTE_BODY_DMC2_SKIN_NAME": {
+      "en": "<color=#B70027>Veteran</color>",
+      "zh-TW": "<color=#B70027>老將</color>"
+    },
+    "ROB_DANTE_BODY_DMC_SKIN_NAME": {
+      "en": "<color=#B70027>El Donte</color>",
+      "zh-TW": "<color=#B70027>埃爾·冬特</color>"
+    },
+    "ROB_DANTE_BODY_SUPER_SKIN_NAME": {
+      "en": "<color=#B70027>Super</color>",
+      "zh-TW": "<color=#B70027>超級</color>"
+    },
+    "ROB_DANTE_BODY_VERGIL_SKIN_NAME": {
+      "en": "<color=#32D2FF>Vergil</color>",
+      "zh-TW": "<color=#32D2FF>維吉爾</color>"
+    },
+    "ROB_DANTE_BODY_VERGILEX_SKIN_NAME": {
+      "en": "<color=#32D2FF>Vergil EX</color>",
+      "zh-TW": "<color=#32D2FF>維吉爾EX</color>"
+    },
+    "ROB_DANTE_BODY_MINECRAFT_SKIN_NAME": {
+      "en": "<color=#B70027>Minecraft</color>",
+      "zh-TW": "<color=#B70027>Minecraft</color>"
+    },
+    "ROB_DANTE_BODY_COMMANDO_SKIN_NAME": {
+      "en": "Commando",
+      "zh-TW": "指揮官"
+    },
+    "ROB_DANTE_BODY_LEON_SKIN_NAME": {
+      "en": "Leon",
+      "zh-TW": "里昂"
+    },
+    "ROB_DANTE_BODY_DEFAULT_SKIN_DESC": {
+      "en": "This survivor's default skin.",
+      "zh-TW": "這名倖存者的預設皮膚。"
+    },
+    "ROB_DANTE_BODY_MASTERY_SKIN_DESC": {
+      "en": "I should have been the one to fill her dark soul with LIIIIIIIIIIIIIIGHT!",
+      "zh-TW": "本該由我來用光明填滿她黑暗的靈魂啊啊啊啊啊啊啊啊啊啊！"
+    },
+    "ROB_DANTE_BODY_TYPHOON_SKIN_DESC": {
+      "en": ""
+    },
+    "ROB_DANTE_BODY_PRESTIGE_SKIN_DESC": {
+      "en": "Come on, I'd never wear white on the job. This is the kind of getup I'd save for a wedding!",
+      "zh-TW": "拜託，我工作時才不會穿白色。這身行頭我是要留到婚禮才穿的！"
+    },
+    "ROB_DANTE_BODY_AC_SKIN_DESC": {
+      "en": "What does this make me, some kind of Digital Devil?",
+      "zh-TW": "這樣我算什麼，某種數位惡魔嗎？"
+    },
+    "ROB_DANTE_BODY_DMC2_SKIN_DESC": {
+      "en": "I really do like this outfit, shame about the rest of that job in Vie de Marli.",
+      "zh-TW": "我是真的很喜歡這套衣服，只可惜在Vie de Marli那份工作的其他部分就不提了。"
+    },
+    "ROB_DANTE_BODY_DMC_SKIN_DESC": {
+      "en": "Call me El Donte. El Donte the demon killer.",
+      "zh-TW": "叫我埃爾·冬特。惡魔殺手埃爾·冬特。"
+    },
+    "ROB_DANTE_BODY_SUPER_SKIN_DESC": {
+      "en": "The helmet lights up caves really well. The only problem is, everything can see you from a mile out.\n\n<color=#B70027>Grants infinite Devil Trigger gauge.</color>",
+      "zh-TW": "這頂頭盔在洞穴裡的照明效果一流。唯一的問題是，大老遠外的東西全都看得見你。\n\n<color=#B70027>獲得無限的魔人化量表。</color>"
+    },
+    "ROB_DANTE_BODY_VERGIL_SKIN_DESC": {
+      "en": "In his quest for power, that man sought a bargain he would come to regret.",
+      "zh-TW": "在追求力量的路上，那個男人尋求了一筆終將令他後悔的交易。"
+    },
+    "ROB_DANTE_BODY_VERGILEX_SKIN_DESC": {
+      "en": "Even this planet of endless conflict would prove too small for the two of them.",
+      "zh-TW": "即便是這顆紛爭不休的星球，終究也容不下他們兩人。"
+    },
+    "ROB_DANTE_BODY_MINECRAFT_SKIN_DESC": {
+      "en": ""
+    },
+    "ROB_DANTE_BODY_COMMANDO_SKIN_DESC": {
+      "en": "If you find one of those UES soldier guys asleep in a toilet stall missing his armor, just ignore it and move on.",
+      "zh-TW": "要是你發現哪個尤伊思士兵沒穿護甲、睡在廁所隔間裡，別管他，繼續往前走就對了。"
+    },
+    "ROB_DANTE_BODY_LEON_SKIN_DESC": {
+      "en": "Man, this is rough work. This place could even make a devil cry!",
+      "zh-TW": "唉，這工作真不好做。這地方連惡魔都會哭泣！"
+    },
+    "ROB_DANTE_BODY_PASSIVE_NAME": {
+      "en": "<color=#B70027>Son of Sparda</color>",
+      "zh-TW": "<color=#B70027>斯巴達之子</color>"
+    },
+    "ROB_DANTE_BODY_PASSIVE_DESCRIPTION": {
+      "en": "<color=#B70027>Dante</color> has access to several <style=cIsDamage>unique abilities</style>. <style=cIsUtility>Hover for more information.</style>",
+      "zh-TW": "<color=#B70027>但丁</color>擁有數種<style=cIsDamage>獨特能力</style>。<style=cIsUtility>將滑鼠移至此處可查看更多資訊。</style>"
+    },
+    "ROB_DANTE_BODY_CONFIRM_NAME": {
+      "en": "Confirm",
+      "zh-TW": "確認"
+    },
+    "ROB_DANTE_BODY_CONFIRM_DESCRIPTION": {
+      "en": "Proceed with the current skill.",
+      "zh-TW": "繼續執行目前的技能。"
+    },
+    "ROB_DANTE_BODY_CANCEL_NAME": {
+      "en": "Cancel",
+      "zh-TW": "取消"
+    },
+    "ROB_DANTE_BODY_CANCEL_DESCRIPTION": {
+      "en": "Cancel the current skill.",
+      "zh-TW": "取消目前的技能。"
+    },
+    "ROB_DANTE_BODY_PRIMARY_NAME": {
+      "en": "<color=#B70027>Ebony & Ivory</color>",
+      "zh-TW": "<color=#B70027>黑檀木與白象牙</color>"
+    },
+    "ROB_DANTE_BODY_PRIMARY_DESCRIPTION": {
+      "en": "Rapidly shoot for <style=cIsDamage>100% damage</style>. Stop firing for <style=cIsUtility>1 second</style> to prepare a <style=cIsDamage>charge shot</style> that deals <style=cIsDamage>380% damage</style>.",
+      "zh-TW": "快速射擊，造成<style=cIsDamage>100%傷害</style>。停止射擊<style=cIsUtility>1秒</style>後可準備一發<style=cIsDamage>蓄力射擊</style>，造成<style=cIsDamage>380%傷害</style>。"
+    },
+    "ROB_NERO_BODY_PRIMARY_NAME": {
+      "en": "<color=#2150AF>Blue Rose</color>",
+      "zh-TW": "<color=#2150AF>湛藍玫瑰</color>"
+    },
+    "ROB_NERO_BODY_PRIMARY_DESCRIPTION": {
+      "en": "Shoot twice, for <style=cIsDamage>200% damage</style> and <style=cIsDamage>350% damage</style>. Hold for <style=cIsUtility>1 second</style> to prepare a <style=cIsDamage>charge shot</style>.",
+      "zh-TW": "射擊兩次，分別造成<style=cIsDamage>200%傷害</style>和<style=cIsDamage>350%傷害</style>。按住<style=cIsUtility>1秒</style>可準備一發<style=cIsDamage>蓄力射擊</style>。"
+    },
+    "ROB_VERGIL_BODY_PRIMARY_NAME": {
+      "en": "<color=#32D2FF>Summon Swords</color>",
+      "zh-TW": "<color=#32D2FF>幻影劍</color>"
+    },
+    "ROB_VERGIL_BODY_PRIMARY_DESCRIPTION": {
+      "en": "Fire spectral swords for <style=cIsDamage>200% damage</style>.",
+      "zh-TW": "發射幻影之劍，造成<style=cIsDamage>200%傷害</style>。"
+    },
+    "ROB_DANTE_BODY_MELEE_NAME": {
+      "en": "<color=#B70027>Lock & Load</color>",
+      "zh-TW": "<color=#B70027>蓄勢待發</color>"
+    },
+    "ROB_DANTE_BODY_MELEE_DESCRIPTION": {
+      "en": "Ready your <style=cIsUtility>held weapon</style>. <style=cIsDamage>Primary</style> becomes <style=cIsDamage>melee attacks</style>, and enemy attacks are <style=cIsUtility>deflected</style> while held.",
+      "zh-TW": "亮出你的<style=cIsUtility>手持武器</style>。<style=cIsDamage>主要技能</style>會變為<style=cIsDamage>近戰攻擊</style>，按住期間還能<style=cIsUtility>彈開</style>敵人的攻擊。"
+    },
+    "ROB_DANTE_BODY_UTILITY_NAME": {
+      "en": "<color=#B70027>Trick</color>",
+      "zh-TW": "<color=#B70027>詭步</color>"
+    },
+    "ROB_DANTE_BODY_UTILITY_DESCRIPTION": {
+      "en": "<style=cIsUtility>Dash</style> in a direction, becoming briefly <style=cIsUtility>invulnerable</style>. <style=cIsUtility>Melee hits instantly refresh this skill.</style>",
+      "zh-TW": "朝指定方向<style=cIsUtility>衝刺</style>，並短暫進入<style=cIsUtility>無敵</style>狀態。<style=cIsUtility>近戰命中會立即刷新此技能。</style>"
+    },
+    "ROB_DANTE_BODY_SPECIAL_DEVILTRIGGER_NAME": {
+      "en": "<color=#A556FF>Devil Trigger</color>",
+      "zh-TW": "<color=#A556FF>魔人化</color>"
+    },
+    "ROB_DANTE_BODY_SPECIAL_DEVILTRIGGER_DESCRIPTION": {
+      "en": "<color=#B70027>Hellbent.</color> Activate <color=#A556FF>Devil Trigger</color>, draining your gauge to gain temporary <style=cIsUtility>armor</style>, <style=cIsHealing>regeneration</style> and <style=cIsDamage>damage</style>. <style=cIsUtility>Melee hits fill the gauge.</style>",
+      "zh-TW": "<color=#B70027>誓死不屈。</color>發動<color=#A556FF>魔人化</color>，持續消耗量表以暫時獲得<style=cIsUtility>護甲</style>、<style=cIsHealing>生命值再生</style>與<style=cIsDamage>傷害</style>加成。<style=cIsUtility>近戰命中可填充量表。</style>"
+    },
+    "ROB_DANTE_BODY_SPECIAL_DEVILTRIGGER_SCEPTER_NAME": {
+      "en": "<color=#A556FF>Perfect Devil Trigger</color>",
+      "zh-TW": "<color=#A556FF>完美魔人化</color>"
+    },
+    "ROB_DANTE_BODY_SPECIAL_DEVILTRIGGER_SCEPTER_DESCRIPTION": {
+      "en": "<color=#B70027>Hellbent.</color> Activate <color=#A556FF>Devil Trigger</color>, draining your gauge to gain temporary <style=cIsUtility>armor</style>, <style=cIsHealing>regeneration</style> and <style=cIsDamage>damage</style>. <style=cIsUtility>Melee hits fill the gauge.</style>\n<color=#d299ff>SCEPTER: Ravage your foes with summoned swords while active.</color>",
+      "zh-TW": "<color=#B70027>誓死不屈。</color>發動<color=#A556FF>魔人化</color>，持續消耗量表以暫時獲得<style=cIsUtility>護甲</style>、<style=cIsHealing>生命值再生</style>與<style=cIsDamage>傷害</style>加成。<style=cIsUtility>近戰命中可填充量表。</style>\n<color=#d299ff>權杖：發動期間以幻影劍蹂躪敵人。</color>"
+    },
+    "ROB_DANTE_BODY_SPECIAL_SDT_NAME": {
+      "en": "<color=#FF2E00>Sin Devil Trigger</color>",
+      "zh-TW": "<color=#FF2E00>真魔人化</color>"
+    },
+    "ROB_DANTE_BODY_SPECIAL_SDT_DESCRIPTION": {
+      "en": "<style=cIsUtility>Hold</style> to funnel gauge into the <color=#FF2E00>Sin Devil Trigger</color> gauge. <style=cIsUtility>Hold</style> when full to unleash your <style=cIsDamage>true demonic form</style> for a short time.",
+      "zh-TW": "<style=cIsUtility>按住</style>可將量表注入<color=#FF2E00>真魔人化</color>量表。量表全滿時<style=cIsUtility>按住</style>，即可短暫解放你<style=cIsDamage>真正的惡魔形態</style>。"
+    },
+    "ROB_DANTE_BODY_SPECIAL_SDT_SCEPTER_NAME": {
+      "en": "<color=#FF2E00>Perfect Sin Devil Trigger</color>",
+      "zh-TW": "<color=#FF2E00>完美真魔人化</color>"
+    },
+    "ROB_DANTE_BODY_SPECIAL_SDT_SCEPTER_DESCRIPTION": {
+      "en": "<style=cIsUtility>Hold</style> to funnel gauge into the <color=#FF2E00>Sin Devil Trigger</color> gauge. <style=cIsUtility>Hold</style> when full to unleash your <style=cIsDamage>true demonic form</style> for a short time.\n<color=#d299ff>SCEPTER: Ravage your foes with summoned swords while active.</color>",
+      "zh-TW": "<style=cIsUtility>按住</style>可將量表注入<color=#FF2E00>真魔人化</color>量表。量表全滿時<style=cIsUtility>按住</style>，即可短暫解放你<style=cIsDamage>真正的惡魔形態</style>。\n<color=#d299ff>權杖：發動期間以幻影劍蹂躪敵人。</color>"
+    },
+    "ROB_DANTE_BODY_SPECIAL_PISTOL_NAME": {
+      "en": "Silver Bullet",
+      "zh-TW": "銀彈"
+    },
+    "ROB_DANTE_BODY_SPECIAL_PISTOL_DESCRIPTION": {
+      "en": "Shoot a <style=cIsUtility>silver bullet</style> for <style=cIsDamage>800% damage</style>. <style=cIsUtility>Headshots</style> deal <style=cIsDamage>2x damage</style>. Kills <style=cIsUtility>reset all your cooldowns</style>.",
+      "zh-TW": "射出一發<style=cIsUtility>銀彈</style>，造成<style=cIsDamage>800%傷害</style>。<style=cIsUtility>爆頭</style>可造成<style=cIsDamage>2倍傷害</style>。擊敗敵人會<style=cIsUtility>重置你所有的冷卻時間</style>。"
+    },
+    "ROB_DANTE_BODY_SPECIAL_PISTOL_SCEPTER_NAME": {
+      "en": "Golden Gun",
+      "zh-TW": "黃金槍"
+    },
+    "ROB_DANTE_BODY_SPECIAL_PISTOL_SCEPTER_DESCRIPTION": {
+      "en": "Shoot a <style=cIsUtility>silver bullet</style> for <style=cIsDamage>800% damage</style>. <style=cIsUtility>Headshots</style> deal <style=cIsDamage>2x damage</style>. Kills <style=cIsUtility>reset all your cooldowns</style>.\n<color=#d299ff>SCEPTER: Deals 9000% damage.</color>",
+      "zh-TW": "射出一發<style=cIsUtility>銀彈</style>，造成<style=cIsDamage>800%傷害</style>。<style=cIsUtility>爆頭</style>可造成<style=cIsDamage>2倍傷害</style>。擊敗敵人會<style=cIsUtility>重置你所有的冷卻時間</style>。\n<color=#d299ff>權杖：造成9000%傷害。</color>"
+    },
+    "ROB_DANTE_BODY_SPECIAL_HOLYCROSS_NAME": {
+      "en": "Sacred Flame",
+      "zh-TW": "聖焰"
+    },
+    "ROB_DANTE_BODY_SPECIAL_HOLYCROSS_DESCRIPTION": {
+      "en": "Invoke the power of <color=#FF0033>Providence</color>, unleashing a <style=cIsUtility>massive flame</style> for <style=cIsDamage>300% damage per tick</style>. Ends with a <style=cIsDamage>4000% damage</style> supernova.",
+      "zh-TW": "借用<color=#FF0033>神</color>的力量，釋放<style=cIsUtility>巨大火焰</style>，每跳造成<style=cIsDamage>300%傷害</style>。最後以一次造成<style=cIsDamage>4000%傷害</style>的超新星爆發收尾。"
+    },
+    "ROB_DANTE_BODY_LOADOUT_SKILL_MISC": {
+      "en": "Passive",
+      "zh-TW": "被動"
+    },
+    "ROB_DANTE_DEVILSHRINE_NAME": {
+      "en": "Shrine of the Night",
+      "zh-TW": "夜之神龕"
+    },
+    "ROB_DANTE_DEVILSHRINE_DESC": {
+      "en": "I am not paid enough to write these.",
+      "zh-TW": "我領的薪水可不夠讓我寫這些。"
+    },
+    "ROB_DANTE_DEVILSHRINE_CONTEXT": {
+      "en": "Pray to Shrine of the Night",
+      "zh-TW": "向夜之神龕祈禱"
+    },
+    "ROB_DANTE_TREASURECHEST_NAME": {
+      "en": "Treasure Chest",
+      "zh-TW": "藏寶箱"
+    },
+    "ROB_DANTE_TREASURECHEST_DESC": {
+      "en": "HEEEEEEEEEELLLLLLLPPPPP MEEEEEEEEEE",
+      "zh-TW": "救命啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"
+    },
+    "ROB_DANTE_TREASURECHEST_CONTEXT": {
+      "en": "Use key and open",
+      "zh-TW": "使用鑰匙開啟"
+    },
+    "ROB_DANTEKEYCOST": {
+      "en": "Skeleton Key",
+      "zh-TW": "萬能鑰匙"
+    },
+    "ROB_DANTE_KEYFRAGMENT_NAME": {
+      "en": "Key Fragment",
+      "zh-TW": "鑰匙碎片"
+    },
+    "ROB_DANTE_KEYFRAGMENT_DESC": {
+      "en": "Fractured piece of a key. Collect 3 to form a whole key.",
+      "zh-TW": "鑰匙的碎片。集滿3個即可組成一把完整的鑰匙。"
+    },
+    "ROB_DANTE_KEYFRAGMENT_PICKUP": {
+      "en": "Fractured piece of a key. Collect 3 to form a whole key.",
+      "zh-TW": "鑰匙的碎片。集滿3個即可組成一把完整的鑰匙。"
+    },
+    "ROB_DANTE_KEYFRAGMENT_LORE": {
+      "en": ""
+    },
+    "ROB_DANTE_KEY_NAME": {
+      "en": "Skeleton Key",
+      "zh-TW": "萬能鑰匙"
+    },
+    "ROB_DANTE_KEY_DESC": {
+      "en": "Used to open a <color=#FFFF00>Treasure Chest</color>. These chests contain a <color=#FF0033>sacred relic</color> and spawn every <style=cIsUtility>fourth</style> stage in a <style=cIsDamage>fixed location</style>.",
+      "zh-TW": "用於開啟<color=#FFFF00>藏寶箱</color>。這種寶箱內含一件<color=#FF0033>神聖遺物</color>，每<style=cIsUtility>四</style>個關卡會在<style=cIsDamage>固定位置</style>生成一次。"
+    },
+    "ROB_DANTE_KEY_PICKUP": {
+      "en": "Used to open a Treasure Chest. Glows when near a chest.",
+      "zh-TW": "用於開啟藏寶箱。靠近寶箱時會發光。"
+    },
+    "ROB_DANTE_KEY_LORE": {
+      "en": ""
+    },
+    "ROB_DANTE_REBELLION_NAME": {
+      "en": "Rebellion",
+      "zh-TW": "叛逆之刃"
+    },
+    "ROB_DANTE_REBELLION_DESC": {
+      "en": "sowrd",
+      "zh-TW": "劍"
+    },
+    "ROB_DANTE_REBELLION_PICKUP": {
+      "en": "sord",
+      "zh-TW": "劍"
+    },
+    "ROB_DANTE_REBELLION_LORE": {
+      "en": ""
+    },
+    "ROB_DANTE_TITAN_NAME": {
+      "en": "Titan",
+      "zh-TW": "巨人"
+    },
+    "ROB_DANTE_TITAN_DESC": {
+      "en": "the 1,000,000,000,000,000,000 year old pooooncher",
+      "zh-TW": "1,000,000,000,000,000,000歲的拳拳拳拳拳擊手"
+    },
+    "ROB_DANTE_TITAN_PICKUP": {
+      "en": "."
+    },
+    "ROB_DANTE_TITAN_LORE": {
+      "en": ""
+    },
+    "ROB_DANTE_QUEEN_NAME": {
+      "en": "Queen",
+      "zh-TW": "女王"
+    },
+    "ROB_DANTE_QUEEN_DESC": {
+      "en": "Dual greatshields great for heavy hits and crowd control.",
+      "zh-TW": "雙持大盾，擅長重擊與控場。"
+    },
+    "ROB_DANTE_QUEEN_PICKUP": {
+      "en": "A hefty pair of greatshields.",
+      "zh-TW": "一對沉重的大盾。"
+    },
+    "ROB_DANTE_QUEEN_LORE": {
+      "en": ""
+    },
+    "ROB_DANTE_MITHRIX_NAME": {
+      "en": "Mithrix",
+      "zh-TW": "米斯歷克斯"
+    },
+    "ROB_DANTE_MITHRIX_DESC": {
+      "en": "The"
+    },
+    "ROB_DANTE_MITHRIX_PICKUP": {
+      "en": ""
+    },
+    "ROB_DANTE_MITHRIX_LORE": {
+      "en": ""
+    },
+    "ROB_DANTE_BROTHERSOUL_NAME": {
+      "en": "Soul of the King",
+      "zh-TW": "王者之魂"
+    },
+    "ROB_DANTE_BROTHERSOUL_DESC": {
+      "en": "Every <style=cIsUtility>whip crack</style> spawns a <style=cIsDamage>lunar flame pillar</style>, every <style=cIsUtility>sword swing</style> spawns a <style=cIsDamage>lunar shard</style>, every <style=cIsUtility>whip slam</style> unleashes <style=cIsDamage>ground shockwaves</style> and every <style=cIsUtility>dash</style> generates <style=cIsHealing>20% barrier</style>.",
+      "zh-TW": "每次<style=cIsUtility>甩鞭</style>都會生成一道<style=cIsDamage>月球火柱</style>，每次<style=cIsUtility>揮劍</style>都會生成一枚<style=cIsDamage>月球碎片</style>，每次<style=cIsUtility>鞭擊砸地</style>都會釋放<style=cIsDamage>地面衝擊波</style>，每次<style=cIsUtility>衝刺</style>都會產生<style=cIsHealing>20%屏障</style>。"
+    },
+    "ROB_DANTE_BROTHERSOUL_PICKUP": {
+      "en": "Wield the King of Nothing's power as your own.",
+      "zh-TW": "將無為之主的力量化為己用。"
+    },
+    "ROB_DANTE_BROTHERSOUL_LORE": {
+      "en": ""
+    },
+    "ROB_DANTE_ITEM_EFFECT_TITLE": {
+      "en": "Bonus Effect",
+      "zh-TW": "額外效果"
+    },
+    "ROB_DANTE_ITEM_EFFECT_BACKUPMAG": {
+      "en": "Gain the ability to store extra Charge Shots.",
+      "zh-TW": "可儲存額外的蓄力射擊。"
+    },
+    "ROB_DANTE_ITEM_EFFECT_BANDOLIER": {
+      "en": "Ammo packs restore gauge.",
+      "zh-TW": "彈藥包可恢復量表。"
+    },
+    "ROB_DANTE_ITEM_EFFECT_ALIENHEAD": {
+      "en": "Devil Trigger consumes less gauge.",
+      "zh-TW": "魔人化消耗的量表減少。"
+    },
+    "ROB_DANTE_ITEM_EFFECT_BRAINSTALKS": {
+      "en": "Devil Trigger consumes no gauge while active.",
+      "zh-TW": "生效期間，魔人化不消耗量表。"
+    },
+    "ROB_DANTE_ITEM_EFFECT_PURITY": {
+      "en": "Increases gauge gained on hit.",
+      "zh-TW": "提高命中時獲得的量表。"
+    },
+    "ROB_DANTE_ITEM_EFFECT_LYSATECELL": {
+      "en": "Increases maximum gauge.",
+      "zh-TW": "提高量表上限。"
+    },
+    "ROB_DANTE_ITEM_EFFECT_LUMINOUSSHOT": {
+      "en": "Charges up while your weapon is out. Resets when you put it away.",
+      "zh-TW": "亮出武器期間持續充能。收起武器時重置。"
+    },
+    "KEYWORD_HELLBENT": {
+      "en": "<style=cKeywordName>Hellbent</style><style=cSub><style=cIsUtility>Once per stage</style>, falling below <style=cIsHealth>25% health</style> fills your gauge and grants a free <color=#A556FF>Devil Trigger</color>.",
+      "zh-TW": "<style=cKeywordName>誓死不屈</style><style=cSub><style=cIsUtility>每個關卡一次</style>，生命值降至<style=cIsHealth>25%以下</style>時會填滿你的量表，並免費發動一次<color=#A556FF>魔人化</color>。"
+    },
+    "KEYWORD_SONOFSPARDA": {
+      "en": "<style=cKeywordName>Devil Arms</style><style=cSub>Certain bosses' souls are turned into obtainable weapons upon death. Tap sprint with your weapon out to cycle through them.\n\n<style=cKeywordName>Speed</style><style=cSub>Run with incredible speed. Cannot be activated in battle.\n\n<style=cKeywordName>Air Hike</style><style=cSub>Double jump.\n\n<style=cKeywordName>Enemy Step</style><style=cSub>Double jump off of an enemy.",
+      "zh-TW": "<style=cKeywordName>惡魔兵器</style><style=cSub>特定首領被擊敗後，其靈魂會化為可取得的武器。亮出武器時輕按奔跑鍵即可輪流切換。\n\n<style=cKeywordName>疾速</style><style=cSub>以驚人的速度奔跑。戰鬥中無法發動。\n\n<style=cKeywordName>空中跳躍</style><style=cSub>二段跳。\n\n<style=cKeywordName>踩敵跳躍</style><style=cSub>踩著敵人再跳一次。"
+    },
+    "ROB_SINDANTE_BODY_NAME": {
+      "en": "<color=#B70027>Dante (Sin Devil Trigger)</color>",
+      "zh-TW": "<color=#B70027>但丁（真魔人化）</color>"
+    },
+    "ROB_SINDANTE_BODY_DESCRIPTION": {
+      "en": "<color=#B70027>Dante</color> is a legendary devil hunter who fights with a pair of pistols and a sword.<color=#CCD3E0>\n\n< ! > Ebony & Ivory is a reliable, consistent source of damage.\n\n< ! > Each Devil Arm has a unique moveset, experiment with directional inputs to make the most of them.\n\n< ! > Use Trick to cancel actions and dodge incoming blows.\n\n< ! > Devil Trigger does stuff and things.",
+      "zh-TW": "<color=#B70027>但丁</color>是一名傳奇惡魔獵人，以雙槍和一把劍作戰。<color=#CCD3E0>\n\n< ! >黑檀木與白象牙是可靠而穩定的傷害來源。\n\n< ! >每把惡魔兵器都有獨特的招式，試著搭配方向輸入來充分發揮它們的威力。\n\n< ! >使用詭步可取消動作並閃避來襲的攻擊。\n\n< ! >魔人化會做些有的沒的。"
+    },
+    "ROB_SINDANTE_BODY_SUBTITLE": {
+      "en": "Legendary Devil Hunter",
+      "zh-TW": "傳奇惡魔獵人"
+    },
+    "ROB_SINDANTE_BODY_LORE": {
+      "en": "Y'kno, I really should scout my jobs better before taking them.\n\nGuy walks into my shop talking about monsters needed killing. Real stiff and proper, probably military. Shotgun where his left arm oughta be. Must mean business.\n\nHe throws a bag of money and a ship ticket on the table. This'll have me sitting pretty for months!\n\nBut I gotta stay cool, play hard to get.\n\n'Long term job means long term pay.'\n\n'I believe this will change your mind.'\n\nPhoto lands on the table. Shows a man trapped in... glass? I can't make out his face, but that pendant I'd know from anywhere.\n\nThis guy did his homework. Guess I gotta get on this ship.\n\n'Deal.'\n\nNow I get to hike across the planet cleaning up the trash.\n\nWeeks of searching, killing, surviving.\n\nBut I've gotta find <color=#32D2FF>him</color>.\n\nJob's a job, right?\n\n<color=#B70027>Let's rock.</color>",
+      "zh-TW": "說真的，我接工作之前真該先好好打聽清楚。\n\n有個男的走進我的店裡，說有怪物需要解決。一板一眼、正經八百的，八成是軍人。本該是左臂的地方裝了把霰彈槍。看來是玩真的。\n\n他把一袋錢和一張船票丟到桌上。這夠我逍遙好幾個月了！\n\n不過我得沉住氣，先吊吊他的胃口。\n\n「長期的工作，就要有長期的報酬。」\n\n「我相信這個會讓你改變心意。」\n\n一張照片落在桌上。上面是個男人，被困在……玻璃裡？我看不清他的臉，但那個墜飾我到哪都認得。\n\n這位老兄做足了功課。看來這艘船我是非上不可了。\n\n「成交。」\n\n現在我得徒步橫越這顆星球，一路清理垃圾。\n\n好幾個星期的搜尋、殺戮、求生。\n\n但我非找到<color=#32D2FF>他</color>不可。\n\n工作就是工作，對吧？\n\n<color=#B70027>來搖滾吧。</color>"
+    },
+    "ROB_SINDANTE_BODY_OUTRO_FLAVOR": {
+      "en": "..and so he left.",
+      "zh-TW": "……於是他走了。"
+    },
+    "ROB_SINDANTE_BODY_OUTRO_FAILURE": {
+      "en": "..and so he vanished.",
+      "zh-TW": "……於是他就這樣消逝了。"
+    },
+    "ROB_SINDANTE_BODY_PASSIVE_NAME": {
+      "en": "<color=#B70027>Son of Sparda</color>",
+      "zh-TW": "<color=#B70027>斯巴達之子</color>"
+    },
+    "ROB_SINDANTE_BODY_PASSIVE_DESCRIPTION": {
+      "en": "<color=#B70027>Dante</color> has access to several <style=cIsDamage>unique abilities</style>. <style=cIsUtility>Hover for more information.</style>",
+      "zh-TW": "<color=#B70027>但丁</color>擁有數種<style=cIsDamage>獨特能力</style>。<style=cIsUtility>將滑鼠移至此處可查看更多資訊。</style>"
+    },
+    "ROB_SINDANTE_BODY_CONFIRM_NAME": {
+      "en": "Confirm",
+      "zh-TW": "確認"
+    },
+    "ROB_SINDANTE_BODY_CONFIRM_DESCRIPTION": {
+      "en": "Proceed with the current skill.",
+      "zh-TW": "繼續執行目前的技能。"
+    },
+    "ROB_SINDANTE_BODY_CANCEL_NAME": {
+      "en": "Cancel",
+      "zh-TW": "取消"
+    },
+    "ROB_SINDANTE_BODY_CANCEL_DESCRIPTION": {
+      "en": "Cancel the current skill.",
+      "zh-TW": "取消目前的技能。"
+    },
+    "ROB_SINDANTE_BODY_PRIMARY_NAME": {
+      "en": "<color=#B70027>Devil Sword Dante</color>",
+      "zh-TW": "<color=#B70027>魔劍但丁</color>"
+    },
+    "ROB_SINDANTE_BODY_PRIMARY_DESCRIPTION": {
+      "en": "A crushing <style=cIsDamage>three-stage combo</style> that unleashes the <style=cIsDamage>full might</style> of the <color=#B70027>Devil Sword Dante</color>.",
+      "zh-TW": "毀滅性的<style=cIsDamage>三段連擊</style>，徹底釋放<color=#B70027>魔劍但丁</color>的<style=cIsDamage>全部威力</style>。"
+    },
+    "ROB_SINDANTE_BODY_SECONDARY_NAME": {
+      "en": "<color=#B70027>The Ombra</color>",
+      "zh-TW": "<color=#B70027>The Ombra</color>"
+    },
+    "ROB_SINDANTE_BODY_SECONDARY_DESCRIPTION": {
+      "en": "<style=cIsDamage>Energy blasts</color> from your palms slam into the enemy with <style=cIsDamage>terrific force</color>.",
+      "zh-TW": "從掌心射出<style=cIsDamage>能量彈</color>，以<style=cIsDamage>驚人的力道</color>轟擊敵人。"
+    },
+    "ROB_SINDANTE_BODY_UTILITY_NAME": {
+      "en": "<color=#B70027>Advent</color>",
+      "zh-TW": "<color=#B70027>降臨</color>"
+    },
+    "ROB_SINDANTE_BODY_UTILITY_DESCRIPTION": {
+      "en": "Move at <style=cIsDamage>hyper speed</style>, reaching the enemy in the <style=cIsUtility>blink of an eye</style>.",
+      "zh-TW": "以<style=cIsDamage>超高速</style>移動，<style=cIsUtility>轉瞬之間</style>逼近敵人。"
+    },
+    "ROB_SINDANTE_BODY_SPECIAL_NAME": {
+      "en": "<color=#A556FF>Judgement</color>",
+      "zh-TW": "<color=#A556FF>審判</color>"
+    },
+    "ROB_SINDANTE_BODY_SPECIAL_DESCRIPTION": {
+      "en": "Unleash <style=cIsDamage>all of your power</style> at once, bathing nearby enemies in <style=cIsDamage>lethal damage</style>. <style=cIsHealth>Expends all of your SDT Gauge.</style>",
+      "zh-TW": "一口氣釋放<style=cIsDamage>你所有的力量</style>，讓附近的敵人承受<style=cIsDamage>致命傷害</style>。<style=cIsHealth>會耗盡你所有的真魔人化量表。</style>"
+    },
+    "ROB_DANTE_BODY_SPECIAL_SCEPTER_NAME": {
+      "en": "<color=#A556FF>Perfect Judgement</color>",
+      "zh-TW": "<color=#A556FF>完美審判</color>"
+    },
+    "ROB_DANTE_BODY_SPECIAL_SCEPTER_DESCRIPTION": {
+      "en": "Unleash <style=cIsDamage>all of your power</style> at once, bathing nearby enemies in <style=cIsDamage>lethal damage</style>. <style=cIsHealth>Expends all of your SDT Gauge.</style>\n<color=#d299ff>SCEPTER: Ravage your foes with summoned swords while active.</color>",
+      "zh-TW": "一口氣釋放<style=cIsDamage>你所有的力量</style>，讓附近的敵人承受<style=cIsDamage>致命傷害</style>。<style=cIsHealth>會耗盡你所有的真魔人化量表。</style>\n<color=#d299ff>權杖：發動期間以幻影劍蹂躪敵人。</color>"
+    },
+    "ACHIEVEMENT_ROB_DANTE_COMPLETION_UNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Dante: Jackpot",
+      "zh-TW": "但丁：頭獎"
+    },
+    "ACHIEVEMENT_ROB_DANTE_COMPLETION_UNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As <color=#B70027>Dante</color>, beat the game.",
+      "zh-TW": "作為<color=#B70027>但丁</color>，通關遊戲。"
+    },
+    "ACHIEVEMENT_ROB_DANTE_MASTERY_UNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Dante: Mastery",
+      "zh-TW": "但丁：精通"
+    },
+    "ACHIEVEMENT_ROB_DANTE_MASTERY_UNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As <color=#B70027>Dante</color>, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為<color=#B70027>但丁</color>，在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_ROB_DANTE_SUPPORTER_ACHIEVEMENT_ID_NAME": {
+      "en": "Dante: Early Supporter",
+      "zh-TW": "但丁：早期支持者"
+    },
+    "ACHIEVEMENT_ROB_DANTE_SUPPORTER_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "Play <color=#B70027>Dante</color> during beta.",
+      "zh-TW": "在測試期間遊玩<color=#B70027>但丁</color>。"
+    },
+    "ACHIEVEMENT_ROB_DANTE_QUEEN_ACHIEVEMENT_ID_NAME": {
+      "en": "Devil Arm: Queen",
+      "zh-TW": "惡魔兵器：女王"
+    },
+    "ACHIEVEMENT_ROB_DANTE_QUEEN_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As <color=#B70027>Dante</color>, obtain this <color=#A556FF>Devil Arm</color> in a run.",
+      "zh-TW": "作為<color=#B70027>但丁</color>，在一輪遊戲中取得這件<color=#A556FF>惡魔兵器</color>。"
+    },
+    "ACHIEVEMENT_ROB_DANTE_TITAN_ACHIEVEMENT_ID_NAME": {
+      "en": "Devil Arm: Titan",
+      "zh-TW": "惡魔兵器：巨人"
+    },
+    "ACHIEVEMENT_ROB_DANTE_TITAN_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As <color=#B70027>Dante</color>, obtain this <color=#A556FF>Devil Arm</color> in a run.",
+      "zh-TW": "作為<color=#B70027>但丁</color>，在一輪遊戲中取得這件<color=#A556FF>惡魔兵器</color>。"
+    },
+    "ACHIEVEMENT_ROB_DANTE_COLOSSUS_ACHIEVEMENT_ID_NAME": {
+      "en": "Devil Arm: Colossus",
+      "zh-TW": "惡魔兵器：巨像"
+    },
+    "ACHIEVEMENT_ROB_DANTE_COLOSSUS_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As <color=#B70027>Dante</color>, obtain this <color=#A556FF>Devil Arm</color> in a run.",
+      "zh-TW": "作為<color=#B70027>但丁</color>，在一輪遊戲中取得這件<color=#A556FF>惡魔兵器</color>。"
+    },
+    "ACHIEVEMENT_ROB_DANTE_OVERLORD_ACHIEVEMENT_ID_NAME": {
+      "en": "Devil Arm: Overlord",
+      "zh-TW": "惡魔兵器：霸主"
+    },
+    "ACHIEVEMENT_ROB_DANTE_OVERLORD_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As <color=#B70027>Dante</color>, obtain this <color=#A556FF>Devil Arm</color> in a run.",
+      "zh-TW": "作為<color=#B70027>但丁</color>，在一輪遊戲中取得這件<color=#A556FF>惡魔兵器</color>。"
+    },
+    "ACHIEVEMENT_ROB_DANTE_YAMATO_ACHIEVEMENT_ID_NAME": {
+      "en": "Devil Arm: Yamato",
+      "zh-TW": "惡魔兵器：閻魔刀"
+    },
+    "ACHIEVEMENT_ROB_DANTE_YAMATO_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As <color=#B70027>Dante</color>, obtain this <color=#A556FF>Devil Arm</color> in a run.",
+      "zh-TW": "作為<color=#B70027>但丁</color>，在一輪遊戲中取得這件<color=#A556FF>惡魔兵器</color>。"
+    },
+    "ACHIEVEMENT_ROB_DANTE_SPARDA_ACHIEVEMENT_ID_NAME": {
+      "en": "Devil Arm: Devil Sword Sparda",
+      "zh-TW": "惡魔兵器：魔劍斯巴達"
+    },
+    "ACHIEVEMENT_ROB_DANTE_SPARDA_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As <color=#B70027>Dante</color>, obtain this <color=#A556FF>Devil Arm</color> in a run.",
+      "zh-TW": "作為<color=#B70027>但丁</color>，在一輪遊戲中取得這件<color=#A556FF>惡魔兵器</color>。"
+    },
+    "ROB_DANTE_WEAPON_COLOSSUS_NAME": {
+      "en": "Colossus",
+      "zh-TW": "巨像"
+    },
+    "ROB_DANTE_WEAPON_COLOSSUS_DESC": {
+      "en": "A Devil Arm made for melee combat, brimming with the sealed power of the Colossus. <color=#B70027>Upgrades Titan.</color>",
+      "zh-TW": "專為近身戰鬥打造的惡魔兵器，充滿被封印的巨像之力。<color=#B70027>可升級巨人。</color>"
+    },
+    "ROB_DANTE_WEAPON_DSD_NAME": {
+      "en": "Devil Sword Dante",
+      "zh-TW": "魔劍但丁"
+    },
+    "ROB_DANTE_WEAPON_DSD_DESC": {
+      "en": "A new devil sword born from the fusion of Rebellion and Sparda: the devil sword Dante.",
+      "zh-TW": "由叛逆之刃與斯巴達融合而生的全新魔劍：魔劍但丁。"
+    },
+    "ROB_DANTE_WEAPON_MIRAGEEDGE_NAME": {
+      "en": "Mirage Edge",
+      "zh-TW": "幻影之刃"
+    },
+    "ROB_DANTE_WEAPON_MIRAGEEDGE_DESC": {
+      "en": "A weapon shaped from Vergil's own infernal energy. There's something about this blade—its shape and attacks—that resembles Force Edge, the sword his father wielded so long ago.",
+      "zh-TW": "以維吉爾自身的魔力塑造而成的武器。這把劍的外形與招式，都隱約有著力之刃的影子——那是他父親許久以前所用的劍。"
+    },
+    "ROB_DANTE_WEAPON_MITHRIX_NAME": {
+      "en": "Mithrix",
+      "zh-TW": "米斯歷克斯"
+    },
+    "ROB_DANTE_WEAPON_MITHRIX_DESC": {
+      "en": "The King of Nothing's signature greathammer.",
+      "zh-TW": "無為之主的招牌巨錘。"
+    },
+    "ROB_DANTE_WEAPON_OVERLORD_NAME": {
+      "en": "Overlord",
+      "zh-TW": "霸主"
+    },
+    "ROB_DANTE_WEAPON_OVERLORD_DESC": {
+      "en": "A powerful blade that can tear holes through dimensions.",
+      "zh-TW": "能在次元之間撕開裂口的強大利刃。"
+    },
+    "ROB_DANTE_WEAPON_QUEEN_NAME": {
+      "en": "Queen",
+      "zh-TW": "女王"
+    },
+    "ROB_DANTE_WEAPON_QUEEN_DESC": {
+      "en": "A hefty pair of greatshields.",
+      "zh-TW": "一對沉重的大盾。"
+    },
+    "ROB_DANTE_WEAPON_REBELLION_NAME": {
+      "en": "Rebellion",
+      "zh-TW": "叛逆之刃"
+    },
+    "ROB_DANTE_WEAPON_REBELLION_DESC": {
+      "en": "A keepsake sword from Dante's father. This magic blade hasn't fully awakened.",
+      "zh-TW": "但丁的父親留給他的紀念之劍。這把魔劍尚未完全覺醒。"
+    },
+    "ROB_DANTE_WEAPON_REDQUEEN_NAME": {
+      "en": "Red Queen",
+      "zh-TW": "緋紅女皇"
+    },
+    "ROB_DANTE_WEAPON_REDQUEEN_DESC": {
+      "en": ""
+    },
+    "ROB_DANTE_WEAPON_SPARDA_NAME": {
+      "en": "Devil Sword Sparda",
+      "zh-TW": "魔劍斯巴達"
+    },
+    "ROB_DANTE_WEAPON_SPARDA_DESC": {
+      "en": "The sword wielded by Dante and Vergil's father, Sparda. This is the true form of the Force Edge.",
+      "zh-TW": "但丁與維吉爾的父親斯巴達所用的劍。這才是力之刃的真正姿態。"
+    },
+    "ROB_DANTE_WEAPON_TITAN_NAME": {
+      "en": "Titan",
+      "zh-TW": "巨人"
+    },
+    "ROB_DANTE_WEAPON_TITAN_DESC": {
+      "en": "Gauntlets with the power of light that have overwhelmingly destructive force.",
+      "zh-TW": "蘊含光之力量的拳套，擁有壓倒性的破壞力。"
+    },
+    "ROB_DANTE_WEAPON_YAMATO_NAME": {
+      "en": "Yamato",
+      "zh-TW": "閻魔刀"
+    },
+    "ROB_DANTE_WEAPON_YAMATO_DESC": {
+      "en": "A powerful blade that can separate man from demon.",
+      "zh-TW": "能將人與魔分離的強大利刃。"
+    },
+    "No Devil Arm": {
+      "en": "No Devil Arm",
+      "zh-TW": "無惡魔兵器"
+    },
+    "Start with no Devil Arm.": {
+      "en": "Start with no Devil Arm.",
+      "zh-TW": "開局不攜帶惡魔兵器。"
+    },
+    "Devil Arm": {
+      "en": "Devil Arm",
+      "zh-TW": "惡魔兵器"
+    },
+    "Devil Sword Sparda": {
+      "en": "Devil Sword Sparda",
+      "zh-TW": "魔劍斯巴達"
+    },
+    "Take": {
+      "en": "Take",
+      "zh-TW": "拿取"
+    }
+  }
+}

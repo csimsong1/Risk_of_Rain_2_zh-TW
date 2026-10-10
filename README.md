@@ -3,7 +3,7 @@
 把 Risk of Rain 2 內建的簡體中文（`zh-CN`）轉成繁體中文（`zh-TW`）的腳本。
 產生的是遊戲原生的語言資料夾，不需要 BepInEx 或任何模組，有沒有裝模組都能用。
 
-有用 r2modman 玩模組的話，腳本還能另外安裝幾個模組的繁體中文翻譯，見[模組翻譯](#模組翻譯)。
+有用 r2modman 玩模組的話，腳本會順便把幾個模組的繁體中文翻譯裝進你的模組設定檔，見[模組翻譯](#模組翻譯)。
 
 | 檔案 | 用途 |
 |---|---|
@@ -33,7 +33,7 @@ OpenCC 會由 uv 自動安裝。在這個資料夾執行：
 uv run ror2_s2t.py
 ```
 
-腳本會自動找到 Steam 上的遊戲，在語言資料夾裡建立 `zh-TW`，接著到遊戲的國旗選單選「繁體中文」即可。
+腳本會自動找到 Steam 上的遊戲，在語言資料夾裡建立 `zh-TW`；有用 r2modman 的話，也會自動把[模組翻譯](#模組翻譯)裝進每個設定檔。接著到遊戲的國旗選單選「繁體中文」即可。
 
 也可以用一般的 Python：`pip install OpenCC` 後執行 `python ror2_s2t.py`（開發時只用 uv 測過）。
 
@@ -43,7 +43,7 @@ uv run ror2_s2t.py
 |---|---|
 | `--game-dir 路徑` | 遊戲安裝資料夾，自動尋找失敗時使用 |
 | `--zip 檔案` | 轉換後另外打包成 zip，方便分享 |
-| `--profile 設定檔` | r2modman 設定檔的名稱或路徑，另外安裝[模組翻譯](#模組翻譯) |
+| `--profile 設定檔` | [模組翻譯](#模組翻譯)只裝進這個 r2modman 設定檔（名稱或路徑）；不指定就裝進所有設定檔 |
 | `--name 名稱` | 語言選單上顯示的名稱，預設「繁體中文」 |
 | `--source` / `--target` | 來源與輸出的語言資料夾，預設 `zh-CN` / `zh-TW` |
 
@@ -58,23 +58,36 @@ uv run ror2_s2t.py --zip RoR2_zh-TW_1.5.1.zip
 
 ## 模組翻譯
 
-模組的文字大多只有英文，沒有簡體可以轉，所以這部分是人工翻譯，放在 `mods/` 資料夾。加上 `--profile` 就會裝進指定的 r2modman 設定檔：
+模組的文字大多只有英文，沒有簡體可以轉，所以這部分是人工翻譯，放在 `mods/` 資料夾。
+
+不用加任何選項：腳本會自動找到 r2modman 的所有設定檔（`%APPDATA%\r2modmanPlus-local\RiskOfRain2\profiles`），把翻譯裝進每一個；設定檔沒有安裝的模組會略過，不會多出檔案。r2modman 沒有把「目前選用的設定檔」記在讀得到的地方，所以是全部都裝。
+
+只想裝進其中一個，或設定檔不在預設位置時，用 `--profile` 指定名稱或完整路徑：
 
 ```bash
 uv run ror2_s2t.py --profile Purist_v4
 ```
 
-設定檔沒有安裝的模組會自動略過。目前有這三個模組：
+目前有這八個模組：
 
 | 模組 | 版本 | 翻譯內容 | 條數 |
 |---|---|---|---|
 | Insurgent | 1.0.2 | 角色、技能、關鍵字、成就、造型名稱 | 31 |
 | LunarDragon | 1.2.3 | 角色、技能、關鍵字、成就、背景故事 | 36 |
 | LookingGlass | 1.16.0 | buff 圖示提示的名稱與說明（83 個 buff） | 165 |
+| HUNK | 1.5.3 | 角色、武器與改造零件、專長、任務目標、物品、鑰匙卡、病毒、成就、背景故事 | 505 |
+| Dante | 0.0.89 | 角色、技能、惡魔兵器、物品、皮膚、成就、背景故事 | 164 |
+| Seamstress | 1.7.3 | 角色、技能、關鍵字、成就、背景故事 | 44 |
+| SkinFlavorText | 1.0.1 | 遊戲本體角色、Paladin 與 HUNK 皮膚的說明文字 | 55 |
+| Heretic | 1.2.11 | 被動、技能說明、物品、成就 | 8 |
+
+Heretic 與 Dante 自帶簡體翻譯（Dante 只有一部分），那些條目是把簡體轉成繁體後對照英文修訂的，其餘由英文翻譯。
+
+Seamstress 的技能數字（傷害、冷卻秒數）和 HUNK 的五條說明會跟著模組設定變動，英文是模組執行時算出來的；譯文是固定的，收錄的是預設設定的版本，改過那些設定的話要自己修改對應的譯文。各檔案開頭的 `notes` 有說明。
 
 安裝時會寫入兩個地方：
 
-- `設定檔\BepInEx\plugins\RoR2_zh-TW\*.language`：Insurgent 與 LunarDragon。R2API 會自動讀取，並蓋過模組寫死的英文。
+- `設定檔\BepInEx\plugins\RoR2_zh-TW\*.language`：LookingGlass 以外的模組。R2API 會自動讀取，並蓋過模組寫死的英文。
 - 遊戲的 `Language\zh-TW\mod_*.json`：LookingGlass。它直接查語言資料夾的內容，不經過 R2API。
 
 要移除就刪掉這些檔案。模組更新後版本對不上時，腳本會提醒，新增或改過的文字會顯示英文，其餘照常。
@@ -85,6 +98,7 @@ uv run ror2_s2t.py --profile Purist_v4
 
 - LookingGlass 的物品數值標籤（`Proc Coefficient:` 這類）
 - PlayerRespawnSystem 的聊天訊息與復活倒數
+- HUNK 的彈藥名稱、畫面中央的提示訊息（背包已滿、需要鑰匙卡等）與無線電對話
 - Risk of Options 選單，以及各模組的設定名稱與說明
 
 LookingGlass 的屬性面板是例外，它的文字存在設定裡，可以自己改。關閉遊戲後，用 r2modman 的 Config editor 開啟 `droppod.lookingglass.cfg`（或直接編輯設定檔的 `BepInEx\config\droppod.lookingglass.cfg`），把 `[Stats Display]` 底下這兩個設定值換成下面的內容：
@@ -119,6 +133,7 @@ LookingGlass 的屬性面板是例外，它的文字存在設定裡，可以自�
 - `mod` 是模組在 `plugins` 底下的資料夾名稱，`version` 是翻譯所依據的版本。
 - `loader` 填 `r2api`（模組用 R2API 註冊文字，絕大多數是這種）或 `language-folder`（模組自己查語言資料夾，例如 LookingGlass）。
 - 沒有 `zh-TW` 的條目會略過，遊戲顯示英文。
+- 有些模組沒有另外註冊 token，而是直接把英文句子當 token 用（例如 HUNK 的專長 `Marathon Runner`）。這種文字用英文原文當鍵就翻得到，`en` 和鍵相同；原文只要差一個字就對不上。
 - 譯文裡的 `<style=...>` 標籤和 `{0}` 佔位符要和原文一致，順序可以不同；不一致時腳本不會安裝那個模組。
 
 ## 自訂

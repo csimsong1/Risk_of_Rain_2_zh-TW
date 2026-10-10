@@ -1,0 +1,42 @@
+{
+  "mod": "Moffein-Heretic",
+  "version": "1.2.11",
+  "loader": "r2api",
+  "notes": [
+    "模組自帶簡體翻譯（language/zh-CN），譯文以它轉成繁體後修訂而成。"
+  ],
+  "strings": {
+    "MOFFEINHERETIC_PASSIVE_DESCRIPTION": {
+      "en": "The Heretic <style=cIsUtility>moves faster</style> and can <style=cIsUtility>flap her wings twice</style> for extra height while airborne.",
+      "zh-TW": "異教徒的<style=cIsUtility>移動速度更快</style>，並且可以在空中<style=cIsUtility>拍動兩次翅膀</style>以飛得更高。"
+    },
+    "MOFFEINHERETIC_STATBONUSITEM_NAME": {
+      "en": "Mark of Heresy",
+      "zh-TW": "異端印記"
+    },
+    "MOFFEINHERETIC_STATBONUSITEM_PICKUP": {
+      "en": "Gain a massive stat boost... <color=#FF7F7F>BUT your health decays over time.</color>",
+      "zh-TW": "屬性大幅提升……<color=#FF7F7F>但生命值會隨時間流失。</color>"
+    },
+    "MOFFEINHERETIC_STATBONUSITEM_DESC": {
+      "en": "Increase <style=cIsHealing>health</style> by <style=cIsHealing>400%</style> and <style=cIsDamage>damage</style> by <style=cIsDamage>50%</style>. Reduce <style=cIsHealing>base health regeneration</style> to <style=cIsHealing>-6hp/s</style>.",
+      "zh-TW": "<style=cIsHealing>生命值</style>提高<style=cIsHealing>400%</style>，<style=cIsDamage>傷害</style>提高<style=cIsDamage>50%</style>。<style=cIsHealing>基礎生命值再生</style>降低至<style=cIsHealing>-6hp/s</style>。"
+    },
+    "MOFFEINHERETIC_SKILL_LUNAR_SECONDARY_REPLACEMENT_DESCRIPTION": {
+      "en": "Charge up a ball of blades that repeatedly deals <style=cIsDamage>175% damage</style>. After a delay, explode and <style=cIsDamage>root</style> all enemies for <style=cIsDamage>700% damage</style>.",
+      "zh-TW": "放出一團刀刃組成的刃球，持續造成<style=cIsDamage>175%的傷害</style>。稍後，刃球會發生爆炸，<style=cIsDamage>定身</style>所有敵人並造成<style=cIsDamage>700%的傷害</style>。"
+    },
+    "MOFFEINHERETIC_SKILL_LUNAR_SPECIAL_REPLACEMENT_DESCRIPTION": {
+      "en": "Dealing damage adds a stack of <style=cIsDamage>Ruin</style>. Activating the skill <style=cIsDamage>detonates all Ruin stacks</style> at unlimited range, dealing <style=cIsDamage>300% damage</style> plus <style=cIsDamage>120% damage</style> per stack of <style=cIsDamage>Ruin</style>.",
+      "zh-TW": "造成傷害可以施加一層<style=cIsDamage>毀壞</style>。啟動此技能可以<style=cIsDamage>引爆所有的毀壞層數</style>，不限距離，並造成<style=cIsDamage>300%的傷害</style>，外加每層<style=cIsDamage>毀壞</style><style=cIsDamage>120%的傷害</style>。"
+    },
+    "ACHIEVEMENT_MOFFEINHERETICUNLOCK_NAME": {
+      "en": "Unorthodoxy Risen",
+      "zh-TW": "異端崛起"
+    },
+    "ACHIEVEMENT_MOFFEINHERETICUNLOCK_DESCRIPTION": {
+      "en": "Escape the moon as the secret survivor.",
+      "zh-TW": "使用隱藏倖存者逃離月球。"
+    }
+  }
+}

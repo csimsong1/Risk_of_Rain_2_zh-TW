@@ -1,0 +1,230 @@
+{
+  "mod": "rob-SkinFlavorText",
+  "version": "1.0.1",
+  "loader": "r2api",
+  "notes": [
+    "遊戲本體角色、Paladin 與 HUNK 皮膚的說明文字。"
+  ],
+  "strings": {
+    "COMMANDO_SKIN_ALT1_DESC": {
+      "en": "Experimental WASP armor. Comes complete with onboard AI and biofoam systems. Only worn by the most elite of soldiers.",
+      "zh-TW": "實驗性的WASP裝甲。配備完整的機載AI與生物泡沫系統。只有最精銳的士兵才能穿上。"
+    },
+    "COMMANDO_SKIN_ALT2_DESC": {
+      "en": "Custom-made decorative MARCH Mk. III variant. The terms of the pact made by those reborn in the eye of the storm are unknown.",
+      "zh-TW": "特別訂製的MARCH Mk. III裝飾款。那些在風暴之眼中重生的人究竟立下了什麼契約，無人知曉。"
+    },
+    "MERC_SKIN_ALT1_DESC": {
+      "en": "A gift from a rival Europian noble, for a job well done.",
+      "zh-TW": "來自一位敵對的歐羅巴貴族的禮物，感謝他出色地完成了任務。"
+    },
+    "MERC_SKIN_ALT2_DESC": {
+      "en": "Don't ask where that scar came from. He'll never admit it.",
+      "zh-TW": "別問那道疤是怎麼來的。他永遠不會承認。"
+    },
+    "MERC_SKIN_ALT3_DESC": {
+      "en": "What, so no head?",
+      "zh-TW": "什麼，所以沒有頭？"
+    },
+    "ENGI_SKIN_ALT1_DESC": {
+      "en": "EOD isn't stressful. Either I'm right, or suddenly it's not my problem anymore.",
+      "zh-TW": "拆彈一點都不緊張。要嘛我做對了，要嘛這突然就不再是我的問題了。"
+    },
+    "ENGI_SKIN_ALT2_DESC": {
+      "en": "Because people need to know you're not ''an Engineer,'' you're ''THE Engineer.''",
+      "zh-TW": "因為大家得知道，你不是「一名工程師」，你是「那位工程師」。"
+    },
+    "HUNTRESS_SKIN_ALT1_DESC": {
+      "en": "Blinding snowdrifts conceal the arrow that will darken your sight forevermore.",
+      "zh-TW": "令人睜不開眼的雪堆，藏著那支將讓你永遠失去光明的箭。"
+    },
+    "HUNTRESS_SKIN_ALT2_DESC": {
+      "en": "Make the treeline your personal hunting platform.",
+      "zh-TW": "把樹梢變成你專屬的狩獵平臺。"
+    },
+    "MAGE_SKIN_ALT1_DESC": {
+      "en": "The House holds many gifts for those it deems worthy.",
+      "zh-TW": "對於它認可的人，家族備有許多贈禮。"
+    },
+    "MAGE_SKIN_ALT2_DESC": {
+      "en": "Bearing the brunt of the storm can be eye-opening.",
+      "zh-TW": "首當其衝地承受風暴，可能會讓人大開眼界。"
+    },
+    "TOOLBOT_SKIN_ALT1_DESC": {
+      "en": "NOW YOU CAN APPLY GREAT FORCE TO COMBATANTS, TOO.",
+      "zh-TW": "現在你也可以對戰鬥人員施加巨大的力量了。"
+    },
+    "TOOLBOT_SKIN_ALT2_DESC": {
+      "en": "The Storm hides many wonders, notably chrome detailing.",
+      "zh-TW": "風暴中藏著許多奇觀，尤其是鍍鉻的細節。"
+    },
+    "TREEBOT_SKIN_ALT1_DESC": {
+      "en": "Even treebots change colors in Autumn.",
+      "zh-TW": "就連樹木機器人到了秋天也會變色。"
+    },
+    "TREEBOT_SKIN_ALT2_DESC": {
+      "en": "Once the Storm subsided, we discovered dozens of specimens of new flora across the planet.",
+      "zh-TW": "風暴平息之後，我們在這顆星球各處發現了數十種新植物的標本。"
+    },
+    "LOADER_SKIN_ALT1_DESC": {
+      "en": "The construction yellow and hazard stripes mean it's safe, right?",
+      "zh-TW": "工程黃加上警示條紋，代表它很安全，對吧？"
+    },
+    "LOADER_SKIN_ALT2_DESC": {
+      "en": "250 tons was the limit for the old suit. That's child's play after the upgrades.",
+      "zh-TW": "250噸是舊款機甲的極限。升級之後，那只是小菜一碟。"
+    },
+    "CROCO_SKIN_ALT1_DESC": {
+      "en": "Ages spent in the Cells tends to leave one looking pale.",
+      "zh-TW": "在牢房中度過漫長歲月，難免顯得蒼白。"
+    },
+    "CROCO_SKIN_ALT2_DESC": {
+      "en": "''Cap? I think our dog mutated.''",
+      "zh-TW": "「船長？我覺得我們的狗突變了。」"
+    },
+    "CAPTAIN_SKIN_ALT1_DESC": {
+      "en": "A promotion he declined, a desk he didn't want to sit behind the rest of his career.",
+      "zh-TW": "一次他婉拒的升遷，一張他不想在餘下職涯中一直坐在後面的辦公桌。"
+    },
+    "CAPTAIN_SKIN_ALT2_DESC": {
+      "en": "A title from a life unlived, never sailing the void.",
+      "zh-TW": "來自另一段未曾活過的人生的頭銜，從未航行於虛空。"
+    },
+    "BANDIT2_SKIN_ALT1_DESC": {
+      "en": "It was here. He was HERE. I start clawing, my razor sharp bones raking the plaster apart. It was here. I'm so cold.",
+      "zh-TW": "它就在這裡。他就在「這裡」。我開始抓刨，銳利如剃刀的骨頭把灰泥耙得四分五裂。它就在這裡。我好冷。"
+    },
+    "BANDIT2_SKIN_ALT2_DESC": {
+      "en": "Bought with the proceeds from ill-gotten gains instead of paying off creditors.",
+      "zh-TW": "用不義之財的收益買的，而不是拿去還債。"
+    },
+    "RAILGUNNER_SKIN_ALT1_DESC": {
+      "en": "Sadly, the drone is nonfunctional.",
+      "zh-TW": "可惜，這架無人機無法運作。"
+    },
+    "RAILGUNNER_SKIN_ALT2_DESC": {
+      "en": "What need is there to be stealthy when you're outside detection range?",
+      "zh-TW": "既然你在偵測範圍之外，又何必隱匿行蹤？"
+    },
+    "VOIDSURVIVOR_SKIN_ALT1_DESC": {
+      "en": "All is dark and quiet now.",
+      "zh-TW": "現在一切都黑暗而寂靜。"
+    },
+    "VOIDSURVIVOR_SKIN_ALT2_DESC": {
+      "en": "Her golden embrace helps to quiet its influence.",
+      "zh-TW": "她金色的擁抱有助於平息它的影響。"
+    },
+    "SEEKER_SKIN_ALT1_DESC": {
+      "en": "Oṃ Maṇi Padme Hūṃ.",
+      "zh-TW": "唵嘛呢叭咪吽。"
+    },
+    "FALSESON_SKIN_ALT1_DESC": {
+      "en": "His light can burn through even the deepest corruption.",
+      "zh-TW": "他的光芒甚至能燒穿最深沉的腐化。"
+    },
+    "CHEF_SKIN_ALT1_DESC": {
+      "en": "More appropriate attire for such an accomplished CHEF unit.",
+      "zh-TW": "對於如此出色的大廚機型而言，這是更合適的裝束。"
+    },
+    "PALADINBODY_DEFAULT_SKIN_DESC": {
+      "en": "This survivor's default skin.",
+      "zh-TW": "這名倖存者的預設皮膚。"
+    },
+    "PALADINBODY_LUNAR_SKIN_DESC": {
+      "en": "Righteous Underling to Mithrix's demands. Wrathful, yet stoic.",
+      "zh-TW": "聽命於米斯歷克斯的正義部下。憤怒，卻又堅忍。"
+    },
+    "PALADINBODY_LUNARKNIGHT_SKIN_DESC": {
+      "en": "Ancient History is sometimes worth looking into once more.",
+      "zh-TW": "古老的歷史有時值得再回顧一次。"
+    },
+    "PALADINBODY_TYPHOON_SKIN_DESC": {
+      "en": "Many cycles after The Fall, mission unforgotten, only delayed. Valiant, yet tired.",
+      "zh-TW": "隕落之後歷經無數輪迴，使命未曾遺忘，只是延宕。英勇，卻已疲憊。"
+    },
+    "PALADINBODY_TYPHOONLEGACY_SKIN_DESC": {
+      "en": "It never hurts to take a peek at the past.",
+      "zh-TW": "回頭看看過去，從來不是壞事。"
+    },
+    "PALADINBODY_POISON_SKIN_DESC": {
+      "en": "Brooding Cultist to N'Kuhana's calling. Unhinged, yet focused.",
+      "zh-TW": "回應恩庫哈納召喚的陰鬱信徒。癲狂，卻又專注。"
+    },
+    "PALADINBODY_POISONLEGACY_SKIN_DESC": {
+      "en": "Oldschool origins, we all gotta start from somewhere.",
+      "zh-TW": "老派的起點，誰都得從某個地方開始。"
+    },
+    "PALADINBODY_CLAY_SKIN_DESC": {
+      "en": "Tar given purpose beyond Gestalt. Quiet, yet unstable.",
+      "zh-TW": "被賦予了超越集合意識之使命的焦油。安靜，卻不穩定。"
+    },
+    "PALADINBODY_SPECTER_SKIN_DESC": {
+      "en": "An ancient member of an Order from a far off land. Known as the Specter of Torment to some.",
+      "zh-TW": "來自遙遠國度某個騎士團的古老成員。有些人稱之為折磨幽魂。"
+    },
+    "PALADINBODY_DRIP_SKIN_DESC": {
+      "en": "No Gods, No Masters, only the grind, the bag, and the motion.",
+      "zh-TW": "沒有神，沒有主人，只有苦幹、賺錢與行動。"
+    },
+    "PALADINBODY_MINECRAFT_SKIN_DESC": {
+      "en": "I... am Paladin.",
+      "zh-TW": "我……是聖騎士。"
+    },
+    "ROB_HUNK_BODY_DEFAULT_SKIN_DESC": {
+      "en": "This survivor's default skin.",
+      "zh-TW": "這名倖存者的預設皮膚。"
+    },
+    "ROB_HUNK_BODY_CLASSIC_SKIN_DESC": {
+      "en": "Resident Evil 2 Remake model.",
+      "zh-TW": "《惡靈古堡2 重製版》的模型。"
+    },
+    "ROB_HUNK_BODY_TOFU_SKIN_DESC": {
+      "en": "Low in calories, high in protein, and just the man for the mission.",
+      "zh-TW": "低熱量、高蛋白，正是這項任務的不二人選。"
+    },
+    "ROB_HUNK_BODY_SUPER_SKIN_DESC": {
+      "en": "Thanks so much for your support and/or congratulations on cheating! As a reward and/or joke, you can have every power.",
+      "zh-TW": "非常感謝你的支持，或者恭喜你作弊成功！作為獎勵，或者說玩笑，你可以擁有所有能力。"
+    },
+    "ROB_HUNK_BODY_LIGHTWEIGHT_SKIN_DESC": {
+      "en": "OSP? Of course. This is a top-secret black op. Don't expect any official support.",
+      "zh-TW": "OSP？當然。這是最高機密的秘密行動。別指望任何官方支援。"
+    },
+    "ROB_HUNK_BODY_GUERRILLA_SKIN_DESC": {
+      "en": "'I have a job to do, and I'm gonna see it through.' -Chris Redfield",
+      "zh-TW": "「我有任務在身，而且我會貫徹到底。」——克里斯．雷德菲爾"
+    },
+    "ROB_HUNK_BODY_ROOKIE_SKIN_DESC": {
+      "en": "'Something tells me he's not a cop...' -Leon S. Kennedy.",
+      "zh-TW": "「直覺告訴我，他不是警察……」——里昂．S．甘迺迪"
+    },
+    "ROB_HUNK_BODY_SWAT_SKIN_DESC": {
+      "en": "Your ass is a long way from Raccoon City, officer. Good luck.",
+      "zh-TW": "你離拉昆市可遠得很，警官。祝你好運。"
+    },
+    "ROB_HUNK_BODY_LEON_SKIN_DESC": {
+      "en": "'Where's everyone going? Bingo?' -Leon S. Kennedy.",
+      "zh-TW": "「大家都上哪去了？玩賓果嗎？」——里昂．S．甘迺迪"
+    },
+    "ROB_HUNK_BODY_ENFORCER_SKIN_DESC": {
+      "en": "Umbrella Corp. denies all affiliation with the Special Armed Garrison. Resemblance to Kerberos Protect Gear is entirely coincidental and non-actionable.",
+      "zh-TW": "保護傘公司否認與特殊武裝駐防部隊有任何關聯。與Kerberos護甲的相似之處純屬巧合，不構成訴訟理由。"
+    },
+    "ROB_HUNK_BODY_WESKER_SKIN_DESC": {
+      "en": "'Seven minutes. Seven minutes is all I can spare to play with you.' -Albert Wesker",
+      "zh-TW": "「七分鐘。我只能抽出七分鐘陪你玩。」——亞伯特．威斯克"
+    },
+    "ROB_HUNK_BODY_DOOM_SKIN_DESC": {
+      "en": "Doomguy",
+      "zh-TW": "毀滅戰士"
+    },
+    "ROB_HUNK_BODY_COMMANDO_SKIN_DESC": {
+      "en": "Standard issue MARCH Mk. III Commando armor. The yellow dome is the iconic face of UES enforcement.",
+      "zh-TW": "制式的MARCH Mk. III指揮官裝甲。黃色圓頂是尤伊思執法部隊的標誌性面孔。"
+    },
+    "ROB_HUNK_BODY_JACKET_SKIN_DESC": {
+      "en": "From hit game Payday 2.",
+      "zh-TW": "來自熱門遊戲《劫薪日2》。"
+    }
+  }
+}
