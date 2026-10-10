@@ -143,3 +143,75 @@ def test_stale_files_ignores_installed_mod_translations(tmp_path):
     (tmp_path / "zh-TW" / "mod_Author-Hud.json").write_text("{}", encoding="utf-8")
 
     assert ror2_s2t.stale_files(tmp_path / "zh-CN", tmp_path / "zh-TW") == []
+
+
+def test_find_profiles_lists_every_folder_that_holds_plugins(tmp_path):
+    add_plugin(tmp_path / "profiles" / "Purist", "Author-Survivor")
+    add_plugin(tmp_path / "profiles" / "Default", "Author-Hud")
+    (tmp_path / "profiles" / "not-a-profile").mkdir()
+
+    found = ror2_s2t.find_profiles(tmp_path / "profiles")
+
+    assert found == [tmp_path / "profiles" / "Default", tmp_path / "profiles" / "Purist"]
+
+
+def test_find_profiles_returns_nothing_when_the_mod_manager_is_not_installed(tmp_path):
+    assert ror2_s2t.find_profiles(tmp_path / "no-such-folder") == []
+
+
+def make_game(root: Path) -> Path:
+    source = root / ror2_s2t.LANG_SUBDIR / "zh-CN"
+    source.mkdir(parents=True)
+    (source / "language.json").write_text('{"language": {"selfname": "简体中文"}}', encoding="utf-8")
+    (source / "Items.json").write_text('{\n  strings:\n  {\n  "ITEM_NAME" : "鼠标",\n  }\n}\n', encoding="utf-8")
+    return root
+
+
+def run_main(tmp_path: Path, monkeypatch, *options: str) -> int:
+    monkeypatch.setattr(ror2_s2t, "MODS_DIR", tmp_path / "mods")
+    monkeypatch.setattr(ror2_s2t, "PROFILES_DIR", tmp_path / "profiles")
+    monkeypatch.setattr("sys.argv", ["ror2_s2t.py", "--game-dir", str(tmp_path / "game"), *options])
+    return ror2_s2t.main()
+
+
+def installed_translation(profile: Path) -> Path:
+    return profile / "BepInEx" / "plugins" / "RoR2_zh-TW" / "Author-Survivor.language"
+
+
+def test_main_installs_mod_translations_into_every_profile_by_default(tmp_path, monkeypatch):
+    make_game(tmp_path / "game")
+    write_mod(tmp_path / "mods", "Author-Survivor", "r2api", SKILL)
+    add_plugin(tmp_path / "profiles" / "First", "Author-Survivor")
+    add_plugin(tmp_path / "profiles" / "Second", "Author-Survivor")
+    add_plugin(tmp_path / "profiles" / "Vanilla", "Someone-Else")
+
+    exit_code = run_main(tmp_path, monkeypatch)
+
+    assert exit_code == 0
+    assert read_json(installed_translation(tmp_path / "profiles" / "First")) == {"zh-TW": {"SKILL_NAME": "鎖鏈斬"}}
+    assert installed_translation(tmp_path / "profiles" / "Second").is_file()
+    assert not (tmp_path / "profiles" / "Vanilla" / "BepInEx" / "plugins" / "RoR2_zh-TW").exists()
+
+
+def test_main_with_profile_option_installs_into_that_profile_only(tmp_path, monkeypatch):
+    make_game(tmp_path / "game")
+    write_mod(tmp_path / "mods", "Author-Survivor", "r2api", SKILL)
+    add_plugin(tmp_path / "profiles" / "First", "Author-Survivor")
+    add_plugin(tmp_path / "profiles" / "Second", "Author-Survivor")
+
+    exit_code = run_main(tmp_path, monkeypatch, "--profile", "Second")
+
+    assert exit_code == 0
+    assert installed_translation(tmp_path / "profiles" / "Second").is_file()
+    assert not installed_translation(tmp_path / "profiles" / "First").exists()
+
+
+def test_main_still_converts_the_language_pack_when_no_profile_exists(tmp_path, monkeypatch):
+    make_game(tmp_path / "game")
+    write_mod(tmp_path / "mods", "Author-Survivor", "r2api", SKILL)
+
+    exit_code = run_main(tmp_path, monkeypatch)
+
+    converted = tmp_path / "game" / ror2_s2t.LANG_SUBDIR / "zh-TW" / "Items.json"
+    assert exit_code == 0
+    assert '"ITEM_NAME" : "滑鼠"' in converted.read_text(encoding="utf-8")

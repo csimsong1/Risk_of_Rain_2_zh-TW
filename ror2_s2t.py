@@ -8,7 +8,9 @@
     uv run ror2_s2t.py                              # 自動尋找 Steam 上的遊戲
     uv run ror2_s2t.py --game-dir "D:\\Games\\Risk of Rain 2"
     uv run ror2_s2t.py --zip RoR2_zh-TW.zip          # 另外打包成 zip 分享給別人
-    uv run ror2_s2t.py --profile Purist_v4           # 另外把模組翻譯裝進 r2modman 設定檔
+    uv run ror2_s2t.py --profile Purist_v4           # 模組翻譯只裝進這個 r2modman 設定檔
+
+模組翻譯（mods 資料夾）預設會裝進 r2modman 的每一個設定檔，沒裝對應模組的設定檔會略過。
 
 遊戲更新後重跑一次即可；之後在遊戲的語言選單選「繁體中文」。
 """
@@ -247,12 +249,19 @@ def markup_diff(source: str, translated: str) -> list[str]:
     )
 
 
-def find_profile(name: str, profiles_dir: Path = PROFILES_DIR) -> Path | None:
+def find_profile(name: str, profiles_dir: Path) -> Path | None:
     """name 可以是 r2modman 的設定檔名稱，或設定檔資料夾的完整路徑。"""
     for candidate in (Path(name), profiles_dir / name):
         if (candidate / "BepInEx" / "plugins").is_dir():
             return candidate
     return None
+
+
+def find_profiles(profiles_dir: Path) -> list[Path]:
+    """回傳 r2modman 的所有設定檔。r2modman 沒有把目前選用的設定檔記在讀得到的地方，所以全部都算。"""
+    if not profiles_dir.is_dir():
+        return []
+    return sorted(p for p in profiles_dir.iterdir() if (p / "BepInEx" / "plugins").is_dir())
 
 
 def stale_files(source_dir: Path, target_dir: Path) -> list[Path]:
@@ -330,7 +339,7 @@ def main() -> int:
     parser.add_argument("--name", default="繁體中文", help="語言選單上顯示的名稱")
     parser.add_argument("--zip", type=Path, metavar="檔案", help="另外打包成 zip 方便分享")
     parser.add_argument(
-        "--profile", metavar="設定檔", help="r2modman 設定檔名稱或路徑；另外安裝 mods 資料夾裡的模組翻譯"
+        "--profile", metavar="設定檔", help="只把模組翻譯裝進這個 r2modman 設定檔（名稱或路徑）；預設裝進所有設定檔"
     )
     args = parser.parse_args()
 
@@ -346,10 +355,14 @@ def main() -> int:
     if source_dir.resolve() == target_dir.resolve():
         print("來源與輸出不能是同一個資料夾。")
         return 1
-    profile = find_profile(args.profile) if args.profile else None
-    if args.profile and profile is None:
-        print(f"找不到模組設定檔：{args.profile}（在 {PROFILES_DIR} 底下也沒有）")
-        return 1
+    if args.profile:
+        profile = find_profile(args.profile, PROFILES_DIR)
+        if profile is None:
+            print(f"找不到模組設定檔：{args.profile}（在 {PROFILES_DIR} 底下也沒有）")
+            return 1
+        profiles = [profile]
+    else:
+        profiles = find_profiles(PROFILES_DIR)
 
     # s2tw：簡體 -> 繁體（臺灣字形），只換字不換詞；用語另由 TERMS 處理
     converter = opencc.OpenCC("s2tw")
@@ -394,7 +407,9 @@ def main() -> int:
     for relative in stale_files(source_dir, target_dir):
         print(f"  注意：{relative} 在來源已不存在，可能是舊版遺留的檔案")
 
-    if profile is not None:
+    if not profiles:
+        print("沒有找到 r2modman 設定檔，未安裝模組翻譯。")
+    for profile in profiles:
         print(f"模組翻譯 -> {profile}")
         if not install_mods(MODS_DIR, profile, target_dir, args.target):
             failed = True
