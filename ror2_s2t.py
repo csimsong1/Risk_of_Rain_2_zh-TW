@@ -37,18 +37,18 @@ OVERRIDES_DIR = Path(__file__).resolve().parent / "overrides"
 HAN = re.compile(
     "[\u2e80-\u2fdf\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0003ffff]"
 )
-# \u8b6f\u6587\u5fc5\u9808\u539f\u6a23\u4fdd\u7559\u7684\u6a19\u8a18\uff1a<style=...> \u9019\u985e\u6a19\u7c64\u8207 {0} \u4f54\u4f4d\u7b26
+# 譯文必須原樣保留的標記：<style=...> 這類標籤與 {0} 佔位符
 MARKUP = re.compile(r"<[^<>]*>|\{\d+[^{}]*\}")
 
-# \u6a21\u7d44\u7684\u82f1\u6587\u6587\u5b57\u6c92\u6709\u7c21\u9ad4\u4f86\u6e90\u53ef\u8f49\uff0c\u8b6f\u6587\u662f\u4eba\u5de5\u7ffb\u7684\uff0c\u4e00\u500b\u6a21\u7d44\u4e00\u500b\u6a94\u6848\u653e\u5728\u9019\u88e1
+# 模組的英文文字沒有簡體來源可轉，譯文是人工翻的，一個模組一個檔案放在這裡
 MODS_DIR = Path(__file__).resolve().parent / "mods"
 PROFILES_DIR = (
     Path(os.environ.get("APPDATA", "")) / "r2modmanPlus-local" / "RiskOfRain2" / "profiles"
 )
-MOD_TEXT = "zh-TW"  # \u6a21\u7d44\u7ffb\u8b6f\u6a94\u88e1\u8b6f\u6587\u7684\u9375\u540d
-# R2API \u6703\u8b80\u53d6 plugins \u5e95\u4e0b\u6240\u6709 *.language \u6a94\uff0c\u6211\u5011\u7684\u6a94\u6848\u96c6\u4e2d\u653e\u5728\u9019\u500b\u8cc7\u6599\u593e
+MOD_TEXT = "zh-TW"  # 模組翻譯檔裡譯文的鍵名
+# R2API 會讀取 plugins 底下所有 *.language 檔，我們的檔案集中放在這個資料夾
 MOD_PLUGIN_DIR = "RoR2_zh-TW"
-MOD_FILE_PREFIX = "mod_"  # \u653e\u9032\u904a\u6232\u8a9e\u8a00\u8cc7\u6599\u593e\u7684\u6a21\u7d44\u7ffb\u8b6f\u6a94\u540d\u958b\u982d
+MOD_FILE_PREFIX = "mod_"  # 放進遊戲語言資料夾的模組翻譯檔名開頭
 
 # 大陸用語 -> 臺灣用語，套用在已轉成繁體字的文字上（較長的詞優先）。
 # 不用 OpenCC 內建的 s2twp 詞庫，因為它在遊戲文本會誤轉，
