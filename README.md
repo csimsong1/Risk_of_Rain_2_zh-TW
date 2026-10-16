@@ -86,7 +86,7 @@ uv run ror2_s2t.py --zip RoR2_zh-TW_1.5.1.zip
 uv run ror2_s2t.py --profile Purist_v4
 ```
 
-目前有這八個模組：
+目前有這十四個模組：
 
 | 模組 | 版本 | 翻譯內容 | 條數 |
 |---|---|---|---|
@@ -98,10 +98,18 @@ uv run ror2_s2t.py --profile Purist_v4
 | Seamstress | 1.7.3 | 角色、技能、關鍵字、成就、背景故事 | 44 |
 | SkinFlavorText | 1.0.1 | 遊戲本體角色、Paladin 與 HUNK 皮膚的說明文字 | 55 |
 | Heretic | 1.2.11 | 被動、技能說明、物品、成就 | 8 |
+| Celestial War Tank | 2.3.10 | 角色、技能、車體與炮塔、塗裝、成就、背景故事、Mega War Tank、Ancient Scepter 強化技能 | 365 |
+| Minato（Zerneas） | 0.14.3 | 角色、技能、九尾查克拉模式、飛雷神提示、背景故事 | 31 |
+| Naruto Shippuden（Zerneas） | 0.21.2 | 角色、技能、四尾形態、背景故事 | 28 |
+| Naruto Sage（Zerneas） | 0.22.3 | 角色、技能、六尾形態、背景故事 | 27 |
+| Sasuke Shippuden（Zerneas） | 0.19.8 | 角色、技能、咒印形態、背景故事 | 28 |
+| Sasuke Mangekyou（Zerneas） | 0.15.2 | 角色、技能、萬花筒形態、背景故事 | 27 |
 
 Heretic 與 Dante 自帶簡體翻譯（Dante 只有一部分），那些條目是把簡體轉成繁體後對照英文修訂的，其餘由英文翻譯。
 
 Seamstress 的技能數字（傷害、冷卻秒數）和 HUNK 的五條說明會跟著模組設定變動，英文是模組執行時算出來的；譯文是固定的，收錄的是預設設定的版本，改過那些設定的話要自己修改對應的譯文。各檔案開頭的 `notes` 有說明。
+
+Celestial War Tank 的車體、炮塔數值和技能說明裡的重量，是模組從自帶的資源包算出來的；技能說明最後的「技能數值」只在模組設定 Show Extra Skill Info 開啟（預設）時出現，關掉的話英文會少這一段，譯文仍會顯示。
 
 安裝時會寫入兩個地方：
 
@@ -117,6 +125,8 @@ Seamstress 的技能數字（傷害、冷卻秒數）和 HUNK 的五條說明會
 - LookingGlass 的物品數值標籤（`Proc Coefficient:` 這類）
 - PlayerRespawnSystem 的聊天訊息與復活倒數
 - HUNK 的彈藥名稱、畫面中央的提示訊息（背包已滿、需要鑰匙卡等）與無線電對話
+- Zerneas 火影系列的形態熟練度提示，以及 Kizuna（羈絆）模組的大廳與技能清單介面（只有英文和西班牙文）
+- Celestial War Tank 的燃料量表與坦克編輯器選單
 - Risk of Options 選單，以及各模組的設定名稱與說明
 
 LookingGlass 的屬性面板是例外，它的文字存在設定裡，可以自己改。關閉遊戲後，用 r2modman 的 Config editor 開啟 `droppod.lookingglass.cfg`（或直接編輯設定檔的 `BepInEx\config\droppod.lookingglass.cfg`），把 `[Stats Display]` 底下這兩個設定值換成下面的內容：
@@ -196,7 +206,7 @@ uv run --with pytest --with "OpenCC>=1.1.9" pytest
 - **用語**：沒列在 `TERMS` 裡的詞仍是大陸用語（例如「循環」「類型」「綁定」）。
 - **校對**：錯字是用規則掃描找的，沒有逐句讀過全部文字，背景故事裡可能還有漏掉的。
 - **模組文字**：只有 `mods/` 裡的模組有翻譯，其他模組顯示英文。模組自帶的簡體翻譯不會套用到 `zh-TW`。
-- **模組翻譯未實測**：token 名稱是從模組的 DLL 靜態分析出來的，譯文的標籤也經過腳本檢查，但還沒有在遊戲裡逐條確認顯示。
+- **模組翻譯未實測**：token 名稱和英文是從模組的 DLL 分析出來的（較新加入的模組是在遊戲外執行模組註冊文字的程式取得），譯文的標籤也經過腳本檢查，但還沒有在遊戲裡逐條確認顯示。
 - **安裝包**：只在製作它的電腦上試過（解壓縮後執行 `安裝.bat`，結果和直接跑腳本相同），沒有在別台電腦上試過。從網路下載的 `.bat` 第一次執行時，Windows 可能會跳出安全性警告。
 - **Epic 版**：尋找遊戲的方式和 r2modman 相同（讀 Epic Games Launcher 的安裝記錄 `LauncherInstalled.dat`），只用模擬的記錄檔測過，沒有在裝了 Epic 版的電腦上實測。找不到時用 `--game-dir` 指定。
 - **測試範圍**：在遊戲 1.5.0（Steam 版）測試，未裝模組與使用 r2modman 模組設定檔兩種情況都正常顯示。多人連線沒有測過。

@@ -1,0 +1,136 @@
+{
+  "mod": "Zerneas-MinatoMod",
+  "version": "0.14.3",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
+    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組的大廳與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。",
+    "ZERNEAS_MINATO_HUD_* 是準星旁飛雷神提示的文字。"
+  ],
+  "strings": {
+    "ZERNEAS_MINATO_NAME": {
+      "en": "Minato",
+      "zh-TW": "波風湊"
+    },
+    "ZERNEAS_MINATO_DESCRIPTION": {
+      "en": "Minato is the Yellow Flash: he plants the Hiraishin formula with his kunai and appears wherever it is, in an instant.<color=#CCD3E0>\r\n\r\n< ! > Every blow writes a seal on the enemy, with no limit.\r\n\r\n< ! > Arriving by Hiraishin at a sealed enemy cashes every seal in: one cut each. Hit, hit, flash, repeat.\r\n\r\n< ! > Hiraishin throws a kunai. Aim at a kunai or a sealed enemy and the same key takes you there for free (the golden rings by your crosshair tell you when).\r\n\r\n< ! > Press again while a kunai still flies to catch it in the air.\r\n\r\n< ! > Chakra control: hold Jump against a wall to run on it.\r\n\r\n< ! > Arrivals, Senko cuts and kills fill the Nine-Tails' chakra: press X to take on the Chakra Mode.\r\n\r\n",
+      "zh-TW": "波風湊就是「黃色閃光」：他用苦無留下飛雷神術式，並在一瞬間出現在術式所在之處。<color=#CCD3E0>\r\n\r\n< ! >每次攻擊都會在敵人身上留下印記，沒有上限。\r\n\r\n< ! >用飛雷神抵達帶有印記的敵人身旁時，會兌現所有印記：每個印記各斬一刀。攻擊、攻擊、閃現，周而復始。\r\n\r\n< ! >飛雷神會擲出一把苦無。瞄準苦無或帶有印記的敵人，再按同一個鍵就能無消耗地瞬移過去（準星旁的金色圓環會提示你何時可以）。\r\n\r\n< ! >苦無還在飛行時再按一次，就能在半空中接住它。\r\n\r\n< ! >查克拉控制：貼著牆按住跳躍鍵就能在牆上奔跑。\r\n\r\n< ! >抵達、閃光的斬擊與擊敗敵人都會累積九尾的查克拉：按X鍵進入查克拉模式。\r\n\r\n"
+    },
+    "ZERNEAS_MINATO_SUBTITLE": {
+      "en": "The Yellow Flash",
+      "zh-TW": "黃色閃光"
+    },
+    "ZERNEAS_MINATO_LORE": {
+      "en": "The Fourth Hokage of the Leaf. In the war they gave an order for him alone: if you meet the Yellow Flash, flee. His kunai carried a formula, and wherever one landed, he was already there.",
+      "zh-TW": "木葉村的第四代火影。戰爭期間，敵軍甚至為他一人下達過專門的命令：若遇上黃色閃光，立刻逃走。他的苦無上刻著術式，無論苦無落在哪裡，他都早已身在那裡。"
+    },
+    "ZERNEAS_MINATO_OUTRO_FLAVOR": {
+      "en": "..and so he left, in a flash of yellow light.",
+      "zh-TW": "……於是他走了，化作一道黃色的閃光。"
+    },
+    "ZERNEAS_MINATO_OUTRO_FAILURE": {
+      "en": "..and so he vanished, and no formula brought him back.",
+      "zh-TW": "……於是他就這樣消逝了，再也沒有任何術式能把他帶回來。"
+    },
+    "ZERNEAS_MINATO_PASSIVE_NAME": {
+      "en": "Hiraishin Formula",
+      "zh-TW": "飛雷神術式"
+    },
+    "ZERNEAS_MINATO_PASSIVE_DESCRIPTION": {
+      "en": "Every blow writes a <style=cIsUtility>seal</style> on the enemy (8s, no limit). Arriving by Hiraishin at a sealed enemy <style=cIsDamage>cashes them in</style>: <style=cIsDamage>80%</style> a seal and <style=cIsUtility>-1s</style> to your cooldowns. <style=cIsUtility>Yellow Flash</style>: every arrival gives <style=cIsDamage>+30% attack speed</style> and <style=cIsUtility>+30% speed</style> for 1.5s.",
+      "zh-TW": "每次攻擊都會在敵人身上留下<style=cIsUtility>印記</style>（持續8秒，沒有上限）。用飛雷神抵達帶有印記的敵人身旁時會<style=cIsDamage>兌現印記</style>：每個印記造成<style=cIsDamage>80%</style>傷害，並使你的冷卻時間<style=cIsUtility>減少1秒</style>。<style=cIsUtility>黃色閃光</style>：每次抵達都會獲得<style=cIsDamage>+30%攻擊速度</style>與<style=cIsUtility>+30%移動速度</style>，持續1.5秒。"
+    },
+    "ZERNEAS_MINATO_PRIMARY_KUNAI_NAME": {
+      "en": "Kunai Taijutsu",
+      "zh-TW": "苦無體術"
+    },
+    "ZERNEAS_MINATO_PRIMARY_KUNAI_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile.</style> Four blows for <style=cIsDamage>150%</style> to <style=cIsDamage>300%</style>; one aimed at an enemy up to 16m away <style=cIsUtility>flashes you to it</style>. In the air, looking down, a dive: <style=cIsDamage>400%</style> in 6m.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。四連擊，造成<style=cIsDamage>150%</style>至<style=cIsDamage>300%</style>的傷害；對16米內的敵人出招時，會<style=cIsUtility>瞬間閃至其身旁</style>。在空中朝下看時改為俯衝：在半徑6米內造成<style=cIsDamage>400%</style>傷害。"
+    },
+    "ZERNEAS_MINATO_SECONDARY_RASENGAN_NAME": {
+      "en": "Rasengan",
+      "zh-TW": "螺旋丸"
+    },
+    "ZERNEAS_MINATO_SECONDARY_RASENGAN_DESCRIPTION": {
+      "en": "Charge and burst: <style=cIsDamage>500%</style> in 5m, <style=cIsDamage>stunning</style>. Aimed at a <style=cIsUtility>mark</style>, appear there: <style=cIsDamage>1000%</style> in 6m, <style=cIsDamage>swallowing the seals</style> it reaches (+100% each).",
+      "zh-TW": "衝鋒並爆發：在半徑5米內造成<style=cIsDamage>500%</style>傷害並<style=cIsDamage>眩暈</style>。瞄準<style=cIsUtility>標記</style>時會直接出現在那裡：在半徑6米內造成<style=cIsDamage>1000%</style>傷害，並<style=cIsDamage>吞噬範圍內的印記</style>（每個+100%）。"
+    },
+    "ZERNEAS_MINATO_UTILITY_HIRAISHIN_NAME": {
+      "en": "Hiraishin",
+      "zh-TW": "飛雷神"
+    },
+    "ZERNEAS_MINATO_UTILITY_HIRAISHIN_DESCRIPTION": {
+      "en": "Throw a kunai (<style=cIsDamage>200%</style>) that sticks where it lands. Aimed at a kunai or a sealed enemy within 90m, <style=cIsUtility>appear there for free</style>: by an enemy, a cut for <style=cIsDamage>250%</style> and its seals cashed in. Every arrival bursts for <style=cIsDamage>150%</style> in 5m. 3 kunai.",
+      "zh-TW": "擲出一把苦無（<style=cIsDamage>200%</style>），會插在落點上。瞄準90米內的苦無或帶有印記的敵人時，可<style=cIsUtility>無消耗地出現在那裡</style>：若在敵人身旁，會斬擊一次造成<style=cIsDamage>250%</style>傷害，並兌現其印記。每次抵達都會爆發，在半徑5米內造成<style=cIsDamage>150%</style>傷害。共3把苦無。"
+    },
+    "ZERNEAS_MINATO_SPECIAL_SENKO_NAME": {
+      "en": "Senko",
+      "zh-TW": "閃光"
+    },
+    "ZERNEAS_MINATO_SPECIAL_SENKO_DESCRIPTION": {
+      "en": "Homing kunai at up to 7 enemies (45m), and you <style=cIsUtility>appear by each in turn</style>: <style=cIsDamage>350%</style> and their seals cashed in. <style=cIsUtility>Invulnerable</style>.",
+      "zh-TW": "向最多7名敵人（45米內）擲出追蹤苦無，並<style=cIsUtility>依序出現在每名敵人身旁</style>：造成<style=cIsDamage>350%</style>傷害並兌現其印記。期間<style=cIsUtility>無敵</style>。"
+    },
+    "ZERNEAS_MINATO_SKIN_JONIN_NAME": {
+      "en": "Jonin",
+      "zh-TW": "上忍"
+    },
+    "ZERNEAS_MINATO_HUD_HIRAISHIN": {
+      "en": "HIRAISHIN",
+      "zh-TW": "飛雷神"
+    },
+    "ZERNEAS_MINATO_HUD_OUT_OF_REACH": {
+      "en": "OUT OF REACH",
+      "zh-TW": "超出範圍"
+    },
+    "ZERNEAS_MINATO_HUD_CATCH": {
+      "en": "CATCH",
+      "zh-TW": "接住"
+    },
+    "ZERNEAS_MINATO_HUD_BLINK": {
+      "en": "FLASH",
+      "zh-TW": "閃現"
+    },
+    "ZERNEAS_MINATO_KYUUBI_NAME": {
+      "en": "Nine-Tails Chakra Mode",
+      "zh-TW": "九尾查克拉模式"
+    },
+    "ZERNEAS_MINATO_KYUUBI_DESCRIPTION": {
+      "en": "Arrivals, Senko and kills fill it. From a quarter: <style=cIsUtility>every hit marks</style>, Hiraishin anywhere, allies taken along. Turn back with X: what's left <style=cIsDamage>seals every enemy</style> within 25m. Let it run out: <style=cIsHealth>no Hiraishin for 5s</style>.",
+      "zh-TW": "抵達、閃光與擊敗敵人都會累積量表。累積到四分之一即可發動：<style=cIsUtility>每次命中都會留下標記</style>，飛雷神可瞬移至任何地方，並能帶上盟友。按X鍵解除：剩餘的量會<style=cIsDamage>為25米內所有敵人刻上印記</style>。若任其耗盡：<style=cIsHealth>5秒內無法使用飛雷神</style>。"
+    },
+    "ZERNEAS_MINATO_KYUUBI_BLOWS_NAME": {
+      "en": "Chakra Mode Taijutsu",
+      "zh-TW": "查克拉模式體術"
+    },
+    "ZERNEAS_MINATO_KYUUBI_BLOWS_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile.</style> Blows with the chakra arms, up to <style=cIsDamage>470%</style>; <style=cIsUtility>every hit marks</style>. Dive: <style=cIsDamage>550%</style> in 8m.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。以查克拉手臂連擊，最高造成<style=cIsDamage>470%</style>傷害；<style=cIsUtility>每次命中都會留下標記</style>。俯衝：在半徑8米內造成<style=cIsDamage>550%</style>傷害。"
+    },
+    "ZERNEAS_MINATO_KYUUBI_RASENGAN_NAME": {
+      "en": "Rasengan",
+      "zh-TW": "螺旋丸"
+    },
+    "ZERNEAS_MINATO_KYUUBI_RASENGAN_DESCRIPTION": {
+      "en": "A bigger Rasengan: <style=cIsDamage>700%</style> in 7m, or at a mark <style=cIsDamage>1300%</style> in 8m.",
+      "zh-TW": "更大的螺旋丸：在半徑7米內造成<style=cIsDamage>700%</style>傷害；瞄準標記時則在半徑8米內造成<style=cIsDamage>1300%</style>傷害。"
+    },
+    "ZERNEAS_MINATO_KYUUBI_HIRAISHIN_NAME": {
+      "en": "Golden Hiraishin",
+      "zh-TW": "金色飛雷神"
+    },
+    "ZERNEAS_MINATO_KYUUBI_HIRAISHIN_DESCRIPTION": {
+      "en": "<style=cIsUtility>Appear where you aim</style> (up to 35m), at a mark or at an ally; allies within 2m <style=cIsUtility>go with you</style>. By an enemy, a cut for <style=cIsDamage>250%</style>. Every arrival bursts for <style=cIsDamage>300%</style> in 7m. 3 charges.",
+      "zh-TW": "<style=cIsUtility>出現在瞄準之處</style>（最遠35米），可以是標記或盟友身旁；2米內的盟友會<style=cIsUtility>與你同行</style>。若在敵人身旁，會斬擊一次造成<style=cIsDamage>250%</style>傷害。每次抵達都會爆發，在半徑7米內造成<style=cIsDamage>300%</style>傷害。3次充能。"
+    },
+    "ZERNEAS_MINATO_KYUUBI_CLONE_NAME": {
+      "en": "Hiraishin: Clone Rasengan",
+      "zh-TW": "飛雷神·分身螺旋丸"
+    },
+    "ZERNEAS_MINATO_KYUUBI_CLONE_DESCRIPTION": {
+      "en": "Throw a chakra kunai: a clone falls on it with a <style=cIsDamage>giant Rasengan</style>, <style=cIsDamage>1600%</style> in 11m, <style=cIsDamage>stunning</style>.",
+      "zh-TW": "擲出一把查克拉苦無：分身會帶著<style=cIsDamage>巨大螺旋丸</style>落在苦無處，在半徑11米內造成<style=cIsDamage>1600%</style>傷害並<style=cIsDamage>眩暈</style>。"
+    }
+  }
+}

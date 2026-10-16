@@ -1,0 +1,1474 @@
+{
+  "mod": "CheeseWithHoles-Celestial_War_Tank",
+  "version": "2.3.10",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的。車體與炮塔的名稱、數值，以及技能說明最後「技能數值」裡的重量，是模組從內嵌資源包的零件資料算出來的，這裡依 2.3.10 版資源包的內容。",
+    "技能說明的「技能數值」區塊（冷卻時間、爆炸半徑、重量）只在設定 Show Extra Skill Info 開啟（預設）時出現；關掉的話英文會少這一段，譯文仍會顯示。",
+    "XTRA_ 開頭的是 Mega War Tank（設定 Add Xtra Tank，預設關閉）；SCEPTER 是裝了 Ancient Scepter 模組時的強化技能。",
+    "鍵是英文的兩條（Celestial War Tank、War Tank）：模組直接把英文當作 AI 坦克的名稱 token，用英文原文當鍵來翻譯。",
+    "燃料量表、坦克編輯器的下拉選單等文字是直接寫到畫面上的，翻不到。"
+  ],
+  "strings": {
+    "CHEESEWITHHOLES_BASICTANK_BODY_NAME": {
+      "en": "Celestial War Tank",
+      "zh-TW": "天界戰車"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_DESCRIPTION": {
+      "en": "This silly powerhouse can be customized and tuned to various strengths, while being capable of using its many, many weapons to deal with all sorts of foes.\r\n\r\n<style=cSub>< ! > Customize your loadout to bring your style of play! Adjust base and unique stats to suit around the tank’s awful regeneration and vertical mobility.\r\n\r\n< ! > Be careful of your limited fuel, which affects jump, utilities, and other miscellaneous. Mobility items can aid your fuel’s recharge and limit.\r\n\r\n< ! > Tank can climb and ramp off odd terrain with ease. Using utilities can launch you further into the air, allowing you to perform tricks beyond the tank’s odds.\r\n\r\n< ! > Tank crashes when landing upside down. However, landing flips grants you speed, fuel, recharges, and negates fall damage!\r\n\r\n< ! > Press 'T' to honk.  Configurable in mod settings.\r\n\r\n</style>",
+      "zh-TW": "這輛傻呼呼的火力怪獸可以自由改裝、調校出各種不同的強項，還能動用它多到數不清的武器，對付各式各樣的敵人。\r\n\r\n<style=cSub>< ! >自訂你的配置，打出你自己的風格！調整基礎屬性與獨特屬性，來配合戰車糟糕的生命值再生與垂直機動性。\r\n\r\n< ! >留意有限的燃料，跳躍、輔助技能和其他各種動作都會用到它。機動類物品可以加快燃料恢復並提高燃料上限。\r\n\r\n< ! >戰車能輕鬆爬上各種奇形怪狀的地形，還能藉坡飛起。使用輔助技能可以把你送得更高，讓你做出戰車本來辦不到的特技。\r\n\r\n< ! >戰車頭下腳上著地就會翻車。不過，翻轉後成功著地可以獲得速度、燃料與技能充能，還能免除跌落傷害！\r\n\r\n< ! >按「T」鍵按喇叭。可在模組設定中更改按鍵。\r\n\r\n</style>"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SUBTITLE": {
+      "en": "Foreign Entity",
+      "zh-TW": "外來實體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_LORE": {
+      "en": "We do not know where this thing originates from. We have only found them in the backpacks of the scavengers.\r\nThis discovery was found by one man, who kept looping around teleporter after teleporter, fighting scavengers day and night. When one day, while he was scrounging through the big 'ol backpack, he found a tank!\r\n\r\n\"This thing quickly gained sentience,\" he said. \"It was vicious! It tried to run me over! Thank goodness for its rather small size and slow speed. I tried to make it stop, but its armor was immaculate!\"\r\n\r\n\"How did you get it to be your friend?\"\r\n\r\n\"Well, I eventually ruined its track.\"\r\n\r\n\"Doesn't it have weapons, though?\"\r\n\r\n\"It kind' a ran out of the bag, with a missing guns and parts. So, after catching my breath, I eventually scrounged the sack for anything else- and behold! All sorts of different barrels, guns, ammunition, and parts! That seems like it was made for it!\"\r\n\r\n\"I'm assuming you put it on the tank, and it just... trusted you?\"\r\n\r\n\"...Yeah, pretty much. I didn't have much to live for, anyway- so why not try and make at least some friend?\"\r\n\r\n\"I see. Well, what's that bomb that's been collecting dust, on your desk?\"\r\n\r\n\"Oh, something I never let silly 'ol billy touch. It looks like a rather violent device. Perhaps a nuclear device? Yeah, I won't let him touch that! Probably could kill him, too!\"\r\n\r\n\"Huh. It could probably be put to good use though, if your life is ever at stake.\"\r\n\r\n\"I don't know, man. I don't know if I want to lose him. He's kind of a sweetheart, you know? And a nice little body shield.\" ",
+      "zh-TW": "我們不知道這東西從何而來，只曾在清道夫的背包裡發現過它們。\r\n最早發現它們的是一名男子。他穿過一個又一個傳送器，不斷循環，日以繼夜地和清道夫搏鬥。直到某天，他在清道夫那個大背包裡東翻西找時，竟然翻出了一輛戰車！\r\n\r\n「這東西很快就有了自我意識，」他說，「而且兇得很！它還想輾過我！幸好它個頭不大、速度又慢。我想讓它停下來，可是它的裝甲完美無瑕！」\r\n\r\n「那你是怎麼跟它變成朋友的？」\r\n\r\n「這個嘛，最後我把它的履帶弄壞了。」\r\n\r\n「可是它不是有武器嗎？」\r\n\r\n「它衝出袋子的時候，身上好像少了槍和一些零件。所以等我喘過氣來，就在那袋子裡翻找還有沒有別的東西——結果你猜怎樣！各式各樣的炮管、槍枝、彈藥和零件，應有盡有！簡直就像是專門為它打造的！」\r\n\r\n「我猜你把那些裝到戰車上，然後它就……信任你了？」\r\n\r\n「……對，差不多就是這樣。反正我也沒剩什麼活下去的理由——那何不至少試著交個朋友？」\r\n\r\n「原來如此。那麼，你桌上那顆積了灰的炸彈是什麼？」\r\n\r\n「喔，那是我從來不讓傻呼呼的老比利碰的東西。看起來是個相當暴力的裝置，說不定是核子裝置？對，我絕對不會讓他碰那個！搞不好連他都會被炸死！」\r\n\r\n「嗯。不過萬一哪天你命懸一線，它說不定能派上用場。」\r\n\r\n「我不知道耶，老兄。我不確定自己捨不捨得失去他。他其實還挺貼心的，你懂吧？而且還是一面很棒的小肉盾。」"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_OUTRO_FLAVOR": {
+      "en": "Freed from the bag, and now freed from the world.\nNow Billy wants to escape the rescue ship.",
+      "zh-TW": "從袋子裡解脫，如今也從這個世界解脫。\n現在，比利想逃離救援飛船。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_OUTRO_FAILURE": {
+      "en": "Freed from the bag, and now freed from the world.\nNow Billy wants to escape the rescue ship.",
+      "zh-TW": "從袋子裡解脫，如今也從這個世界解脫。\n現在，比利想逃離救援飛船。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_ORIGINAL_SKIN_NAME": {
+      "en": "ORIGINAL",
+      "zh-TW": "原色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_WHITE_SKIN_NAME": {
+      "en": "WHITE",
+      "zh-TW": "白色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_BLACK_SKIN_NAME": {
+      "en": "BLACK",
+      "zh-TW": "黑色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_RED_SKIN_NAME": {
+      "en": "RED",
+      "zh-TW": "紅色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_DARK_RED_SKIN_NAME": {
+      "en": "DARK RED",
+      "zh-TW": "暗紅色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GREEN_SKIN_NAME": {
+      "en": "GREEN",
+      "zh-TW": "綠色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_BLUE_SKIN_NAME": {
+      "en": "BLUE",
+      "zh-TW": "藍色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_CYAN_SKIN_NAME": {
+      "en": "CYAN",
+      "zh-TW": "青色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_YELLOW_SKIN_NAME": {
+      "en": "YELLOW",
+      "zh-TW": "黃色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_MAGENTA_SKIN_NAME": {
+      "en": "MAGENTA",
+      "zh-TW": "洋紅色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PURPLE_SKIN_NAME": {
+      "en": "PURPLE",
+      "zh-TW": "紫色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_ORANGE_SKIN_NAME": {
+      "en": "ORANGE",
+      "zh-TW": "橙色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_BROWN_SKIN_NAME": {
+      "en": "BROWN",
+      "zh-TW": "棕色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UNITED_STATES_SKIN_NAME": {
+      "en": "UNITED STATES",
+      "zh-TW": "美國"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GERMANY_SKIN_NAME": {
+      "en": "GERMANY",
+      "zh-TW": "德國"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UNITED_KINGDOM_SKIN_NAME": {
+      "en": "UNITED KINGDOM",
+      "zh-TW": "英國"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_RUSSIA_SKIN_NAME": {
+      "en": "RUSSIA",
+      "zh-TW": "俄羅斯"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_FRANCE_SKIN_NAME": {
+      "en": "FRANCE",
+      "zh-TW": "法國"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SKINCOLOR_DESCRIPTION": {
+      "en": "This changes the body color.  Does not affect gameplay.",
+      "zh-TW": "改變車身顏色。不影響遊戲玩法。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_DEFAULT_SKIN_NAME": {
+      "en": "MAIN",
+      "zh-TW": "主色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_DEFAULT_DIRTY_SKIN_NAME": {
+      "en": "DIRTY YELLOW",
+      "zh-TW": "髒黃色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_2_SKIN_NAME": {
+      "en": "GREEN",
+      "zh-TW": "綠色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_2_DIRTY_SKIN_NAME": {
+      "en": "DIRTY GREEN",
+      "zh-TW": "髒綠色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_3_SKIN_NAME": {
+      "en": "BLUE",
+      "zh-TW": "藍色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_3_DIRTY_SKIN_NAME": {
+      "en": "DIRTY BLUE",
+      "zh-TW": "髒藍色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_4_SKIN_NAME": {
+      "en": "RED",
+      "zh-TW": "紅色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_4_DIRTY_SKIN_NAME": {
+      "en": "DIRTY RED",
+      "zh-TW": "髒紅色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_MASTERY_SKIN_NAME": {
+      "en": "MASTERY",
+      "zh-TW": "精通"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Bruiser_NAME": {
+      "en": "Bruiser Hull",
+      "zh-TW": "Bruiser車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Bruiser_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>1000\n<color=#00FFFF>Speed: </color>10\nTraverse Speed: 4\n\n<color=#00FF00>Health: </color>150\n<color=#FF0000>Armor: </color>15\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>100\nWeight: 164\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>1000\n<color=#00FFFF>速度：</color>10\n轉向速度：4\n\n<color=#00FF00>生命值：</color>150\n<color=#FF0000>護甲：</color>15\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>100\n重量：164\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Tiger_I_NAME": {
+      "en": "Tiger I Hull",
+      "zh-TW": "Tiger I車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Tiger_I_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>1100\n<color=#00FFFF>Speed: </color>9.5\nTraverse Speed: 3.5\n\n<color=#00FF00>Health: </color>175\n<color=#FF0000>Armor: </color>20\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>105\nWeight: 195\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>1100\n<color=#00FFFF>速度：</color>9.5\n轉向速度：3.5\n\n<color=#00FF00>生命值：</color>175\n<color=#FF0000>護甲：</color>20\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>105\n重量：195\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Cromwell_NAME": {
+      "en": "Cromwell Hull",
+      "zh-TW": "Cromwell車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Cromwell_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>900\n<color=#00FFFF>Speed: </color>10\nTraverse Speed: 5\n\n<color=#00FF00>Health: </color>75\n<color=#FF0000>Armor: </color>11\n\n<color=#AA00FF>Thrust Power: </color>40.5\n<color=#ffc080>Fuel Amount: </color>95\nWeight: 86\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>900\n<color=#00FFFF>速度：</color>10\n轉向速度：5\n\n<color=#00FF00>生命值：</color>75\n<color=#FF0000>護甲：</color>11\n\n<color=#AA00FF>推進力：</color>40.5\n<color=#ffc080>燃料量：</color>95\n重量：86\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_T62_NAME": {
+      "en": "T62 Hull",
+      "zh-TW": "T62車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_T62_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>850\n<color=#00FFFF>Speed: </color>11\nTraverse Speed: 4\n\n<color=#00FF00>Health: </color>125\n<color=#FF0000>Armor: </color>12\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>100\nWeight: 137\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>850\n<color=#00FFFF>速度：</color>11\n轉向速度：4\n\n<color=#00FF00>生命值：</color>125\n<color=#FF0000>護甲：</color>12\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>100\n重量：137\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Somua_S35_NAME": {
+      "en": "Somua S35 Hull",
+      "zh-TW": "Somua S35車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Somua_S35_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>950\n<color=#00FFFF>Speed: </color>10\nTraverse Speed: 3.5\n\n<color=#00FF00>Health: </color>50\n<color=#FF0000>Armor: </color>9\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>105\nWeight: 59\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>950\n<color=#00FFFF>速度：</color>10\n轉向速度：3.5\n\n<color=#00FF00>生命值：</color>50\n<color=#FF0000>護甲：</color>9\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>105\n重量：59\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Churchill_NAME": {
+      "en": "Churchill Hull",
+      "zh-TW": "Churchill車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Churchill_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>1200\n<color=#00FFFF>Speed: </color>9\nTraverse Speed: 3.5\n\n<color=#00FF00>Health: </color>140\n<color=#FF0000>Armor: </color>13\n\n<color=#AA00FF>Thrust Power: </color>39\n<color=#ffc080>Fuel Amount: </color>115\nWeight: 153\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>1200\n<color=#00FFFF>速度：</color>9\n轉向速度：3.5\n\n<color=#00FF00>生命值：</color>140\n<color=#FF0000>護甲：</color>13\n\n<color=#AA00FF>推進力：</color>39\n<color=#ffc080>燃料量：</color>115\n重量：153\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Maus_NAME": {
+      "en": "Maus Hull",
+      "zh-TW": "Maus車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Maus_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>1400\n<color=#00FFFF>Speed: </color>8\nTraverse Speed: 3\n\n<color=#00FF00>Health: </color>200\n<color=#FF0000>Armor: </color>40\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>110\nWeight: 240\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>1400\n<color=#00FFFF>速度：</color>8\n轉向速度：3\n\n<color=#00FF00>生命值：</color>200\n<color=#FF0000>護甲：</color>40\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>110\n重量：240\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Tetrarch_NAME": {
+      "en": "Tetrarch Hull",
+      "zh-TW": "Tetrarch車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Tetrarch_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>1000\n<color=#00FFFF>Speed: </color>10.5\nTraverse Speed: 4.5\n\n<color=#00FF00>Health: </color>40\n<color=#FF0000>Armor: </color>8\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>95\nWeight: 48\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>1000\n<color=#00FFFF>速度：</color>10.5\n轉向速度：4.5\n\n<color=#00FF00>生命值：</color>40\n<color=#FF0000>護甲：</color>8\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>95\n重量：48\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_APC_NAME": {
+      "en": "APC Hull",
+      "zh-TW": "APC車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_APC_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>970\n<color=#00FFFF>Speed: </color>10\nTraverse Speed: 4\n\n<color=#00FF00>Health: </color>65\n<color=#FF0000>Armor: </color>2\n\n<color=#AA00FF>Thrust Power: </color>37.5\n<color=#ffc080>Fuel Amount: </color>120\nWeight: 67\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>970\n<color=#00FFFF>速度：</color>10\n轉向速度：4\n\n<color=#00FF00>生命值：</color>65\n<color=#FF0000>護甲：</color>2\n\n<color=#AA00FF>推進力：</color>37.5\n<color=#ffc080>燃料量：</color>120\n重量：67\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Staghound_NAME": {
+      "en": "Staghound Hull",
+      "zh-TW": "Staghound車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Staghound_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>900\n<color=#00FFFF>Speed: </color>10.5\nTraverse Speed: 5.5\n\n<color=#00FF00>Health: </color>15\n<color=#FF0000>Armor: </color>0\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>90\nWeight: 15\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>900\n<color=#00FFFF>速度：</color>10.5\n轉向速度：5.5\n\n<color=#00FF00>生命值：</color>15\n<color=#FF0000>護甲：</color>0\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>90\n重量：15\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_T-34-85_NAME": {
+      "en": "T-34-85 Hull",
+      "zh-TW": "T-34-85車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_T-34-85_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>810\n<color=#00FFFF>Speed: </color>13\nTraverse Speed: 4\n\n<color=#00FF00>Health: </color>90\n<color=#FF0000>Armor: </color>15\n\n<color=#AA00FF>Thrust Power: </color>41\n<color=#ffc080>Fuel Amount: </color>60\nWeight: 105\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>810\n<color=#00FFFF>速度：</color>13\n轉向速度：4\n\n<color=#00FF00>生命值：</color>90\n<color=#FF0000>護甲：</color>15\n\n<color=#AA00FF>推進力：</color>41\n<color=#ffc080>燃料量：</color>60\n重量：105\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Tank_MK.II_NAME": {
+      "en": "Tank MK.II Hull",
+      "zh-TW": "Tank MK.II車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Tank_MK.II_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>1050\n<color=#00FFFF>Speed: </color>9.5\nTraverse Speed: 4.5\n\n<color=#00FF00>Health: </color>120\n<color=#FF0000>Armor: </color>27\n\n<color=#AA00FF>Thrust Power: </color>38\n<color=#ffc080>Fuel Amount: </color>100\nWeight: 147\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>1050\n<color=#00FFFF>速度：</color>9.5\n轉向速度：4.5\n\n<color=#00FF00>生命值：</color>120\n<color=#FF0000>護甲：</color>27\n\n<color=#AA00FF>推進力：</color>38\n<color=#ffc080>燃料量：</color>100\n重量：147\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_FV4005_NAME": {
+      "en": "FV4005 Hull",
+      "zh-TW": "FV4005車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_FV4005_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>1100\n<color=#00FFFF>Speed: </color>11\nTraverse Speed: 3.3\n\n<color=#00FF00>Health: </color>100\n<color=#FF0000>Armor: </color>9\n\n<color=#AA00FF>Thrust Power: </color>41\n<color=#ffc080>Fuel Amount: </color>80\nWeight: 109\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>1100\n<color=#00FFFF>速度：</color>11\n轉向速度：3.3\n\n<color=#00FF00>生命值：</color>100\n<color=#FF0000>護甲：</color>9\n\n<color=#AA00FF>推進力：</color>41\n<color=#ffc080>燃料量：</color>80\n重量：109\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Bunker_NAME": {
+      "en": "Bunker Hull",
+      "zh-TW": "Bunker車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Bunker_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>800\n<color=#00FFFF>Speed: </color>17\nTraverse Speed: 2.5\n\n<color=#00FF00>Health: </color>240\n<color=#FF0000>Armor: </color>12\n\n<color=#AA00FF>Thrust Power: </color>39.5\n<color=#ffc080>Fuel Amount: </color>100\nWeight: 300\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>800\n<color=#00FFFF>速度：</color>17\n轉向速度：2.5\n\n<color=#00FF00>生命值：</color>240\n<color=#FF0000>護甲：</color>12\n\n<color=#AA00FF>推進力：</color>39.5\n<color=#ffc080>燃料量：</color>100\n重量：300\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_BobSemple_NAME": {
+      "en": "BobSemple Hull",
+      "zh-TW": "BobSemple車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_BobSemple_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>1000\n<color=#00FFFF>Speed: </color>9\nTraverse Speed: 4\n\n<color=#00FF00>Health: </color>55\n<color=#FF0000>Armor: </color>5\n\n<color=#AA00FF>Thrust Power: </color>50\n<color=#ffc080>Fuel Amount: </color>100\nWeight: 60\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>1000\n<color=#00FFFF>速度：</color>9\n轉向速度：4\n\n<color=#00FF00>生命值：</color>55\n<color=#FF0000>護甲：</color>5\n\n<color=#AA00FF>推進力：</color>50\n<color=#ffc080>燃料量：</color>100\n重量：60\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Prototype_NAME": {
+      "en": "Prototype Hull",
+      "zh-TW": "Prototype車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Prototype_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>800\n<color=#00FFFF>Speed: </color>11.75\nTraverse Speed: 3.5\n\n<color=#00FF00>Health: </color>120\n<color=#FF0000>Armor: </color>0\n\n<color=#AA00FF>Thrust Power: </color>39.5\n<color=#ffc080>Fuel Amount: </color>100\nWeight: 110\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>800\n<color=#00FFFF>速度：</color>11.75\n轉向速度：3.5\n\n<color=#00FF00>生命值：</color>120\n<color=#FF0000>護甲：</color>0\n\n<color=#AA00FF>推進力：</color>39.5\n<color=#ffc080>燃料量：</color>100\n重量：110\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Scorpion_NAME": {
+      "en": "Scorpion Hull",
+      "zh-TW": "Scorpion車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_Scorpion_DESCRIPTION": {
+      "en": "<color=#FFFF00>Engine Power: </color>1200\n<color=#00FFFF>Speed: </color>8\nTraverse Speed: 4\n\n<color=#00FF00>Health: </color>35\n<color=#FF0000>Armor: </color>2\n\n<color=#AA00FF>Thrust Power: </color>42\n<color=#ffc080>Fuel Amount: </color>110\nWeight: 37\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>1200\n<color=#00FFFF>速度：</color>8\n轉向速度：4\n\n<color=#00FF00>生命值：</color>35\n<color=#FF0000>護甲：</color>2\n\n<color=#AA00FF>推進力：</color>42\n<color=#ffc080>燃料量：</color>110\n重量：37\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Bruiser_NAME": {
+      "en": "Bruiser",
+      "zh-TW": "Bruiser"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Bruiser_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>75\n<color=#FF0000>Armor: </color>15\n\nRotation Speed: 40\n\nWeight: 88\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>75\n<color=#FF0000>護甲：</color>15\n\n旋轉速度：40\n\n重量：88\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Tiger_I_NAME": {
+      "en": "Tiger I",
+      "zh-TW": "Tiger I"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Tiger_I_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>90\n<color=#FF0000>Armor: </color>18\n\nRotation Speed: 35\n\nWeight: 108\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>90\n<color=#FF0000>護甲：</color>18\n\n旋轉速度：35\n\n重量：108\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Cromwell_NAME": {
+      "en": "Cromwell",
+      "zh-TW": "Cromwell"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Cromwell_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>50\n<color=#FF0000>Armor: </color>11\n\nRotation Speed: 50\n\nWeight: 55\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>50\n<color=#FF0000>護甲：</color>11\n\n旋轉速度：50\n\n重量：55\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_T62_NAME": {
+      "en": "T62",
+      "zh-TW": "T62"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_T62_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>80\n<color=#FF0000>Armor: </color>11\n\nRotation Speed: 38\n\nWeight: 91\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>80\n<color=#FF0000>護甲：</color>11\n\n旋轉速度：38\n\n重量：91\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Somua_S35_NAME": {
+      "en": "Somua S35",
+      "zh-TW": "Somua S35"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Somua_S35_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>25\n<color=#FF0000>Armor: </color>8\n\nRotation Speed: 45\n\nWeight: 33\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>25\n<color=#FF0000>護甲：</color>8\n\n旋轉速度：45\n\n重量：33\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Churchill_NAME": {
+      "en": "Churchill",
+      "zh-TW": "Churchill"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Churchill_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>85\n<color=#FF0000>Armor: </color>12\n\nRotation Speed: 34\n\nWeight: 97\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>85\n<color=#FF0000>護甲：</color>12\n\n旋轉速度：34\n\n重量：97\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Maus_NAME": {
+      "en": "Maus",
+      "zh-TW": "Maus"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Maus_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>150\n<color=#FF0000>Armor: </color>30\n\nRotation Speed: 30\n\nWeight: 180\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>150\n<color=#FF0000>護甲：</color>30\n\n旋轉速度：30\n\n重量：180\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Tetrarch_NAME": {
+      "en": "Tetrarch",
+      "zh-TW": "Tetrarch"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Tetrarch_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>15\n<color=#FF0000>Armor: </color>7\n\nRotation Speed: 50\n\nWeight: 22\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>15\n<color=#FF0000>護甲：</color>7\n\n旋轉速度：50\n\n重量：22\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_APC_NAME": {
+      "en": "APC",
+      "zh-TW": "APC"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_APC_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>15\n<color=#FF0000>Armor: </color>2\n\nRotation Speed: 40\n\nWeight: 17\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>15\n<color=#FF0000>護甲：</color>2\n\n旋轉速度：40\n\n重量：17\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Staghound_NAME": {
+      "en": "Staghound",
+      "zh-TW": "Staghound"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Staghound_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>10\n<color=#FF0000>Armor: </color>0\n\nRotation Speed: 55\n\nWeight: 5\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>10\n<color=#FF0000>護甲：</color>0\n\n旋轉速度：55\n\n重量：5\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_T-34-85_NAME": {
+      "en": "T-34-85",
+      "zh-TW": "T-34-85"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_T-34-85_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>100\n<color=#FF0000>Armor: </color>20\n\nRotation Speed: 33\n\nWeight: 120\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>100\n<color=#FF0000>護甲：</color>20\n\n旋轉速度：33\n\n重量：120\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Tank_MK.II_NAME": {
+      "en": "Tank MK.II",
+      "zh-TW": "Tank MK.II"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Tank_MK.II_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>60\n<color=#FF0000>Armor: </color>23\n\nRotation Speed: 29\n\nWeight: 83\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>60\n<color=#FF0000>護甲：</color>23\n\n旋轉速度：29\n\n重量：83\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_FV4005_NAME": {
+      "en": "FV4005",
+      "zh-TW": "FV4005"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_FV4005_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>160\n<color=#FF0000>Armor: </color>0\n\nRotation Speed: 25\nAngle Limit: 90\n\nWeight: 160\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>160\n<color=#FF0000>護甲：</color>0\n\n旋轉速度：25\n射角限制：90\n\n重量：160\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Bunker_NAME": {
+      "en": "Bunker",
+      "zh-TW": "Bunker"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Bunker_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>45\n<color=#FF0000>Armor: </color>4\n\nRotation Speed: 25\n\nWeight: 25\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>45\n<color=#FF0000>護甲：</color>4\n\n旋轉速度：25\n\n重量：25\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_BobSemple_NAME": {
+      "en": "BobSemple",
+      "zh-TW": "BobSemple"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_BobSemple_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>20\n<color=#FF0000>Armor: </color>15\n\nRotation Speed: 35\n\nWeight: 35\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>20\n<color=#FF0000>護甲：</color>15\n\n旋轉速度：35\n\n重量：35\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Prototype_NAME": {
+      "en": "Prototype",
+      "zh-TW": "Prototype"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Prototype_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>35\n<color=#FF0000>Armor: </color>3\n\nRotation Speed: 30\n\nWeight: 25\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>35\n<color=#FF0000>護甲：</color>3\n\n旋轉速度：30\n\n重量：25\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Scorpion_NAME": {
+      "en": "Scorpion",
+      "zh-TW": "Scorpion"
+    },
+    "CHEESEWITHHOLES_BASICTANK_TURRET_Scorpion_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>5\n<color=#FF0000>Armor: </color>1\n\nRotation Speed: 40\nAngle Limit: 30\n\nWeight: 6\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>5\n<color=#FF0000>護甲：</color>1\n\n旋轉速度：40\n射角限制：30\n\n重量：6\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_ORIGINAL_NAME": {
+      "en": "ORIGINAL",
+      "zh-TW": "原色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_RED_NAME": {
+      "en": "RED",
+      "zh-TW": "紅色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_LIGHT_RED_NAME": {
+      "en": "LIGHT RED",
+      "zh-TW": "淺紅色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_GREEN_NAME": {
+      "en": "GREEN",
+      "zh-TW": "綠色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_DARK_GREEN_NAME": {
+      "en": "DARK GREEN",
+      "zh-TW": "深綠色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_BLUE_NAME": {
+      "en": "BLUE",
+      "zh-TW": "藍色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_CYAN_NAME": {
+      "en": "CYAN",
+      "zh-TW": "青色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_PINK_NAME": {
+      "en": "PINK",
+      "zh-TW": "粉紅色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_MEGENTA_NAME": {
+      "en": "MEGENTA",
+      "zh-TW": "洋紅色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_YELLOW_NAME": {
+      "en": "YELLOW",
+      "zh-TW": "黃色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_ORANGE_NAME": {
+      "en": "ORANGE",
+      "zh-TW": "橙色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_WHITE_NAME": {
+      "en": "WHITE",
+      "zh-TW": "白色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_BLACK_NAME": {
+      "en": "BLACK",
+      "zh-TW": "黑色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_DESCRIPTION": {
+      "en": "This changes the 'glowy' part of the vehicle to a different color.  Does not affect gameplay.",
+      "zh-TW": "把載具「發光」的部位換成其他顏色。不影響遊戲玩法。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_TEXTURE_DIRTY_NAME": {
+      "en": "Dirty",
+      "zh-TW": "髒汙"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_TEXTURE_CLEAN_NAME": {
+      "en": "Clean",
+      "zh-TW": "乾淨"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_TEXTURE_JAGGED_CAMO_NAME": {
+      "en": "Jagged_Camo",
+      "zh-TW": "鋸齒迷彩"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_TEXTURE_PIXEL_CAMO_NAME": {
+      "en": "Pixel_Camo",
+      "zh-TW": "像素迷彩"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_TEXTURE_PAPER_CAMO_NAME": {
+      "en": "Paper_Camo",
+      "zh-TW": "紙紋迷彩"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_TEXTURE_DIAMOND_PLATE_NAME": {
+      "en": "Diamond_Plate",
+      "zh-TW": "菱紋鋼板"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_TEXTURE_BOLTED_PLATE_NAME": {
+      "en": "Bolted_Plate",
+      "zh-TW": "螺栓鋼板"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_TEXTURE_PROCEDURAL_SET_NAME": {
+      "en": "Procedural_Set",
+      "zh-TW": "程序生成"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_TEXTURE_COLORFUL_BLEND_NAME": {
+      "en": "Colorful_Blend",
+      "zh-TW": "繽紛混色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_TEXTURE_GRADIENT_RAINBOW_NAME": {
+      "en": "Gradient_Rainbow",
+      "zh-TW": "漸層彩虹"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_TEXTURE_MONOCHROME_NAME": {
+      "en": "Monochrome",
+      "zh-TW": "單色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_TEXTURE_FLUID_GALAXY_NAME": {
+      "en": "Fluid_Galaxy",
+      "zh-TW": "流體星河"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_TEXTURE_SPACE_NAME": {
+      "en": "Space",
+      "zh-TW": "太空"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_TEXTURE_DESCRIPTION": {
+      "en": "",
+      "zh-TW": ""
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PASSIVE_NAME": {
+      "en": "Engine Systems",
+      "zh-TW": "引擎系統"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PASSIVE_DESCRIPTION": {
+      "en": "Utilities and thrust consume fuel. Fuel replenishment is affected by <style=cIsUtility>attack speed</style>; fuel capacity is affected by <style=cIsUtility>afterburners</style> and <style=cIsUtility>jump-induced items</style>. Tank can <style=cIsUtility>sprint in any direction</style>.\n\nThrust allows for versatile control in the air. However, <color=#fc8080>tank cannot normally jump</color>.",
+      "zh-TW": "輔助技能與推進會消耗燃料。燃料恢復速度受<style=cIsUtility>攻擊速度</style>影響；燃料容量受<style=cIsUtility>補燃器</style>與<style=cIsUtility>跳躍類物品</style>影響。戰車可以<style=cIsUtility>朝任意方向奔跑</style>。\n\n推進讓你在空中也能靈活操控。不過，<color=#fc8080>戰車無法正常跳躍</color>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PASSIVE2_NAME": {
+      "en": "Super Armory",
+      "zh-TW": "超級軍械庫"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PASSIVE2_DESCRIPTION": {
+      "en": "Hull and turret selections affect health, armor, speed, thrust, and mass. <style=cIsUtility>Heavier mass can help push heavier enemies</style>; else be more prone to <color=#ffff80>knockback</color>.\n\nArmor or speed can help assuage the tank’s <color=#fc8080>abysmal health regeneration</color>.",
+      "zh-TW": "所選的車體與炮塔會影響生命值、護甲、速度、推進力與質量。<style=cIsUtility>質量越大，越能推動較重的敵人</style>；反之則更容易被<color=#ffff80>擊退</color>。\n\n護甲或速度能稍微彌補戰車<color=#fc8080>慘不忍睹的生命值再生</color>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PASSIVE3_NAME": {
+      "en": "Celestial Instability",
+      "zh-TW": "天界失衡"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PASSIVE3_DESCRIPTION": {
+      "en": "Tank cannot re-balance itself in the air, <color=#ffff80>being prone to losing control</color>. Landing on your head leaves you <color=#fc8080>immobilized and vulnerable for a short time</color>.",
+      "zh-TW": "戰車在空中無法自行恢復平衡，<color=#ffff80>很容易失去控制</color>。倒栽蔥著地會讓你<color=#fc8080>短時間內無法動彈且毫無防備</color>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_FLIGHT_PASSIVE_NAME": {
+      "en": "Flight Thrusters",
+      "zh-TW": "飛行推進器"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_FLIGHT_PASSIVE_DESCRIPTION": {
+      "en": "Hold <style=cIsUtility>Jump</style> to begin flight. Direction of flight depends on the angle of your tank. <style=cIsUtility>Most versatile flight</style>, but may be hard to use.",
+      "zh-TW": "按住<style=cIsUtility>跳躍</style>開始飛行。飛行方向取決於戰車的角度。<style=cIsUtility>飛行最為靈活</style>，但可能不好操控。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_BURST_PASSIVE_NAME": {
+      "en": "Pulse Thrusters",
+      "zh-TW": "脈衝推進器"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_BURST_PASSIVE_DESCRIPTION": {
+      "en": "Allows the tank to <style=cIsUtility>jump</style> normally like other survivors. Tank tilt can be activated on 2nd jump. Each jump consumes <color=#ffc080>25</color> fuel.",
+      "zh-TW": "讓戰車能像其他倖存者一樣正常<style=cIsUtility>跳躍</style>。第2段跳躍時可啟動戰車傾斜。每次跳躍消耗<color=#ffc080>25</color>點燃料。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_HOVER_PASSIVE_NAME": {
+      "en": "Hover Thrusters",
+      "zh-TW": "懸浮推進器"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_HOVER_PASSIVE_DESCRIPTION": {
+      "en": "Allows the tank to hover off the ground. Hold <style=cIsUtility>Jump</style> to ascend; hold <style=cIsUtility>LeftAlt</style> to descend. Ascending consumes more fuel.",
+      "zh-TW": "讓戰車能離地懸浮。按住<style=cIsUtility>跳躍</style>上升；按住<style=cIsUtility>左Alt</style>下降。上升會消耗較多燃料。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PRIMARY_MACHINEGUNS_NAME": {
+      "en": "Machine Guns",
+      "zh-TW": "機槍"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PRIMARY_MACHINEGUNS_DESCRIPTION": {
+      "en": "Constantly fire for <style=cIsDamage>2x40% damage</style>.\n\nSkill Stats:\n- Weight: 5",
+      "zh-TW": "持續射擊，造成<style=cIsDamage>2x40%傷害</style>。\n\n技能數值：\n- 重量：5"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PRIMARY_SHOTGUN_NAME": {
+      "en": "Shotgun",
+      "zh-TW": "霰彈槍"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PRIMARY_SHOTGUN_DESCRIPTION": {
+      "en": "Fire for <style=cIsDamage>12x75% damage</style>.  <color=#ffc080>Burn fuel</color> to <style=cIsUtility>gain extra stock</style>; <color=#80fc80>land a stunt</color> to temporarily gain a power shot for <style=cIsDamage>18x150% damage</style>.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 1s</style>\n- Weight: 9",
+      "zh-TW": "射擊，造成<style=cIsDamage>12x75%傷害</style>。<color=#ffc080>消耗燃料</color>可<style=cIsUtility>獲得額外充能</style>；<color=#80fc80>成功完成特技</color>可暫時獲得一發強力射擊，造成<style=cIsDamage>18x150%傷害</style>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：1秒</style>\n- 重量：9"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PRIMARY_GRENADELAUNCHER_NAME": {
+      "en": "Grenade Launcher",
+      "zh-TW": "榴彈發射器"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PRIMARY_GRENADELAUNCHER_DESCRIPTION": {
+      "en": "Fire inaccurate shells for <style=cIsDamage>4x250% damage</style>.  Shells are explosive and heavy.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 4s</style>\n- <style=cIsDamage>Blast Radius: 5m</style>\n- Weight: 15",
+      "zh-TW": "發射準頭不佳的榴彈，造成<style=cIsDamage>4x250%傷害</style>。榴彈會爆炸，而且很重。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：4秒</style>\n- <style=cIsDamage>爆炸半徑：5米</style>\n- 重量：15"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PRIMARY_MICRO_MISSLE_NAME": {
+      "en": "Missile Launcher",
+      "zh-TW": "導彈發射器"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PRIMARY_MICRO_MISSLE_DESCRIPTION": {
+      "en": "Fire accurate missiles for <style=cIsDamage>1000% damage</style>. Missiles are not affected by gravity.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 3s</style>\n- <style=cIsDamage>Blast Radius: 8m</style>\n- Weight: 18",
+      "zh-TW": "發射精準的導彈，造成<style=cIsDamage>1000%傷害</style>。導彈不受重力影響。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：3秒</style>\n- <style=cIsDamage>爆炸半徑：8米</style>\n- 重量：18"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PRIMARY_FLAMETHROWER_NAME": {
+      "en": "Flamethrower",
+      "zh-TW": "火焰噴射器"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PRIMARY_FLAMETHROWER_DESCRIPTION": {
+      "en": "Spew fire for <color=#E85E31>25% burning damage</color> every <color=#ffc080>15 fuel per second</color>.  Damage increases with stacks; <style=cIsUtility>Attack speed increases range</style>.\n\nSkill Stats:\n- <color=#ffc080>Fuel Powered</color>\n- Weight: 12",
+      "zh-TW": "噴出火焰，造成<color=#E85E31>25%燃燒傷害</color>，每秒消耗<color=#ffc080>15點燃料</color>。傷害隨層數提高；<style=cIsUtility>攻擊速度可增加射程</style>。\n\n技能數值：\n- <color=#ffc080>燃料驅動</color>\n- 重量：12"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PRIMARY_ULTRANTENNA_NAME": {
+      "en": "Ultrantenna",
+      "zh-TW": "超級天線"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_PRIMARY_ULTRANTENNA_DESCRIPTION": {
+      "en": "<color=#fc8080>Electrocute yourself</color> and <style=cIsUtility>activate on-kill items</style>.  <style=cIsUtility>Touching enemies also electrocutes them</style>, and they recieve <style=cIsDamage>250% damage</style> per <style=cIsUtility>on-kill</style> item.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 7s</style>\n- <style=cIsDamage>Blast Radius: 5m</style>\n- Weight: 1",
+      "zh-TW": "<color=#fc8080>電擊自己</color>，並<style=cIsUtility>啟動擊敗時觸發的物品</style>。<style=cIsUtility>碰到敵人時也會電擊對方</style>，每持有一個<style=cIsUtility>擊敗時觸發</style>的物品，就對其造成<style=cIsDamage>250%傷害</style>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：7秒</style>\n- <style=cIsDamage>爆炸半徑：5米</style>\n- 重量：1"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_CANNON_NAME": {
+      "en": "Critical Cannon",
+      "zh-TW": "暴擊炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_CANNON_DESCRIPTION": {
+      "en": "Fire for <color=#ff4d76>1200% crit damage</color>. Critical chance increases damage of the cannon.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 7s</style>\n- <style=cIsDamage>Blast Radius: 10m</style>\n- Weight: 50",
+      "zh-TW": "開炮，造成<color=#ff4d76>1200%暴擊傷害</color>。暴擊率會提高這門炮的傷害。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：7秒</style>\n- <style=cIsDamage>爆炸半徑：10米</style>\n- 重量：50"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_HOWITZER_CANNON_NAME": {
+      "en": "Howitzer Cannon",
+      "zh-TW": "榴彈炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_HOWITZER_CANNON_DESCRIPTION": {
+      "en": "Charge to fire for a splashy <style=cIsDamage>7000% damage</style>. <style=cIsUtility>Can launch tank if in the air.</style>\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 16s</style>\n- <style=cIsDamage>Blast Radius: 15m</style>\n- Weight: 75",
+      "zh-TW": "蓄力後開炮，造成<style=cIsDamage>7000%濺射傷害</style>。<style=cIsUtility>在空中開炮可把戰車往後彈飛。</style>\n\n技能數值：\n- <style=cIsUtility>冷卻時間：16秒</style>\n- <style=cIsDamage>爆炸半徑：15米</style>\n- 重量：75"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_CROMWELL_CANNON_NAME": {
+      "en": "Knocker Cannon",
+      "zh-TW": "擊退炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_CROMWELL_CANNON_DESCRIPTION": {
+      "en": "Fire inaccurately for <style=cIsDamage>1700% damage</style>. <style=cIsDamage>Damage decreases as it travels</style>; <style=cIsDamage>Proc items instead increase damage</style>.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 3s</style>\n- <style=cIsDamage>Blast Radius: 5m</style>\n- Weight: 25",
+      "zh-TW": "以不太精準的準頭開炮，造成<style=cIsDamage>1700%傷害</style>。<style=cIsDamage>傷害隨飛行距離遞減</style>；<style=cIsDamage>觸發類物品改為提高傷害</style>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：3秒</style>\n- <style=cIsDamage>爆炸半徑：5米</style>\n- 重量：25"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_T62_CANNON_NAME": {
+      "en": "Piercing Cannon",
+      "zh-TW": "穿甲炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_T62_CANNON_DESCRIPTION": {
+      "en": "Fire for <style=cIsDamage>2500% damage</style>.  Hold to calibrate and deal <style=cIsDamage>3500% damage</style>, capable of <style=cIsUtility>hitting weak points</style>.  When calibrated, <color=#fc8080>moving worsens accuracy</color>.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 5s</style>\n- <style=cIsDamage>Blast Radius: 2m</style>\n- Weight: 45",
+      "zh-TW": "開炮，造成<style=cIsDamage>2500%傷害</style>。按住可進行校準，造成<style=cIsDamage>3500%傷害</style>，並能<style=cIsUtility>命中弱點</style>。校準時<color=#fc8080>移動會降低精準度</color>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：5秒</style>\n- <style=cIsDamage>爆炸半徑：2米</style>\n- 重量：45"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_FRENCHGUN_NAME": {
+      "en": "French Gun",
+      "zh-TW": "法國炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_FRENCHGUN_DESCRIPTION": {
+      "en": "Fire for a measly <style=cIsDamage>550% damage</style>. For some reason, <style=cIsUtility>has too much proc</style>.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 1s</style>\n- Weight: 10",
+      "zh-TW": "開炮，造成區區<style=cIsDamage>550%傷害</style>。但不知道為什麼，<style=cIsUtility>觸發多到爆</style>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：1秒</style>\n- 重量：10"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_MINIGUN_NAME": {
+      "en": "Minigun",
+      "zh-TW": "轉管機槍"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_MINIGUN_DESCRIPTION": {
+      "en": "Spew for <style=cIsDamage>50% damage</style>. At 75% overheat deals <color=#E85E31>fire</color>; <color=#fc8080>overheating locks up the gun</color>. <style=cIsUtility>Cooldown items increases cooldown rate</style>; <style=cIsUtility>Backup magazines prevents overheat</style>.\n\nSkill Stats:\n- Weight: 45",
+      "zh-TW": "掃射，造成<style=cIsDamage>50%傷害</style>。過熱達75%時會造成<color=#E85E31>燃燒</color>；<color=#fc8080>完全過熱會讓槍卡死</color>。<style=cIsUtility>冷卻類物品可加快冷卻速度</style>；<style=cIsUtility>備用彈夾可防止過熱</style>。\n\n技能數值：\n- 重量：45"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_MAUS_NAME": {
+      "en": "Basic Cannon",
+      "zh-TW": "基礎炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_MAUS_DESCRIPTION": {
+      "en": "Fire a speedy shell for <style=cIsDamage>5400% damage</style>.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 12s</style>\n- <style=cIsDamage>Blast Radius: 7m</style>\n- Weight: 65",
+      "zh-TW": "發射一枚高速炮彈，造成<style=cIsDamage>5400%傷害</style>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：12秒</style>\n- <style=cIsDamage>爆炸半徑：7米</style>\n- 重量：65"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_AA_NAME": {
+      "en": "AA Cannon",
+      "zh-TW": "防空炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_AA_DESCRIPTION": {
+      "en": "Fire for <style=cIsDamage>300% damage</style>.  Projectile detonates near air targets, dealing <style=cIsDamage>2.5x damage</style>.  <color=#fc8080>Tank slows down to fire</color>.\n\nSkill Stats:\n- <style=cIsDamage>Blast Radius: 5.5m</style>\n- Weight: 40",
+      "zh-TW": "開炮，造成<style=cIsDamage>300%傷害</style>。投射物會在空中目標附近引爆，造成<style=cIsDamage>2.5倍傷害</style>。<color=#fc8080>開炮時戰車會減速</color>。\n\n技能數值：\n- <style=cIsDamage>爆炸半徑：5.5米</style>\n- 重量：40"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_CANNON_MKII_NAME": {
+      "en": "Splash Cannon",
+      "zh-TW": "濺射炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_CANNON_MKII_DESCRIPTION": {
+      "en": "Fire for <style=cIsDamage>2200% damage</style> in a <style=cIsUtility>great arc</style>, splashing for <style=cIsDamage>10x5% total damage</style>.  Damage increases the further it travels, up to <style=cIsDamage>5500% damage</style>.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 10s</style>\n- <style=cIsDamage>Blast Radius: 16m</style>\n- Weight: 55",
+      "zh-TW": "以<style=cIsUtility>大弧線</style>開炮，造成<style=cIsDamage>2200%傷害</style>，並濺射造成<style=cIsDamage>10x5%總傷害</style>。飛行距離越遠傷害越高，最高可達<style=cIsDamage>5500%傷害</style>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：10秒</style>\n- <style=cIsDamage>爆炸半徑：16米</style>\n- 重量：55"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_CELESTIAL_CANNON_NAME": {
+      "en": "Celestial Cannon",
+      "zh-TW": "天界炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_CELESTIAL_CANNON_DESCRIPTION": {
+      "en": "Consume <color=#ffc080>40</color>/<color=#ffc080>100</color>/<color=#ffc080>145</color> fuel for <color=#E85E31>1800%</color>/<color=#E85E31>4500%</color>/<color=#E85E31>9000%</color> <color=#E85E31>damage</color>.  Charged lasers pierce; <color=#fc8080>Insufficient fuel kills the weapon.</color>\n\nSkill Stats:\n- <color=#ffc080>Fuel Powered</color>\n- Weight: 35",
+      "zh-TW": "消耗<color=#ffc080>40</color>/<color=#ffc080>100</color>/<color=#ffc080>145</color>點燃料，造成<color=#E85E31>1800%</color>/<color=#E85E31>4500%</color>/<color=#E85E31>9000%</color><color=#E85E31>傷害</color>。蓄力後的雷射可穿透敵人；<color=#fc8080>燃料不足時武器會直接停擺。</color>\n\n技能數值：\n- <color=#ffc080>燃料驅動</color>\n- 重量：35"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_OBLITERATOR_CANNON_NAME": {
+      "en": "Obliterator Cannon",
+      "zh-TW": "抹除炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_OBLITERATOR_CANNON_DESCRIPTION": {
+      "en": "Charge to auto-fire a <color=#E85E31>kill-triggering shell</color> for <style=cIsDamage>12000% damage</style>.  Afterward, <color=#fc8080>abilites are disabled for 4 seconds.  Shell may hurt allies</color>.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 21s</style>\n- <style=cIsDamage>Blast Radius: 5m</style>\n- Weight: 100",
+      "zh-TW": "蓄力後自動發射一枚<color=#E85E31>可觸發擊敗效果的炮彈</color>，造成<style=cIsDamage>12000%傷害</style>。之後<color=#fc8080>技能停用4秒。炮彈可能傷及盟友</color>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：21秒</style>\n- <style=cIsDamage>爆炸半徑：5米</style>\n- 重量：100"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_AUTO_CANNON_NAME": {
+      "en": "Auto Cannon",
+      "zh-TW": "機關炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_AUTO_CANNON_DESCRIPTION": {
+      "en": "Fire up to 4 shells that deal <style=cIsDamage>2000% damage</style> each. Last shell deals <style=cIsDamage>2x damage</style> in a fixed point.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 14s</style>\n- <style=cIsDamage>Blast Radius: 7m</style>\n- Weight: 35",
+      "zh-TW": "最多連發4枚炮彈，每枚造成<style=cIsDamage>2000%傷害</style>。最後一枚炮彈會打在固定落點，造成<style=cIsDamage>2倍傷害</style>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：14秒</style>\n- <style=cIsDamage>爆炸半徑：7米</style>\n- 重量：35"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UTILITY_DASHRAM_NAME": {
+      "en": "Plow",
+      "zh-TW": "推土鏟"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UTILITY_DASHRAM_DESCRIPTION": {
+      "en": "<style=cIsUtility>Dash a small distance</style> for <color=#ffc080>50</color> fuel. Can knockback <style=cIsUtility>any enemy</style> for <style=cIsDamage>1000% damage</style> and replenish <color=#ffc080>40</color> fuel.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 2s</style>\n- Weight: 20",
+      "zh-TW": "消耗<color=#ffc080>50</color>點燃料，<style=cIsUtility>短距離衝刺</style>。可擊退<style=cIsUtility>任何敵人</style>並造成<style=cIsDamage>1000%傷害</style>，同時恢復<color=#ffc080>40</color>點燃料。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：2秒</style>\n- 重量：20"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UTILITY_DASHRAM_BLEED_NAME": {
+      "en": "Spikes",
+      "zh-TW": "尖刺"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UTILITY_DASHRAM_BLEED_DESCRIPTION": {
+      "en": "<style=cIsUtility>Dash a great distance</style> for <color=#ffc080>50</color> fuel. Ram enemies for <color=#AA2B2A>550% bleed damage</color>.  <style=cIsUtility>Has no cooldown</style>.\n\nSkill Stats:\n- Weight: 15",
+      "zh-TW": "消耗<color=#ffc080>50</color>點燃料，<style=cIsUtility>長距離衝刺</style>。衝撞敵人造成<color=#AA2B2A>550%流血傷害</color>。<style=cIsUtility>沒有冷卻時間</style>。\n\n技能數值：\n- 重量：15"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UTILITY_DASHRAM_CONSTANT_NAME": {
+      "en": "Turbo",
+      "zh-TW": "渦輪"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UTILITY_DASHRAM_CONSTANT_DESCRIPTION": {
+      "en": "<style=cIsUtility>Zoom</style> and consume <color=#ffc080>30</color> fuel per second.  Can ram for <style=cIsDamage>250% damage</style>. Ramming adds <color=#ffc080>20</color> fuel.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 1s</style>\n- Weight: 10",
+      "zh-TW": "<style=cIsUtility>高速飆行</style>，每秒消耗<color=#ffc080>30</color>點燃料。可衝撞敵人造成<style=cIsDamage>250%傷害</style>。每次衝撞恢復<color=#ffc080>20</color>點燃料。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：1秒</style>\n- 重量：10"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UTILITY_SUPERJUMP_NAME": {
+      "en": "Super Jump",
+      "zh-TW": "超級跳躍"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UTILITY_SUPERJUMP_DESCRIPTION": {
+      "en": "Launch up for <color=#ffc080>50</color> fuel.  While sprinting, instead launch forward for <color=#ffc080>75</color> fuel and flail your tank for <style=cIsDamage>2500% damage</style>.  Tank weight increases damage.",
+      "zh-TW": "消耗<color=#ffc080>50</color>點燃料向上彈射。奔跑時改為消耗<color=#ffc080>75</color>點燃料向前彈射，讓戰車翻滾亂甩，造成<style=cIsDamage>2500%傷害</style>。戰車越重，傷害越高。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UTILITY_MA_NAME": {
+      "en": "Bulldozer",
+      "zh-TW": "推土機"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UTILITY_MA_DESCRIPTION": {
+      "en": "<style=cIsUtility>Boost</style> and consume <color=#ffc080>20</color> fuel per second.  Can plow <style=cIsUtility>any enemy</style> for constant <style=cIsDamage>200% damage</style>.  Deal <style=cIsDamage>350% damage</style> on impact.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 1s</style>\n- Weight: 30",
+      "zh-TW": "<style=cIsUtility>加速前進</style>，每秒消耗<color=#ffc080>20</color>點燃料。可剷開<style=cIsUtility>任何敵人</style>，持續造成<style=cIsDamage>200%傷害</style>。撞擊時造成<style=cIsDamage>350%傷害</style>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：1秒</style>\n- 重量：30"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UTILITY_RIP_DOZER_NAME": {
+      "en": "Ripdozer",
+      "zh-TW": "撕裂推土機"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UTILITY_RIP_DOZER_DESCRIPTION": {
+      "en": "Charge to <style=cIsUtility>dash the greatest distance</style> for <color=#ffc080>100</color> fuel.  <style=cIsUtility>Pierce crowds</style> for <color=#AA2B2A>4000% bleed damage</color> and <style=cIsUtility>prolong dash</style>; Turn to end dash; <color=#80fc80>land a stunt</color> to <style=cIsUtility>skip the charge</style>.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 7s</style>\n- Weight: 25",
+      "zh-TW": "蓄力後消耗<color=#ffc080>100</color>點燃料，<style=cIsUtility>衝刺最遠的距離</style>。<style=cIsUtility>貫穿敵群</style>造成<color=#AA2B2A>4000%流血傷害</color>並<style=cIsUtility>延長衝刺</style>；轉向即可結束衝刺；<color=#80fc80>成功完成特技</color>可<style=cIsUtility>跳過蓄力</style>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：7秒</style>\n- 重量：25"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UTILITY_TRENCHER_NAME": {
+      "en": "Trencher",
+      "zh-TW": "掘溝機"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_UTILITY_TRENCHER_DESCRIPTION": {
+      "en": "<style=cIsUtility>Hold to burrow</style>, consuming <color=#ffc080>20</color> fuel per second, <style=cIsUtility>protecting your tank while under</style>.  Release to pop out and deal <style=cIsDamage>900% damage</style> to nearby enemies.  Cannot engage while under.\n\nSkill Stats:\n- <style=cIsDamage>Blast Radius: 10m</style>\n- Weight: 40",
+      "zh-TW": "<style=cIsUtility>按住可鑽入地下</style>，每秒消耗<color=#ffc080>20</color>點燃料，<style=cIsUtility>潛地期間戰車受到保護</style>。放開後破土而出，對附近敵人造成<style=cIsDamage>900%傷害</style>。潛地期間無法攻擊。\n\n技能數值：\n- <style=cIsDamage>爆炸半徑：10米</style>\n- 重量：40"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SPECIAL_LANDMINE_NAME": {
+      "en": "King Mine",
+      "zh-TW": "地雷之王"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SPECIAL_LANDMINE_DESCRIPTION": {
+      "en": "Drop a landmine that deals <style=cIsDamage>3000% damage</style>.  <style=cIsDamage>Proc items instead increase damage</style>.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 10s</style>\n- <style=cIsDamage>Blast Radius: 10m</style>\n- Weight: 25",
+      "zh-TW": "放置一枚地雷，造成<style=cIsDamage>3000%傷害</style>。<style=cIsDamage>觸發類物品改為提高傷害</style>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：10秒</style>\n- <style=cIsDamage>爆炸半徑：10米</style>\n- 重量：25"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SPECIAL_MINDFIELD_WALL_NAME": {
+      "en": "Mini Mines",
+      "zh-TW": "迷你地雷"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SPECIAL_MINDFIELD_WALL_DESCRIPTION": {
+      "en": "Aim and expend all miniature landmines that deal <style=cIsDamage>750% damage</style> each.  Stock and interactable-induced items increase max mines.  <color=#ffc080>Burn fuel</color> to <style=cIsUtility>gain extra stock</style>.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 3s</style>\n- <style=cIsDamage>Blast Radius: 10m</style>\n- Weight: 10",
+      "zh-TW": "瞄準並一口氣投出所有迷你地雷，每枚造成<style=cIsDamage>750%傷害</style>。增加充能的物品與可互動目標類物品會提高地雷上限。<color=#ffc080>消耗燃料</color>可<style=cIsUtility>獲得額外充能</style>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：3秒</style>\n- <style=cIsDamage>爆炸半徑：10米</style>\n- 重量：10"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SPECIAL_BARREL_NAME": {
+      "en": "Barrelling",
+      "zh-TW": "滾油桶"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SPECIAL_BARREL_DESCRIPTION": {
+      "en": "Launch a barrel for <color=#ffc080>25</color> fuel that ignites on collision for <style=cIsDamage>6500% damage</style>, and leaves a <color=#E85E31>burning puddle</color>.  <color=#80fc80>Landing a stunt</color> causes this ability to be temporarily <color=#fc8080>unstable</color>, which <style=cIsUtility>sends your tank flailing</style>.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 14s</style>\n- <style=cIsDamage>Blast Radius: 18m</style>\n- <style=cIsDamage>Zone Radius: 8</style>\n- Weight: 40",
+      "zh-TW": "消耗<color=#ffc080>25</color>點燃料發射一個油桶，碰撞時起火，造成<style=cIsDamage>6500%傷害</style>，並留下一灘<color=#E85E31>燃燒的油</color>。<color=#80fc80>成功完成特技</color>會讓此技能暫時變得<color=#fc8080>不穩定</color>，<style=cIsUtility>把你的戰車炸得翻滾亂飛</style>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：14秒</style>\n- <style=cIsDamage>爆炸半徑：18米</style>\n- <style=cIsDamage>區域半徑：8</style>\n- 重量：40"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SPECIAL_SELF_DESTRUCT_NAME": {
+      "en": "Self Destruct",
+      "zh-TW": "自爆"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SPECIAL_SELF_DESTRUCT_DESCRIPTION": {
+      "en": "Annihilate <color=#d40000>ALL</color> in a 35m for <style=cIsDamage>100000% damage</style>.  Start with a <color=#80fc80>Dio's Best Friend</color> on new run.\n\nSkill Stats:\n- <style=cIsDamage>Blast Radius: 35m</style>\n- Weight: 90",
+      "zh-TW": "殲滅半徑35米內的<color=#d40000>一切</color>，造成<style=cIsDamage>100000%傷害</style>。每局開始時附帶一個<color=#80fc80>迪奧最好的朋友</color>。\n\n技能數值：\n- <style=cIsDamage>爆炸半徑：35米</style>\n- 重量：90"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SPECIAL_MISSLE_LAUNCHER_NAME": {
+      "en": "REIGN",
+      "zh-TW": "君臨"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SPECIAL_MISSLE_LAUNCHER_DESCRIPTION": {
+      "en": "Slow down and charge to fire a barrage of missiles.  Damage increases the further it travels, up to <style=cIsDamage>12x3000% damage.</style>\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 30s</style>\n- <style=cIsDamage>Blast Radius: 10m</style>\n- Weight: 70",
+      "zh-TW": "減速並蓄力，發射一輪導彈齊射。飛行距離越遠傷害越高，最高可達<style=cIsDamage>12x3000%傷害。</style>\n\n技能數值：\n- <style=cIsUtility>冷卻時間：30秒</style>\n- <style=cIsDamage>爆炸半徑：10米</style>\n- 重量：70"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SPECIAL_EVADE_NAME": {
+      "en": "Evade",
+      "zh-TW": "迴避"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SPECIAL_EVADE_DESCRIPTION": {
+      "en": "Emit smoke, stunning nearby enemies for <style=cIsDamage>150% damage</style> and conceal.  <style=cIsUtility>Become immune</style> to damage for 1 second.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 12s</style>\n- <style=cIsDamage>Blast Radius: 10m</style>\n- Weight: 5",
+      "zh-TW": "施放煙霧，眩暈附近的敵人並造成<style=cIsDamage>150%傷害</style>，同時隱蔽自身。1秒內<style=cIsUtility>免疫</style>傷害。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：12秒</style>\n- <style=cIsDamage>爆炸半徑：10米</style>\n- 重量：5"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_EMPTY_PRIMARY_NAME": {
+      "en": "Passive: Berserk",
+      "zh-TW": "被動：狂暴"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_EMPTY_PRIMARY_DESCRIPTION": {
+      "en": "Removes this skill. Increases <style=cIsDamage>base attack speed by 0.5</style> and decreases <style=cIsUtility>cooldown by 10%</style>.",
+      "zh-TW": "移除此技能。<style=cIsDamage>基礎攻擊速度提高0.5</style>，<style=cIsUtility>冷卻時間縮短10%</style>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_EMPTY_UTILITY_NAME": {
+      "en": "Passive: Engines",
+      "zh-TW": "被動：引擎"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_EMPTY_UTILITY_DESCRIPTION": {
+      "en": "Removes this skill. Increases <style=cIsUtility>base speed by 1m/s</style> and <style=cIsUtility>thrust power by 10%</style>.",
+      "zh-TW": "移除此技能。<style=cIsUtility>基礎速度提高1米/秒</style>，<style=cIsUtility>推進力提高10%</style>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_EMPTY_SPECIAL_NAME": {
+      "en": "Passive: Armor",
+      "zh-TW": "被動：裝甲"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_EMPTY_SPECIAL_DESCRIPTION": {
+      "en": "Removes this skill. Increases <style=cIsUtility>base armor by 30</style>.",
+      "zh-TW": "移除此技能。<style=cIsUtility>基礎護甲提高30</style>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_MASTERY_ACHIEVEMENT_NAME": {
+      "en": "Celestial War Tank: Mastery",
+      "zh-TW": "天界戰車：精通"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_MASTERY_ACHIEVEMENT_DESC": {
+      "en": "As Celestial War Tank, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為天界戰車，在季風難度下通關遊戲或抹除自己。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_MASTERY_UNLOCKABLE_NAME": {
+      "en": "Celestial War Tank: Mastery",
+      "zh-TW": "天界戰車：精通"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_CELESTIAL_CANNON_ACHIEVEMENT_NAME": {
+      "en": "Celestial War Tank: Celestial Cannon",
+      "zh-TW": "天界戰車：天界炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_CELESTIAL_CANNON_ACHIEVEMENT_DESC": {
+      "en": "As Celestial War Tank, go home",
+      "zh-TW": "作為天界戰車，回家。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_CELESTIAL_CANNON_UNLOCKABLE_NAME": {
+      "en": "Celestial War Tank: Celestial Cannon",
+      "zh-TW": "天界戰車：天界炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_OBLITERATOR_ACHIEVEMENT_NAME": {
+      "en": "Celestial War Tank: Obliterator",
+      "zh-TW": "天界戰車：抹除者"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_OBLITERATOR_ACHIEVEMENT_DESC": {
+      "en": "As Celestial War Tank, deal over 1,000,000 damage in one shot.",
+      "zh-TW": "作為天界戰車，一擊造成超過100萬點傷害。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_OBLITERATOR_UNLOCKABLE_NAME": {
+      "en": "Celestial War Tank: Obliterator",
+      "zh-TW": "天界戰車：抹除者"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_RIP_DOZER_ACHIEVEMENT_NAME": {
+      "en": "Celestial War Tank: Ripdozer",
+      "zh-TW": "天界戰車：撕裂推土機"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_RIP_DOZER_ACHIEVEMENT_DESC": {
+      "en": "As Celestial War Tank, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為天界戰車，在季風難度下通關遊戲或抹除自己。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_RIP_DOZER_UNLOCKABLE_NAME": {
+      "en": "Celestial War Tank: Ripdozer",
+      "zh-TW": "天界戰車：撕裂推土機"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_BUNKER_BODY_ACHIEVEMENT_NAME": {
+      "en": "Celestial War Tank: Tanky",
+      "zh-TW": "天界戰車：皮糙肉厚"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_BUNKER_BODY_ACHIEVEMENT_DESC": {
+      "en": "As Celestial War Tank, Obtain 10000 HP.",
+      "zh-TW": "作為天界戰車，生命值達到10000點。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_BUNKER_BODY_UNLOCKABLE_NAME": {
+      "en": "Celestial War Tank: Tanky",
+      "zh-TW": "天界戰車：皮糙肉厚"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_NAME": {
+      "en": "Mega War Tank",
+      "zh-TW": "超級戰車"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_DESCRIPTION": {
+      "en": "The ultimate tank of destruction. Resist all types of foes, running and crushing them with its mighty weight and weapons!\r\n\r\n<style=cSub>< ! > Tank is huge, and heavily slow, making you susceptible to any form of damage. Playing either extremely defensive or aggressive will help mitigate the amount of damage you will take. Know that the tank has no healing.\r\n\r\n< ! > The tank’s body can be used for damage- run your enemies over or use your weight to squish them all!\r\n\r\n< ! > When tank crashes, it’s heavier and it takes a while to get back up, susceptible to more fall damage. Tank cannot do stunts.\r\n\r\n< ! > Healing factors are mitigated- tank has too much health!\r\n\r\n< ! > Press 'T' to honk.  Configurable in mod settings.\r\n\r\n</style>",
+      "zh-TW": "終極毀滅戰車。無懼各種敵人，用它驚人的重量與武器把敵人輾過、壓扁！\r\n\r\n<style=cSub>< ! >戰車體型巨大、速度極慢，很容易受到各種形式的傷害。採取極度防守或極度激進的打法，都有助於減少你承受的傷害。請注意，戰車沒有任何治療手段。\r\n\r\n< ! >戰車的車身本身就能造成傷害——輾過敵人，或用你的重量把他們全部壓扁！\r\n\r\n< ! >戰車翻車時，因為車身更重，需要一段時間才能翻回來，也會受到更多跌落傷害。戰車無法做特技。\r\n\r\n< ! >治療效果會被削弱——戰車的生命值實在太多了！\r\n\r\n< ! >按「T」鍵按喇叭。可在模組設定中更改按鍵。\r\n\r\n</style>"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SUBTITLE": {
+      "en": "Foreign Entity",
+      "zh-TW": "外來實體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_LORE": {
+      "en": "Upon further research, we have found some origin to these tanks- the hands of the scavengers. Crafted by quality scrap parts and items from the UES, they had successfully created these war tanks.\n\nHowever, this leads to dangerous conclusions. After obtaining one of the enemy antennas, we have alerted this behemoth sized of a tank. It’s the size of beetle guards!\n\nOf course after a long-fought battle, we have finally taken it down. We hope to take further research and re-alter its mind, in hopes to get better answers. It’ll be a difficult task at that, for it IS alien technology.\n\nOne humongous note to take in, is that upon its defeat, it had summoned an emergency portal. The largest, most violent portal we have ever seen. As much as it might lead us straight into answers, I don’t think it’s going to be a cakewalk in the park. An average tank is far too deadly, and I’m not sure what other inventions made by the scavengers are out there.",
+      "zh-TW": "經過進一步研究，我們找到了這些戰車的部分來歷——它們出自清道夫之手。清道夫用尤伊思的優質廢料零件和物品，成功打造出了這些戰車。\n\n然而，這也引出了危險的結論。我們取得一具敵方天線之後，竟然驚動了這輛巨獸般的戰車。它足足有甲殼蟲守衛那麼大！\n\n當然，經過一場漫長的苦戰，我們終於把它擊倒了。我們希望能進一步研究，並重新改造它的心智，好得到更確切的答案。這會是一項艱鉅的任務，畢竟這可是不折不扣的外星科技。\n\n有一點必須特別記下：它被擊敗時，召喚出了一道緊急傳送門——那是我們見過最巨大、最狂暴的傳送門。雖然它或許能直接帶我們找到答案，但我不認為那會是什麼輕鬆愜意的公園散步。一輛普通的戰車就已經致命至極，我也不確定外頭還有哪些清道夫造出來的發明。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_ORIGINAL_SKIN_NAME": {
+      "en": "ORIGINAL",
+      "zh-TW": "原色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_WHITE_SKIN_NAME": {
+      "en": "WHITE",
+      "zh-TW": "白色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_BLACK_SKIN_NAME": {
+      "en": "BLACK",
+      "zh-TW": "黑色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_RED_SKIN_NAME": {
+      "en": "RED",
+      "zh-TW": "紅色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_DARK_RED_SKIN_NAME": {
+      "en": "DARK RED",
+      "zh-TW": "暗紅色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_GREEN_SKIN_NAME": {
+      "en": "GREEN",
+      "zh-TW": "綠色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_BLUE_SKIN_NAME": {
+      "en": "BLUE",
+      "zh-TW": "藍色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_CYAN_SKIN_NAME": {
+      "en": "CYAN",
+      "zh-TW": "青色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_YELLOW_SKIN_NAME": {
+      "en": "YELLOW",
+      "zh-TW": "黃色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_MAGENTA_SKIN_NAME": {
+      "en": "MAGENTA",
+      "zh-TW": "洋紅色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PURPLE_SKIN_NAME": {
+      "en": "PURPLE",
+      "zh-TW": "紫色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_ORANGE_SKIN_NAME": {
+      "en": "ORANGE",
+      "zh-TW": "橙色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_BROWN_SKIN_NAME": {
+      "en": "BROWN",
+      "zh-TW": "棕色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_UNITED_STATES_SKIN_NAME": {
+      "en": "UNITED STATES",
+      "zh-TW": "美國"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_GERMANY_SKIN_NAME": {
+      "en": "GERMANY",
+      "zh-TW": "德國"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_UNITED_KINGDOM_SKIN_NAME": {
+      "en": "UNITED KINGDOM",
+      "zh-TW": "英國"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_RUSSIA_SKIN_NAME": {
+      "en": "RUSSIA",
+      "zh-TW": "俄羅斯"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_FRANCE_SKIN_NAME": {
+      "en": "FRANCE",
+      "zh-TW": "法國"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SKINCOLOR_DESCRIPTION": {
+      "en": "This changes the body color.  Does not affect gameplay.",
+      "zh-TW": "改變車身顏色。不影響遊戲玩法。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_DEFAULT_SKIN_NAME": {
+      "en": "MAIN",
+      "zh-TW": "主色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_DEFAULT_DIRTY_SKIN_NAME": {
+      "en": "DIRTY YELLOW",
+      "zh-TW": "髒黃色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_2_SKIN_NAME": {
+      "en": "GREEN",
+      "zh-TW": "綠色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_2_DIRTY_SKIN_NAME": {
+      "en": "DIRTY GREEN",
+      "zh-TW": "髒綠色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_3_SKIN_NAME": {
+      "en": "BLUE",
+      "zh-TW": "藍色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_3_DIRTY_SKIN_NAME": {
+      "en": "DIRTY BLUE",
+      "zh-TW": "髒藍色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_4_SKIN_NAME": {
+      "en": "RED",
+      "zh-TW": "紅色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_4_DIRTY_SKIN_NAME": {
+      "en": "DIRTY RED",
+      "zh-TW": "髒紅色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_MASTERY_SKIN_NAME": {
+      "en": "MASTERY",
+      "zh-TW": "精通"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Rogue_NAME": {
+      "en": "Rogue Hull",
+      "zh-TW": "Rogue車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Rogue_DESCRIPTION": {
+      "en": "\n<color=#FFFF00>Engine Power: </color>3000\n<color=#00FFFF>Speed: </color>10\nTraverse Speed: 0.8\n\n<color=#00FF00>Health: </color>1000\n<color=#FF0000>Armor: </color>75\n\n<color=#AA00FF>Thrust Power: </color>35\n<color=#ffc080>Fuel Amount: </color>500\nWeight: 1000\n",
+      "zh-TW": "\n<color=#FFFF00>引擎功率：</color>3000\n<color=#00FFFF>速度：</color>10\n轉向速度：0.8\n\n<color=#00FF00>生命值：</color>1000\n<color=#FF0000>護甲：</color>75\n\n<color=#AA00FF>推進力：</color>35\n<color=#ffc080>燃料量：</color>500\n重量：1000\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Griffon_NAME": {
+      "en": "Griffon Hull",
+      "zh-TW": "Griffon車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Griffon_DESCRIPTION": {
+      "en": "<color=#80fc80>- Turret compatible</color>.\n\n<color=#FFFF00>Engine Power: </color>2300\n<color=#00FFFF>Speed: </color>11\nTraverse Speed: 1\n\n<color=#00FF00>Health: </color>800\n<color=#FF0000>Armor: </color>25\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>500\nWeight: 800\n",
+      "zh-TW": "<color=#80fc80>- 可安裝炮塔</color>。\n\n<color=#FFFF00>引擎功率：</color>2300\n<color=#00FFFF>速度：</color>11\n轉向速度：1\n\n<color=#00FF00>生命值：</color>800\n<color=#FF0000>護甲：</color>25\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>500\n重量：800\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_TONK_NAME": {
+      "en": "TONK Hull",
+      "zh-TW": "TONK車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_TONK_DESCRIPTION": {
+      "en": "\n<color=#FFFF00>Engine Power: </color>1100\n<color=#00FFFF>Speed: </color>12\nTraverse Speed: 2\n\n<color=#00FF00>Health: </color>500\n<color=#FF0000>Armor: </color>25\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>300\nWeight: 450\n",
+      "zh-TW": "\n<color=#FFFF00>引擎功率：</color>1100\n<color=#00FFFF>速度：</color>12\n轉向速度：2\n\n<color=#00FF00>生命值：</color>500\n<color=#FF0000>護甲：</color>25\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>300\n重量：450\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Type_5_Heavy_NAME": {
+      "en": "Type 5 Heavy Hull",
+      "zh-TW": "Type 5 Heavy車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Type_5_Heavy_DESCRIPTION": {
+      "en": "\n<color=#FFFF00>Engine Power: </color>3500\n<color=#00FFFF>Speed: </color>8\nTraverse Speed: 0.6\n\n<color=#00FF00>Health: </color>1400\n<color=#FF0000>Armor: </color>100\n\n<color=#AA00FF>Thrust Power: </color>34\n<color=#ffc080>Fuel Amount: </color>750\nWeight: 1250\n",
+      "zh-TW": "\n<color=#FFFF00>引擎功率：</color>3500\n<color=#00FFFF>速度：</color>8\n轉向速度：0.6\n\n<color=#00FF00>生命值：</color>1400\n<color=#FF0000>護甲：</color>100\n\n<color=#AA00FF>推進力：</color>34\n<color=#ffc080>燃料量：</color>750\n重量：1250\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Bigfoot_NAME": {
+      "en": "Bigfoot Hull",
+      "zh-TW": "Bigfoot車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Bigfoot_DESCRIPTION": {
+      "en": "Provides more <style=cIsUtility>air control</style>.\n\n\n<color=#FFFF00>Engine Power: </color>2000\n<color=#00FFFF>Speed: </color>13\nTraverse Speed: 1.4\n\n<color=#00FF00>Health: </color>600\n<color=#FF0000>Armor: </color>20\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>450\nWeight: 750\n",
+      "zh-TW": "提供更好的<style=cIsUtility>空中操控</style>。\n\n\n<color=#FFFF00>引擎功率：</color>2000\n<color=#00FFFF>速度：</color>13\n轉向速度：1.4\n\n<color=#00FF00>生命值：</color>600\n<color=#FF0000>護甲：</color>20\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>450\n重量：750\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_AMX50B_NAME": {
+      "en": "AMX50B Hull",
+      "zh-TW": "AMX50B車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_AMX50B_DESCRIPTION": {
+      "en": "<style=cIsUtility>- Speed is not affected by weight</style>.\n\n<color=#FFFF00>Engine Power: </color>700\n<color=#00FFFF>Speed: </color>9\nTraverse Speed: 0.7\n\n<color=#00FF00>Health: </color>900\n<color=#FF0000>Armor: </color>50\n\n<color=#AA00FF>Thrust Power: </color>35\n<color=#ffc080>Fuel Amount: </color>370\nWeight: 1100\n",
+      "zh-TW": "<style=cIsUtility>- 速度不受重量影響</style>。\n\n<color=#FFFF00>引擎功率：</color>700\n<color=#00FFFF>速度：</color>9\n轉向速度：0.7\n\n<color=#00FF00>生命值：</color>900\n<color=#FF0000>護甲：</color>50\n\n<color=#AA00FF>推進力：</color>35\n<color=#ffc080>燃料量：</color>370\n重量：1100\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_TOG_II_NAME": {
+      "en": "TOG II Hull",
+      "zh-TW": "TOG II車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_TOG_II_DESCRIPTION": {
+      "en": "\n<color=#FFFF00>Engine Power: </color>3700\n<color=#00FFFF>Speed: </color>8\nTraverse Speed: 0.4\n\n<color=#00FF00>Health: </color>1150\n<color=#FF0000>Armor: </color>60\n\n<color=#AA00FF>Thrust Power: </color>32\n<color=#ffc080>Fuel Amount: </color>1000\nWeight: 1200\n",
+      "zh-TW": "\n<color=#FFFF00>引擎功率：</color>3700\n<color=#00FFFF>速度：</color>8\n轉向速度：0.4\n\n<color=#00FF00>生命值：</color>1150\n<color=#FF0000>護甲：</color>60\n\n<color=#AA00FF>推進力：</color>32\n<color=#ffc080>燃料量：</color>1000\n重量：1200\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_TANKDOZER_NAME": {
+      "en": "TANKDOZER Hull",
+      "zh-TW": "TANKDOZER車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_TANKDOZER_DESCRIPTION": {
+      "en": "Plow <style=cIsUtility>blocks</style> all <style=cIsDamage>incoming damage</style>.\n\n- Tank Destroyer Mode: <color=#fc8080>Cannot mount turret</color>.\n\n<color=#FFFF00>Engine Power: </color>2500\n<color=#00FFFF>Speed: </color>8.5\nTraverse Speed: 0.9\n\n<color=#00FF00>Health: </color>1250\n<color=#FF0000>Armor: </color>80\n\n<color=#AA00FF>Thrust Power: </color>34\n<color=#ffc080>Fuel Amount: </color>500\nWeight: 1200\n",
+      "zh-TW": "推土鏟會<style=cIsUtility>擋下</style>所有<style=cIsDamage>來襲的傷害</style>。\n\n- 驅逐戰車模式：<color=#fc8080>無法安裝炮塔</color>。\n\n<color=#FFFF00>引擎功率：</color>2500\n<color=#00FFFF>速度：</color>8.5\n轉向速度：0.9\n\n<color=#00FF00>生命值：</color>1250\n<color=#FF0000>護甲：</color>80\n\n<color=#AA00FF>推進力：</color>34\n<color=#ffc080>燃料量：</color>500\n重量：1200\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Truck_Kan_NAME": {
+      "en": "Truck Kan Hull",
+      "zh-TW": "Truck Kan車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Truck_Kan_DESCRIPTION": {
+      "en": "<color=#80fc80>- Turret compatible</color>.\n<style=cIsUtility>- Speed is not affected by weight</style>.\n\n<color=#FFFF00>Engine Power: </color>1000\n<color=#00FFFF>Speed: </color>12\nTraverse Speed: 0.9\n\n<color=#00FF00>Health: </color>450\n<color=#FF0000>Armor: </color>15\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>600\nWeight: 600\n",
+      "zh-TW": "<color=#80fc80>- 可安裝炮塔</color>。\n<style=cIsUtility>- 速度不受重量影響</style>。\n\n<color=#FFFF00>引擎功率：</color>1000\n<color=#00FFFF>速度：</color>12\n轉向速度：0.9\n\n<color=#00FF00>生命值：</color>450\n<color=#FF0000>護甲：</color>15\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>600\n重量：600\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Rogue_NAME": {
+      "en": "Rogue",
+      "zh-TW": "Rogue"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Rogue_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>250\n<color=#FF0000>Armor: </color>25\n\nRotation Speed: 7.5\n\nWeight: 250\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>250\n<color=#FF0000>護甲：</color>25\n\n旋轉速度：7.5\n\n重量：250\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Turret_NAME": {
+      "en": "Turret",
+      "zh-TW": "炮塔"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Turret_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>100\n<color=#FF0000>Armor: </color>10\n\nRotation Speed: 20\n\nWeight: 50\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>100\n<color=#FF0000>護甲：</color>10\n\n旋轉速度：20\n\n重量：50\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_TONK_NAME": {
+      "en": "TONK",
+      "zh-TW": "TONK"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_TONK_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>150\n<color=#FF0000>Armor: </color>15\n\nRotation Speed: 20\n\nWeight: 100\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>150\n<color=#FF0000>護甲：</color>15\n\n旋轉速度：20\n\n重量：100\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Type 5 Heavy_NAME": {
+      "en": "Type 5 Heavy",
+      "zh-TW": "Type 5 Heavy"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Type 5 Heavy_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>350\n<color=#FF0000>Armor: </color>50\n\nRotation Speed: 5\n\nWeight: 500\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>350\n<color=#FF0000>護甲：</color>50\n\n旋轉速度：5\n\n重量：500\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Bigfoot_NAME": {
+      "en": "Bigfoot",
+      "zh-TW": "Bigfoot"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Bigfoot_DESCRIPTION": {
+      "en": "<style=cIsDamage>200% damage</style>?  I couldn't find the code where it increases damage for this specific turret.\n- Developer\n\n\n<color=#00FF00>Health: </color>200\n<color=#FF0000>Armor: </color>25\n\nRotation Speed: 13\nAngle Limit: 60\n\nWeight: 200\n",
+      "zh-TW": "<style=cIsDamage>200%傷害</style>？我找不到這座炮塔提高傷害的程式碼在哪裡。\n- 開發者\n\n\n<color=#00FF00>生命值：</color>200\n<color=#FF0000>護甲：</color>25\n\n旋轉速度：13\n射角限制：60\n\n重量：200\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_AMX50B_NAME": {
+      "en": "AMX50B",
+      "zh-TW": "AMX50B"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_AMX50B_DESCRIPTION": {
+      "en": "Adds <style=cIsDamage>5 charges</style> to the <style=cIsUtility>secondary</style> skill.\n<style=cIsUtility>Replenishes all charges</style> after cooldown.\nCannon damage decreases by 80%\n\n<color=#00FF00>Health: </color>300\n<color=#FF0000>Armor: </color>20\n\nRotation Speed: 9\n\nWeight: 350\n",
+      "zh-TW": "<style=cIsUtility>次要技能</style>增加<style=cIsDamage>5次充能</style>。\n冷卻結束後<style=cIsUtility>補滿所有充能</style>。\n主炮傷害降低80%\n\n<color=#00FF00>生命值：</color>300\n<color=#FF0000>護甲：</color>20\n\n旋轉速度：9\n\n重量：350\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_TOG II_NAME": {
+      "en": "TOG II",
+      "zh-TW": "TOG II"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_TOG II_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>210\n<color=#FF0000>Armor: </color>30\n\nRotation Speed: 6\n\nWeight: 200\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>210\n<color=#FF0000>護甲：</color>30\n\n旋轉速度：6\n\n重量：200\n"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PASSIVE_NAME": {
+      "en": "Heavy Weight",
+      "zh-TW": "重量級"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PASSIVE_DESCRIPTION": {
+      "en": "The tank can <style=cIsUtility>run enemies over</style>, with <style=cIsDamage>damage dependent on speed</style>.  Falling 20 m/s or faster causes your weight to create a <style=cIsUtility>shockwave</style>, harming foes nearby.",
+      "zh-TW": "戰車可以<style=cIsUtility>輾過敵人</style>，<style=cIsDamage>傷害取決於速度</style>。以20米/秒以上的速度墜落時，你的重量會產生<style=cIsUtility>衝擊波</style>，傷害附近的敵人。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_EMPTY_PRIMARY_NAME": {
+      "en": "None",
+      "zh-TW": "無"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_EMPTY_PRIMARY_DESCRIPTION": {
+      "en": "Removes this skill.  Increases the following stats:\n\nAttack Speed: <color=#80fc80>+0.5</color>",
+      "zh-TW": "移除此技能。提高以下屬性：\n\n攻擊速度：<color=#80fc80>+0.5</color>"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_EMPTY_SECONDARY_NAME": {
+      "en": "None",
+      "zh-TW": "無"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_EMPTY_SECONDARY_DESCRIPTION": {
+      "en": "<color=#7a7a7a>Currently does nothing.</color>",
+      "zh-TW": "<color=#7a7a7a>目前沒有任何效果。</color>"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_EMPTY_UTILITY_NAME": {
+      "en": "None",
+      "zh-TW": "無"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_EMPTY_UTILITY_DESCRIPTION": {
+      "en": "Removes this skill.  Increases the following stats:\n\nSpeed: <color=#80fc80>+1</color> m/s\nThruster Power: <color=#80fc80>+10%</color>",
+      "zh-TW": "移除此技能。提高以下屬性：\n\n速度：<color=#80fc80>+1</color>米/秒\n推進力：<color=#80fc80>+10%</color>"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_EMPTY_SPECIAL_NAME": {
+      "en": "None",
+      "zh-TW": "無"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_EMPTY_SPECIAL_DESCRIPTION": {
+      "en": "Removes this skill.  Increases armor by <color=#80fc80>30</color> and increases fuel capacity by <color=#80fc80>200</color>",
+      "zh-TW": "移除此技能。護甲提高<color=#80fc80>30</color>，燃料容量提高<color=#80fc80>200</color>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PRIMARY_BOBSEMPLETURRET_NAME": {
+      "en": "Mini Cannon",
+      "zh-TW": "迷你炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PRIMARY_BOBSEMPLETURRET_DESCRIPTION": {
+      "en": "Inaccurately fire for <style=cIsDamage>200% damage.</style>",
+      "zh-TW": "以不太精準的準頭開炮，造成<style=cIsDamage>200%傷害。</style>"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PRIMARY_EMP_NAME": {
+      "en": "EMP",
+      "zh-TW": "EMP"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PRIMARY_EMP_DESCRIPTION": {
+      "en": "Ignite your shield, and create an emp for <style=cIsDamage>2000% damage</style>, that electrocutes enemies!",
+      "zh-TW": "點燃你的護盾，釋放一道EMP，造成<style=cIsDamage>2000%傷害</style>並電擊敵人！"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PRIMARY_CALLIOPE_NAME": {
+      "en": "Calliope",
+      "zh-TW": "Calliope"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PRIMARY_CALLIOPE_DESCRIPTION": {
+      "en": "Hold a massive stock of up to 22 missiles! Each one dealing <style=cIsDamage>1200% damage</style> in a giant radius.",
+      "zh-TW": "最多可囤積22枚導彈的超大充能！每枚都能在巨大範圍內造成<style=cIsDamage>1200%傷害</style>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PRIMARY_AUTOCANNONTURRET_NAME": {
+      "en": "Rapid Auto Cannon",
+      "zh-TW": "速射機關炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PRIMARY_AUTOCANNONTURRET_DESCRIPTION": {
+      "en": "Shoot explosive shells at enemies for <style=cIsDamage>500% damage</style>. Must reload every 4 seconds.",
+      "zh-TW": "向敵人發射爆炸炮彈，造成<style=cIsDamage>500%傷害</style>。每4秒必須上彈一次。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_ROGUECANNON_NAME": {
+      "en": "Mighty Cannon",
+      "zh-TW": "強力炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_ROGUECANNON_DESCRIPTION": {
+      "en": "Fire for <style=cIsDamage>7500% damage</style>, knocking foes.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 16s</style>\n- <style=cIsDamage>Blast Radius: 12.5m</style>",
+      "zh-TW": "開炮，造成<style=cIsDamage>7500%傷害</style>並擊退敵人。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：16秒</style>\n- <style=cIsDamage>爆炸半徑：12.5米</style>"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_ARTCANNON_NAME": {
+      "en": "Artillery Cannon",
+      "zh-TW": "火炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_ARTCANNON_DESCRIPTION": {
+      "en": "<style=cIsUtility>Hold to aim</style>, and release to fire a powerful shell for <style=cIsDamage>7000% damage</style>.  Damage increases the further it travels up to <style=cIsDamage>14000% damage</style>.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 16s</style>\n- <style=cIsDamage>Blast Radius: 12.5m</style>",
+      "zh-TW": "<style=cIsUtility>按住瞄準</style>，放開後發射一枚強力炮彈，造成<style=cIsDamage>7000%傷害</style>。飛行距離越遠傷害越高，最高可達<style=cIsDamage>14000%傷害</style>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：16秒</style>\n- <style=cIsDamage>爆炸半徑：12.5米</style>"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_CRYOCANNON_NAME": {
+      "en": "Cryo Cannon",
+      "zh-TW": "冷凍炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_CRYOCANNON_DESCRIPTION": {
+      "en": "Shoot a giant snowball for <color=#75EAFF>1500% damage</color> and freeze enemies.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 5s</style>\n- <style=cIsDamage>Blast Radius: 10m</style>",
+      "zh-TW": "發射一顆巨大雪球，造成<color=#75EAFF>1500%傷害</color>並冰凍敵人。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：5秒</style>\n- <style=cIsDamage>爆炸半徑：10米</style>"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_DOUBLEBARREL_NAME": {
+      "en": "Duo Cannon",
+      "zh-TW": "雙聯炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_DOUBLEBARREL_DESCRIPTION": {
+      "en": "Fire for <style=cIsDamage>5400% damage</style>. Hold to fire 2 shells, which <color=#fc8080>increases skill cooldown</color> afterward. Firing a double <color=#80fc80>greatly decreases</color> the next charge time for 2 seconds.",
+      "zh-TW": "開炮，造成<style=cIsDamage>5400%傷害</style>。按住可連發2枚炮彈，但之後會<color=#fc8080>增加技能冷卻時間</color>。雙發後的2秒內，下一次的蓄力時間<color=#80fc80>大幅縮短</color>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_BRITCANNON_NAME": {
+      "en": "British Cannon",
+      "zh-TW": "英國炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_BRITCANNON_DESCRIPTION": {
+      "en": "Fire for <style=cIsDamage>2400% damage</style>.  <color=#fc8080>Cannot proc items</color>.",
+      "zh-TW": "開炮，造成<style=cIsDamage>2400%傷害</style>。<color=#fc8080>無法觸發物品效果</color>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_GIGACANNON_NAME": {
+      "en": "Big Bad Cannon",
+      "zh-TW": "大壞炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_GIGACANNON_DESCRIPTION": {
+      "en": "Fire for <style=cIsDamage>2000% damage</style>.  <style=cIsUtility>Hold to charge</style> and deal up to <style=cIsDamage>11000% damage</style>.  Max charge auto-fires the cannon for an additional <style=cIsDamage>5500% laser damage</style> with <style=cIsUtility>additional knockback</style>.",
+      "zh-TW": "開炮，造成<style=cIsDamage>2000%傷害</style>。<style=cIsUtility>按住蓄力</style>，最多可造成<style=cIsDamage>11000%傷害</style>。蓄滿時會自動開炮，額外造成<style=cIsDamage>5500%雷射傷害</style>，並附帶<style=cIsUtility>額外擊退</style>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_OPPENSNUKE_NAME": {
+      "en": "Oppenheimer's Experimental",
+      "zh-TW": "歐本海默的實驗品"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_OPPENSNUKE_DESCRIPTION": {
+      "en": "Let your shell destroy your shield, and annihilate for <color=#ff4d76>9000% crit damage</color>!",
+      "zh-TW": "讓你的炮彈摧毀自己的護盾，毀天滅地，造成<color=#ff4d76>9000%暴擊傷害</color>！"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_UTILITY_JETS_NAME": {
+      "en": "Jets",
+      "zh-TW": "噴射引擎"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_UTILITY_JETS_DESCRIPTION": {
+      "en": "Ignite and conume <color=#ffc080>70 fuel</color> per second, allowing the tank to gain more and more speed over time.",
+      "zh-TW": "點火後每秒消耗<color=#ffc080>70點燃料</color>，讓戰車隨時間越跑越快。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_UTILITY_POWERCYCLE_NAME": {
+      "en": "Power Cycle",
+      "zh-TW": "動力循環"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_UTILITY_POWERCYCLE_DESCRIPTION": {
+      "en": "Activate to swap between 3 modes- Evade, Offense, or Defense: \n\n<style=cIsUtility>Evade</style>: Reduce attack speed by 50% and increase cooldown by 50% for a extra 50% speed, 10% thrust power, and 50% engine power!\n\n<color=#80fc80>Defense</color>: Sacrifice 70% speed and 100% thrust power for 500 armor.\n\n<style=cIsDamage>Offense</style>: All weapons deal double damage. Decrease cooldowns by 33% and increase attack speed by 33%, but lose ALL armor and healing. Activating this mode shocks your tank for 2 seconds.",
+      "zh-TW": "啟動後可在3種模式之間切換——迴避、攻擊或防禦：\n\n<style=cIsUtility>迴避</style>：攻擊速度降低50%、冷卻時間增加50%，換取額外50%速度、10%推進力與50%引擎功率！\n\n<color=#80fc80>防禦</color>：犧牲70%速度與100%推進力，換取500點護甲。\n\n<style=cIsDamage>攻擊</style>：所有武器造成雙倍傷害。冷卻時間縮短33%，攻擊速度提高33%，但會失去「全部」護甲與治療效果。啟動此模式時，戰車會被震盪2秒。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_UTILITY_OVERCLOCK_NAME": {
+      "en": "Overclock",
+      "zh-TW": "超頻"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_UTILITY_OVERCLOCK_DESCRIPTION": {
+      "en": "Let your velocity destroy your shield, and violently erupt your thrusters for <style=cIsDamage>6000% damage</style> sending yourself in the air, <style=cIsUtility>preventing fall damage</style>!",
+      "zh-TW": "讓你的速度摧毀自己的護盾，推進器猛烈爆發，造成<style=cIsDamage>6000%傷害</style>並把自己送上天空，<style=cIsUtility>免受跌落傷害</style>！"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SPECIAL_SHEILDS_NAME": {
+      "en": "Shields",
+      "zh-TW": "護盾"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SPECIAL_SHEILDS_DESCRIPTION": {
+      "en": "Activate to become <style=cIsUtility>immune to outside damage</style> for 4 seconds.  Can be sacrificed for a one-time <color=#03fcc2>Power Ability</color>.",
+      "zh-TW": "啟動後4秒內<style=cIsUtility>免疫外來傷害</style>。可犧牲護盾，換取一次性的<color=#03fcc2>強力技能</color>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SPECIAL_BLAST_NAME": {
+      "en": "Blasticular",
+      "zh-TW": "爆裂奇觀"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SPECIAL_BLAST_DESCRIPTION": {
+      "en": "Fire 4 cannons, each dealing <style=cIsDamage>1500% damage</style> in a huge radius. Weapons <color=#fc8080>overheat</color> instead of reloading.\n\nSkill Stats:\n- <style=cIsDamage>Blast Radius: 12.5m</style>",
+      "zh-TW": "4門炮齊射，每發在超大範圍內造成<style=cIsDamage>1500%傷害</style>。武器不需上彈，而是會<color=#fc8080>過熱</color>。\n\n技能數值：\n- <style=cIsDamage>爆炸半徑：12.5米</style>"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PC_MOBILITY_NAME": {
+      "en": "Power Mode: <style=cIsUtility>Evade</style>",
+      "zh-TW": "動力模式：<style=cIsUtility>迴避</style>"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PC_MOBILITY_DESCRIPTION": {
+      "en": "Reduce attack speed by 50% and increase cooldown by 50% for a extra 50% speed, 10% thrust power, and 50% engine power.",
+      "zh-TW": "攻擊速度降低50%、冷卻時間增加50%，換取額外50%速度、10%推進力與50%引擎功率。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PC_DEFENSE_NAME": {
+      "en": "Power Mode: <color=#80fc80>Defense</color>",
+      "zh-TW": "動力模式：<color=#80fc80>防禦</color>"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PC_DEFENSE_DESCRIPTION": {
+      "en": "Sacrifice 70% speed and 100% thrust power for 500 armor.",
+      "zh-TW": "犧牲70%速度與100%推進力，換取500點護甲。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PC_OFFENSE_NAME": {
+      "en": "Power Mode: <style=cIsDamage>Offense</style>",
+      "zh-TW": "動力模式：<style=cIsDamage>攻擊</style>"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PC_OFFENSE_DESCRIPTION": {
+      "en": "All weapons deal double damage. Decrease cooldowns by 33% and increase attack speed by 33%, but lose ALL armor and healing. Activating this mode shocks your tank for 2 seconds.",
+      "zh-TW": "所有武器造成雙倍傷害。冷卻時間縮短33%，攻擊速度提高33%，但會失去「全部」護甲與治療效果。啟動此模式時，戰車會被震盪2秒。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_OUTRO_FLAVOR": {
+      "en": "And to think Dedee was finally freed, \r\nit was yet again captured by the UES.",
+      "zh-TW": "原以為迪迪終於重獲自由，\r\n它卻又一次被尤伊思抓走了。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_OUTRO_FAILURE": {
+      "en": "And to think Dedee was finally freed, \r\nit was yet again captured by the UES.",
+      "zh-TW": "原以為迪迪終於重獲自由，\r\n它卻又一次被尤伊思抓走了。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_TURRETLESS_NAME": {
+      "en": "Turretless",
+      "zh-TW": "無炮塔"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SECONDARY_TURRETLESS_DESCRIPTION": {
+      "en": "Removes the turret.  <style=cIsDamage>Increases all damage by 30%</style>",
+      "zh-TW": "移除炮塔。<style=cIsDamage>所有傷害提高30%</style>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_CANNON_NAME": {
+      "en": "Doctor's Cannon",
+      "zh-TW": "醫生之炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_CANNON_DESCRIPTION": {
+      "en": "Fire the main gun for <style=cIsDamage>2100% damage</style> with <style=cIsDamage>unfaltering critical chance</style>. Critical chance increases damage of the cannon.",
+      "zh-TW": "以主炮開火，造成<style=cIsDamage>2100%傷害</style>，且<style=cIsDamage>暴擊率屹立不搖</style>。暴擊率會提高這門炮的傷害。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_HOWITZER_CANNON_NAME": {
+      "en": "Fatman's Cannon",
+      "zh-TW": "胖子之炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_HOWITZER_CANNON_DESCRIPTION": {
+      "en": "Charge, and fire the Howitzer for <style=cIsDamage>9100% damage</style>. <style=cIsUtility>Stuns and slows enemies</style>. Has an <color=#d40000>extra excessive knockback</color>, and is risky to fire in-air.",
+      "zh-TW": "蓄力後以榴彈炮開火，造成<style=cIsDamage>9100%傷害</style>。<style=cIsUtility>眩暈並減速敵人</style>。附帶<color=#d40000>超額的強烈擊退</color>，在空中開炮相當危險。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_CROMWELL_CANNON_NAME": {
+      "en": "Boxer's Cannon",
+      "zh-TW": "拳擊手之炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_CROMWELL_CANNON_DESCRIPTION": {
+      "en": "Fire the gun for <style=cIsDamage>2975% damage</style>.  <style=cIsDamage>Damage decreases as it travels</style>;  <style=cIsDamage>Proc items instead increase damage</style>.",
+      "zh-TW": "開炮，造成<style=cIsDamage>2975%傷害</style>。<style=cIsDamage>傷害隨飛行距離遞減</style>；<style=cIsDamage>觸發類物品改為提高傷害</style>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_FRENCHGUN_NAME": {
+      "en": "French Fries",
+      "zh-TW": "法式薯條"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_FRENCHGUN_DESCRIPTION": {
+      "en": "Now shoots <style=cIsDamage>5x550 damage</style>, with proc of 10.",
+      "zh-TW": "現在改為射出<style=cIsDamage>5x550傷害</style>，觸發係數高達10。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_MINIGUN_NAME": {
+      "en": "Laser Minigun",
+      "zh-TW": "雷射轉管機槍"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_MINIGUN_DESCRIPTION": {
+      "en": "Fire the minigun for <style=cIsDamage>50% damage</style>. Near overheat deals <style=cIsDamage>x2 base damage</style>.  Complete overheat <color=#fc8080>penalizes cooldown</color>. <style=cIsUtility>Attack speed only affects cooldown</style>; <color=#80fc80>Backup Magazines</color> increases time to overheat.",
+      "zh-TW": "以轉管機槍掃射，造成<style=cIsDamage>50%傷害</style>。接近過熱時造成<style=cIsDamage>2倍基礎傷害</style>。完全過熱會<color=#fc8080>延長冷卻時間作為懲罰</color>。<style=cIsUtility>攻擊速度僅影響冷卻</style>；<color=#80fc80>備用彈夾</color>可延長過熱所需的時間。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_T62_CANNON_NAME": {
+      "en": "Billy's Cannon",
+      "zh-TW": "比利之炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_T62_CANNON_DESCRIPTION": {
+      "en": "Fire the laser gun for <style=cIsDamage>3750% damage</style>. Hitting weak points deals <style=cIsDamage>extra damage</style>.",
+      "zh-TW": "以雷射炮開火，造成<style=cIsDamage>3750%傷害</style>。命中弱點會造成<style=cIsDamage>額外傷害</style>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_MAUS_NAME": {
+      "en": "Fractured Cannon",
+      "zh-TW": "碎裂炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_MAUS_DESCRIPTION": {
+      "en": "Fire the gun for <style=cIsDamage>8100% damage</style>.  Hitting a enemy deals <color=#E85E31>fire</color>, <color=#AA2B2A>bleed</color>, and <color=#D0E375>weakness</color>.  Possesses the <style=cIsUtility>fastest projectile</style>, allowing for ease of use.",
+      "zh-TW": "開炮，造成<style=cIsDamage>8100%傷害</style>。命中敵人會造成<color=#E85E31>燃燒</color>、<color=#AA2B2A>流血</color>與<color=#D0E375>弱化</color>。擁有<style=cIsUtility>最快的投射物速度</style>，十分好上手。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_AA_NAME": {
+      "en": "G/A Cannon",
+      "zh-TW": "地空兩用炮"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_AA_DESCRIPTION": {
+      "en": "Fire the gun for <style=cIsDamage>405% damage</style>. Projectile detonates <style=cIsDamage>5.5m</style> near <style=cIsUtility>any</style> targets for an extra <style=cIsDamage>2.5x</style> base damage.  While firing, <color=#fc8080>speed is penalized</color>.",
+      "zh-TW": "開炮，造成<style=cIsDamage>405%傷害</style>。投射物會在接近<style=cIsUtility>任何</style>目標<style=cIsDamage>5.5米</style>內時引爆，額外造成<style=cIsDamage>2.5倍</style>基礎傷害。開炮時<color=#fc8080>速度會降低</color>。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_CANNON_MKII_NAME": {
+      "en": "RAIN",
+      "zh-TW": "炮雨"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_CANNON_MKII_DESCRIPTION": {
+      "en": "Fire the gun for <style=cIsDamage>7x2200% damage</style> in a <style=cIsUtility>great arc</style>.  Damage increases the further it travels, up to <style=cIsDamage>12x5500% damage</style>.\n\nCooldown: 30s\nBlast Radius: 13m/bullet",
+      "zh-TW": "以<style=cIsUtility>大弧線</style>開炮，造成<style=cIsDamage>7x2200%傷害</style>。飛行距離越遠傷害越高，最高可達<style=cIsDamage>12x5500%傷害</style>。\n\n冷卻時間：30秒\n爆炸半徑：13米/發"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_OBLITERATOR_CANNON_NAME": {
+      "en": "Oppenheimer’s Unreleased Experimental",
+      "zh-TW": "歐本海默的未公開實驗品"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_SECONDARY_SCEPTER_OBLITERATOR_CANNON_DESCRIPTION": {
+      "en": "Annihilate <color=#d40000>ALL</color> in a 35m for <style=cIsDamage>24000% damage</style>.",
+      "zh-TW": "殲滅半徑35米內的<color=#d40000>一切</color>，造成<style=cIsDamage>24000%傷害</style>。"
+    },
+    "CHEESEWITHHOLES_TANK_EXPANSION_NAME": {
+      "en": "Celestial Tanks",
+      "zh-TW": "天界戰車"
+    },
+    "CHEESEWITHHOLES_TANK_EXPANSION_DESCRIPTION": {
+      "en": "Adds content from the mod 'Celestial War Tank' to the game.",
+      "zh-TW": "加入「Celestial War Tank」模組的內容。"
+    },
+    "Celestial War Tank": {
+      "en": "Celestial War Tank",
+      "zh-TW": "天界戰車"
+    },
+    "War Tank": {
+      "en": "War Tank",
+      "zh-TW": "戰車"
+    }
+  }
+}

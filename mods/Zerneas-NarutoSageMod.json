@@ -1,0 +1,119 @@
+{
+  "mod": "Zerneas-NarutoSageMod",
+  "version": "0.22.3",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
+    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組的大廳與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
+  ],
+  "strings": {
+    "ZERNEAS_NARUTOSAGE_NAME": {
+      "en": "Sage Naruto",
+      "zh-TW": "仙人模式鳴人"
+    },
+    "ZERNEAS_NARUTOSAGE_DESCRIPTION": {
+      "en": "Sage Naruto fights with the patience of the toads: calm gathers natural energy, and natural energy makes his jutsu enormous.<color=#CCD3E0>\r\n\r\n< ! > Keep still to meditate and fill your four charges of natural energy; your hidden clones bring charges too.\r\n\r\n< ! > Every Frog Kumite blow gives you a point of natural energy, with no limit. Your next Sage Art spends them all.\r\n\r\n< ! > Tap a Sage Art to use it at once, or hold it to pour charges in: bigger, it catches more enemies.\r\n\r\n< ! > Clone Catapult, then Big Ball Rasengan aimed down: a meteor onto the crowd.\r\n\r\n< ! > Chakra control: hold Jump against a wall to run on it.\r\n\r\n< ! > Fighting fills your fury: from a quarter, press X to become the Six-Tails. Let it run out and Sage Mode breaks.\r\n\r\n",
+      "zh-TW": "仙人模式鳴人以蛤蟆般的耐心作戰：心靜才能匯聚自然能量，而自然能量能讓他的忍術變得無比巨大。<color=#CCD3E0>\r\n\r\n< ! >保持靜止即可冥想，填滿四次自然能量充能；潛伏的分身也會為你帶來充能。\r\n\r\n< ! >蛙組手每次命中都會給你1點自然能量，沒有上限。下一次仙法會將其全數消耗。\r\n\r\n< ! >輕按仙法可立即施放，按住則可灌注充能：術越大，波及的敵人越多。\r\n\r\n< ! >先用分身投擲，再朝下施放大玉螺旋丸：彷彿一顆隕石砸向敵群。\r\n\r\n< ! >查克拉控制：貼著牆按住跳躍鍵就能在牆上奔跑。\r\n\r\n< ! >戰鬥會累積怒氣：累積到四分之一後，按X鍵化為六尾。若任怒氣耗盡，仙人模式就會解除。\r\n\r\n"
+    },
+    "ZERNEAS_NARUTOSAGE_SUBTITLE": {
+      "en": "The Toad Sage's Disciple",
+      "zh-TW": "蛤蟆仙人的弟子"
+    },
+    "ZERNEAS_NARUTOSAGE_LORE": {
+      "en": "He learned to stand as still as a toad on Mount Myoboku, until nature itself flowed into him. Now the orange round his eyes means the fight is already decided.",
+      "zh-TW": "他在妙木山學會像蛤蟆一樣靜止不動，直到大自然本身流入他的體內。如今，只要他的眼周泛起橙色，這場戰鬥就已經分出勝負了。"
+    },
+    "ZERNEAS_NARUTOSAGE_OUTRO_FLAVOR": {
+      "en": "..and so he left, at one with the world around him.",
+      "zh-TW": "……於是他走了，與周遭的世界融為一體。"
+    },
+    "ZERNEAS_NARUTOSAGE_OUTRO_FAILURE": {
+      "en": "..and so he vanished, the toads' teachings unfinished.",
+      "zh-TW": "……於是他就這樣消逝了，蛤蟆們的教誨終究沒能學成。"
+    },
+    "ZERNEAS_NARUTOSAGE_SKIN_PONCHO_NAME": {
+      "en": "Poncho",
+      "zh-TW": "斗篷"
+    },
+    "ZERNEAS_NARUTOSAGE_PASSIVE_NAME": {
+      "en": "Sage Mode",
+      "zh-TW": "仙人模式"
+    },
+    "ZERNEAS_NARUTOSAGE_PASSIVE_DESCRIPTION": {
+      "en": "Up to <style=cIsUtility>4 charges of natural energy</style>, full every stage: <style=cIsUtility>meditating</style> (still, on the ground) gives 1 a second, your hidden clones 1 every 8s. Every Frog Kumite blow that lands gives <style=cIsDamage>1 point of natural energy</style> (15s, no limit) and reaches 50% farther. <style=cIsUtility>Sage Arts</style>: your Secondary and Special spend every point as they land, <style=cIsDamage>70% damage a point</style>; hold them to pour charges in and make them bigger.",
+      "zh-TW": "最多<style=cIsUtility>4次自然能量充能</style>，每個關卡都會充滿：<style=cIsUtility>冥想</style>（在地面上保持靜止）每秒獲得1次，潛伏的分身每8秒帶來1次。蛙組手每次命中都會給予<style=cIsDamage>1點自然能量</style>（持續15秒，沒有上限），且攻擊距離增加50%。<style=cIsUtility>仙法</style>：你的次要技能與特殊技能命中時會消耗所有點數，<style=cIsDamage>每點增加70%傷害</style>；按住技能可灌注充能，使其變得更大。"
+    },
+    "ZERNEAS_NARUTOSAGE_PRIMARY_KUMITE_NAME": {
+      "en": "Frog Kumite",
+      "zh-TW": "蛙組手"
+    },
+    "ZERNEAS_NARUTOSAGE_PRIMARY_KUMITE_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile.</style> Four blows for <style=cIsDamage>150%</style> (a clone joins the 2nd and 3rd for <style=cIsDamage>80%</style>) and a finisher for <style=cIsDamage>320%</style> that knocks back. In the air, blows for <style=cIsDamage>150%</style>; looking down, a diving Rasengan Barrage: <style=cIsDamage>300%</style> in 5m.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。四連擊，每擊造成<style=cIsDamage>150%</style>傷害（第2、3擊會有分身加入，造成<style=cIsDamage>80%</style>傷害），再以終結技造成<style=cIsDamage>320%</style>傷害並擊退敵人。在空中時連擊造成<style=cIsDamage>150%</style>傷害；朝下看時改為俯衝施放螺旋連丸：在半徑5米內造成<style=cIsDamage>300%</style>傷害。"
+    },
+    "ZERNEAS_NARUTOSAGE_SECONDARY_RASENGAN_NAME": {
+      "en": "Sage Art: Big Ball Rasengan",
+      "zh-TW": "仙法·大玉螺旋丸"
+    },
+    "ZERNEAS_NARUTOSAGE_SECONDARY_RASENGAN_DESCRIPTION": {
+      "en": "Charge up to 12m with a Big Ball Rasengan: <style=cIsDamage>900%</style> in 6m, <style=cIsDamage>stunning</style>. <style=cIsUtility>Sage Art</style>: <style=cIsDamage>+70%</style> a point; each charge poured, <style=cIsDamage>+450%</style> and +2.25m.",
+      "zh-TW": "帶著大玉螺旋丸衝鋒最多12米：在半徑6米內造成<style=cIsDamage>900%</style>傷害並<style=cIsDamage>眩暈</style>。<style=cIsUtility>仙法</style>：每點<style=cIsDamage>+70%</style>；每灌注1次充能，<style=cIsDamage>+450%</style>且範圍+2.25米。"
+    },
+    "ZERNEAS_NARUTOSAGE_UTILITY_CATAPULT_NAME": {
+      "en": "Clone Catapult",
+      "zh-TW": "分身投擲"
+    },
+    "ZERNEAS_NARUTOSAGE_UTILITY_CATAPULT_DESCRIPTION": {
+      "en": "Two clones <style=cIsUtility>throw you</style> toward the crosshair. <style=cIsUtility>Invulnerable</style> for 0.5s; <style=cIsDamage>stuns</style> enemies within 6m.",
+      "zh-TW": "兩個分身將你<style=cIsUtility>拋向</style>準星方向。<style=cIsUtility>無敵</style>0.5秒；<style=cIsDamage>眩暈</style>6米內的敵人。"
+    },
+    "ZERNEAS_NARUTOSAGE_SPECIAL_RASENSHURIKEN_NAME": {
+      "en": "Sage Art: Rasen-Shuriken",
+      "zh-TW": "仙法·螺旋手裡劍"
+    },
+    "ZERNEAS_NARUTOSAGE_SPECIAL_RASENSHURIKEN_DESCRIPTION": {
+      "en": "A 8m sphere of wind blades that <style=cIsUtility>pulls enemies in</style>: <style=cIsDamage>10x100%</style>, then <style=cIsDamage>500%</style> as it bursts. <style=cIsUtility>Sage Art</style>: <style=cIsDamage>+70%</style> a point; each charge poured, <style=cIsDamage>+35%</style> and +1.88m.",
+      "zh-TW": "產生8米的風刃球體，將敵人<style=cIsUtility>吸入</style>：造成<style=cIsDamage>10x100%</style>傷害，爆炸時再造成<style=cIsDamage>500%</style>傷害。<style=cIsUtility>仙法</style>：每點<style=cIsDamage>+70%</style>；每灌注1次充能，<style=cIsDamage>+35%</style>且範圍+1.88米。"
+    },
+    "ZERNEAS_NARUTOSAGE_SIXTAILS_NAME": {
+      "en": "Six-Tails",
+      "zh-TW": "六尾"
+    },
+    "ZERNEAS_NARUTOSAGE_SIXTAILS_DESCRIPTION": {
+      "en": "<style=cIsDamage>Fury</style> fills as you fight. From <style=cIsUtility>25%</style>, become the Six-Tails with a roar for <style=cIsDamage>300%</style> in 10m. <style=cIsUtility>+40 armor</style>, <style=cIsUtility>+30% speed</style>, no stuns; fury drains 5% a second. Turn back with X: the fury left becomes <style=cIsDamage>natural energy</style>. If it <style=cIsHealth>runs out</style>, you <style=cIsHealth>lose Sage Mode</style>.",
+      "zh-TW": "<style=cIsDamage>怒氣</style>會在戰鬥中累積。達<style=cIsUtility>25%</style>即可化為六尾，並發出咆哮，在半徑10米內造成<style=cIsDamage>300%</style>傷害。<style=cIsUtility>+40護甲</style>、<style=cIsUtility>+30%移動速度</style>，免疫眩暈；怒氣每秒減少5%。按X鍵解除：剩餘的怒氣會轉為<style=cIsDamage>自然能量</style>。若怒氣<style=cIsHealth>耗盡</style>，你會<style=cIsHealth>失去仙人模式</style>。"
+    },
+    "ZERNEAS_NARUTOSAGE_SIXTAILS_CLAWS_NAME": {
+      "en": "Chakra Claws",
+      "zh-TW": "查克拉利爪"
+    },
+    "ZERNEAS_NARUTOSAGE_SIXTAILS_CLAWS_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile.</style> Spring at the enemy and tear into it: <style=cIsDamage>250%</style>, <style=cIsDamage>250%</style> throwing it up, then a slam for <style=cIsDamage>400%</style> in 5m. In the air, claws for <style=cIsDamage>250%</style>; looking down, a dive for <style=cIsDamage>400%</style>.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。撲向敵人撕扯：<style=cIsDamage>250%</style>、<style=cIsDamage>250%</style>並將其拋起，接著重擊地面，在半徑5米內造成<style=cIsDamage>400%</style>傷害。在空中時以爪擊造成<style=cIsDamage>250%</style>傷害；朝下看時改為俯衝，造成<style=cIsDamage>400%</style>傷害。"
+    },
+    "ZERNEAS_NARUTOSAGE_SIXTAILS_CANNON_NAME": {
+      "en": "Chakra Cannon",
+      "zh-TW": "查克拉炮"
+    },
+    "ZERNEAS_NARUTOSAGE_SIXTAILS_CANNON_DESCRIPTION": {
+      "en": "<style=cIsDamage>3 homing blasts</style>: <style=cIsDamage>300%</style> in 4m each. In the air, one for <style=cIsDamage>500%</style>.",
+      "zh-TW": "發射<style=cIsDamage>3發追蹤炮彈</style>：每發在半徑4米內造成<style=cIsDamage>300%</style>傷害。在空中時改為發射1發，造成<style=cIsDamage>500%</style>傷害。"
+    },
+    "ZERNEAS_NARUTOSAGE_SIXTAILS_RAMPAGE_NAME": {
+      "en": "Rampage",
+      "zh-TW": "暴走"
+    },
+    "ZERNEAS_NARUTOSAGE_SIXTAILS_RAMPAGE_DESCRIPTION": {
+      "en": "Roar (<style=cIsDamage>100%</style>, slowing) and run with rage for up to 3s: <style=cIsDamage>300%</style> and a <style=cIsDamage>stun</style> to everything you trample. Press again to <style=cIsDamage>crash down</style>: <style=cIsDamage>400%</style> in 7m.",
+      "zh-TW": "咆哮（<style=cIsDamage>100%</style>，並使敵人減速），接著狂暴奔馳最多3秒：對踐踏到的一切造成<style=cIsDamage>300%</style>傷害並使其<style=cIsDamage>眩暈</style>。再按一次可<style=cIsDamage>猛然砸地</style>：在半徑7米內造成<style=cIsDamage>400%</style>傷害。"
+    },
+    "ZERNEAS_NARUTOSAGE_SIXTAILS_BIJUUDAMA_NAME": {
+      "en": "Tailed Beast Ball",
+      "zh-TW": "尾獸玉"
+    },
+    "ZERNEAS_NARUTOSAGE_SIXTAILS_BIJUUDAMA_DESCRIPTION": {
+      "en": "Explodes for <style=cIsDamage>1500%</style> in 12m. Hold to <style=cIsDamage>pour fury</style> in: <style=cIsDamage>+500%</style> and +3m each, up to 3.",
+      "zh-TW": "爆炸，在半徑12米內造成<style=cIsDamage>1500%</style>傷害。按住可<style=cIsDamage>灌注怒氣</style>：每次<style=cIsDamage>+500%</style>且範圍+3米，最多3次。"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "mod": "Zerneas-SasukeMangekyouMod",
+  "version": "0.15.2",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
+    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組的大廳與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
+  ],
+  "strings": {
+    "ZERNEAS_SASUKEMANGEKYOU_NAME": {
+      "en": "Sasuke (Taka)",
+      "zh-TW": "佐助（鷹）"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_DESCRIPTION": {
+      "en": "Taka Sasuke reads every move with his Sharingan: he cuts in, steps aside at the last instant, and burns down whatever he has marked.<color=#CCD3E0>\r\n\r\n< ! > Every enemy you hurt is marked (a red tomoe). Amaterasu sets alight the one at your crosshair and the marked ones in sight.\r\n\r\n< ! > The black flames never go out and leap to the next enemy. Every hit on what burns makes its flame stronger, with no limit.\r\n\r\n< ! > Shunshin right as an attack lands: a perfect dodge gives the charge back and a sure crit.\r\n\r\n< ! > Hold Chidori to draw Chidori-to, which cuts through everything.\r\n\r\n< ! > The Susanoo's ribcage saves you once from a hit that would leave you nearly dead.\r\n\r\n< ! > Chakra control: hold Jump against a wall to run on it.\r\n\r\n< ! > Precise hits, perfect dodges and kills fill your Mangekyo: press X to awaken it. Close it with X before it burns out, or your sight blurs.\r\n\r\n",
+      "zh-TW": "鷹小隊的佐助以寫輪眼看穿一切動作：他切入敵陣，在最後一刻閃身避開，再將標記過的目標燒成灰燼。<color=#CCD3E0>\r\n\r\n< ! >每個被你傷害的敵人都會被標記（紅色勾玉）。天照會點燃準星對準的敵人，以及視線內所有被標記的敵人。\r\n\r\n< ! >黑炎永不熄滅，並會跳到下一個敵人身上。每次攻擊燃燒中的目標都會讓它的火焰更強，沒有上限。\r\n\r\n< ! >在攻擊即將命中的瞬間使用瞬身：完美閃避會返還充能，並讓下一擊必定暴擊。\r\n\r\n< ! >按住千鳥可拔出千鳥刀，貫穿一切。\r\n\r\n< ! >須佐能乎的肋骨能替你擋下一次會讓你瀕死的攻擊。\r\n\r\n< ! >查克拉控制：貼著牆按住跳躍鍵就能在牆上奔跑。\r\n\r\n< ! >精準命中、完美閃避與擊敗敵人會累積萬花筒：按X鍵開眼。在燃盡前按X鍵闔眼，否則你的視線會變得模糊。\r\n\r\n"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_SUBTITLE": {
+      "en": "The Avenger of the Mangekyo",
+      "zh-TW": "萬花筒的復仇者"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_LORE": {
+      "en": "He killed his brother and learned the truth too late. Now he wears the clouds of the Akatsuki and his brother's eyes burn in his own: whatever they look at, the black flames take.",
+      "zh-TW": "他殺了哥哥，卻太晚才得知真相。如今他披上曉的雲紋長袍，哥哥的雙眼在他眼中燃燒：凡是那雙眼睛注視之物，皆為黑炎所吞噬。"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_OUTRO_FLAVOR": {
+      "en": "..and so he left, his hatred still burning.",
+      "zh-TW": "……於是他走了，心中的仇恨仍在燃燒。"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_OUTRO_FAILURE": {
+      "en": "..and so he vanished, his revenge unfinished.",
+      "zh-TW": "……於是他就這樣消逝了，復仇終究未能完成。"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_SKIN_PONCHO_NAME": {
+      "en": "Poncho",
+      "zh-TW": "斗篷"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_PASSIVE_NAME": {
+      "en": "Mangekyo Sharingan",
+      "zh-TW": "萬花筒寫輪眼"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_PASSIVE_DESCRIPTION": {
+      "en": "<style=cIsHealing>Susanoo</style>: a hit that would leave you under <style=cIsHealth>30% health</style> is blocked and you're <style=cIsUtility>invulnerable for 2s</style> (recharges in 45s). <style=cIsDamage>Sharingan</style>: every enemy you hurt is <style=cIsDamage>marked</style> for 6s and takes <style=cIsDamage>+20%</style> from your Chidori and Amaterasu.",
+      "zh-TW": "<style=cIsHealing>須佐能乎</style>：會讓你降到<style=cIsHealth>30%生命值</style>以下的攻擊會被擋下，並使你<style=cIsUtility>無敵2秒</style>（45秒後重新充能）。<style=cIsDamage>寫輪眼</style>：每個被你傷害的敵人都會被<style=cIsDamage>標記</style>6秒，受到你的千鳥與天照的傷害<style=cIsDamage>+20%</style>。"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_PRIMARY_KUSANAGI_NAME": {
+      "en": "Kusanagi",
+      "zh-TW": "草薙劍"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_PRIMARY_KUSANAGI_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile.</style> A jab for <style=cIsDamage>160%</style>, cuts and kicks for <style=cIsDamage>2x100%</style> and a Chidori cut for <style=cIsDamage>350%</style> (30% to stun). In the air, looking down, a lightning dive: <style=cIsDamage>300%</style> in 5m.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。刺擊造成<style=cIsDamage>160%</style>傷害，斬擊與踢擊造成<style=cIsDamage>2x100%</style>傷害，千鳥斬擊造成<style=cIsDamage>350%</style>傷害（30%機率眩暈）。在空中朝下看時改為雷電俯衝：在半徑5米內造成<style=cIsDamage>300%</style>傷害。"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_SECONDARY_CHIDORI_NAME": {
+      "en": "Chidori",
+      "zh-TW": "千鳥"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_SECONDARY_CHIDORI_DESCRIPTION": {
+      "en": "<style=cIsDamage>Stunning.</style> Charge up to 14m: <style=cIsDamage>500%</style> in 3.5m. Hold for <style=cIsUtility>Chidori-to</style>: 20m cutting through every enemy for <style=cIsDamage>800%</style>.",
+      "zh-TW": "<style=cIsDamage>眩暈</style>。衝鋒最多14米：在半徑3.5米內造成<style=cIsDamage>500%</style>傷害。按住則改為<style=cIsUtility>千鳥刀</style>：貫穿20米內的所有敵人，造成<style=cIsDamage>800%</style>傷害。"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_UTILITY_SHUNSHIN_NAME": {
+      "en": "Shunshin",
+      "zh-TW": "瞬身"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_UTILITY_SHUNSHIN_DESCRIPTION": {
+      "en": "Step 10m, <style=cIsUtility>invulnerable</style>. 2 charges. <style=cIsDamage>Perfect dodge</style>: if an attack would have hit you, the charge comes back and your next hit is a <style=cIsDamage>sure crit</style>.",
+      "zh-TW": "瞬移10米，期間<style=cIsUtility>無敵</style>。2次充能。<style=cIsDamage>完美閃避</style>：若原本會被攻擊命中，則返還充能，且下一擊<style=cIsDamage>必定暴擊</style>。"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_SPECIAL_AMATERASU_NAME": {
+      "en": "Amaterasu",
+      "zh-TW": "天照"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_SPECIAL_AMATERASU_DESCRIPTION": {
+      "en": "<style=cIsDamage>Ignite.</style> The enemy you look at and the marked ones in sight burn: <style=cIsDamage>100%</style>, then <style=cIsDamage>190% a second</style> until they die; then the flames leap on. Every hit of yours on a burning enemy: <style=cIsDamage>+3%</style> burn, no limit. Up to 5 flames at once.",
+      "zh-TW": "<style=cIsDamage>點燃</style>。注視的敵人與視線內被標記的敵人會燃燒：先造成<style=cIsDamage>100%</style>傷害，之後<style=cIsDamage>每秒190%</style>，直到死亡；接著火焰會跳到下一個目標。你每次命中燃燒中的敵人：燃燒<style=cIsDamage>+3%</style>，沒有上限。最多同時存在5團火焰。"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_MANGEKYOU_NAME": {
+      "en": "Awakened Mangekyo",
+      "zh-TW": "萬花筒開眼"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_MANGEKYOU_DESCRIPTION": {
+      "en": "From 25% of the gauge. You <style=cIsDamage>mark whatever you look at</style>, your <style=cIsUtility>precognition</style> dodges a hit every 3s, and you're 15% faster. The gauge drains 5% a second, faster as you use the eye. Turn back with X: what's left <style=cIsDamage>stokes your black flames</style>. Burn it out and your <style=cIsHealth>sight blurs for 6s</style>.",
+      "zh-TW": "量表達25%即可發動。你會<style=cIsDamage>標記所注視的一切</style>，<style=cIsUtility>預知</style>能力每3秒可閃避一次攻擊，移動速度+15%。量表每秒減少5%，使用瞳術時減少得更快。按X鍵解除：剩餘的量會<style=cIsDamage>助長你的黑炎</style>。若量表燃盡，你的<style=cIsHealth>視線會模糊6秒</style>。"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_MANGEKYOU_PRIMARY_NAME": {
+      "en": "Mangekyo Kusanagi",
+      "zh-TW": "萬花筒草薙劍"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_MANGEKYOU_PRIMARY_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile.</style> Five quicker blows; with the last you sheathe the sword and 3 cuts land for <style=cIsDamage>150%</style> each, setting <style=cIsDamage>marked enemies alight</style>. In the air, looking down, a dive for <style=cIsDamage>400%</style> in 6m.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。更快速的五連擊；最後一擊收刀入鞘，落下3道斬擊，每道造成<style=cIsDamage>150%</style>傷害，並<style=cIsDamage>點燃被標記的敵人</style>。在空中朝下看時改為俯衝，在半徑6米內造成<style=cIsDamage>400%</style>傷害。"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_MANGEKYOU_SECONDARY_NAME": {
+      "en": "Genjutsu: Sharingan",
+      "zh-TW": "幻術·寫輪眼"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_MANGEKYOU_SECONDARY_DESCRIPTION": {
+      "en": "The enemy at your crosshair and the marked ones in sight (up to 6) are <style=cIsUtility>paralyzed for 3s</style> (bosses: slowed) and take <style=cIsDamage>+30%</style> from you. Costs 10% of the gauge.",
+      "zh-TW": "準星對準的敵人與視線內被標記的敵人（最多6名）會<style=cIsUtility>麻痺3秒</style>（首領則改為減速），且受到你的傷害<style=cIsDamage>+30%</style>。消耗10%量表。"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_MANGEKYOU_UTILITY_NAME": {
+      "en": "Shunshin: Execution",
+      "zh-TW": "瞬身·處決"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_MANGEKYOU_UTILITY_DESCRIPTION": {
+      "en": "Appear behind the marked enemy nearest your crosshair (25m) and cut it: <style=cIsDamage>400%</style>, double if paralyzed. <style=cIsDamage>A kill gives the charge back.</style> 2 charges.",
+      "zh-TW": "出現在離準星最近的被標記敵人（25米內）身後並斬擊：造成<style=cIsDamage>400%</style>傷害，若目標處於麻痺狀態則傷害加倍。<style=cIsDamage>擊敗敵人時返還充能。</style>2次充能。"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_MANGEKYOU_SPECIAL_NAME": {
+      "en": "Amaterasu: Unbounded Gaze",
+      "zh-TW": "天照·無界凝視"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_MANGEKYOU_SPECIAL_DESCRIPTION": {
+      "en": "<style=cIsDamage>Ignite.</style> Tap: Amaterasu. <style=cIsUtility>Hold</style> (up to 3s): whatever you look at burns, for 10% of the gauge a second. Up to 12 flames while awakened.",
+      "zh-TW": "<style=cIsDamage>點燃</style>。輕按：施放天照。<style=cIsUtility>按住</style>（最多3秒）：注視的一切都會燃燒，每秒消耗10%量表。開眼期間最多同時存在12團火焰。"
+    }
+  }
+}

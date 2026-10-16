@@ -1,0 +1,123 @@
+{
+  "mod": "Zerneas-NarutoShippudenMod",
+  "version": "0.21.2",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
+    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組的大廳與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
+  ],
+  "strings": {
+    "ZERNEAS_NARUTOSHIPPUDEN_NAME": {
+      "en": "Naruto (Shippuden)",
+      "zh-TW": "鳴人（疾風傳）"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_DESCRIPTION": {
+      "en": "Naruto never fights alone: his shadow clones fight beside him, and everything they learn comes back to him.<color=#CCD3E0>\r\n\r\n< ! > Your combo's finisher leaves a shadow clone behind (up to 4). They copy your items and go after whatever you hit.\r\n\r\n< ! > Every clone that's gone hands you its experience: you strike faster, and your next Rasengan hits harder (the ×N by the crosshair).\r\n\r\n< ! > Your clones' Rasengans crash into the same enemy as yours.\r\n\r\n< ! > The Rasen-Shuriken spends your experience for more than the Rasengan, but its backlash throws you back and costs 10% of your health.\r\n\r\n< ! > Chakra control: hold Jump against a wall to run on it.\r\n\r\n< ! > Getting hurt, losing clones and killing fill the Kyuubi's chakra: press X to become the Four-Tails. It costs you your clones.\r\n\r\n",
+      "zh-TW": "鳴人從不孤軍奮戰：影分身在他身旁並肩作戰，它們學到的一切都會回到他身上。<color=#CCD3E0>\r\n\r\n< ! >連段的終結技會留下一個影分身（最多4個）。分身會複製你的物品，並追擊你攻擊的目標。\r\n\r\n< ! >每個消失的分身都會把經驗交給你：你的攻擊會變快，下一發螺旋丸也會更強（準星旁的×N）。\r\n\r\n< ! >分身的螺旋丸會和你的一起轟向同一個敵人。\r\n\r\n< ! >螺旋手裡劍消耗經驗所得的加成比螺旋丸更高，但反衝會把你震退，並消耗你10%的生命值。\r\n\r\n< ! >查克拉控制：貼著牆按住跳躍鍵就能在牆上奔跑。\r\n\r\n< ! >受傷、失去分身與擊敗敵人都會累積九尾的查克拉：按X鍵化為四尾。代價是失去所有分身。\r\n\r\n"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_SUBTITLE": {
+      "en": "The Unpredictable Ninja",
+      "zh-TW": "意外性第一的忍者"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_LORE": {
+      "en": "He came back to the Leaf after two years of training, still unable to form a Rasengan with one hand. So he never forms it alone: there's always another of him to help.",
+      "zh-TW": "經過兩年的修行，他回到了木葉，卻依然無法單手凝聚螺旋丸。所以他從不獨自完成：身邊總有另一個自己來幫忙。"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_OUTRO_FLAVOR": {
+      "en": "..and so he left, a thousand of him cheering at once.",
+      "zh-TW": "……於是他走了，上千個他同時歡呼著。"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_OUTRO_FAILURE": {
+      "en": "..and so he vanished, in a puff of smoke.",
+      "zh-TW": "……於是他就這樣消逝了，砰的一聲化成一團白煙。"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_CLONE_NAME": {
+      "en": "Shadow Clone",
+      "zh-TW": "影分身"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_SKIN_SASUKE_NAME": {
+      "en": "Sasuke's Outfit",
+      "zh-TW": "佐助的服裝"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_PASSIVE_NAME": {
+      "en": "Shadow Clones",
+      "zh-TW": "影分身之術"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_PASSIVE_DESCRIPTION": {
+      "en": "Your combo's finisher leaves a <style=cIsUtility>shadow clone</style> (up to 4): it copies your items, with <style=cIsHealth>40% of your health</style> and <style=cIsDamage>35% of your damage</style>. <style=cIsUtility>Experience</style>: every clone that's gone gives <style=cIsDamage>+6% attack speed</style> (8s, up to 10) and <style=cIsDamage>1 point for every blow it landed</style>, which your Rasengan and Rasen-Shuriken spend.",
+      "zh-TW": "連段的終結技會留下一個<style=cIsUtility>影分身</style>（最多4個）：分身會複製你的物品，擁有你<style=cIsHealth>40%的生命值</style>與<style=cIsDamage>35%的傷害</style>。<style=cIsUtility>經驗</style>：每個消失的分身會給予<style=cIsDamage>+6%攻擊速度</style>（持續8秒，最多10層），並且<style=cIsDamage>它每命中一次就給你1點</style>，供螺旋丸與螺旋手裡劍消耗。"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_PRIMARY_COMBO_NAME": {
+      "en": "Uzumaki Combo",
+      "zh-TW": "漩渦連彈"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_PRIMARY_COMBO_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile.</style> Four blows for <style=cIsDamage>150%</style> (a clone joins the 2nd and 3rd for <style=cIsDamage>80%</style>) and a finisher for <style=cIsDamage>320%</style> that knocks back and leaves a clone. Your clones finish with you. In the air, blows for <style=cIsDamage>150%</style>; looking down, a diving kick: <style=cIsDamage>300%</style> in 5m.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。四連擊，每擊造成<style=cIsDamage>150%</style>傷害（第2、3擊會有分身加入，造成<style=cIsDamage>80%</style>傷害），再以終結技造成<style=cIsDamage>320%</style>傷害，擊退敵人並留下一個分身。你的分身會和你一起施放終結技。在空中時連擊造成<style=cIsDamage>150%</style>傷害；朝下看時改為俯衝踢：在半徑5米內造成<style=cIsDamage>300%</style>傷害。"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_SECONDARY_RASENGAN_NAME": {
+      "en": "Rasengan",
+      "zh-TW": "螺旋丸"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_SECONDARY_RASENGAN_DESCRIPTION": {
+      "en": "Charge up to 12m: it <style=cIsDamage>drills</style> 4 times for <style=cIsDamage>75%</style>, then bursts for <style=cIsDamage>450%</style> in 5.5m, <style=cIsDamage>stunning</style>. Spends your experience: <style=cIsDamage>+40% a point</style>. Every clone of yours charges the same enemy with its own.",
+      "zh-TW": "衝鋒最多12米：螺旋丸<style=cIsDamage>鑽擊</style>4次，每次造成<style=cIsDamage>75%</style>傷害，接著爆發，在半徑5.5米內造成<style=cIsDamage>450%</style>傷害並<style=cIsDamage>眩暈</style>。消耗你的經驗：<style=cIsDamage>每點+40%</style>。你的每個分身都會帶著自己的螺旋丸衝向同一個敵人。"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_UTILITY_FUMA_NAME": {
+      "en": "Henge: Fuma Shuriken",
+      "zh-TW": "變身術·風魔手裡劍"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_UTILITY_FUMA_DESCRIPTION": {
+      "en": "Become a giant Fuma shuriken and fly for up to 1.6s, <style=cIsUtility>invulnerable</style>: <style=cIsDamage>250%</style> to every enemy you cut through. Press again to come out.",
+      "zh-TW": "變身成巨大的風魔手裡劍飛行最多1.6秒，期間<style=cIsUtility>無敵</style>：對穿過的每個敵人造成<style=cIsDamage>250%</style>傷害。再按一次可解除變身。"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_SPECIAL_RASENSHURIKEN_NAME": {
+      "en": "Wind Style: Rasen-Shuriken",
+      "zh-TW": "風遁·螺旋手裡劍"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_SPECIAL_RASENSHURIKEN_DESCRIPTION": {
+      "en": "Form it with <style=cIsUtility>2 of your clones</style> and charge up to 14m: a 7m sphere drags enemies in, <style=cIsDamage>cuts 8 times for 60%</style> (+2 a clone) and bursts for <style=cIsDamage>600%</style>. Spends your experience: <style=cIsDamage>+70% a point</style>. Every cut gives 1 point. <style=cIsHealth>Throws you back and costs 10% of your max health.</style>",
+      "zh-TW": "與<style=cIsUtility>2個分身</style>一同凝聚，並衝鋒最多14米：7米的球體會將敵人吸入，<style=cIsDamage>斬擊8次，每次60%</style>（每個分身+2次），最後爆發造成<style=cIsDamage>600%</style>傷害。消耗你的經驗：<style=cIsDamage>每點+70%</style>。每次斬擊給予1點。<style=cIsHealth>會將你震退，並消耗你10%的最大生命值。</style>"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_NAME": {
+      "en": "Four-Tails",
+      "zh-TW": "四尾"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_DESCRIPTION": {
+      "en": "From <style=cIsUtility>25%</style>: <style=cIsHealth>your clones are gone</style> and the chakra bursts for <style=cIsDamage>300%</style> in 10m. <style=cIsUtility>+25% speed</style>; the cloak <style=cIsDamage>burns</style> everything within 4m and <style=cIsHealth>you</style> (1.5% health a second), and you <style=cIsHealing>heal 15% of your damage</style>. Turn back with X: what's left becomes experience, and the <style=cIsDamage>Kyuubi's chakra lingers</style>: burning blows, red Rasengans (+50%), <style=cIsDamage>+20% attack speed</style>.",
+      "zh-TW": "累積達<style=cIsUtility>25%</style>即可發動：<style=cIsHealth>你的分身全部消失</style>，查克拉爆發，在半徑10米內造成<style=cIsDamage>300%</style>傷害。<style=cIsUtility>+25%移動速度</style>；查克拉外衣會<style=cIsDamage>燃燒</style>4米內的一切，也會燃燒<style=cIsHealth>你自己</style>（每秒1.5%生命值），而你會<style=cIsHealing>以造成傷害的15%治療自己</style>。按X鍵解除：剩餘的量會轉為經驗，且<style=cIsDamage>九尾的查克拉會殘留</style>：攻擊帶有燃燒、螺旋丸變紅（+50%）、<style=cIsDamage>+20%攻擊速度</style>。"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_ARMS_NAME": {
+      "en": "Chakra Arms",
+      "zh-TW": "查克拉手臂"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_ARMS_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile.</style> Chakra arms reaching 6m: <style=cIsDamage>220%</style>, <style=cIsDamage>220%</style> and <style=cIsDamage>300%</style>, <style=cIsDamage>igniting</style>. In the air, claws for <style=cIsDamage>220%</style>; looking down, a dive for <style=cIsDamage>300%</style>.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。伸出可及6米的查克拉手臂攻擊：<style=cIsDamage>220%</style>、<style=cIsDamage>220%</style>及<style=cIsDamage>300%</style>，並<style=cIsDamage>點燃</style>敵人。在空中時以爪擊造成<style=cIsDamage>220%</style>傷害；朝下看時改為俯衝，造成<style=cIsDamage>300%</style>傷害。"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_HAND_NAME": {
+      "en": "Chakra Hand",
+      "zh-TW": "查克拉之手"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_HAND_DESCRIPTION": {
+      "en": "A chakra hand (up to 35m) <style=cIsUtility>drags</style> an enemy to you and slams it: <style=cIsDamage>600%</style> in 3.5m, <style=cIsDamage>igniting</style>. A boss or a wall pulls you there instead.",
+      "zh-TW": "伸出查克拉之手（最遠35米），將一名敵人<style=cIsUtility>拉</style>到你面前並重摔在地：在半徑3.5米內造成<style=cIsDamage>600%</style>傷害並<style=cIsDamage>點燃</style>。若抓住的是首領或牆壁，則改為將你拉過去。"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_LEAP_NAME": {
+      "en": "Crater Leap",
+      "zh-TW": "裂地飛撲"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_LEAP_DESCRIPTION": {
+      "en": "Pounce up to 35m and crash down in an explosion: <style=cIsDamage>700%</style> in 9m, <style=cIsDamage>igniting</style>.",
+      "zh-TW": "飛撲最遠35米，挾著爆炸重重落地：在半徑9米內造成<style=cIsDamage>700%</style>傷害並<style=cIsDamage>點燃</style>。"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_ROAR_NAME": {
+      "en": "Chakra Roar",
+      "zh-TW": "查克拉咆哮"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_ROAR_DESCRIPTION": {
+      "en": "Roar, <style=cIsUtility>invincible</style>: <style=cIsDamage>3 shockwaves</style> of <style=cIsDamage>300%</style> in 13m, <style=cIsDamage>igniting</style>; the last pushes back.",
+      "zh-TW": "咆哮，期間<style=cIsUtility>無敵</style>：發出<style=cIsDamage>3道衝擊波</style>，各在半徑13米內造成<style=cIsDamage>300%</style>傷害並<style=cIsDamage>點燃</style>；最後一道會擊退敵人。"
+    }
+  }
+}

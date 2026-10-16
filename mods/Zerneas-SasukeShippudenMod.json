@@ -1,0 +1,123 @@
+{
+  "mod": "Zerneas-SasukeShippudenMod",
+  "version": "0.19.8",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
+    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組的大廳與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
+  ],
+  "strings": {
+    "ZERNEAS_SASUKESHIPPUDEN_NAME": {
+      "en": "Sasuke (Shippuden)",
+      "zh-TW": "佐助（疾風傳）"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_DESCRIPTION": {
+      "en": "Sasuke fights with two natures: his fire sets enemies up and his lightning cashes in.<color=#CCD3E0>\r\n\r\n< ! > Hitting what burns heats the sky (the number by your crosshair); Kirin spends all the heat: wider, and more bolts.\r\n\r\n< ! > Every blow of your blade leaps to nearby enemies and calls Kirin sooner.\r\n\r\n< ! > The loop: Katon on the group, Chidori in and cut, then Kirin.\r\n\r\n< ! > Chakra control: hold Jump against a wall to run on it.\r\n\r\n< ! > Your jutsu and your kills fill the Cursed Seal: press X to wake its second state and take to the air.\r\n\r\n",
+      "zh-TW": "佐助以兩種性質變化作戰：火焰為敵人鋪路，雷電負責收割。<color=#CCD3E0>\r\n\r\n< ! >攻擊燃燒中的目標會加熱天空（準星旁的數字）；麒麟會消耗所有熱量：範圍更廣，落雷更多。\r\n\r\n< ! >刀刃的每次攻擊都會跳躍至附近的敵人，並讓麒麟更快就緒。\r\n\r\n< ! >循環：先對敵群施放火遁，再用千鳥衝進去斬擊，最後放出麒麟。\r\n\r\n< ! >查克拉控制：貼著牆按住跳躍鍵就能在牆上奔跑。\r\n\r\n< ! >忍術與擊敗敵人會累積咒印：按X鍵喚醒狀態二並飛上天空。\r\n\r\n"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_SUBTITLE": {
+      "en": "The Avenger",
+      "zh-TW": "復仇者"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_LORE": {
+      "en": "He left the Leaf to grow strong enough to kill his brother. Orochimaru taught him, and he took what he learned and left him too. The day he finally met Itachi, he heated the sky with fire and brought the storm down on him.",
+      "zh-TW": "為了變得強大到足以殺死哥哥，他離開了木葉。大蛇丸傳授他力量，而他學成之後，也離開了大蛇丸。終於與鼬對決的那一天，他以火焰加熱天空，將雷暴降在鼬的身上。"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_OUTRO_FLAVOR": {
+      "en": "..and so he left, one step closer to his brother.",
+      "zh-TW": "……於是他走了，離他的哥哥又近了一步。"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_OUTRO_FAILURE": {
+      "en": "..and so he vanished, his revenge unfinished.",
+      "zh-TW": "……於是他就這樣消逝了，復仇終究未能完成。"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_SKIN_NARUTO_NAME": {
+      "en": "Naruto's Outfit",
+      "zh-TW": "鳴人的服裝"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_SKIN_HEBI_NAME": {
+      "en": "Hebi",
+      "zh-TW": "蛇小隊"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_PASSIVE_NAME": {
+      "en": "Two Natures",
+      "zh-TW": "雙重性質"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_PASSIVE_DESCRIPTION": {
+      "en": "<style=cIsDamage>Lightning</style>: every Kusanagi blow <style=cIsDamage>leaps</style> to 2 enemies within 15m for <style=cIsDamage>40%</style> and takes 0.15s off Kirin. <style=cIsDamage>Fire</style>: Katon <style=cIsDamage>ignites</style>; every hit on a burning enemy and every burn tick <style=cIsDamage>heats the sky</style> (no limit, 20s a point). Kirin spends it.",
+      "zh-TW": "<style=cIsDamage>雷</style>：草薙劍的每次攻擊都會<style=cIsDamage>跳躍</style>至15米內的2名敵人，造成<style=cIsDamage>40%</style>傷害，並使麒麟的冷卻時間減少0.15秒。<style=cIsDamage>火</style>：火遁會<style=cIsDamage>點燃</style>敵人；每次命中燃燒中的敵人，以及燃燒每造成一次傷害，都會<style=cIsDamage>加熱天空</style>（沒有上限，每點持續20秒）。麒麟會消耗這些熱量。"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_PRIMARY_KUSANAGI_NAME": {
+      "en": "Kusanagi",
+      "zh-TW": "草薙劍"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_PRIMARY_KUSANAGI_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile.</style> Cuts and kicks for <style=cIsDamage>70-180%</style>, then the <style=cIsDamage>Chidori-to</style> thrust: <style=cIsDamage>450%</style> through a 8m line, <style=cIsDamage>stunning</style>. In the air, looking down, a dive: <style=cIsDamage>300%</style> in 5m.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。以斬擊與踢擊造成<style=cIsDamage>70-180%</style>傷害，接著以<style=cIsDamage>千鳥刀</style>突刺：對8米直線上的敵人造成<style=cIsDamage>450%</style>傷害並<style=cIsDamage>眩暈</style>。在空中朝下看時改為俯衝：在半徑5米內造成<style=cIsDamage>300%</style>傷害。"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_SECONDARY_KATON_NAME": {
+      "en": "Katon",
+      "zh-TW": "火遁"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_SECONDARY_KATON_DESCRIPTION": {
+      "en": "Tap: a Great Fireball, <style=cIsDamage>500%</style> in 6m, the ground left burning. Hold: a <style=cIsDamage>huge</style> one that rolls through enemies (<style=cIsDamage>300%</style>) and bursts for <style=cIsDamage>800%</style> in 12m. Both <style=cIsDamage>ignite</style>.",
+      "zh-TW": "輕按：施放豪火球，在半徑6米內造成<style=cIsDamage>500%</style>傷害，並使地面持續燃燒。按住：施放<style=cIsDamage>巨大</style>的火球，滾過敵人（<style=cIsDamage>300%</style>）後爆炸，在半徑12米內造成<style=cIsDamage>800%</style>傷害。兩者皆會<style=cIsDamage>點燃</style>敵人。"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_UTILITY_CHIDORI_NAME": {
+      "en": "Chidori",
+      "zh-TW": "千鳥"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_UTILITY_CHIDORI_DESCRIPTION": {
+      "en": "Charge 20m, <style=cIsUtility>invulnerable</style>: <style=cIsDamage>300%</style> and a <style=cIsDamage>stun</style> to every enemy you cross, then a burst for <style=cIsDamage>200%</style> in 4m. 2 charges.",
+      "zh-TW": "衝鋒20米，期間<style=cIsUtility>無敵</style>：對沿途的每個敵人造成<style=cIsDamage>300%</style>傷害並使其<style=cIsDamage>眩暈</style>，最後爆發，在半徑4米內造成<style=cIsDamage>200%</style>傷害。2次充能。"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_SPECIAL_KIRIN_NAME": {
+      "en": "Kirin",
+      "zh-TW": "麒麟"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_SPECIAL_KIRIN_DESCRIPTION": {
+      "en": "A dragon of lightning strikes where you aim: <style=cIsDamage>1000%</style> in 9m, <style=cIsDamage>stunning</style>. Spends all the <style=cIsDamage>heat</style>: +0.1m a point (up to 15m) and a bolt of <style=cIsDamage>200%</style> for every 2 points.",
+      "zh-TW": "一條雷龍劈向瞄準之處：在半徑9米內造成<style=cIsDamage>1000%</style>傷害並<style=cIsDamage>眩暈</style>。消耗所有<style=cIsDamage>熱量</style>：每點使範圍+0.1米（最多15米），每2點額外降下一道<style=cIsDamage>200%</style>的落雷。"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_CURSEDSEAL_NAME": {
+      "en": "Cursed Seal: Second State",
+      "zh-TW": "咒印·狀態二"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_CURSEDSEAL_DESCRIPTION": {
+      "en": "Your jutsu and kills fill it. From <style=cIsUtility>25%</style>: dark chakra bursts for <style=cIsDamage>300%</style> in 10m and you <style=cIsUtility>fly</style> (hold Jump to climb, sprint to fly fast). Drains 5% a second. Turn back with X: what's left <style=cIsDamage>heats the sky</style>. If it runs out, you're <style=cIsHealth>worn out for 4s</style>.",
+      "zh-TW": "忍術與擊敗敵人會累積咒印。達<style=cIsUtility>25%</style>即可發動：黑暗查克拉爆發，在半徑10米內造成<style=cIsDamage>300%</style>傷害，且你能夠<style=cIsUtility>飛行</style>（按住跳躍鍵上升，奔跑可加速飛行）。每秒減少5%。按X鍵解除：剩餘的量會<style=cIsDamage>加熱天空</style>。若耗盡，你會<style=cIsHealth>力竭4秒</style>。"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_CURSEDSEAL_BLOWS_NAME": {
+      "en": "Seal Blows",
+      "zh-TW": "咒印連擊"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_CURSEDSEAL_BLOWS_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile.</style> Fists, the wings' hands and the Kusanagi: <style=cIsDamage>220%</style> to <style=cIsDamage>480%</style>. For 4s after a Wing Beat, in the air: wing claws for <style=cIsDamage>85%</style> and a fireball for <style=cIsDamage>350%</style>, <style=cIsDamage>igniting</style>.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。以拳頭、翼手與草薙劍攻擊：造成<style=cIsDamage>220%</style>至<style=cIsDamage>480%</style>傷害。振翅後4秒內於空中時：以翼爪造成<style=cIsDamage>85%</style>傷害，並射出火球造成<style=cIsDamage>350%</style>傷害且<style=cIsDamage>點燃</style>。"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_CURSEDSEAL_CHIDORI_NAME": {
+      "en": "Seal Chidori",
+      "zh-TW": "咒印千鳥"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_CURSEDSEAL_CHIDORI_DESCRIPTION": {
+      "en": "Charge 30m with a dark Chidori: it bursts on the first enemy for <style=cIsDamage>1100%</style> in 5m, <style=cIsDamage>stunning</style>.",
+      "zh-TW": "帶著黑色千鳥衝鋒30米：在碰到的第一個敵人身上爆發，在半徑5米內造成<style=cIsDamage>1100%</style>傷害並<style=cIsDamage>眩暈</style>。"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_CURSEDSEAL_FLAP_NAME": {
+      "en": "Wing Beat",
+      "zh-TW": "振翅"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_CURSEDSEAL_FLAP_DESCRIPTION": {
+      "en": "A wing beat flings you 15m, <style=cIsUtility>invulnerable</style> for a moment, and thrusts away whatever is near. 2 charges.",
+      "zh-TW": "振翅將你甩出15米，短暫<style=cIsUtility>無敵</style>，並將附近的一切推開。2次充能。"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_CURSEDSEAL_PHOENIX_NAME": {
+      "en": "Phoenix Flower",
+      "zh-TW": "鳳仙火"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_CURSEDSEAL_PHOENIX_DESCRIPTION": {
+      "en": "<style=cIsDamage>6 fire shuriken</style> that seek enemies (up to 40m): <style=cIsDamage>250%</style> each, <style=cIsDamage>igniting</style>.",
+      "zh-TW": "射出<style=cIsDamage>6枚火焰手裡劍</style>追蹤敵人（最遠40米）：每枚造成<style=cIsDamage>250%</style>傷害並<style=cIsDamage>點燃</style>。"
+    }
+  }
+}
