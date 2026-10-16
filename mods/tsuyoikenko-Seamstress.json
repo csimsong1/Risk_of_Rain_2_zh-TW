@@ -1,9 +1,10 @@
 {
   "mod": "tsuyoikenko-Seamstress",
-  "version": "1.7.3",
+  "version": "1.7.4",
   "loader": "r2api",
   "notes": [
     "技能說明裡的數字（傷害%、冷卻秒數等）來自模組設定的預設值；模組的英文會跟著設定變，譯文是固定的，改過設定請一併修改。",
+    "大招（Skewer）的說明中「在空中投擲時，你會被推往投擲的反方向」一句，模組只在設定 Change Skewer Airborne Recoil Speed 大於 0（預設 12）時才會顯示；設成 0 的話英文沒有這句，譯文仍有。",
     "鍵是英文句子的條目：模組直接把那段英文當語言 token 使用，沒有另外註冊，所以用英文原文當鍵來翻譯；原文改一個字就會對不上。關鍵字說明（無情、粉碎、共生等）屬於這一類。"
   ],
   "strings": {
@@ -140,12 +141,12 @@
       "zh-TW": "準備<style=cIsUtility>招架</style>。被擊中時，立即進入<color=#9B3737>不知饜足</color>狀態並衝刺穿過敵人。短暫延遲後，對被穿過的敵人造成<style=cIsDamage>400%傷害</style>，並將非首領敵人拉向你。"
     },
     "KENKO_SEAMSTRESS_SPECIAL_FIRE_DESCRIPTION": {
-      "en": "<style=cIsHealth>15% HP</style>. Fire a <color=#9B3737>Symbiotic</color> scissor dealing <style=cIsDamage>400% damage</style>. Pick up <color=#9B3737>Symbiotic</color> scissors to slash for <style=cIsDamage>200% damage</style>.",
-      "zh-TW": "<style=cIsHealth>15%生命值</style>。射出一把<color=#9B3737>共生</color>剪刀，造成<style=cIsDamage>400%傷害</style>。撿起<color=#9B3737>共生</color>剪刀時揮砍，造成<style=cIsDamage>200%傷害</style>。"
+      "en": "<style=cIsHealth>15% HP</style>. Fire a <color=#9B3737>Symbiotic</color> scissor dealing <style=cIsDamage>400% damage</style>. Airborne throws push you <style=cIsUtility>opposite the throw direction</style>. Pick up <color=#9B3737>Symbiotic</color> scissors to slash for <style=cIsDamage>200% damage</style>.",
+      "zh-TW": "<style=cIsHealth>15%生命值</style>。射出一把<color=#9B3737>共生</color>剪刀，造成<style=cIsDamage>400%傷害</style>。在空中投擲時，你會被推往<style=cIsUtility>投擲的反方向</style>。撿起<color=#9B3737>共生</color>剪刀時揮砍，造成<style=cIsDamage>200%傷害</style>。"
     },
     "KENKO_SEAMSTRESS_SPECIAL_SCEPTER_DESCRIPTION": {
-      "en": "<style=cIsHealth>15% HP</style>. Fire a <color=#9B3737>Symbiotic</color> scissor dealing <style=cIsDamage>400% damage</style>. Pick up <color=#9B3737>Symbiotic</color> scissors to slash for <style=cIsDamage>200% damage</style>.\n<color=#d299ff>SCEPTER: Your <color=#9B3737>Symbiotic</color> weapon only has a <style=cIsUtility>1.5 second pickup time</style>.</color>",
-      "zh-TW": "<style=cIsHealth>15%生命值</style>。射出一把<color=#9B3737>共生</color>剪刀，造成<style=cIsDamage>400%傷害</style>。撿起<color=#9B3737>共生</color>剪刀時揮砍，造成<style=cIsDamage>200%傷害</style>。\n<color=#d299ff>權杖：你的<color=#9B3737>共生</color>武器只需<style=cIsUtility>1.5秒即可撿回</style>。</color>"
+      "en": "<style=cIsHealth>15% HP</style>. Fire a <color=#9B3737>Symbiotic</color> scissor dealing <style=cIsDamage>400% damage</style>. Airborne throws push you <style=cIsUtility>opposite the throw direction</style>. Pick up <color=#9B3737>Symbiotic</color> scissors to slash for <style=cIsDamage>200% damage</style>.\n<color=#d299ff>SCEPTER: Your <color=#9B3737>Symbiotic</color> weapon only has a <style=cIsUtility>1.5 second pickup time</style>.</color>",
+      "zh-TW": "<style=cIsHealth>15%生命值</style>。射出一把<color=#9B3737>共生</color>剪刀，造成<style=cIsDamage>400%傷害</style>。在空中投擲時，你會被推往<style=cIsUtility>投擲的反方向</style>。撿起<color=#9B3737>共生</color>剪刀時揮砍，造成<style=cIsDamage>200%傷害</style>。\n<color=#d299ff>權杖：你的<color=#9B3737>共生</color>武器只需<style=cIsUtility>1.5秒即可撿回</style>。</color>"
     },
     "Expunge": {
       "en": "Expunge",

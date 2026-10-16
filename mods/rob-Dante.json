@@ -1,11 +1,11 @@
 {
   "mod": "rob-Dante",
-  "version": "0.0.89",
+  "version": "1.0.1",
   "loader": "r2api",
   "notes": [
     "模組自帶部分簡體翻譯（language/zh-CN/dante.txt，73 條），那些條目以它轉成繁體後對照英文修訂；其餘由英文翻譯。",
     "ROB_DANTE_WEAPON_*_NAME/_DESC 是模組在程式裡註冊的武器文字。",
-    "鍵是英文句子的條目：模組直接把那段英文當語言 token 使用，沒有另外註冊，所以用英文原文當鍵來翻譯；原文改一個字就會對不上。"
+    "鍵是英文句子的條目：模組直接把那段英文當語言 token 使用，沒有另外註冊，所以用英文原文當鍵來翻譯；原文改一個字就會對不上。米斯歷克斯與虛假子嗣遇到但丁時的台詞也屬於這一類。"
   ],
   "strings": {
     "ROB_DANTE_BODY_NAME": {
@@ -541,12 +541,12 @@
       "zh-TW": "作為<color=#B70027>但丁</color>，在季風難度下通關遊戲或抹除自己。"
     },
     "ACHIEVEMENT_ROB_DANTE_SUPPORTER_ACHIEVEMENT_ID_NAME": {
-      "en": "Dante: Early Supporter",
-      "zh-TW": "但丁：早期支持者"
+      "en": "Dante: Unwavering Bravery",
+      "zh-TW": "但丁：堅定不移的勇氣"
     },
     "ACHIEVEMENT_ROB_DANTE_SUPPORTER_ACHIEVEMENT_ID_DESCRIPTION": {
-      "en": "Play <color=#B70027>Dante</color> during beta.",
-      "zh-TW": "在測試期間遊玩<color=#B70027>但丁</color>。"
+      "en": "<color=#B70027>Unlock Dante's full potential.</color>",
+      "zh-TW": "<color=#B70027>解放但丁的全部潛能。</color>"
     },
     "ACHIEVEMENT_ROB_DANTE_QUEEN_ACHIEVEMENT_ID_NAME": {
       "en": "Devil Arm: Queen",
@@ -702,6 +702,38 @@
     "Take": {
       "en": "Take",
       "zh-TW": "拿取"
+    },
+    "You die at my hands.": {
+      "en": "You die at my hands.",
+      "zh-TW": "你將死在我手中。"
+    },
+    "You should be honored.": {
+      "en": "You should be honored.",
+      "zh-TW": "你應當感到榮幸。"
+    },
+    "Die, son of Sparda!": {
+      "en": "Die, son of Sparda!",
+      "zh-TW": "消失吧，斯巴達之子！"
+    },
+    "Again I must face a Sparda; strange fate, isn't it?": {
+      "en": "Again I must face a Sparda; strange fate, isn't it?",
+      "zh-TW": "又要與斯巴達一族交手；命運真是奇妙，不是嗎？"
+    },
+    "Prepare to suffer, son of Sparda.": {
+      "en": "Prepare to suffer, son of Sparda.",
+      "zh-TW": "準備受苦吧，斯巴達之子。"
+    },
+    "We meet again, son of Sparda.": {
+      "en": "We meet again, son of Sparda.",
+      "zh-TW": "我們又見面了，斯巴達之子。"
+    },
+    "A Sparda... of course.": {
+      "en": "A Sparda... of course.",
+      "zh-TW": "斯巴達一族……果然。"
+    },
+    "You will suffer, son of Sparda.": {
+      "en": "You will suffer, son of Sparda.",
+      "zh-TW": "你將受盡苦難，斯巴達之子。"
     }
   }
 }

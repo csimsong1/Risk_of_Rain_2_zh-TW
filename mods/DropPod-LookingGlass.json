@@ -1,9 +1,9 @@
 {
   "mod": "DropPod-LookingGlass",
-  "version": "1.16.0",
+  "version": "1.16.3",
   "loader": "language-folder",
   "notes": [
-    "只包含 buff 圖示提示的名稱與說明；物品數值標籤和設定選單寫死在程式裡，語言檔翻不到。",
+    "只包含 buff 圖示提示的名稱與說明（135 個 buff）；物品數值標籤和設定選單寫死在程式裡，語言檔翻不到。",
     "token 是 LG_TOKEN_NAME_ / LG_TOKEN_DESCRIPTION_ 加上 buff 資產名稱（\"bd\" + 欄位名稱）。",
     "原文的 <style=\"cIsUtility> 多了一個引號，是模組本身的寫法，譯文照原樣保留。",
     "bdSharedSuffering 的說明原文是空字串。"
@@ -57,6 +57,14 @@
       "en": "<style=\"cIsUtility>Cripple</style> on hit. Occasionally fire 4 bomb projectiles at enemies. Gain 30% increased <style=\"cIsUtility>movement speed</style>, and gain 25% <style=\"cIsHealth>max health</style>. All health will be replaced with <style=\"cIsUtility>shields</style>.",
       "zh-TW": "命中時使目標<style=\"cIsUtility>殘廢</style>。偶爾向敵人發射4枚炸彈投射物。<style=\"cIsUtility>移動速度</style>提高30%，<style=\"cIsHealth>最大生命值</style>提高25%。所有生命值都會被<style=\"cIsUtility>護盾</style>取代。"
     },
+    "LG_TOKEN_NAME_bdHealingDisabled": {
+      "en": "Malachite Poisoning",
+      "zh-TW": "孔雀石中毒"
+    },
+    "LG_TOKEN_DESCRIPTION_bdHealingDisabled": {
+      "en": "Disables all healing, including health regeneration. ",
+      "zh-TW": "無法獲得任何治療，包括生命值再生。"
+    },
     "LG_TOKEN_NAME_bdAffixHauntedRecipient": {
       "en": "Celestine Cloak",
       "zh-TW": "天青石隱身"
@@ -65,6 +73,326 @@
       "en": "You are <style=\"cIsUtility>cloaked</style> due to a Celestine Ally.",
       "zh-TW": "附近有天青石盟友，你處於<style=\"cIsUtility>隱身</style>狀態。"
     },
+    "LG_TOKEN_NAME_bdBanditSkull": {
+      "en": "Bandit Skull",
+      "zh-TW": "潛行者頭骨"
+    },
+    "LG_TOKEN_DESCRIPTION_bdBanditSkull": {
+      "en": "Desperado gains <style=\"cIsDamage>10% damage</style> per stack.",
+      "zh-TW": "每層使亡命徒獲得<style=\"cIsDamage>10%傷害加成</style>。"
+    },
+    "LG_TOKEN_NAME_bdArmorBoost": {
+      "en": "Strong Armor Boost",
+      "zh-TW": "強效護甲提升"
+    },
+    "LG_TOKEN_DESCRIPTION_bdArmorBoost": {
+      "en": "Gain <style=\"cIsUtility>+200 armor.</style> ",
+      "zh-TW": "獲得<style=\"cIsUtility>+200護甲。</style>"
+    },
+    "LG_TOKEN_NAME_bdSmallArmorBoost": {
+      "en": "Small Armor Boost",
+      "zh-TW": "小型護甲提升"
+    },
+    "LG_TOKEN_DESCRIPTION_bdSmallArmorBoost": {
+      "en": "Gain <style=\"cIsUtility>+100 armor</style>. ",
+      "zh-TW": "獲得<style=\"cIsUtility>+100護甲</style>。"
+    },
+    "LG_TOKEN_NAME_bdCrocoRegen": {
+      "en": "Regenerative",
+      "zh-TW": "自我恢復"
+    },
+    "LG_TOKEN_DESCRIPTION_bdCrocoRegen": {
+      "en": "Gain <style=\"cIsHealing>health regeneration</style> equal to 5% of your <style=\"cIsHealing>maximum health</style>. ",
+      "zh-TW": "獲得相當於<style=\"cIsHealing>最大生命值</style>5%的<style=\"cIsHealing>生命值再生</style>。"
+    },
+    "LG_TOKEN_NAME_bdWeak": {
+      "en": "Weak",
+      "zh-TW": "弱化"
+    },
+    "LG_TOKEN_DESCRIPTION_bdWeak": {
+      "en": "Reduces <style=\"cIsUtility>armor</style> by 30%, reduces <style=\"cIsUtility>movement speed and damage</style> by 40%. ",
+      "zh-TW": "<style=\"cIsUtility>護甲</style>降低30%，<style=\"cIsUtility>移動速度與傷害</style>降低40%。"
+    },
+    "LG_TOKEN_NAME_bdEntangle": {
+      "en": "Entangle",
+      "zh-TW": "纏繞"
+    },
+    "LG_TOKEN_DESCRIPTION_bdEntangle": {
+      "en": "Disables <style=\"cIsUtility>movement.</style>",
+      "zh-TW": "無法<style=\"cIsUtility>移動。</style>"
+    },
+    "LG_TOKEN_NAME_bdFruiting": {
+      "en": "Fruiting",
+      "zh-TW": "結果"
+    },
+    "LG_TOKEN_DESCRIPTION_bdFruiting": {
+      "en": "Spawn 2-8 <style=\"cIsHealing>healing</style> fruits on death. ",
+      "zh-TW": "死亡時生成2至8顆<style=\"cIsHealing>治療</style>果實。"
+    },
+    "LG_TOKEN_NAME_bdMercExpose": {
+      "en": "Expose",
+      "zh-TW": "暴露"
+    },
+    "LG_TOKEN_DESCRIPTION_bdMercExpose": {
+      "en": "Will take <style=\"cIsDamage>350% damage</style> from next attack.",
+      "zh-TW": "受到下一次攻擊時承受<style=\"cIsDamage>350%傷害</style>。"
+    },
+    "LG_TOKEN_NAME_bdMedkitHeal": {
+      "en": "Medkit Heal",
+      "zh-TW": "醫療包治療"
+    },
+    "LG_TOKEN_DESCRIPTION_bdMedkitHeal": {
+      "en": "Gain <style=\"cIsHealing>health</style> after a 2-second delay. ",
+      "zh-TW": "2秒後恢復<style=\"cIsHealing>生命值</style>。"
+    },
+    "LG_TOKEN_NAME_bdWarbanner": {
+      "en": "Warbanner",
+      "zh-TW": "戰旗"
+    },
+    "LG_TOKEN_DESCRIPTION_bdWarbanner": {
+      "en": "Gain <style=\"cIsUtility>+30% attack</style> and <style=\"cIsUtility>movement speed</style>. ",
+      "zh-TW": "獲得<style=\"cIsUtility>+30%攻擊</style>與<style=\"cIsUtility>移動速度</style>。"
+    },
+    "LG_TOKEN_NAME_bdElementalRingsReady": {
+      "en": "Elemental Bands Ready",
+      "zh-TW": "元素手環就緒"
+    },
+    "LG_TOKEN_DESCRIPTION_bdElementalRingsReady": {
+      "en": "Elemental bands can be activated.",
+      "zh-TW": "元素手環可以觸發。"
+    },
+    "LG_TOKEN_NAME_bdElementalRingsCooldown": {
+      "en": "Elemental Bands Cooldown",
+      "zh-TW": "元素手環冷卻中"
+    },
+    "LG_TOKEN_DESCRIPTION_bdElementalRingsCooldown": {
+      "en": "Elemental Bands are on cooldown",
+      "zh-TW": "元素手環正在冷卻"
+    },
+    "LG_TOKEN_NAME_bdWhipBoost": {
+      "en": "Whip Boost",
+      "zh-TW": "紅鞭子加速"
+    },
+    "LG_TOKEN_DESCRIPTION_bdWhipBoost": {
+      "en": "Gain <style=\"cIsUtility>+30% movement speed</style> for each Red Whip. ",
+      "zh-TW": "每個紅鞭子提供<style=\"cIsUtility>+30%移動速度</style>。"
+    },
+    "LG_TOKEN_NAME_bdAttackSpeedOnCrit": {
+      "en": "Attack Speed On Crit",
+      "zh-TW": "暴擊攻速加成"
+    },
+    "LG_TOKEN_DESCRIPTION_bdAttackSpeedOnCrit": {
+      "en": "Gain <style=\"cIsUtility>+12% attack speed</style> per stack.",
+      "zh-TW": "每層獲得<style=\"cIsUtility>+12%攻擊速度</style>。"
+    },
+    "LG_TOKEN_NAME_bdCloak": {
+      "en": "Cloak",
+      "zh-TW": "隱身"
+    },
+    "LG_TOKEN_DESCRIPTION_bdCloak": {
+      "en": "<style=\"cIsUtility>Disappear</style>. Enemies cannot target invisible allies.",
+      "zh-TW": "<style=\"cIsUtility>消失無蹤</style>。敵人無法鎖定隱身的盟友。"
+    },
+    "LG_TOKEN_NAME_bdCloakSpeed": {
+      "en": "Cloak Speed",
+      "zh-TW": "隱身加速"
+    },
+    "LG_TOKEN_DESCRIPTION_bdCloakSpeed": {
+      "en": "Gain <style=\"cIsUtility>+40% movement speed</style> while invisible. ",
+      "zh-TW": "隱身時獲得<style=\"cIsUtility>+40%移動速度</style>。"
+    },
+    "LG_TOKEN_NAME_bdEnergized": {
+      "en": "Energized",
+      "zh-TW": "精力充沛"
+    },
+    "LG_TOKEN_DESCRIPTION_bdEnergized": {
+      "en": "Gain <style=\"cIsUtility>+70% attack speed</style>.",
+      "zh-TW": "獲得<style=\"cIsUtility>+70%攻擊速度</style>。"
+    },
+    "LG_TOKEN_NAME_bdDeathMark": {
+      "en": "Death Mark",
+      "zh-TW": "湮滅標記"
+    },
+    "LG_TOKEN_DESCRIPTION_bdDeathMark": {
+      "en": "Increases <style=\"cIsDamage>damage taken</style> from <style=\"cIsHealth>all sources</style> by 50% for 7 (+7 per stack) seconds. ",
+      "zh-TW": "從<style=\"cIsHealth>所有來源</style><style=\"cIsDamage>受到的傷害</style>提高50%，持續7（每層+7）秒。"
+    },
+    "LG_TOKEN_NAME_bdNoCooldowns": {
+      "en": "No Cooldowns",
+      "zh-TW": "無冷卻"
+    },
+    "LG_TOKEN_DESCRIPTION_bdNoCooldowns": {
+      "en": "Ability cooldowns reduced to 0.5s. ",
+      "zh-TW": "技能冷卻時間縮短為0.5秒。"
+    },
+    "LG_TOKEN_NAME_bdLaserTurbineKillCharge": {
+      "en": "Resonance Disc Kill Charge",
+      "zh-TW": "共鳴圓盤擊敗充能"
+    },
+    "LG_TOKEN_DESCRIPTION_bdLaserTurbineKillCharge": {
+      "en": "Gain a stack per kill that lasts for 7 seconds. At 4 stacks, the Resonance Disc fires, resetting all stacks. ",
+      "zh-TW": "每次擊敗獲得一層，持續7秒。達到4層時共鳴圓盤發射，並重置所有層數。"
+    },
+    "LG_TOKEN_NAME_bdTeslaField": {
+      "en": "Tesla Field",
+      "zh-TW": "特斯拉力場"
+    },
+    "LG_TOKEN_DESCRIPTION_bdTeslaField": {
+      "en": "Shock nearby enemies for <style=\"cIsDamage>200% damage</style> every 0.5s.",
+      "zh-TW": "每0.5秒電擊附近的敵人，造成<style=\"cIsDamage>200%傷害</style>。"
+    },
+    "LG_TOKEN_NAME_bdPulverized": {
+      "en": "Pulverized",
+      "zh-TW": "粉碎"
+    },
+    "LG_TOKEN_DESCRIPTION_bdPulverized": {
+      "en": "Reduces <style=\"cIsUtility>armor</style> by 60.",
+      "zh-TW": "<style=\"cIsUtility>護甲</style>降低60點。"
+    },
+    "LG_TOKEN_NAME_bdPulverizeBuildup": {
+      "en": "Pulverize Buildup",
+      "zh-TW": "粉碎累積"
+    },
+    "LG_TOKEN_DESCRIPTION_bdPulverizeBuildup": {
+      "en": "Upon getting 5 stacks, reset all stacks and apply the Pulverized debuff. ",
+      "zh-TW": "疊到5層時，重置所有層數並施加粉碎減益。"
+    },
+    "LG_TOKEN_NAME_bdPowerBuff": {
+      "en": "Power Buff",
+      "zh-TW": "力量增益"
+    },
+    "LG_TOKEN_DESCRIPTION_bdPowerBuff": {
+      "en": "Gain <style=\"cIsDamage>+50% damage</style>. ",
+      "zh-TW": "獲得<style=\"cIsDamage>+50%傷害</style>。"
+    },
+    "LG_TOKEN_NAME_bdLunarSecondaryRoot": {
+      "en": "Lunar Root",
+      "zh-TW": "月之定身"
+    },
+    "LG_TOKEN_DESCRIPTION_bdLunarSecondaryRoot": {
+      "en": "Disables <style=\"cIsUtility>movement</style>. ",
+      "zh-TW": "無法<style=\"cIsUtility>移動</style>。"
+    },
+    "LG_TOKEN_NAME_bdLunarDetonationCharge": {
+      "en": "Ruin",
+      "zh-TW": "毀壞"
+    },
+    "LG_TOKEN_DESCRIPTION_bdLunarDetonationCharge": {
+      "en": "Consumes Ruin stacks to deal 300% <style=\"cIsDamage>damage</style> plus 120% <style=\"cIsDamage>damage</style> per Ruin stack ",
+      "zh-TW": "消耗毀壞層數，造成300%<style=\"cIsDamage>傷害</style>，外加每層毀壞120%<style=\"cIsDamage>傷害</style>"
+    },
+    "LG_TOKEN_NAME_bdElephantArmorBoost": {
+      "en": "Elephant Armor Boost",
+      "zh-TW": "玉象護甲提升"
+    },
+    "LG_TOKEN_DESCRIPTION_bdElephantArmorBoost": {
+      "en": "Gain <style=\"cShrine>+500 armor</style>, negating most attacks. ",
+      "zh-TW": "獲得<style=\"cShrine>+500護甲</style>，抵銷大部分攻擊。"
+    },
+    "LG_TOKEN_NAME_bdFullCrit": {
+      "en": "Full Crit",
+      "zh-TW": "全暴擊"
+    },
+    "LG_TOKEN_DESCRIPTION_bdFullCrit": {
+      "en": "Gain <style=\"cIsDamage>100% critical strike</style> chance. ",
+      "zh-TW": "獲得<style=\"cIsDamage>100%暴擊</style>機率。"
+    },
+    "LG_TOKEN_NAME_bdLifeSteal": {
+      "en": "Life Steal",
+      "zh-TW": "生命竊取"
+    },
+    "LG_TOKEN_DESCRIPTION_bdLifeSteal": {
+      "en": "<style=\"cIsHealing>Heal</style> for 20% of <style=\"cIsDamage>damage</style> dealt.",
+      "zh-TW": "<style=\"cIsHealing>恢復</style>相當於所造成<style=\"cIsDamage>傷害</style>20%的生命值。"
+    },
+    "LG_TOKEN_NAME_bdTeamWarCry": {
+      "en": "Team War Cry",
+      "zh-TW": "團隊戰吼"
+    },
+    "LG_TOKEN_DESCRIPTION_bdTeamWarCry": {
+      "en": "Gain <style=\"cIsUtility>+50% movement speed</style> and <style=\"cIsUtility>+100% attack speed</style>. ",
+      "zh-TW": "獲得<style=\"cIsUtility>+50%移動速度</style>與<style=\"cIsUtility>+100%攻擊速度</style>。"
+    },
+    "LG_TOKEN_NAME_bdWarCryBuff": {
+      "en": "War Cry",
+      "zh-TW": "戰吼"
+    },
+    "LG_TOKEN_DESCRIPTION_bdWarCryBuff": {
+      "en": "Gain <style=\"cIsUtility>+50% movement speed</style> and <style=\"cIsUtility>+100% attack speed</style>. ",
+      "zh-TW": "獲得<style=\"cIsUtility>+50%移動速度</style>與<style=\"cIsUtility>+100%攻擊速度</style>。"
+    },
+    "LG_TOKEN_NAME_bdTonicBuff": {
+      "en": "Spinel Tonic",
+      "zh-TW": "尖晶強心劑"
+    },
+    "LG_TOKEN_DESCRIPTION_bdTonicBuff": {
+      "en": "Gain the following boosts:\n<style=\"cIsHealing>+150% max health</style>\n<style=\"cIsHealing>+400% health regeneration</style>\n<style=\"cIsUtility>+170% attack speed</style>\n<style=\"cIsUtility>+130% movement speed</style>\n<style=\"cIsUtility>+20 armor</style>\n<style=\"cIsDamage>+200% base damage</style>",
+      "zh-TW": "獲得以下加成：\n<style=\"cIsHealing>+150%最大生命值</style>\n<style=\"cIsHealing>+400%生命值再生</style>\n<style=\"cIsUtility>+170%攻擊速度</style>\n<style=\"cIsUtility>+130%移動速度</style>\n<style=\"cIsUtility>+20護甲</style>\n<style=\"cIsDamage>+200%基礎傷害</style>"
+    },
+    "LG_TOKEN_NAME_bdImmune": {
+      "en": "Immune",
+      "zh-TW": "免疫"
+    },
+    "LG_TOKEN_DESCRIPTION_bdImmune": {
+      "en": "Become immune to all attacks.",
+      "zh-TW": "免疫所有攻擊。"
+    },
+    "LG_TOKEN_NAME_bdHiddenInvincibility": {
+      "en": "Hidden Invincibility",
+      "zh-TW": "隱藏無敵"
+    },
+    "LG_TOKEN_DESCRIPTION_bdHiddenInvincibility": {
+      "en": "Become immune to all attacks.",
+      "zh-TW": "免疫所有攻擊。"
+    },
+    "LG_TOKEN_NAME_bdPermanentCurse": {
+      "en": "Permanent Curse",
+      "zh-TW": "永久詛咒"
+    },
+    "LG_TOKEN_DESCRIPTION_bdPermanentCurse": {
+      "en": "Maximum health reduced",
+      "zh-TW": "最大生命值降低"
+    },
+    "LG_TOKEN_NAME_bdBleeding": {
+      "en": "Bleed",
+      "zh-TW": "流血"
+    },
+    "LG_TOKEN_DESCRIPTION_bdBleeding": {
+      "en": "Deals <style=\"cIsDamage>240% damage</style> over time. Refreshes duration when applied.",
+      "zh-TW": "持續造成<style=\"cIsDamage>240%傷害</style>。再次施加時刷新持續時間。"
+    },
+    "LG_TOKEN_NAME_bdSuperBleed": {
+      "en": "Hemorrhage",
+      "zh-TW": "出血"
+    },
+    "LG_TOKEN_DESCRIPTION_bdSuperBleed": {
+      "en": "<style=\"cIsDamage>2000% base damage</style> over 15s. Refreshes duration when applied.",
+      "zh-TW": "在15秒內造成<style=\"cIsDamage>2000%基礎傷害</style>。再次施加時刷新持續時間。"
+    },
+    "LG_TOKEN_NAME_bdPoisoned": {
+      "en": "Poisoned",
+      "zh-TW": "中毒"
+    },
+    "LG_TOKEN_DESCRIPTION_bdPoisoned": {
+      "en": "Deals 1% of the victim's <style=\"cIsDamage>maximum health</style> per second",
+      "zh-TW": "每秒造成受害者<style=\"cIsDamage>最大生命值</style>1%的傷害"
+    },
+    "LG_TOKEN_NAME_bdBlight": {
+      "en": "Blight",
+      "zh-TW": "枯萎"
+    },
+    "LG_TOKEN_DESCRIPTION_bdBlight": {
+      "en": "Deals <style=\"cIsDamage>20% base damage stat</style> per tick",
+      "zh-TW": "每次造成<style=\"cIsDamage>20%基礎傷害值</style>的傷害"
+    },
+    "LG_TOKEN_NAME_bdOnFire": {
+      "en": "Ignited",
+      "zh-TW": "點燃"
+    },
+    "LG_TOKEN_DESCRIPTION_bdOnFire": {
+      "en": "Applies a percent of <style=\"cIsDamage>damage</style> over time, and <style=\"cIsHealth>disables health regeneration.</style> ",
+      "zh-TW": "持續造成一定比例的<style=\"cIsDamage>傷害</style>，並<style=\"cIsHealth>停用生命值再生。</style>"
+    },
     "LG_TOKEN_NAME_bdStrongerBurn": {
       "en": "Wild Burn",
       "zh-TW": "猛烈燃燒"
@@ -72,6 +400,94 @@
     "LG_TOKEN_DESCRIPTION_bdStrongerBurn": {
       "en": "A deadly burn with at least 4x effectiveness of regular Ignite. Health regeneration is disabled. ",
       "zh-TW": "致命的燃燒，效果至少是一般點燃的4倍。生命值再生會被停用。"
+    },
+    "LG_TOKEN_NAME_bdSlow50": {
+      "en": "50% Slow",
+      "zh-TW": "50%減速"
+    },
+    "LG_TOKEN_DESCRIPTION_bdSlow50": {
+      "en": "Reduces <style=\"cIsUtility>movement speed</style> by 50% ",
+      "zh-TW": "<style=\"cIsUtility>移動速度</style>降低50%"
+    },
+    "LG_TOKEN_NAME_bdSlow60": {
+      "en": "60% Slow",
+      "zh-TW": "60%減速"
+    },
+    "LG_TOKEN_DESCRIPTION_bdSlow60": {
+      "en": "Reduces <style=\"cIsUtility>movement speed</style> by 60% ",
+      "zh-TW": "<style=\"cIsUtility>移動速度</style>降低60%"
+    },
+    "LG_TOKEN_NAME_bdSlow80": {
+      "en": "80% Slow",
+      "zh-TW": "80%減速"
+    },
+    "LG_TOKEN_DESCRIPTION_bdSlow80": {
+      "en": "Reduces <style=\"cIsUtility>movement speed</style> by 80% ",
+      "zh-TW": "<style=\"cIsUtility>移動速度</style>降低80%"
+    },
+    "LG_TOKEN_NAME_bdBeetleJuice": {
+      "en": "Beetle Juice",
+      "zh-TW": "甲殼蟲汁液"
+    },
+    "LG_TOKEN_DESCRIPTION_bdBeetleJuice": {
+      "en": "Reduce <style=\"cIsDamage>movement speed</style>, <style=\"cIsHealing>character damage</style>, and <style=\"cIsDamage>attack speed</style> by 5%. ",
+      "zh-TW": "<style=\"cIsDamage>移動速度</style>、<style=\"cIsHealing>角色傷害</style>與<style=\"cIsDamage>攻擊速度</style>降低5%。"
+    },
+    "LG_TOKEN_NAME_bdCripple": {
+      "en": "Cripple",
+      "zh-TW": "殘廢"
+    },
+    "LG_TOKEN_DESCRIPTION_bdCripple": {
+      "en": "Reduces <style=\"cIsUtility>armor</style> by 20. Reduces <style=\"cIsUtility>movement speed</style> by 50%. ",
+      "zh-TW": "<style=\"cIsUtility>護甲</style>降低20點。<style=\"cIsUtility>移動速度</style>降低50%。"
+    },
+    "LG_TOKEN_NAME_bdNullified": {
+      "en": "Nullified ",
+      "zh-TW": "無效化"
+    },
+    "LG_TOKEN_DESCRIPTION_bdNullified": {
+      "en": "Disables <style=\"cIsUtility>movement</style>.",
+      "zh-TW": "無法<style=\"cIsUtility>移動</style>。"
+    },
+    "LG_TOKEN_NAME_bdNullifyStack": {
+      "en": "Nullify Buildup",
+      "zh-TW": "無效化累積"
+    },
+    "LG_TOKEN_DESCRIPTION_bdNullifyStack": {
+      "en": "Upon getting 3 stacks, reset all stacks and apply the Nullified debuff. ",
+      "zh-TW": "疊到3層時，重置所有層數並施加無效化減益。"
+    },
+    "LG_TOKEN_NAME_bdOverheat": {
+      "en": "Overheat",
+      "zh-TW": "過熱"
+    },
+    "LG_TOKEN_DESCRIPTION_bdOverheat": {
+      "en": "Increases the duration of burn damage from Grandparent's sun attack. ",
+      "zh-TW": "延長元祖太陽攻擊造成的燃燒傷害持續時間。"
+    },
+    "LG_TOKEN_NAME_bdClayGoo": {
+      "en": "Tar",
+      "zh-TW": "焦油"
+    },
+    "LG_TOKEN_DESCRIPTION_bdClayGoo": {
+      "en": "Reduces <style=\"cIsUtility>movement speed</style> by 50%. ",
+      "zh-TW": "<style=\"cIsUtility>移動速度</style>降低50%。"
+    },
+    "LG_TOKEN_NAME_bdVoidFogMild": {
+      "en": "Void Fog",
+      "zh-TW": "虛空迷霧"
+    },
+    "LG_TOKEN_DESCRIPTION_bdVoidFogMild": {
+      "en": "Deals a small amount of <style=\"cIsDamage>damage</style> multiple times per second, <style=\"cIsHealth>increasing with each tick</style>. ",
+      "zh-TW": "每秒多次造成少量<style=\"cIsDamage>傷害</style>，<style=\"cIsHealth>每次都會提高</style>。"
+    },
+    "LG_TOKEN_NAME_bdVoidFogStrong": {
+      "en": "Void Fog",
+      "zh-TW": "虛空迷霧"
+    },
+    "LG_TOKEN_DESCRIPTION_bdVoidFogStrong": {
+      "en": "Deals a medium amount of <style=\"cIsDamage>damage</style> multiple times per second, <style=\"cIsHealth>increasing with each tick</style>.",
+      "zh-TW": "每秒多次造成中等量的<style=\"cIsDamage>傷害</style>，<style=\"cIsHealth>每次都會提高</style>。"
     },
     "LG_TOKEN_NAME_bdVoidSurvivorCorruptMode": {
       "en": "Void Corruption",
