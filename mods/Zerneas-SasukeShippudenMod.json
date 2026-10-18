@@ -1,10 +1,11 @@
 {
   "mod": "Zerneas-SasukeShippudenMod",
-  "version": "0.19.8",
+  "version": "0.21.1",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
-    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組的大廳與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
+    "ACHIEVEMENT_ 開頭的是解鎖造型或技能的成就。",
+    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組（Zerneas-KizunaMod）的大廳、標題畫面與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
   ],
   "strings": {
     "ZERNEAS_SASUKESHIPPUDEN_NAME": {
@@ -118,6 +119,22 @@
     "ZERNEAS_SASUKESHIPPUDEN_CURSEDSEAL_PHOENIX_DESCRIPTION": {
       "en": "<style=cIsDamage>6 fire shuriken</style> that seek enemies (up to 40m): <style=cIsDamage>250%</style> each, <style=cIsDamage>igniting</style>.",
       "zh-TW": "射出<style=cIsDamage>6枚火焰手裡劍</style>追蹤敵人（最遠40米）：每枚造成<style=cIsDamage>250%</style>傷害並<style=cIsDamage>點燃</style>。"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKESHIPPUDENCLEARGAMEMONSOON_NAME": {
+      "en": "Sasuke (Shippuden): Mastery",
+      "zh-TW": "佐助（疾風傳）：精通"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKESHIPPUDENCLEARGAMEMONSOON_DESCRIPTION": {
+      "en": "As Sasuke (Shippuden), beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為佐助（疾風傳），在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKESHIPPUDENCLEARMERIDIANEVENT_NAME": {
+      "en": "Sasuke (Shippuden): Hebi",
+      "zh-TW": "佐助（疾風傳）：蛇小隊"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKESHIPPUDENCLEARMERIDIANEVENT_DESCRIPTION": {
+      "en": "As Sasuke (Shippuden), defeat the False Son.",
+      "zh-TW": "作為佐助（疾風傳），打敗虛假子嗣。"
     }
   }
 }

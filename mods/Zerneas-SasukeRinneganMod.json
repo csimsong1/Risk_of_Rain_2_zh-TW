@@ -1,0 +1,100 @@
+{
+  "mod": "Zerneas-SasukeRinneganMod",
+  "version": "0.14.1",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
+    "ACHIEVEMENT_ 開頭的是解鎖造型或技能的成就。",
+    "奧義（Ogi）熟練度的提示，以及 Kizuna 羈絆模組（Zerneas-KizunaMod）的大廳、標題畫面與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
+  ],
+  "strings": {
+    "ZERNEAS_SASUKERINNEGAN_NAME": {
+      "en": "Sasuke (Rinnegan)",
+      "zh-TW": "佐助（輪迴眼）"
+    },
+    "ZERNEAS_SASUKERINNEGAN_DESCRIPTION": {
+      "en": "Sasuke at his peak: the Rinnegan bends space, and the Susanoo fights beside him.<color=#CCD3E0>\r\n\r\n< ! > The hits of your skills fill the Rinnegan's six tomoe; at six, the Susanoo strikes where you fight by itself, stronger every time (the ×N).\r\n\r\n< ! > Amenotejikara swaps you with an enemy: drop it into your fight, or get out of one.\r\n\r\n< ! > Hold the black Chidori and Amaterasu goes with it: farther, harder, and it burns.\r\n\r\n< ! > Chibaku Tensei gathers the enemies into a sphere: strike them all, then crush it with the key again.\r\n\r\n< ! > Chakra control: hold Jump against a wall to run on it.\r\n\r\n< ! > Fighting fills the Ogi (X, from 25%): Indra's Arrow. Shoot it into your own Chibaku Tensei.\r\n\r\n",
+      "zh-TW": "巔峰時期的佐助：輪迴眼能扭曲空間，須佐能乎在他身旁並肩作戰。<color=#CCD3E0>\r\n\r\n< ! >技能命中會填滿輪迴眼的六顆勾玉；集滿六顆時，須佐能乎會自行在你作戰的地方出擊，而且一次比一次強（畫面上的×N）。\r\n\r\n< ! >天手力能讓你和敵人互換位置：把敵人拉進你的戰局，或讓自己脫身。\r\n\r\n< ! >按住黑千鳥時會同時施放天照：衝得更遠、威力更強，還會燃燒敵人。\r\n\r\n< ! >地爆天星會把敵人聚成一顆球體：先攻擊被困住的所有敵人，再按一次同一個鍵把球體壓碎。\r\n\r\n< ! >查克拉控制：貼著牆按住跳躍鍵就能在牆上奔跑。\r\n\r\n< ! >戰鬥會累積奧義量表（按X鍵，25%起即可施放）：因陀羅之矢。把它射進你自己的地爆天星裡。\r\n\r\n"
+    },
+    "ZERNEAS_SASUKERINNEGAN_SUBTITLE": {
+      "en": "Reincarnation of Indra",
+      "zh-TW": "因陀羅的轉世"
+    },
+    "ZERNEAS_SASUKERINNEGAN_LORE": {
+      "en": "The Sage of Six Paths gave him the Moon's half of his power. With one eye that bends space and another that sees through everything, he stood beside Naruto against a goddess, and then against Naruto himself.",
+      "zh-TW": "六道仙人將自己力量中屬於月亮的那一半交給了他。他以一隻能扭曲空間的眼睛，加上另一隻看穿一切的眼睛，與鳴人並肩對抗女神，之後又與鳴人本人一戰。"
+    },
+    "ZERNEAS_SASUKERINNEGAN_OUTRO_FLAVOR": {
+      "en": "..and so he left, to see the world with his own eyes.",
+      "zh-TW": "……於是他走了，要用自己的雙眼去看這個世界。"
+    },
+    "ZERNEAS_SASUKERINNEGAN_OUTRO_FAILURE": {
+      "en": "..and so he vanished, his revolution unfinished.",
+      "zh-TW": "……於是他就這樣消逝了，他的革命終究沒能完成。"
+    },
+    "ZERNEAS_SASUKERINNEGAN_SKIN_FINAL_NAME": {
+      "en": "Final Fight",
+      "zh-TW": "最終決戰"
+    },
+    "ZERNEAS_SASUKERINNEGAN_PASSIVE_NAME": {
+      "en": "Latent Susanoo",
+      "zh-TW": "潛藏的須佐能乎"
+    },
+    "ZERNEAS_SASUKERINNEGAN_PASSIVE_DESCRIPTION": {
+      "en": "Every hit of your skills and items fills one of 6 tomoe. At the last, the <style=cIsDamage>Susanoo</style> strikes where you fight: a sweep for <style=cIsDamage>120%</style>, a fist for <style=cIsDamage>200%</style> in 6.5m (<style=cIsDamage>stunning</style>) and a cut for <style=cIsDamage>160%</style>. Each time is a <style=cIsDamage>Manifestation</style> (15s, no limit): <style=cIsDamage>+8%</style> to its blows and to Indra's Arrow.",
+      "zh-TW": "技能與物品每命中一次，就會填滿6顆勾玉中的一顆。填滿最後一顆時，<style=cIsDamage>須佐能乎</style>會在你作戰的地方出擊：一記橫掃造成<style=cIsDamage>120%</style>傷害，一記拳擊在半徑6.5米內造成<style=cIsDamage>200%</style>傷害（並<style=cIsDamage>眩暈</style>），再一記斬擊造成<style=cIsDamage>160%</style>傷害。每次出擊都算一層<style=cIsDamage>顯現</style>（持續15秒，沒有上限）：須佐能乎的攻擊與因陀羅之矢<style=cIsDamage>+8%</style>。"
+    },
+    "ZERNEAS_SASUKERINNEGAN_PRIMARY_KUSANAGI_NAME": {
+      "en": "Kusanagi",
+      "zh-TW": "草薙劍"
+    },
+    "ZERNEAS_SASUKERINNEGAN_PRIMARY_KUSANAGI_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile.</style> The Kusanagi and the Susanoo's blade: <style=cIsDamage>80%</style> to <style=cIsDamage>330%</style>. In the air, looking down, a dive: <style=cIsDamage>330%</style> in 5m.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。以草薙劍與須佐能乎之刃連擊，造成<style=cIsDamage>80%</style>至<style=cIsDamage>330%</style>的傷害。在空中朝下看時改為俯衝：在半徑5米內造成<style=cIsDamage>330%</style>傷害。"
+    },
+    "ZERNEAS_SASUKERINNEGAN_SECONDARY_CHIDORI_NAME": {
+      "en": "Black Chidori",
+      "zh-TW": "黑千鳥"
+    },
+    "ZERNEAS_SASUKERINNEGAN_SECONDARY_CHIDORI_DESCRIPTION": {
+      "en": "Tap: charge 22m, <style=cIsUtility>invulnerable</style>: <style=cIsDamage>300%</style> through, then <style=cIsDamage>250%</style> in 4m. Hold: with <style=cIsDamage>Amaterasu</style>, 28m, <style=cIsDamage>400%</style> through and <style=cIsDamage>500%</style> in 7m, and it <style=cIsDamage>burns</style>; you teleport to the enemy at your crosshair first. Both <style=cIsDamage>stun</style>. 2 charges.",
+      "zh-TW": "輕按：衝鋒22米，期間<style=cIsUtility>無敵</style>：對穿過的敵人造成<style=cIsDamage>300%</style>傷害，接著在半徑4米內造成<style=cIsDamage>250%</style>傷害。按住：附加<style=cIsDamage>天照</style>，衝鋒28米，對穿過的敵人造成<style=cIsDamage>400%</style>傷害，再在半徑7米內造成<style=cIsDamage>500%</style>傷害，並使敵人<style=cIsDamage>燃燒</style>；衝鋒前會先瞬移到準星對準的敵人身旁。兩者皆會<style=cIsDamage>眩暈</style>。2次充能。"
+    },
+    "ZERNEAS_SASUKERINNEGAN_UTILITY_SWAP_NAME": {
+      "en": "Amenotejikara",
+      "zh-TW": "天手力"
+    },
+    "ZERNEAS_SASUKERINNEGAN_UTILITY_SWAP_DESCRIPTION": {
+      "en": "<style=cIsUtility>Instant.</style> Swap places with the enemy at your crosshair (60m): it arrives <style=cIsDamage>stunned</style> on stakes of Amaterasu, <style=cIsDamage>250%</style> in 6m, <style=cIsDamage>burning</style>. With no enemy, a 25m step. 2 charges.",
+      "zh-TW": "<style=cIsUtility>瞬發</style>。與準星對準的敵人（60米內）互換位置：敵人會落在天照的黑炎尖樁上並被<style=cIsDamage>眩暈</style>，在半徑6米內造成<style=cIsDamage>250%</style>傷害並使其<style=cIsDamage>燃燒</style>。沒有敵人時，改為向前移動25米。2次充能。"
+    },
+    "ZERNEAS_SASUKERINNEGAN_SPECIAL_CHIBAKU_NAME": {
+      "en": "Chibaku Tensei",
+      "zh-TW": "地爆天星"
+    },
+    "ZERNEAS_SASUKERINNEGAN_SPECIAL_CHIBAKU_DESCRIPTION": {
+      "en": "Every enemy within 24m of where you aim is drawn into a sphere of rock, <style=cIsDamage>helpless</style> for 3s (bosses: slowed). Press again, or wait: it's <style=cIsDamage>crushed</style> for <style=cIsDamage>700%</style> in 11m, <style=cIsDamage>stunning</style>.",
+      "zh-TW": "瞄準處24米內的所有敵人都會被吸進一顆岩石球體，<style=cIsDamage>無法動彈</style>3秒（首領則改為減速）。再按一次或等待時間結束：球體會被<style=cIsDamage>壓碎</style>，在半徑11米內造成<style=cIsDamage>700%</style>傷害並<style=cIsDamage>眩暈</style>。"
+    },
+    "ZERNEAS_SASUKERINNEGAN_OGI_NAME": {
+      "en": "Ogi: Indra's Arrow",
+      "zh-TW": "奧義·因陀羅之矢"
+    },
+    "ZERNEAS_SASUKERINNEGAN_OGI_DESCRIPTION": {
+      "en": "From <style=cIsUtility>50%</style>, spends the whole gauge. <style=cIsDamage>Indra's Susanoo</style> draws its bow (<style=cIsUtility>+100 armor</style>) and its arrow pierces everything: <style=cIsDamage>900-3600%</style> in 14-22m, <style=cIsDamage>+20%</style> into your Chibaku Tensei, <style=cIsDamage>+8%</style> per Manifestation. The fuller the gauge, the bigger.",
+      "zh-TW": "量表達<style=cIsUtility>50%</style>即可施放，會消耗整條量表。<style=cIsDamage>因陀羅的須佐能乎</style>拉開長弓（期間<style=cIsUtility>+100護甲</style>），射出的箭矢會貫穿一切：在半徑14-22米內造成<style=cIsDamage>900-3600%</style>傷害，射進你的地爆天星時<style=cIsDamage>+20%</style>，每層顯現<style=cIsDamage>+8%</style>。量表越滿，箭矢越大。"
+    },
+    "ZERNEAS_SASUKERINNEGAN_KEYWORD_GRAVITY": {
+      "en": "Held by the Chibaku Tensei: slowed.",
+      "zh-TW": "被地爆天星困住：減速。"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKERINNEGANCLEARGAMEMONSOON_NAME": {
+      "en": "Sasuke (Rinnegan): Mastery",
+      "zh-TW": "佐助（輪迴眼）：精通"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKERINNEGANCLEARGAMEMONSOON_DESCRIPTION": {
+      "en": "As Sasuke (Rinnegan), beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為佐助（輪迴眼），在季風難度下通關遊戲或抹除自己。"
+    }
+  }
+}

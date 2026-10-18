@@ -1,10 +1,11 @@
 {
   "mod": "Zerneas-SasukeMangekyouMod",
-  "version": "0.15.2",
+  "version": "0.17.1",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
-    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組的大廳與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
+    "ACHIEVEMENT_ 開頭的是解鎖造型或技能的成就。",
+    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組（Zerneas-KizunaMod）的大廳、標題畫面與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
   ],
   "strings": {
     "ZERNEAS_SASUKEMANGEKYOU_NAME": {
@@ -114,6 +115,14 @@
     "ZERNEAS_SASUKEMANGEKYOU_MANGEKYOU_SPECIAL_DESCRIPTION": {
       "en": "<style=cIsDamage>Ignite.</style> Tap: Amaterasu. <style=cIsUtility>Hold</style> (up to 3s): whatever you look at burns, for 10% of the gauge a second. Up to 12 flames while awakened.",
       "zh-TW": "<style=cIsDamage>點燃</style>。輕按：施放天照。<style=cIsUtility>按住</style>（最多3秒）：注視的一切都會燃燒，每秒消耗10%量表。開眼期間最多同時存在12團火焰。"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKEMANGEKYOUCLEARGAMEMONSOON_NAME": {
+      "en": "Sasuke (Taka): Mastery",
+      "zh-TW": "佐助（鷹）：精通"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKEMANGEKYOUCLEARGAMEMONSOON_DESCRIPTION": {
+      "en": "As Sasuke (Taka), beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為佐助（鷹），在季風難度下通關遊戲或抹除自己。"
     }
   }
 }

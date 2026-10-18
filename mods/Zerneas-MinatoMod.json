@@ -1,10 +1,11 @@
 {
   "mod": "Zerneas-MinatoMod",
-  "version": "0.14.3",
+  "version": "0.15.1",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
-    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組的大廳與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。",
+    "ACHIEVEMENT_ 開頭的是解鎖造型或技能的成就。",
+    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組（Zerneas-KizunaMod）的大廳、標題畫面與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。",
     "ZERNEAS_MINATO_HUD_* 是準星旁飛雷神提示的文字。"
   ],
   "strings": {
@@ -131,6 +132,14 @@
     "ZERNEAS_MINATO_KYUUBI_CLONE_DESCRIPTION": {
       "en": "Throw a chakra kunai: a clone falls on it with a <style=cIsDamage>giant Rasengan</style>, <style=cIsDamage>1600%</style> in 11m, <style=cIsDamage>stunning</style>.",
       "zh-TW": "擲出一把查克拉苦無：分身會帶著<style=cIsDamage>巨大螺旋丸</style>落在苦無處，在半徑11米內造成<style=cIsDamage>1600%</style>傷害並<style=cIsDamage>眩暈</style>。"
+    },
+    "ACHIEVEMENT_ZERNEASMINATOCLEARGAMEMONSOON_NAME": {
+      "en": "Minato: Mastery",
+      "zh-TW": "波風湊：精通"
+    },
+    "ACHIEVEMENT_ZERNEASMINATOCLEARGAMEMONSOON_DESCRIPTION": {
+      "en": "As Minato, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為波風湊，在季風難度下通關遊戲或抹除自己。"
     }
   }
 }

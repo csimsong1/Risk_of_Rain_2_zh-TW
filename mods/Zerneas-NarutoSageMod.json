@@ -1,10 +1,12 @@
 {
   "mod": "Zerneas-NarutoSageMod",
-  "version": "0.22.3",
+  "version": "0.27.3",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
-    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組的大廳與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
+    "ACHIEVEMENT_ 開頭的是解鎖造型或技能的成就。",
+    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組（Zerneas-KizunaMod）的大廳、標題畫面與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。",
+    "FROGCALL 與 ODAMA 是用成就（六道、妙木山修行）解鎖的隱藏技能。"
   ],
   "strings": {
     "ZERNEAS_NARUTOSAGE_NAME": {
@@ -67,6 +69,14 @@
       "en": "Two clones <style=cIsUtility>throw you</style> toward the crosshair. <style=cIsUtility>Invulnerable</style> for 0.5s; <style=cIsDamage>stuns</style> enemies within 6m.",
       "zh-TW": "兩個分身將你<style=cIsUtility>拋向</style>準星方向。<style=cIsUtility>無敵</style>0.5秒；<style=cIsDamage>眩暈</style>6米內的敵人。"
     },
+    "ZERNEAS_NARUTOSAGE_UTILITY_FROGCALL_NAME": {
+      "en": "Sage Art: Frog Call",
+      "zh-TW": "仙法·蛙鳴"
+    },
+    "ZERNEAS_NARUTOSAGE_UTILITY_FROGCALL_DESCRIPTION": {
+      "en": "Fukasaku and Shima croak a sound wave toward the crosshair: <style=cIsDamage>200%</style> in 25m, <style=cIsDamage>stunning</style> for 1.5s. Bosses are <style=cIsUtility>slowed</style> instead.",
+      "zh-TW": "深作與志麻朝準星方向發出一道蛙鳴音波：在25米範圍內造成<style=cIsDamage>200%</style>傷害，並<style=cIsDamage>眩暈</style>1.5秒。首領則改為<style=cIsUtility>減速</style>。"
+    },
     "ZERNEAS_NARUTOSAGE_SPECIAL_RASENSHURIKEN_NAME": {
       "en": "Sage Art: Rasen-Shuriken",
       "zh-TW": "仙法·螺旋手裡劍"
@@ -74,6 +84,14 @@
     "ZERNEAS_NARUTOSAGE_SPECIAL_RASENSHURIKEN_DESCRIPTION": {
       "en": "A 8m sphere of wind blades that <style=cIsUtility>pulls enemies in</style>: <style=cIsDamage>10x100%</style>, then <style=cIsDamage>500%</style> as it bursts. <style=cIsUtility>Sage Art</style>: <style=cIsDamage>+70%</style> a point; each charge poured, <style=cIsDamage>+35%</style> and +1.88m.",
       "zh-TW": "產生8米的風刃球體，將敵人<style=cIsUtility>吸入</style>：造成<style=cIsDamage>10x100%</style>傷害，爆炸時再造成<style=cIsDamage>500%</style>傷害。<style=cIsUtility>仙法</style>：每點<style=cIsDamage>+70%</style>；每灌注1次充能，<style=cIsDamage>+35%</style>且範圍+1.88米。"
+    },
+    "ZERNEAS_NARUTOSAGE_SPECIAL_ODAMA_NAME": {
+      "en": "Sage Art: Twin Big Ball Rasengan",
+      "zh-TW": "仙法·雙大玉螺旋丸"
+    },
+    "ZERNEAS_NARUTOSAGE_SPECIAL_ODAMA_DESCRIPTION": {
+      "en": "Two clones plunge onto the crosshair with a giant Rasengan each: <style=cIsDamage>2x800%</style> in 7m, one blow each. <style=cIsUtility>Sage Art</style>: <style=cIsDamage>+70%</style> a point; each charge poured, <style=cIsDamage>+250%</style> per ball and +1.5m.",
+      "zh-TW": "兩個分身各帶著一顆巨大的螺旋丸衝向準星位置：在半徑7米內造成<style=cIsDamage>2x800%</style>傷害，每顆只會擊中一次。<style=cIsUtility>仙法</style>：每點<style=cIsDamage>+70%</style>；每灌注1次充能，每顆<style=cIsDamage>+250%</style>且範圍+1.5米。"
     },
     "ZERNEAS_NARUTOSAGE_SIXTAILS_NAME": {
       "en": "Six-Tails",
@@ -114,6 +132,30 @@
     "ZERNEAS_NARUTOSAGE_SIXTAILS_BIJUUDAMA_DESCRIPTION": {
       "en": "Explodes for <style=cIsDamage>1500%</style> in 12m. Hold to <style=cIsDamage>pour fury</style> in: <style=cIsDamage>+500%</style> and +3m each, up to 3.",
       "zh-TW": "爆炸，在半徑12米內造成<style=cIsDamage>1500%</style>傷害。按住可<style=cIsDamage>灌注怒氣</style>：每次<style=cIsDamage>+500%</style>且範圍+3米，最多3次。"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSAGECLEARGAMEMONSOON_NAME": {
+      "en": "Sage Naruto: Mastery",
+      "zh-TW": "仙人模式鳴人：精通"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSAGECLEARGAMEMONSOON_DESCRIPTION": {
+      "en": "As Sage Naruto, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為仙人模式鳴人，在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSAGESIXPATHS_NAME": {
+      "en": "Sage Naruto: The Six Paths",
+      "zh-TW": "仙人模式鳴人：六道"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSAGESIXPATHS_DESCRIPTION": {
+      "en": "As Sage Naruto, kill 6 enemies with a single Sage Art.",
+      "zh-TW": "作為仙人模式鳴人，用一次仙法擊敗6名敵人。"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSAGEMYOBOKU_NAME": {
+      "en": "Sage Naruto: Training on Mount Myoboku",
+      "zh-TW": "仙人模式鳴人：妙木山修行"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSAGEMYOBOKU_DESCRIPTION": {
+      "en": "As Sage Naruto, gather 20 charges of natural energy by meditating in a single run.",
+      "zh-TW": "作為仙人模式鳴人，一輪遊戲中靠冥想累積20次自然能量充能。"
     }
   }
 }

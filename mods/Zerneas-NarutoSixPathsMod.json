@@ -1,0 +1,104 @@
+{
+  "mod": "Zerneas-NarutoSixPathsMod",
+  "version": "0.16.1",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
+    "ACHIEVEMENT_ 開頭的是解鎖造型或技能的成就。",
+    "奧義（Ogi）熟練度的提示，以及 Kizuna 羈絆模組（Zerneas-KizunaMod）的大廳、標題畫面與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
+  ],
+  "strings": {
+    "ZERNEAS_NARUTOSIXPATHS_NAME": {
+      "en": "Naruto (Six Paths)",
+      "zh-TW": "鳴人（六道）"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_DESCRIPTION": {
+      "en": "Naruto at his peak: the Sage of Six Paths' power, and the nine tailed beasts' chakra with it.<color=#CCD3E0>\r\n\r\n< ! > The hits of your skills shoot Truth-Seeking Orbs that home on enemies; each one that lands makes the next ones and your special stronger (the ×N).\r\n\r\n< ! > Hold Jump to fly.\r\n\r\n< ! > The Rasen-Shuriken stays grinding where it lands and pulls everything in: throw it into a crowd, then your special on top.\r\n\r\n< ! > Chakra control: hold Jump against a wall to run on it.\r\n\r\n< ! > Fighting fills the Ogi (X, from 25%): Kurama's avatar throws two giant Rasen-Shuriken. The fuller the gauge, the harder.\r\n\r\n",
+      "zh-TW": "巔峰時期的鳴人：擁有六道仙人的力量，還有九隻尾獸的查克拉。<color=#CCD3E0>\r\n\r\n< ! >技能命中時會射出追蹤敵人的求道玉；每命中一顆，之後的求道玉和你的特殊技能都會更強（畫面上的×N）。\r\n\r\n< ! >按住跳躍鍵即可飛行。\r\n\r\n< ! >螺旋手裡劍落地後會留在原處持續絞切，並把周圍的一切吸過去：先丟進敵群，再接上特殊技能。\r\n\r\n< ! >查克拉控制：貼著牆按住跳躍鍵就能在牆上奔跑。\r\n\r\n< ! >戰鬥會累積奧義量表（按X鍵，25%起即可施放）：九喇嘛的化身會擲出兩顆巨大的螺旋手裡劍。量表越滿，威力越強。\r\n\r\n"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_SUBTITLE": {
+      "en": "Reincarnation of Asura",
+      "zh-TW": "阿修羅的轉世"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_LORE": {
+      "en": "The Sage of Six Paths gave him the Sun's half of his power, and the nine tailed beasts each a share of their chakra. With them he stood beside Sasuke against a goddess, and then against Sasuke himself.",
+      "zh-TW": "六道仙人將自己力量中屬於太陽的那一半交給了他，九隻尾獸也各自分給他一份查克拉。憑著這些力量，他與佐助並肩對抗女神，之後又與佐助本人一戰。"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_OUTRO_FLAVOR": {
+      "en": "..and so he left, one step closer to the Hokage's seat.",
+      "zh-TW": "……於是他走了，離火影的位子又近了一步。"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_OUTRO_FAILURE": {
+      "en": "..and so he vanished, his promise unkept.",
+      "zh-TW": "……於是他就這樣消逝了，許下的承諾終究沒能實現。"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_SKIN_FINAL_NAME": {
+      "en": "Final Fight",
+      "zh-TW": "最終決戰"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_PASSIVE_NAME": {
+      "en": "Truth-Seeking Orbs",
+      "zh-TW": "求道玉"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_PASSIVE_DESCRIPTION": {
+      "en": "Every 3 hits of your skills, 1 to 3 <style=cIsDamage>orbs</style> home on nearby enemies: <style=cIsDamage>120%</style> in 3.5m. Each one that lands is a point of <style=cIsDamage>Biju chakra</style> (40s, no limit): <style=cIsDamage>+3%</style> to the orbs and your special. <style=cIsUtility>Flight</style>: hold Jump to fly.",
+      "zh-TW": "技能每命中3次，就有1到3顆<style=cIsDamage>求道玉</style>追蹤附近的敵人：在半徑3.5米內造成<style=cIsDamage>120%</style>傷害。每命中一顆就獲得1點<style=cIsDamage>尾獸查克拉</style>（持續40秒，沒有上限）：求道玉與你的特殊技能<style=cIsDamage>+3%</style>。<style=cIsUtility>飛行</style>：按住跳躍鍵即可飛行。"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_PRIMARY_TAIJUTSU_NAME": {
+      "en": "Six Paths Taijutsu",
+      "zh-TW": "六道體術"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_PRIMARY_TAIJUTSU_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile.</style> The staff and arms of chakra: <style=cIsDamage>100%</style> to <style=cIsDamage>350%</style>. In the air, looking down, both arms join in one fist: <style=cIsDamage>330%</style> in 5m.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。以棍杖與查克拉手臂連擊，造成<style=cIsDamage>100%</style>至<style=cIsDamage>350%</style>的傷害。在空中朝下看時，兩隻手臂會合成一記重拳：在半徑5米內造成<style=cIsDamage>330%</style>傷害。"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_SECONDARY_SHURIKEN_NAME": {
+      "en": "Lava Release: Rasen-Shuriken",
+      "zh-TW": "熔遁·螺旋手裡劍"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_SECONDARY_SHURIKEN_DESCRIPTION": {
+      "en": "It <style=cIsUtility>stays grinding</style> where it lands for 1.5s: <style=cIsDamage>6x60%</style>, <style=cIsUtility>pulling in</style> everything within 7m, then bursts for <style=cIsDamage>250%</style>, <style=cIsDamage>igniting</style>. 2 charges.",
+      "zh-TW": "落地後會在原處<style=cIsUtility>持續絞切</style>1.5秒：造成<style=cIsDamage>6x60%</style>傷害，並將7米內的一切<style=cIsUtility>吸過去</style>，接著爆炸造成<style=cIsDamage>250%</style>傷害並<style=cIsDamage>點燃</style>。2次充能。"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_UTILITY_GRIP_NAME": {
+      "en": "Kurama's Arms",
+      "zh-TW": "九喇嘛之臂"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_UTILITY_GRIP_DESCRIPTION": {
+      "en": "Two arms of chakra close where you aim (up to 60m): every enemy within 13m is <style=cIsUtility>dragged together</style>, held 2.5s, and takes <style=cIsDamage>320%</style> and a <style=cIsDamage>stun</style>. Bosses are held where they are.",
+      "zh-TW": "兩隻查克拉手臂在瞄準處合攏（最遠60米）：13米內的所有敵人都會被<style=cIsUtility>拖到一起</style>，被抓住2.5秒，並受到<style=cIsDamage>320%</style>傷害且<style=cIsDamage>眩暈</style>。首領則會被定在原地。"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_UTILITY_DASH_NAME": {
+      "en": "Golden Flash",
+      "zh-TW": "金色閃光"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_UTILITY_DASH_DESCRIPTION": {
+      "en": "Flash 18m like yellow lightning: <style=cIsDamage>150%</style> to every enemy you cross. 2 charges.",
+      "zh-TW": "如黃色閃電般閃過18米：對穿過的每個敵人造成<style=cIsDamage>150%</style>傷害。2次充能。"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_SPECIAL_BARRAGE_NAME": {
+      "en": "Super Tailed Beast Rasen-Shuriken",
+      "zh-TW": "超尾獸螺旋手裡劍"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_SPECIAL_BARRAGE_DESCRIPTION": {
+      "en": "You and your clones throw <style=cIsDamage>9 Rasen-Shuriken</style> that home on the enemy at your crosshair: <style=cIsDamage>220%</style> in 6m, <style=cIsDamage>stunning</style>, <style=cIsDamage>+15%</style> for each one that hit it before. <style=cIsDamage>+3%</style> a point of Biju chakra.",
+      "zh-TW": "你和分身一起擲出<style=cIsDamage>9枚螺旋手裡劍</style>，追蹤準星對準的敵人：每枚在半徑6米內造成<style=cIsDamage>220%</style>傷害並<style=cIsDamage>眩暈</style>，該敵人先前每被一枚命中，傷害就<style=cIsDamage>+15%</style>。每點尾獸查克拉<style=cIsDamage>+3%</style>。"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_OGI_NAME": {
+      "en": "Ogi: Six Paths Ultra-Big Ball Rasen-Shuriken",
+      "zh-TW": "奧義·六道超大玉螺旋手裡劍"
+    },
+    "ZERNEAS_NARUTOSIXPATHS_OGI_DESCRIPTION": {
+      "en": "From <style=cIsUtility>50%</style>, spends the whole gauge. <style=cIsDamage>Kurama's avatar</style> forms two giant Rasen-Shuriken (1.2s, <style=cIsUtility>+100 armor</style>) and throws them where you aim: <style=cIsDamage>600-2200%</style> each in 14-22m, <style=cIsDamage>stunning</style>. The fuller the gauge, the harder.",
+      "zh-TW": "量表達<style=cIsUtility>50%</style>即可施放，會消耗整條量表。<style=cIsDamage>九喇嘛的化身</style>凝聚出兩顆巨大的螺旋手裡劍（1.2秒，期間<style=cIsUtility>+100護甲</style>），再擲向瞄準處：每顆在半徑14-22米內造成<style=cIsDamage>600-2200%</style>傷害並<style=cIsDamage>眩暈</style>。量表越滿，威力越強。"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSIXPATHSCLEARGAMEMONSOON_NAME": {
+      "en": "Naruto (Six Paths): Mastery",
+      "zh-TW": "鳴人（六道）：精通"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSIXPATHSCLEARGAMEMONSOON_DESCRIPTION": {
+      "en": "As Naruto (Six Paths), beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為鳴人（六道），在季風難度下通關遊戲或抹除自己。"
+    }
+  }
+}

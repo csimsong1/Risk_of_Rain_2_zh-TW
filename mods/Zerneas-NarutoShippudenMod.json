@@ -1,10 +1,11 @@
 {
   "mod": "Zerneas-NarutoShippudenMod",
-  "version": "0.21.2",
+  "version": "0.23.1",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
-    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組的大廳與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
+    "ACHIEVEMENT_ 開頭的是解鎖造型或技能的成就。",
+    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組（Zerneas-KizunaMod）的大廳、標題畫面與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
   ],
   "strings": {
     "ZERNEAS_NARUTOSHIPPUDEN_NAME": {
@@ -118,6 +119,14 @@
     "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_ROAR_DESCRIPTION": {
       "en": "Roar, <style=cIsUtility>invincible</style>: <style=cIsDamage>3 shockwaves</style> of <style=cIsDamage>300%</style> in 13m, <style=cIsDamage>igniting</style>; the last pushes back.",
       "zh-TW": "咆哮，期間<style=cIsUtility>無敵</style>：發出<style=cIsDamage>3道衝擊波</style>，各在半徑13米內造成<style=cIsDamage>300%</style>傷害並<style=cIsDamage>點燃</style>；最後一道會擊退敵人。"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSHIPPUDENCLEARGAMEMONSOON_NAME": {
+      "en": "Naruto (Shippuden): Mastery",
+      "zh-TW": "鳴人（疾風傳）：精通"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSHIPPUDENCLEARGAMEMONSOON_DESCRIPTION": {
+      "en": "As Naruto (Shippuden), beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為鳴人（疾風傳），在季風難度下通關遊戲或抹除自己。"
     }
   }
 }
