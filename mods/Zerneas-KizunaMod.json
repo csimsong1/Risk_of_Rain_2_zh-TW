@@ -1,6 +1,6 @@
 {
   "mod": "Zerneas-KizunaMod",
-  "version": "0.21.0",
+  "version": "0.21.1",
   "loader": "r2api",
   "notes": [
     "英文是模組程式裡寫死的字串：選角畫面 Variants 分頁（Survariants）裡，火影各角色變體的一句話說明。模組用 Language.SetStringByToken 直接寫入英文（或西班牙文）；R2API 語言檔的譯文會優先於它。",

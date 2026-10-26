@@ -1,6 +1,6 @@
 {
   "mod": "Zerneas-SasukeMangekyouMod",
-  "version": "0.25.0",
+  "version": "0.25.2",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
@@ -71,6 +71,10 @@
     "ZERNEAS_SASUKEMANGEKYOU_UTILITY_SHUNSHIN_DESCRIPTION": {
       "en": "Step 10m, <style=cIsUtility>invulnerable</style>. 2 charges. <style=cIsDamage>Perfect dodge</style>: if an attack would have hit you, the charge comes back and your next hit is a <style=cIsDamage>sure crit</style>.",
       "zh-TW": "瞬移10米，期間<style=cIsUtility>無敵</style>。2次充能。<style=cIsDamage>完美閃避</style>：若原本會被攻擊命中，則返還充能，且下一擊<style=cIsDamage>必定暴擊</style>。"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_DODGE_PERFECT": {
+      "en": "PERFECT DODGE",
+      "zh-TW": "完美閃避"
     },
     "ZERNEAS_SASUKEMANGEKYOU_SPECIAL_AMATERASU_NAME": {
       "en": "Amaterasu",

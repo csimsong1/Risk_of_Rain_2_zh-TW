@@ -1,0 +1,101 @@
+{
+  "mod": "Zerneas-ZabuzaMod",
+  "version": "0.6.3",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
+    "ACHIEVEMENT_ 開頭的是解鎖造型的成就。",
+    "CLONE_NAME 是霧隱之術留下的水分身的名稱。",
+    "霧隱之鬼人（X）熟練度的提示，以及 Kizuna 羈絆模組（Zerneas-KizunaMod）的大廳、標題畫面、技能清單與羈絆說明，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
+  ],
+  "strings": {
+    "ZERNEAS_ZABUZA_NAME": {
+      "en": "Zabuza",
+      "zh-TW": "再不斬"
+    },
+    "ZERNEAS_ZABUZA_DESCRIPTION": {
+      "en": "Zabuza is a heavy swordsman who hunts inside his own mist, unseen, and feeds his blade with blood.<color=#CCD3E0>\r\n\r\n< ! > Your dragon and your Kirigakure leave mist. Inside it, enemies far from you lose you, and your first cut on each is a sure crit.\r\n\r\n< ! > Every cut of the Kubikiribocho drinks Blood Iron (twice from wet enemies); the Decapitation spends it all.\r\n\r\n< ! > X awakens the demon: faster, unstoppable, drinking life, and stronger the closer you are to death.\r\n\r\n< ! > Chakra control: hold Jump against a wall to run on it.\r\n\r\n",
+      "zh-TW": "再不斬是一名重劍士，他藏身在自己的霧中狩獵，不見蹤影，並以鮮血餵養他的刀。<color=#CCD3E0>\r\n\r\n< ! >水龍彈與霧隱之術會留下霧氣。在霧中，離你較遠的敵人會失去你的蹤影，而你對每個敵人砍出的第一刀必定暴擊。\r\n\r\n< ! >斬首大刀每砍一刀都會吸取血鐵（對濕透的敵人吸取兩次）；斬首會將它全數消耗。\r\n\r\n< ! >按X鍵喚醒鬼人：更快、無法阻擋、吸取生命，而且越接近死亡就越強。\r\n\r\n< ! >查克拉控制：貼著牆按住跳躍鍵就能在牆上奔跑。\r\n\r\n"
+    },
+    "ZERNEAS_ZABUZA_SUBTITLE": {
+      "en": "The Demon of the Hidden Mist",
+      "zh-TW": "霧隱的鬼人"
+    },
+    "ZERNEAS_ZABUZA_LORE": {
+      "en": "One of the Seven Swordsmen of the Mist, who tried to take his village's head and fled with a price on his own. Feared as the Demon, he killed in silence, inside the mist, with a blade that drinks the blood of what it cuts.",
+      "zh-TW": "霧隱忍刀七人眾之一，曾企圖取下村子首領的首級，事敗後帶著自己首級的懸賞逃亡。人稱鬼人而令人畏懼，他在霧中無聲殺人，手中的刀會吸食所斬之物的鮮血。"
+    },
+    "ZERNEAS_ZABUZA_OUTRO_FLAVOR": {
+      "en": "..and so Zabuza left, the mist closing behind him.",
+      "zh-TW": "……於是再不斬離開了，濃霧在他身後闔上。"
+    },
+    "ZERNEAS_ZABUZA_OUTRO_FAILURE": {
+      "en": "..and so Zabuza fell, a demon to the very end.",
+      "zh-TW": "……於是再不斬倒下了，至死都是個鬼人。"
+    },
+    "ZERNEAS_ZABUZA_CLONE_NAME": {
+      "en": "Water Clone",
+      "zh-TW": "水分身"
+    },
+    "ZERNEAS_ZABUZA_KIRI_SKIN_NAME": {
+      "en": "Kirigakure Uniform",
+      "zh-TW": "霧隱制服"
+    },
+    "ZERNEAS_ZABUZA_PASSIVE_NAME": {
+      "en": "Demon of the Hidden Mist",
+      "zh-TW": "霧隱的鬼人"
+    },
+    "ZERNEAS_ZABUZA_PASSIVE_DESCRIPTION": {
+      "en": "Inside <style=cIsUtility>your mist</style> (one at a time) enemies farther than 10m lose you. <style=cIsDamage>Silent Killing</style>: your first cut on each enemy from the mist is a <style=cIsDamage>sure crit</style>. <style=cIsHealth>Blood Iron</style>: every cut of the Kubikiribocho drinks 1 (2 from a wet enemy), 10s each, no limit.",
+      "zh-TW": "在<style=cIsUtility>你的霧</style>中（同時只有一片），10米外的敵人會失去你的蹤影。<style=cIsDamage>無聲殺人術</style>：你從霧中對每個敵人砍出的第一刀<style=cIsDamage>必定暴擊</style>。<style=cIsHealth>血鐵</style>：斬首大刀每砍一刀吸取1點（濕透的敵人為2點），每點持續10秒，沒有上限。"
+    },
+    "ZERNEAS_ZABUZA_PRIMARY_KENJUTSU_NAME": {
+      "en": "Kenjutsu",
+      "zh-TW": "劍術"
+    },
+    "ZERNEAS_ZABUZA_PRIMARY_KENJUTSU_DESCRIPTION": {
+      "en": "Three wide sweeps of the Kubikiribocho that cut everything in front of you: <style=cIsDamage>220%</style>, <style=cIsDamage>260%</style> and <style=cIsDamage>2x200%</style>. In the air, <style=cIsDamage>180%</style>; looking down, a <style=cIsDamage>dive</style> for <style=cIsDamage>450%</style> in 6m.",
+      "zh-TW": "以斬首大刀大範圍橫掃三次，斬開前方的一切：分別造成<style=cIsDamage>220%</style>、<style=cIsDamage>260%</style>與<style=cIsDamage>2x200%</style>傷害。在空中時造成<style=cIsDamage>180%</style>傷害；朝下看時改為<style=cIsDamage>俯衝</style>：在半徑6米內造成<style=cIsDamage>450%</style>傷害。"
+    },
+    "ZERNEAS_ZABUZA_SECONDARY_DRAGON_NAME": {
+      "en": "Suiryudan",
+      "zh-TW": "水龍彈"
+    },
+    "ZERNEAS_ZABUZA_SECONDARY_DRAGON_DESCRIPTION": {
+      "en": "A water dragon rams ahead: <style=cIsDamage>900%</style> to everything in its way, leaving it <style=cIsUtility>wet</style>. It leaves <style=cIsUtility>mist</style> all along its way.",
+      "zh-TW": "水龍向前衝撞：對路徑上的一切造成<style=cIsDamage>900%</style>傷害，並使其<style=cIsUtility>濕透</style>。水龍經過的路徑上都會留下<style=cIsUtility>霧氣</style>。"
+    },
+    "ZERNEAS_ZABUZA_UTILITY_MIST_NAME": {
+      "en": "Kirigakure no Jutsu",
+      "zh-TW": "霧隱之術"
+    },
+    "ZERNEAS_ZABUZA_UTILITY_MIST_DESCRIPTION": {
+      "en": "Raise <style=cIsUtility>mist</style> around you (12m) and vanish for 2s, <style=cIsUtility>+30% speed</style>. A <style=cIsUtility>water clone</style> stays behind, drawing enemies and cutting for <style=cIsDamage>150%</style>, then bursts for <style=cIsDamage>250%</style>.",
+      "zh-TW": "在身邊升起<style=cIsUtility>霧氣</style>（半徑12米）並消失2秒，<style=cIsUtility>+30%移動速度</style>。原地會留下一個<style=cIsUtility>水分身</style>，吸引敵人並揮砍造成<style=cIsDamage>150%</style>傷害，最後爆開造成<style=cIsDamage>250%</style>傷害。"
+    },
+    "ZERNEAS_ZABUZA_SPECIAL_DECAPITATION_NAME": {
+      "en": "Decapitation",
+      "zh-TW": "斬首"
+    },
+    "ZERNEAS_ZABUZA_SPECIAL_DECAPITATION_DESCRIPTION": {
+      "en": "Rush the enemy at your crosshair (or the nearest ahead, up to 25m, even in the air) and bring the blade down: <style=cIsDamage>600%</style> in 7m, <style=cIsDamage>+50%</style> per <style=cIsHealth>Blood Iron</style>, spending it all; <style=cIsHealing>heals 0.5%</style> per Iron. Non-bosses left under <style=cIsHealth>20% health</style> die.",
+      "zh-TW": "衝向準星對準的敵人（或前方最近的敵人，最遠25米，在空中也行）並揮刀斬下：在半徑7米內造成<style=cIsDamage>600%</style>傷害，每點<style=cIsHealth>血鐵</style><style=cIsDamage>+50%</style>，並消耗所有血鐵；每點血鐵<style=cIsHealing>治療0.5%</style>。生命值剩下不到<style=cIsHealth>20%</style>的非首領敵人會直接死亡。"
+    },
+    "ZERNEAS_ZABUZA_KIJIN_NAME": {
+      "en": "Kirigakure no Kijin",
+      "zh-TW": "霧隱之鬼人"
+    },
+    "ZERNEAS_ZABUZA_KIJIN_DESCRIPTION": {
+      "en": "Become the demon for 12s (<style=cIsUtility>+1s per kill</style>, up to 24s): your mist goes with you, <style=cIsDamage>+30% attack speed</style>, <style=cIsHealing>15% lifesteal</style>, no stuns or knockback, and up to <style=cIsDamage>+50% damage</style> the lower your health.",
+      "zh-TW": "化身鬼人12秒（<style=cIsUtility>每次擊殺+1秒</style>，最多24秒）：霧氣會跟著你移動，<style=cIsDamage>+30%攻擊速度</style>、<style=cIsHealing>15%生命竊取</style>，不會被眩暈或擊退，而且生命值越低傷害越高，最多<style=cIsDamage>+50%傷害</style>。"
+    },
+    "ACHIEVEMENT_ZERNEASZABUZACLEARGAMEMONSOON_NAME": {
+      "en": "Zabuza: Mastery",
+      "zh-TW": "再不斬：精通"
+    },
+    "ACHIEVEMENT_ZERNEASZABUZACLEARGAMEMONSOON_DESCRIPTION": {
+      "en": "As Zabuza, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為再不斬，在季風難度下通關遊戲或抹除自己。"
+    }
+  }
+}

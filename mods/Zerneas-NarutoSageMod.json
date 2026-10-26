@@ -1,6 +1,6 @@
 {
   "mod": "Zerneas-NarutoSageMod",
-  "version": "0.32.0",
+  "version": "0.32.1",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",

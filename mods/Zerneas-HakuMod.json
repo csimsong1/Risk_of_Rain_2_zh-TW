@@ -1,0 +1,133 @@
+{
+  "mod": "Zerneas-HakuMod",
+  "version": "0.18.1",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
+    "ACHIEVEMENT_ 開頭的是解鎖造型的成就。",
+    "MIRROR_ 開頭的條目與 DOME_ENTER 是靠近冰鏡或冰鏡穹頂時畫面上的互動提示。",
+    "魔鏡冰晶（X）熟練度的提示，以及 Kizuna 羈絆模組（Zerneas-KizunaMod）的大廳、標題畫面、技能清單與羈絆說明，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
+  ],
+  "strings": {
+    "ZERNEAS_HAKU_NAME": {
+      "en": "Haku",
+      "zh-TW": "白"
+    },
+    "ZERNEAS_HAKU_DESCRIPTION": {
+      "en": "Haku fights from afar and from his ice mirrors: set them, go into them, strike out of all of them at once.<color=#CCD3E0>\r\n\r\n< ! > Every hit of your skills leaves an ice needle round you; the Sensatsu Suisho lets them all go.\r\n\r\n< ! > Set mirrors with your utility, then press Interact by one to go into it: from inside, every attack comes out of every mirror, and your utility passes you to another.\r\n\r\n< ! > With 3 mirrors near, X raises the dome of ice mirrors round your target. Strike its mirrors, or go into it and dance.\r\n\r\n< ! > Chakra control: hold Jump against a wall to run on it.\r\n\r\n",
+      "zh-TW": "白在遠處與他的冰鏡之中作戰：架起冰鏡、進入冰鏡，再從所有冰鏡同時出擊。<color=#CCD3E0>\r\n\r\n< ! >技能每命中一次，就會在你身邊留下一根冰針；千殺水翔會將它們全數射出。\r\n\r\n< ! >用輔助技能架起冰鏡，再到冰鏡旁按互動鍵進入：在冰鏡裡時，每次攻擊都會從每一面冰鏡射出，輔助技能則會帶你移到另一面冰鏡。\r\n\r\n< ! >附近有3面冰鏡時，按X鍵會在目標周圍升起冰鏡穹頂。攻擊穹頂的冰鏡，或進入穹頂起舞。\r\n\r\n< ! >查克拉控制：貼著牆按住跳躍鍵就能在牆上奔跑。\r\n\r\n"
+    },
+    "ZERNEAS_HAKU_SUBTITLE": {
+      "en": "The Demonic Ice Mirrors",
+      "zh-TW": "魔鏡冰晶"
+    },
+    "ZERNEAS_HAKU_LORE": {
+      "en": "The last of a clan hunted for its ice. Taken in by Zabuza, Haku became his weapon, and asked for nothing but to be of use to him.",
+      "zh-TW": "因冰遁而遭到追殺的一族最後的倖存者。被再不斬收留後，白成了他的武器，除了能對他有用之外，別無所求。"
+    },
+    "ZERNEAS_HAKU_OUTRO_FLAVOR": {
+      "en": "..and so Haku left, a tool that had found its own reason.",
+      "zh-TW": "……於是白離開了，這件工具找到了屬於自己的理由。"
+    },
+    "ZERNEAS_HAKU_OUTRO_FAILURE": {
+      "en": "..and so Haku fell, like snow that never reaches spring.",
+      "zh-TW": "……於是白倒下了，宛如等不到春天的雪。"
+    },
+    "ZERNEAS_HAKU_PASSIVE_NAME": {
+      "en": "Hyoton",
+      "zh-TW": "冰遁"
+    },
+    "ZERNEAS_HAKU_PASSIVE_DESCRIPTION": {
+      "en": "Every hit of your skills leaves an <style=cIsDamage>ice needle</style> round you (8s each, no limit; your senbon, one a throw; your mirrors, one a volley). Standing still, they don't melt. Your hits <style=cIsUtility>chill</style>: -25% speed.",
+      "zh-TW": "技能每命中一次，就會在你身邊留下一根<style=cIsDamage>冰針</style>（每根持續8秒，沒有上限；千本每次投擲留下一根，冰鏡每輪齊射留下一根）。保持靜止時冰針不會融化。你的攻擊會使敵人<style=cIsUtility>受寒</style>：移動速度-25%。"
+    },
+    "ZERNEAS_HAKU_PRIMARY_SENBON_NAME": {
+      "en": "Senbon",
+      "zh-TW": "千本"
+    },
+    "ZERNEAS_HAKU_PRIMARY_SENBON_DESCRIPTION": {
+      "en": "Throw 3 senbon for <style=cIsDamage>52%</style> each. From inside a mirror: every mirror throws 3 x <style=cIsDamage>40%</style> at the enemy nearest it. In the air, looking down: a <style=cIsDamage>dive kick</style>, <style=cIsDamage>330%</style> in 5m where you land.",
+      "zh-TW": "投擲3根千本，每根造成<style=cIsDamage>52%</style>傷害。在冰鏡裡時：每面冰鏡都會朝離它最近的敵人投擲3根，每根造成<style=cIsDamage>40%</style>傷害。在空中朝下看時改為<style=cIsDamage>俯衝踢</style>：在落地處半徑5米內造成<style=cIsDamage>330%</style>傷害。"
+    },
+    "ZERNEAS_HAKU_SECONDARY_SENSATSU_NAME": {
+      "en": "Sensatsu Suisho",
+      "zh-TW": "千殺水翔"
+    },
+    "ZERNEAS_HAKU_SECONDARY_SENSATSU_DESCRIPTION": {
+      "en": "A sphere of water needles closes on your target: <style=cIsDamage>400%</style> in 6m. Lets go every ice needle into it, <style=cIsDamage>+50%</style> each, and takes 1s off your other cooldowns.",
+      "zh-TW": "水針聚成的球體朝目標合攏：在半徑6米內造成<style=cIsDamage>400%</style>傷害。同時把所有冰針射向目標，每根<style=cIsDamage>+50%</style>，並使你其他技能的冷卻時間減少1秒。"
+    },
+    "ZERNEAS_HAKU_UTILITY_MIRROR_NAME": {
+      "en": "Ice Mirror",
+      "zh-TW": "冰鏡"
+    },
+    "ZERNEAS_HAKU_UTILITY_MIRROR_DESCRIPTION": {
+      "en": "Set an ice mirror where you aim. Up to 6: a new one bursts the oldest (<style=cIsDamage>150%</style>). <style=cIsUtility>Interact</style> by one to go into it: <style=cIsUtility>untouchable</style> for up to 6s; this key passes you to the mirror you aim at. 3 charges.",
+      "zh-TW": "在瞄準處架起一面冰鏡。最多6面：架起新冰鏡時，最舊的那面會碎裂爆開（<style=cIsDamage>150%</style>）。在冰鏡旁<style=cIsUtility>互動</style>即可進入：最多6秒內<style=cIsUtility>不會受到攻擊</style>；在冰鏡裡按這個鍵會移到你瞄準的冰鏡。3次充能。"
+    },
+    "ZERNEAS_HAKU_SPECIAL_TSUBAME_NAME": {
+      "en": "Tsubame Fubuki",
+      "zh-TW": "燕吹雪"
+    },
+    "ZERNEAS_HAKU_SPECIAL_TSUBAME_DESCRIPTION": {
+      "en": "8 swallows of ice hunt the enemy at your crosshair, each bursting for <style=cIsDamage>250%</style> damage in an area.",
+      "zh-TW": "8隻冰燕追擊準星對準的敵人，每隻爆開時對範圍造成<style=cIsDamage>250%</style>傷害。"
+    },
+    "ZERNEAS_HAKU_DOME_NAME": {
+      "en": "Makyo Hyosho",
+      "zh-TW": "魔鏡冰晶"
+    },
+    "ZERNEAS_HAKU_DOME_DESCRIPTION": {
+      "en": "Needs 3 of your mirrors near (each extra: +1s, +10%). A dome of ice mirrors traps your target and what's round it for 8s. Strike a mirror: the attack comes out of all of them. <style=cIsUtility>Interact</style> by one: you dance through every mirror, striking. It bursts inward at its end.",
+      "zh-TW": "附近需要有3面你的冰鏡（每多一面：+1秒、+10%）。冰鏡穹頂會困住目標與它周圍的敵人8秒。攻擊其中一面冰鏡：這次攻擊會從所有冰鏡射出。在冰鏡旁<style=cIsUtility>互動</style>：你會在每一面冰鏡之間穿梭攻擊。穹頂結束時會向內爆裂。"
+    },
+    "ZERNEAS_HAKU_MIRROR_ENTER": {
+      "en": "Go into the mirror",
+      "zh-TW": "進入冰鏡"
+    },
+    "ZERNEAS_HAKU_MIRROR_WAIT": {
+      "en": "The mirror isn't ready yet",
+      "zh-TW": "冰鏡還沒準備好"
+    },
+    "ZERNEAS_HAKU_DOME_ENTER": {
+      "en": "Dance of the mirrors",
+      "zh-TW": "冰鏡之舞"
+    },
+    "ZERNEAS_HAKU_MIRROR_TRAVEL": {
+      "en": "Pass to the marked mirror",
+      "zh-TW": "移到標示的冰鏡"
+    },
+    "ZERNEAS_HAKU_MIRROR_AIM": {
+      "en": "Aim at another mirror to pass to it",
+      "zh-TW": "瞄準另一面冰鏡即可移過去"
+    },
+    "ZERNEAS_HAKU_MIRROR_EXIT": {
+      "en": "Come out",
+      "zh-TW": "離開冰鏡"
+    },
+    "ZERNEAS_HAKU_MASK_SKIN_NAME": {
+      "en": "Hunter-nin",
+      "zh-TW": "追忍部隊"
+    },
+    "ZERNEAS_HAKU_KIMONO_SKIN_NAME": {
+      "en": "First Encounter",
+      "zh-TW": "初遇"
+    },
+    "ACHIEVEMENT_ZERNEASHAKUCLEARGAMEMONSOON_NAME": {
+      "en": "Haku: Mastery",
+      "zh-TW": "白：精通"
+    },
+    "ACHIEVEMENT_ZERNEASHAKUCLEARGAMEMONSOON_DESCRIPTION": {
+      "en": "As Haku, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為白，在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_ZERNEASHAKUCLEARMERIDIANEVENT_NAME": {
+      "en": "Haku: First Encounter",
+      "zh-TW": "白：初遇"
+    },
+    "ACHIEVEMENT_ZERNEASHAKUCLEARMERIDIANEVENT_DESCRIPTION": {
+      "en": "As Haku, defeat the False Son.",
+      "zh-TW": "作為白，打敗虛假子嗣。"
+    }
+  }
+}
