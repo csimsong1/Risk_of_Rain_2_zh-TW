@@ -1,0 +1,134 @@
+{
+  "mod": "The_Constellate-Shock_Trooper",
+  "version": "1.2.5",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的。"
+  ],
+  "strings": {
+    "GALE_GaleShockTrooper_NAME": {
+      "en": "Shock Trooper",
+      "zh-TW": "突擊兵"
+    },
+    "GALE_GaleShockTrooper_DESCRIPTION": {
+      "en": "Six and a half feet of saurian apex predator, your typical skorg Shock Trooper is a well-rounded and versatile soldier.  From tungsten-palladium steel armor to a small scale micro missile foundry in their arsenal, the Shock Trooper is prepared to face any conflict.<style=cSub>\r\n\r\n< ! > Thanks to the ingenious concept of mounting a solid steel plate in front of your face, Blast Shield protects you from explosions and high velocity shrapnel far more effectively than standard-issue armor.\r\n\r\n< ! > The PRD-12 Auto Shotgun is a versatile weapon, capable of handling enemies at medium to close range.  Each individual pellet can proc effects independently.\r\n\r\n< ! > Use your Micro Missiles to handle enemies at longer ranges.  They pack just enough punch to proc bands.\r\n\r\n< ! > Overdrive is incredibly useful in both evasive and aggressive maneuvers.  Overdrive can be used to dodge attacks with the right timing, or to even stun enemies that are readying a dangerous attack.\r\n\r\n< ! > Let your enemies know true fear with Easy Prey.  Fire a six-bore tungsten smart slug at an enemy and watch it bounce to several more monsters.  Especially effective when you’ve got a swarm of Blind Pests on your tail.",
+      "zh-TW": "身高六呎半的蜥類頂級掠食者——典型的斯科格突擊兵是一名全方位、多才多藝的士兵。從鎢鈀合金鋼裝甲，到軍火庫裡的小型微型導彈鑄造廠，突擊兵已做好面對任何衝突的準備。<style=cSub>\r\n\r\n< ! > 多虧了「在臉前裝一塊實心鋼板」這個天才構想，防爆盾抵擋爆炸與高速破片的效果遠勝於制式護甲。\r\n\r\n< ! > PRD-12自動霰彈槍是一把用途廣泛的武器，能應付中近距離的敵人。每一顆彈丸都能各自觸發效果。\r\n\r\n< ! > 用微型導彈對付較遠距離的敵人。它們的威力剛好足以觸發手環。\r\n\r\n< ! > 超速驅動無論用來閃避還是進攻都極為實用。只要時機抓得準，超速驅動就能躲開攻擊，甚至能眩暈正在準備危險攻擊的敵人。\r\n\r\n< ! > 用囊中之物讓敵人見識真正的恐懼。朝敵人發射一枚六號口徑的鎢製智慧獨頭彈，看著它在更多怪物之間彈射。被一大群盲蟲緊追不放時特別有效。"
+    },
+    "GALE_GaleShockTrooper_SUBTITLE": {
+      "en": "Interstellar Bounty Hunter",
+      "zh-TW": "星際賞金獵人"
+    },
+    "GALE_GaleShockTrooper_LORE": {
+      "en": "A lone skorg sits against a rock, gazing up at the night sky.  The grass ripples like water from a gentle breeze.  A human approaches and sits next to him.\n\n“Never thought of your species as the meditative kind,” spoke the human.\n\n“Earth is much more temperate than Sabbides,” the skorg responded.\n\nThe human nods, aware of the muggy, volcanic jungles the skorg originates from.  A few minutes pass as the two continue to stargaze.  The human then speaks again.\n\n“You’re thinking of going, aren’t you?”\n\nThe skorg nods.  The human speaks again.\n\n“You really shouldn’t.  I’ve read the same reports you have.  It’s a shitshow down there.“\n\nThe skorg takes a deep breath.  Then he sighs.\n\n“A bounty this big could save the resistance.  We could finally turn the tide on this stupid war my people are fighting.”\n\nThe human shakes his head in disappointment, but understands from experience.  He stands, changing the subject to a lighter tone.\n\n“Regardless, you should hurry to the mess hall with me.  I know you’re not a fan of lab grown meat, but you’ve gotta try the printed bighorn steaks.”\n\nThe human receives no response.  He turns and leaves without any further words.  A moment passes, then the skorg stands, his yellow-eyed gaze fixed on stars only he can see.  He closes his eyes, envisioning the stars awash with pink.  A tailwind blows across his spiracles, carrying a damp, earthy scent from the symbiotic moss on his scales.  With a sigh, he opens his eyes again and speaks a single word.\n\n“P e t r i c h o r .”",
+      "zh-TW": "一名孤身的斯科格人倚著岩石而坐，仰望夜空。微風輕拂，草地如水面般泛起漣漪。一名人類走近，在他身旁坐下。\n\n「我從沒想過你們這個種族也會靜下來冥想。」人類說。\n\n「地球的氣候比薩比德斯溫和多了。」斯科格人回答。\n\n人類點點頭，他知道斯科格人來自悶熱潮濕的火山叢林。幾分鐘過去，兩人繼續凝望星空。接著，人類再度開口。\n\n「你在考慮要去，對吧？」\n\n斯科格人點點頭。人類又說：\n\n「你真的不該去。你看過的報告我也都看過了。那底下簡直是一團糟。」\n\n斯科格人深吸一口氣，接著嘆了出來。\n\n「這麼大一筆賞金，足以拯救反抗軍。我們終於能扭轉局勢，結束我的族人正在打的這場愚蠢戰爭。」\n\n人類失望地搖搖頭，但憑著過往的經驗，他能理解。他站起身，把話題轉向輕鬆一些的方向。\n\n「不管怎樣，你該跟我一起趕快去餐廳了。我知道你不愛實驗室培養的肉，但你一定要嚐嚐看列印出來的大角羊排。」\n\n人類沒有得到回應。他轉身離開，沒再多說什麼。片刻之後，斯科格人站起身，那雙黃色的眼睛凝視著只有他看得見的星辰。他閉上雙眼，想像群星浸染在一片粉紅之中。一陣風從背後拂過他的氣孔，帶來他鱗片上共生苔蘚那潮濕的泥土氣息。他嘆了口氣，再度睜開雙眼，說出了一個詞。\n\n「瓊……泥……」"
+    },
+    "GALE_GaleShockTrooper_OUTRO_FLAVOR": {
+      "en": "..and so he left, drawing lines between pink stars.",
+      "zh-TW": "……於是他走了，在粉紅的星辰之間畫下連線。"
+    },
+    "GALE_GaleShockTrooper_OUTRO_FAILURE": {
+      "en": "..and so he vanished, a star dimming in the night sky.",
+      "zh-TW": "……於是他就這樣消逝了，如夜空中一顆逐漸黯淡的星。"
+    },
+    "GALE_GaleShockTrooper_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR": {
+      "en": "..and so he vanished, a star dimming in the night sky.",
+      "zh-TW": "……於是他就這樣消逝了，如夜空中一顆逐漸黯淡的星。"
+    },
+    "GALE_GaleShockTrooper_MASTERY_SKIN_NAME": {
+      "en": "Aeron",
+      "zh-TW": "艾隆"
+    },
+    "GALE_GaleShockTrooper_PASSIVE_NAME": {
+      "en": "Blast Shield",
+      "zh-TW": "防爆盾"
+    },
+    "GALE_GaleShockTrooper_PASSIVE_DESCRIPTION": {
+      "en": "The Shock Trooper takes <style=cIsUtility>33% reduced damage</style> against <style=cIsDamage>projectiles</style>, <style=cIsDamage>blasts</style>, and <style=cIsDamage>bullets</style> from the <style=cIsUtility>front</style>.",
+      "zh-TW": "突擊兵受到來自<style=cIsUtility>正面</style>的<style=cIsDamage>投射物</style>、<style=cIsDamage>爆炸</style>與<style=cIsDamage>子彈</style>傷害<style=cIsUtility>降低33%</style>。"
+    },
+    "GALE_GaleShockTrooper_PRIMARY_NAME": {
+      "en": "PRD-12 Auto Shotgun",
+      "zh-TW": "PRD-12自動霰彈槍"
+    },
+    "GALE_GaleShockTrooper_PRIMARY_DESCRIPTION": {
+      "en": "Fire a shotgun blast for <style=cIsDamage>5x40%</style> damage.",
+      "zh-TW": "以霰彈槍射擊，造成<style=cIsDamage>5x40%</style>傷害。"
+    },
+    "GALE_GaleShockTrooper_SECONDARY_NAME": {
+      "en": "Micro Missiles",
+      "zh-TW": "微型導彈"
+    },
+    "GALE_GaleShockTrooper_SECONDARY_DESCRIPTION": {
+      "en": "Enter <style=cIsUtility>target painting mode</style> to launch heat-seeking missiles that deal <style=cIsDamage>400% damage</style> each. Can store up to 6.",
+      "zh-TW": "進入<style=cIsUtility>目標標記模式</style>以發射熱追蹤導彈，每發造成<style=cIsDamage>400%傷害</style>。最多可儲存6發。"
+    },
+    "GALE_GaleShockTrooper_SECONDARY_STICKY_NAME": {
+      "en": "Thqwib Bomb",
+      "zh-TW": "腦花水母炸彈"
+    },
+    "GALE_GaleShockTrooper_SECONDARY_STICKY_DESCRIPTION": {
+      "en": "Throw a Thqwib-mounted bomb that explodes for <style=cIsDamage>600% damage</style> and <style=cIsDamage>triggers on-kill effects</style>.",
+      "zh-TW": "投擲一顆綁在腦花水母身上的炸彈，爆炸時造成<style=cIsDamage>600%傷害</style>，並<style=cIsDamage>觸發擊殺時效果</style>。"
+    },
+    "GALE_GaleShockTrooper_UTILITY_NAME": {
+      "en": "Overdrive",
+      "zh-TW": "超速驅動"
+    },
+    "GALE_GaleShockTrooper_UTILITY_DESCRIPTION": {
+      "en": "<style=cIsDamage>Shocking</style>. <style=cIsUtility>Dash</style> a short distance while electrocuting nearby enemies for <style=cIsDamage>100% damage</style>.",
+      "zh-TW": "<style=cIsDamage>震盪</style>。<style=cIsUtility>衝刺</style>一小段距離，同時電擊附近的敵人，造成<style=cIsDamage>100%傷害</style>。"
+    },
+    "GALE_GaleShockTrooper_SPECIAL_NAME": {
+      "en": "Easy Prey",
+      "zh-TW": "囊中之物"
+    },
+    "GALE_GaleShockTrooper_SPECIAL_DESCRIPTION": {
+      "en": "Fire a slug for <style=cIsDamage>3000% damage</style>. Upon hitting an enemy, <style=cIsDamage>ricochets</style> to up to <style=cIsDamage>9</style> additional targets.",
+      "zh-TW": "發射一枚獨頭彈，造成<style=cIsDamage>3000%傷害</style>。命中敵人後，會<style=cIsDamage>彈射</style>至最多<style=cIsDamage>9</style>個額外目標。"
+    },
+    "GALE_GaleShockTrooper_SPECIAL_DRONE_NAME": {
+      "en": "SC4R-4B Hunter Killer Drone",
+      "zh-TW": "SC4R-4B獵殺無人機"
+    },
+    "GALE_GaleShockTrooper_SPECIAL_DRONE_DESCRIPTION": {
+      "en": "Deploy a drone that <style=cIsUtility>inherits all your items</style>. Attacks enemies for <style=cIsDamage>2x100% damage</style>.",
+      "zh-TW": "部署一架<style=cIsUtility>繼承你所有物品</style>的無人機。攻擊敵人時造成<style=cIsDamage>2x100%傷害</style>。"
+    },
+    "GALE_GaleShockTrooperDrone_NAME": {
+      "en": "Hunter Drone",
+      "zh-TW": "獵手無人機"
+    },
+    "ACHIEVEMENT_GALE_GALESHOCKTROOPER_UNLOCKACHIEVEMENT_NAME": {
+      "en": "Competitive Contracts",
+      "zh-TW": "競爭合約"
+    },
+    "ACHIEVEMENT_GALE_GALESHOCKTROOPER_UNLOCKACHIEVEMENT_DESCRIPTION": {
+      "en": "Beat a competitor to his bounty on the Moon.",
+      "zh-TW": "在月球上搶先競爭對手一步，拿下他的賞金目標。"
+    },
+    "ACHIEVEMENT_GALE_GALESHOCKTROOPER_MASTERYACHIEVEMENT_NAME": {
+      "en": "Shock Trooper: Mastery",
+      "zh-TW": "突擊兵：精通"
+    },
+    "ACHIEVEMENT_GALE_GALESHOCKTROOPER_MASTERYACHIEVEMENT_DESCRIPTION": {
+      "en": "As the Shock Trooper, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為突擊兵，在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_GALE_GALESHOCKTROOPER_STICKYACHIEVEMENT_NAME": {
+      "en": "Shock Trooper: Demolitions Expert",
+      "zh-TW": "突擊兵：爆破專家"
+    },
+    "ACHIEVEMENT_GALE_GALESHOCKTROOPER_STICKYACHIEVEMENT_DESCRIPTION": {
+      "en": "As the Shock Trooper, kill 200 enemies with explosives in a single run.",
+      "zh-TW": "作為突擊兵，在一輪遊戲中用爆裂物擊殺200名敵人。"
+    },
+    "ACHIEVEMENT_GALE_GALESHOCKTROOPER_DRONEACHIEVEMENT_NAME": {
+      "en": "Shock Trooper: Reverse Engineering",
+      "zh-TW": "突擊兵：逆向工程"
+    },
+    "ACHIEVEMENT_GALE_GALESHOCKTROOPER_DRONEACHIEVEMENT_DESCRIPTION": {
+      "en": "As the Shock Trooper, escape the Moon while carrying the Fuel Array.",
+      "zh-TW": "作為突擊兵，攜帶燃料組件逃離月球。"
+    }
+  }
+}

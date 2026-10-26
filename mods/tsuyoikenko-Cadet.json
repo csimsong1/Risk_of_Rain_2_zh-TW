@@ -1,0 +1,120 @@
+{
+  "mod": "tsuyoikenko-Cadet",
+  "version": "1.1.11",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的。",
+    "技能說明裡的數字（傷害%、彈藥量、秒數等）來自模組設定的預設值；模組的英文會跟著設定變，譯文是固定的，改過設定請一併修改。",
+    "鍵是英文句子的條目：模組直接把那段英文當語言 token 使用，沒有另外註冊，所以用英文原文當鍵來翻譯；原文改一個字就會對不上。靈巧的關鍵字說明屬於這一類。"
+  ],
+  "strings": {
+    "KENKO_CADET_NAME": {
+      "en": "Cadet",
+      "zh-TW": "軍校生"
+    },
+    "KENKO_CADET_DESCRIPTION": {
+      "en": "The Cadet is a versatile gunner who is able to weave through combat with close range weapons and quick mobility.<color=#CCD3E0>\r\n\r\n< ! > Make sure to Shoot at a close distance to effectively use your limited ammo count without decreasing your damage.\r\n\r\n< ! > Plan C increases its damage and radius with your current ammo so make sure to use it when your magazine is full.\r\n\r\n< ! > Use Replenshing Roll to swiftly avoid burst damage and to fully restock your magazine.\r\n\r\n< ! > Try to use Echo Drones as often as you can as it will help clear out any enemies you may have missed while on the move.\r\n\r\n",
+      "zh-TW": "軍校生是一名多才多藝的槍手，能憑藉近距離武器與迅捷的機動性在戰場中穿梭自如。<color=#CCD3E0>\r\n\r\n< ! > 務必在近距離射擊，才能有效運用有限的彈藥，又不會降低傷害。\r\n\r\n< ! > C計畫的傷害與範圍會隨目前的彈藥量提高，所以請在彈匣全滿時使用。\r\n\r\n< ! > 使用補給翻滾可以迅速躲開爆發傷害，並把彈匣完全補滿。\r\n\r\n< ! > 盡可能頻繁地使用回聲無人機，它能幫你清掉移動時漏掉的敵人。\r\n\r\n"
+    },
+    "KENKO_CADET_SUBTITLE": {
+      "en": "Aspiring Soldier",
+      "zh-TW": "胸懷抱負的士兵"
+    },
+    "KENKO_CADET_LORE": {
+      "en": "\"Have you ever thought about making a difference in this world? Do you believe you're destined for honor-bound glory? Does your body ache for the adrenaline rush that only life-threatening situations provide? If you answered yes to any of these questions, then consider joining our ranks!\"\r\n\r\nThe barely audible television played in the shelter, a new addition. Perfectly placed in the middle, it was the center of attention to the young impressionable eyes of the area with nothing to lose. Some of them came quickly, automatically entranced by the promise of something better than whatever they called their current situation. Others tried to hold out, fearful of the idea of a military life, although one can only hold out for so long before they don't have any other options left but to swallow whatever complaints they have and roll with it.\r\n\r\nThe rest of them? They either got with the program, or got crushed under the city's rubble. Indecisiveness isn't an option, not in this age at least.\r\n\r\n\"And remember, you'll always have a place here! Visit your local recruitment center today! See you soon, soldier!\"\r\n\r\nYeah. Not an option, never has been.\r\n",
+      "zh-TW": "「你是否曾想過要改變這個世界？你是否相信自己註定要贏得以榮譽為誓的榮光？你的身體是否渴望著唯有生死關頭才能帶來的腎上腺素？只要以上任何一題你的答案是肯定的，那就考慮加入我們的行列吧！」\r\n\r\n避難所裡那臺新添的電視正播放著，聲音小得幾乎聽不見。它被擺在正中央，恰到好處，成了這一帶那些一無所有、容易受人左右的年輕目光所注視的焦點。有些人很快就來了，對那份承諾一下子著了迷——無論他們怎麼稱呼眼下的處境，那份承諾聽起來都比它好。另一些人則試著撐下去，害怕軍旅生活；但人能撐的時間終究有限，到頭來除了把滿腹牢騷吞下肚、隨波逐流之外，再也別無選擇。\r\n\r\n剩下的那些人呢？他們要不乖乖就範，要不就被埋在城市的瓦礫底下。猶豫不決不是選項，至少在這個時代不是。\r\n\r\n「別忘了，這裡永遠有你的一席之地！今天就到你當地的招募中心報到吧！很快就會再見了，士兵！」\r\n\r\n是啊。不是選項，從來都不是。\r\n"
+    },
+    "KENKO_CADET_OUTRO_FLAVOR": {
+      "en": "and he left, an echo of his past self.",
+      "zh-TW": "於是他走了，成了過去那個自己的回聲。"
+    },
+    "KENKO_CADET_OUTRO_FAILURE": {
+      "en": "and he vanished, a waste of passion.",
+      "zh-TW": "於是他消逝了，一腔熱血就此白費。"
+    },
+    "KENKO_CADET_MASTERY_SKIN_NAME": {
+      "en": "Lieutenant",
+      "zh-TW": "中尉"
+    },
+    "KENKO_CADET_PASSIVE_DESCRIPTION": {
+      "en": ".",
+      "zh-TW": "。"
+    },
+    "KENKO_CADET_PRIMARY_SMG_NAME": {
+      "en": "Bullet Storm",
+      "zh-TW": "子彈風暴"
+    },
+    "KENKO_CADET_PRIMARY_SMG_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile</style>. Fire a laser for <style=cIsDamage>60% damage</style>. Requires a <style=cIsUtility>reload</style> after <style=cIsDamage>20</style> bullets.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。發射一道雷射，造成<style=cIsDamage>60%傷害</style>。每發射<style=cIsDamage>20</style>發子彈需要<style=cIsUtility>上彈</style>。"
+    },
+    "KENKO_CADET_PRIMARY_SHOTGUN_NAME": {
+      "en": "Crashing Tides",
+      "zh-TW": "驚濤拍岸"
+    },
+    "KENKO_CADET_PRIMARY_SHOTGUN_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile</style>. Fire a burst for <style=cIsDamage>3x100% damage</style>. Requires a <style=cIsUtility>reload</style> after <style=cIsDamage>10</style> bullets.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。發射一輪連射，造成<style=cIsDamage>3x100%傷害</style>。每發射<style=cIsDamage>10</style>發子彈需要<style=cIsUtility>上彈</style>。"
+    },
+    "KENKO_CADET_SECONDARY_THROWGUN_NAME": {
+      "en": "Plan C",
+      "zh-TW": "C計畫"
+    },
+    "KENKO_CADET_SECONDARY_THROWGUN_DESCRIPTION": {
+      "en": "Throw your gun dealing <style=cIsDamage>250 - 750% damage</style> based on your current ammo.",
+      "zh-TW": "把你的槍扔出去，依目前的彈藥量造成<style=cIsDamage>250 - 750%傷害</style>。"
+    },
+    "KENKO_CADET_SECONDARY_GRENADE_NAME": {
+      "en": "Plan B",
+      "zh-TW": "B計畫"
+    },
+    "KENKO_CADET_SECONDARY_GRENADE_DESCRIPTION": {
+      "en": "Fire your lightweight grenade launcher dealing <style=cIsDamage>400% damage</style>.",
+      "zh-TW": "以輕型榴彈發射器開火，造成<style=cIsDamage>400%傷害</style>。"
+    },
+    "KENKO_CADET_UTILITY_ROLLOAD_NAME": {
+      "en": "Replenishing Roll",
+      "zh-TW": "補給翻滾"
+    },
+    "KENKO_CADET_UTILITY_ROLLOAD_DESCRIPTION": {
+      "en": "Roll in a direction instantly <style=cIsUtility>reloading</style> your gun.",
+      "zh-TW": "朝一個方向翻滾，並立即為你的槍<style=cIsUtility>上彈</style>。"
+    },
+    "KENKO_CADET_UTILITY_SLIDE_NAME": {
+      "en": "Restocking Reposition",
+      "zh-TW": "補彈換位"
+    },
+    "KENKO_CADET_UTILITY_SLIDE_DESCRIPTION": {
+      "en": "Slide in a direction instantly <style=cIsUtility>reloading</style> your gun.",
+      "zh-TW": "朝一個方向滑行，並立即為你的槍<style=cIsUtility>上彈</style>。"
+    },
+    "KENKO_CADET_SPECIAL_ULTRA_NAME": {
+      "en": "Plan A",
+      "zh-TW": "A計畫"
+    },
+    "KENKO_CADET_SPECIAL_ULTRA_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile</style>. Fire a heavy burst of pellets, dealing <style=cIsDamage>32x150% damage</style>.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。發射一陣密集的彈丸，造成<style=cIsDamage>32x150%傷害</style>。"
+    },
+    "KENKO_CADET_SPECIAL_ECHO_NAME": {
+      "en": "Echo Drones",
+      "zh-TW": "回聲無人機"
+    },
+    "KENKO_CADET_SPECIAL_ECHO_DESCRIPTION": {
+      "en": "Fabricate <style=cIsDamage>two drones</style> that seek out nearby enemies dealing <style=cIsDamage>2x370% damage</style>.",
+      "zh-TW": "製造<style=cIsDamage>兩架無人機</style>，追蹤附近的敵人並造成<style=cIsDamage>2x370%傷害</style>。"
+    },
+    "ACHIEVEMENT_KENKO_CADET_MASTERYACHIEVEMENT_NAME": {
+      "en": "Cadet: Mastery",
+      "zh-TW": "軍校生：精通"
+    },
+    "ACHIEVEMENT_KENKO_CADET_MASTERYACHIEVEMENT_DESCRIPTION": {
+      "en": "As Cadet, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為軍校生，在季風難度下通關遊戲或抹除自己。"
+    },
+    "<style=cKeywordName>Agile</style><style=cSub>The skill can be used while sprinting.</style>": {
+      "en": "<style=cKeywordName>Agile</style><style=cSub>The skill can be used while sprinting.</style>",
+      "zh-TW": "<style=cKeywordName>靈巧</style><style=cSub>該技能可在奔跑時使用。</style>"
+    }
+  }
+}

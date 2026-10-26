@@ -1,0 +1,316 @@
+{
+  "mod": "EnforcerGang-MinerUnearthed",
+  "version": "1.10.1",
+  "loader": "r2api",
+  "notes": [
+    "模組自帶語言檔（language/en、language/zh-CN 等），依遊戲的語言名稱載入同名資料夾；沒有 zh-TW 資料夾，選繁體中文時會顯示英文，所以另外用 R2API 語言檔補上。",
+    "英文取自 language/en（Digger.txt、DiggerUnlocks.txt、Misc.txt）；有簡體翻譯的條目以它轉成繁體後對照英文修訂，其餘由英文翻譯。",
+    "Misc.txt 是首領 Direseeker 與 Fatacrid 的文字；Fatacrid 的名稱在英文檔裡就是西班牙文（Perro Grande）。"
+  ],
+  "strings": {
+    "MINER_NAME": {
+      "en": "Miner",
+      "zh-TW": "礦工"
+    },
+    "MINER_DESCRIPTION": {
+      "en": "The Miner is a fast paced and highly mobile melee survivor who prioritizes getting long kill combos to build stacks of his passive.<color=#CCD3E0>\n\n< ! > Once you get a good number of stacks of Adrenaline, Gouge and Crush will be your best source of damage.\n\n< ! > Charging Drill Charge only affects damage dealt. Aim at the ground or into enemies to deal concentrated damage.\n\n< ! > You can tap Backblast to travel a short distance. Hold it to go further.\n\n< ! > To The Stars can deal high damage to large enemies.",
+      "zh-TW": "礦工是一名節奏明快、機動性極高的近戰倖存者，專注於打出長串連殺，以累積被動技能的層數。<color=#CCD3E0>\n\n< ! > 累積相當層數的腎上腺素後，鑿擊和粉碎將成為你最主要的傷害來源。\n\n< ! > 鑽頭衝鋒的蓄力只會影響造成的傷害。瞄準地面或朝敵人衝去，就能造成集中的傷害。\n\n< ! > 輕按反衝爆破可以移動一小段距離，按住則能移動得更遠。\n\n< ! > 飛向星辰能對大型敵人造成高額傷害。"
+    },
+    "MINER_SUBTITLE": {
+      "en": "Destructive Drug Addict",
+      "zh-TW": "破壞狂癮君子"
+    },
+    "MINER_LORE": {
+      "en": "\nAmong the cold steel of the freighter's ruins and the air of the freezing night, the dim blue light of an audio journal catches your eye. The journal lies in utter disrepair among the remains of the cargo, and yet it persists, remaining functional. The analog buttons on the device's casing pulse slowly, as if inviting anybody to listen to their warped entries, ever-decaying in coherency...\n\n<color=#8990A7><CLICK></color>\n\n<color=#8990A7>/ / - - L  O  G     1 - - / /</color>\n''First log. Date, uhhh... Oh-five, oh-one, twenty-fifty-five. Brass decided to pull us out of the mining job. After months of digging, after months of blood, swe<color=#8990A7>-///////-</color>nd millions spent on this operation, we're just dropping it? Bull<color=#8990A7>-//-</color>.''\n\n<color=#8990A7>/ / - - L  O  G     5 - - / /</color>\n''<color=#8990A7>-////////-</color>nter of the asteroid. I've never seen anything like it. It was like a dr<color=#8990A7>-////////-</color>nd fractal... The inside is almost like a kaleidoscope. It's gotta be worth<color=#8990A7>-/////-</color>nd brass wants us gone, ASAP. Well, they can kiss m<color=#8990A7>-////-</color>. And I'm going out there tonight to dig the rest of it out... If I can fence this, the next thousand paychecks won't hold a candle. I've been waiting for an opportunity like this.''\n\n<color=#8990A7>/ / - - L  O  G     7 - - / /</color>\n''Pretty sure they know everything. They're questioning people now. I stashed the artifact in a vent in<color=#8990A7>-//////-</color>, should be safe. Freighter called the UE<color=#8990A7>-////-</color>t's docking in a few months. I just have to hold out and sneak on.''\n\n<color=#8990A7>/ / - - L  O  G     15 - - / /</color>\n''They're looking for me. Not long before they find me. Hiding in the walls of the ship like a f<color=#8990A7>-//////-</color>rat. Freighter's off schedule. I gave everything for this. I gave <i>everything</i> for this.''\n\n<color=#8990A7>/ / - - L  O  G     16 - - / /</color>\n''Somewhere in the hull. Nobody comes back here. Not even maintenance. I should be safe until the ship arrives.''\n\n<color=#8990A7>/ / - - L  O  G     18 - - / /</color>\n''Ship still on hold. Can't get an idea of when it won't be.'' <color=#8990A7><Groan>.</color> ''This is ago<color=#8990A7>-//-</color>zing.''\n\n <color=#8990A7>/ / - - L  O  G     29 - - / /</color>\n''<color=#8990A7>-//////////-</color>'s here. Finally. Finally. Have to get the artifact on board. Security everywhere, though. Mercs...'' <color=#8990A7><Distant voices have an indiscernible conversation.></color> ''Okay. Shut up. Shut up and go. I'm going. Going. Tonight.''\n\n <color=#8990A7>/ / - - L  O  G     31 - - / /</color>\n''<color=#8990A7>-//////-</color>omething's happening to the ship. Cargo flying out. Lost the artifact. Lost everything. . . . Lost everythi<color=#8990A7>-//-</color>.''\n\nThe audio journal's screen sparks and pops, leaving you in complete darkness, complemented by the deafening silence brought about by the ominous last words of the miner.",
+      "zh-TW": "\n在貨輪殘骸的冰冷鋼鐵與凍人的夜風之間，一臺語音日誌發出的微弱藍光吸引了你的目光。日誌躺在散落的貨物殘骸中，早已殘破不堪，卻依然頑強地運作著。裝置外殼上的實體按鈕緩緩明滅，彷彿在邀請任何人聆聽那些扭曲的紀錄，而那些紀錄正一點一滴地崩解，愈來愈難以辨識……\n\n<color=#8990A7><CLICK></color>\n\n<color=#8990A7>/ / - - L  O  G     1 - - / /</color>\n「第一篇日誌。日期，呃……零五、零一、二零五五。高層決定把我們從採礦工作撤下來。挖了好幾個月，流了好幾個月的血、汗<color=#8990A7>-///////-</color>幾百萬砸在這次行動上，結果就這樣放棄？狗<color=#8990A7>-//-</color>。」\n\n<color=#8990A7>/ / - - L  O  G     5 - - / /</color>\n「<color=#8990A7>-////////-</color>小行星的核心。我從沒見過那種東西。它就像晶<color=#8990A7>-////////-</color>和碎形……內部簡直就像萬花筒。這玩意兒肯定值<color=#8990A7>-/////-</color>高層卻要我們盡快滾蛋。哼，他們可以去親我的<color=#8990A7>-////-</color>。我今晚就要出去，把剩下的部分挖出來……要是能把這東西銷贓脫手，往後一千份薪水加起來都比不上。我一直在等這樣的機會。」\n\n<color=#8990A7>/ / - - L  O  G     7 - - / /</color>\n「我很確定他們什麼都知道了。他們現在正在一個個盤問。我把神器藏在<color=#8990A7>-//////-</color>的通風口裡，應該很安全。有艘貨輪叫尤伊<color=#8990A7>-////-</color>幾個月後會來停靠。我只要撐下去，再偷偷溜上船就好。」\n\n<color=#8990A7>/ / - - L  O  G     15 - - / /</color>\n「他們在找我。過不了多久就會找到我。我像隻該<color=#8990A7>-//////-</color>老鼠一樣躲在船的夾牆裡。貨輪誤點了。我為了這東西付出了一切。我為了這東西付出了<i>一切</i>。」\n\n<color=#8990A7>/ / - - L  O  G     16 - - / /</color>\n「船體裡的某個角落。沒有人會來這裡，連維修人員都不會。在那艘船抵達之前，我應該都很安全。」\n\n<color=#8990A7>/ / - - L  O  G     18 - - / /</color>\n「船還在延期。完全不知道什麼時候才會出發。」<color=#8990A7><Groan>。</color>「這真是煎<color=#8990A7>-//-</color>熬。」\n\n <color=#8990A7>/ / - - L  O  G     29 - - / /</color>\n「<color=#8990A7>-//////////-</color>到了。終於。終於到了。得把神器弄上船才行。不過到處都是保全，還有傭兵……」<color=#8990A7><Distant voices have an indiscernible conversation.></color>「好。閉嘴。閉嘴，快走。我要走了。這就走。就今晚。」\n\n <color=#8990A7>/ / - - L  O  G     31 - - / /</color>\n「<color=#8990A7>-//////-</color>船出事了。貨物都飛出去了。神器弄丟了。全都沒了。……全都沒<color=#8990A7>-//-</color>。」\n\n語音日誌的螢幕迸出火花，啪的一聲熄滅，將你留在一片徹底的黑暗之中；隨之而來的，是礦工那不祥的遺言過後，震耳欲聾的寂靜。"
+    },
+    "MINER_OUTRO_FLAVOR": {
+      "en": "..and so he left, adrenaline still rushing through his veins.",
+      "zh-TW": "……於是他走了，腎上腺素仍在他的血管中奔騰。"
+    },
+    "MINER_PASSIVE_NAME": {
+      "en": "Gold Rush",
+      "zh-TW": "淘金熱"
+    },
+    "MINER_PASSIVE_DESCRIPTION": {
+      "en": "Gain <style=cIsHealth>ADRENALINE</style> when receiving gold, increasing <style=cIsDamage>attack speed</style>, <style=cIsUtility>movement speed</style>, and <style=cIsHealing>health regen</style>.",
+      "zh-TW": "獲得金錢時會得到<style=cIsHealth>腎上腺素</style>，提升<style=cIsDamage>攻擊速度</style>、<style=cIsUtility>移動速度</style>和<style=cIsHealing>生命值再生</style>。"
+    },
+    "KEYWORD_CLEAVING": {
+      "en": "<style=cKeywordName>Cleaving</style><style=cSub>Applies a stacking debuff that lowers <style=cIsDamage>armor</style> by <style=cIsHealth>3 per stack</style>.</style>",
+      "zh-TW": "<style=cKeywordName>劈裂</style><style=cSub>施加可疊加的減益效果，使<style=cIsDamage>護甲</style><style=cIsHealth>每層降低3點</style>。</style>"
+    },
+    "MINER_PRIMARY_GOUGE_NAME": {
+      "en": "Gouge",
+      "zh-TW": "鑿擊"
+    },
+    "MINER_PRIMARY_GOUGE_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile.</style> Wildly swing at nearby enemies for <style=cIsDamage>270% damage</style>, <style=cIsHealth>cleaving</style> their armor.",
+      "zh-TW": "<style=cIsUtility>靈巧。</style>朝附近的敵人瘋狂揮擊，造成<style=cIsDamage>270%傷害</style>，並<style=cIsHealth>劈裂</style>其護甲。"
+    },
+    "MINER_PRIMARY_CRUSH_NAME": {
+      "en": "Crush",
+      "zh-TW": "粉碎"
+    },
+    "MINER_PRIMARY_CRUSH_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile.</style> Crush nearby enemies for <style=cIsDamage>360% damage</style>. <style=cIsUtility>Range increases with attack speed</style>.",
+      "zh-TW": "<style=cIsUtility>靈巧。</style>粉碎附近的敵人，造成<style=cIsDamage>360%傷害</style>。<style=cIsUtility>攻擊範圍隨攻擊速度增加</style>。"
+    },
+    "MINER_SECONDARY_CHARGE_NAME": {
+      "en": "Drill Charge",
+      "zh-TW": "鑽頭衝鋒"
+    },
+    "MINER_SECONDARY_CHARGE_DESCRIPTION": {
+      "en": "Charge up and dash into enemies for up to <style=cIsDamage>6x180% damage</style>. <style=cIsUtility>You cannot be hit for the duration.</style>",
+      "zh-TW": "蓄力後衝向敵人，最多造成<style=cIsDamage>6x180%傷害</style>。<style=cIsUtility>技能持續期間不會被擊中。</style>"
+    },
+    "MINER_SECONDARY_BREAK_NAME": {
+      "en": "Crack Hammer",
+      "zh-TW": "裂石錘"
+    },
+    "MINER_SECONDARY_BREAK_DESCRIPTION": {
+      "en": "Dash forward, exploding for <style=cIsDamage>2x240% damage</style> on contact with an enemy. <style=cIsUtility>You cannot be hit for the duration.</style>",
+      "zh-TW": "向前衝刺，接觸到敵人時引發爆炸，造成<style=cIsDamage>2x240%傷害</style>。<style=cIsUtility>技能持續期間不會被擊中。</style>"
+    },
+    "MINER_UTILITY_BACKBLAST_NAME": {
+      "en": "Backblast",
+      "zh-TW": "反衝爆破"
+    },
+    "MINER_UTILITY_BACKBLAST_DESCRIPTION": {
+      "en": "<style=cIsDamage>Stunning.</style> Blast backwards, hitting nearby enemies for <style=cIsDamage>600% damage</style>. Hold to travel further. <style=cIsUtility>You cannot be hit for the duration.</style>",
+      "zh-TW": "<style=cIsDamage>眩暈。</style>向後爆衝，對附近的敵人造成<style=cIsDamage>600%傷害</style>。按住可移動得更遠。<style=cIsUtility>技能持續期間不會被擊中。</style>"
+    },
+    "MINER_UTILITY_CAVEIN_NAME": {
+      "en": "Cave In",
+      "zh-TW": "坍方"
+    },
+    "MINER_UTILITY_CAVEIN_DESCRIPTION": {
+      "en": "<style=cIsUtility>Stunning.</style> Blast backwards, <style=cIsUtility>pulling</style> in all enemies in a large radius. <style=cIsUtility>You cannot be hit for the duration.</style>",
+      "zh-TW": "<style=cIsUtility>眩暈。</style>向後爆衝，將大範圍內的所有敵人<style=cIsUtility>拉過來</style>。<style=cIsUtility>技能持續期間不會被擊中。</style>"
+    },
+    "MINER_SPECIAL_TOTHESTARSCLASSIC_NAME": {
+      "en": "To The Stars",
+      "zh-TW": "飛向星辰"
+    },
+    "MINER_SPECIAL_TOTHESTARSCLASSIC_DESCRIPTION": {
+      "en": "Jump into the air, hitting enemies directly below for <style=cIsDamage>6x300% damage</style>.",
+      "zh-TW": "躍向空中，攻擊正下方的敵人，造成<style=cIsDamage>6x300%傷害</style>。"
+    },
+    "MINER_SPECIAL_TOTHESTARS_NAME": {
+      "en": "Meteor Shower",
+      "zh-TW": "流星雨"
+    },
+    "MINER_SPECIAL_TOTHESTARS_DESCRIPTION": {
+      "en": "Jump into the air, shooting a spray of shrapnel downwards for <style=cIsDamage>15x160% damage</style>.",
+      "zh-TW": "躍向空中，朝下方射出大量碎片，造成<style=cIsDamage>15x160%傷害</style>。"
+    },
+    "MINER_SPECIAL_SCEPTERTOTHESTARS_NAME": {
+      "en": "Falling Comet",
+      "zh-TW": "墜落彗星"
+    },
+    "MINER_SPECIAL_SCEPTERTOTHESTARS_DESCRIPTION": {
+      "en": "Jump into the air, shooting a spray of shrapnel downwards for <style=cIsDamage>15x160% damage</style>, then fall downwards and create a huge blast on impact that deals <style=cIsDamage>1500% damage</style> and <style=cIsDamage>ignites</style> enemies hit.",
+      "zh-TW": "躍向空中，朝下方射出大量碎片，造成<style=cIsDamage>15x160%傷害</style>，接著向下墜落，著地時引發巨大爆炸，造成<style=cIsDamage>1500%傷害</style>並<style=cIsDamage>點燃</style>被擊中的敵人。"
+    },
+    "MINER_SPECIAL_SCEPTERTOTHESTARSCLASSIC_NAME": {
+      "en": "Starbound",
+      "zh-TW": "星辰征途"
+    },
+    "MINER_SPECIAL_SCEPTERTOTHESTARSCLASSIC_DESCRIPTION": {
+      "en": "<style=cIsDamage>Stunning</style>. Jump into the air, hitting enemies directly below for <style=cIsDamage>10x300% damage</style> total.",
+      "zh-TW": "<style=cIsDamage>眩暈</style>。躍向空中，攻擊正下方的敵人，總共造成<style=cIsDamage>10x300%傷害</style>。"
+    },
+    "MINERBODY_DEFAULT_SKIN_NAME": {
+      "en": "Default",
+      "zh-TW": "預設"
+    },
+    "MINERBODY_MOLTEN_SKIN_NAME": {
+      "en": "Molten",
+      "zh-TW": "熔岩"
+    },
+    "MINERBODY_TYPHOON_SKIN_NAME": {
+      "en": "Conqueror",
+      "zh-TW": "征服者"
+    },
+    "MINERBODY_PUPLE_SKIN_NAME": {
+      "en": "Puple",
+      "zh-TW": "紫紫"
+    },
+    "MINERBODY_TUNDRA_SKIN_NAME": {
+      "en": "Tundra",
+      "zh-TW": "凍原"
+    },
+    "MINERBODY_BLACKSMITH_SKIN_NAME": {
+      "en": "Blacksmith",
+      "zh-TW": "鐵匠"
+    },
+    "MINERBODY_IRON_SKIN_NAME": {
+      "en": "Iron",
+      "zh-TW": "鐵"
+    },
+    "MINERBODY_GOLD_SKIN_NAME": {
+      "en": "Gold",
+      "zh-TW": "黃金"
+    },
+    "MINERBODY_DIAMOND_SKIN_NAME": {
+      "en": "Diamond",
+      "zh-TW": "鑽石"
+    },
+    "MINERBODY_STEVE_SKIN_NAME": {
+      "en": "Minecraft",
+      "zh-TW": "當個創世神"
+    },
+    "MINERBODY_DRIP_SKIN_NAME": {
+      "en": "Drip",
+      "zh-TW": "潮裝"
+    },
+    "MINER_UNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Adrenaline Rush",
+      "zh-TW": "腎上腺素飆升"
+    },
+    "MINER_UNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Adrenaline Rush",
+      "zh-TW": "腎上腺素飆升"
+    },
+    "MINER_UNLOCKABLE_ACHIEVEMENT_DESC": {
+      "en": "Open a Legendary Chest.",
+      "zh-TW": "打開一個傳奇寶箱。"
+    },
+    "MINER_ALTUNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Forged in Flames",
+      "zh-TW": "烈焰鍛造"
+    },
+    "MINER_ALTUNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Forged in Flames",
+      "zh-TW": "烈焰鍛造"
+    },
+    "MINER_ALTUNLOCKABLE_ACHIEVEMENT_DESC": {
+      "en": "Defeat the unique guardian of Abyssal Depths.",
+      "zh-TW": "擊敗深淵的獨特守衛。"
+    },
+    "MINER_TYPHOONUNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Miner: Grand Mastery",
+      "zh-TW": "礦工：大師級精通"
+    },
+    "MINER_TYPHOONUNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Miner: Grand Mastery",
+      "zh-TW": "礦工：大師級精通"
+    },
+    "MINER_TYPHOONUNLOCKABLE_ACHIEVEMENT_DESC": {
+      "en": "As Miner, beat the game or obliterate on Typhoon or Eclipse.\n<color=#8888>(Typhoon difficulty requires Starstorm 2)</color>",
+      "zh-TW": "作為礦工，在颱風或日食難度下通關遊戲或抹除自己。\n<color=#8888>（颱風難度需要安裝Starstorm 2）</color>"
+    },
+    "MINER_MONSOONUNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Miner: Mastery",
+      "zh-TW": "礦工：精通"
+    },
+    "MINER_MONSOONUNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Miner: Mastery",
+      "zh-TW": "礦工：精通"
+    },
+    "MINER_MONSOONUNLOCKABLE_ACHIEVEMENT_DESC": {
+      "en": "As Miner, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為礦工，在季風難度下通關遊戲或抹除自己。"
+    },
+    "MINER_CRUSHUNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Miner: Pillaged Gold",
+      "zh-TW": "礦工：劫掠黃金"
+    },
+    "MINER_CRUSHUNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Miner: Pillaged Gold",
+      "zh-TW": "礦工：劫掠黃金"
+    },
+    "MINER_CRUSHUNLOCKABLE_ACHIEVEMENT_DESC": {
+      "en": "As Miner, apply 12 stacks of cleave to the unique guardian of Gilded Coast.",
+      "zh-TW": "作為礦工，對鍍金海岸的獨特守衛施加12層劈裂。"
+    },
+    "MINER_CRACKUNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Miner: Junkie",
+      "zh-TW": "礦工：毒蟲"
+    },
+    "MINER_CRACKUNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Miner: Junkie",
+      "zh-TW": "礦工：毒蟲"
+    },
+    "MINER_CRACKUNLOCKABLE_ACHIEVEMENT_DESC": {
+      "en": "As Miner, gain 50 stacks of Adrenaline.",
+      "zh-TW": "作為礦工，獲得50層腎上腺素。"
+    },
+    "MINER_CAVEINUNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Miner: Compacted",
+      "zh-TW": "礦工：壓實"
+    },
+    "MINER_CAVEINUNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Miner: Compacted",
+      "zh-TW": "礦工：壓實"
+    },
+    "MINER_CAVEINUNLOCKABLE_ACHIEVEMENT_DESC": {
+      "en": "As Miner, hit 20 enemies with one Backblast.",
+      "zh-TW": "作為礦工，用一次反衝爆破擊中20名敵人。"
+    },
+    "MINER_PUPLEUNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Miner: The Five Keys",
+      "zh-TW": "礦工：五把鑰匙"
+    },
+    "MINER_PUPLEUNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Miner: The Five Keys",
+      "zh-TW": "礦工：五把鑰匙"
+    },
+    "MINER_PUPLEUNLOCKABLE_ACHIEVEMENT_DESC": {
+      "en": "As Miner, Discover G-N-O-M-E's debugging secret.",
+      "zh-TW": "作為礦工，發現G-N-O-M-E的除錯秘密。"
+    },
+    "MINER_TUNDRAUNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Miner: Frozen",
+      "zh-TW": "礦工：冰封"
+    },
+    "MINER_TUNDRAUNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Miner: Frozen",
+      "zh-TW": "礦工：冰封"
+    },
+    "MINER_TUNDRAUNLOCKABLE_ACHIEVEMENT_DESC": {
+      "en": "As Miner, reach Rallypoint Delta in under 8 minutes.",
+      "zh-TW": "作為礦工，在8分鐘內抵達達爾塔集合點。"
+    },
+    "MINER_BLACKSMITHUNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Miner: Tempered",
+      "zh-TW": "礦工：千錘百鍊"
+    },
+    "MINER_BLACKSMITHUNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Miner: Tempered",
+      "zh-TW": "礦工：千錘百鍊"
+    },
+    "MINER_BLACKSMITHUNLOCKABLE_ACHIEVEMENT_DESC": {
+      "en": "As Miner, find a smithing tool on the planet.",
+      "zh-TW": "作為礦工，在這顆行星上找到一件鍛造工具。"
+    },
+    "FATACRID_BODY_NAME": {
+      "en": "Perro Grande",
+      "zh-TW": "大狗狗"
+    },
+    "FATACRID_BODY_SUBTITLE": {
+      "en": "(Forma Gigante)",
+      "zh-TW": "（巨大型態）"
+    },
+    "DIGGERPLUGIN_DIRESEEKER_BODY_NAME": {
+      "en": "Direseeker",
+      "zh-TW": "兇獵者"
+    },
+    "DIGGERPLUGIN_DIRESEEKER_BODY_SUBTITLE": {
+      "en": "Track and Kill",
+      "zh-TW": "追蹤獵殺"
+    },
+    "DIGGERPLUGIN_DIRESEEKER_BODY_LORE": {
+      "en": "Legends tell of a monstrous beast that once roamed the underground barracks of Petrichor V.\n\nFeared by the bravest of survivors and the nastiest of monsters, the massive beast was unrivaled. It donned blood-red scales, tempered by hellfire. It had burning yellow eyes, with a glare so intense it made the largest of creatures stop dead in their tracks. It had smoldering breath, hot enough to melt metal in an instant.\n\nOnly once stopped by a survivor strong enough to slay Providence himself, it was believed that the beast had finally met its match.\n\n<style=cIsHealth>Until it showed its terrifying face once again.</style>",
+      "zh-TW": "傳說中，曾有一頭怪物般的巨獸，在瓊泥5號的地下營房中四處遊蕩。\n\n不論是最勇敢的倖存者，還是最兇惡的怪物，都對它心懷畏懼；這頭龐然巨獸無可匹敵。它披著一身經地獄之火淬鍊的血紅鱗片，一雙黃色的眼睛熊熊燃燒，目光之兇狠，足以讓最龐大的生物當場僵住。它的吐息如悶燒的餘燼般熾熱，能在轉瞬間熔化金屬。\n\n它只被擋下過一次，擋下它的倖存者強大到足以弒神。人們都以為，這頭巨獸終於遇上了剋星。\n\n<style=cIsHealth>直到它再次露出那張駭人的面孔。</style>"
+    },
+    "DIGGERPLUGIN_DIRESEEKER_BODY_OUTRO_FLAVOR": {
+      "en": "..and so it left, in search of new prey.",
+      "zh-TW": "……於是它走了，去尋找新的獵物。"
+    },
+    "DIGGERPLUGIN_DIRESEEKER_BODY_DEFAULT_SKIN_NAME": {
+      "en": "Default",
+      "zh-TW": "預設"
+    }
+  }
+}

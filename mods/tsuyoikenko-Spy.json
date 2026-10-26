@@ -1,0 +1,156 @@
+{
+  "mod": "tsuyoikenko-Spy",
+  "version": "1.3.4",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的。",
+    "技能說明裡的數字（傷害%、彈藥量、秒數等）來自模組設定的預設值；模組的英文會跟著設定變，譯文是固定的，改過設定請一併修改。",
+    "鍵是英文句子的條目：模組直接把那段英文當語言 token 使用，沒有另外註冊，所以用英文原文當鍵來翻譯；原文改一個字就會對不上。關鍵字說明（靈巧、諜報、投機者、背刺），以及配裝畫面的欄位標籤 Passive 屬於這一類。"
+  ],
+  "strings": {
+    "KENKO_SPY_NAME": {
+      "en": "Spy",
+      "zh-TW": "間諜"
+    },
+    "KENKO_SPY_DESCRIPTION": {
+      "en": "The Spy is a squishy melee assassin who excels at killing high priority targets with ease.<color=#CCD3E0>\r\n\r\n< ! > Build up stacks of Espionage with Spy's knife and unleash crits with The Diamondback.\r\n\r\n< ! > Stab is a devestating ability that can instantly kill weaker enemies.\r\n\r\n< ! > Sap can be a great tool to get into Backstab range while stunning nearby enemies.\r\n\r\n< ! > Cloak can be a great way to both engage and escape enemies but requires proper resource management.\r\n\r\n",
+      "zh-TW": "間諜是一名身板脆弱的近戰刺客，擅長輕鬆擊殺高優先目標。<color=#CCD3E0>\r\n\r\n< ! > 用間諜的匕首累積諜報層數，再用響尾蛇打出暴擊。\r\n\r\n< ! > 刺擊是極具破壞力的技能，能瞬間擊殺較弱的敵人。\r\n\r\n< ! > 癱瘓是拉近到背刺距離的好工具，還能同時眩暈附近的敵人。\r\n\r\n< ! > 隱身既能用來切入戰鬥，也能用來擺脫敵人，但需要妥善管理資源。\r\n\r\n"
+    },
+    "KENKO_SPY_SUBTITLE": {
+      "en": "Master of Espionage",
+      "zh-TW": "諜報大師"
+    },
+    "KENKO_SPY_LORE": {
+      "en": "As the rapid development of space empires surged across the stars, so too did the silent wars that burn between them. Diplomatic facades masked the tension, but beneath the surface hides fierce political strife, alliances fracturing, and ideologies clashing in the silence of space. \r\n\r\nIn this age of interstellar ambition, open conflict risked total annihilation. Leaders turned to the shadows to carry out their will instead. Espionage became the weapon of choice—a silent war waged in data streams, whispered codes, and stolen secrets. Entire civilizations were swayed not by fleets or firepower, but by a well-placed whisper, a corrupted protocol, a missing official.\r\n\r\nSpies became ghosts in the machinery of empire. Masters of deception, infiltration, and subversion, they slipped between borders unnoticed, cutting into empires with surgical precision. Some served sovereigns. Others served ideals. A few served only themselves.\r\n\r\nTheir victories are never paraded. Their names are never spoken. Their missions, buried by design. And yet, the rise and fall of entire star-nations have turned on the actions of a few, unseen agents.\r\n\r\nA good spy is never caught. The impact they leave on history is untraceable, but in the quiet shift of power, in the moment an empire rises or crumbles, their hand is always there, unseen... but undeniable.",
+      "zh-TW": "隨著太空帝國在群星之間急速擴張，帝國之間無聲燃燒的戰爭也隨之蔓延。外交的假面掩蓋了緊張局勢，表面之下卻潛藏著激烈的政治鬥爭——同盟分崩離析，意識形態在寂靜的太空中彼此衝撞。\r\n\r\n在這個星際野心勃發的時代，公開衝突可能招致全面毀滅。於是，領袖們轉向暗處，藉此貫徹自己的意志。諜報成了首選的武器——一場在資料流、低語的密碼與竊來的機密之間進行的無聲戰爭。左右整個文明的，不是艦隊或火力，而是一句恰到好處的耳語、一段遭到竄改的協定、一名下落不明的官員。\r\n\r\n間諜成了帝國機器中的幽靈。他們是欺瞞、滲透與顛覆的大師，悄無聲息地穿梭於國界之間，以外科手術般的精準切入帝國的要害。有些人效忠君主，有些人效忠理想，少數人只效忠自己。\r\n\r\n他們的勝利從不遊街慶祝。他們的名字從不被人提起。他們的任務，從一開始就註定被埋葬。然而，整個星際國度的興衰，卻往往取決於少數幾名不為人知的特務。\r\n\r\n好的間諜永遠不會被抓到。他們在歷史上留下的影響無跡可循，但在權力悄然易手之際，在帝國崛起或崩塌的那一刻，他們的手總在那裡——無人看見……卻無可否認。"
+    },
+    "KENKO_SPY_OUTRO_FLAVOR": {
+      "en": "..and so he left, another mission completed.",
+      "zh-TW": "……於是他走了，又完成了一項任務。"
+    },
+    "KENKO_SPY_OUTRO_FAILURE": {
+      "en": "..and so he vanished, without a trace.",
+      "zh-TW": "……於是他就這樣消逝了，不留一絲痕跡。"
+    },
+    "KENKO_SPY_MASTERY_SKIN_NAME": {
+      "en": "Alternate",
+      "zh-TW": "替代"
+    },
+    "KENKO_SPY_PASSIVE_NAME": {
+      "en": "Backstab",
+      "zh-TW": "背刺"
+    },
+    "KENKO_SPY_PASSIVE_DESCRIPTION": {
+      "en": "<color=#62746f>Spy</color> can <style=cIsHealth>Backstab</style> enemies with his <color=#62746f>Knife</color>, causing a <style=cIsDamage>Critical Strike</style> that instantly <style=cIsHealth>kills</style> weaker enemies.",
+      "zh-TW": "<color=#62746f>間諜</color>能用<color=#62746f>匕首</color>對敵人<style=cIsHealth>背刺</style>，造成<style=cIsDamage>暴擊</style>，並立即<style=cIsHealth>擊殺</style>較弱的敵人。"
+    },
+    "KENKO_SPY_PRIMARY_REVOLVER_NAME": {
+      "en": "Diamondback",
+      "zh-TW": "響尾蛇"
+    },
+    "KENKO_SPY_PRIMARY_REVOLVER_DESCRIPTION": {
+      "en": "Fire a bullet for <style=cIsDamage>320% damage</style>. <style=cIsHealth>Backstab</style> kills grant <color=#62746f>Espionage</color>. Max 5 stacks.",
+      "zh-TW": "發射一發子彈，造成<style=cIsDamage>320%傷害</style>。以<style=cIsHealth>背刺</style>擊殺敵人可獲得<color=#62746f>諜報</color>。最多5層。"
+    },
+    "KENKO_SPY_PRIMARY_REVOLVER2_NAME": {
+      "en": "Ambassador",
+      "zh-TW": "大使"
+    },
+    "KENKO_SPY_PRIMARY_REVOLVER2_DESCRIPTION": {
+      "en": "Fire a bullet for <style=cIsDamage>260% damage</style>. Landing a headshot <style=cIsDamage>Critically Strikes</style>.",
+      "zh-TW": "發射一發子彈，造成<style=cIsDamage>260%傷害</style>。爆頭時必定<style=cIsDamage>暴擊</style>。"
+    },
+    "KENKO_SPY_SECONDARY_KNIFE_NAME": {
+      "en": "Stab",
+      "zh-TW": "刺擊"
+    },
+    "KENKO_SPY_SECONDARY_KNIFE_DESCRIPTION": {
+      "en": "Prepare your <color=#62746f>Knife</color>. Release to swing for <style=cIsDamage>500% damage</style>.",
+      "zh-TW": "舉起你的<color=#62746f>匕首</color>。放開按鍵即可揮刺，造成<style=cIsDamage>500%傷害</style>。"
+    },
+    "KENKO_SPY_SECONDARY_KNIFE2_NAME": {
+      "en": "Big Earner",
+      "zh-TW": "大賺家"
+    },
+    "KENKO_SPY_SECONDARY_KNIFE2_DESCRIPTION": {
+      "en": "<color=#62746f>Opportunist</color>. Prepare your <color=#62746f>Knife</color>. Release to swing for <style=cIsDamage>500% damage</style>. <style=cIsHealth>Backstab</style> kills grant <style=cIsUtility>movement speed</style> and <style=cIsHealing>barrier</style> as well as <style=cIsUtility>resetting this abilities cooldown</style> for a short period.",
+      "zh-TW": "<color=#62746f>投機者</color>。舉起你的<color=#62746f>匕首</color>。放開按鍵即可揮刺，造成<style=cIsDamage>500%傷害</style>。以<style=cIsHealth>背刺</style>擊殺敵人可短暫獲得<style=cIsUtility>移動速度</style>與<style=cIsHealing>屏障</style>，並<style=cIsUtility>重置此技能的冷卻時間</style>。"
+    },
+    "KENKO_SPY_UTILITY_FLIP_NAME": {
+      "en": "Sap",
+      "zh-TW": "癱瘓"
+    },
+    "KENKO_SPY_UTILITY_FLIP_DESCRIPTION": {
+      "en": "<style=cIsUtility>Dash</style> in a direction or <style=cIsUtility>Flip</style> in the air. Plant a <color=#62746f>Sapper</color> on a nearby enemy, <style=cIsUtility>shocking</style> them and nearby enemies for <style=cIsUtility>5 seconds</style>.",
+      "zh-TW": "朝一個方向<style=cIsUtility>衝刺</style>，或在空中<style=cIsUtility>空翻</style>。在附近的敵人身上安裝<color=#62746f>電子破壞器</color>，使該敵人與周圍的敵人陷入<style=cIsUtility>震盪</style>，持續<style=cIsUtility>5秒</style>。"
+    },
+    "KENKO_SPY_SPECIAL_WATCH_NAME": {
+      "en": "Cloak",
+      "zh-TW": "隱身"
+    },
+    "KENKO_SPY_SPECIAL_WATCH_DESCRIPTION": {
+      "en": "Become <style=cIsUtility>cloaked</style> for up to <style=cIsUtility>8 seconds</style>. While <style=cIsUtility>cloaked</style>, <color=#62746f>Spy</color> cannot shoot.",
+      "zh-TW": "進入<style=cIsUtility>隱身</style>狀態，最多持續<style=cIsUtility>8秒</style>。<style=cIsUtility>隱身</style>期間，<color=#62746f>間諜</color>無法射擊。"
+    },
+    "KENKO_SPY_SPECIAL_WATCH2_NAME": {
+      "en": "Deadman's Watch",
+      "zh-TW": "死者之錶"
+    },
+    "KENKO_SPY_SPECIAL_WATCH2_DESCRIPTION": {
+      "en": "Take out your <color=#62746f>Deadman's Watch</color>. Taking <style=cIsDamage>damage</style> grants <style=cIsUtility>invisiblity</style> for <style=cIsUtility>8 seconds</style> at the cost of up to <style=cIsHealth>25% HP</style>. While your <color=#62746f>Deadman's Watch</color> is out, <color=#62746f>Spy</color> cannot shoot.",
+      "zh-TW": "取出你的<color=#62746f>死者之錶</color>。受到<style=cIsDamage>傷害</style>時獲得<style=cIsUtility>隱身</style>，持續<style=cIsUtility>8秒</style>，代價是最多<style=cIsHealth>25%生命值</style>。<color=#62746f>死者之錶</color>取出期間，<color=#62746f>間諜</color>無法射擊。"
+    },
+    "KENKO_SPY_SPECIAL_SCEPTER_WATCH_NAME": {
+      "en": "Cloak",
+      "zh-TW": "隱身"
+    },
+    "KENKO_SPY_SPECIAL_SCEPTER_WATCH_DESCRIPTION": {
+      "en": "Become <style=cIsUtility>cloaked</style> for up to <style=cIsUtility>8 seconds</style>. While <style=cIsUtility>cloaked</style>, <color=#62746f>Spy</color> cannot shoot.\n<color=#d299ff>SCEPTER: Decloak instantly.</color>",
+      "zh-TW": "進入<style=cIsUtility>隱身</style>狀態，最多持續<style=cIsUtility>8秒</style>。<style=cIsUtility>隱身</style>期間，<color=#62746f>間諜</color>無法射擊。\n<color=#d299ff>權杖：立即解除隱身。</color>"
+    },
+    "KENKO_SPY_SPECIAL_SCEPTER_WATCH2_NAME": {
+      "en": "Deadman's Watch Scepter",
+      "zh-TW": "死者之錶（權杖）"
+    },
+    "KENKO_SPY_SPECIAL_SCEPTER_WATCH2_DESCRIPTION": {
+      "en": "Take out your <color=#62746f>Deadman's Watch</color>. Taking <style=cIsDamage>damage</style> grants <style=cIsUtility>invisiblity</style> for <style=cIsUtility>8 seconds</style> at the cost of up to <style=cIsHealth>25% HP</style>. While your <color=#62746f>Deadman's Watch</color> is out, <color=#62746f>Spy</color> cannot shoot.\n<color=#d299ff>SCEPTER: <style=cIsHealth>Backstab</style> kills <style=cIsUtility>reset</style> <color=#62746f>Deadman's Watch</color> and the <style=cIsHealth>HP</style> cost is removed.</color>",
+      "zh-TW": "取出你的<color=#62746f>死者之錶</color>。受到<style=cIsDamage>傷害</style>時獲得<style=cIsUtility>隱身</style>，持續<style=cIsUtility>8秒</style>，代價是最多<style=cIsHealth>25%生命值</style>。<color=#62746f>死者之錶</color>取出期間，<color=#62746f>間諜</color>無法射擊。\n<color=#d299ff>權杖：以<style=cIsHealth>背刺</style>擊殺敵人會<style=cIsUtility>重置</style><color=#62746f>死者之錶</color>，且不再消耗<style=cIsHealth>生命值</style>。</color>"
+    },
+    "ACHIEVEMENT_KENKO_SPY_MASTERYACHIEVEMENT_NAME": {
+      "en": "Spy: Mastery",
+      "zh-TW": "間諜：精通"
+    },
+    "ACHIEVEMENT_KENKO_SPY_MASTERYACHIEVEMENT_DESCRIPTION": {
+      "en": "As Spy, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為間諜，在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_KENKO_SPY_UNLOCK_ACHIEVEMENT_NAME": {
+      "en": "Dressed to Kill",
+      "zh-TW": "致命盛裝"
+    },
+    "ACHIEVEMENT_KENKO_SPY_UNLOCK_ACHIEVEMENT_DESCRIPTION": {
+      "en": "Get a Backstab.",
+      "zh-TW": "完成一次背刺。"
+    },
+    "<style=cKeywordName>Agile</style><style=cSub>The skill can be used while sprinting.</style>": {
+      "en": "<style=cKeywordName>Agile</style><style=cSub>The skill can be used while sprinting.</style>",
+      "zh-TW": "<style=cKeywordName>靈巧</style><style=cSub>該技能可在奔跑時使用。</style>"
+    },
+    "<style=cKeywordName>Espionage</style><style=cSub>Your next shot has <style=cIsDamage>100% Crit Chance</style>. Rolling a <style=cIsDamage>Critical Strike</style> with <color=#62746f>Espionage</color> stacks increases <style=cIsDamage>damage by 2x</style> instead. <style=cIsHealth>Backstabs</style> will always grant <color=#62746f>Espionage</color> stacks on champion enemies.</style>": {
+      "en": "<style=cKeywordName>Espionage</style><style=cSub>Your next shot has <style=cIsDamage>100% Crit Chance</style>. Rolling a <style=cIsDamage>Critical Strike</style> with <color=#62746f>Espionage</color> stacks increases <style=cIsDamage>damage by 2x</style> instead. <style=cIsHealth>Backstabs</style> will always grant <color=#62746f>Espionage</color> stacks on champion enemies.</style>",
+      "zh-TW": "<style=cKeywordName>諜報</style><style=cSub>你的下一發射擊有<style=cIsDamage>100%暴擊率</style>。若在擁有<color=#62746f>諜報</color>層數時本身就觸發了<style=cIsDamage>暴擊</style>，則改為使<style=cIsDamage>傷害變為2倍</style>。對首領敵人<style=cIsHealth>背刺</style>必定會獲得<color=#62746f>諜報</color>層數。</style>"
+    },
+    "<style=cKeywordName>Opportunist</style><style=cSub>Your <style=cIsHealth>HP</style> and <style=cIsHealing>health regneration</style> are <style=cDeath>permanently reduced by 25%</style>. <style=cIsHealth>Backstabs</style> that don't kill champion enemies grant <style=cIsUtility>movement speed</style> and <style=cIsHealing>barrier</style>. </style>": {
+      "en": "<style=cKeywordName>Opportunist</style><style=cSub>Your <style=cIsHealth>HP</style> and <style=cIsHealing>health regneration</style> are <style=cDeath>permanently reduced by 25%</style>. <style=cIsHealth>Backstabs</style> that don't kill champion enemies grant <style=cIsUtility>movement speed</style> and <style=cIsHealing>barrier</style>. </style>",
+      "zh-TW": "<style=cKeywordName>投機者</style><style=cSub>你的<style=cIsHealth>生命值</style>與<style=cIsHealing>生命值再生</style><style=cDeath>永久降低25%</style>。對首領敵人<style=cIsHealth>背刺</style>但未能擊殺時，會獲得<style=cIsUtility>移動速度</style>與<style=cIsHealing>屏障</style>。</style>"
+    },
+    "<style=cKeywordName>Backstab</style><style=cSub>Deals <style=cIsDamage>2x damage</style> against champion enemies and <style=cIsHealth>30% HP</style> or more to elites.</style>": {
+      "en": "<style=cKeywordName>Backstab</style><style=cSub>Deals <style=cIsDamage>2x damage</style> against champion enemies and <style=cIsHealth>30% HP</style> or more to elites.</style>",
+      "zh-TW": "<style=cKeywordName>背刺</style><style=cSub>對首領敵人造成<style=cIsDamage>2倍傷害</style>，對精英敵人則造成相當於其<style=cIsHealth>30%生命值</style>以上的傷害。</style>"
+    },
+    "Passive": {
+      "en": "Passive",
+      "zh-TW": "被動"
+    }
+  }
+}

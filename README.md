@@ -86,7 +86,7 @@ uv run ror2_s2t.py --zip RoR2_zh-TW_1.5.1.zip
 uv run ror2_s2t.py --profile Purist_v4
 ```
 
-目前有這十七個模組：
+目前有這二十八個模組：
 
 | 模組 | 版本 | 翻譯內容 | 條數 |
 |---|---|---|---|
@@ -107,10 +107,21 @@ uv run ror2_s2t.py --profile Purist_v4
 | Naruto Six Paths（Zerneas） | 0.21.1 | 角色、技能、奧義、成就、背景故事 | 23 |
 | Sasuke Rinnegan（Zerneas） | 0.19.1 | 角色、技能、奧義、關鍵字、成就、背景故事 | 22 |
 | Kizuna（Zerneas） | 0.21.0 | 選角畫面 Variants 分頁裡火影各角色變體的說明 | 6 |
+| Miner Unearthed | 1.10.1 | 角色、技能、關鍵字、Ancient Scepter 強化技能、造型、成就、背景故事、首領 Direseeker | 76 |
+| Pilot | 0.6.5 | 角色、技能、Ancient Scepter 強化技能、背景故事 | 30 |
+| Rocket | 1.1.6 | 角色、技能、Ancient Scepter 強化技能、造型、成就、背景故事 | 34 |
+| Paladin | 2.3.2 | 角色、技能、關鍵字、Ancient Scepter 強化技能、造型、成就、背景故事、米斯歷克斯與虛假子嗣的台詞 | 93 |
+| Shock Trooper | 1.2.5 | 角色、技能、無人機、造型、成就、背景故事 | 31 |
+| Cadet | 1.1.11 | 角色、技能、關鍵字、造型、成就、背景故事 | 27 |
+| Scout | 0.9.11 | 角色、技能、關鍵字、Ancient Scepter 強化技能、配裝欄位名稱、造型、成就、背景故事 | 31 |
+| Spy | 1.3.4 | 角色、技能、關鍵字、Ancient Scepter 強化技能、配裝欄位名稱、造型、成就、背景故事 | 36 |
+| Ivory Bastion | 1.2.2 | 角色名稱與介紹、技能名稱、無人機名稱、buff | 22 |
+| PlayerRespawnSystem | 2.2.0 | 兩條禁止重生的聊天訊息 | 2 |
+| Survariants | 1.0.9 | 選角畫面 Variants 分頁的標籤 | 1 |
 
-Heretic 與 Dante 自帶簡體翻譯（Dante 只有一部分），那些條目是把簡體轉成繁體後對照英文修訂的，其餘由英文翻譯。
+Heretic、Dante、Miner Unearthed、Pilot、Rocket 與 Paladin 自帶簡體翻譯（Dante、Miner Unearthed 與 Paladin 只有一部分），那些條目是把簡體轉成繁體後對照英文修訂的，其餘由英文翻譯。
 
-Seamstress 的技能數字（傷害、冷卻秒數）和 HUNK 的五條說明會跟著模組設定變動，英文是模組執行時算出來的；譯文是固定的，收錄的是預設設定的版本，改過那些設定的話要自己修改對應的譯文。各檔案開頭的 `notes` 有說明。
+Seamstress、Paladin、Cadet、Scout、Spy 的技能數字（傷害、冷卻秒數）和 HUNK 的五條說明會跟著模組設定變動，英文是模組執行時算出來的；譯文是固定的，收錄的是預設設定的版本，改過那些設定的話要自己修改對應的譯文。各檔案開頭的 `notes` 有說明。
 
 Celestial War Tank 的車體、炮塔數值和技能說明裡的重量，是模組從自帶的資源包算出來的；技能說明最後的「技能數值」只在模組設定 Show Extra Skill Info 開啟（預設）時出現，關掉的話英文會少這一段，譯文仍會顯示。
 
@@ -126,7 +137,9 @@ Celestial War Tank 的車體、炮塔數值和技能說明裡的重量，是模�
 這些文字寫死在模組的程式裡，不經過語言表，語言檔沒辦法翻：
 
 - LookingGlass 的物品數值標籤（`Proc Coefficient:` 這類）
-- PlayerRespawnSystem 的聊天訊息與復活倒數
+- PlayerRespawnSystem 的復活倒數，以及含玩家名稱或秒數的聊天訊息
+- Ivory Bastion 的 Engineering 升級面板與 HUD；它的技能說明、關鍵字說明和兩個技能名稱雖然經過語言表，但模組用 R2API 的通用疊加層寫入，優先於任何語言的翻譯，同樣翻不到
+- Survariants 變體清單裡的 Default 項目
 - HUNK 的彈藥名稱、畫面中央的提示訊息（背包已滿、需要鑰匙卡等）與無線電對話
 - Zerneas 火影系列的形態與奧義熟練度提示，以及 Kizuna（羈絆）模組的大廳、標題畫面、技能清單介面、羈絆說明與第一次遊玩時展開的提示卷軸（只有英文和西班牙文）
 - Celestial War Tank 的燃料量表與坦克編輯器選單

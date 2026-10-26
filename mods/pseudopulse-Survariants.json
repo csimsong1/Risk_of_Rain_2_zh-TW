@@ -1,0 +1,15 @@
+{
+  "mod": "pseudopulse-Survariants",
+  "version": "1.0.9",
+  "loader": "r2api",
+  "notes": [
+    "選角畫面的 Variants 分頁標籤：模組直接把英文當 token 使用，鍵就是英文原文。",
+    "變體清單第一項的「Default」與「The default survivor.」寫死在程式裡，翻不到；其他變體的名稱與說明由提供變體的模組負責（例如 Kizuna）。"
+  ],
+  "strings": {
+    "Variants": {
+      "en": "Variants",
+      "zh-TW": "變體"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "mod": "Mordrog-PlayerRespawnSystem",
+  "version": "2.2.0",
+  "loader": "r2api",
+  "notes": [
+    "只有這兩條聊天訊息翻得到：模組把整句英文當聊天訊息的 token 送出，所以鍵就是英文原文，原文改一個字就會對不上。",
+    "含玩家名稱或秒數的復活訊息，以及死亡後畫面上的復活倒數，文字寫死在程式裡，翻不到。"
+  ],
+  "strings": {
+    "<color=#7e91af>Timed respawns are blocked on this stage.</color>": {
+      "en": "<color=#7e91af>Timed respawns are blocked on this stage.</color>",
+      "zh-TW": "<color=#7e91af>本關卡禁止定時重生。</color>"
+    },
+    "<color=#7e91af>Respawns are blocked on teleporter event.</color>": {
+      "en": "<color=#7e91af>Respawns are blocked on teleporter event.</color>",
+      "zh-TW": "<color=#7e91af>傳送器事件期間禁止重生。</color>"
+    }
+  }
+}

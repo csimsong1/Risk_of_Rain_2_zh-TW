@@ -1,0 +1,385 @@
+{
+  "mod": "Paladin_Alliance-PaladinMod",
+  "version": "2.3.2",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的。模組附的 Language/english 是較舊的內容，而且資料夾名稱和遊戲的語言名稱 en 對不上，不會被載入。",
+    "模組自帶簡體翻譯（Language/zh-CN），英文和現行版本相同的條目以它轉成繁體後對照英文修訂；其餘由英文翻譯。",
+    "技能說明裡的數字（傷害%、彈藥量、秒數等）來自模組設定的預設值；模組的英文會跟著設定變，譯文是固定的，改過設定請一併修改。",
+    "角色名稱每次啟動遊戲有 1% 機率變成彩蛋名稱 True Son；譯文一律是聖騎士。"
+  ],
+  "strings": {
+    "PALADIN_NAME": {
+      "en": "Paladin",
+      "zh-TW": "聖騎士"
+    },
+    "PALADIN_DESCRIPTION": {
+      "en": "The Paladin is a versatile spellblade that can opt for otherworldly magic or devastating swordsmanship to aid allies and decimate foes.<color=#CCD3E0>\r\n\r\n< ! > Your passive makes up a good portion of your damage, try to keep it up as much as possible.\r\n\r\n< ! > Spinning Slash can serve as either a powerful crowd control tool or a form of limited mobility.\r\n\r\n< ! > Quickstep's cooldown is lowered with each hit, rewarding you for staying in the thick of it.\r\n\r\n< ! > Vow of Silence is a great way to deal with flying enemies, as it drags all affected down to the ground.\r\n\r\n",
+      "zh-TW": "聖騎士是一名多才多藝的魔劍士，可以選擇以超凡的魔法或毀滅性的劍術來援助盟友、殲滅敵人。<color=#CCD3E0>\r\n\r\n< ! > 你的被動技能佔了你相當大一部分的傷害，請盡可能維持它的效果。\r\n\r\n< ! > 迴旋斬既能當作強力的控場手段，也能提供有限的位移。\r\n\r\n< ! > 每次命中都會縮短疾步的冷卻時間，鼓勵你留在戰況最激烈的地方。\r\n\r\n< ! > 沉默誓言是對付飛行敵人的好方法，因為它會把所有受影響的敵人拖到地面上。\r\n\r\n"
+    },
+    "PALADIN_SUBTITLE": {
+      "en": "Acolyte of Providence",
+      "zh-TW": "神之侍僧"
+    },
+    "PALADIN_LORE": {
+      "en": "\"You will go to Petrichor V.  This planet has been selected for your pilgrimage, the punishment for the sins committed towards your people<s>, K        </s>.\"\n\nI stared ahead, stripped of my armor and my sword.  My crown, shattered.  My obsidian-stone carapace, damaged and torn.  A small, starry gemstone embedded in my right palm, a remnant of my past as king.  They keep me bound and push me towards a ship, end of the line, my sacrifice for the good of my brothers and sisters.\n\nI did it to save my people, even if they do not accept such niceties.  I would not fall into their habits of never-ending war and suffering.  I tried to change them for the betterment of themselves, but I learned the hard way that traditionalism is something that one alone cannot change.\n\nSo be it.  Perhaps my message will live on in the minds of those who tried to defend me.  Maybe my actions will mean something, maybe they will result in nothing.  I do not care for my own fate, I only hope that my people will learn from their pasts and improve themselves.\n\nFor the sake of my people, for the sake of our history, for the sake of longevity...\n\nTo the stars I go... to this planet of hushed rumors.",
+      "zh-TW": "「你將前往瓊泥5號。這顆行星已被選為你朝聖的終點，作為你對自己的人民所犯罪孽的懲罰<s>，陛        </s>。」\n\n我凝視前方，盔甲與劍都已被剝奪。我的王冠，已然粉碎。我那黑曜岩般的甲殼，殘破而撕裂。一顆閃爍星光的小寶石嵌在我的右掌心，那是我昔日為王時僅存的遺物。他們將我綑縛，推向一艘飛船。路已走到盡頭，這是我為了兄弟姊妹們的福祉所做的犧牲。\n\n我這麼做是為了拯救我的人民，即使他們並不領受這份好意。我不願重蹈他們的覆轍，陷入永無止境的戰爭與苦難。我曾試圖改變他們，讓他們變得更好，卻在慘痛的教訓中明白：守舊的傳統，並非一人之力所能撼動。\n\n那就這樣吧。或許我的理念會留存在那些曾試圖為我辯護之人的心中。或許我的所作所為終將有所意義，又或許終究一事無成。我不在乎自己的命運，只盼我的人民能從過去汲取教訓，讓自己變得更好。\n\n為了我的人民，為了我們的歷史，為了生生不息……\n\n我向群星而去……前往這顆只在竊竊私語中流傳的行星。"
+    },
+    "PALADIN_OUTRO_FLAVOR": {
+      "en": "..and so he left, faith in his doctrine shaken.",
+      "zh-TW": "……於是他走了，對教義的信仰已然動搖。"
+    },
+    "PALADIN_OUTRO_FAILURE": {
+      "en": "..and so he vanished, his prayers unheard.",
+      "zh-TW": "……於是他就這樣消逝了，他的祈禱無人聽聞。"
+    },
+    "PALADINBODY_DEFAULT_SKIN_NAME": {
+      "en": "Default",
+      "zh-TW": "預設"
+    },
+    "PALADINBODY_LUNAR_SKIN_NAME": {
+      "en": "Lunar",
+      "zh-TW": "月球"
+    },
+    "PALADINBODY_LUNARKNIGHT_SKIN_NAME": {
+      "en": "Lunar Knight",
+      "zh-TW": "月球騎士"
+    },
+    "PALADINBODY_TYPHOON_SKIN_NAME": {
+      "en": "Sovereign",
+      "zh-TW": "君王"
+    },
+    "PALADINBODY_TYPHOONLEGACY_SKIN_NAME": {
+      "en": "Sovereign (legacy)",
+      "zh-TW": "君王（舊版）"
+    },
+    "PALADINBODY_POISON_SKIN_NAME": {
+      "en": "Corruption",
+      "zh-TW": "腐化"
+    },
+    "PALADINBODY_POISONLEGACY_SKIN_NAME": {
+      "en": "Corruption (legacy)",
+      "zh-TW": "腐化（舊版）"
+    },
+    "PALADINBODY_CLAY_SKIN_NAME": {
+      "en": "Aphelian",
+      "zh-TW": "阿菲利安"
+    },
+    "PALADINBODY_SPECTER_SKIN_NAME": {
+      "en": "Specter",
+      "zh-TW": "幽魂"
+    },
+    "PALADINBODY_DRIP_SKIN_NAME": {
+      "en": "Drip",
+      "zh-TW": "潮裝"
+    },
+    "PALADINBODY_MINECRAFT_SKIN_NAME": {
+      "en": "Minecraft",
+      "zh-TW": "當個創世神"
+    },
+    "PALADIN_PASSIVE_NAME": {
+      "en": "Unwavering Faith",
+      "zh-TW": "堅定信仰"
+    },
+    "PALADIN_PASSIVE_DESCRIPTION": {
+      "en": "While above <style=cIsHealth>90% health</style> or while having active <style=cIsHealth>barrier</style>, the Paladin is <style=cIsHealing>blessed</style>, empowering all sword skills and <style=cIsHealing>blessing all nearby allies as well</style>.",
+      "zh-TW": "處於<style=cIsHealth>90%生命值</style>以上，或擁有<style=cIsHealth>屏障</style>時，聖騎士會受到<style=cIsHealing>祝福</style>，強化所有劍技，並<style=cIsHealing>同時祝福附近所有盟友</style>。"
+    },
+    "PALADIN_PRIMARY_SLASH_NAME": {
+      "en": "Divine Blade",
+      "zh-TW": "神聖之劍"
+    },
+    "PALADIN_PRIMARY_SLASH_DESCRIPTION": {
+      "en": "Slash for <style=cIsDamage>300% damage</style>. Fires a <style=cIsUtility>beam of light</style> for <style=cIsDamage>300% damage</style> if the Paladin is <style=cIsHealing>blessed</style>.",
+      "zh-TW": "揮劍造成<style=cIsDamage>300%傷害</style>。若聖騎士受到<style=cIsHealing>祝福</style>，還會射出一道<style=cIsUtility>光束</style>，造成<style=cIsDamage>300%傷害</style>。"
+    },
+    "PALADIN_PRIMARY_CURSESLASH_NAME": {
+      "en": "Accursed Blade",
+      "zh-TW": "詛咒之劍"
+    },
+    "PALADIN_PRIMARY_CURSESLASH_DESCRIPTION": {
+      "en": "Slash for <style=cIsDamage>380% damage</style>. Fires a <style=cIsUtility>beam of light</style> for <style=cIsDamage>300% damage</style> if the Paladin is <style=cIsHealing>blessed</style>.",
+      "zh-TW": "揮劍造成<style=cIsDamage>380%傷害</style>。若聖騎士受到<style=cIsHealing>祝福</style>，還會射出一道<style=cIsUtility>光束</style>，造成<style=cIsDamage>300%傷害</style>。"
+    },
+    "PALADIN_SECONDARY_SPINSLASH_NAME": {
+      "en": "Spinning Slash",
+      "zh-TW": "迴旋斬"
+    },
+    "PALADIN_SECONDARY_SPINSLASH_DESCRIPTION": {
+      "en": "Perform a <style=cIsUtility>wide stunning slash</style> for <style=cIsDamage>750% damage</style>, gaining range if <style=cIsHealing>blessed</style>. While airborne, instead perform a leap strike, firing a <style=cIsUtility>shockwave</style> if <style=cIsHealing>blessed</style>.",
+      "zh-TW": "發動一次<style=cIsUtility>大範圍的眩暈斬擊</style>，造成<style=cIsDamage>750%傷害</style>，受到<style=cIsHealing>祝福</style>時攻擊範圍增加。在空中時改為發動跳躍斬擊，若受到<style=cIsHealing>祝福</style>，還會釋放一道<style=cIsUtility>衝擊波</style>。"
+    },
+    "PALADIN_SECONDARY_LIGHTNING_NAME": {
+      "en": "Lightning Spear",
+      "zh-TW": "雷霆長矛"
+    },
+    "PALADIN_SECONDARY_LIGHTNING_DESCRIPTION": {
+      "en": "<style=cIsUtility>Shocking.</style> <style=cIsUtility>Agile.</style> Charge up and throw a <style=cIsUtility>lightning bolt</style>, dealing up to <style=cIsDamage>700% damage</style>. Throw at your feet to coat your blade in <style=cIsUtility>lightning</style> for <style=cIsUtility>4 seconds</style>.",
+      "zh-TW": "<style=cIsUtility>震盪</style>。<style=cIsUtility>靈巧</style>。蓄力後擲出一道<style=cIsUtility>閃電</style>，最多造成<style=cIsDamage>700%傷害</style>。擲向自己腳下，可讓劍刃附上<style=cIsUtility>雷電</style>，持續<style=cIsUtility>4秒</style>。"
+    },
+    "PALADIN_SECONDARY_LUNARSHARD_NAME": {
+      "en": "Lunar Shards (Experimental)",
+      "zh-TW": "月之碎片（實驗性）"
+    },
+    "PALADIN_SECONDARY_LUNARSHARD_DESCRIPTION": {
+      "en": "Fire a volley of <style=cIsUtility>lunar shards</style>, dealing <style=cIsDamage>6x50% damage</style> each. Hitting foes marks them for detonation on hit for <style=cIsDamage>300% damage per stack</style>.",
+      "zh-TW": "發射一輪<style=cIsUtility>月之碎片</style>，每枚造成<style=cIsDamage>6x50%傷害</style>。命中敵人會留下標記，標記會在敵人再次被擊中時引爆，<style=cIsDamage>每層造成300%傷害</style>。"
+    },
+    "PALADIN_SECONDARY_LUNARSHARDLEGACY_NAME": {
+      "en": "Lunar Shards",
+      "zh-TW": "月之碎片"
+    },
+    "PALADIN_SECONDARY_LUNARSHARDLEGACY_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile.</style> Fire a volley of <style=cIsUtility>lunar shards</style>, dealing <style=cIsDamage>75% damage</style> each. Hold up to <style=cIsDamage>12</style> shards.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。發射一輪<style=cIsUtility>月之碎片</style>，每枚造成<style=cIsDamage>75%傷害</style>。最多可儲存<style=cIsDamage>12</style>枚碎片。"
+    },
+    "PALADIN_UTILITY_DASH_NAME": {
+      "en": "Quickstep",
+      "zh-TW": "疾步"
+    },
+    "PALADIN_UTILITY_DASH_DESCRIPTION": {
+      "en": "<style=cIsUtility>Dash</style> a short distance and gain <style=cIsHealing>15% barrier</style>. Successful hits from <style=cIsDamage>Divine Blade</style> <style=cIsUtility>lower cooldown</style> by <style=cIsDamage>1 second</style>. <style=cIsUtility>Store up to 2 dashes.<style=cIsHealing>",
+      "zh-TW": "<style=cIsUtility>衝刺</style>一小段距離，並獲得<style=cIsHealing>15%屏障</style>。<style=cIsDamage>神聖之劍</style>每次成功命中，都會使此技能的<style=cIsUtility>冷卻時間減少</style><style=cIsDamage>1秒</style>。<style=cIsUtility>最多可儲存2次衝刺。<style=cIsHealing>"
+    },
+    "PALADIN_UTILITY_HEAL_NAME": {
+      "en": "Replenish",
+      "zh-TW": "充盈"
+    },
+    "PALADIN_UTILITY_HEAL_DESCRIPTION": {
+      "en": "Restore <style=cIsHealing>15% max health</style> and grant <style=cIsHealing>15% barrier</style> to all allies in an area.",
+      "zh-TW": "為範圍內所有盟友恢復<style=cIsHealing>15%最大生命值</style>，並給予<style=cIsHealing>15%屏障</style>。"
+    },
+    "PALADIN_UTILITY_SOULTETHER_NAME": {
+      "en": "Soul Bind",
+      "zh-TW": "靈魂束縛"
+    },
+    "PALADIN_UTILITY_SOULTETHER_DESCRIPTION": {
+      "en": "Link to an ally to share <style=cIsHealing>heals and barrier gain</style>, or link to an enemy to gain <style=cIsHealing>10%</style> of damage they take as <style=cIsHealing>both health and barrier</style>. When the linked target dies, <style=cIsUtility>steal their soul</style> as a permanent ally.",
+      "zh-TW": "與一名盟友連結，共享<style=cIsHealing>治療與獲得的屏障</style>；或與一名敵人連結，獲得相當於其所受傷害<style=cIsHealing>10%</style>的<style=cIsHealing>生命值與屏障</style>。被連結的目標死亡時，<style=cIsUtility>奪取其靈魂</style>，使其成為永久的盟友。"
+    },
+    "PALADIN_SPECIAL_HEALZONE_NAME": {
+      "en": "Sacred Sunlight",
+      "zh-TW": "聖潔陽光"
+    },
+    "PALADIN_SPECIAL_HEALZONE_DESCRIPTION": {
+      "en": "<style=cIsUtility>Channel</style> for <style=cIsDamage>1.5</style> seconds, then release to <style=cIsUtility>Bless</style> an area for <style=cIsDamage>12 seconds</style>, gradually <style=cIsHealing>restoring health</style> and granting <style=cIsHealing>barrier</style> to all allies inside.",
+      "zh-TW": "<style=cIsUtility>引導</style><style=cIsDamage>1.5</style>秒後釋放，對一片區域施加<style=cIsUtility>祝福</style>，持續<style=cIsDamage>12秒</style>，使區域內所有盟友逐漸<style=cIsHealing>恢復生命值</style>並獲得<style=cIsHealing>屏障</style>。"
+    },
+    "PALADIN_SPECIAL_SCEPTERHEALZONE_NAME": {
+      "en": "Consecrated Sunlight",
+      "zh-TW": "祝聖陽光"
+    },
+    "PALADIN_SPECIAL_SCEPTERHEALZONE_DESCRIPTION": {
+      "en": "<style=cIsUtility>Channel</style> for <style=cIsDamage>1.5</style> seconds, then release to <style=cIsUtility>Bless</style> an area for <style=cIsDamage>12 seconds</style>, gradually <style=cIsHealing>restoring health</style> and granting <style=cIsHealing>barrier</style> to all allies inside.\n<color=#d299ff>SCEPTER: Boosted radius. Double healing. Double barrier. Cleanses debuffs.</color>",
+      "zh-TW": "<style=cIsUtility>引導</style><style=cIsDamage>1.5</style>秒後釋放，對一片區域施加<style=cIsUtility>祝福</style>，持續<style=cIsDamage>12秒</style>，使區域內所有盟友逐漸<style=cIsHealing>恢復生命值</style>並獲得<style=cIsHealing>屏障</style>。\n<color=#d299ff>權杖：範圍擴大。治療量加倍。屏障加倍。清除減益效果。</color>"
+    },
+    "PALADIN_SPECIAL_TORPOR_NAME": {
+      "en": "Vow of Silence",
+      "zh-TW": "沉默誓言"
+    },
+    "PALADIN_SPECIAL_TORPOR_DESCRIPTION": {
+      "en": "<style=cIsUtility>Channel</style> for <style=cIsDamage>2</style> seconds, then release to <style=cIsUtility>Silence</style> an area for <style=cIsDamage>10 seconds</style>, inflicting <style=cIsHealth>torpor</style> on all enemies in the vicinity.",
+      "zh-TW": "<style=cIsUtility>引導</style><style=cIsDamage>2</style>秒後釋放，使一片區域陷入<style=cIsUtility>沉默</style>，持續<style=cIsDamage>10秒</style>，對附近所有敵人施加<style=cIsHealth>遲滯</style>。"
+    },
+    "PALADIN_SPECIAL_SCEPTERTORPOR_NAME": {
+      "en": "Mandate of Silence",
+      "zh-TW": "沉默敕令"
+    },
+    "PALADIN_SPECIAL_SCEPTERTORPOR_DESCRIPTION": {
+      "en": "<style=cIsUtility>Channel</style> for <style=cIsDamage>2</style> seconds, then release to <style=cIsUtility>Silence</style> an area for <style=cIsDamage>10 seconds</style>, inflicting <style=cIsHealth>torpor</style> on all enemies in the vicinity.\n<color=#d299ff>SCEPTER: Boosted radius. Stronger debuff. Larger radius. Destroys projectiles.</color>",
+      "zh-TW": "<style=cIsUtility>引導</style><style=cIsDamage>2</style>秒後釋放，使一片區域陷入<style=cIsUtility>沉默</style>，持續<style=cIsDamage>10秒</style>，對附近所有敵人施加<style=cIsHealth>遲滯</style>。\n<color=#d299ff>權杖：範圍擴大。減益效果更強。半徑更大。摧毀投射物。</color>"
+    },
+    "PALADIN_SPECIAL_WARCRY_NAME": {
+      "en": "Sacred Oath",
+      "zh-TW": "聖潔誓約"
+    },
+    "PALADIN_SPECIAL_WARCRY_DESCRIPTION": {
+      "en": "<style=cIsUtility>Channel</style> for <style=cIsDamage>2</style> seconds, then release to <style=cIsUtility>Empower</style> an area for <style=cIsDamage>8 seconds</style>, increasing <style=cIsDamage>damage</style> and <style=cIsDamage>attack speed</style> for all allies inside.",
+      "zh-TW": "<style=cIsUtility>引導</style><style=cIsDamage>2</style>秒後釋放，對一片區域施加<style=cIsUtility>強化</style>，持續<style=cIsDamage>8秒</style>，提升區域內所有盟友的<style=cIsDamage>傷害</style>與<style=cIsDamage>攻擊速度</style>。"
+    },
+    "PALADIN_SPECIAL_SCEPTERWARCRY_NAME": {
+      "en": "Divine Oath",
+      "zh-TW": "神聖誓約"
+    },
+    "PALADIN_SPECIAL_SCEPTERWARCRY_DESCRIPTION": {
+      "en": "<style=cIsUtility>Channel</style> for <style=cIsDamage>2</style> seconds, then release to <style=cIsUtility>Empower</style> an area for <style=cIsDamage>8 seconds</style>, increasing <style=cIsDamage>damage</style> and <style=cIsDamage>attack speed</style> for all allies inside.\n<color=#d299ff>SCEPTER: Boosted radius. Faster cast speed. Double damage. Double attack speed.</color>",
+      "zh-TW": "<style=cIsUtility>引導</style><style=cIsDamage>2</style>秒後釋放，對一片區域施加<style=cIsUtility>強化</style>，持續<style=cIsDamage>8秒</style>，提升區域內所有盟友的<style=cIsDamage>傷害</style>與<style=cIsDamage>攻擊速度</style>。\n<color=#d299ff>權杖：範圍擴大。施放速度加快。傷害加成加倍。攻擊速度加成加倍。</color>"
+    },
+    "PALADIN_SPECIAL_SUN_NAME": {
+      "en": "Cruel Sun",
+      "zh-TW": "殘酷太陽"
+    },
+    "PALADIN_SPECIAL_SUN_DESCRIPTION": {
+      "en": "<style=cIsUtility>Channel</style> for <style=cIsDamage>2</style> seconds, then create a <style=cIsUtility>miniature star</style> for <style=cIsDamage>12</style> seconds that <style=cDeath>overheats EVERYTHING</style> around it. Targets burn for <style=cIsDamage>30% damage</style> + <style=cIsDamage>4%</style> of their maximum health over 5 seconds.",
+      "zh-TW": "<style=cIsUtility>引導</style><style=cIsDamage>2</style>秒後，創造一顆<style=cIsUtility>微型恆星</style>，持續<style=cIsDamage>12</style>秒，使周圍<style=cDeath>所有一切過熱</style>。目標會燃燒，在5秒內受到<style=cIsDamage>30%傷害</style>外加最大生命值<style=cIsDamage>4%</style>的傷害。"
+    },
+    "PALADIN_SPECIAL_SUN_CANCEL_NAME": {
+      "en": "Cancel Cruel Sun",
+      "zh-TW": "取消殘酷太陽"
+    },
+    "PALADIN_SPECIAL_SUN_CANCEL_DESCRIPTION": {
+      "en": "Stop channeling the current Cruel Sun.",
+      "zh-TW": "停止引導目前的殘酷太陽。"
+    },
+    "PALADIN_SPECIAL_SCEPSUN_NAME": {
+      "en": "Pride Flare",
+      "zh-TW": "傲慢閃焰"
+    },
+    "PALADIN_SPECIAL_SCEPSUN_DESCRIPTION": {
+      "en": "<style=cIsUtility>Channel</style> for <style=cIsDamage>2</style> seconds, then create a <style=cIsUtility>miniature star</style> for <style=cIsDamage>12</style> seconds that <style=cDeath>overheats EVERYTHING</style> around it. Targets burn for <style=cIsDamage>30% damage</style> + <style=cIsDamage>4%</style> of their maximum health over 5 seconds.\n<color=#d299ff>SCEPTER: Cast again and hold to aim, then release to throw the star, exploding for <style=cIsDamage>4000% damage</style> to <style=cDeath>EVERYTHING</style> around it.</color>",
+      "zh-TW": "<style=cIsUtility>引導</style><style=cIsDamage>2</style>秒後，創造一顆<style=cIsUtility>微型恆星</style>，持續<style=cIsDamage>12</style>秒，使周圍<style=cDeath>所有一切過熱</style>。目標會燃燒，在5秒內受到<style=cIsDamage>30%傷害</style>外加最大生命值<style=cIsDamage>4%</style>的傷害。\n<color=#d299ff>權杖：再次施放並按住以瞄準，放開即可擲出恆星，爆炸對周圍<style=cDeath>所有一切</style>造成<style=cIsDamage>4000%傷害</style>。</color>"
+    },
+    "PALADIN_SPECIAL_SUN_LEGACY_NAME": {
+      "en": "Cruel Sun (Legacy)",
+      "zh-TW": "殘酷太陽（舊版）"
+    },
+    "PALADIN_SPECIAL_SUN_LEGACY_DESCRIPTION": {
+      "en": "<style=cIsUtility>Channel</style> for <style=cIsDamage>5</style> seconds, then release to create a <style=cIsUtility>miniature star</style> that <style=cIsDamage>drains health</style> from <style=cIsHealth>ALL</style> entities around it.",
+      "zh-TW": "<style=cIsUtility>引導</style><style=cIsDamage>5</style>秒後釋放，創造一顆<style=cIsUtility>微型恆星</style>，從周圍<style=cIsHealth>所有</style>個體身上<style=cIsDamage>吸取生命值</style>。"
+    },
+    "PALADIN_SPECIAL_SCEPSUN_LEGACY_NAME": {
+      "en": "Pride Flare",
+      "zh-TW": "傲慢閃焰"
+    },
+    "PALADIN_SPECIAL_SCEPSUN_LEGACY_DESCRIPTION": {
+      "en": "<style=cIsUtility>Channel</style> for <style=cIsDamage>5</style> seconds, then release to create a <style=cIsUtility>miniature star</style> that <style=cIsDamage>drains health</style> from <style=cIsHealth>ALL</style> entities around it.\n<color=#d299ff>SCEPTER: Explodes for a massive burst of 9001% damage.</color>",
+      "zh-TW": "<style=cIsUtility>引導</style><style=cIsDamage>5</style>秒後釋放，創造一顆<style=cIsUtility>微型恆星</style>，從周圍<style=cIsHealth>所有</style>個體身上<style=cIsDamage>吸取生命值</style>。\n<color=#d299ff>權杖：爆炸時瞬間迸發9001%的巨量傷害。</color>"
+    },
+    "PALADIN_SPECIAL_BERSERK_NAME": {
+      "en": "Berserk",
+      "zh-TW": "狂暴"
+    },
+    "PALADIN_SPECIAL_BERSERK_DESCRIPTION": {
+      "en": "While below <style=cIsHealth>25% health</style>, generate <style=cIsDamage>Rage</style>. When at max <style=cIsDamage>Rage</style>, use to enter <color=#dc0000>Berserker Mode</color>, gaining a <style=cIsHealing>massive buff</style> and a <style=cIsUtility>new set of skills</style>.",
+      "zh-TW": "處於<style=cIsHealth>25%生命值</style>以下時，會累積<style=cIsDamage>怒氣</style>。<style=cIsDamage>怒氣</style>全滿時，使用此技能可進入<color=#dc0000>狂戰士模式</color>，獲得<style=cIsHealing>大幅增益</style>以及<style=cIsUtility>一套全新的技能</style>。"
+    },
+    "KEYWORD_SWORDBEAM": {
+      "en": "<style=cKeywordName>Sword Beam</style><style=cSub>A piercing, short range beam of light that deals <style=cIsDamage>300% damage</style>.",
+      "zh-TW": "<style=cKeywordName>劍光</style><style=cSub>一道可穿透敵人的短距離光束，造成<style=cIsDamage>300%傷害</style>。"
+    },
+    "KEYWORD_TORPOR": {
+      "en": "<style=cKeywordName>Torpor</style><style=cSub>Applies a <style=cIsHealth>60%</style> attack and movement speed <style=cIsDamage>slow</style>. <style=cIsHealth>Drags enemies to the ground.</style>",
+      "zh-TW": "<style=cKeywordName>遲滯</style><style=cSub>施加<style=cIsHealth>60%</style>的攻擊速度與移動速度<style=cIsDamage>減速</style>效果。<style=cIsHealth>將敵人拖到地面。</style>"
+    },
+    "KEYWORD_OVERHEAT": {
+      "en": "<style=cKeywordName>Overheat</style><style=cSub>Multiplies the damage received from <style=cIsDamage>the sun</style>.</style>",
+      "zh-TW": "<style=cKeywordName>過熱</style><style=cSub>使受到<style=cIsDamage>太陽</style>的傷害倍增。</style>"
+    },
+    "ACHIEVEMENT_PALADIN_UNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "A Paladin's Vow",
+      "zh-TW": "聖騎士的誓言"
+    },
+    "ACHIEVEMENT_PALADIN_UNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "Use the Beads of Fealty and become whole once more.",
+      "zh-TW": "使用忠誠之珠，重歸完整。"
+    },
+    "ACHIEVEMENT_PALADIN_MASTERYUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Paladin: Mastery",
+      "zh-TW": "聖騎士：精通"
+    },
+    "ACHIEVEMENT_PALADIN_MASTERYUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Paladin, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為聖騎士，在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_PALADIN_TYPHOONUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Paladin: Grand Mastery",
+      "zh-TW": "聖騎士：大師級精通"
+    },
+    "ACHIEVEMENT_PALADIN_TYPHOONUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Paladin, beat the game or obliterate on Typhoon or Eclipse.\n<color=#8888>(Counts any difficulty Typhoon or higher)</color>",
+      "zh-TW": "作為聖騎士，在颱風或日食難度下通關遊戲或抹除自己。\n<color=#8888>（颱風以上的任何難度皆計入）</color>"
+    },
+    "ACHIEVEMENT_PALADIN_POISONUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Paladin: Her Disciple",
+      "zh-TW": "聖騎士：她的門徒"
+    },
+    "ACHIEVEMENT_PALADIN_POISONUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Paladin, form a covenant with a goddess of corruption.",
+      "zh-TW": "作為聖騎士，與一位腐化女神立下盟約。"
+    },
+    "ACHIEVEMENT_PALADIN_LIGHTNINGSPEARUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Paladin: Jolly Cooperation",
+      "zh-TW": "聖騎士：愉快的合作"
+    },
+    "ACHIEVEMENT_PALADIN_LIGHTNINGSPEARUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Paladin, strike an enemy with a Royal Capacitor. <color=#c11>Host only</color>",
+      "zh-TW": "作為聖騎士，用皇家電容器擊中一名敵人。<color=#c11>僅限房主</color>"
+    },
+    "ACHIEVEMENT_PALADIN_LUNARSHARDUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Paladin: Herald of the Lost King",
+      "zh-TW": "聖騎士：失落之王的使者"
+    },
+    "ACHIEVEMENT_PALADIN_LUNARSHARDUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Paladin, hold 8 Lunar items at once.",
+      "zh-TW": "作為聖騎士，同時持有8個月球物品。"
+    },
+    "ACHIEVEMENT_PALADIN_HEALUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Paladin: Warm Embrace",
+      "zh-TW": "聖騎士：溫暖的擁抱"
+    },
+    "ACHIEVEMENT_PALADIN_HEALUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Paladin, heal an ally with a Gnarled Woodsprite. <color=#c11>Host only</color>",
+      "zh-TW": "作為聖騎士，用身形扭曲的木靈治療一名盟友。<color=#c11>僅限房主</color>"
+    },
+    "ACHIEVEMENT_PALADIN_TORPORUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Paladin: Suppression",
+      "zh-TW": "聖騎士：壓制"
+    },
+    "ACHIEVEMENT_PALADIN_TORPORUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Paladin, stack 4 debuffs on one enemy.",
+      "zh-TW": "作為聖騎士，對同一名敵人疊加4種減益效果。"
+    },
+    "ACHIEVEMENT_PALADIN_CRUELSUNUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Paladin: Lion's Sin of Pride",
+      "zh-TW": "聖騎士：獅子的傲慢之罪"
+    },
+    "ACHIEVEMENT_PALADIN_CRUELSUNUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Paladin, bear the full brunt of a Sun and survive.",
+      "zh-TW": "作為聖騎士，承受太陽的全部威力並存活下來。"
+    },
+    "ACHIEVEMENT_PALADIN_CLAYUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Paladin: Ancient Relic",
+      "zh-TW": "聖騎士：古代遺物"
+    },
+    "ACHIEVEMENT_PALADIN_CLAYUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Paladin, acquire a certain parasitic urn.",
+      "zh-TW": "作為聖騎士，取得某個寄生性的甕。"
+    },
+    "BROTHER_SEE_PALADIN_1": {
+      "en": "Brother? No. Cheap imitation.",
+      "zh-TW": "兄弟？不。拙劣的仿冒品。"
+    },
+    "BROTHER_SEE_PALADIN_2": {
+      "en": "I will answer to your faith.",
+      "zh-TW": "你的信仰，由我來回應。"
+    },
+    "BROTHER_SEE_PALADIN_3": {
+      "en": "Wasted potential.",
+      "zh-TW": "空有潛能，白白浪費。"
+    },
+    "BROTHER_KILL_PALADIN_1": {
+      "en": "Your crude armor fails you.",
+      "zh-TW": "粗劣的盔甲，護不了你。"
+    },
+    "BROTHER_KILL_PALADIN_2": {
+      "en": "Look where your faith has brought you.",
+      "zh-TW": "看看你的信仰把你帶到了何處。"
+    },
+    "BROTHER_KILL_PALADIN_3": {
+      "en": "Return to nothing, foolish devotee.",
+      "zh-TW": "歸於虛無吧，愚昧的信徒。"
+    },
+    "FALSESON_SEE_PALADIN_1": {
+      "en": "Familiar...",
+      "zh-TW": "好熟悉……"
+    },
+    "FALSESON_SEE_PALADIN_2": {
+      "en": "That sword...",
+      "zh-TW": "那把劍……"
+    },
+    "FALSESON_SEE_PALADIN_3": {
+      "en": "An echo?",
+      "zh-TW": "是迴響嗎？"
+    }
+  }
+}

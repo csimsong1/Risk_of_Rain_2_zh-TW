@@ -1,0 +1,101 @@
+{
+  "mod": "Kuriyukihime-IvoryBastion",
+  "version": "1.2.2",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的。",
+    "技能說明、關鍵字說明、被動說明，以及 Heavenfall Rush、Widow Array 兩個技能的名稱，是模組用 R2API 的通用疊加層（LanguageAPI.AddOverlay）寫入的；疊加層的優先順序高於任何語言的翻譯，語言檔翻不到。",
+    "Engineering 升級面板與 HUD 上的文字寫死在程式裡，也翻不到。",
+    "鍵以 Bastion 開頭、含空格的四條是兩個 buff 的名稱與說明（模組以 buff 的內部名稱當 token）。"
+  ],
+  "strings": {
+    "BASTION_NAME": {
+      "en": "Ivory Bastion",
+      "zh-TW": "象牙堡壘"
+    },
+    "BASTION_SUBTITLE": {
+      "en": "The Unfolding Arsenal",
+      "zh-TW": "展開的軍火庫"
+    },
+    "BASTION_DESCRIPTION": {
+      "en": "A small aerial skirmisher unfolds into a missile fortress.\n\n< ! Mobile: rapid pistols, held Thruster Boost, Heavenfall Rush micro-missile dashes and Blue Shift overdrive.\n\n< ! Siege: laser cannon, homing missiles, walking spider mines and Skyfall warheads. Aegis protects and accelerates missile reload.\n\n< ! C switches forms; Shift fires your current form's utility. Both utilities recharge independently in the background.\n\n< ! Produce Fabrication while deployed and the run timer advances. Buy lasting upgrades through the Engineering panel.",
+      "zh-TW": "一架小巧的空中遊擊機體，能展開成一座導彈要塞。\n\n< ! 機動形態：快速連射的手槍、按住施放的推進器加速、以微型導彈衝刺的天墜突進，以及藍移超頻。\n\n< ! 攻城形態：雷射炮、追蹤導彈、會行走的蜘蛛地雷，以及天降彈頭。神盾能提供防護，並加快導彈的裝填速度。\n\n< ! 按C切換形態；按Shift施放目前形態的輔助技能。兩個輔助技能都會在背景各自獨立充能。\n\n< ! 處於部署狀態且本輪計時持續進行時，會產生製造點數。可透過工程面板購買持續生效的升級。"
+    },
+    "BASTION_OUTRO": {
+      "en": "...and so she left, carrying an army within.",
+      "zh-TW": "……於是她走了，體內承載著一整支軍隊。"
+    },
+    "BASTION_FAILURE": {
+      "en": "...and so she vanished, the last battery falling silent.",
+      "zh-TW": "……於是她就這樣消逝了，最後一座炮臺也陷入沉寂。"
+    },
+    "BASTION_PASSIVE_NAME": {
+      "en": "Autonomous Foundry",
+      "zh-TW": "自主鑄造廠"
+    },
+    "BASTION_NEEDLE_NAME": {
+      "en": "Needlefire",
+      "zh-TW": "針火"
+    },
+    "BASTION_BOOST_NAME": {
+      "en": "Thruster Boost",
+      "zh-TW": "推進器加速"
+    },
+    "BASTION_DEPLOY_NAME": {
+      "en": "Deploy Fortress",
+      "zh-TW": "部署要塞"
+    },
+    "BASTION_PACK_NAME": {
+      "en": "Pack Up",
+      "zh-TW": "收合要塞"
+    },
+    "BASTION_REDLINE_NAME": {
+      "en": "Blue Shift",
+      "zh-TW": "藍移"
+    },
+    "BASTION_LANCE_NAME": {
+      "en": "Ion Lance / Missile Battery",
+      "zh-TW": "離子長槍／導彈炮臺"
+    },
+    "BASTION_PROTOCOL_NAME": {
+      "en": "Aegis Protocol",
+      "zh-TW": "神盾協定"
+    },
+    "BASTION_SATURATION_NAME": {
+      "en": "Skyfall Barrage",
+      "zh-TW": "天降彈幕"
+    },
+    "BASTION_UNIT_0": {
+      "en": "Bulwark Sentinel",
+      "zh-TW": "壁壘哨兵"
+    },
+    "BASTION_UNIT_1": {
+      "en": "Needle Gunner",
+      "zh-TW": "飛針射手"
+    },
+    "BASTION_UNIT_2": {
+      "en": "Arc Interceptor",
+      "zh-TW": "電弧攔截機"
+    },
+    "BASTION_UNIT_3": {
+      "en": "Field Repairer",
+      "zh-TW": "戰地維修機"
+    },
+    "BastionAegis Barrier": {
+      "en": "Aegis Barrier",
+      "zh-TW": "神盾屏障"
+    },
+    "BastionAegis Barrier_DESCRIPTION": {
+      "en": "Independent, decaying Aegis barrier. Absorbs damage before Seraph Shield. Hits stopped by Aegis do not delay Seraph recharge.",
+      "zh-TW": "獨立且會逐漸衰減的神盾屏障。會比熾天使護盾先吸收傷害。被神盾擋下的攻擊不會延遲熾天使護盾的充能。"
+    },
+    "BastionSeraph Shield": {
+      "en": "Seraph Shield",
+      "zh-TW": "熾天使護盾"
+    },
+    "BastionSeraph Shield_DESCRIPTION": {
+      "en": "Independent shield with its own charge, damage reduction and recharge. Barrier absorbs damage first. Item shields and healing do not refill it.",
+      "zh-TW": "獨立的護盾，擁有自己的護盾值、傷害減免與充能機制。屏障會優先吸收傷害。物品提供的護盾與治療都無法補充它。"
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "mod": "EnforcerGang-Pilot",
+  "version": "0.6.5",
+  "loader": "r2api",
+  "notes": [
+    "模組自帶語言檔（language/en、language/zh-CN 等），依遊戲的語言名稱載入同名資料夾；沒有 zh-TW 資料夾，選繁體中文時會顯示英文，所以另外用 R2API 語言檔補上。",
+    "英文取自 language/en（Pilot.txt）；有簡體翻譯的條目以它轉成繁體後對照英文修訂，其餘由英文翻譯。"
+  ],
+  "strings": {
+    "MOFFEIN_PILOT_BODY_NAME": {
+      "en": "Pilot",
+      "zh-TW": "飛行員"
+    },
+    "MOFFEIN_PILOT_BODY_SUBTITLE": {
+      "en": "Airborne Ace",
+      "zh-TW": "空中王牌"
+    },
+    "MOFFEIN_PILOT_BODY_LORE": {
+      "en": "United Enterprise Shipping invites pilots from across the known universe to apply to our Preferred Pilot Enhanced Commissions program! Benefits include access to cybernetic impact augmentations for easier landings, Weapons and Securities certification programs, and luxurious vacation opportunities! (Applicants expected to apply 5 years in advance of flight operations. Cybernetics not guaranteed to all program participants. Weapons and Securities certificates only valid through UES employment. All opportunities are listed as-is and no further gratuities, opportunities or benefits are to be assumed regardless of updates to space maritime law on participating planets.",
+      "zh-TW": "聯合企業航運（尤伊思）誠摯邀請已知宇宙各地的飛行員，申請加入我們的「優選飛行員加碼佣金計畫」！福利包括：可接受讓降落更輕鬆的義體抗衝擊強化、參加武器與保全認證課程，還有奢華的度假機會！（申請者須於開始飛行作業前5年提出申請。不保證所有計畫參與者皆可獲得義體。武器與保全證書僅於受僱於尤伊思期間有效。所有機會皆依現況提供，無論各參與星球的太空海事法如何更新，均不得預期任何額外的酬金、機會或福利。）"
+    },
+    "MOFFEIN_PILOT_BODY_DESCRIPTION": {
+      "en": "The Pilot is an airborne fighter that excels at raining damage from above.<style=cSub>\r\n\r\n< ! > Pilot can avoid danger by staying airborne. Clever use of his skills will allow you to maximize your airtime.\r\n\r\n< ! > Target Acquired can be used to break your fall.\r\n\r\n< ! > Rapid Deployment travels upwards when used on the ground, and forwards when used while airborne.\r\n\r\n< ! > Knock enemies into the sky with Air Strike, then combine that with Target Acquired to juggle them in the air.",
+      "zh-TW": "飛行員是一名空中戰士，擅長從高處傾瀉傷害。<style=cSub>\r\n\r\n< ! > 飛行員可以藉由保持滯空來避開危險。巧妙運用他的技能，就能盡可能延長滯空時間。\r\n\r\n< ! > 目標鎖定可以用來緩衝下墜。\r\n\r\n< ! > 快速部署在地面使用時會向上升空，在空中使用時則會向前飛行。\r\n\r\n< ! > 用空中打擊把敵人擊飛到空中，再搭配目標鎖定，就能在空中連續追打它們。"
+    },
+    "MOFFEIN_PILOT_BODY_OUTRO_FLAVOR": {
+      "en": "..and so he left, his dreams of the sky below.",
+      "zh-TW": "……於是他走了，昔日對天空的夢想，如今已在腳下。"
+    },
+    "MOFFEIN_PILOT_BODY_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR": {
+      "en": "..and so he vanished, the skies forever out of reach.",
+      "zh-TW": "……於是他就這樣消逝了，天空從此遙不可及。"
+    },
+    "MOFFEIN_PILOT_BODY_OUTRO_FAILURE": {
+      "en": "..and so he vanished, the skies forever out of reach.",
+      "zh-TW": "……於是他就這樣消逝了，天空從此遙不可及。"
+    },
+    "MOFFEIN_PILOT_BODY_PRIMARY_NAME": {
+      "en": "Cluster Fire",
+      "zh-TW": "集束射擊"
+    },
+    "MOFFEIN_PILOT_BODY_PRIMARY_DESCRIPTION": {
+      "en": "Fire your weapon for <style=cIsDamage>160% damage</style>. Every third hit <style=cIsDamage>explodes</style> and deals <style=cIsDamage>320% damage</style>.",
+      "zh-TW": "開火射擊，造成<style=cIsDamage>160%傷害</style>。每第三次命中會<style=cIsDamage>爆炸</style>，造成<style=cIsDamage>320%傷害</style>。"
+    },
+    "MOFFEIN_PILOT_BODY_PRIMARY_RETURNS_DESCRIPTION": {
+      "en": "Fire your weapon for <style=cIsDamage>160% damage</style>. Every third hit deals <style=cIsDamage>320% damage</style> and <style=cIsDamage>pierces</style>.",
+      "zh-TW": "開火射擊，造成<style=cIsDamage>160%傷害</style>。每第三次命中會造成<style=cIsDamage>320%傷害</style>並<style=cIsDamage>穿透</style>敵人。"
+    },
+    "MOFFEIN_PILOT_BODY_PRIMARY_ALT_NAME": {
+      "en": "Rapid Fire",
+      "zh-TW": "速射"
+    },
+    "MOFFEIN_PILOT_BODY_PRIMARY_ALT_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile</style>. Rapidly fire your weapon for <style=cIsDamage>140% damage</style>.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。快速開火，造成<style=cIsDamage>140%傷害</style>。"
+    },
+    "MOFFEIN_PILOT_BODY_PRIMARY_SILENCER_NAME": {
+      "en": "Suppressed Fire",
+      "zh-TW": "消音射擊"
+    },
+    "MOFFEIN_PILOT_BODY_PRIMARY_SILENCER_DESCRIPTION": {
+      "en": "<style=cIsDamage>Slayer</style>. Fire your silenced pistol for <style=cIsDamage>100% damage</style>.",
+      "zh-TW": "<style=cIsDamage>屠戮者</style>。用消音手槍射擊，造成<style=cIsDamage>100%傷害</style>。"
+    },
+    "MOFFEIN_PILOT_BODY_SECONDARY_NAME": {
+      "en": "Target Acquired!",
+      "zh-TW": "目標鎖定！"
+    },
+    "MOFFEIN_PILOT_BODY_SECONDARY_DESCRIPTION": {
+      "en": "Transform your weapon into a <style=cIsDamage>piercing smartgun</style> that deals <style=cIsDamage>3x160% damage</style>. Deals <style=cIsDamage>50%</style> more damage to <style=cIsUtility>airborne</style> targets. Hold up to 2.",
+      "zh-TW": "將武器變形為<style=cIsDamage>穿透型智慧槍</style>，造成<style=cIsDamage>3x160%傷害</style>。對<style=cIsUtility>空中</style>目標造成的傷害提高<style=cIsDamage>50%</style>。最多可儲存2次。"
+    },
+    "MOFFEIN_PILOT_BODY_SECONDARY_ALT_NAME": {
+      "en": "Bombs Away!",
+      "zh-TW": "投彈！"
+    },
+    "MOFFEIN_PILOT_BODY_SECONDARY_ALT_DESCRIPTION": {
+      "en": "Transform your weapon into a <style=cIsDamage>energy grenade launcher</style> that deals <style=cIsDamage>480% damage</style>. While <style=cIsUtility>airborne</style>, deals <style=cIsDamage>3x220% damage</style> instead. Hold up to 2.",
+      "zh-TW": "將武器變形為<style=cIsDamage>能量榴彈發射器</style>，造成<style=cIsDamage>480%傷害</style>。身處<style=cIsUtility>空中</style>時，改為造成<style=cIsDamage>3x220%傷害</style>。最多可儲存2次。"
+    },
+    "MOFFEIN_PILOT_BODY_UTILITY_NAME": {
+      "en": "Rapid Deployment",
+      "zh-TW": "快速部署"
+    },
+    "MOFFEIN_PILOT_BODY_UTILITY_DESCRIPTION": {
+      "en": "<style=cIsDamage>Stunning</style>. Launch into the air and <style=cIsUtility>activate your parachute</style>. Using this midair <style=cIsHealth>reduces lift</style> in exchange for more <style=cIsUtility>forward force</style>.",
+      "zh-TW": "<style=cIsDamage>眩暈</style>。彈射升空並<style=cIsUtility>打開降落傘</style>。在空中使用時會<style=cIsHealth>降低上升力道</style>，換取更強的<style=cIsUtility>向前推力</style>。"
+    },
+    "MOFFEIN_PILOT_BODY_UTILITY_ALT_NAME": {
+      "en": "Aerobatics",
+      "zh-TW": "特技飛行"
+    },
+    "MOFFEIN_PILOT_BODY_UTILITY_ALT_DESCRIPTION": {
+      "en": "<style=cIsUtility>Dash forwards</style> and <style=cIsUtility>cling to a wall</style> while gaining <style=cIsDamage>30% attack speed</style>. Boost forwards when <style=cIsUtility>jumping off the wall</style>.",
+      "zh-TW": "<style=cIsUtility>向前衝刺</style>並<style=cIsUtility>攀附在牆上</style>，同時獲得<style=cIsDamage>30%攻擊速度</style>。<style=cIsUtility>從牆上跳離</style>時會向前加速衝出。"
+    },
+    "MOFFEIN_PILOT_BODY_SPECIAL_NAME": {
+      "en": "Air Strike",
+      "zh-TW": "空中打擊"
+    },
+    "MOFFEIN_PILOT_BODY_SPECIAL_DESCRIPTION": {
+      "en": "<style=cIsUtility>Dash</style> and place a bomb <style=cIsDamage>at your feet</style> that <style=cIsDamage>knocks enemies into the air</style> for <style=cIsDamage>600% damage</style>. Can trigger <style=cIsDamage>3</style> times. Hold up to 2.",
+      "zh-TW": "<style=cIsUtility>衝刺</style>並在<style=cIsDamage>腳下</style>放置一顆炸彈，<style=cIsDamage>將敵人擊飛到空中</style>，造成<style=cIsDamage>600%傷害</style>。可觸發<style=cIsDamage>3</style>次。最多可儲存2次。"
+    },
+    "MOFFEIN_PILOT_BODY_SPECIAL_SCEPTER_NAME": {
+      "en": "Air Raid",
+      "zh-TW": "空襲"
+    },
+    "MOFFEIN_PILOT_BODY_SPECIAL_SCEPTER_DESCRIPTION": {
+      "en": "<style=cIsUtility>Dash</style> and place a bomb <style=cIsDamage>at your feet</style> that <style=cIsDamage>knocks enemies into the air</style> for <style=cIsDamage>800% damage</style>. Can trigger <style=cIsDamage>6</style> times. Hold up to 2.",
+      "zh-TW": "<style=cIsUtility>衝刺</style>並在<style=cIsDamage>腳下</style>放置一顆炸彈，<style=cIsDamage>將敵人擊飛到空中</style>，造成<style=cIsDamage>800%傷害</style>。可觸發<style=cIsDamage>6</style>次。最多可儲存2次。"
+    },
+    "MOFFEIN_PILOT_BODY_SPECIAL_ALT_NAME": {
+      "en": "Aerial Support",
+      "zh-TW": "空中支援"
+    },
+    "MOFFEIN_PILOT_BODY_SPECIAL_ALT_DESCRIPTION": {
+      "en": "Bombard an area for <style=cIsDamage>4x400% damage</style>, <style=cIsDamage>knocking enemies into the air</style> on the final hit.",
+      "zh-TW": "轟炸一片區域，造成<style=cIsDamage>4x400%傷害</style>，最後一擊會<style=cIsDamage>將敵人擊飛到空中</style>。"
+    },
+    "MOFFEIN_PILOT_BODY_SPECIAL_ALT_SCEPTER_NAME": {
+      "en": "Aerial Barrage",
+      "zh-TW": "空中彈幕"
+    },
+    "MOFFEIN_PILOT_BODY_SPECIAL_ALT_SCEPTER_DESCRIPTION": {
+      "en": "Bombard an area for <style=cIsDamage>8x400% damage</style>, <style=cIsDamage>knocking enemies into the air</style> on the final hit.",
+      "zh-TW": "轟炸一片區域，造成<style=cIsDamage>8x400%傷害</style>，最後一擊會<style=cIsDamage>將敵人擊飛到空中</style>。"
+    }
+  }
+}

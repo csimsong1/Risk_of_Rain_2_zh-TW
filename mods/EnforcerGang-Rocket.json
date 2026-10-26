@@ -1,0 +1,147 @@
+{
+  "mod": "EnforcerGang-Rocket",
+  "version": "1.1.6",
+  "loader": "r2api",
+  "notes": [
+    "模組自帶語言檔（language/en、language/zh-CN 等），依遊戲的語言名稱載入同名資料夾；沒有 zh-TW 資料夾，選繁體中文時會顯示英文，所以另外用 R2API 語言檔補上。",
+    "英文取自 language/en（RocketSurvivor.txt）；有簡體翻譯的條目以它轉成繁體後對照英文修訂，其餘由英文翻譯。"
+  ],
+  "strings": {
+    "MOFFEIN_ROCKET_BODY_NAME": {
+      "en": "Rocket",
+      "zh-TW": "火箭手"
+    },
+    "MOFFEIN_ROCKET_BODY_SUBTITLE": {
+      "en": "Shock and Awe",
+      "zh-TW": "震撼與威懾"
+    },
+    "MOFFEIN_ROCKET_BODY_LORE": {
+      "en": "Log - Day 432\n\nYou know what's better than a rocket launcher?NOTHING.\n\nI've been blasting aliens, rocks, and god-knows-what-else across this forsaken planet for over a year now, and lemme tell ya, there’s no problem a well-timed explosion can't fix. Got a swarm of bugs coming at you? BOOM. Need to cross a gap? BAM. Heck, I’ve even blown up dinner a couple times. Charred meat tastes better when it’s crispy, alright?\n\nThey sent me here for my \"reckless behavior.\" I mean, is it really reckless if I get results? Sure, I may have leveled a couple of bases by accident. Who hasn’t? You try keeping your trigger finger calm when you're holding 60 pounds of explosive fun.\n\nNow, I’m stuck fighting off lizard-things and space bugs. But you know what? I'm having a blast (literally). Every time I hear that sweet fwoosh of a rocket sailing through the air, I know it’s gonna be a good day. And when it hits? Well, I’ve never been one for details, but the view’s always spectacular.\n\nSure, I might blow myself up one day. But until then, I’m taking this launcher and riding the boom all the way home.\n\nEnd Log. And yeah, I blew up the recorder too. Oops.",
+      "zh-TW": "日誌：第432天\n\n你知道有什麼比火箭發射器更棒嗎？沒！有！\n\n我在這顆被遺棄的星球上炸外星人、炸石頭、炸天曉得還有什麼鬼東西，已經炸了一年多了。我跟你說，世上沒有什麼問題是一發抓準時機的爆炸解決不了的。一群蟲子朝你衝過來？轟！要跨過一道深溝？碰！說真的，我連晚餐都炸飛過好幾次。烤焦的肉就是要酥酥脆脆才好吃，懂嗎？\n\n他們把我送來這裡，說是因為我「行事魯莽」。拜託，只要有成果，那還算魯莽嗎？好啦，我可能不小心夷平過幾座基地。誰沒幹過？等你抱著六十磅重的爆炸樂趣，再來試試看能不能讓扣扳機的手指保持冷靜。\n\n現在我被困在這裡，跟蜥蜴怪和太空蟲子打個沒完。不過你知道嗎？我玩得爆開心（字面上的「爆」）。每次聽到火箭劃過天空那美妙的「咻——」一聲，我就知道今天會是美好的一天。至於命中的時候？嗯，我向來不太注重細節，但那景象永遠壯觀得要命。\n\n當然，說不定哪天我會把自己給炸了。但在那之前，我會扛著這具發射器，一路乘著爆炸衝回家。\n\n日誌結束。對啦，我把錄音機也炸了。糟糕。"
+    },
+    "MOFFEIN_ROCKET_BODY_DESCRIPTION": {
+      "en": "The Rocket is a highly mobile explosives expert who deals devastating area damage.<style=cSub>\r\n\r\n< ! > Blast jump often to traverse the map quickly and escape danger!\r\n\r\n< ! > Your Rocket Launcher has high knockback against enemies. Use this to knock them off of ledges.\r\n\r\n< ! > Remote Detonator is useful for hitting flying enemies, and can also be used for mobility.\r\n\r\n< ! > Nitro Charge is great for both area damage and mobility.\r\n\r\n< ! > Rapid Rearm can be used to skip your rocket launcher's lengthy reload time.",
+      "zh-TW": "火箭手是一名機動性極高的爆破專家，能造成毀滅性的範圍傷害。<style=cSub>\r\n\r\n< ! > 多多使用爆炸跳，就能快速穿越地圖、脫離險境！\r\n\r\n< ! > 你的火箭發射器對敵人有很強的擊退力，可以藉此把敵人轟下懸崖。\r\n\r\n< ! > 遙控引爆器很適合用來攻擊飛行的敵人，也能用來提升機動性。\r\n\r\n< ! > 硝化炸藥既能造成範圍傷害，也能用來移動。\r\n\r\n< ! > 快速重裝可以讓你跳過火箭發射器漫長的裝填時間。"
+    },
+    "MOFFEIN_ROCKET_BODY_OUTRO_FLAVOR": {
+      "en": "..and so he left, blasting off again.",
+      "zh-TW": "……於是他走了，再一次一飛衝天。"
+    },
+    "MOFFEIN_ROCKET_BODY_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR": {
+      "en": "..and so he vanished, never to touch the ground again.",
+      "zh-TW": "……於是他就這樣消逝了，再也沒有落回地面。"
+    },
+    "MOFFEIN_ROCKET_BODY_PASSIVE_NAME": {
+      "en": "Blastoff",
+      "zh-TW": "發射升空"
+    },
+    "MOFFEIN_ROCKET_BODY_PASSIVE_DESCRIPTION": {
+      "en": "Your explosives can be used to <style=cIsUtility>blast jump</style>.",
+      "zh-TW": "你的爆炸物可以用來<style=cIsUtility>爆炸跳</style>。"
+    },
+    "MOFFEIN_ROCKET_BODY_PRIMARY_NAME": {
+      "en": "HG4 Rocket Launcher",
+      "zh-TW": "HG4火箭發射器"
+    },
+    "MOFFEIN_ROCKET_BODY_PRIMARY_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile</style>. Fire a rocket for <style=cIsDamage>600% damage</style>. Can hold up to 4.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。發射一枚火箭，造成<style=cIsDamage>600%傷害</style>。最多可裝填4枚。"
+    },
+    "MOFFEIN_ROCKET_BODY_PRIMARY_ALT_NAME": {
+      "en": "HG4 SAM Launcher",
+      "zh-TW": "HG4地對空飛彈發射器"
+    },
+    "MOFFEIN_ROCKET_BODY_PRIMARY_ALT_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile</style>. Fire a <style=cIsUtility>heat-seeking</style> missile with a <style=cIsHealth>smaller blast radius</style> that deals <style=cIsDamage>600% damage</style>. Can hold up to 4.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。發射一枚<style=cIsUtility>熱追蹤</style>飛彈，造成<style=cIsDamage>600%傷害</style>，但<style=cIsHealth>爆炸半徑較小</style>。最多可裝填4枚。"
+    },
+    "MOFFEIN_ROCKET_BODY_SECONDARY_NAME": {
+      "en": "Remote Detonator",
+      "zh-TW": "遙控引爆器"
+    },
+    "MOFFEIN_ROCKET_BODY_SECONDARY_DESCRIPTION": {
+      "en": "Detonate <style=cIsDamage>all explosives</style>. Detonated <style=cIsDamage>rockets</style> gain <style=cIsDamage>50%</style> extra <style=cIsDamage>damage</style> and <style=cIsDamage>blast radius</style>.",
+      "zh-TW": "引爆<style=cIsDamage>所有爆炸物</style>。被引爆的<style=cIsDamage>火箭</style>會額外獲得<style=cIsDamage>50%</style>的<style=cIsDamage>傷害</style>與<style=cIsDamage>爆炸半徑</style>。"
+    },
+    "MOFFEIN_ROCKET_BODY_UTILITY_NAME": {
+      "en": "Nitro Charge",
+      "zh-TW": "硝化炸藥"
+    },
+    "MOFFEIN_ROCKET_BODY_UTILITY_DESCRIPTION": {
+      "en": "<style=cIsDamage>Stunning</style>. Place an explosive charge. Use <style=cIsDamage>Remote Detonator</style> to detonate it for <style=cIsDamage>1200% damage</style>.",
+      "zh-TW": "<style=cIsDamage>眩暈</style>。放置一個炸藥包。使用<style=cIsDamage>遙控引爆器</style>將其引爆，造成<style=cIsDamage>1200%傷害</style>。"
+    },
+    "MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME": {
+      "en": "Bombing Run",
+      "zh-TW": "轟炸突襲"
+    },
+    "MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION": {
+      "en": "<style=cIsUtility>Heavy</style>. <style=cIsDamage>Stunning</style>. Swing your explosive shovel at an enemy for <style=cIsDamage>1200% damage</style>. Deals <style=cIsDamage>Critical Strikes</style> while <style=cIsUtility>blast jumping</style>.",
+      "zh-TW": "<style=cIsUtility>重型</style>。<style=cIsDamage>眩暈</style>。朝敵人揮出爆破鏟，造成<style=cIsDamage>1200%傷害</style>。<style=cIsUtility>爆炸跳</style>期間必定造成<style=cIsDamage>暴擊</style>。"
+    },
+    "MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_NAME": {
+      "en": "Grand Slam",
+      "zh-TW": "大滿貫"
+    },
+    "MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_DESCRIPTION": {
+      "en": "<style=cIsUtility>Heavy</style>. <style=cIsDamage>Stunning</style>. Swing your explosive shovel at an enemy for <style=cIsDamage>1800% damage</style>. Deals <style=cIsDamage>Critical Strikes</style> while <style=cIsUtility>blast jumping</style>.",
+      "zh-TW": "<style=cIsUtility>重型</style>。<style=cIsDamage>眩暈</style>。朝敵人揮出爆破鏟，造成<style=cIsDamage>1800%傷害</style>。<style=cIsUtility>爆炸跳</style>期間必定造成<style=cIsDamage>暴擊</style>。"
+    },
+    "MOFFEIN_ROCKET_BODY_SPECIAL_NAME": {
+      "en": "Rapid Rearm",
+      "zh-TW": "快速重裝"
+    },
+    "MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION": {
+      "en": "Rapidly <style=cIsDamage>fire 4 rockets</style>, then <style=cIsUtility>reload your weapon</style>.",
+      "zh-TW": "快速<style=cIsDamage>發射4枚火箭</style>，接著<style=cIsUtility>重新裝填武器</style>。"
+    },
+    "MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_NAME": {
+      "en": "Rocketstorm",
+      "zh-TW": "火箭風暴"
+    },
+    "MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_DESCRIPTION": {
+      "en": "Rapidly <style=cIsDamage>fire 10 rockets</style>, then <style=cIsUtility>reload your weapon</style>.",
+      "zh-TW": "快速<style=cIsDamage>發射10枚火箭</style>，接著<style=cIsUtility>重新裝填武器</style>。"
+    },
+    "ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_NAME": {
+      "en": "Rocket: Speed is Life",
+      "zh-TW": "火箭手：速度就是生命"
+    },
+    "ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_DESCRIPTION": {
+      "en": "As Rocket, reach and proceed through the Celestial Portal in 25 minutes or less.",
+      "zh-TW": "作為火箭手，在25分鐘或更短時間內到達並穿過天界傳送門。"
+    },
+    "ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_NAME": {
+      "en": "Rocket: Pogo",
+      "zh-TW": "火箭手：彈簧跳"
+    },
+    "ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_DESCRIPTION": {
+      "en": "As Rocket, blast jump 10 times in a row without touching the ground.",
+      "zh-TW": "作為火箭手，在不接觸地面的情況下連續爆炸跳10次。"
+    },
+    "MOFFEIN_ROCKET_BODY_MASTERY_SKIN_NAME": {
+      "en": "Bombardier",
+      "zh-TW": "投彈手"
+    },
+    "ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_NAME": {
+      "en": "Rocket: Mastery",
+      "zh-TW": "火箭手：精通"
+    },
+    "ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_DESCRIPTION": {
+      "en": "As Rocket, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為火箭手，在季風難度下通關遊戲或抹除自己。"
+    },
+    "MOFFEIN_ROCKET_BODY_GRANDMASTERY_SKIN_NAME": {
+      "en": "Ranger",
+      "zh-TW": "遊騎兵"
+    },
+    "ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_NAME": {
+      "en": "Rocket: Grand Mastery",
+      "zh-TW": "火箭手：大師級精通"
+    },
+    "ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_DESCRIPTION": {
+      "en": "As Rocket, beat the game or obliterate on Typhoon or Eclipse.\n<color=#8888>(Typhoon difficulty requires Starstorm 2)</color>",
+      "zh-TW": "作為火箭手，在颱風或日食難度下通關遊戲或抹除自己。\n<color=#8888>（颱風難度需要安裝Starstorm 2）</color>"
+    }
+  }
+}

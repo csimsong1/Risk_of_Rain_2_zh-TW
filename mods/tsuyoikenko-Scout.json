@@ -1,0 +1,136 @@
+{
+  "mod": "tsuyoikenko-Scout",
+  "version": "0.9.11",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的。",
+    "技能說明裡的數字（傷害%、彈藥量、秒數等）來自模組設定的預設值；模組的英文會跟著設定變，譯文是固定的，改過設定請一併修改。",
+    "鍵是英文句子的條目：模組直接把那段英文當語言 token 使用，沒有另外註冊，所以用英文原文當鍵來翻譯；原文改一個字就會對不上。關鍵字說明（靈巧、原子暴擊），以及配裝畫面的欄位標籤 Passive、Swap 屬於這一類。"
+  ],
+  "strings": {
+    "KENKO_SCOUT_NAME": {
+      "en": "Scout",
+      "zh-TW": "偵察兵"
+    },
+    "KENKO_SCOUT_DESCRIPTION": {
+      "en": "The Scout is an extremely mobile, burst damage survivor that can focus down singular enemies with ease.<color=#CCD3E0>\r\n\r\n< ! > Use your Splatterguns knockback to reach high locations or to avoid enemy attacks.\r\n\r\n< ! > Comboing your Baseball and Cleaver can deal massive damage from far away.\r\n\r\n< ! > Bat can gain the most Atomic Core charge if there are large groups of enemies.\r\n\r\n< ! > Extra stocks for Atomic Blast increase its duration while cooldown reduction increases Atomic Core chargeup speed.\r\n\r\n",
+      "zh-TW": "偵察兵是一名機動性極高的爆發傷害型倖存者，能輕鬆集火擊倒單一敵人。<color=#CCD3E0>\r\n\r\n< ! > 利用濺射槍的擊退效果登上高處，或閃避敵人的攻擊。\r\n\r\n< ! > 把棒球和切肉刀連起來用，能從遠處造成大量傷害。\r\n\r\n< ! > 敵人成群時，用球棒能累積最多的原子核心充能。\r\n\r\n< ! > 原子爆發的額外充能會延長其持續時間，冷卻時間縮減則會加快原子核心的充能速度。\r\n\r\n"
+    },
+    "KENKO_SCOUT_SUBTITLE": {
+      "en": "Force of Nature",
+      "zh-TW": "自然之力"
+    },
+    "KENKO_SCOUT_LORE": {
+      "en": "An escape from the power plant. An accident that would spread like wildfire throughout the news, its cause unknown. A lone worker stumbles slowly away, his bat being his only support. He wandered aimlessly, pain and shock ringing throughout his body. Approaching what seemed to be an abandoned railroad, in the distance he could only attempt to make out what, logically, he considered was another person. Having a strange aura to them, he kept his guard up and tried to identify any potential threat from the figure.\r\n\r\n“It’s a nice time for a walk, mind if I join ya near these ol’ tracks?”\r\n\r\n“W-Who are you…? What d-do you want from me?”\r\n\r\n“My identity does not concern you.”\r\n“... however I can tell you had a pretty rough night. Nearing Death’s doorstep, hm?”\r\n“I may have something that can help you out, an… offer of some sorts.”\r\n\r\n“A… d-deal..?”\r\n\r\n“Precisely.”\r\n\r\nHis throat closed, heart began to race, and mind beginning to pretend that none of this was happening. Hesitating, he finally exhaled the breath he had been holding for what felt like an eternity as the person spoke. Was it fear he was feeling? Confusion? Or was it the idea that he could have the world at his fingertips that sent him into an almost euphoric temptation? Regardless, he still listened intently. Focusing and decoding every single word. Maybe it could get him out of this hell.\r\n\r\n“I can sense the radiation emitting from you… hm…”\r\n“... I got just the thing. How about I turn that into something that will power ya up, hm? Make you better and stronger than before, in exchange for… let's see… some favors. Sounds good, doesn’t it? I think it does.”\r\n“I have some old pals of mine that can help out with the procedure too.”\r\n\r\n“... B-but what about my job?”\r\n“Where will I go? I would rather not be unemployed…”\r\n\r\n“Funny that you mention that, I heard of a job that goes somewhere into the depths of space. I’d imagine they’d be able to utilize your new speed and agility for it once it’s all done.”\r\n“... also a word of advice, build up some confidence. It may improve your chances.”\r\n\r\n“Hm…”\r\n“... Alright, call it a deal… whoever you are.”\r\n\r\n“Wonderful.”\r\n\r\nThe sound of a distant train can be heard. As it slowed down and with the sound of its old whistle going off, the two were gone.",
+      "zh-TW": "發電廠裡的一場脫逃。一場意外，消息即將如野火燎原般傳遍各家新聞，起因不明。一名孤身的工人踉踉蹌蹌地緩緩走遠，手中的球棒是他唯一的支撐。他漫無目的地遊蕩，疼痛與驚嚇在全身迴盪。走近一段看似廢棄的鐵道時，他只能勉強辨認出遠處的身影——照理說，那應該是另一個人。對方散發著一股奇異的氣息，他保持戒備，試圖看清這個身影是否帶有任何威脅。\r\n\r\n「這時間散步正好，介意我陪你在這些老鐵軌邊走走嗎？」\r\n\r\n「你、你是誰……？你想從我這、這裡得到什麼？」\r\n\r\n「我的身分與你無關。」\r\n「……不過，看得出來你這一晚過得相當難熬。都快走到死神家門口了，嗯？」\r\n「我也許有個東西能幫上你，一個……算是某種提議吧。」\r\n\r\n「交、交易……？」\r\n\r\n「正是。」\r\n\r\n他的喉嚨一緊，心跳開始加速，腦中開始假裝這一切都沒有發生。他猶豫著，在那人說話的同時，終於吐出那口彷彿憋了一輩子的氣。他感受到的是恐懼嗎？是困惑？還是一想到整個世界都能任他擺布，便陷入一種近乎狂喜的誘惑？無論如何，他仍專注地聆聽，細細解讀每一個字。也許這能讓他逃離這座地獄。\r\n\r\n「我感覺得到你身上散發出的輻射……嗯……」\r\n「……我正好有個好東西。我把它變成能讓你變強的力量如何，嗯？讓你比以前更好、更強，代價是……我想想……幫我幾個忙。聽起來不錯吧？我是這麼覺得。」\r\n「我還有幾個老朋友，也能幫忙處理這場手術。」\r\n\r\n「……可、可是我的工作怎麼辦？」\r\n「我要去哪裡？我可不想失業……」\r\n\r\n「說來有趣，我正好聽說有份工作要深入太空的某個地方。等一切都辦妥了，我想他們用得上你新的速度與敏捷。」\r\n「……還有，給你個忠告：培養一點自信。也許能提高你的勝算。」\r\n\r\n「嗯……」\r\n「……好吧，就這麼說定了……不管你是誰。」\r\n\r\n「太好了。」\r\n\r\n遠方傳來火車的聲音。火車漸漸慢了下來，老舊的汽笛隨之響起，而那兩人已消失無蹤。"
+    },
+    "KENKO_SCOUT_OUTRO_FLAVOR": {
+      "en": ".. grass grows, birds fly, sun shines and brother, I hurt people .",
+      "zh-TW": "……草會長，鳥會飛，太陽會發光；而兄弟，我呢，專門揍人。"
+    },
+    "KENKO_SCOUT_OUTRO_FAILURE": {
+      "en": "..what the hell was that crap?",
+      "zh-TW": "……剛剛那到底是什麼鬼東西？"
+    },
+    "KENKO_SCOUT_MASTERY_SKIN_NAME": {
+      "en": "Alternate",
+      "zh-TW": "替代"
+    },
+    "KENKO_SCOUT_PASSIVE_NAME": {
+      "en": "Atomic Core",
+      "zh-TW": "原子核心"
+    },
+    "KENKO_SCOUT_PASSIVE_DESCRIPTION": {
+      "en": "Scout can <style=cIsUtility>jump twice</style>. Deal <style=cIsDamage>damage</style> to build up <style=cHumanObjective>Atomic Core</style>. Taking damage reduces <style=cHumanObjective>Atomic Core</style>. <style=cHumanObjective>Atomic Core</style> increases <style=cIsUtility>movement speed</style>.",
+      "zh-TW": "偵察兵可以<style=cIsUtility>跳躍兩次</style>。造成<style=cIsDamage>傷害</style>可累積<style=cHumanObjective>原子核心</style>。受到傷害會減少<style=cHumanObjective>原子核心</style>。<style=cHumanObjective>原子核心</style>會提高<style=cIsUtility>移動速度</style>。"
+    },
+    "KENKO_SCOUT_PRIMARY_SPLATTERGUN_NAME": {
+      "en": "Splattergun",
+      "zh-TW": "濺射槍"
+    },
+    "KENKO_SCOUT_PRIMARY_SPLATTERGUN_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile</style>. Fire a scattergun burst for <style=cIsDamage>12x65% damage</style>.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。以散彈槍射擊，造成<style=cIsDamage>12x65%傷害</style>。"
+    },
+    "KENKO_SCOUT_PRIMARY_RIFLE_NAME": {
+      "en": "Dastardly Dwarf",
+      "zh-TW": "卑劣矮子"
+    },
+    "KENKO_SCOUT_PRIMARY_RIFLE_DESCRIPTION": {
+      "en": "Fire a high velocity round for <style=cIsDamage>240% damage</style>. <style=cIsDamage>Headshots deal 2x damage</style>",
+      "zh-TW": "發射一發高速子彈，造成<style=cIsDamage>240%傷害</style>。<style=cIsDamage>爆頭造成2倍傷害</style>。"
+    },
+    "KENKO_SCOUT_PRIMARY_BONK_NAME": {
+      "en": "Elephants Foot",
+      "zh-TW": "象腳"
+    },
+    "KENKO_SCOUT_PRIMARY_BONK_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile</style>. Swing your bat for <style=cIsDamage>300% damage</style>.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。揮動球棒，造成<style=cIsDamage>300%傷害</style>。"
+    },
+    "KENKO_SCOUT_SECONDARY_CLEAVER_NAME": {
+      "en": "Toxic Cleaver",
+      "zh-TW": "劇毒切肉刀"
+    },
+    "KENKO_SCOUT_SECONDARY_CLEAVER_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile</style>. Throw your cleaver <style=cIsDamage>Blighting</style> and dealing <style=cIsDamage>400% damage</style>. <style=cIsDamage>Critically Strikes</style> and <style=cIsHealing>Poisons</style> <style=cIsDamage>Stunned</style> enemies.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。擲出切肉刀，施加<style=cIsDamage>枯萎</style>並造成<style=cIsDamage>400%傷害</style>。對<style=cIsDamage>眩暈</style>中的敵人必定<style=cIsDamage>暴擊</style>，並使其<style=cIsHealing>毒化</style>。"
+    },
+    "KENKO_SCOUT_SECONDARY_SPIKEDBALL_NAME": {
+      "en": "Spike Ball",
+      "zh-TW": "尖刺球"
+    },
+    "KENKO_SCOUT_SECONDARY_SPIKEDBALL_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile</style>. Hit your baseball <style=cIsDamage>Stunning</style> and dealing <style=cIsDamage>300% damage</style>. <style=cIsDamage>Stun</style> duration scales with distance traveled.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。擊出棒球，造成<style=cIsDamage>眩暈</style>與<style=cIsDamage>300%傷害</style>。<style=cIsDamage>眩暈</style>時間隨飛行距離增加。"
+    },
+    "KENKO_SCOUT_UTILITY_ATOMICBLAST_NAME": {
+      "en": "Atomic Blast",
+      "zh-TW": "原子爆發"
+    },
+    "KENKO_SCOUT_UTILITY_ATOMICBLAST_DESCRIPTION": {
+      "en": "Drain your <style=cHumanObjective>Atomic Core</style> gaining <style=cIsDamage>Atomic Crits</style>, <style=cIsDamage>attack speed</style>, and <style=cIsUtility>movement speed</style>. Deal <style=cIsDamage>100% - 1000% damage</style> around you based on charge.",
+      "zh-TW": "消耗<style=cHumanObjective>原子核心</style>，獲得<style=cIsDamage>原子暴擊</style>、<style=cIsDamage>攻擊速度</style>與<style=cIsUtility>移動速度</style>。依充能量對周圍造成<style=cIsDamage>100% - 1000%傷害</style>。"
+    },
+    "KENKO_SCOUT_SPECIAL_SWAP_NAME": {
+      "en": "Swap",
+      "zh-TW": "切換"
+    },
+    "KENKO_SCOUT_SPECIAL_SWAP_DESCRIPTION": {
+      "en": " Swap to your bat.",
+      "zh-TW": "切換成球棒。"
+    },
+    "KENKO_SCOUT_SPECIAL_SCEPTER_SWAP_NAME": {
+      "en": "Swap",
+      "zh-TW": "切換"
+    },
+    "KENKO_SCOUT_SPECIAL_SCEPTER_SWAP_DESCRIPTION": {
+      "en": " Swap to your bat.\n<color=#d299ff>SCEPTER: <style=cHumanObjective>Atomic Charge</style> can still be gained while <style=cHumanObjective>Atomic Core</style> drains .</color>",
+      "zh-TW": "切換成球棒。\n<color=#d299ff>權杖：<style=cHumanObjective>原子核心</style>消耗期間，仍可獲得<style=cHumanObjective>原子充能</style>。</color>"
+    },
+    "ACHIEVEMENT_KENKO_SCOUT_MASTERYACHIEVEMENT_NAME": {
+      "en": "Scout: Mastery",
+      "zh-TW": "偵察兵：精通"
+    },
+    "ACHIEVEMENT_KENKO_SCOUT_MASTERYACHIEVEMENT_DESCRIPTION": {
+      "en": "As Scout, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為偵察兵，在季風難度下通關遊戲或抹除自己。"
+    },
+    "<style=cKeywordName>Agile</style><style=cSub>The skill can be used while sprinting.</style>": {
+      "en": "<style=cKeywordName>Agile</style><style=cSub>The skill can be used while sprinting.</style>",
+      "zh-TW": "<style=cKeywordName>靈巧</style><style=cSub>該技能可在奔跑時使用。</style>"
+    },
+    "<style=cKeywordName>Atomic Crits</style><style=cSub>Damage is increased by 125% and all attacks apply Weaken.</style>": {
+      "en": "<style=cKeywordName>Atomic Crits</style><style=cSub>Damage is increased by 125% and all attacks apply Weaken.</style>",
+      "zh-TW": "<style=cKeywordName>原子暴擊</style><style=cSub>傷害提高125%，且所有攻擊都會施加弱化。</style>"
+    },
+    "Passive": {
+      "en": "Passive",
+      "zh-TW": "被動"
+    },
+    "Swap": {
+      "en": "Swap",
+      "zh-TW": "切換"
+    }
+  }
+}
