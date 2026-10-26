@@ -1,0 +1,36 @@
+{
+  "mod": "Zerneas-KizunaMod",
+  "version": "0.21.0",
+  "loader": "r2api",
+  "notes": [
+    "英文是模組程式裡寫死的字串：選角畫面 Variants 分頁（Survariants）裡，火影各角色變體的一句話說明。模組用 Language.SetStringByToken 直接寫入英文（或西班牙文）；R2API 語言檔的譯文會優先於它。",
+    "變體的名稱用的是各角色模組自己的名稱 token，翻在各角色的檔案裡。",
+    "大廳、標題畫面、技能清單、羈絆說明，以及第一次遊玩時展開的提示卷軸，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
+  ],
+  "strings": {
+    "ZERNEAS_KIZUNA_VARIANT_NARUTOSHIPPUDEN": {
+      "en": "Shippuden: his Shadow Clones, the Wind Release Rasen-Shuriken and the Four-Tails.",
+      "zh-TW": "疾風傳：影分身、風遁·螺旋手裡劍與四尾。"
+    },
+    "ZERNEAS_KIZUNA_VARIANT_NARUTOSAGE": {
+      "en": "Sage Mode: nature's chakra, the toads of Mount Myoboku and his biggest Rasengan.",
+      "zh-TW": "仙人模式：自然的查克拉、妙木山的蛤蟆，以及他最大的螺旋丸。"
+    },
+    "ZERNEAS_KIZUNA_VARIANT_NARUTOSIXPATHS": {
+      "en": "Sage of Six Paths: the Truth-Seeking Orbs, flight and the power of Ashura.",
+      "zh-TW": "六道仙人：求道玉、飛行與阿修羅的力量。"
+    },
+    "ZERNEAS_KIZUNA_VARIANT_SASUKESHIPPUDEN": {
+      "en": "Shippuden: the Kusanagi, his two natures of fire and lightning, Kirin and the Cursed Seal.",
+      "zh-TW": "疾風傳：草薙劍、火與雷兩種性質變化、麒麟與咒印。"
+    },
+    "ZERNEAS_KIZUNA_VARIANT_SASUKEMANGEKYOU": {
+      "en": "Taka: the Mangekyō Sharingan, the black flames of Amaterasu and his genjutsu.",
+      "zh-TW": "鷹：萬花筒寫輪眼、天照的黑炎與他的幻術。"
+    },
+    "ZERNEAS_KIZUNA_VARIANT_SASUKERINNEGAN": {
+      "en": "Rinnegan: the Susanoo, Amenotejikara, Chibaku Tensei and Indra's Arrow.",
+      "zh-TW": "輪迴眼：須佐能乎、天手力、地爆天星與因陀羅之矢。"
+    }
+  }
+}

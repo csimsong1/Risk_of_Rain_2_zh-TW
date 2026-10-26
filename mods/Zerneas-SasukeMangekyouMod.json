@@ -1,6 +1,6 @@
 {
   "mod": "Zerneas-SasukeMangekyouMod",
-  "version": "0.17.1",
+  "version": "0.25.0",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
@@ -35,6 +35,10 @@
     "ZERNEAS_SASUKEMANGEKYOU_SKIN_PONCHO_NAME": {
       "en": "Poncho",
       "zh-TW": "斗篷"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_SKIN_SCHOOL_NAME": {
+      "en": "School",
+      "zh-TW": "學生制服"
     },
     "ZERNEAS_SASUKEMANGEKYOU_PASSIVE_NAME": {
       "en": "Mangekyo Sharingan",
@@ -81,8 +85,8 @@
       "zh-TW": "萬花筒開眼"
     },
     "ZERNEAS_SASUKEMANGEKYOU_MANGEKYOU_DESCRIPTION": {
-      "en": "From 25% of the gauge. You <style=cIsDamage>mark whatever you look at</style>, your <style=cIsUtility>precognition</style> dodges a hit every 3s, and you're 15% faster. The gauge drains 5% a second, faster as you use the eye. Turn back with X: what's left <style=cIsDamage>stokes your black flames</style>. Burn it out and your <style=cIsHealth>sight blurs for 6s</style>.",
-      "zh-TW": "量表達25%即可發動。你會<style=cIsDamage>標記所注視的一切</style>，<style=cIsUtility>預知</style>能力每3秒可閃避一次攻擊，移動速度+15%。量表每秒減少5%，使用瞳術時減少得更快。按X鍵解除：剩餘的量會<style=cIsDamage>助長你的黑炎</style>。若量表燃盡，你的<style=cIsHealth>視線會模糊6秒</style>。"
+      "en": "From 25% of the gauge. You <style=cIsDamage>mark whatever you look at</style>, your <style=cIsUtility>precognition</style> dodges a hit every 3s, and you're 15% faster. The gauge drains 4% a second, faster as you use the eye. Turn back with X: what's left <style=cIsDamage>stokes your black flames</style>. Burn it out and your <style=cIsHealth>sight blurs for 6s</style>.",
+      "zh-TW": "量表達25%即可發動。你會<style=cIsDamage>標記所注視的一切</style>，<style=cIsUtility>預知</style>能力每3秒可閃避一次攻擊，移動速度+15%。量表每秒減少4%，使用瞳術時減少得更快。按X鍵解除：剩餘的量會<style=cIsDamage>助長你的黑炎</style>。若量表燃盡，你的<style=cIsHealth>視線會模糊6秒</style>。"
     },
     "ZERNEAS_SASUKEMANGEKYOU_MANGEKYOU_PRIMARY_NAME": {
       "en": "Mangekyo Kusanagi",
@@ -123,6 +127,14 @@
     "ACHIEVEMENT_ZERNEASSASUKEMANGEKYOUCLEARGAMEMONSOON_DESCRIPTION": {
       "en": "As Sasuke (Taka), beat the game or obliterate on Monsoon.",
       "zh-TW": "作為佐助（鷹），在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKEMANGEKYOUCLEARMERIDIANEVENT_NAME": {
+      "en": "Sasuke (Taka): School",
+      "zh-TW": "佐助（鷹）：學生制服"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKEMANGEKYOUCLEARMERIDIANEVENT_DESCRIPTION": {
+      "en": "As Sasuke (Taka), defeat the False Son.",
+      "zh-TW": "作為佐助（鷹），打敗虛假子嗣。"
     }
   }
 }

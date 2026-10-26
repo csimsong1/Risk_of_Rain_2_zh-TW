@@ -1,6 +1,6 @@
 {
   "mod": "Zerneas-SasukeRinneganMod",
-  "version": "0.14.1",
+  "version": "0.19.1",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
@@ -13,8 +13,8 @@
       "zh-TW": "佐助（輪迴眼）"
     },
     "ZERNEAS_SASUKERINNEGAN_DESCRIPTION": {
-      "en": "Sasuke at his peak: the Rinnegan bends space, and the Susanoo fights beside him.<color=#CCD3E0>\r\n\r\n< ! > The hits of your skills fill the Rinnegan's six tomoe; at six, the Susanoo strikes where you fight by itself, stronger every time (the ×N).\r\n\r\n< ! > Amenotejikara swaps you with an enemy: drop it into your fight, or get out of one.\r\n\r\n< ! > Hold the black Chidori and Amaterasu goes with it: farther, harder, and it burns.\r\n\r\n< ! > Chibaku Tensei gathers the enemies into a sphere: strike them all, then crush it with the key again.\r\n\r\n< ! > Chakra control: hold Jump against a wall to run on it.\r\n\r\n< ! > Fighting fills the Ogi (X, from 25%): Indra's Arrow. Shoot it into your own Chibaku Tensei.\r\n\r\n",
-      "zh-TW": "巔峰時期的佐助：輪迴眼能扭曲空間，須佐能乎在他身旁並肩作戰。<color=#CCD3E0>\r\n\r\n< ! >技能命中會填滿輪迴眼的六顆勾玉；集滿六顆時，須佐能乎會自行在你作戰的地方出擊，而且一次比一次強（畫面上的×N）。\r\n\r\n< ! >天手力能讓你和敵人互換位置：把敵人拉進你的戰局，或讓自己脫身。\r\n\r\n< ! >按住黑千鳥時會同時施放天照：衝得更遠、威力更強，還會燃燒敵人。\r\n\r\n< ! >地爆天星會把敵人聚成一顆球體：先攻擊被困住的所有敵人，再按一次同一個鍵把球體壓碎。\r\n\r\n< ! >查克拉控制：貼著牆按住跳躍鍵就能在牆上奔跑。\r\n\r\n< ! >戰鬥會累積奧義量表（按X鍵，25%起即可施放）：因陀羅之矢。把它射進你自己的地爆天星裡。\r\n\r\n"
+      "en": "Sasuke at his peak: the Rinnegan bends space, and the Susanoo fights beside him.<color=#CCD3E0>\r\n\r\n< ! > The hits of your skills fill the Rinnegan's six tomoe; at six, the Susanoo strikes where you fight by itself, stronger every time (the ×N).\r\n\r\n< ! > Amenotejikara swaps you with an enemy: drop it into your fight, or get out of one.\r\n\r\n< ! > Hold the black Chidori and Amaterasu goes with it: farther, harder, and it burns.\r\n\r\n< ! > Chibaku Tensei gathers the enemies into a sphere: strike them all, then crush it with the key again.\r\n\r\n< ! > Chakra control: hold Jump against a wall to run on it.\r\n\r\n< ! > Fighting fills the Ogi (X, from 50%): Indra's Arrow. Shoot it into your own Chibaku Tensei.\r\n\r\n",
+      "zh-TW": "巔峰時期的佐助：輪迴眼能扭曲空間，須佐能乎在他身旁並肩作戰。<color=#CCD3E0>\r\n\r\n< ! >技能命中會填滿輪迴眼的六顆勾玉；集滿六顆時，須佐能乎會自行在你作戰的地方出擊，而且一次比一次強（畫面上的×N）。\r\n\r\n< ! >天手力能讓你和敵人互換位置：把敵人拉進你的戰局，或讓自己脫身。\r\n\r\n< ! >按住黑千鳥時會同時施放天照：衝得更遠、威力更強，還會燃燒敵人。\r\n\r\n< ! >地爆天星會把敵人聚成一顆球體：先攻擊被困住的所有敵人，再按一次同一個鍵把球體壓碎。\r\n\r\n< ! >查克拉控制：貼著牆按住跳躍鍵就能在牆上奔跑。\r\n\r\n< ! >戰鬥會累積奧義量表（按X鍵，50%起即可施放）：因陀羅之矢。把它射進你自己的地爆天星裡。\r\n\r\n"
     },
     "ZERNEAS_SASUKERINNEGAN_SUBTITLE": {
       "en": "Reincarnation of Indra",

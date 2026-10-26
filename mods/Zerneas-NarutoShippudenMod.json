@@ -1,6 +1,6 @@
 {
   "mod": "Zerneas-NarutoShippudenMod",
-  "version": "0.23.1",
+  "version": "0.30.0",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
@@ -40,6 +40,10 @@
       "en": "Sasuke's Outfit",
       "zh-TW": "佐助的服裝"
     },
+    "ZERNEAS_NARUTOSHIPPUDEN_SKIN_CLOAK_NAME": {
+      "en": "Hokage Cloak",
+      "zh-TW": "火影披風"
+    },
     "ZERNEAS_NARUTOSHIPPUDEN_PASSIVE_NAME": {
       "en": "Shadow Clones",
       "zh-TW": "影分身之術"
@@ -77,16 +81,16 @@
       "zh-TW": "風遁·螺旋手裡劍"
     },
     "ZERNEAS_NARUTOSHIPPUDEN_SPECIAL_RASENSHURIKEN_DESCRIPTION": {
-      "en": "Form it with <style=cIsUtility>2 of your clones</style> and charge up to 14m: a 7m sphere drags enemies in, <style=cIsDamage>cuts 8 times for 60%</style> (+2 a clone) and bursts for <style=cIsDamage>600%</style>. Spends your experience: <style=cIsDamage>+70% a point</style>. Every cut gives 1 point. <style=cIsHealth>Throws you back and costs 10% of your max health.</style>",
-      "zh-TW": "與<style=cIsUtility>2個分身</style>一同凝聚，並衝鋒最多14米：7米的球體會將敵人吸入，<style=cIsDamage>斬擊8次，每次60%</style>（每個分身+2次），最後爆發造成<style=cIsDamage>600%</style>傷害。消耗你的經驗：<style=cIsDamage>每點+70%</style>。每次斬擊給予1點。<style=cIsHealth>會將你震退，並消耗你10%的最大生命值。</style>"
+      "en": "Form it with <style=cIsUtility>2 of your clones</style> and charge up to 20m: a 7m sphere drags enemies in, <style=cIsDamage>cuts 8 times for 80%</style> (+2 a clone) and bursts for <style=cIsDamage>800%</style>. Spends your experience: <style=cIsDamage>+70% a point</style>. Every cut gives 1 point. <style=cIsHealth>Throws you back and costs 10% of your max health.</style>",
+      "zh-TW": "與<style=cIsUtility>2個分身</style>一同凝聚，並衝鋒最多20米：7米的球體會將敵人吸入，<style=cIsDamage>斬擊8次，每次80%</style>（每個分身+2次），最後爆發造成<style=cIsDamage>800%</style>傷害。消耗你的經驗：<style=cIsDamage>每點+70%</style>。每次斬擊給予1點。<style=cIsHealth>會將你震退，並消耗你10%的最大生命值。</style>"
     },
     "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_NAME": {
       "en": "Four-Tails",
       "zh-TW": "四尾"
     },
     "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_DESCRIPTION": {
-      "en": "From <style=cIsUtility>25%</style>: <style=cIsHealth>your clones are gone</style> and the chakra bursts for <style=cIsDamage>300%</style> in 10m. <style=cIsUtility>+25% speed</style>; the cloak <style=cIsDamage>burns</style> everything within 4m and <style=cIsHealth>you</style> (1.5% health a second), and you <style=cIsHealing>heal 15% of your damage</style>. Turn back with X: what's left becomes experience, and the <style=cIsDamage>Kyuubi's chakra lingers</style>: burning blows, red Rasengans (+50%), <style=cIsDamage>+20% attack speed</style>.",
-      "zh-TW": "累積達<style=cIsUtility>25%</style>即可發動：<style=cIsHealth>你的分身全部消失</style>，查克拉爆發，在半徑10米內造成<style=cIsDamage>300%</style>傷害。<style=cIsUtility>+25%移動速度</style>；查克拉外衣會<style=cIsDamage>燃燒</style>4米內的一切，也會燃燒<style=cIsHealth>你自己</style>（每秒1.5%生命值），而你會<style=cIsHealing>以造成傷害的15%治療自己</style>。按X鍵解除：剩餘的量會轉為經驗，且<style=cIsDamage>九尾的查克拉會殘留</style>：攻擊帶有燃燒、螺旋丸變紅（+50%）、<style=cIsDamage>+20%攻擊速度</style>。"
+      "en": "From <style=cIsUtility>25%</style>: <style=cIsHealth>your clones are gone</style> and the chakra bursts for <style=cIsDamage>300%</style> in 10m. <style=cIsUtility>+25% speed</style> and <style=cIsHealing>+60 armor</style>; the cloak <style=cIsDamage>burns</style> everything within 4m and <style=cIsHealth>you</style> (1.5% health a second), and you <style=cIsHealing>heal 15% of your damage</style>. Turn back with X: what's left becomes experience, and the <style=cIsDamage>Kyuubi's chakra lingers</style>: burning blows, red Rasengans (+50%), <style=cIsDamage>+20% attack speed</style>.",
+      "zh-TW": "累積達<style=cIsUtility>25%</style>即可發動：<style=cIsHealth>你的分身全部消失</style>，查克拉爆發，在半徑10米內造成<style=cIsDamage>300%</style>傷害。<style=cIsUtility>+25%移動速度</style>與<style=cIsHealing>+60護甲</style>；查克拉外衣會<style=cIsDamage>燃燒</style>4米內的一切，也會燃燒<style=cIsHealth>你自己</style>（每秒1.5%生命值），而你會<style=cIsHealing>以造成傷害的15%治療自己</style>。按X鍵解除：剩餘的量會轉為經驗，且<style=cIsDamage>九尾的查克拉會殘留</style>：攻擊帶有燃燒、螺旋丸變紅（+50%）、<style=cIsDamage>+20%攻擊速度</style>。"
     },
     "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_ARMS_NAME": {
       "en": "Chakra Arms",
@@ -127,6 +131,14 @@
     "ACHIEVEMENT_ZERNEASNARUTOSHIPPUDENCLEARGAMEMONSOON_DESCRIPTION": {
       "en": "As Naruto (Shippuden), beat the game or obliterate on Monsoon.",
       "zh-TW": "作為鳴人（疾風傳），在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSHIPPUDENCLEARMERIDIANEVENT_NAME": {
+      "en": "Naruto (Shippuden): Hokage Cloak",
+      "zh-TW": "鳴人（疾風傳）：火影披風"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSHIPPUDENCLEARMERIDIANEVENT_DESCRIPTION": {
+      "en": "As Naruto (Shippuden), defeat the False Son.",
+      "zh-TW": "作為鳴人（疾風傳），打敗虛假子嗣。"
     }
   }
 }

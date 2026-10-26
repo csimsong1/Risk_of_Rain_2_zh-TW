@@ -1,6 +1,6 @@
 {
   "mod": "Zerneas-NarutoSageMod",
-  "version": "0.27.3",
+  "version": "0.32.0",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
@@ -36,6 +36,10 @@
     "ZERNEAS_NARUTOSAGE_SKIN_PONCHO_NAME": {
       "en": "Poncho",
       "zh-TW": "斗篷"
+    },
+    "ZERNEAS_NARUTOSAGE_SKIN_SCHOOL_NAME": {
+      "en": "School",
+      "zh-TW": "學生制服"
     },
     "ZERNEAS_NARUTOSAGE_PASSIVE_NAME": {
       "en": "Sage Mode",
@@ -140,6 +144,14 @@
     "ACHIEVEMENT_ZERNEASNARUTOSAGECLEARGAMEMONSOON_DESCRIPTION": {
       "en": "As Sage Naruto, beat the game or obliterate on Monsoon.",
       "zh-TW": "作為仙人模式鳴人，在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSAGECLEARMERIDIANEVENT_NAME": {
+      "en": "Sage Naruto: School",
+      "zh-TW": "仙人模式鳴人：學生制服"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSAGECLEARMERIDIANEVENT_DESCRIPTION": {
+      "en": "As Sage Naruto, defeat the False Son.",
+      "zh-TW": "作為仙人模式鳴人，打敗虛假子嗣。"
     },
     "ACHIEVEMENT_ZERNEASNARUTOSAGESIXPATHS_NAME": {
       "en": "Sage Naruto: The Six Paths",

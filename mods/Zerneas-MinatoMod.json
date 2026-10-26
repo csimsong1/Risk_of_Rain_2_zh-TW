@@ -1,6 +1,6 @@
 {
   "mod": "Zerneas-MinatoMod",
-  "version": "0.15.1",
+  "version": "0.21.0",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
@@ -77,6 +77,10 @@
       "en": "Jonin",
       "zh-TW": "上忍"
     },
+    "ZERNEAS_MINATO_SKIN_SUIT_NAME": {
+      "en": "Suit",
+      "zh-TW": "西裝"
+    },
     "ZERNEAS_MINATO_HUD_HIRAISHIN": {
       "en": "HIRAISHIN",
       "zh-TW": "飛雷神"
@@ -140,6 +144,14 @@
     "ACHIEVEMENT_ZERNEASMINATOCLEARGAMEMONSOON_DESCRIPTION": {
       "en": "As Minato, beat the game or obliterate on Monsoon.",
       "zh-TW": "作為波風湊，在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_ZERNEASMINATOCLEARMERIDIANEVENT_NAME": {
+      "en": "Minato: Suit",
+      "zh-TW": "波風湊：西裝"
+    },
+    "ACHIEVEMENT_ZERNEASMINATOCLEARMERIDIANEVENT_DESCRIPTION": {
+      "en": "As Minato, defeat the False Son.",
+      "zh-TW": "作為波風湊，打敗虛假子嗣。"
     }
   }
 }

@@ -86,7 +86,7 @@ uv run ror2_s2t.py --zip RoR2_zh-TW_1.5.1.zip
 uv run ror2_s2t.py --profile Purist_v4
 ```
 
-目前有這十六個模組：
+目前有這十七個模組：
 
 | 模組 | 版本 | 翻譯內容 | 條數 |
 |---|---|---|---|
@@ -98,14 +98,15 @@ uv run ror2_s2t.py --profile Purist_v4
 | Seamstress | 1.7.4 | 角色、技能、關鍵字、成就、背景故事 | 44 |
 | SkinFlavorText | 1.0.1 | 遊戲本體角色、Paladin 與 HUNK 皮膚的說明文字 | 55 |
 | Heretic | 1.2.11 | 被動、技能說明、物品、成就 | 8 |
-| Celestial War Tank | 2.3.11 | 角色、技能、車體與炮塔、塗裝、成就、背景故事、Mega War Tank、Ancient Scepter 強化技能 | 365 |
-| Minato（Zerneas） | 0.15.1 | 角色、技能、九尾查克拉模式、飛雷神提示、成就、背景故事 | 33 |
-| Naruto Shippuden（Zerneas） | 0.23.1 | 角色、技能、四尾形態、成就、背景故事 | 30 |
-| Naruto Sage（Zerneas） | 0.27.3 | 角色、技能、隱藏技能、六尾形態、成就、背景故事 | 37 |
-| Sasuke Shippuden（Zerneas） | 0.21.1 | 角色、技能、咒印形態、成就、背景故事 | 32 |
-| Sasuke Mangekyou（Zerneas） | 0.17.1 | 角色、技能、萬花筒形態、成就、背景故事 | 29 |
-| Naruto Six Paths（Zerneas） | 0.16.1 | 角色、技能、奧義、成就、背景故事 | 23 |
-| Sasuke Rinnegan（Zerneas） | 0.14.1 | 角色、技能、奧義、關鍵字、成就、背景故事 | 22 |
+| Celestial War Tank | 2.3.12 | 角色、技能、車體與炮塔、塗裝、成就、背景故事、Mega War Tank（含引擎欄位）、Ancient Scepter 強化技能 | 368 |
+| Minato（Zerneas） | 0.21.0 | 角色、技能、九尾查克拉模式、飛雷神提示、成就、背景故事 | 36 |
+| Naruto Shippuden（Zerneas） | 0.30.0 | 角色、技能、四尾形態、成就、背景故事 | 33 |
+| Naruto Sage（Zerneas） | 0.32.0 | 角色、技能、隱藏技能、六尾形態、成就、背景故事 | 40 |
+| Sasuke Shippuden（Zerneas） | 0.31.1 | 角色、技能、隱藏技能、咒印形態、成就、背景故事 | 40 |
+| Sasuke Mangekyou（Zerneas） | 0.25.0 | 角色、技能、萬花筒形態、成就、背景故事 | 32 |
+| Naruto Six Paths（Zerneas） | 0.21.1 | 角色、技能、奧義、成就、背景故事 | 23 |
+| Sasuke Rinnegan（Zerneas） | 0.19.1 | 角色、技能、奧義、關鍵字、成就、背景故事 | 22 |
+| Kizuna（Zerneas） | 0.21.0 | 選角畫面 Variants 分頁裡火影各角色變體的說明 | 6 |
 
 Heretic 與 Dante 自帶簡體翻譯（Dante 只有一部分），那些條目是把簡體轉成繁體後對照英文修訂的，其餘由英文翻譯。
 
@@ -127,7 +128,7 @@ Celestial War Tank 的車體、炮塔數值和技能說明裡的重量，是模�
 - LookingGlass 的物品數值標籤（`Proc Coefficient:` 這類）
 - PlayerRespawnSystem 的聊天訊息與復活倒數
 - HUNK 的彈藥名稱、畫面中央的提示訊息（背包已滿、需要鑰匙卡等）與無線電對話
-- Zerneas 火影系列的形態與奧義熟練度提示，以及 Kizuna（羈絆）模組的大廳、標題畫面與技能清單介面（只有英文和西班牙文）
+- Zerneas 火影系列的形態與奧義熟練度提示，以及 Kizuna（羈絆）模組的大廳、標題畫面、技能清單介面、羈絆說明與第一次遊玩時展開的提示卷軸（只有英文和西班牙文）
 - Celestial War Tank 的燃料量表與坦克編輯器選單
 - Risk of Options 選單，以及各模組的設定名稱與說明
 

@@ -1,9 +1,9 @@
 {
   "mod": "CheeseWithHoles-Celestial_War_Tank",
-  "version": "2.3.11",
+  "version": "2.3.12",
   "loader": "r2api",
   "notes": [
-    "英文是在遊戲外執行模組註冊文字的程式記錄下來的。車體與炮塔的名稱、數值，以及技能說明最後「技能數值」裡的重量，是模組從內嵌資源包的零件資料算出來的，這裡依 2.3.11 版資源包的內容。",
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的。車體與炮塔的名稱、數值，以及技能說明最後「技能數值」裡的重量，是模組從內嵌資源包的零件資料算出來的，這裡依 2.3.12 版資源包的內容。",
     "技能說明的「技能數值」區塊（冷卻時間、爆炸半徑、重量）只在設定 Show Extra Skill Info 開啟（預設）時出現；關掉的話英文會少這一段，譯文仍會顯示。",
     "XTRA_ 開頭的是 Mega War Tank（設定 Add Xtra Tank，預設關閉）；SCEPTER 是裝了 Ancient Scepter 模組時的強化技能。",
     "鍵是英文的兩條（Celestial War Tank、War Tank）：模組直接把英文當作 AI 坦克的名稱 token，用英文原文當鍵來翻譯。",
@@ -607,8 +607,8 @@
       "zh-TW": "導彈發射器"
     },
     "CHEESEWITHHOLES_BASICTANK_BODY_PRIMARY_MICRO_MISSLE_DESCRIPTION": {
-      "en": "Fire accurate missiles for <style=cIsDamage>1000% damage</style>. Missiles are not affected by gravity.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 3s</style>\n- <style=cIsDamage>Blast Radius: 8m</style>\n- Weight: 18",
-      "zh-TW": "發射精準的導彈，造成<style=cIsDamage>1000%傷害</style>。導彈不受重力影響。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：3秒</style>\n- <style=cIsDamage>爆炸半徑：8米</style>\n- 重量：18"
+      "en": "Fire accurate missiles for <style=cIsDamage>1000% damage</style>. <style=cIsDamage>Damage increases as it travels</style>.\n\nSkill Stats:\n- <style=cIsUtility>Cooldown: 3s</style>\n- <style=cIsDamage>Blast Radius: 8m</style>\n- Weight: 18",
+      "zh-TW": "發射精準的導彈，造成<style=cIsDamage>1000%傷害</style>。<style=cIsDamage>傷害隨飛行距離遞增</style>。\n\n技能數值：\n- <style=cIsUtility>冷卻時間：3秒</style>\n- <style=cIsDamage>爆炸半徑：8米</style>\n- 重量：18"
     },
     "CHEESEWITHHOLES_BASICTANK_BODY_PRIMARY_FLAMETHROWER_NAME": {
       "en": "Flamethrower",
@@ -1107,8 +1107,8 @@
       "zh-TW": "Truck Kan車體"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Truck_Kan_DESCRIPTION": {
-      "en": "<color=#80fc80>- Turret compatible</color>.\n<style=cIsUtility>- Speed is not affected by weight</style>.\n\n<color=#FFFF00>Engine Power: </color>1000\n<color=#00FFFF>Speed: </color>12\nTraverse Speed: 0.9\n\n<color=#00FF00>Health: </color>450\n<color=#FF0000>Armor: </color>15\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>600\nWeight: 600\n",
-      "zh-TW": "<color=#80fc80>- 可安裝炮塔</color>。\n<style=cIsUtility>- 速度不受重量影響</style>。\n\n<color=#FFFF00>引擎功率：</color>1000\n<color=#00FFFF>速度：</color>12\n轉向速度：0.9\n\n<color=#00FF00>生命值：</color>450\n<color=#FF0000>護甲：</color>15\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>600\n重量：600\n"
+      "en": "Ram damage is increased by <color=#80fc80>100.0%</color>\n\n<color=#80fc80>- Turret compatible</color>.\n<style=cIsUtility>- Speed is not affected by weight</style>.\n\n<color=#FFFF00>Engine Power: </color>1000\n<color=#00FFFF>Speed: </color>12\nTraverse Speed: 0.9\n\n<color=#00FF00>Health: </color>450\n<color=#FF0000>Armor: </color>15\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>600\nWeight: 600\n",
+      "zh-TW": "衝撞傷害提高<color=#80fc80>100.0%</color>\n\n<color=#80fc80>- 可安裝炮塔</color>。\n<style=cIsUtility>- 速度不受重量影響</style>。\n\n<color=#FFFF00>引擎功率：</color>1000\n<color=#00FFFF>速度：</color>12\n轉向速度：0.9\n\n<color=#00FF00>生命值：</color>450\n<color=#FF0000>護甲：</color>15\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>600\n重量：600\n"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Rogue_NAME": {
       "en": "Rogue",
@@ -1131,8 +1131,8 @@
       "zh-TW": "TONK"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_TONK_DESCRIPTION": {
-      "en": "\n<color=#00FF00>Health: </color>150\n<color=#FF0000>Armor: </color>15\n\nRotation Speed: 20\n\nWeight: 100\n",
-      "zh-TW": "\n<color=#00FF00>生命值：</color>150\n<color=#FF0000>護甲：</color>15\n\n旋轉速度：20\n\n重量：100\n"
+      "en": "\n<color=#00FF00>Health: </color>100\n<color=#FF0000>Armor: </color>15\n\nRotation Speed: 15\n\nWeight: 100\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>100\n<color=#FF0000>護甲：</color>15\n\n旋轉速度：15\n\n重量：100\n"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Type 5 Heavy_NAME": {
       "en": "Type 5 Heavy",
@@ -1147,24 +1147,24 @@
       "zh-TW": "Bigfoot"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Bigfoot_DESCRIPTION": {
-      "en": "<style=cIsDamage>200% damage</style>?  I couldn't find the code where it increases damage for this specific turret.\n- Developer\n\n\n<color=#00FF00>Health: </color>200\n<color=#FF0000>Armor: </color>25\n\nRotation Speed: 13\nAngle Limit: 60\n\nWeight: 200\n",
-      "zh-TW": "<style=cIsDamage>200%傷害</style>？我找不到這座炮塔提高傷害的程式碼在哪裡。\n- 開發者\n\n\n<color=#00FF00>生命值：</color>200\n<color=#FF0000>護甲：</color>25\n\n旋轉速度：13\n射角限制：60\n\n重量：200\n"
+      "en": "<style=cIsDamage>200% damage</style>?  I couldn't find the code where it increases damage for this specific turret.\n- Developer\n\n\n<color=#00FF00>Health: </color>150\n<color=#FF0000>Armor: </color>25\n\nRotation Speed: 13\nAngle Limit: 60\n\nWeight: 100\n",
+      "zh-TW": "<style=cIsDamage>200%傷害</style>？我找不到這座炮塔提高傷害的程式碼在哪裡。\n- 開發者\n\n\n<color=#00FF00>生命值：</color>150\n<color=#FF0000>護甲：</color>25\n\n旋轉速度：13\n射角限制：60\n\n重量：100\n"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_AMX50B_NAME": {
       "en": "AMX50B",
       "zh-TW": "AMX50B"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_AMX50B_DESCRIPTION": {
-      "en": "Adds <style=cIsDamage>5 charges</style> to the <style=cIsUtility>secondary</style> skill.\n<style=cIsUtility>Replenishes all charges</style> after cooldown.\nCannon damage decreases by 80%\n\n<color=#00FF00>Health: </color>300\n<color=#FF0000>Armor: </color>20\n\nRotation Speed: 9\n\nWeight: 350\n",
-      "zh-TW": "<style=cIsUtility>次要技能</style>增加<style=cIsDamage>5次充能</style>。\n冷卻結束後<style=cIsUtility>補滿所有充能</style>。\n主炮傷害降低80%\n\n<color=#00FF00>生命值：</color>300\n<color=#FF0000>護甲：</color>20\n\n旋轉速度：9\n\n重量：350\n"
+      "en": "Adds <style=cIsDamage>5 charges</style> to the <style=cIsUtility>secondary</style> skill.\n<style=cIsUtility>Replenishes all charges</style> after cooldown.\nCannon damage decreases by 80%\n\n<color=#00FF00>Health: </color>300\n<color=#FF0000>Armor: </color>20\n\nRotation Speed: 7\n\nWeight: 350\n",
+      "zh-TW": "<style=cIsUtility>次要技能</style>增加<style=cIsDamage>5次充能</style>。\n冷卻結束後<style=cIsUtility>補滿所有充能</style>。\n主炮傷害降低80%\n\n<color=#00FF00>生命值：</color>300\n<color=#FF0000>護甲：</color>20\n\n旋轉速度：7\n\n重量：350\n"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_TOG II_NAME": {
       "en": "TOG II",
       "zh-TW": "TOG II"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_TOG II_DESCRIPTION": {
-      "en": "\n<color=#00FF00>Health: </color>210\n<color=#FF0000>Armor: </color>30\n\nRotation Speed: 6\n\nWeight: 200\n",
-      "zh-TW": "\n<color=#00FF00>生命值：</color>210\n<color=#FF0000>護甲：</color>30\n\n旋轉速度：6\n\n重量：200\n"
+      "en": "\n<color=#00FF00>Health: </color>200\n<color=#FF0000>Armor: </color>30\n\nRotation Speed: 9\n\nWeight: 200\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>200\n<color=#FF0000>護甲：</color>30\n\n旋轉速度：9\n\n重量：200\n"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PASSIVE_NAME": {
       "en": "Heavy Weight",
@@ -1227,8 +1227,8 @@
       "zh-TW": "Calliope"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PRIMARY_CALLIOPE_DESCRIPTION": {
-      "en": "Hold a massive stock of up to 22 missiles! Each one dealing <style=cIsDamage>1200% damage</style> in a giant radius.",
-      "zh-TW": "最多可囤積22枚導彈的超大充能！每枚都能在巨大範圍內造成<style=cIsDamage>1200%傷害</style>。"
+      "en": "Hold a massive stock of up to 22 missiles! Each one dealing from <style=cIsDamage>1100% damage</style> up to <style=cIsDamage>1800% damage</style>.",
+      "zh-TW": "最多可囤積22枚導彈的超大充能！每枚可造成<style=cIsDamage>1100%傷害</style>，最高可達<style=cIsDamage>1800%傷害</style>。"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PRIMARY_AUTOCANNONTURRET_NAME": {
       "en": "Rapid Auto Cannon",
@@ -1331,8 +1331,24 @@
       "zh-TW": "爆裂奇觀"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_SPECIAL_BLAST_DESCRIPTION": {
-      "en": "Fire 4 cannons, each dealing <style=cIsDamage>1500% damage</style> in a huge radius. Weapons <color=#fc8080>overheat</color> instead of reloading.\n\nSkill Stats:\n- <style=cIsDamage>Blast Radius: 12.5m</style>",
-      "zh-TW": "4門炮齊射，每發在超大範圍內造成<style=cIsDamage>1500%傷害</style>。武器不需上彈，而是會<color=#fc8080>過熱</color>。\n\n技能數值：\n- <style=cIsDamage>爆炸半徑：12.5米</style>"
+      "en": "Fire 4 cannons, each dealing <style=cIsDamage>1400% damage</style> in a huge radius. Weapons <color=#fc8080>overheat</color> instead of reloading.\n\nSkill Stats:\n- <style=cIsDamage>Blast Radius: 10m</style>",
+      "zh-TW": "4門炮齊射，每發在超大範圍內造成<style=cIsDamage>1400%傷害</style>。武器不需上彈，而是會<color=#fc8080>過熱</color>。\n\n技能數值：\n- <style=cIsDamage>爆炸半徑：10米</style>"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_ENGINE_STANDARD_NAME": {
+      "en": "Standard",
+      "zh-TW": "標準"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_ENGINE_STANDARD_DESCRIPTION": {
+      "en": "Vanilla experience.\n\nThe tank moves and turns based on your chosen direction of travel.",
+      "zh-TW": "原版體驗。\n\n戰車會依你選擇的行進方向移動與轉向。"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_ENGINE_ALT_NAME": {
+      "en": "Alternative",
+      "zh-TW": "替代"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_ENGINE_ALT_DESCRIPTION": {
+      "en": "Changes the way this tank is played.\n\nThe tank moves base on hull direction, but <color=#fc8080>will not turn in the direction of travel</color>.  This is handled by <style=cIsUtility>turning manually</style>.\n\nWhile flying, controls revert to Standard.",
+      "zh-TW": "改變這輛戰車的操作方式。\n\n戰車會依車體朝向移動，但<color=#fc8080>不會轉向行進方向</color>，必須<style=cIsUtility>手動轉向</style>。\n\n飛行時會恢復為標準操控。"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PC_MOBILITY_NAME": {
       "en": "Power Mode: <style=cIsUtility>Evade</style>",

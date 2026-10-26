@@ -1,11 +1,12 @@
 {
   "mod": "Zerneas-SasukeShippudenMod",
-  "version": "0.21.1",
+  "version": "0.31.1",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
     "ACHIEVEMENT_ 開頭的是解鎖造型或技能的成就。",
-    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組（Zerneas-KizunaMod）的大廳、標題畫面與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
+    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組（Zerneas-KizunaMod）的大廳、標題畫面與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。",
+    "EISO 與 MANDA 是用成就（馴服雷電、大蛇丸之力）解鎖的隱藏技能。"
   ],
   "strings": {
     "ZERNEAS_SASUKESHIPPUDEN_NAME": {
@@ -80,6 +81,22 @@
       "en": "A dragon of lightning strikes where you aim: <style=cIsDamage>1000%</style> in 9m, <style=cIsDamage>stunning</style>. Spends all the <style=cIsDamage>heat</style>: +0.1m a point (up to 15m) and a bolt of <style=cIsDamage>200%</style> for every 2 points.",
       "zh-TW": "一條雷龍劈向瞄準之處：在半徑9米內造成<style=cIsDamage>1000%</style>傷害並<style=cIsDamage>眩暈</style>。消耗所有<style=cIsDamage>熱量</style>：每點使範圍+0.1米（最多15米），每2點額外降下一道<style=cIsDamage>200%</style>的落雷。"
     },
+    "ZERNEAS_SASUKESHIPPUDEN_UTILITY_MANDA_NAME": {
+      "en": "Kuchiyose: Daija",
+      "zh-TW": "通靈術·大蛇"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_UTILITY_MANDA_DESCRIPTION": {
+      "en": "A giant white snake bursts out of the ground and winds round you: <style=cIsUtility>invulnerable</style> while it wraps you (2.5s), nothing can drag you and its coils push enemies away. Then it shoots out 22m where you aim: <style=cIsDamage>600%</style> to every enemy it crushes and a slam of <style=cIsDamage>500%</style> in 8m, <style=cIsDamage>stunning</style>.",
+      "zh-TW": "一條巨大的白蛇從地底竄出，纏繞在你身上：被纏繞期間（2.5秒）<style=cIsUtility>無敵</style>，任何東西都拖不動你，蛇身也會把敵人推開。接著牠朝瞄準方向衝出22米：對每個被輾過的敵人造成<style=cIsDamage>600%</style>傷害，最後重擊，在半徑8米內造成<style=cIsDamage>500%</style>傷害並<style=cIsDamage>眩暈</style>。"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_SPECIAL_EISO_NAME": {
+      "en": "Chidori Eisō",
+      "zh-TW": "千鳥銳槍"
+    },
+    "ZERNEAS_SASUKESHIPPUDEN_SPECIAL_EISO_DESCRIPTION": {
+      "en": "A spear of lightning shoots out where you aim, through every enemy: <style=cIsDamage>400%</style>, <style=cIsDamage>stunning</style>, and bursts where it ends: <style=cIsDamage>800%</style> in 5m, <style=cIsDamage>stunning</style>. Spends all the <style=cIsDamage>heat</style>: the burst +<style=cIsDamage>30%</style> and +0.12m a point (up to 11m), and a branch of <style=cIsDamage>200%</style> out of the spear to an enemy near it for every 4 points.",
+      "zh-TW": "一道雷之長槍朝瞄準方向射出，貫穿所有敵人：造成<style=cIsDamage>400%</style>傷害並<style=cIsDamage>眩暈</style>，並在末端爆發：在半徑5米內造成<style=cIsDamage>800%</style>傷害並<style=cIsDamage>眩暈</style>。消耗所有<style=cIsDamage>熱量</style>：每點使爆發+<style=cIsDamage>30%</style>傷害、範圍+0.12米（最多11米），每4點從長槍分出一道<style=cIsDamage>200%</style>的分支，擊向長槍附近的一名敵人。"
+    },
     "ZERNEAS_SASUKESHIPPUDEN_CURSEDSEAL_NAME": {
       "en": "Cursed Seal: Second State",
       "zh-TW": "咒印·狀態二"
@@ -135,6 +152,22 @@
     "ACHIEVEMENT_ZERNEASSASUKESHIPPUDENCLEARMERIDIANEVENT_DESCRIPTION": {
       "en": "As Sasuke (Shippuden), defeat the False Son.",
       "zh-TW": "作為佐助（疾風傳），打敗虛假子嗣。"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKESHIPPUDENLIGHTNING_NAME": {
+      "en": "Sasuke (Shippuden): Taming the Lightning",
+      "zh-TW": "佐助（疾風傳）：馴服雷電"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKESHIPPUDENLIGHTNING_DESCRIPTION": {
+      "en": "As Sasuke (Shippuden), cash in 50 heat with a single Kirin.",
+      "zh-TW": "作為佐助（疾風傳），用一次麒麟消耗50點熱量。"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKESHIPPUDENOROCHIMARU_NAME": {
+      "en": "Sasuke (Shippuden): Orochimaru's Power",
+      "zh-TW": "佐助（疾風傳）：大蛇丸之力"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKESHIPPUDENOROCHIMARU_DESCRIPTION": {
+      "en": "As Sasuke (Shippuden), kill a boss with the Cursed Seal awake.",
+      "zh-TW": "作為佐助（疾風傳），在咒印覺醒時擊敗一名首領。"
     }
   }
 }
