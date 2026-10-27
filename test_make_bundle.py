@@ -10,6 +10,7 @@ from pathlib import Path
 import pytest
 
 import make_bundle
+import ror2_update
 
 HEADER = '# /// script\n# requires-python = ">=3.9"\n# dependencies = ["OpenCC>=1.1.9"]\n# ///\n'
 PYTHON_FILES = (
@@ -37,6 +38,7 @@ def make_python(root: Path) -> Path:
 def make_project(root: Path) -> Path:
     touch(
         root,
+        "ror2_update.py",
         "mods/Author-Survivor.json",
         "overrides/icon.png",
         "plugin/RoR2_zh-TW.HardcodedText.dll",
@@ -148,6 +150,7 @@ def test_build_packs_python_script_and_translations_under_one_folder(tmp_path, r
         "RoR2_zh-TW/安裝.bat",
         "RoR2_zh-TW/說明.txt",
         "RoR2_zh-TW/ror2_s2t.py",
+        "RoR2_zh-TW/ror2_update.py",
         "RoR2_zh-TW/mods/Author-Survivor.json",
         "RoR2_zh-TW/overrides/icon.png",
         "RoR2_zh-TW/plugin/RoR2_zh-TW.HardcodedText.dll",
@@ -157,14 +160,14 @@ def test_build_packs_python_script_and_translations_under_one_folder(tmp_path, r
     }
 
 
-def test_build_installs_the_script_dependencies_then_runs_the_script_with_the_bundled_python(tmp_path, run):
+def test_build_installs_the_script_dependencies_then_runs_the_updater_offline_with_the_bundled_python(tmp_path, run):
     build(tmp_path)
 
     (install, _), (check, check_options) = run.commands
     python = Path(install[0])
     assert python.name == "python.exe" and python.parent.name == "python_embeded"
     assert install[1:4] == ["-m", "pip", "install"] and install[-1] == "OpenCC>=1.1.9"
-    assert check == [str(python), "ror2_s2t.py", "--help"]
+    assert check == [str(python), "ror2_update.py", "--no-update", "--help"]
     assert Path(check_options["cwd"]) == python.parent.parent
 
 
@@ -192,7 +195,7 @@ def test_launcher_is_a_batch_file_cmd_can_read(tmp_path, run):
     # cmd 讀不懂 BOM，第一行指令會失效；換行要是 CRLF
     assert not launcher.startswith(codecs.BOM_UTF8)
     assert b"\n" not in launcher.replace(b"\r\n", b"")
-    assert "python_embeded\\python.exe ror2_s2t.py %*" in launcher.decode("utf-8").splitlines()
+    assert "python_embeded\\python.exe ror2_update.py %*" in launcher.decode("utf-8").splitlines()
 
 
 def test_guide_opens_as_utf8_in_notepad(tmp_path, run):
@@ -201,6 +204,7 @@ def test_guide_opens_as_utf8_in_notepad(tmp_path, run):
     guide = read(zip_path, "RoR2_zh-TW/說明.txt")
     assert guide.startswith(codecs.BOM_UTF8)
     assert "安裝.bat" in guide.decode("utf-8-sig")
+    assert ror2_update.RELEASES_URL in guide.decode("utf-8-sig")
 
 
 def test_build_extracts_an_archive_with_7zip(tmp_path, run, monkeypatch):

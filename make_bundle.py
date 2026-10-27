@@ -15,18 +15,19 @@ from __future__ import annotations
 import argparse
 import codecs
 import os
-import re
 import shutil
 import subprocess
 import sys
 import tempfile
-import tomllib
 import zipfile
 from pathlib import Path
 
+import ror2_update
+
 PROJECT_DIR = Path(__file__).resolve().parent
-SCRIPT = "ror2_s2t.py"
-DATA_DIRS = ("mods", "overrides")
+SCRIPT = ror2_update.SCRIPT
+# 安裝.bat 執行的是更新程式：先從 GitHub 更新翻譯，再由它執行 SCRIPT
+UPDATER = "ror2_update.py"
 # 替換模組寫死文字的外掛；只帶編譯好的 DLL，原始碼不用給朋友
 PLUGIN = Path("plugin") / "RoR2_zh-TW.HardcodedText.dll"
 DEFAULT_OUTPUT = "RoR2_zh-TW_安裝包.zip"
@@ -48,7 +49,7 @@ if not exist "{PYTHON_DIR}\\python.exe" (
     pause
     exit /b 1
 )
-{PYTHON_DIR}\\python.exe {SCRIPT} %*
+{PYTHON_DIR}\\python.exe {UPDATER} %*
 echo.
 pause
 """
@@ -62,6 +63,15 @@ Risk of Rain 2 繁體中文語言包（含模組翻譯）
   3. 開遊戲（已經開著就重開），在主選單右上角的國旗選單拉到最下面，選「繁體中文」。
 
 遊戲或模組更新之後，再點一次「{LAUNCHER}」就好。
+
+更新翻譯
+  每次執行「{LAUNCHER}」都會先從 GitHub 下載最新的翻譯再安裝：
+      https://github.com/{ror2_update.REPO}
+  連不上網路時，就用這個資料夾裡現有的翻譯安裝。
+  畫面最後提示要下載新的安裝包時，到下面的網址下載，解壓縮後執行新的「{LAUNCHER}」：
+      {ror2_update.RELEASES_URL}
+  不想更新、只用現有的翻譯安裝時，在這個資料夾的網址列輸入 cmd 按 Enter，再執行：
+      {LAUNCHER} {ror2_update.NO_UPDATE}
 
 它做了什麼
   - 把遊戲內建的簡體中文轉成繁體中文，放進遊戲的
@@ -84,13 +94,7 @@ Risk of Rain 2 繁體中文語言包（含模組翻譯）
 
 def script_dependencies(script: Path) -> list[str]:
     """讀出腳本開頭 PEP 723 區塊宣告的相依套件，安裝包裡的 Python 要裝一樣的東西。"""
-    match = re.search(
-        r"(?m)^# /// script$\s(?P<content>(^#(| .*)$\s)+)^# ///$", script.read_text(encoding="utf-8")
-    )
-    if not match:
-        return []
-    content = "".join(line[2:] or "\n" for line in match["content"].splitlines(keepends=True))
-    return tomllib.loads(content).get("dependencies", [])
+    return ror2_update.script_metadata(script.read_text(encoding="utf-8")).get("dependencies", [])
 
 
 def find_7z() -> Path | None:
@@ -165,20 +169,21 @@ def build(source: Path, project_dir: Path, zip_path: Path) -> bool:
             return False
         prune(python_dir)
 
-        shutil.copy2(project_dir / SCRIPT, bundle)
-        for name in DATA_DIRS:
-            shutil.copytree(project_dir / name, bundle / name)
         if not (project_dir / PLUGIN).is_file():
             print(f"找不到 {PLUGIN}，請先執行 dotnet build plugin -c Release。")
             return False
-        (bundle / PLUGIN).parent.mkdir()
-        shutil.copy2(project_dir / PLUGIN, bundle / PLUGIN)
+        # 和更新程式從 GitHub 換掉的是同一批檔案
+        for name in ror2_update.FILES:
+            (bundle / name).parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(project_dir / name, bundle / name)
+        for name in ror2_update.DIRS:
+            shutil.copytree(project_dir / name, bundle / name)
         (bundle / LAUNCHER).write_bytes(LAUNCHER_TEXT.replace("\n", "\r\n").encode("utf-8"))
         # 帶 BOM，舊版記事本才不會把 UTF-8 當成 Big5 開
         (bundle / GUIDE).write_bytes(codecs.BOM_UTF8 + GUIDE_TEXT.replace("\n", "\r\n").encode("utf-8"))
 
-        # 用包好的 Python 實際跑一次，確認拿掉安裝工具之後腳本還能執行
-        check = [python, SCRIPT, "--help"]
+        # 用包好的 Python 實際跑一次，確認拿掉安裝工具之後腳本還能執行；打包時不連 GitHub
+        check = [python, UPDATER, ror2_update.NO_UPDATE, "--help"]
         if subprocess.run(check, cwd=bundle, stdout=subprocess.DEVNULL).returncode != 0:
             print("包好的 Python 無法執行腳本，未產生安裝包。")
             return False

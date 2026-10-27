@@ -14,6 +14,8 @@
 | `test_ror2_s2t.py` | 模組翻譯功能的測試 |
 | `make_bundle.py` | 打包成[給朋友的安裝包](#給朋友的安裝包含模組翻譯)，連模組翻譯一起 |
 | `test_make_bundle.py` | 打包流程的測試 |
+| `ror2_update.py` | 安裝包的「安裝.bat」執行的程式：先從 GitHub [更新翻譯](#自動更新)，再執行 `ror2_s2t.py` |
+| `test_ror2_update.py` | 更新程式的測試 |
 | `RoR2_zh-TW_1.5.0.zip` | 打包好的語言包，可直接分享給別人（只有遊戲本體） |
 
 ## 安裝打包好的語言包
@@ -35,13 +37,21 @@
 uv run make_bundle.py "D:\python_embeded_v3.13.15.7z"
 ```
 
-它把轉換腳本、`mods`、`overrides` 和一份可攜式 Python 包成 `RoR2_zh-TW_安裝包.zip`（約 13 MB）。朋友不用安裝任何東西：解壓縮後點兩下 `安裝.bat`，就等於在他的電腦上執行一次 `uv run ror2_s2t.py`，遊戲語言包和模組翻譯會一起裝好。壓縮檔裡的 `說明.txt` 寫了安裝、移除，以及找不到遊戲時的做法。
+它把轉換腳本、更新程式、`mods`、`overrides`、外掛 DLL 和一份可攜式 Python 包成 `RoR2_zh-TW_安裝包.zip`（約 13 MB）。朋友不用安裝任何東西：解壓縮後點兩下 `安裝.bat`，它會先從 GitHub 更新翻譯，再像 `uv run ror2_s2t.py` 一樣把遊戲語言包和模組翻譯一起裝好。壓縮檔裡的 `說明.txt` 寫了安裝、更新、移除，以及找不到遊戲時的做法。
 
 - 參數是一份裝好 pip 的 Python embeddable package（`._pth` 要啟用 `import site`），資料夾或壓縮檔都可以；壓縮檔要安裝 7-Zip 才解得開。原本那份不會被更動。Python 3.11、3.12、3.13 都打包過。
 - 打包時會用它的 pip 安裝 OpenCC，需要網路。
 - `--output 檔案` 可以改輸出的檔名。
 
-改了翻譯之後重新打包再傳一次；或只把 `mods` 資料夾傳給朋友，蓋掉原本的再點一次 `安裝.bat`。
+### 自動更新
+
+`安裝.bat` 執行的是 `ror2_update.py`：先下載 GitHub 上 `main` 分支的壓縮檔（https://github.com/csimsong1/Risk_of_Rain_2_zh-TW ），把安裝包裡的 `ror2_s2t.py`、`ror2_update.py`、外掛 DLL、`mods`、`overrides` 換成最新版本，再用新的 `ror2_s2t.py` 安裝。所以改了翻譯之後，合併到 `main` 並推送，朋友下次點 `安裝.bat` 就會拿到；`main` 等於朋友拿到的版本，在遊戲裡確認過再推。
+
+- `mods`、`overrides` 整個資料夾換成 GitHub 上的內容，repo 刪掉的翻譯，朋友那邊也會刪掉。
+- 連不上 GitHub、下載的檔案不完整，或寫入檔案失敗時，照樣用現有的檔案安裝。
+- 安裝包裡的 Python 拿掉了 pip，裝不了新的套件。`ror2_s2t.py` 開頭的相依套件或 Python 版本改了的話，舊的安裝包不會更新任何檔案，裝完後提示朋友到 [Releases](https://github.com/csimsong1/Risk_of_Rain_2_zh-TW/releases/latest) 下載新的安裝包。這種時候要重新打包，上傳到 GitHub 的 Releases。
+- `安裝.bat` 和 `說明.txt` 是打包時產生的，不會被更新；改了它們也要重新打包。
+- `安裝.bat --no-update` 不連 GitHub，只用現有的檔案安裝。在有 `.git` 的資料夾（這個 repo）裡執行時也不會更新，以免蓋掉還沒推送的翻譯。
 
 ## 自己產生語言包
 
@@ -246,7 +256,7 @@ LookingGlass 的屬性面板是例外，它的文字存在設定裡，可以自�
 
 ## 測試
 
-模組翻譯的安裝與檢查邏輯、安裝包的打包流程有測試，改腳本之後可以跑：
+模組翻譯的安裝與檢查邏輯、安裝包的打包流程和更新程式有測試，改腳本之後可以跑：
 
 ```bash
 uv run --with pytest --with "OpenCC>=1.1.9" pytest
@@ -260,6 +270,7 @@ uv run --with pytest --with "OpenCC>=1.1.9" pytest
 - **模組翻譯未實測**：token 名稱和英文是從模組的 DLL 分析出來的（較新加入的模組是在遊戲外執行模組註冊文字的程式取得），譯文的標籤也經過腳本檢查，但還沒有在遊戲裡逐條確認顯示。
 - **外掛未在遊戲裡實測**：替換寫死文字的外掛只在遊戲外載入模組測過資料替換與方法改寫；介面類的方法因為呼叫 Unity 內部函式，遊戲外無法改寫，要在遊戲裡才看得到結果。
 - **安裝包**：只在製作它的電腦上試過（解壓縮後執行 `安裝.bat`，結果和直接跑腳本相同），沒有在別台電腦上試過。從網路下載的 `.bat` 第一次執行時，Windows 可能會跳出安全性警告。
+- **自動更新**：在這台電腦上用解壓縮出來的安裝包實際連 GitHub 測過已是最新、有檔案變動、連不上三種情況；相依套件改變時的提示只有自動測試涵蓋。
 - **Epic 版**：尋找遊戲的方式和 r2modman 相同（讀 Epic Games Launcher 的安裝記錄 `LauncherInstalled.dat`），只用模擬的記錄檔測過，沒有在裝了 Epic 版的電腦上實測。找不到時用 `--game-dir` 指定。
 - **測試範圍**：在遊戲 1.5.0（Steam 版）測試，未裝模組與使用 r2modman 模組設定檔兩種情況都正常顯示。多人連線沒有測過。
 - **文字來源**：內容是官方簡體中文翻譯轉換而來，公開散布前請自行斟酌。
