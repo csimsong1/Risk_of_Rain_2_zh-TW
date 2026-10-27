@@ -1,0 +1,274 @@
+{
+  "mod": "DragonycksModdingComms-Xenologist",
+  "version": "1.0.4",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的；XENO_NAME 等五條角色文字與 XENODRONE_NAME 直接取自程式裡的字串。",
+    "技能說明裡的數字來自模組設定（BepInEx/config/Xenologist/*.cfg）的預設值；模組的英文會跟著設定變，譯文是固定的，改過設定請一併修改。",
+    "各技能的關鍵字（XENO_*_KEYWORD）是九種樣本說明以換行串起來的；特殊技能的關鍵字裡，中性那一行少了開頭的「屠戮者」，譯文照原文。",
+    "XENO_DESCRIPTION 的原文只有空白的提示格式，沒有可翻譯的內容，所以不翻。",
+    "九種樣本的名稱沿用遊戲精英詞綴的譯名（燃燒、超載、結冰、修補、孔雀石、天青石、無懈可擊、虛空觸碰）。原文有幾處數字少了 % 或單位（例如「5 attack speed」「30 damage」），譯文照原文。",
+    "收集樣本時角色身上的數量顯示（x3 這類）沒有文字，不需要翻譯。"
+  ],
+  "strings": {
+    "XENO_NAME": {
+      "en": "Xenologist",
+      "zh-TW": "異星學家"
+    },
+    "XENO_DESCRIPTION": {
+      "en": "<style=cSub>\r\n\r\n< ! > \r\n<style=cSub>\r\n\r\n< ! > \r\n<style=cSub>\r\n\r\n< ! > \r\n<style=cSub>\r\n\r\n< ! > "
+    },
+    "XENO_SUBTITLE": {
+      "en": "Specialized Researcher",
+      "zh-TW": "專精研究員"
+    },
+    "XENO_OUTRO": {
+      "en": "..and so she left, in the search for new extraterrestrials to study.",
+      "zh-TW": "……於是她離開了，去尋找新的外星生物來研究。"
+    },
+    "XENO_FAIL": {
+      "en": "..and so she vanished, her endless research finally come to an end.",
+      "zh-TW": "……於是她消失了，無盡的研究終於畫下句點。"
+    },
+    "XENO_PASSIVE_NAME": {
+      "en": "Alien Research",
+      "zh-TW": "異星研究"
+    },
+    "XENO_PASSIVE_DESCRIPTION": {
+      "en": "Become imbued with Aspects by collecting <style=cIsDamage>Samples</style>, enhancing your abilities. Collecting <style=cIsDamage>10</style> of the same sample grants you its <style=cIsDamage>aspect</style> and replaces your <style=cIsUtility>special skill</style> with a matching version. You start with 10 <color=#c7dad8>Neutral</color> samples.",
+      "zh-TW": "收集<style=cIsDamage>樣本</style>來注入象徵之力，強化你的技能。收集<style=cIsDamage>10</style>個同種樣本即可獲得該種<style=cIsDamage>象徵</style>，並把<style=cIsUtility>特殊技能</style>換成對應的版本。開局時擁有10個<color=#c7dad8>中性</color>樣本。"
+    },
+    "XENO_PRIMARY_NAME": {
+      "en": "Smart Syringe Shot",
+      "zh-TW": "智慧針筒射擊"
+    },
+    "XENOBASE_PRIMARY_DESCRIPTION": {
+      "en": "Fire syringes for <style=cIsDamage>100% damage</style>, which inject enemies with harmful chemicals and allies with helpful ones.",
+      "zh-TW": "發射針筒，造成<style=cIsDamage>100%傷害</style>；針筒會為敵人注入有害藥劑，為盟友注入有益藥劑。"
+    },
+    "XENO_PRIMARY0_DESCRIPTION": {
+      "en": "<color=#c7dad8>Neutral</color>: Damage reduced by <style=cIsDamage>5%</style> and fire rate increased by <style=cIsDamage>10%</style> per sample.",
+      "zh-TW": "<color=#c7dad8>中性</color>：每個樣本使傷害降低<style=cIsDamage>5%</style>，射速提高<style=cIsDamage>10%</style>。"
+    },
+    "XENO_PRIMARY1_DESCRIPTION": {
+      "en": "<color=#cb3526>Blazing</color>: Inflicts <style=cIsDamage>Burn</style> for <style=cIsDamage>10% damage</style> per sample. Allies gain <style=cIsDamage>5% damage</style> per sample for <style=cIsUtility>6s</style>.",
+      "zh-TW": "<color=#cb3526>燃燒</color>：每個樣本施加造成<style=cIsDamage>10%傷害</style>的<style=cIsDamage>燃燒</style>。盟友每個樣本獲得<style=cIsDamage>5%傷害</style>加成，持續<style=cIsUtility>6秒</style>。"
+    },
+    "XENO_PRIMARY2_DESCRIPTION": {
+      "en": "<color=#4262db>Overloading</color>: Bounces between allies and enemies once per sample, giving allies <style=cIsDamage>5 attack speed</style> per sample for <style=cIsUtility>6s</style>.",
+      "zh-TW": "<color=#4262db>超載</color>：每個樣本使針筒在盟友與敵人之間多彈跳1次，盟友每個樣本獲得<style=cIsDamage>5點攻擊速度</style>，持續<style=cIsUtility>6秒</style>。"
+    },
+    "XENO_PRIMARY3_DESCRIPTION": {
+      "en": "<color=#d6f6f6>Glacial</color>: Syringes explode in a <style=cIsUtility>1m radius</style> with an additional <style=cIsDamage>30 damage</style> per sample.",
+      "zh-TW": "<color=#d6f6f6>結冰</color>：針筒會在<style=cIsUtility>半徑1米</style>內爆炸，每個樣本額外造成<style=cIsDamage>30點傷害</style>。"
+    },
+    "XENO_PRIMARY4_DESCRIPTION": {
+      "en": "<color=#a1e74f>Mending</color>: Gains <style=cIsDamage>10% life steal</style> per sample. Allies are <style=cIsHealing>healed</style> for <style=cIsHealth>3% MaxHP</style> per sample.",
+      "zh-TW": "<color=#a1e74f>修補</color>：每個樣本獲得<style=cIsDamage>10%生命竊取</style>。盟友每個樣本<style=cIsHealing>恢復</style><style=cIsHealth>3%最大生命值</style>。"
+    },
+    "XENO_PRIMARY5_DESCRIPTION": {
+      "en": "<color=#94d39c>Malachite</color>: Syringes home into enemies and allies, becoming more efficient with more samples. Allies a skull per sample when hit, dealing <style=cIsDamage>10</style> of their <style=cIsHealth>MaxHP</style> as damage. ",
+      "zh-TW": "<color=#94d39c>孔雀石</color>：針筒會追蹤敵人與盟友，樣本越多追蹤越精準。盟友被命中時，每個樣本放出1顆骷髏，造成相當於其<style=cIsHealth>最大生命值</style><style=cIsDamage>10</style>的傷害。"
+    },
+    "XENO_PRIMARY6_DESCRIPTION": {
+      "en": "<color=#94d7d6>Celestine</color>: Enemies are <style=cIsDamage>slowed</style> for <style=cIsDamage>10%</style> and lose <style=cIsDamage>10 armor</style> per sample. Allies gain <style=cIsDamage>invisibility</style> for <style=cIsUtility>1s</style> per sample.",
+      "zh-TW": "<color=#94d7d6>天青石</color>：每個樣本使敵人<style=cIsDamage>減速</style><style=cIsDamage>10%</style>並失去<style=cIsDamage>10點護甲</style>。盟友每個樣本獲得<style=cIsUtility>1秒</style>的<style=cIsDamage>隱身</style>。"
+    },
+    "XENO_PRIMARY7_DESCRIPTION": {
+      "en": "<color=#394d63>Perfected</color>: Enemies and allies hit are <style=cIsDamage>cursed</style> for <style=cIsHealth>5% MaxHP</style> and gain <style=cIsDamage>10% damage</style> per sample, for <style=cIsUtility>10s</style>.",
+      "zh-TW": "<color=#394d63>無懈可擊</color>：被命中的敵人與盟友每個樣本會受到<style=cIsDamage>詛咒</style>，損失<style=cIsHealth>5%最大生命值</style>，並獲得<style=cIsDamage>10%傷害</style>加成，持續<style=cIsUtility>10秒</style>。"
+    },
+    "XENO_PRIMARY8_DESCRIPTION": {
+      "en": "<color=#db71ed>Voidtouched</color>: Syringes have <style=cIsDamage>1% chance</style> per sample to deal <style=cIsDamage>3000% damage</style>. Allies gain shield for <style=cIsUtility>1s</style> that <style=cIsHealing>blocks</style> incoming damage once.",
+      "zh-TW": "<color=#db71ed>虛空觸碰</color>：每個樣本使針筒有<style=cIsDamage>1%機率</style>造成<style=cIsDamage>3000%傷害</style>。盟友獲得持續<style=cIsUtility>1秒</style>的護盾，可<style=cIsHealing>抵擋</style>一次傷害。"
+    },
+    "XENO_PRIMARY_KEYWORD": {
+      "en": "<color=#c7dad8>Neutral</color>: Damage reduced by <style=cIsDamage>5%</style> and fire rate increased by <style=cIsDamage>10%</style> per sample.\r\n<color=#cb3526>Blazing</color>: Inflicts <style=cIsDamage>Burn</style> for <style=cIsDamage>10% damage</style> per sample. Allies gain <style=cIsDamage>5% damage</style> per sample for <style=cIsUtility>6s</style>.\r\n<color=#4262db>Overloading</color>: Bounces between allies and enemies once per sample, giving allies <style=cIsDamage>5 attack speed</style> per sample for <style=cIsUtility>6s</style>.\r\n<color=#d6f6f6>Glacial</color>: Syringes explode in a <style=cIsUtility>1m radius</style> with an additional <style=cIsDamage>30 damage</style> per sample.\r\n<color=#a1e74f>Mending</color>: Gains <style=cIsDamage>10% life steal</style> per sample. Allies are <style=cIsHealing>healed</style> for <style=cIsHealth>3% MaxHP</style> per sample.\r\n<color=#94d39c>Malachite</color>: Syringes home into enemies and allies, becoming more efficient with more samples. Allies a skull per sample when hit, dealing <style=cIsDamage>10</style> of their <style=cIsHealth>MaxHP</style> as damage. \r\n<color=#94d7d6>Celestine</color>: Enemies are <style=cIsDamage>slowed</style> for <style=cIsDamage>10%</style> and lose <style=cIsDamage>10 armor</style> per sample. Allies gain <style=cIsDamage>invisibility</style> for <style=cIsUtility>1s</style> per sample.\r\n<color=#394d63>Perfected</color>: Enemies and allies hit are <style=cIsDamage>cursed</style> for <style=cIsHealth>5% MaxHP</style> and gain <style=cIsDamage>10% damage</style> per sample, for <style=cIsUtility>10s</style>.\r\n<color=#db71ed>Voidtouched</color>: Syringes have <style=cIsDamage>1% chance</style> per sample to deal <style=cIsDamage>3000% damage</style>. Allies gain shield for <style=cIsUtility>1s</style> that <style=cIsHealing>blocks</style> incoming damage once.",
+      "zh-TW": "<color=#c7dad8>中性</color>：每個樣本使傷害降低<style=cIsDamage>5%</style>，射速提高<style=cIsDamage>10%</style>。\r\n<color=#cb3526>燃燒</color>：每個樣本施加造成<style=cIsDamage>10%傷害</style>的<style=cIsDamage>燃燒</style>。盟友每個樣本獲得<style=cIsDamage>5%傷害</style>加成，持續<style=cIsUtility>6秒</style>。\r\n<color=#4262db>超載</color>：每個樣本使針筒在盟友與敵人之間多彈跳1次，盟友每個樣本獲得<style=cIsDamage>5點攻擊速度</style>，持續<style=cIsUtility>6秒</style>。\r\n<color=#d6f6f6>結冰</color>：針筒會在<style=cIsUtility>半徑1米</style>內爆炸，每個樣本額外造成<style=cIsDamage>30點傷害</style>。\r\n<color=#a1e74f>修補</color>：每個樣本獲得<style=cIsDamage>10%生命竊取</style>。盟友每個樣本<style=cIsHealing>恢復</style><style=cIsHealth>3%最大生命值</style>。\r\n<color=#94d39c>孔雀石</color>：針筒會追蹤敵人與盟友，樣本越多追蹤越精準。盟友被命中時，每個樣本放出1顆骷髏，造成相當於其<style=cIsHealth>最大生命值</style><style=cIsDamage>10</style>的傷害。\r\n<color=#94d7d6>天青石</color>：每個樣本使敵人<style=cIsDamage>減速</style><style=cIsDamage>10%</style>並失去<style=cIsDamage>10點護甲</style>。盟友每個樣本獲得<style=cIsUtility>1秒</style>的<style=cIsDamage>隱身</style>。\r\n<color=#394d63>無懈可擊</color>：被命中的敵人與盟友每個樣本會受到<style=cIsDamage>詛咒</style>，損失<style=cIsHealth>5%最大生命值</style>，並獲得<style=cIsDamage>10%傷害</style>加成，持續<style=cIsUtility>10秒</style>。\r\n<color=#db71ed>虛空觸碰</color>：每個樣本使針筒有<style=cIsDamage>1%機率</style>造成<style=cIsDamage>3000%傷害</style>。盟友獲得持續<style=cIsUtility>1秒</style>的護盾，可<style=cIsHealing>抵擋</style>一次傷害。"
+    },
+    "XENO_SECONDARY_NAME": {
+      "en": "Samplerang",
+      "zh-TW": "樣本迴旋鏢"
+    },
+    "XENOBASE_SECONDARY_DESCRIPTION": {
+      "en": "Throw a boomerang for <style=cIsDamage>150% damage</style> per second. Press again to recall the boomerang.",
+      "zh-TW": "擲出迴旋鏢，每秒造成<style=cIsDamage>150%傷害</style>。再按一次可收回迴旋鏢。"
+    },
+    "XENO_SECONDARY0_DESCRIPTION": {
+      "en": "<color=#c7dad8>Neutral</color>: Gains <style=cIsDamage>5% velocity</style> per sample.",
+      "zh-TW": "<color=#c7dad8>中性</color>：每個樣本獲得<style=cIsDamage>5%飛行速度</style>。"
+    },
+    "XENO_SECONDARY1_DESCRIPTION": {
+      "en": "<color=#cb3526>Blazing</color>: Gains a ring of fire that extends by <style=cIsUtility>2m</style> per sample. The ring explodes when recalled, <style=cIsDamage>doubling</style> its range and inflicting <style=cIsDamage>150% damage</style> per sample.",
+      "zh-TW": "<color=#cb3526>燃燒</color>：附帶一圈火環，每個樣本使範圍擴大<style=cIsUtility>2米</style>。收回時火環會爆炸，範圍<style=cIsDamage>加倍</style>，每個樣本造成<style=cIsDamage>150%傷害</style>。"
+    },
+    "XENO_SECONDARY2_DESCRIPTION": {
+      "en": "<color=#4262db>Overloading</color>: Cooldown is reduced by <style=cIsUtility>5%</style> per sample. When recalled, dash towards it for <style=cIsUtility>10% distance</style> per sample, dealing <style=cIsDamage>600% damage</style> to nearby enemies.",
+      "zh-TW": "<color=#4262db>超載</color>：每個樣本使冷卻時間縮短<style=cIsUtility>5%</style>。收回時朝迴旋鏢衝刺，每個樣本衝刺<style=cIsUtility>10%距離</style>，對附近的敵人造成<style=cIsDamage>600%傷害</style>。"
+    },
+    "XENO_SECONDARY3_DESCRIPTION": {
+      "en": "<color=#d6f6f6>Glacial</color>: Travel duration is increased by <style=cIsUtility>20%</style> per sample, and velocity is reduced by <style=cIsDamage>0.05%</style> per sample. When recalled, the velocity reduction is removed.",
+      "zh-TW": "<color=#d6f6f6>結冰</color>：每個樣本使飛行時間延長<style=cIsUtility>20%</style>，速度降低<style=cIsDamage>0.05%</style>。收回時移除速度降低的效果。"
+    },
+    "XENO_SECONDARY4_DESCRIPTION": {
+      "en": "<color=#a1e74f>Mending</color>: Draws enemy aggro in a range of <style=cIsUtility>10m</style> per sample, increasing their <style=cIsDamage>movement speed</style> by <style=cIsDamage>40%</style> per sample. When recalled, aggroed enenemies are <style=cIsDamage>sundered</style> for <style=cIsUtility>1.5s</style>, causing them to take an additional <style=cIsDamage>125% damage per sample</style>. Sundered enemies drop a <style=cIsHealing>healing orb</style> on death.",
+      "zh-TW": "<color=#a1e74f>修補</color>：每個樣本吸引<style=cIsUtility>10米</style>範圍內敵人的仇恨，並使其<style=cIsDamage>移動速度</style>每個樣本提高<style=cIsDamage>40%</style>。收回時被吸引的敵人會被<style=cIsDamage>撕裂</style><style=cIsUtility>1.5秒</style>，額外承受<style=cIsDamage>每個樣本125%的傷害</style>。被撕裂的敵人死亡時會掉落<style=cIsHealing>治療球</style>。"
+    },
+    "XENO_SECONDARY5_DESCRIPTION": {
+      "en": "<color=#94d39c>Malachite</color>: Stops in place at the end of its range for <style=cIsUtility>1s</style>, additionally firing a spike every <style=cIsDamage>1s</style> at the closest enemy for <style=cIsDamage>400% damage</style> per sample.",
+      "zh-TW": "<color=#94d39c>孔雀石</color>：飛到射程盡頭時停留<style=cIsUtility>1秒</style>，並每<style=cIsDamage>1秒</style>朝最近的敵人發射尖刺，每個樣本造成<style=cIsDamage>400%傷害</style>。"
+    },
+    "XENO_SECONDARY6_DESCRIPTION": {
+      "en": "<color=#94d7d6>Celestine</color>: Draws enemies within <style=cIsUtility>3m</style> per sample into its center.",
+      "zh-TW": "<color=#94d7d6>天青石</color>：每個樣本將<style=cIsUtility>3米</style>內的敵人吸往中心。"
+    },
+    "XENO_SECONDARY7_DESCRIPTION": {
+      "en": "<color=#394d63>Perfected</color>: Rain down a meteor every <style=cIsUtility>1s</style> for <style=cIsDamage>600% damage</style>.",
+      "zh-TW": "<color=#394d63>無懈可擊</color>：每<style=cIsUtility>1秒</style>降下一顆隕石，造成<style=cIsDamage>600%傷害</style>。"
+    },
+    "XENO_SECONDARY8_DESCRIPTION": {
+      "en": "<color=#db71ed>Voidtouched</color>: Striking an enemy causes it to disappear and strike the enemy again <style=cIsUtility>30</style> times.",
+      "zh-TW": "<color=#db71ed>虛空觸碰</color>：擊中敵人時迴旋鏢會消失，再對該敵人打擊<style=cIsUtility>30</style>次。"
+    },
+    "XENO_SECONDARY_KEYWORD": {
+      "en": "<color=#c7dad8>Neutral</color>: Gains <style=cIsDamage>5% velocity</style> per sample.\r\n<color=#cb3526>Blazing</color>: Gains a ring of fire that extends by <style=cIsUtility>2m</style> per sample. The ring explodes when recalled, <style=cIsDamage>doubling</style> its range and inflicting <style=cIsDamage>150% damage</style> per sample.\r\n<color=#4262db>Overloading</color>: Cooldown is reduced by <style=cIsUtility>5%</style> per sample. When recalled, dash towards it for <style=cIsUtility>10% distance</style> per sample, dealing <style=cIsDamage>600% damage</style> to nearby enemies.\r\n<color=#d6f6f6>Glacial</color>: Travel duration is increased by <style=cIsUtility>20%</style> per sample, and velocity is reduced by <style=cIsDamage>0.05%</style> per sample. When recalled, the velocity reduction is removed.\r\n<color=#a1e74f>Mending</color>: Draws enemy aggro in a range of <style=cIsUtility>10m</style> per sample, increasing their <style=cIsDamage>movement speed</style> by <style=cIsDamage>40%</style> per sample. When recalled, aggroed enenemies are <style=cIsDamage>sundered</style> for <style=cIsUtility>1.5s</style>, causing them to take an additional <style=cIsDamage>125% damage per sample</style>. Sundered enemies drop a <style=cIsHealing>healing orb</style> on death.\r\n<color=#94d39c>Malachite</color>: Stops in place at the end of its range for <style=cIsUtility>1s</style>, additionally firing a spike every <style=cIsDamage>1s</style> at the closest enemy for <style=cIsDamage>400% damage</style> per sample.\r\n<color=#94d7d6>Celestine</color>: Draws enemies within <style=cIsUtility>3m</style> per sample into its center.\r\n<color=#394d63>Perfected</color>: Rain down a meteor every <style=cIsUtility>1s</style> for <style=cIsDamage>600% damage</style>.\r\n<color=#db71ed>Voidtouched</color>: Striking an enemy causes it to disappear and strike the enemy again <style=cIsUtility>30</style> times.",
+      "zh-TW": "<color=#c7dad8>中性</color>：每個樣本獲得<style=cIsDamage>5%飛行速度</style>。\r\n<color=#cb3526>燃燒</color>：附帶一圈火環，每個樣本使範圍擴大<style=cIsUtility>2米</style>。收回時火環會爆炸，範圍<style=cIsDamage>加倍</style>，每個樣本造成<style=cIsDamage>150%傷害</style>。\r\n<color=#4262db>超載</color>：每個樣本使冷卻時間縮短<style=cIsUtility>5%</style>。收回時朝迴旋鏢衝刺，每個樣本衝刺<style=cIsUtility>10%距離</style>，對附近的敵人造成<style=cIsDamage>600%傷害</style>。\r\n<color=#d6f6f6>結冰</color>：每個樣本使飛行時間延長<style=cIsUtility>20%</style>，速度降低<style=cIsDamage>0.05%</style>。收回時移除速度降低的效果。\r\n<color=#a1e74f>修補</color>：每個樣本吸引<style=cIsUtility>10米</style>範圍內敵人的仇恨，並使其<style=cIsDamage>移動速度</style>每個樣本提高<style=cIsDamage>40%</style>。收回時被吸引的敵人會被<style=cIsDamage>撕裂</style><style=cIsUtility>1.5秒</style>，額外承受<style=cIsDamage>每個樣本125%的傷害</style>。被撕裂的敵人死亡時會掉落<style=cIsHealing>治療球</style>。\r\n<color=#94d39c>孔雀石</color>：飛到射程盡頭時停留<style=cIsUtility>1秒</style>，並每<style=cIsDamage>1秒</style>朝最近的敵人發射尖刺，每個樣本造成<style=cIsDamage>400%傷害</style>。\r\n<color=#94d7d6>天青石</color>：每個樣本將<style=cIsUtility>3米</style>內的敵人吸往中心。\r\n<color=#394d63>無懈可擊</color>：每<style=cIsUtility>1秒</style>降下一顆隕石，造成<style=cIsDamage>600%傷害</style>。\r\n<color=#db71ed>虛空觸碰</color>：擊中敵人時迴旋鏢會消失，再對該敵人打擊<style=cIsUtility>30</style>次。"
+    },
+    "XENO_UTILITY_NAME": {
+      "en": "Salvaged Spotter",
+      "zh-TW": "回收偵察機"
+    },
+    "XENOBASE_UTILITY_DESCRIPTION": {
+      "en": "Deploy a familiar spotter drone to scan an enemy with varying effects influenced by samples.",
+      "zh-TW": "部署一架熟悉的偵察無人機掃描敵人，效果依樣本而不同。"
+    },
+    "XENO_UTILITY0_DESCRIPTION": {
+      "en": "<color=#c7dad8>Neutral</color>: Grants <style=cIsDamage>10% critical chance</style> per sample against the marked enemy.",
+      "zh-TW": "<color=#c7dad8>中性</color>：對被標記的敵人，每個樣本提供<style=cIsDamage>10%暴擊機率</style>。"
+    },
+    "XENO_UTILITY1_DESCRIPTION": {
+      "en": "<color=#cb3526>Blazing</color>: Once per scan, when the scanned enemy is ignited, inflict an additional stack for <style=cIsDamage>100% damage</style> per sample.",
+      "zh-TW": "<color=#cb3526>燃燒</color>：每次掃描限一次：被掃描的敵人被點燃時，額外施加一層燃燒，每個樣本造成<style=cIsDamage>100%傷害</style>。"
+    },
+    "XENO_UTILITY2_DESCRIPTION": {
+      "en": "<color=#4262db>Overloading</color>: The scanned enemy gains a <style=cIsDamage>10% chance</style> per sample to arc lightning to enemies within <style=cIsUtility>3m</style> for <style=cIsDamage>100% damage</style> per sample.",
+      "zh-TW": "<color=#4262db>超載</color>：被掃描的敵人每個樣本有<style=cIsDamage>10%機率</style>對<style=cIsUtility>3米</style>內的敵人釋放電弧，每個樣本造成<style=cIsDamage>100%傷害</style>。"
+    },
+    "XENO_UTILITY3_DESCRIPTION": {
+      "en": "<color=#d6f6f6>Glacial</color>: Has a <style=cIsDamage>10% chance</style> per sample to <style=cIsDamage>freeze</style> the enemy on scan.",
+      "zh-TW": "<color=#d6f6f6>結冰</color>：掃描時每個樣本有<style=cIsDamage>10%機率</style><style=cIsDamage>冰凍</style>敵人。"
+    },
+    "XENO_UTILITY4_DESCRIPTION": {
+      "en": "<color=#a1e74f>Mending</color>: The scanned enemy's health is leeched off for <style=cIsDamage>100% damage</style> each second, <style=cIsHealing>healing</style> Xenologist for <style=cIsDamage>10%</style> of the total damage done on recall.",
+      "zh-TW": "<color=#a1e74f>修補</color>：每秒吸取被掃描敵人的生命值，造成<style=cIsDamage>100%傷害</style>；收回時為異星學家<style=cIsHealing>恢復</style>相當於總傷害<style=cIsDamage>10%</style>的生命值。"
+    },
+    "XENO_UTILITY5_DESCRIPTION": {
+      "en": "<color=#94d39c>Malachite</color>: When scanned, fire a homing spike per sample from the enemy for <style=cIsDamage>600% damage</style>.",
+      "zh-TW": "<color=#94d39c>孔雀石</color>：掃描時，每個樣本從敵人身上射出一根追蹤尖刺，造成<style=cIsDamage>600%傷害</style>。"
+    },
+    "XENO_UTILITY6_DESCRIPTION": {
+      "en": "<color=#94d7d6>Celestine</color>: Has a <style=cIsDamage>10% chance</style> to <style=cIsDamage>blind</style>, making it unable to attack.",
+      "zh-TW": "<color=#94d7d6>天青石</color>：有<style=cIsDamage>10%機率</style>使敵人<style=cIsDamage>失明</style>，無法攻擊。"
+    },
+    "XENO_UTILITY7_DESCRIPTION": {
+      "en": "<color=#394d63>Perfected</color>: The scanned enemy receives and deals an increased <style=cIsDamage>50% damage</style> per sample.",
+      "zh-TW": "<color=#394d63>無懈可擊</color>：被掃描的敵人每個樣本承受與造成的傷害提高<style=cIsDamage>50%</style>。"
+    },
+    "XENO_UTILITY8_DESCRIPTION": {
+      "en": "<color=#db71ed>Voidtouched</color>: Has a <style=cIsDamage>1% chance</style> per sample to <style=cIsDamage>infest</style> the enemy on scan, converting them to your side.",
+      "zh-TW": "<color=#db71ed>虛空觸碰</color>：掃描時每個樣本有<style=cIsDamage>1%機率</style><style=cIsDamage>寄生</style>敵人，使其轉為我方。"
+    },
+    "XENO_UTILITY_KEYWORD": {
+      "en": "<color=#c7dad8>Neutral</color>: Grants <style=cIsDamage>10% critical chance</style> per sample against the marked enemy.\r\n<color=#cb3526>Blazing</color>: Once per scan, when the scanned enemy is ignited, inflict an additional stack for <style=cIsDamage>100% damage</style> per sample.\r\n<color=#4262db>Overloading</color>: The scanned enemy gains a <style=cIsDamage>10% chance</style> per sample to arc lightning to enemies within <style=cIsUtility>3m</style> for <style=cIsDamage>100% damage</style> per sample.\r\n<color=#d6f6f6>Glacial</color>: Has a <style=cIsDamage>10% chance</style> per sample to <style=cIsDamage>freeze</style> the enemy on scan.\r\n<color=#a1e74f>Mending</color>: The scanned enemy's health is leeched off for <style=cIsDamage>100% damage</style> each second, <style=cIsHealing>healing</style> Xenologist for <style=cIsDamage>10%</style> of the total damage done on recall.\r\n<color=#94d39c>Malachite</color>: When scanned, fire a homing spike per sample from the enemy for <style=cIsDamage>600% damage</style>.\r\n<color=#94d7d6>Celestine</color>: Has a <style=cIsDamage>10% chance</style> to <style=cIsDamage>blind</style>, making it unable to attack.\r\n<color=#394d63>Perfected</color>: The scanned enemy receives and deals an increased <style=cIsDamage>50% damage</style> per sample.\r\n<color=#db71ed>Voidtouched</color>: Has a <style=cIsDamage>1% chance</style> per sample to <style=cIsDamage>infest</style> the enemy on scan, converting them to your side.",
+      "zh-TW": "<color=#c7dad8>中性</color>：對被標記的敵人，每個樣本提供<style=cIsDamage>10%暴擊機率</style>。\r\n<color=#cb3526>燃燒</color>：每次掃描限一次：被掃描的敵人被點燃時，額外施加一層燃燒，每個樣本造成<style=cIsDamage>100%傷害</style>。\r\n<color=#4262db>超載</color>：被掃描的敵人每個樣本有<style=cIsDamage>10%機率</style>對<style=cIsUtility>3米</style>內的敵人釋放電弧，每個樣本造成<style=cIsDamage>100%傷害</style>。\r\n<color=#d6f6f6>結冰</color>：掃描時每個樣本有<style=cIsDamage>10%機率</style><style=cIsDamage>冰凍</style>敵人。\r\n<color=#a1e74f>修補</color>：每秒吸取被掃描敵人的生命值，造成<style=cIsDamage>100%傷害</style>；收回時為異星學家<style=cIsHealing>恢復</style>相當於總傷害<style=cIsDamage>10%</style>的生命值。\r\n<color=#94d39c>孔雀石</color>：掃描時，每個樣本從敵人身上射出一根追蹤尖刺，造成<style=cIsDamage>600%傷害</style>。\r\n<color=#94d7d6>天青石</color>：有<style=cIsDamage>10%機率</style>使敵人<style=cIsDamage>失明</style>，無法攻擊。\r\n<color=#394d63>無懈可擊</color>：被掃描的敵人每個樣本承受與造成的傷害提高<style=cIsDamage>50%</style>。\r\n<color=#db71ed>虛空觸碰</color>：掃描時每個樣本有<style=cIsDamage>1%機率</style><style=cIsDamage>寄生</style>敵人，使其轉為我方。"
+    },
+    "XENO_SPECIAL_NAME": {
+      "en": "Sample Extraction",
+      "zh-TW": "樣本萃取"
+    },
+    "XENOBASE_SPECIAL_DESCRIPTION": {
+      "en": "<style=cIsDamage>Slayer</style>. Briefly charges before firing an orb which deals <style=cIsDamage>600% damage</style> and extracts <style=cIsDamage>1</style> sample from slain enemies. It is not modified by samples, instead becoming a new skill entirely once you reach <style=cIsDamage>10</style> of the same sample.",
+      "zh-TW": "<style=cIsDamage>屠戮者</style>。短暫蓄力後發射一顆光球，造成<style=cIsDamage>600%傷害</style>，並從擊殺的敵人身上萃取<style=cIsDamage>1</style>個樣本。這個技能不受樣本強化，而是在同種樣本達到<style=cIsDamage>10</style>個時變成全新的技能。"
+    },
+    "XENO_SPECIAL0_NAME": {
+      "en": "Overclocked Extraction",
+      "zh-TW": "超頻萃取"
+    },
+    "XENO_SPECIAL1_NAME": {
+      "en": "Fire Breath",
+      "zh-TW": "火焰吐息"
+    },
+    "XENO_SPECIAL2_NAME": {
+      "en": "Lightning Leap",
+      "zh-TW": "雷電飛躍"
+    },
+    "XENO_SPECIAL3_NAME": {
+      "en": "Ice Ignition",
+      "zh-TW": "寒冰引爆"
+    },
+    "XENO_SPECIAL4_NAME": {
+      "en": "Earth Soothe",
+      "zh-TW": "大地撫慰"
+    },
+    "XENO_SPECIAL5_NAME": {
+      "en": "Corruption Surge",
+      "zh-TW": "腐化湧流"
+    },
+    "XENO_SPECIAL6_NAME": {
+      "en": "Incorporeal Imbuement",
+      "zh-TW": "無形灌注"
+    },
+    "XENO_SPECIAL7_NAME": {
+      "en": "Perfect Judgment",
+      "zh-TW": "完美審判"
+    },
+    "XENO_SPECIAL8_NAME": {
+      "en": "Void Implosion",
+      "zh-TW": "虛空內爆"
+    },
+    "XENO_SPECIAL0_DESCRIPTION": {
+      "en": "<color=#c7dad8>Neutral</color>: <style=cIsDamage>Slayer</style>. Fire a <style=cIsDamage>piercing</style> beam for <style=cIsDamage>2000% damage</style>, extracting <style=cIsDamage>3</style> samples from slain <style=cIsDamage>elites</style>.",
+      "zh-TW": "<color=#c7dad8>中性</color>：<style=cIsDamage>屠戮者</style>。發射一道<style=cIsDamage>貫穿</style>光束，造成<style=cIsDamage>2000%傷害</style>，並從擊殺的<style=cIsDamage>精英</style>身上萃取<style=cIsDamage>3</style>個樣本。"
+    },
+    "XENO_SPECIAL1_DESCRIPTION": {
+      "en": "<color=#cb3526>Blazing</color>: Create a cone of fire that hits <style=cIsDamage>10x</style> for a total of <style=cIsDamage>1000% damage</style>, <style=cIsDamage>burning</style> for <style=cIsDamage>50% damage</style> on each hit.",
+      "zh-TW": "<color=#cb3526>燃燒</color>：噴出錐形火焰，命中<style=cIsDamage>10次</style>，總共造成<style=cIsDamage>1000%傷害</style>，每次命中都會<style=cIsDamage>燃燒</style>敵人，造成<style=cIsDamage>50%傷害</style>。"
+    },
+    "XENO_SPECIAL2_DESCRIPTION": {
+      "en": "<color=#4262db>Overloading</color>: Dash forward, <style=cIsDamage>lightning striking</style> nearby enemies for <style=cIsDamage>500% damage</style>.",
+      "zh-TW": "<color=#4262db>超載</color>：向前衝刺，以<style=cIsDamage>雷擊</style>攻擊附近的敵人，造成<style=cIsDamage>500%傷害</style>。"
+    },
+    "XENO_SPECIAL3_DESCRIPTION": {
+      "en": "<color=#d6f6f6>Glacial</color>: Target an area to create a <style=cIsUtility>45m</style> radial blast for <style=cIsDamage>2000% damage</style>, <style=cIsUtility>freezing</style> all enemies hit.",
+      "zh-TW": "<color=#d6f6f6>結冰</color>：指定一個區域，引發<style=cIsUtility>45米</style>範圍的爆炸，造成<style=cIsDamage>2000%傷害</style>，並<style=cIsUtility>冰凍</style>所有被命中的敵人。"
+    },
+    "XENO_SPECIAL4_DESCRIPTION": {
+      "en": "<color=#a1e74f>Mending</color>: <style=cIsHealing>Heal</style> nearby allies for <style=cIsHealing>200% MaxHP</style>.",
+      "zh-TW": "<color=#a1e74f>修補</color>：為附近的盟友<style=cIsHealing>恢復</style><style=cIsHealing>200%最大生命值</style>。"
+    },
+    "XENO_SPECIAL5_DESCRIPTION": {
+      "en": "<color=#94d39c>Malachite</color>: Knock nearby enemies away, dealing <style=cIsDamage>100% damage</style> every <style=cIsUtility>0.1s</style> while in the air.",
+      "zh-TW": "<color=#94d39c>孔雀石</color>：擊飛附近的敵人，敵人在空中時每<style=cIsUtility>0.1秒</style>受到<style=cIsDamage>100%傷害</style>。"
+    },
+    "XENO_SPECIAL6_DESCRIPTION": {
+      "en": "<color=#94d7d6>Celestine</color>: Create a spectral field around you, granting <style=cIsHealing>100 armor</style> and <style=cIsUtility>200% movement speed</style> to you and all nearby allies for <style=cIsUtility>10s</style>.",
+      "zh-TW": "<color=#94d7d6>天青石</color>：在身邊形成靈體力場，使你與附近所有盟友獲得<style=cIsHealing>100點護甲</style>與<style=cIsUtility>200%移動速度</style>，持續<style=cIsUtility>10秒</style>。"
+    },
+    "XENO_SPECIAL7_DESCRIPTION": {
+      "en": "<color=#394d63>Perfected</color>: Instantly <style=cIsDamage>execute</style> an enemy at <style=cIsHealth>25%</style> health or lower. If used when you are at <style=cIsHealth>25%</style> health or lower, execute <style=cIsHealth>yourself</style> instead.",
+      "zh-TW": "<color=#394d63>無懈可擊</color>：立即<style=cIsDamage>處決</style>生命值在<style=cIsHealth>25%</style>以下的敵人。若你自己的生命值在<style=cIsHealth>25%</style>以下時使用，被處決的會是<style=cIsHealth>你自己</style>。"
+    },
+    "XENO_SPECIAL8_DESCRIPTION": {
+      "en": "<color=#db71ed>Voidtouched</color>: Create a void implosion around you instantly <style=cIsDamage>executing</style> any entity within <style=cIsUtility>18m</style>, and bringing your own health down to <style=cIsHealth>1</style>.",
+      "zh-TW": "<color=#db71ed>虛空觸碰</color>：在身邊引發虛空內爆，立即<style=cIsDamage>處決</style><style=cIsUtility>18米</style>內的所有生物，並使你自己的生命值降到<style=cIsHealth>1</style>。"
+    },
+    "XENO_SPECIAL_KEYWORD": {
+      "en": "<color=#c7dad8>Neutral</color>: Fire a <style=cIsDamage>piercing</style> beam for <style=cIsDamage>2000% damage</style>, extracting <style=cIsDamage>3</style> samples from slain <style=cIsDamage>elites</style>.\r\n<color=#cb3526>Blazing</color>: Create a cone of fire that hits <style=cIsDamage>10x</style> for a total of <style=cIsDamage>1000% damage</style>, <style=cIsDamage>burning</style> for <style=cIsDamage>50% damage</style> on each hit.\r\n<color=#4262db>Overloading</color>: Dash forward, <style=cIsDamage>lightning striking</style> nearby enemies for <style=cIsDamage>500% damage</style>.\r\n<color=#d6f6f6>Glacial</color>: Target an area to create a <style=cIsUtility>45m</style> radial blast for <style=cIsDamage>2000% damage</style>, <style=cIsUtility>freezing</style> all enemies hit.\r\n<color=#a1e74f>Mending</color>: <style=cIsHealing>Heal</style> nearby allies for <style=cIsHealing>200% MaxHP</style>.\r\n<color=#94d39c>Malachite</color>: Knock nearby enemies away, dealing <style=cIsDamage>100% damage</style> every <style=cIsUtility>0.1s</style> while in the air.\r\n<color=#94d7d6>Celestine</color>: Create a spectral field around you, granting <style=cIsHealing>100 armor</style> and <style=cIsUtility>200% movement speed</style> to you and all nearby allies for <style=cIsUtility>10s</style>.\r\n<color=#394d63>Perfected</color>: Instantly <style=cIsDamage>execute</style> an enemy at <style=cIsHealth>25%</style> health or lower. If used when you are at <style=cIsHealth>25%</style> health or lower, execute <style=cIsHealth>yourself</style> instead.\r\n<color=#db71ed>Voidtouched</color>: Create a void implosion around you instantly <style=cIsDamage>executing</style> any entity within <style=cIsUtility>18m</style>, and bringing your own health down to <style=cIsHealth>1</style>.",
+      "zh-TW": "<color=#c7dad8>中性</color>：發射一道<style=cIsDamage>貫穿</style>光束，造成<style=cIsDamage>2000%傷害</style>，並從擊殺的<style=cIsDamage>精英</style>身上萃取<style=cIsDamage>3</style>個樣本。\r\n<color=#cb3526>燃燒</color>：噴出錐形火焰，命中<style=cIsDamage>10次</style>，總共造成<style=cIsDamage>1000%傷害</style>，每次命中都會<style=cIsDamage>燃燒</style>敵人，造成<style=cIsDamage>50%傷害</style>。\r\n<color=#4262db>超載</color>：向前衝刺，以<style=cIsDamage>雷擊</style>攻擊附近的敵人，造成<style=cIsDamage>500%傷害</style>。\r\n<color=#d6f6f6>結冰</color>：指定一個區域，引發<style=cIsUtility>45米</style>範圍的爆炸，造成<style=cIsDamage>2000%傷害</style>，並<style=cIsUtility>冰凍</style>所有被命中的敵人。\r\n<color=#a1e74f>修補</color>：為附近的盟友<style=cIsHealing>恢復</style><style=cIsHealing>200%最大生命值</style>。\r\n<color=#94d39c>孔雀石</color>：擊飛附近的敵人，敵人在空中時每<style=cIsUtility>0.1秒</style>受到<style=cIsDamage>100%傷害</style>。\r\n<color=#94d7d6>天青石</color>：在身邊形成靈體力場，使你與附近所有盟友獲得<style=cIsHealing>100點護甲</style>與<style=cIsUtility>200%移動速度</style>，持續<style=cIsUtility>10秒</style>。\r\n<color=#394d63>無懈可擊</color>：立即<style=cIsDamage>處決</style>生命值在<style=cIsHealth>25%</style>以下的敵人。若你自己的生命值在<style=cIsHealth>25%</style>以下時使用，被處決的會是<style=cIsHealth>你自己</style>。\r\n<color=#db71ed>虛空觸碰</color>：在身邊引發虛空內爆，立即<style=cIsDamage>處決</style><style=cIsUtility>18米</style>內的所有生物，並使你自己的生命值降到<style=cIsHealth>1</style>。"
+    },
+    "XENODRONE_NAME": {
+      "en": "Spotter Drone",
+      "zh-TW": "偵察無人機"
+    }
+  }
+}

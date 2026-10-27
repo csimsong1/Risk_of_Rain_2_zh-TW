@@ -92,11 +92,11 @@ def test_install_warns_when_installed_mod_version_differs(tmp_path, capsys):
     assert ok
 
 
-def write_literal_mod(mods_dir: Path, name: str, literals: dict) -> None:
+def write_literal_mod(mods_dir: Path, name: str, literals: dict, **extra) -> None:
     write_mod(mods_dir, name, "r2api", SKILL)
     path = mods_dir / f"{name}.json"
     content = read_json(path)
-    content.update({"assembly": "SurvivorMod", "literals": literals})
+    content.update({"assembly": "SurvivorMod", "literals": literals, **extra})
     path.write_text(json.dumps(content, ensure_ascii=False), encoding="utf-8")
 
 
@@ -123,6 +123,23 @@ def test_install_writes_hardcoded_text_table_and_copies_the_plugin(tmp_path):
     )
     assert (folder / dll.name).read_bytes() == b"MZ"
     assert ok
+
+
+def test_install_lists_the_methods_to_call_after_a_language_switch(tmp_path):
+    write_literal_mod(
+        tmp_path / "mods", "Author-Survivor", {"Text": {"Dash": "衝刺"}}, refresh=["Survivor.Text::Refresh"]
+    )
+    add_plugin(tmp_path / "profile", "Author-Survivor")
+
+    ror2_s2t.install_mods(tmp_path / "mods", tmp_path / "profile", tmp_path / "zh-TW", "zh-TW", fake_plugin(tmp_path))
+
+    table = tmp_path / "profile" / "BepInEx" / "plugins" / "RoR2_zh-TW" / "Author-Survivor.literals"
+    assert table.read_text(encoding="utf-8").splitlines()[:4] == [
+        "@language zh-TW",
+        "@assembly SurvivorMod",
+        "@refresh Survivor.Text::Refresh",
+        "@type Text",
+    ]
 
 
 def test_install_does_not_copy_the_plugin_for_mods_without_hardcoded_text(tmp_path):

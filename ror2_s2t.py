@@ -296,9 +296,14 @@ def escape_literal(text: str) -> str:
     return "\\" + escaped if escaped.startswith("@") else escaped
 
 
-def format_literals(assembly: str, literals: dict[str, dict[str, str]], language: str) -> str:
-    """寫成外掛讀的翻譯表；literals 是 {類別名稱: {英文: 譯文}}，譯文是空字串的略過。"""
-    lines = [f"@language {language}", f"@assembly {assembly}"]
+def format_literals(
+    assembly: str, literals: dict[str, dict[str, str]], language: str, refresh: list[str] = ()
+) -> str:
+    """寫成外掛讀的翻譯表；literals 是 {類別名稱: {英文: 譯文}}，譯文是空字串的略過。
+
+    refresh 是切換語言後要請模組重算文字的靜態方法（「命名空間.類別::方法」）。
+    """
+    lines = [f"@language {language}", f"@assembly {assembly}"] + [f"@refresh {method}" for method in refresh]
     for type_name, entries in literals.items():
         lines.append(f"@type {type_name}")
         lines += [f"{escape_literal(en)}\t{escape_literal(text)}" for en, text in entries.items() if text]
@@ -362,7 +367,9 @@ def install_mods(
         if count:
             table = plugins / MOD_PLUGIN_DIR / f"{name}{LITERALS_SUFFIX}"
             table.parent.mkdir(parents=True, exist_ok=True)
-            table.write_bytes(format_literals(mod["assembly"], literals, language).encode("utf-8"))
+            table.write_bytes(
+                format_literals(mod["assembly"], literals, language, mod.get("refresh", [])).encode("utf-8")
+            )
             print(f"  {name}: 已安裝 {count} 條寫死文字的翻譯 -> {table}")
             needs_plugin = True
 

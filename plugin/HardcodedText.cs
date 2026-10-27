@@ -15,13 +15,15 @@ namespace RoR2zhTW
     // 有些模組把畫面上的文字直接寫在程式裡（英文和西班牙文二選一），不經過遊戲的語言表，語言檔翻不到。
     // 這個外掛在遊戲啟動時依 *.literals 翻譯表換掉那些英文：
     // 方法裡的字串用 Harmony 改寫，靜態建構式建好的資料則直接改欄位的值。
-    // 只有遊戲語言是翻譯表指定的語言時才顯示譯文，切到其他語言會恢復原文。
-    [BepInPlugin(Guid, "RoR2 zh-TW Hardcoded Text", "1.0.0")]
+    // 只有遊戲語言是翻譯表指定的語言時才顯示譯文，切到其他語言會恢復原文；
+    // 模組把文字算好後存到別處的，切換時再呼叫翻譯表指定的方法重算。
+    [BepInPlugin(Guid, "RoR2 zh-TW Hardcoded Text", "1.1.0")]
     public class HardcodedTextPlugin : BaseUnityPlugin
     {
         public const string Guid = "ror2_zh_tw.hardcodedtext";
 
         private List<Table> tables = new List<Table>();
+        private readonly List<MethodInfo> refreshes = new List<MethodInfo>();
         private Func<string> currentLanguageName;
         private string lastLanguage;
 
@@ -56,19 +58,38 @@ namespace RoR2zhTW
                     continue;
                 }
                 Patcher.Apply(harmony, assembly, table, Logger.LogInfo, Logger.LogWarning);
+                refreshes.AddRange(Patcher.RefreshMethods(assembly, table, Logger.LogWarning));
             }
-            lastLanguage = currentLanguageName();
-            Translation.SetActive(tables.Any(t => t.Language == lastLanguage));
+            SyncLanguage();
         }
 
         // 遊戲啟動後才設定語言，之後玩家也可能切換；每個畫格比對一次語言名稱，變了就切換譯文和原文
         private void Update()
         {
             if (tables.Count == 0 || currentLanguageName == null) return;
+            SyncLanguage();
+        }
+
+        private void SyncLanguage()
+        {
             var name = currentLanguageName();
             if (name == lastLanguage) return;
             lastLanguage = name;
-            Translation.SetActive(tables.Any(t => t.Language == name));
+            var active = tables.Any(t => t.Language == name);
+            if (active == Translation.Active) return;
+            Translation.SetActive(active);
+            // 模組把算好的文字交給別處保存（例如 R2API 的疊加層），要請它重算一次才會換成目前的語言
+            foreach (var refresh in refreshes)
+            {
+                try
+                {
+                    refresh.Invoke(null, null);
+                }
+                catch (Exception e)
+                {
+                    Logger.LogWarning($"呼叫 {refresh.DeclaringType?.FullName}::{refresh.Name} 時出錯：{Patcher.Describe(e)}");
+                }
+            }
         }
     }
 
@@ -160,6 +181,7 @@ namespace RoR2zhTW
     // 安裝腳本寫出的翻譯表。格式：
     //   @language zh-TW
     //   @assembly KizunaMod
+    //   @refresh IvoryBastion.BastionBalanceText::Refresh   切換語言後要呼叫的靜態方法（不帶參數），可以有多行
     //   @type KizunaBook        之後的條目只套用在這個類別（含巢狀類別）
     //   英文<TAB>譯文           \t \n \r \\ 用反斜線跳脫
     public sealed class Table
@@ -167,6 +189,7 @@ namespace RoR2zhTW
         public string Source;
         public string Language;
         public string Assembly;
+        public readonly List<string> Refresh = new List<string>();
         public readonly Dictionary<string, Dictionary<string, string>> Types =
             new Dictionary<string, Dictionary<string, string>>();
 
@@ -205,6 +228,7 @@ namespace RoR2zhTW
                     {
                         case "language": table.Language = value; break;
                         case "assembly": table.Assembly = value; break;
+                        case "refresh": table.Refresh.Add(value); break;
                         case "type":
                             if (!table.Types.TryGetValue(value, out current))
                                 table.Types[value] = current = new Dictionary<string, string>();
@@ -338,8 +362,26 @@ namespace RoR2zhTW
             return methods;
         }
 
+        // 翻譯表 @refresh 指定的方法；找不到的提醒後略過
+        public static List<MethodInfo> RefreshMethods(Assembly assembly, Table table, Action<string> warn)
+        {
+            var methods = new List<MethodInfo>();
+            foreach (var spec in table.Refresh)
+            {
+                var split = spec.LastIndexOf("::", StringComparison.Ordinal);
+                var type = split > 0 ? assembly.GetType(spec.Substring(0, split)) : null;
+                var method = type?.GetMethod(spec.Substring(split + 2),
+                    BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic, null, Type.EmptyTypes, null);
+                if (method == null)
+                    warn($"{assembly.GetName().Name}：找不到要重算文字的方法 {spec}");
+                else
+                    methods.Add(method);
+            }
+            return methods;
+        }
+
         // 例外連同內層例外的訊息，Harmony 的錯誤細節通常在內層
-        private static string Describe(Exception e)
+        public static string Describe(Exception e)
         {
             var parts = new List<string>();
             for (; e != null; e = e.InnerException) parts.Add(e.Message);

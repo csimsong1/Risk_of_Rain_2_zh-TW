@@ -87,11 +87,12 @@ uv run ror2_s2t.py --zip RoR2_zh-TW_1.5.1.zip
 uv run ror2_s2t.py --profile Purist_v4
 ```
 
-目前有這三十個模組：
+目前有這三十一個模組：
 
 | 模組 | 版本 | 翻譯內容 | 條數 |
 |---|---|---|---|
 | Insurgent | 1.0.2 | 角色、技能、關鍵字、成就、造型名稱 | 31 |
+| Xenologist | 1.0.4 | 角色、技能、九種樣本的效果、特殊技能變體、偵察無人機 | 64 |
 | LunarDragon | 1.2.5 | 角色、技能、關鍵字、成就、背景故事 | 36 |
 | LookingGlass | 1.16.3 | buff 圖示提示的名稱與說明（135 個 buff） | 269 |
 | HUNK | 1.5.3 | 角色、武器與改造零件、專長、任務目標、物品、鑰匙卡、病毒、成就、背景故事 | 505 |
@@ -118,7 +119,7 @@ uv run ror2_s2t.py --profile Purist_v4
 | Cadet | 1.1.11 | 角色、技能、關鍵字、造型、成就、背景故事 | 27 |
 | Scout | 0.9.11 | 角色、技能、關鍵字、Ancient Scepter 強化技能、配裝欄位名稱、造型、成就、背景故事 | 31 |
 | Spy | 1.3.4 | 角色、技能、關鍵字、Ancient Scepter 強化技能、配裝欄位名稱、造型、成就、背景故事 | 36 |
-| Ivory Bastion | 1.2.2 | 角色名稱與介紹、技能名稱、無人機名稱、buff | 22 |
+| Ivory Bastion | 1.2.2 | 角色名稱與介紹、技能名稱、無人機名稱、buff；技能與關鍵字說明、工程面板、HUD、升級樹、畫面提示（外掛） | 22＋212 |
 | PlayerRespawnSystem | 2.2.0 | 兩條禁止重生的聊天訊息 | 2 |
 | Survariants | 1.0.9 | 選角畫面 Variants 分頁的標籤 | 1 |
 
@@ -126,7 +127,7 @@ uv run ror2_s2t.py --profile Purist_v4
 
 Heretic、Dante、Miner Unearthed、Pilot、Rocket 與 Paladin 自帶簡體翻譯（Dante、Miner Unearthed 與 Paladin 只有一部分），那些條目是把簡體轉成繁體後對照英文修訂的，其餘由英文翻譯。
 
-Seamstress、Paladin、Cadet、Scout、Spy 的技能數字（傷害、冷卻秒數）和 HUNK 的五條說明會跟著模組設定變動，英文是模組執行時算出來的；譯文是固定的，收錄的是預設設定的版本，改過那些設定的話要自己修改對應的譯文。各檔案開頭的 `notes` 有說明。
+Seamstress、Paladin、Cadet、Scout、Spy、Xenologist 的技能數字（傷害、冷卻秒數）和 HUNK 的五條說明會跟著模組設定變動，英文是模組執行時算出來的；譯文是固定的，收錄的是預設設定的版本，改過那些設定的話要自己修改對應的譯文。各檔案開頭的 `notes` 有說明。
 
 Celestial War Tank 的車體、炮塔數值和技能說明裡的重量，是模組從自帶的資源包算出來的；技能說明最後的「技能數值」只在模組設定 Show Extra Skill Info 開啟（預設）時出現，關掉的話英文會少這一段，譯文仍會顯示。
 
@@ -134,17 +135,20 @@ Celestial War Tank 的車體、炮塔數值和技能說明裡的重量，是模�
 
 - `設定檔\BepInEx\plugins\RoR2_zh-TW\*.language`：LookingGlass 以外的模組。R2API 會自動讀取，並蓋過模組寫死的英文。
 - 遊戲的 `Language\zh-TW\mod_*.json`：LookingGlass。它直接查語言資料夾的內容，不經過 R2API。
-- `設定檔\BepInEx\plugins\RoR2_zh-TW\*.literals` 和 `RoR2_zh-TW.HardcodedText.dll`：火影系列寫死在程式裡的文字，見下一節。只有裝了這類模組的設定檔才會有。
+- `設定檔\BepInEx\plugins\RoR2_zh-TW\*.literals` 和 `RoR2_zh-TW.HardcodedText.dll`：火影系列與 Ivory Bastion 寫死在程式裡的文字，見下一節。只有裝了這類模組的設定檔才會有。
 
 要移除就刪掉這些檔案。模組更新後版本對不上時，腳本會提醒，新增或改過的文字會顯示英文，其餘照常。
 
 ### 寫死在程式裡的文字
 
-Zerneas 火影系列有些介面文字直接寫在程式裡（只有英文和西班牙文），不經過語言表，語言檔翻不到。這部分由專案自己的 BepInEx 外掛 `RoR2_zh-TW.HardcodedText.dll` 處理：
+有些模組的介面文字直接寫在程式裡，不經過語言表，語言檔翻不到。這部分由專案自己的 BepInEx 外掛 `RoR2_zh-TW.HardcodedText.dll` 處理：
 
-- 翻的範圍：Kizuna（羈絆）模組的選角畫面羈絆面板與 36 組羈絆說明、第一次遊玩時展開的教學卷軸、標題畫面的語音與終結之谷開關，以及各角色形態、奧義、魔鏡冰晶與霧隱之鬼人的熟練度提示。
+- 翻的範圍：
+  - Zerneas 火影系列（程式裡只有英文和西班牙文）：Kizuna（羈絆）模組的選角畫面羈絆面板與 36 組羈絆說明、第一次遊玩時展開的教學卷軸、標題畫面的語音與終結之谷開關，以及各角色形態、奧義、魔鏡冰晶與霧隱之鬼人的熟練度提示。
+  - Ivory Bastion：工程（Engineering）升級面板、升級樹與升級卡片、HUD 的狀態列與護盾量表、畫面中央的提示訊息、重設設定的確認對話框。它的技能說明、關鍵字說明和兩個技能名稱是用 R2API 的通用疊加層寫入的，優先於任何語言的翻譯，也交給外掛處理。
 - 譯文寫在各模組檔案的 `literals`，安裝時轉成外掛讀的 `*.literals` 翻譯表，和外掛一起放進 `RoR2_zh-TW` 資料夾。
 - 遊戲啟動時，外掛把模組裡對應的英文字串換成譯文。只有語言選「繁體中文」時才顯示譯文，切到其他語言會恢復原文；它不改模組的檔案，也不影響連線的其他玩家。
+- 模組把算好的文字存在別處的（Ivory Bastion 的疊加層），外掛切換語言後會呼叫模組檔案 `refresh` 列出的方法，讓模組依目前的語言重算一次。
 - 模組更新改了某句英文，那一句就會變回英文，其他照常。BepInEx 的記錄檔（`LogOutput.log`）會寫出改寫了多少地方、有幾條原文找不到。
 
 外掛的原始碼在 `plugin/HardcodedText.cs`。改過之後用 .NET SDK 重新編譯，成品會複製到 `plugin\RoR2_zh-TW.HardcodedText.dll`，安裝腳本和打包都用這個檔案：
@@ -155,11 +159,10 @@ dotnet build plugin -c Release
 
 ### 翻不到的部分
 
-這些文字寫死在模組的程式裡，不經過語言表，語言檔沒辦法翻（火影系列見上一節）：
+這些文字寫死在模組的程式裡，不經過語言表，語言檔沒辦法翻（火影系列與 Ivory Bastion 見上一節）：
 
 - LookingGlass 的物品數值標籤（`Proc Coefficient:` 這類）
 - PlayerRespawnSystem 的復活倒數，以及含玩家名稱或秒數的聊天訊息
-- Ivory Bastion 的 Engineering 升級面板與 HUD；它的技能說明、關鍵字說明和兩個技能名稱雖然經過語言表，但模組用 R2API 的通用疊加層寫入，優先於任何語言的翻譯，同樣翻不到
 - Survariants 變體清單裡的 Default 項目
 - HUNK 的彈藥名稱、畫面中央的提示訊息（背包已滿、需要鑰匙卡等）與無線電對話
 - Celestial War Tank 的燃料量表與坦克編輯器選單
@@ -209,6 +212,8 @@ LookingGlass 的屬性面板是例外，它的文字存在設定裡，可以自�
   }
 }
 ```
+
+- 模組把寫死的文字算好後存到別處（例如 R2API 的疊加層）時，換掉字串還不夠，要讓模組重算一次。這時在 `refresh` 列出重算用的靜態方法（不帶參數），外掛切換語言後會呼叫它們：`"refresh": ["IvoryBastion.BastionBalanceText::Refresh"]`。
 
 ## 自訂
 
