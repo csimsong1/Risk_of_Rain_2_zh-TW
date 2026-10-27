@@ -18,7 +18,7 @@
 | `test_make_bundle.py` | 打包流程的測試 |
 | `ror2_update.py` | 安裝包的「安裝.bat」執行的程式：先從 GitHub [更新翻譯](#自動更新)，再執行 `ror2_s2t.py` |
 | `test_ror2_update.py` | 更新程式的測試 |
-| `RoR2_zh-TW_1.5.0.zip` | 打包好的語言包，可直接分享給別人（只有遊戲本體） |
+| `RoR2_zh-TW_1.5.0.zip` | 用 `--zip` 打包的語言包（只有遊戲本體），可直接分享給別人；不在 repo 裡，見[遊戲更新之後](#遊戲更新之後) |
 
 ## 安裝打包好的語言包
 
@@ -44,6 +44,22 @@ uv run make_bundle.py "D:\python_embeded_v3.13.15.7z"
 - 參數是一份裝好 pip 的 Python embeddable package（`._pth` 要啟用 `import site`），資料夾或壓縮檔都可以；壓縮檔要安裝 7-Zip 才解得開。原本那份不會被更動。Python 3.11、3.12、3.13 都打包過。
 - 打包時會用它的 pip 安裝 OpenCC，需要網路。
 - `--output 檔案` 可以改輸出的檔名。
+
+### 發布到 GitHub
+
+安裝包放在 GitHub 的 [Releases](https://github.com/csimsong1/Risk_of_Rain_2_zh-TW/releases/latest)。朋友第一次從那裡下載，之後靠[自動更新](#自動更新)拿到新的翻譯，所以只有這些時候才需要發布新的安裝包：
+
+- `ror2_s2t.py` 開頭的相依套件或 Python 版本改了（舊的安裝包會提示朋友下載新版）。
+- 改了 `make_bundle.py` 產生的 `安裝.bat` 或 `說明.txt`。
+
+要先安裝 [GitHub CLI](https://cli.github.com/)（`gh`）並用 `gh auth login` 登入。標籤用發布日期；附件名稱要維持 `RoR2_zh-TW_installer.zip`，README 開頭的直接下載連結指向這個名稱，`#` 後面是頁面上顯示的名稱：
+
+```bash
+uv run make_bundle.py "D:\python_embeded_v3.13.15.7z" --output RoR2_zh-TW_installer.zip
+gh release create v2026.10.27 "RoR2_zh-TW_installer.zip#RoR2_zh-TW_安裝包.zip" --target main --title "繁體中文語言包 2026-10-27" --notes-file 發布說明.md
+```
+
+`發布說明.md` 是頁面上的安裝與更新說明，可以照上一版的 Release 修改。
 
 ### 自動更新
 
@@ -80,8 +96,8 @@ uv run ror2_s2t.py
 
 ## 遊戲更新之後
 
-遊戲更新新增的文字不會自動出現在 `zh-TW`，重跑一次腳本就好。
-要給朋友的話順便重新打包，檔名改成新的遊戲版本號：
+遊戲更新新增的文字不會自動出現在 `zh-TW`，重跑一次腳本就好；用安裝包的人再點一次 `安裝.bat`。
+用 `--zip` 分享語言包的話，順便重新打包，檔名改成新的遊戲版本號：
 
 ```bash
 uv run ror2_s2t.py --zip RoR2_zh-TW_1.5.1.zip
@@ -275,4 +291,4 @@ uv run --with pytest --with "OpenCC>=1.1.9" pytest
 - **自動更新**：在這台電腦上用解壓縮出來的安裝包實際連 GitHub 測過已是最新、有檔案變動、連不上三種情況；相依套件改變時的提示只有自動測試涵蓋。
 - **Epic 版**：尋找遊戲的方式和 r2modman 相同（讀 Epic Games Launcher 的安裝記錄 `LauncherInstalled.dat`），只用模擬的記錄檔測過，沒有在裝了 Epic 版的電腦上實測。找不到時用 `--game-dir` 指定。
 - **測試範圍**：在遊戲 1.5.0（Steam 版）測試，未裝模組與使用 r2modman 模組設定檔兩種情況都正常顯示。多人連線沒有測過。
-- **文字來源**：內容是官方簡體中文翻譯轉換而來，公開散布前請自行斟酌。
+- **文字來源**：遊戲本體的文字是官方簡體中文翻譯轉換而來。repo 和安裝包裡都沒有這些文字，是在使用者的電腦上轉換的；用 `--zip` 打包的語言包則含有轉換後的文字，公開散布前請自行斟酌。
