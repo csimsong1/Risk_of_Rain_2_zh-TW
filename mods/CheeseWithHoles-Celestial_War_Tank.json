@@ -7,7 +7,7 @@
     "技能說明的「技能數值」區塊（冷卻時間、爆炸半徑、重量）只在設定 Show Extra Skill Info 開啟（預設）時出現；關掉的話英文會少這一段，譯文仍會顯示。",
     "XTRA_ 開頭的是 Mega War Tank（設定 Add Xtra Tank，預設關閉）；SCEPTER 是裝了 Ancient Scepter 模組時的強化技能。",
     "鍵是英文的兩條（Celestial War Tank、War Tank）：模組直接把英文當作 AI 坦克的名稱 token，用英文原文當鍵來翻譯。",
-    "燃料量表、坦克編輯器的下拉選單等文字是直接寫到畫面上的，翻不到。"
+    "燃料量表的標籤與坦克編輯器下拉選單的炮塔名稱寫死在程式裡，放在 literals，由專案的外掛在遊戲裡替換；編輯器的其他文字在資源包的介面裡，充能條的名稱同時被模組當成識別用的鍵，這兩種沒有翻。"
   ],
   "strings": {
     "CHEESEWITHHOLES_BASICTANK_BODY_NAME": {
@@ -1485,6 +1485,34 @@
     "War Tank": {
       "en": "War Tank",
       "zh-TW": "戰車"
+    }
+  },
+  "assembly": "TanksMod",
+  "literals": {
+    "CheesePlayerHandler": {
+      "Fuel:": "燃料：",
+      "Fuel Burned:": "燃料消耗："
+    },
+    "OnScreenTankEditor": {
+      "None": "無",
+      "Crit Cannon": "暴擊炮",
+      "Howitzer Cannon": "榴彈炮",
+      "Knocker Cannon": "擊退炮",
+      "Piercing Cannon": "穿甲炮",
+      "French Gun": "法國炮",
+      "Minigun": "轉管機槍",
+      "Basic Cannon": "基礎炮",
+      "AA Cannon": "防空炮",
+      "MK.II Cannon": "MK.II炮",
+      "Celestial Cannon": "天界炮",
+      "Obilterator Cannon": "抹除炮",
+      "Auto Cannon": "機關炮",
+      "Rogue Cannon": "盜賊炮",
+      "Artillery Cannon": "火炮",
+      "Tonk Cannon": "坦克炮",
+      "T5 Cannon": "T5炮",
+      "British Cannon": "英國炮",
+      "Big Bad Cannon": "大壞炮"
     }
   }
 }

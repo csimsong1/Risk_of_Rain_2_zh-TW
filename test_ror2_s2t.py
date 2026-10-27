@@ -142,6 +142,24 @@ def test_install_lists_the_methods_to_call_after_a_language_switch(tmp_path):
     ]
 
 
+def test_install_lists_the_classes_whose_static_data_the_plugin_walks(tmp_path):
+    write_literal_mod(
+        tmp_path / "mods", "Author-Survivor", {"Catalog": {"Shells": "霰彈"}}, walk=["Catalog"]
+    )
+    add_plugin(tmp_path / "profile", "Author-Survivor")
+
+    ror2_s2t.install_mods(tmp_path / "mods", tmp_path / "profile", tmp_path / "zh-TW", "zh-TW", fake_plugin(tmp_path))
+
+    table = tmp_path / "profile" / "BepInEx" / "plugins" / "RoR2_zh-TW" / "Author-Survivor.literals"
+    assert table.read_text(encoding="utf-8").splitlines() == [
+        "@language zh-TW",
+        "@assembly SurvivorMod",
+        "@walk Catalog",
+        "@type Catalog",
+        "Shells\t霰彈",
+    ]
+
+
 def test_install_does_not_copy_the_plugin_for_mods_without_hardcoded_text(tmp_path):
     write_mod(tmp_path / "mods", "Author-Survivor", "r2api", SKILL)
     add_plugin(tmp_path / "profile", "Author-Survivor")

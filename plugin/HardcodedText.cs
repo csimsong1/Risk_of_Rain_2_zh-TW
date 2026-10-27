@@ -17,7 +17,7 @@ namespace RoR2zhTW
     // 方法裡的字串用 Harmony 改寫，靜態建構式建好的資料則直接改欄位的值。
     // 只有遊戲語言是翻譯表指定的語言時才顯示譯文，切到其他語言會恢復原文；
     // 模組把文字算好後存到別處的，切換時再呼叫翻譯表指定的方法重算。
-    [BepInPlugin(Guid, "RoR2 zh-TW Hardcoded Text", "1.1.0")]
+    [BepInPlugin(Guid, "RoR2 zh-TW Hardcoded Text", "1.2.0")]
     public class HardcodedTextPlugin : BaseUnityPlugin
     {
         public const string Guid = "ror2_zh_tw.hardcodedtext";
@@ -182,6 +182,7 @@ namespace RoR2zhTW
     //   @language zh-TW
     //   @assembly KizunaMod
     //   @refresh IvoryBastion.BastionBalanceText::Refresh   切換語言後要呼叫的靜態方法（不帶參數），可以有多行
+    //   @walk HunkWeaponCatalog 啟動時從這個類別的靜態欄位往下找字串（模組在 Awake 就把文字存進資料時用），可以有多行
     //   @type KizunaBook        之後的條目只套用在這個類別（含巢狀類別）
     //   英文<TAB>譯文           \t \n \r \\ 用反斜線跳脫
     public sealed class Table
@@ -190,6 +191,7 @@ namespace RoR2zhTW
         public string Language;
         public string Assembly;
         public readonly List<string> Refresh = new List<string>();
+        public readonly List<string> Walk = new List<string>();
         public readonly Dictionary<string, Dictionary<string, string>> Types =
             new Dictionary<string, Dictionary<string, string>>();
 
@@ -229,6 +231,7 @@ namespace RoR2zhTW
                         case "language": table.Language = value; break;
                         case "assembly": table.Assembly = value; break;
                         case "refresh": table.Refresh.Add(value); break;
+                        case "walk": table.Walk.Add(value); break;
                         case "type":
                             if (!table.Types.TryGetValue(value, out current))
                                 table.Types[value] = current = new Dictionary<string, string>();
@@ -300,11 +303,14 @@ namespace RoR2zhTW
                     warn($"{name}：找不到類別 {group.Key}");
                     continue;
                 }
+                var walk = table.Walk.Contains(group.Key);
                 foreach (var type in matched)
                 {
                     try
                     {
                         methods += ApplyToType(harmony, transpiler, type, map, assembly, seen, warn);
+                        // 模組在 Awake 就把文字存進靜態資料，改寫方法已經來不及，直接改資料
+                        if (walk) Walker.Statics(type, map, assembly, seen, warn);
                     }
                     catch (Exception e)
                     {
@@ -335,7 +341,7 @@ namespace RoR2zhTW
                     try
                     {
                         RuntimeHelpers.RunClassConstructor(type.TypeHandle);
-                        Walker.Statics(type, map, assembly, warn);
+                        Walker.Statics(type, map, assembly, seen, warn);
                     }
                     catch (Exception e)
                     {
@@ -406,11 +412,24 @@ namespace RoR2zhTW
         private static IEnumerable<MethodBase> Methods(Type type)
         {
             foreach (var method in type.GetMethods(Declared))
-                if (!method.IsAbstract && !method.ContainsGenericParameters && method.GetMethodBody() != null)
+                if (!method.IsAbstract && !method.ContainsGenericParameters && HasBody(method))
                     yield return method;
             foreach (var constructor in type.GetConstructors(Declared))
-                if (!constructor.IsStatic && constructor.GetMethodBody() != null)
+                if (!constructor.IsStatic && HasBody(constructor))
                     yield return constructor;
+        }
+
+        // 方法用到的型別載入失敗時（例如遊戲外的 .NET Framework 不支援介面預設方法）只略過那個方法
+        private static bool HasBody(MethodBase method)
+        {
+            try
+            {
+                return method.GetMethodBody() != null;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         private static List<string> Literals(MethodBase method)
@@ -446,31 +465,34 @@ namespace RoR2zhTW
         }
     }
 
-    // 從類別的靜態欄位往下找字串：陣列、清單、字典的值，以及同一個組件裡定義的物件的欄位
+    // 從類別的靜態欄位往下找字串：陣列、清單、字典的值，以及同一個組件裡定義的物件的欄位。
+    // 找到的原文記進 seen，用來提醒翻譯表裡哪些原文在模組裡找不到
     internal static class Walker
     {
         private const int MaxDepth = 12;
         private const BindingFlags InstanceFields =
             BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
 
-        public static void Statics(Type type, Dictionary<string, string> map, Assembly assembly, Action<string> warn)
+        public static void Statics(Type type, Dictionary<string, string> map, Assembly assembly, HashSet<string> seen,
+            Action<string> warn)
         {
             var visited = new HashSet<object>(new ReferenceComparer());
             const BindingFlags flags = BindingFlags.DeclaredOnly | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
             foreach (var field in type.GetFields(flags))
             {
                 if (field.IsLiteral) continue;
-                Visit(field.GetValue(null), () => new FieldSlot(null, field), map, assembly, visited, 0, warn);
+                Visit(field.GetValue(null), () => new FieldSlot(null, field), map, assembly, seen, visited, 0, warn);
             }
         }
 
         private static void Visit(object value, Func<Slot> slot, Dictionary<string, string> map, Assembly assembly,
-            HashSet<object> visited, int depth, Action<string> warn)
+            HashSet<string> seen, HashSet<object> visited, int depth, Action<string> warn)
         {
             if (value is string text)
             {
                 if (map.TryGetValue(text, out var translated))
                 {
+                    seen.Add(text);
                     var s = slot();
                     s.Original = text;
                     s.Translated = translated;
@@ -487,18 +509,18 @@ namespace RoR2zhTW
                     for (var i = 0; i < array.Length; i++)
                     {
                         var index = i;
-                        Visit(array.GetValue(i), () => new ArraySlot(array, index), map, assembly, visited, depth + 1, warn);
+                        Visit(array.GetValue(i), () => new ArraySlot(array, index), map, assembly, seen, visited, depth + 1, warn);
                     }
                     return;
                 case IDictionary dictionary:
                     foreach (var key in dictionary.Keys.Cast<object>().ToList())
-                        Visit(dictionary[key], () => new DictionarySlot(dictionary, key), map, assembly, visited, depth + 1, warn);
+                        Visit(dictionary[key], () => new DictionarySlot(dictionary, key), map, assembly, seen, visited, depth + 1, warn);
                     return;
                 case IList list:
                     for (var i = 0; i < list.Count; i++)
                     {
                         var index = i;
-                        Visit(list[i], () => new ListSlot(list, index), map, assembly, visited, depth + 1, warn);
+                        Visit(list[i], () => new ListSlot(list, index), map, assembly, seen, visited, depth + 1, warn);
                     }
                     return;
             }
@@ -508,7 +530,7 @@ namespace RoR2zhTW
                 foreach (var field in type.GetFields(InstanceFields))
                 {
                     var owner = value;
-                    Visit(field.GetValue(value), () => new FieldSlot(owner, field), map, assembly, visited, depth + 1, warn);
+                    Visit(field.GetValue(value), () => new FieldSlot(owner, field), map, assembly, seen, visited, depth + 1, warn);
                 }
             }
         }

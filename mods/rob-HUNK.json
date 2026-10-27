@@ -6,7 +6,7 @@
     "有五條文字會依模組設定而不同（Sidearm Shotgun、Disable Nemesis），這裡收錄的是預設設定的版本。",
     "ROB_HUNK_WEAPON_*_NAME/_DESC 是每把武器的名稱與說明。",
     "鍵是英文句子的條目：模組直接把那段英文當語言 token 使用，沒有另外註冊，所以用英文原文當鍵來翻譯；原文改一個字就會對不上。技能欄位標籤、專長、任務目標、補給箱屬於這一類。",
-    "彈藥名稱、畫面中央的提示訊息（背包已滿、需要鑰匙卡等）與無線電對話是直接寫到畫面上的，不經過語言表，翻不到。"
+    "彈藥名稱、畫面中央的提示訊息（背包已滿、需要鑰匙卡等）、無線電對話與突變提示寫死在程式裡，放在 literals，由專案的外掛在遊戲裡替換。彈藥名稱在模組啟動時就存進武器資料，所以列在 walk，外掛直接改 HunkWeaponCatalog 底下的資料。"
   ],
   "strings": {
     "ROB_HUNK_WEAPON_ADDON_SPARKSHOT_NAME": {
@@ -2055,6 +2055,93 @@
     "All enemies can now be consumed at full health.": {
       "en": "All enemies can now be consumed at full health.",
       "zh-TW": "現在可以吞噬生命值全滿的任何敵人。"
+    }
+  },
+  "assembly": "HunkMod",
+  "walk": [
+    "HunkWeaponCatalog"
+  ],
+  "literals": {
+    "HunkWeaponCatalog": {
+      "5.56mm Ammo": "5.56mm彈藥",
+      "84mm Rockets": "84mm火箭彈",
+      "84mm Rocket": "84mm火箭彈",
+      "Silver Bullets": "銀彈",
+      "9mm Ammo": "9mm彈藥",
+      "MAG Rounds": "MAG子彈",
+      "Submachine Gun Ammo": "衝鋒槍彈藥",
+      "Golden Ammo": "黃金彈藥",
+      "Incendiary Rounds": "燃燒彈",
+      ".45 ACP Rounds": ".45 ACP子彈",
+      "Shotgun Shells": "霰彈",
+      "Explosive Rounds": "爆裂彈",
+      "7.62mm rounds": "7.62mm子彈",
+      "66mm Rockets": "66mm火箭彈",
+      "EMF Battery": "EMF電池",
+      "Shotgun Slugs": "獨頭彈",
+      "Needle Cartridges": "針彈匣",
+      "Birdshot Shells": "鳥彈"
+    },
+    "Hunk": {
+      "You already have a ": "你已經有",
+      "Inventory full!\nDrop a weapon to pick this up": "背包已滿！\n丟掉一把武器才能撿起來"
+    },
+    "ItemCostTypeHelperClub": {
+      "You need a U.C. Keycard (Club) to open this": "需要U.C.鑰匙卡（梅花）才能打開"
+    },
+    "ItemCostTypeHelperDiamond": {
+      "You need a U.C. Keycard (Diamond) to open this": "需要U.C.鑰匙卡（方塊）才能打開"
+    },
+    "ItemCostTypeHelperHeart": {
+      "You need a U.C. Keycard (Heart) to open this": "需要U.C.鑰匙卡（紅心）才能打開"
+    },
+    "ItemCostTypeHelperSpade": {
+      "You need a U.C. Keycard (Spade) to open this": "需要U.C.鑰匙卡（黑桃）才能打開"
+    },
+    "ItemCostTypeHelperStar": {
+      "You need a U.C. Keycard (Star) to open this": "需要U.C.鑰匙卡（星星）才能打開"
+    },
+    "ItemCostTypeHelperStarsBadge": {
+      "You need a S.T.A.R.S. Badge to open this": "需要S.T.A.R.S.徽章才能打開"
+    },
+    "ItemCostTypeHelperWristband": {
+      "You need an ID Wristband to open this": "需要I.D.手環才能打開"
+    },
+    "GrenadePickupInteraction": {
+      "You're already holding a grenade": "你已經拿著一顆手雷了"
+    },
+    "HunkController": {
+      "One day you will have to answer for your actions.": "總有一天，你得為自己的所作所為付出代價。"
+    },
+    "Freefall": {
+      "Press any button to activate your parachute": "按任意鍵打開降落傘"
+    },
+    "NemesisNotification": {
+      "New Mutation: ": "新突變："
+    },
+    "HunkDialogue": {
+      "This is Nighthawk. Come in, Alpha.": "這裡是夜鷹。Alpha，請回答。",
+      "Alpha, do you read?": "Alpha，聽得到嗎？",
+      "Nighthawk, this is Hunk from Alpha Team.": "夜鷹，這裡是Alpha小隊的Hunk。",
+      "Man, I thought you were all wiped out.\nI've been trying to-": "天啊，我還以為你們全軍覆沒了。\n我一直在想辦法——",
+      "I'm at Point K12. Need info on my extraction.": "我在K12點，需要撤離的情報。",
+      "Guess there's no keeping down the Grim Reaper, huh?": "看來死神是打不倒的，是吧？",
+      "My extraction point!": "我的撤離點！",
+      "Relax, Mr. Reaper.": "放輕鬆，死神先生。",
+      "I'm headed towards the front gate of R.P.D.\nPick you up there.": "我正前往R.P.D.的正門。\n在那裡接你。",
+      "Got it.": "收到。"
+    },
+    "HunkDialogue2": {
+      "What the hell, Hunk? You're late for extraction.": "Hunk，搞什麼？你撤離遲到了。",
+      "Door's blocked. Gotta find another way out.": "門被堵住了，得找別的出路。",
+      "Heads up, guys at the top just ordered a full clean up.": "注意，上頭剛下令全面清除。",
+      "So move fast, or you can kiss your ass goodbye.": "動作快，不然你就等著完蛋吧。"
+    },
+    "StrikeTeamCaller": {
+      "???: Requesting strike package. Repeat, requesting package, over.": "???：請求打擊部隊。重複，請求部隊，完畢。",
+      "???: Request deployment of strike package Alpha. Do you copy?": "???：請求部署Alpha打擊部隊。收到嗎？",
+      "???: Strike package Bravo is away. Repeat, Bravo is away.": "???：Bravo打擊部隊已出發。重複，Bravo已出發。",
+      "???: Package request confirmed. Sending Delta team to your twenty, over.": "???：部隊請求已確認，Delta小隊正前往你的位置，完畢。"
     }
   }
 }
