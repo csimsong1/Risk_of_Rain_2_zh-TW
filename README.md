@@ -3,6 +3,8 @@
 把 Risk of Rain 2 內建的簡體中文（`zh-CN`）轉成繁體中文（`zh-TW`）的腳本。
 產生的是遊戲原生的語言資料夾，不需要 BepInEx 或任何模組，有沒有裝模組都能用。
 
+**下載安裝包**：到 [Releases](https://github.com/csimsong1/Risk_of_Rain_2_zh-TW/releases/latest) 下載 `RoR2_zh-TW_installer.zip`（[直接下載](https://github.com/csimsong1/Risk_of_Rain_2_zh-TW/releases/latest/download/RoR2_zh-TW_installer.zip)），解壓縮後點兩下 `安裝.bat`，遊戲語言包和模組翻譯會一起裝好。之後再點一次 `安裝.bat`，就會先從 GitHub 更新翻譯再安裝，見[自動更新](#自動更新)。
+
 有用 r2modman 玩模組的話，腳本會順便把幾個模組的繁體中文翻譯裝進你的模組設定檔，見[模組翻譯](#模組翻譯)。
 
 | 檔案 | 用途 |
