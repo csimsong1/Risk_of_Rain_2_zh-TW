@@ -35,7 +35,13 @@ def make_python(root: Path) -> Path:
 
 
 def make_project(root: Path) -> Path:
-    touch(root, "mods/Author-Survivor.json", "overrides/icon.png")
+    touch(
+        root,
+        "mods/Author-Survivor.json",
+        "overrides/icon.png",
+        "plugin/RoR2_zh-TW.HardcodedText.dll",
+        "plugin/HardcodedText.cs",
+    )
     (root / "ror2_s2t.py").write_text(HEADER + "print('hi')\n", encoding="utf-8")
     return root
 
@@ -144,6 +150,7 @@ def test_build_packs_python_script_and_translations_under_one_folder(tmp_path, r
         "RoR2_zh-TW/ror2_s2t.py",
         "RoR2_zh-TW/mods/Author-Survivor.json",
         "RoR2_zh-TW/overrides/icon.png",
+        "RoR2_zh-TW/plugin/RoR2_zh-TW.HardcodedText.dll",
         "RoR2_zh-TW/python_embeded/python.exe",
         "RoR2_zh-TW/python_embeded/python313._pth",
         "RoR2_zh-TW/python_embeded/Lib/site-packages/opencc/__init__.py",
@@ -239,6 +246,16 @@ def test_build_stops_when_the_dependencies_cannot_be_installed(tmp_path, run, ca
     assert not ok and not zip_path.exists()
     assert "pip" in capsys.readouterr().out
     assert len(run.commands) == 1
+
+
+def test_build_refuses_a_project_whose_plugin_is_not_built(tmp_path, run, capsys):
+    project = make_project(tmp_path / "project")
+    (project / "plugin" / "RoR2_zh-TW.HardcodedText.dll").unlink()
+
+    ok = make_bundle.build(make_python(tmp_path / "python_embeded"), project, tmp_path / "bundle.zip")
+
+    assert not ok and not (tmp_path / "bundle.zip").exists()
+    assert "dotnet build" in capsys.readouterr().out
 
 
 def test_build_writes_no_bundle_when_the_bundled_python_cannot_run_the_script(tmp_path, run, capsys):

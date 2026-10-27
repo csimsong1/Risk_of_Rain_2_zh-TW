@@ -27,6 +27,8 @@ from pathlib import Path
 PROJECT_DIR = Path(__file__).resolve().parent
 SCRIPT = "ror2_s2t.py"
 DATA_DIRS = ("mods", "overrides")
+# 替換模組寫死文字的外掛；只帶編譯好的 DLL，原始碼不用給朋友
+PLUGIN = Path("plugin") / "RoR2_zh-TW.HardcodedText.dll"
 DEFAULT_OUTPUT = "RoR2_zh-TW_安裝包.zip"
 BUNDLE_NAME = "RoR2_zh-TW"  # 壓縮檔裡最上層的資料夾，解壓縮後不會散成一堆檔案
 PYTHON_DIR = "python_embeded"
@@ -66,6 +68,8 @@ Risk of Rain 2 繁體中文語言包（含模組翻譯）
     Risk of Rain 2_Data\\StreamingAssets\\Language\\zh-TW 資料夾。
   - 把模組的繁體中文翻譯放進 r2modman 每個設定檔的
     BepInEx\\plugins\\RoR2_zh-TW 資料夾；設定檔沒有安裝的模組會略過。
+    有些模組（火影系列的 Kizuna 羈絆面板等）把文字寫死在程式裡，
+    同一個資料夾會多一個小外掛 RoR2_zh-TW.HardcodedText.dll，在遊戲裡把那些文字換成中文。
 
 找不到遊戲或設定檔
   遊戲不是用 Steam 或 Epic Games 安裝，或 r2modman 的資料不在預設位置時，要自己指定路徑。
@@ -164,6 +168,11 @@ def build(source: Path, project_dir: Path, zip_path: Path) -> bool:
         shutil.copy2(project_dir / SCRIPT, bundle)
         for name in DATA_DIRS:
             shutil.copytree(project_dir / name, bundle / name)
+        if not (project_dir / PLUGIN).is_file():
+            print(f"找不到 {PLUGIN}，請先執行 dotnet build plugin -c Release。")
+            return False
+        (bundle / PLUGIN).parent.mkdir()
+        shutil.copy2(project_dir / PLUGIN, bundle / PLUGIN)
         (bundle / LAUNCHER).write_bytes(LAUNCHER_TEXT.replace("\n", "\r\n").encode("utf-8"))
         # 帶 BOM，舊版記事本才不會把 UTF-8 當成 Big5 開
         (bundle / GUIDE).write_bytes(codecs.BOM_UTF8 + GUIDE_TEXT.replace("\n", "\r\n").encode("utf-8"))

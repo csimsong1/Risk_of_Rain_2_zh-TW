@@ -6,7 +6,7 @@
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
     "ACHIEVEMENT_ 開頭的是解鎖造型的成就。",
     "MIRROR_ 開頭的條目與 DOME_ENTER 是靠近冰鏡或冰鏡穹頂時畫面上的互動提示。",
-    "魔鏡冰晶（X）熟練度的提示，以及 Kizuna 羈絆模組（Zerneas-KizunaMod）的大廳、標題畫面、技能清單與羈絆說明，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。"
+    "literals 是寫死在程式裡、語言檔翻不到的魔鏡冰晶（X）熟練度的提示，由專案的外掛 RoR2_zh-TW.HardcodedText 在遊戲裡替換。Kizuna 羈絆模組的介面翻在 Zerneas-KizunaMod 的檔案裡。"
   ],
   "strings": {
     "ZERNEAS_HAKU_NAME": {
@@ -128,6 +128,12 @@
     "ACHIEVEMENT_ZERNEASHAKUCLEARMERIDIANEVENT_DESCRIPTION": {
       "en": "As Haku, defeat the False Son.",
       "zh-TW": "作為白，打敗虛假子嗣。"
+    }
+  },
+  "assembly": "HakuMod",
+  "literals": {
+    "DomeMastery": {
+      "<style=cIsUtility>Mastery {0}/{1}</style>: <style=cIsDamage>+{2}% damage</style> in your whole kit and the dome recharges {3}% faster. It grows with the damage you deal this run.": "<style=cIsUtility>熟練度{0}/{1}</style>：整套技能<style=cIsDamage>+{2}%傷害</style>，魔鏡冰晶的冷卻速度加快{3}%。會隨著你本局造成的傷害成長。"
     }
   }
 }

@@ -49,6 +49,9 @@ MOD_TEXT = "zh-TW"  # 模組翻譯檔裡譯文的鍵名
 # R2API 會讀取 plugins 底下所有 *.language 檔，我們的檔案集中放在這個資料夾
 MOD_PLUGIN_DIR = "RoR2_zh-TW"
 MOD_FILE_PREFIX = "mod_"  # 放進遊戲語言資料夾的模組翻譯檔名開頭
+# 模組寫死在程式裡的文字（mods 檔案的 literals）由這個 BepInEx 外掛在遊戲裡替換，原始碼在 plugin 資料夾
+PLUGIN_DLL = Path(__file__).resolve().parent / "plugin" / "RoR2_zh-TW.HardcodedText.dll"
+LITERALS_SUFFIX = ".literals"  # 外掛讀取的翻譯表副檔名
 
 # 大陸用語 -> 臺灣用語，套用在已轉成繁體字的文字上（較長的詞優先）。
 # 不用 OpenCC 內建的 s2twp 詞庫，因為它在遊戲文本會誤轉，
@@ -287,10 +290,28 @@ def stale_files(source_dir: Path, target_dir: Path) -> list[Path]:
     )
 
 
-def install_mods(mods_dir: Path, profile_dir: Path, target_dir: Path, language: str) -> bool:
+def escape_literal(text: str) -> str:
+    """翻譯表一行一條、以 tab 分隔原文與譯文，所以要跳脫反斜線、tab 和換行；開頭的 @ 是指令，也要跳脫。"""
+    escaped = text.replace("\\", "\\\\").replace("\t", "\\t").replace("\n", "\\n").replace("\r", "\\r")
+    return "\\" + escaped if escaped.startswith("@") else escaped
+
+
+def format_literals(assembly: str, literals: dict[str, dict[str, str]], language: str) -> str:
+    """寫成外掛讀的翻譯表；literals 是 {類別名稱: {英文: 譯文}}，譯文是空字串的略過。"""
+    lines = [f"@language {language}", f"@assembly {assembly}"]
+    for type_name, entries in literals.items():
+        lines.append(f"@type {type_name}")
+        lines += [f"{escape_literal(en)}\t{escape_literal(text)}" for en, text in entries.items() if text]
+    return "\n".join(lines) + "\n"
+
+
+def install_mods(
+    mods_dir: Path, profile_dir: Path, target_dir: Path, language: str, plugin_dll: Path = PLUGIN_DLL
+) -> bool:
     """把模組翻譯裝進模組設定檔；設定檔沒裝的模組會略過。有譯文未通過檢查時回傳 False。"""
     plugins = profile_dir / "BepInEx" / "plugins"
     ok = True
+    needs_plugin = False
     for path in sorted(mods_dir.glob("*.json")):
         mod = json.loads(path.read_text(encoding="utf-8"))
         name = mod["mod"]
@@ -301,12 +322,19 @@ def install_mods(mods_dir: Path, profile_dir: Path, target_dir: Path, language: 
         strings = {
             token: entry[MOD_TEXT] for token, entry in mod["strings"].items() if entry.get(MOD_TEXT)
         }
+        literals = mod.get("literals", {})
         broken = False
         for token, text in strings.items():
             diff = markup_diff(mod["strings"][token]["en"], text)
             if diff:
                 print(f"  {name}: {token} 的標籤或佔位符與原文不一致 {diff}")
                 broken = True
+        for entries in literals.values():
+            for en, text in entries.items():
+                diff = markup_diff(en, text) if text else []
+                if diff:
+                    print(f"  {name}: 寫死的文字「{en[:30]}」的標籤或佔位符與原文不一致 {diff}")
+                    broken = True
         if broken:
             print(f"  {name}: 未安裝")
             ok = False
@@ -329,6 +357,22 @@ def install_mods(mods_dir: Path, profile_dir: Path, target_dir: Path, language: 
             json.dumps({root: strings}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
         )
         print(f"  {name}: 已安裝 {len(strings)} 條翻譯 -> {output}")
+
+        count = sum(1 for entries in literals.values() for text in entries.values() if text)
+        if count:
+            table = plugins / MOD_PLUGIN_DIR / f"{name}{LITERALS_SUFFIX}"
+            table.parent.mkdir(parents=True, exist_ok=True)
+            table.write_bytes(format_literals(mod["assembly"], literals, language).encode("utf-8"))
+            print(f"  {name}: 已安裝 {count} 條寫死文字的翻譯 -> {table}")
+            needs_plugin = True
+
+    if needs_plugin:
+        if plugin_dll.is_file():
+            shutil.copyfile(plugin_dll, plugins / MOD_PLUGIN_DIR / plugin_dll.name)
+            print(f"  已安裝替換寫死文字的外掛 -> {plugins / MOD_PLUGIN_DIR / plugin_dll.name}")
+        else:
+            print(f"  找不到外掛 {plugin_dll}，寫死的文字不會被翻譯")
+            ok = False
     return ok
 
 

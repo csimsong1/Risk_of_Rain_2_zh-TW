@@ -5,8 +5,8 @@
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
     "ACHIEVEMENT_ 開頭的是解鎖造型或技能的成就。",
-    "形態熟練度（Mastery）的提示，以及 Kizuna 羈絆模組（Zerneas-KizunaMod）的大廳、標題畫面與技能清單介面，文字寫死在程式裡（只有英文和西班牙文），不經過語言表，翻不到。",
-    "FROGCALL 與 ODAMA 是用成就（六道、妙木山修行）解鎖的隱藏技能。"
+    "FROGCALL 與 ODAMA 是用成就（六道、妙木山修行）解鎖的隱藏技能。",
+    "literals 是寫死在程式裡、語言檔翻不到的形態熟練度（Mastery）的提示，由專案的外掛 RoR2_zh-TW.HardcodedText 在遊戲裡替換。Kizuna 羈絆模組的介面翻在 Zerneas-KizunaMod 的檔案裡。"
   ],
   "strings": {
     "ZERNEAS_NARUTOSAGE_NAME": {
@@ -168,6 +168,12 @@
     "ACHIEVEMENT_ZERNEASNARUTOSAGEMYOBOKU_DESCRIPTION": {
       "en": "As Sage Naruto, gather 20 charges of natural energy by meditating in a single run.",
       "zh-TW": "作為仙人模式鳴人，一輪遊戲中靠冥想累積20次自然能量充能。"
+    }
+  },
+  "assembly": "NarutoSageMod",
+  "literals": {
+    "FormMastery": {
+      "<style=cIsUtility>Mastery {0}/{1}</style>: <style=cIsDamage>+{2}% damage</style> in your whole kit, transformed or not, and the gauge fills {3}% faster. It grows with the damage you deal this run.": "<style=cIsUtility>熟練度{0}/{1}</style>：整套技能<style=cIsDamage>+{2}%傷害</style>（不論是否變身），量表累積速度加快{3}%。會隨著你本局造成的傷害成長。"
     }
   }
 }

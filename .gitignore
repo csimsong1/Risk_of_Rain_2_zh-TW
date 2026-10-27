@@ -4,3 +4,6 @@
 RoR2_zh-TW/
 __pycache__/
 .pytest_cache/
+# 外掛的建置輸出（成品會複製到 plugin\RoR2_zh-TW.HardcodedText.dll）
+plugin/bin/
+plugin/obj/

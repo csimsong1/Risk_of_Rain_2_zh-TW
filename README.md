@@ -10,6 +10,7 @@
 | `ror2_s2t.py` | 轉換腳本 |
 | `overrides/icon.png` | 語言選單上的國旗圖示（中華民國國旗） |
 | `mods/` | 模組的繁體中文翻譯，一個模組一個檔案 |
+| `plugin/` | 替換模組寫死文字的 BepInEx 外掛（原始碼與編譯好的 `RoR2_zh-TW.HardcodedText.dll`），見[寫死在程式裡的文字](#寫死在程式裡的文字) |
 | `test_ror2_s2t.py` | 模組翻譯功能的測試 |
 | `make_bundle.py` | 打包成[給朋友的安裝包](#給朋友的安裝包含模組翻譯)，連模組翻譯一起 |
 | `test_make_bundle.py` | 打包流程的測試 |
@@ -99,16 +100,16 @@ uv run ror2_s2t.py --profile Purist_v4
 | SkinFlavorText | 1.0.1 | 遊戲本體角色、Paladin 與 HUNK 皮膚的說明文字 | 55 |
 | Heretic | 1.2.11 | 被動、技能說明、物品、成就 | 8 |
 | Celestial War Tank | 2.3.12 | 角色、技能、車體與炮塔、塗裝、成就、背景故事、Mega War Tank（含引擎欄位）、Ancient Scepter 強化技能 | 368 |
-| Minato（Zerneas） | 0.21.1 | 角色、技能、九尾查克拉模式、飛雷神提示、成就、背景故事 | 36 |
-| Naruto Shippuden（Zerneas） | 0.30.1 | 角色、技能、四尾形態、成就、背景故事 | 33 |
-| Naruto Sage（Zerneas） | 0.32.1 | 角色、技能、隱藏技能、六尾形態、成就、背景故事 | 40 |
-| Sasuke Shippuden（Zerneas） | 0.31.3 | 角色、技能、隱藏技能、咒印形態、成就、背景故事 | 40 |
-| Sasuke Mangekyou（Zerneas） | 0.25.2 | 角色、技能、萬花筒形態、完美閃避提示、成就、背景故事 | 33 |
-| Naruto Six Paths（Zerneas） | 0.21.2 | 角色、技能、奧義、成就、背景故事 | 23 |
-| Sasuke Rinnegan（Zerneas） | 0.19.2 | 角色、技能、奧義、關鍵字、成就、背景故事 | 22 |
-| Haku（Zerneas） | 0.18.1 | 角色、技能、魔鏡冰晶、冰鏡互動提示、造型、成就、背景故事 | 30 |
-| Zabuza（Zerneas） | 0.6.3 | 角色、技能、霧隱之鬼人、水分身、造型、成就、背景故事 | 22 |
-| Kizuna（Zerneas） | 0.21.1 | 選角畫面 Variants 分頁裡火影各角色變體的說明 | 6 |
+| Minato（Zerneas） | 0.21.1 | 角色、技能、九尾查克拉模式、飛雷神提示、成就、背景故事；熟練度提示（外掛） | 36＋1 |
+| Naruto Shippuden（Zerneas） | 0.30.1 | 角色、技能、四尾形態、成就、背景故事；熟練度提示（外掛） | 33＋1 |
+| Naruto Sage（Zerneas） | 0.32.1 | 角色、技能、隱藏技能、六尾形態、成就、背景故事；熟練度提示（外掛） | 40＋1 |
+| Sasuke Shippuden（Zerneas） | 0.31.3 | 角色、技能、隱藏技能、咒印形態、成就、背景故事；熟練度提示（外掛） | 40＋1 |
+| Sasuke Mangekyou（Zerneas） | 0.25.2 | 角色、技能、萬花筒形態、完美閃避提示、成就、背景故事；熟練度提示（外掛） | 33＋1 |
+| Naruto Six Paths（Zerneas） | 0.21.2 | 角色、技能、奧義、成就、背景故事；熟練度提示（外掛） | 23＋1 |
+| Sasuke Rinnegan（Zerneas） | 0.19.2 | 角色、技能、奧義、關鍵字、成就、背景故事；熟練度提示（外掛） | 22＋1 |
+| Haku（Zerneas） | 0.18.1 | 角色、技能、魔鏡冰晶、冰鏡互動提示、造型、成就、背景故事；熟練度提示（外掛） | 30＋1 |
+| Zabuza（Zerneas） | 0.6.3 | 角色、技能、霧隱之鬼人、水分身、造型、成就、背景故事；熟練度提示（外掛） | 22＋1 |
+| Kizuna（Zerneas） | 0.21.1 | 選角畫面 Variants 分頁裡火影各角色變體的說明；羈絆面板與羈絆說明、教學卷軸、標題畫面開關（外掛） | 6＋276 |
 | Miner Unearthed | 1.10.1 | 角色、技能、關鍵字、Ancient Scepter 強化技能、造型、成就、背景故事、首領 Direseeker | 76 |
 | Pilot | 0.6.5 | 角色、技能、Ancient Scepter 強化技能、背景故事 | 30 |
 | Rocket | 1.1.6 | 角色、技能、Ancient Scepter 強化技能、造型、成就、背景故事 | 34 |
@@ -121,29 +122,46 @@ uv run ror2_s2t.py --profile Purist_v4
 | PlayerRespawnSystem | 2.2.0 | 兩條禁止重生的聊天訊息 | 2 |
 | Survariants | 1.0.9 | 選角畫面 Variants 分頁的標籤 | 1 |
 
+條數裡「＋」後面的是由外掛替換的寫死文字，見[寫死在程式裡的文字](#寫死在程式裡的文字)。
+
 Heretic、Dante、Miner Unearthed、Pilot、Rocket 與 Paladin 自帶簡體翻譯（Dante、Miner Unearthed 與 Paladin 只有一部分），那些條目是把簡體轉成繁體後對照英文修訂的，其餘由英文翻譯。
 
 Seamstress、Paladin、Cadet、Scout、Spy 的技能數字（傷害、冷卻秒數）和 HUNK 的五條說明會跟著模組設定變動，英文是模組執行時算出來的；譯文是固定的，收錄的是預設設定的版本，改過那些設定的話要自己修改對應的譯文。各檔案開頭的 `notes` 有說明。
 
 Celestial War Tank 的車體、炮塔數值和技能說明裡的重量，是模組從自帶的資源包算出來的；技能說明最後的「技能數值」只在模組設定 Show Extra Skill Info 開啟（預設）時出現，關掉的話英文會少這一段，譯文仍會顯示。
 
-安裝時會寫入兩個地方：
+安裝時會寫入這些地方：
 
 - `設定檔\BepInEx\plugins\RoR2_zh-TW\*.language`：LookingGlass 以外的模組。R2API 會自動讀取，並蓋過模組寫死的英文。
 - 遊戲的 `Language\zh-TW\mod_*.json`：LookingGlass。它直接查語言資料夾的內容，不經過 R2API。
+- `設定檔\BepInEx\plugins\RoR2_zh-TW\*.literals` 和 `RoR2_zh-TW.HardcodedText.dll`：火影系列寫死在程式裡的文字，見下一節。只有裝了這類模組的設定檔才會有。
 
 要移除就刪掉這些檔案。模組更新後版本對不上時，腳本會提醒，新增或改過的文字會顯示英文，其餘照常。
 
+### 寫死在程式裡的文字
+
+Zerneas 火影系列有些介面文字直接寫在程式裡（只有英文和西班牙文），不經過語言表，語言檔翻不到。這部分由專案自己的 BepInEx 外掛 `RoR2_zh-TW.HardcodedText.dll` 處理：
+
+- 翻的範圍：Kizuna（羈絆）模組的選角畫面羈絆面板與 36 組羈絆說明、第一次遊玩時展開的教學卷軸、標題畫面的語音與終結之谷開關，以及各角色形態、奧義、魔鏡冰晶與霧隱之鬼人的熟練度提示。
+- 譯文寫在各模組檔案的 `literals`，安裝時轉成外掛讀的 `*.literals` 翻譯表，和外掛一起放進 `RoR2_zh-TW` 資料夾。
+- 遊戲啟動時，外掛把模組裡對應的英文字串換成譯文。只有語言選「繁體中文」時才顯示譯文，切到其他語言會恢復原文；它不改模組的檔案，也不影響連線的其他玩家。
+- 模組更新改了某句英文，那一句就會變回英文，其他照常。BepInEx 的記錄檔（`LogOutput.log`）會寫出改寫了多少地方、有幾條原文找不到。
+
+外掛的原始碼在 `plugin/HardcodedText.cs`。改過之後用 .NET SDK 重新編譯，成品會複製到 `plugin\RoR2_zh-TW.HardcodedText.dll`，安裝腳本和打包都用這個檔案：
+
+```bash
+dotnet build plugin -c Release
+```
+
 ### 翻不到的部分
 
-這些文字寫死在模組的程式裡，不經過語言表，語言檔沒辦法翻：
+這些文字寫死在模組的程式裡，不經過語言表，語言檔沒辦法翻（火影系列見上一節）：
 
 - LookingGlass 的物品數值標籤（`Proc Coefficient:` 這類）
 - PlayerRespawnSystem 的復活倒數，以及含玩家名稱或秒數的聊天訊息
 - Ivory Bastion 的 Engineering 升級面板與 HUD；它的技能說明、關鍵字說明和兩個技能名稱雖然經過語言表，但模組用 R2API 的通用疊加層寫入，優先於任何語言的翻譯，同樣翻不到
 - Survariants 變體清單裡的 Default 項目
 - HUNK 的彈藥名稱、畫面中央的提示訊息（背包已滿、需要鑰匙卡等）與無線電對話
-- Zerneas 火影系列的形態、奧義、魔鏡冰晶與霧隱之鬼人的熟練度提示，以及 Kizuna（羈絆）模組的大廳、標題畫面、技能清單介面、羈絆說明與第一次遊玩時展開的提示卷軸（只有英文和西班牙文）
 - Celestial War Tank 的燃料量表與坦克編輯器選單
 - Risk of Options 選單，以及各模組的設定名稱與說明
 
@@ -181,6 +199,16 @@ LookingGlass 的屬性面板是例外，它的文字存在設定裡，可以自�
 - 沒有 `zh-TW` 的條目會略過，遊戲顯示英文。
 - 有些模組沒有另外註冊 token，而是直接把英文句子當 token 用（例如 HUNK 的專長 `Marathon Runner`）。這種文字用英文原文當鍵就翻得到，`en` 和鍵相同；原文只要差一個字就對不上。
 - 譯文裡的 `<style=...>` 標籤和 `{0}` 佔位符要和原文一致，順序可以不同；不一致時腳本不會安裝那個模組。
+- 寫死在程式裡的文字放在 `literals`，`assembly` 是模組的 DLL 名稱。`literals` 依類別分組，鍵是英文原文、值是譯文，只會在那個類別（含它的巢狀類別）裡替換；同一句英文在別的地方可能是物件名稱，分組可以避免改錯：
+
+```json
+{
+  "assembly": "KizunaMod",
+  "literals": {
+    "KizunaLobby": { "PARTNERS": "夥伴", "{0} bonded": "已有{0}組羈絆" }
+  }
+}
+```
 
 ## 自訂
 
@@ -225,6 +253,7 @@ uv run --with pytest --with "OpenCC>=1.1.9" pytest
 - **校對**：錯字是用規則掃描找的，沒有逐句讀過全部文字，背景故事裡可能還有漏掉的。
 - **模組文字**：只有 `mods/` 裡的模組有翻譯，其他模組顯示英文。模組自帶的簡體翻譯不會套用到 `zh-TW`。
 - **模組翻譯未實測**：token 名稱和英文是從模組的 DLL 分析出來的（較新加入的模組是在遊戲外執行模組註冊文字的程式取得），譯文的標籤也經過腳本檢查，但還沒有在遊戲裡逐條確認顯示。
+- **外掛未在遊戲裡實測**：替換寫死文字的外掛只在遊戲外載入模組測過資料替換與方法改寫；介面類的方法因為呼叫 Unity 內部函式，遊戲外無法改寫，要在遊戲裡才看得到結果。
 - **安裝包**：只在製作它的電腦上試過（解壓縮後執行 `安裝.bat`，結果和直接跑腳本相同），沒有在別台電腦上試過。從網路下載的 `.bat` 第一次執行時，Windows 可能會跳出安全性警告。
 - **Epic 版**：尋找遊戲的方式和 r2modman 相同（讀 Epic Games Launcher 的安裝記錄 `LauncherInstalled.dat`），只用模擬的記錄檔測過，沒有在裝了 Epic 版的電腦上實測。找不到時用 `--game-dir` 指定。
 - **測試範圍**：在遊戲 1.5.0（Steam 版）測試，未裝模組與使用 r2modman 模組設定檔兩種情況都正常顯示。多人連線沒有測過。

@@ -92,6 +92,77 @@ def test_install_warns_when_installed_mod_version_differs(tmp_path, capsys):
     assert ok
 
 
+def write_literal_mod(mods_dir: Path, name: str, literals: dict) -> None:
+    write_mod(mods_dir, name, "r2api", SKILL)
+    path = mods_dir / f"{name}.json"
+    content = read_json(path)
+    content.update({"assembly": "SurvivorMod", "literals": literals})
+    path.write_text(json.dumps(content, ensure_ascii=False), encoding="utf-8")
+
+
+def fake_plugin(tmp_path: Path) -> Path:
+    dll = tmp_path / "plugin" / "RoR2_zh-TW.HardcodedText.dll"
+    dll.parent.mkdir()
+    dll.write_bytes(b"MZ")
+    return dll
+
+
+def test_install_writes_hardcoded_text_table_and_copies_the_plugin(tmp_path):
+    literals = {"Lobby": {"PARTNERS": "夥伴", "{0} bonded": "已結羈絆：{0}"}, "Book": {"Team 7": "第七班"}}
+    write_literal_mod(tmp_path / "mods", "Author-Survivor", literals)
+    add_plugin(tmp_path / "profile", "Author-Survivor")
+    dll = fake_plugin(tmp_path)
+
+    ok = ror2_s2t.install_mods(tmp_path / "mods", tmp_path / "profile", tmp_path / "zh-TW", "zh-TW", dll)
+
+    folder = tmp_path / "profile" / "BepInEx" / "plugins" / "RoR2_zh-TW"
+    assert (folder / "Author-Survivor.literals").read_bytes().decode("utf-8") == (
+        "@language zh-TW\n@assembly SurvivorMod\n"
+        "@type Lobby\nPARTNERS\t夥伴\n{0} bonded\t已結羈絆：{0}\n"
+        "@type Book\nTeam 7\t第七班\n"
+    )
+    assert (folder / dll.name).read_bytes() == b"MZ"
+    assert ok
+
+
+def test_install_does_not_copy_the_plugin_for_mods_without_hardcoded_text(tmp_path):
+    write_mod(tmp_path / "mods", "Author-Survivor", "r2api", SKILL)
+    add_plugin(tmp_path / "profile", "Author-Survivor")
+    dll = fake_plugin(tmp_path)
+
+    ror2_s2t.install_mods(tmp_path / "mods", tmp_path / "profile", tmp_path / "zh-TW", "zh-TW", dll)
+
+    assert not (tmp_path / "profile" / "BepInEx" / "plugins" / "RoR2_zh-TW" / dll.name).exists()
+
+
+def test_install_refuses_hardcoded_text_whose_placeholder_differs(tmp_path):
+    write_literal_mod(tmp_path / "mods", "Author-Survivor", {"Lobby": {"{0} bonded": "已結羈絆"}})
+    add_plugin(tmp_path / "profile", "Author-Survivor")
+    dll = fake_plugin(tmp_path)
+
+    ok = ror2_s2t.install_mods(tmp_path / "mods", tmp_path / "profile", tmp_path / "zh-TW", "zh-TW", dll)
+
+    assert not (tmp_path / "profile" / "BepInEx" / "plugins" / "RoR2_zh-TW").exists()
+    assert not ok
+
+
+def test_install_reports_a_missing_plugin(tmp_path, capsys):
+    write_literal_mod(tmp_path / "mods", "Author-Survivor", {"Lobby": {"PARTNERS": "夥伴"}})
+    add_plugin(tmp_path / "profile", "Author-Survivor")
+
+    ok = ror2_s2t.install_mods(
+        tmp_path / "mods", tmp_path / "profile", tmp_path / "zh-TW", "zh-TW", tmp_path / "missing.dll"
+    )
+
+    assert "missing.dll" in capsys.readouterr().out
+    assert not ok
+
+
+def test_escape_literal_keeps_each_entry_on_one_line():
+    assert ror2_s2t.escape_literal("a\tb\nc\\d") == "a\\tb\\nc\\\\d"
+    assert ror2_s2t.escape_literal("@home") == "\\@home"
+
+
 def test_markup_diff_accepts_tags_in_a_different_order():
     source = "<style=cIsDamage>Stunning</style>. Deal {0}% damage."
     translated = "造成{0}%傷害。<style=cIsDamage>眩暈</style>。"
