@@ -147,7 +147,7 @@ uv run ror2_s2t.py --profile Purist_v4
 | Cadet | 1.1.11 | 角色、技能、關鍵字、造型、成就、背景故事 | 27 |
 | Scout | 0.9.11 | 角色、技能、關鍵字、Ancient Scepter 強化技能、配裝欄位名稱、造型、成就、背景故事 | 31 |
 | Spy | 1.3.4 | 角色、技能、關鍵字、Ancient Scepter 強化技能、配裝欄位名稱、造型、成就、背景故事 | 36 |
-| Ivory Bastion | 1.2.2 | 角色名稱與介紹、技能名稱、無人機名稱、buff；技能與關鍵字說明、工程面板、HUD、升級樹、畫面提示（外掛） | 22＋212 |
+| Ivory Bastion | 1.2.3 | 角色名稱與介紹、技能名稱、無人機名稱、buff；技能與關鍵字說明、工程面板、HUD、升級樹、畫面提示（外掛） | 22＋212 |
 | PlayerRespawnSystem | 2.2.0 | 兩條禁止重生的聊天訊息；死亡後的重生倒數（外掛） | 2＋10 |
 | Survariants | 1.0.9 | 選角畫面 Variants 分頁的標籤；變體清單的 Default 項目（外掛） | 1＋2 |
 
