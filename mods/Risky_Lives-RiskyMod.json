@@ -1,0 +1,737 @@
+{
+  "mod": "Risky_Lives-RiskyMod",
+  "version": "2.12.3",
+  "loader": "r2api",
+  "notes": [
+    "模組自帶語言檔（language/en、language/zh-CN 等），依遊戲的語言名稱載入同名資料夾；沒有 zh-TW 資料夾，選繁體中文時會顯示英文，所以另外用 R2API 語言檔補上。",
+    "英文取自 language/en 的 Items、Equipment、Keywords、Survivors 四個檔案；有簡體翻譯的條目以它轉成繁體後對照英文修訂，簡中沒有的 9 條由英文翻譯。",
+    "這些都是 _RISKYMOD 結尾的新 token，模組依設定決定是否換上；關掉某項改動時，遊戲照常顯示原本的說明。",
+    "船長補給信標非永久模式用的 CAPTAIN_SUPPLY_EQUIPMENT_RESTOCK_DESCRIPTION_RISKYMOD 在模組自己的語言檔裡也沒有（英文同樣只會顯示 token），沒有收錄。"
+  ],
+  "strings": {
+    "ITEM_FLATHEALTH_PICKUP_RISKYMOD": {
+      "en": "Gain max health.",
+      "zh-TW": "增加最大生命值。"
+    },
+    "ITEM_FLATHEALTH_DESC_RISKYMOD": {
+      "en": "Increases <style=cIsHealing>maximum health</style> by <style=cIsHealing>1</style><style=cStack> (+1 per stack)</style> level.",
+      "zh-TW": "增加相當於升<style=cIsHealing>1</style><style=cStack>（每層增加1）</style>級的<style=cIsHealing>最大生命值</style>。"
+    },
+    "ITEM_CRITGLASSES_PICKUP_RISKYMOD": {
+      "en": "Gain 7% chance for hits to 'Critically Strike', dealing double damage.",
+      "zh-TW": "獲得7%機率發動暴擊，造成雙倍傷害。"
+    },
+    "ITEM_CRITGLASSES_DESC_RISKYMOD": {
+      "en": "Your attacks have a <style=cIsDamage>10%</style> <style=cStack>(+7% per stack)</style> chance to '<style=cIsDamage>Critically Strike</style>', dealing <style=cIsDamage>double damage</style>.",
+      "zh-TW": "攻擊時有<style=cIsDamage>10%</style><style=cStack>（每層增加7%）</style>的機率發動<style=cIsDamage>暴擊</style>，造成<style=cIsDamage>雙倍傷害</style>。"
+    },
+    "ITEM_STICKYBOMB_DESC_RISKYMOD": {
+      "en": "<style=cIsDamage>5%</style> <style=cStack>(+5% per stack)</style> chance on hit to attach a <style=cIsDamage>bomb</style> to an enemy, detonating for <style=cIsDamage>240%</style> TOTAL damage.",
+      "zh-TW": "命中時有<style=cIsDamage>5%</style><style=cStack>（每層增加5%）</style>的機率在敵人身上放置一顆<style=cIsDamage>炸彈</style>，爆炸時合計造成<style=cIsDamage>240%</style>的傷害。"
+    },
+    "ITEM_CROWBAR_PICKUP_RISKYMOD": {
+      "en": "Deal bonus damage on your first hit against an enemy.",
+      "zh-TW": "對敵人的首次命中會造成額外傷害。"
+    },
+    "ITEM_CROWBAR_DESC_RISKYMOD": {
+      "en": "Deal <style=cIsDamage>+45%</style> <style=cStack>(+45% per stack)</style> damage on your <style=cIsDamage>first hit</style> against an enemy.",
+      "zh-TW": "對敵人的<style=cIsDamage>首次命中</style>造成的傷害提高<style=cIsDamage>45%</style><style=cStack>（每層增加45%）</style>。"
+    },
+    "ITEM_WARDONLEVEL_PICKUP_RISKYMOD": {
+      "en": "Drop a Warbanner on level up or starting the Teleporter event. Grants allies damage, attack speed, movement speed, and health regeneration.",
+      "zh-TW": "升級或開始傳送器事件時放置一面戰旗。給友方提供傷害、攻擊速度、移動速度與生命值再生加成。"
+    },
+    "ITEM_WARDONLEVEL_DESC_RISKYMOD": {
+      "en": "On <style=cIsUtility>level up</style> or starting the <style=cIsUtility>Teleporter event</style>, drop a banner that strengthens all allies within <style=cIsUtility>16m</style> <style=cStack>(+8m per stack)</style>. Raise <style=cIsDamage>damage</style> by <style=cIsDamage>10%</style>, and <style=cIsDamage>attack speed</style> and <style=cIsUtility>movement speed</style> by <style=cIsDamage>30%</style>. Also regenerate <style=cIsHealing>1%</style> of your <style=cIsHealing>health</style> every second.",
+      "zh-TW": "<style=cIsUtility>升級</style>或開始<style=cIsUtility>傳送器事件</style>時放置一面旗幟，強化<style=cIsUtility>16米</style><style=cStack>（每層增加8米）</style>內的全體友方，使其<style=cIsDamage>傷害</style>提高<style=cIsDamage>10%</style>，<style=cIsDamage>攻擊速度</style>和<style=cIsUtility>移動速度</style>提高<style=cIsDamage>30%</style>，並且每秒再生<style=cIsHealing>生命值</style>的<style=cIsHealing>1%</style>。"
+    },
+    "ITEM_IGNITEONKILL_DESC_RISKYMOD": {
+      "en": "Killing an enemy <style=cIsDamage>ignites</style> all enemies within <style=cIsDamage>16m</style> for <style=cIsDamage>150%</style> base damage. Additionally, enemies <style=cIsDamage>burn</style> for <style=cIsDamage>150%</style> <style=cStack>(+75% per stack)</style> base damage.",
+      "zh-TW": "擊敗敵人後<style=cIsDamage>點燃</style><style=cIsDamage>16米</style>內的所有敵人，造成<style=cIsDamage>150%</style>的基礎傷害。另外，<style=cIsDamage>燃燒</style>可對敵人造成<style=cIsDamage>150%</style><style=cStack>（每層增加75%）</style>的基礎傷害。"
+    },
+    "ITEM_BEAR_DESC_RISKYMOD": {
+      "en": "<style=cIsHealing>10%</style> <style=cStack>(+10% per stack)</style> chance to <style=cIsHealing>block</style> incoming damage. <style=cIsUtility>Unaffected by luck</style>.",
+      "zh-TW": "有<style=cIsHealing>10%</style><style=cStack>（每層增加10%）</style>的機率<style=cIsHealing>格擋</style>受到的傷害。<style=cIsUtility>不受運氣影響</style>。"
+    },
+    "ITEM_SLOWONHIT_DESC_RISKYMOD": {
+      "en": "<style=cIsUtility>Slow</style> enemies on hit for <style=cIsUtility>-80% movement speed</style> and <style=cIsDamage>-20% attack speed</style> for <style=cIsUtility>2s</style> <style=cStack>(+2s per stack)</style>.",
+      "zh-TW": "命中敵人時使其<style=cIsUtility>減速</style>，<style=cIsUtility>移動速度降低80%</style>、<style=cIsDamage>攻擊速度降低20%</style>，持續<style=cIsUtility>2秒</style><style=cStack>（每層增加2秒）</style>。"
+    },
+    "ITEM_SEED_DESC_RISKYMOD": {
+      "en": "Dealing damage <style=cIsHealing>heals</style> you for <style=cIsHealing>1</style> plus an additional <style=cIsHealing>1% <style=cStack>(+1% per stack)</style></style> of the <style=cIsDamage>damage dealt</style>.",
+      "zh-TW": "造成傷害時會<style=cIsHealing>治療</style>自身<style=cIsHealing>1點</style>生命值，外加<style=cIsDamage>所造成傷害</style>的<style=cIsHealing>1%<style=cStack>（每層增加1%）</style></style>。"
+    },
+    "ITEM_MISSILE_DESC_RISKYMOD": {
+      "en": "<style=cIsDamage>10%</style> chance to fire a missile that deals <style=cIsDamage>300%</style> <style=cStack>(+210% per stack)</style> TOTAL damage.",
+      "zh-TW": "有<style=cIsDamage>10%</style>機率發射一枚導彈，合計造成<style=cIsDamage>300%</style><style=cStack>（每層增加210%）</style>的傷害。"
+    },
+    "ITEM_ICERING_DESC_RISKYMOD": {
+      "en": "Hits that deal <style=cIsDamage>more than 400% damage</style> also blasts enemies with a <style=cIsDamage>runic ice blast</style>, <style=cIsUtility>slowing</style> them by <style=cIsUtility>80%</style> for <style=cIsUtility>3s</style> <style=cStack>(+3s per stack)</style> and dealing <style=cIsDamage>200%</style> <style=cStack>(+120% per stack)</style> TOTAL damage. Recharges every <style=cIsUtility>10</style> seconds.",
+      "zh-TW": "造成<style=cIsDamage>高於400%傷害</style>的攻擊也會產生一道<style=cIsDamage>符文冰霜爆炸</style>轟擊敵人，使其<style=cIsUtility>減速</style><style=cIsUtility>80%</style>，持續<style=cIsUtility>3秒</style><style=cStack>（每層增加3秒）</style>，並合計造成<style=cIsDamage>200%</style><style=cStack>（每層增加120%）</style>的傷害。每<style=cIsUtility>10</style>秒可自動充能一次。"
+    },
+    "ITEM_FIRERING_DESC_RISKYMOD": {
+      "en": "Hits that deal <style=cIsDamage>more than 400% damage</style> also blasts enemies with a <style=cIsDamage>runic flame tornado</style>, dealing <style=cIsDamage>250%</style> <style=cStack>(+150% per stack)</style> TOTAL damage over time. Recharges every <style=cIsUtility>10</style> seconds.",
+      "zh-TW": "造成<style=cIsDamage>高於400%傷害</style>的攻擊會同時產生一道<style=cIsDamage>符文火焰龍捲風</style>轟擊敵人，在持續時間內合計造成<style=cIsDamage>250%</style><style=cStack>（每層增加150%）</style>的傷害。每<style=cIsUtility>10</style>秒可自動充能一次。"
+    },
+    "ITEM_PHASING_PICKUP_RISKYMOD": {
+      "en": "Turn invisible on taking heavy damage.",
+      "zh-TW": "受到大量傷害時隱身。"
+    },
+    "ITEM_PHASING_DESC_RISKYMOD": {
+      "en": "Chance on taking damage to gain <style=cIsUtility>40% movement speed</style> and <style=cIsUtility>invisibility</style> for <style=cIsUtility>3s</style> <style=cStack>(+1.5s per stack)</style>. Chance increases the more damage you take.",
+      "zh-TW": "受到傷害時有機率獲得<style=cIsUtility>40%的移動速度</style>並<style=cIsUtility>隱身</style>，持續<style=cIsUtility>3秒</style><style=cStack>（每層增加1.5秒）</style>。受到的傷害越高，機率越大。"
+    },
+    "ITEM_EXPLODEONDEATH_DESC_RISKYMOD": {
+      "en": "On killing an enemy, spawn a <style=cIsDamage>lava pillar</style> in a <style=cIsDamage>16m</style> radius for <style=cIsDamage>350%</style> <style=cStack>(+280% per stack)</style> base damage.",
+      "zh-TW": "擊敗一名敵人後，召喚一道<style=cIsDamage>岩漿柱</style>，對<style=cIsDamage>16米</style>範圍內的敵人造成<style=cIsDamage>350%</style><style=cStack>（每層增加280%）</style>的基礎傷害。"
+    },
+    "ITEM_SQUIDTURRET_PICKUP_RISKYMOD": {
+      "en": "Taking heavy damage summons a Squid Turret nearby.",
+      "zh-TW": "受到大量傷害時會在附近召喚烏賊機槍塔。"
+    },
+    "ITEM_SQUIDTURRET_DESC_RISKYMOD": {
+      "en": "Chance on taking damage to summon a <style=cIsDamage>Squid Turret</style> with <style=cIsHealing>100% <style=cStack>(+50% per stack)</style></style> health and <style=cIsDamage>100% <style=cStack>(+100% per stack)</style></style> attack speed that <style=cIsUtility>distracts</style> nearby enemies. Chance increases the more damage you take. Limited to <style=cIsUtility>3</style>.",
+      "zh-TW": "受到傷害時有機率召喚一座<style=cIsDamage>烏賊機槍塔</style>，擁有<style=cIsHealing>100%<style=cStack>（每層增加50%）</style></style>的生命值和<style=cIsDamage>100%<style=cStack>（每層增加100%）</style></style>的攻擊速度，可<style=cIsUtility>吸引</style>附近敵人的注意力。受到的傷害越高，機率越大。最多<style=cIsUtility>3</style>座。"
+    },
+    "ITEM_CHAINLIGHTNING_DESC_RISKYMOD": {
+      "en": "<style=cIsDamage>25%</style> chance to fire <style=cIsDamage>chain lightning</style> for <style=cIsDamage>80%</style> TOTAL damage on up to <style=cIsDamage>3 <style=cStack>(+2 per stack)</style></style> targets within <style=cIsDamage>25m</style>.",
+      "zh-TW": "有<style=cIsDamage>25%</style>的機率發射<style=cIsDamage>連鎖閃電</style>，對<style=cIsDamage>25米</style>內的最多<style=cIsDamage>3個<style=cStack>（每層增加2個）</style></style>目標合計造成<style=cIsDamage>80%</style>的傷害。"
+    },
+    "ITEM_THORNS_DESC_RISKYMOD": {
+      "en": "Getting hit causes you to explode in a burst of razors, dealing <style=cIsDamage>160%</style> <style=cStack>(+80% per stack)</style> damage. Hits up to <style=cIsDamage>3</style> <style=cStack>(+2 per stack)</style> targets in a <style=cIsDamage>25m</style> radius.",
+      "zh-TW": "被擊中後，你會爆炸射出多發剃刀，造成<style=cIsDamage>160%</style><style=cStack>（每層增加80%）</style>的傷害。最多可擊中<style=cIsDamage>25米</style>半徑內的<style=cIsDamage>3</style>個<style=cStack>（每層增加2個）</style>目標。"
+    },
+    "ITEM_SPRINTARMOR_PICKUP_RISKYMOD": {
+      "en": "Increase armor. Gain bonus armor while sprinting.",
+      "zh-TW": "提升護甲。奔跑時獲得額外護甲。"
+    },
+    "ITEM_SPRINTARMOR_DESC_RISKYMOD": {
+      "en": "<style=cIsHealing>Increase armor</style> by <style=cIsHealing>10</style> <style=cStack>(+10 per stack)</style>. Gain an additional <style=cIsHealing>10</style> <style=cStack>(+10 per stack)</style> armor while <style=cIsUtility>sprinting</style>.",
+      "zh-TW": "<style=cIsHealing>護甲提高</style><style=cIsHealing>10點</style><style=cStack>（每層增加10點）</style>。<style=cIsUtility>奔跑時</style>護甲額外提高<style=cIsHealing>10點</style><style=cStack>（每層增加10點）</style>。"
+    },
+    "ITEM_EXECUTELOWHEALTHELITE_PICKUP_RISKYMOD": {
+      "en": "Deal bonus damage to enemies below 50% health.",
+      "zh-TW": "對生命值低於50%的敵人造成額外傷害。"
+    },
+    "ITEM_EXECUTELOWHEALTHELITE_DESC_RISKYMOD": {
+      "en": "Deal <style=cIsDamage>+30%</style> <style=cStack>(+30% per stack)</style> damage to enemies below <style=cIsDamage>50% health</style>.",
+      "zh-TW": "對<style=cIsDamage>生命值低於50%</style>的敵人造成的傷害提高<style=cIsDamage>30%</style><style=cStack>（每層增加30%）</style>。"
+    },
+    "ITEM_WARCRYONMULTIKILL_PICKUP_RISKYMOD": {
+      "en": "Enter a frenzy after killing enemies. Stacks 3 times.",
+      "zh-TW": "擊敗敵人後進入狂熱狀態。最多疊加3層。"
+    },
+    "ITEM_WARCRYONMULTIKILL_DESC_RISKYMOD": {
+      "en": "<style=cIsDamage>Killing enemies</style> sends you into a <style=cIsDamage>frenzy</style> for <style=cIsDamage>6s</style>, increasing <style=cIsUtility>movement speed</style> and <style=cIsDamage>attack speed</style> by <style=cIsDamage>15%</style> for each enemy killed. Maximum cap of <style=cIsDamage>3 <style=cStack>(+2 per stack)</style></style> buffs.",
+      "zh-TW": "<style=cIsDamage>擊敗敵人</style>會使你進入<style=cIsDamage>狂熱</style>狀態，持續<style=cIsDamage>6秒</style>。每擊敗一名敵人，<style=cIsUtility>移動速度</style>和<style=cIsDamage>攻擊速度</style>提高<style=cIsDamage>15%</style>。最多疊加<style=cIsDamage>3層<style=cStack>（每層增加2層）</style></style>。"
+    },
+    "ITEM_ENERGIZEDONEQUIPMENTUSE_PICKUP_RISKYMOD": {
+      "en": "Activating your Equipment gives you a burst of movement speed and attack speed.",
+      "zh-TW": "啟用裝備使你獲得移動速度和攻擊速度加成。"
+    },
+    "ITEM_ENERGIZEDONEQUIPMENTUSE_DESC_RISKYMOD": {
+      "en": "Activating your Equipment gives you <style=cIsUtility>+50% movement speed</style> and <style=cIsDamage>+70% attack speed</style> for <style=cIsDamage>8s</style> <style=cStack>(+4s per stack)</style>.",
+      "zh-TW": "啟用裝備可使你獲得<style=cIsUtility>+50%移動速度加成</style>和<style=cIsDamage>+70%攻擊速度加成</style>，持續<style=cIsDamage>8秒</style><style=cStack>（每層增加4秒）</style>。"
+    },
+    "ITEM_INFUSION_PICKUP_RISKYMOD": {
+      "en": "Killing an enemy permanently increases your maximum health.",
+      "zh-TW": "擊敗敵人可永久性增加你的最大生命值。"
+    },
+    "ITEM_INFUSION_DESC_RISKYMOD": {
+      "en": "Killing an enemy increases your <style=cIsHealing>health permanently</style> by <style=cIsHealing>1</style> <style=cStack>(+1 per stack)</style>. Every <style=cIsHealing>100 health</style> gained from this item <style=cIsHealth>reduces</style> the health gained from kills.",
+      "zh-TW": "每擊敗一名敵人，即可<style=cIsHealing>永久增加生命值</style><style=cIsHealing>1</style>點<style=cStack>（每層增加1點）</style>。此物品每提供<style=cIsHealing>100點生命值</style>，擊敗敵人獲得的生命值就會<style=cIsHealth>減少</style>。"
+    },
+    "ITEM_ICICLE_DESC_RISKYMOD": {
+      "en": "Killing an enemy surrounds you with an <style=cIsDamage>ice storm</style> that deals <style=cIsDamage>1200% <style=cStack>(+400% per stack)</style> damage per second</style> and <style=cIsUtility>slows</style> enemies by <style=cIsUtility>80%</style> for <style=cIsUtility>1.5s</style>. The storm <style=cIsDamage>grows with every kill</style>, increasing its radius by <style=cIsDamage>3m</style>. Stacks up to <style=cIsDamage>18m</style>.",
+      "zh-TW": "擊敗敵人後，你的周圍會出現一道<style=cIsDamage>寒冰風暴</style>，造成<style=cIsDamage>每秒1200%<style=cStack>（每層增加400%）</style>的傷害</style>，並使敵人<style=cIsUtility>減速</style><style=cIsUtility>80%</style>，持續<style=cIsUtility>1.5秒</style>。<style=cIsDamage>每達成一次擊敗</style>，風暴的半徑都會擴大<style=cIsDamage>3米</style>，最大為<style=cIsDamage>18米</style>。"
+    },
+    "ITEM_HEADHUNTER_PICKUP_RISKYMOD": {
+      "en": "Deal extra damage to elites, and temporarily gain their power on kill.",
+      "zh-TW": "對精英造成額外傷害，並在擊敗後暫時獲取其能力。"
+    },
+    "ITEM_HEADHUNTER_DESC_RISKYMOD": {
+      "en": "Deal an additional <style=cIsDamage>30%</style> damage to elite monsters. Upon killing an elite, temporarily gain its power for <style=cIsDamage>10s</style> <style=cStack>(+5s per stack)</style>.",
+      "zh-TW": "對精英怪物額外造成<style=cIsDamage>30%</style>的傷害。擊敗精英怪物後，暫時獲得其能力，持續<style=cIsDamage>10秒</style><style=cStack>（每層增加5秒）</style>。"
+    },
+    "ITEM_FALLBOOTS_PICKUP_RISKYMOD": {
+      "en": "Increase jump height and air control. Hold 'Interact' to slam down to the ground.",
+      "zh-TW": "增加跳躍高度和空中操控。按住“互動”可砸向地面。"
+    },
+    "ITEM_FALLBOOTS_DESC_RISKYMOD": {
+      "en": "Increase <style=cIsUtility>jump height</style> and <style=cIsUtility>air control</style>. Creates a <style=cIsDamage>5m-100m</style> radius <style=cIsDamage>kinetic explosion</style> on hitting the ground, dealing <style=cIsDamage>1000%-10000%</style> <style=cStack>(+600%-6000% per stack)</style> base damage that scales up with <style=cIsDamage>fall distance</style>. Recharges every <style=cIsDamage>10</style> seconds.",
+      "zh-TW": "提高<style=cIsUtility>跳躍高度</style>和<style=cIsUtility>空中操控</style>。砸向地面時在<style=cIsDamage>5-100米</style>範圍內造成一次<style=cIsDamage>動能爆破</style>，造成<style=cIsDamage>1000%-10000%</style><style=cStack>（每層增加600%-6000%）</style>的基礎傷害，傷害隨<style=cIsDamage>下落距離</style>增加。每<style=cIsDamage>10</style>秒充能一次。"
+    },
+    "ITEM_GHOSTONKILL_PICKUP_RISKYMOD": {
+      "en": "Killing an enemy summons a ghost. Recharges over time.",
+      "zh-TW": "擊敗一名敵人時召喚一個幽靈。隨時間充能。"
+    },
+    "ITEM_GHOSTONKILL_DESC_RISKYMOD": {
+      "en": "Killing an enemy <style=cIsDamage>spawns a ghost</style> of the killed enemy with <style=cIsDamage>600%</style> <style=cStack>(+180% per stack)</style> damage. Lasts <style=cIsDamage>30s</style> <style=cStack>(+30s per stack)</style>. Recharges every <style=cIsUtility>20</style> seconds. Can have up to <style=cIsUtility>3</style> ghosts at a time.",
+      "zh-TW": "擊敗敵人後<style=cIsDamage>召喚所擊敗敵人的幽靈</style>，它具有<style=cIsDamage>600%</style><style=cStack>（每層增加180%）</style>傷害，持續<style=cIsDamage>30秒</style><style=cStack>（每層增加30秒）</style>。每<style=cIsUtility>20</style>秒充能一次。最多可同時存在<style=cIsUtility>3</style>個幽靈。"
+    },
+    "ITEM_BEETLEGLAND_DESC_RISKYMOD": {
+      "en": "<style=cIsUtility>Recruit a Beetle Guard</style> with bonus <style=cIsDamage>300%</style> <style=cStack>(+300% per stack)</style> damage and <style=cIsHealing>200% <style=cStack>(+100% per stack)</style></style> health.",
+      "zh-TW": "<style=cIsUtility>招募一隻甲殼蟲守衛</style>，可額外造成<style=cIsDamage>300%</style><style=cStack>（每層增加300%）</style>的傷害，並額外擁有<style=cIsHealing>200%<style=cStack>（每層增加100%）</style></style>的生命值。"
+    },
+    "ITEM_FIREBALLSONHIT_DESC_RISKYMOD": {
+      "en": "<style=cIsDamage>10%</style> chance on hit to call forth <style=cIsDamage>3 magma balls</style> from an enemy, dealing <style=cIsDamage>300%</style> <style=cStack>(+180% per stack)</style> damage each.",
+      "zh-TW": "命中時有<style=cIsDamage>10%</style>的機率從一名敵人處召喚<style=cIsDamage>3顆岩漿球</style>，每顆造成<style=cIsDamage>300%</style><style=cStack>（每層增加180%）</style>的傷害。"
+    },
+    "ITEM_LIGHTNINGSTRIKEONHIT_DESC_RISKYMOD": {
+      "en": "<style=cIsDamage>10%</style> chance on hit to down a lightning strike, dealing <style=cIsDamage>500%</style> <style=cStack>(+300% per stack)</style> damage.",
+      "zh-TW": "命中時有<style=cIsDamage>10%</style>的機率從上空召喚一次雷電攻擊，造成<style=cIsDamage>500%</style><style=cStack>（每層增加300%）</style>的傷害。"
+    },
+    "ITEM_BLEEDONHITANDEXPLODE_PICKUP_RISKYMOD": {
+      "en": "Bleeding enemies explode on kill.",
+      "zh-TW": "流血的敵人被擊敗時會爆炸。"
+    },
+    "ITEM_BLEEDONHITANDEXPLODE_DESC_RISKYMOD": {
+      "en": "Gain a <style=cIsDamage>10%</style> chance to <style=cIsDamage>bleed</style> enemies for <style=cIsDamage>240%</style> base damage. <style=cIsDamage>Bleeding</style> enemies <style=cIsDamage>explode</style> on death for <style=cIsDamage>400%</style> <style=cStack>(+320% per stack)</style> damage, plus an additional <style=cIsDamage>10%</style> <style=cStack>(+8% per stack)</style> of their maximum health.",
+      "zh-TW": "獲得<style=cIsDamage>10%</style>的機率使敵人<style=cIsDamage>流血</style>，造成<style=cIsDamage>240%</style>的基礎傷害。<style=cIsDamage>流血</style>的敵人會在死亡時<style=cIsDamage>爆炸</style>，造成<style=cIsDamage>400%</style><style=cStack>（每層增加320%）</style>的傷害，外加相當於敵人最大生命值<style=cIsDamage>10%</style><style=cStack>（每層增加8%）</style>的額外傷害。"
+    },
+    "ITEM_KNURL_PICKUP_RISKYMOD": {
+      "en": "Boosts health, regeneration, and armor.",
+      "zh-TW": "生命值、再生速度和護甲增加。"
+    },
+    "ITEM_KNURL_DESC_RISKYMOD": {
+      "en": "<style=cIsHealing>Increase maximum health</style> by <style=cIsHealing>8%</style> <style=cStack>(+8% per stack)</style>, <style=cIsHealing>base health regeneration</style> by <style=cIsHealing>+1.6 hp/s</style> <style=cStack>(+1.6 hp/s per stack)</style>, and <style=cIsHealing>armor</style> by <style=cIsHealing>10</style> <style=cStack>(+10 per stack)</style>.",
+      "zh-TW": "<style=cIsHealing>最大生命值增加</style><style=cIsHealing>8%</style><style=cStack>（每層增加8%）</style>，<style=cIsHealing>基礎生命值再生速度</style>增加<style=cIsHealing>1.6生命值/秒</style><style=cStack>（每層增加1.6生命值/秒）</style>，<style=cIsHealing>護甲</style>增加<style=cIsHealing>10</style>點<style=cStack>（每層增加10點）</style>。"
+    },
+    "ITEM_SHIELDONLY_PICKUP_RISKYMOD": {
+      "en": "Convert all your health into shield. Increase maximum health... <color=#FF7F7F>BUT increase shield regeneration delay.</color>",
+      "zh-TW": "將你的所有生命值轉化為護盾，提高最大生命值……<color=#FF7F7F>但是護盾再生延遲增加。</color>"
+    },
+    "ITEM_SHIELDONLY_DESC_RISKYMOD": {
+      "en": "<style=cIsHealing>Convert</style> all but <style=cIsHealing>1 health</style> into <style=cIsHealing>regenerating shields</style>. <style=cIsHealing>Gain 50% <style=cStack>(+25% per stack)</style> maximum health</style>. Increase <style=cIsHealing>shield regeneration delay</style> by <style=cIsHealing>0s</style> <style=cStack>(+1s per stack)</style>.",
+      "zh-TW": "將<style=cIsHealing>1點生命值</style>以外的所有生命值<style=cIsHealing>轉化為</style><style=cIsHealing>可再生護盾</style>。<style=cIsHealing>獲得50%<style=cStack>（每層增加25%）</style>的最大生命值</style>。<style=cIsHealing>護盾再生延遲</style>增加<style=cIsHealing>0秒</style><style=cStack>（每層增加1秒）</style>。"
+    },
+    "ITEM_MISSILEVOID_DESC_RISKYMOD": {
+      "en": "Gain a <style=cIsHealing>shield</style> equal to <style=cIsHealing>10%</style> of your maximum health. While you have a <style=cIsHealing>shield</style>, hitting an enemy fires a missile that deals <style=cIsDamage>40%</style> <style=cStack>(+28% per stack)</style> TOTAL damage. <style=cIsVoid>Corrupts all AtG Missile Mk. 1s</style>.",
+      "zh-TW": "獲得一個相當於你最大生命值<style=cIsHealing>10%</style>的<style=cIsHealing>護盾</style>。你擁有<style=cIsHealing>護盾</style>時，命中敵人會發射一枚導彈，合計造成<style=cIsDamage>40%</style><style=cStack>（每層增加28%）</style>的傷害。<style=cIsVoid>使所有空對地導彈1號無效化</style>。"
+    },
+    "ITEM_EXPLODEONDEATHVOID_DESC_RISKYMOD": {
+      "en": "Upon hitting an enemy above <style=cIsDamage>90% health</style>, spawn a <style=cIsDamage>lava pillar</style> in a <style=cIsDamage>12m</style> radius for <style=cIsDamage>350%</style> <style=cStack>(+280% per stack)</style> base damage. <style=cIsVoid>Corrupts all Will-o'-the-wisps</style>.",
+      "zh-TW": "命中<style=cIsDamage>生命值高於90%</style>的敵人時，召喚一道<style=cIsDamage>岩漿柱</style>，對<style=cIsDamage>12米</style>範圍內的敵人造成<style=cIsDamage>350%</style><style=cStack>（每層增加280%）</style>的基礎傷害。<style=cIsVoid>使所有鬼火無效化</style>。"
+    },
+    "ITEM_ELEMENTALRINGVOID_DESC_RISKYMOD": {
+      "en": "Hits that deal <style=cIsDamage>more than 400% damage</style> also fire a black hole that <style=cIsUtility>draws enemies within 15m into its center</style>. Lasts <style=cIsUtility>5</style> seconds before collapsing, dealing <style=cIsDamage>200%</style> <style=cStack>(+120% per stack)</style> TOTAL damage. Recharges every <style=cIsUtility>15</style> seconds. <style=cIsVoid>Corrupts all Runald's and Kjaro's Bands</style>.",
+      "zh-TW": "攻擊造成<style=cIsDamage>高於400%的傷害</style>時，還會發射一個黑洞，<style=cIsUtility>將15米範圍內的敵人吸引至其中心</style>。持續<style=cIsUtility>5</style>秒，之後坍縮，合計造成<style=cIsDamage>200%</style><style=cStack>（每層增加120%）</style>的傷害。每<style=cIsUtility>15</style>秒充能一次。<style=cIsVoid>使所有魯納德和賈羅的手環無效化</style>。"
+    },
+    "ITEM_MOVESPEEDONKILL_DESC_RISKYMOD": {
+      "en": "Killing an enemy increases <style=cIsUtility>movement speed</style> by <style=cIsUtility>50%</style> for <style=cIsUtility>1.5</style> <style=cStack>(+1 per stack)</style> seconds. <style=cIsDamage>Consecutive kills increase buff duration</style> for up to 25 seconds.",
+      "zh-TW": "擊敗敵人會使<style=cIsUtility>移動速度</style>提高<style=cIsUtility>50%</style>，持續<style=cIsUtility>1.5</style><style=cStack>（每層增加1）</style>秒。<style=cIsDamage>連續擊敗敵人會延長效果持續時間</style>，最長可達25秒。"
+    },
+    "ITEM_SPRINTOUTOFCOMBAT_DESC_RISKYMOD": {
+      "en": "Increases <style=cIsUtility>movement speed</style> by <style=cIsUtility>10%</style> <style=cStack>(+10% per stack)</style>. Leaving combat boosts your <style=cIsUtility>movement speed</style> by an additional <style=cIsUtility>30%</style> <style=cStack>(+30% per stack)</style>.",
+      "zh-TW": "<style=cIsUtility>移動速度</style>提高<style=cIsUtility>10%</style><style=cStack>（每層增加10%）</style>。脫離戰鬥時會使你的<style=cIsUtility>移動速度</style>額外提高<style=cIsUtility>30%</style><style=cStack>（每層增加30%）</style>。"
+    },
+    "ITEM_MUSHROOMVOID_DESC_RISKYMOD": {
+      "en": "<style=cIsHealing>Heals</style> for <style=cIsHealing>1.2%</style> <style=cStack>(+0.6% per stack)</style> of your <style=cIsHealing>health</style> every second <style=cIsUtility>while sprinting</style>. <style=cIsVoid>Corrupts all Bustling Fungi</style>.",
+      "zh-TW": "<style=cIsUtility>奔跑期間</style>每秒為你<style=cIsHealing>恢復</style><style=cIsHealing>生命值</style>的<style=cIsHealing>1.2%</style><style=cStack>（每層增加0.6%）</style>。<style=cIsVoid>使所有爆裂真菌無效化</style>。"
+    },
+    "ITEM_TPHEALINGNOVA_PICKUP_RISKYMOD": {
+      "en": "Create a healing zone around the Teleporter.",
+      "zh-TW": "在傳送器周圍產生一個治療區域。"
+    },
+    "ITEM_TPHEALINGNOVA_DESC_RISKYMOD": {
+      "en": "Create a zone around the Teleporter that <style=cIsHealing>heals</style> for <style=cIsHealing>5%</style> <style=cStack>(+2.5% per stack)</style> of your <style=cIsHealing>health</style> every second.",
+      "zh-TW": "在傳送器周圍產生一個區域，每秒<style=cIsHealing>恢復</style>你<style=cIsHealing>生命值</style>的<style=cIsHealing>5%</style><style=cStack>（每層增加2.5%）</style>。"
+    },
+    "ITEM_CLOVER_DESC_RISKYMOD": {
+      "en": "All random effects are rolled <style=cIsUtility>+1</style> <style=cStack>(+1 per stack)</style>times for a <style=cIsUtility>favorable outcome</style>. If your <style=cIsDamage>luck</style> is above <style=cIsUtility>1</style>, increase <style=cIsUtility>ALL stats</style> by <style=cIsUtility>40%</style> <style=cStack>(+40% per stack)</style> instead.",
+      "zh-TW": "所有隨機效果都會<style=cIsUtility>額外判定1</style><style=cStack>（每層增加1）</style>次，<style=cIsUtility>取更有利的效果</style>。如果你的<style=cIsDamage>幸運值</style>大於<style=cIsUtility>1</style>，則改為使<style=cIsUtility>全屬性</style>提高<style=cIsUtility>40%</style><style=cStack>（每層增加40%）</style>。"
+    },
+    "ITEM_DRONEWEAPONS_DESC_RISKYMOD": {
+      "en": "Gain <style=cIsDamage>Col. Droneman</style>. \nDrones gain <style=cIsDamage>+25%</style> <style=cStack>(+25% per stack)</style> attack speed and cooldown reduction. \nDrones gain <style=cIsDamage>10%</style> chance to fire a <style=cIsDamage>missile</style> on hit, dealing <style=cIsDamage>150%</style> TOTAL damage. \nDrones gain an <style=cIsDamage>automatic chain gun</style> that deals <style=cIsDamage>6x50%</style>damage, bouncing to <style=cIsDamage>1</style> enemies.",
+      "zh-TW": "獲得<style=cIsDamage>德魯曼上校</style>。\n無人機獲得<style=cIsDamage>+25%</style><style=cStack>（每層增加25%）</style>攻擊速度和冷卻時間縮減。\n無人機獲得<style=cIsDamage>10%</style>的機率在命中時發射一枚<style=cIsDamage>導彈</style>，合計造成<style=cIsDamage>150%</style>的傷害。\n無人機獲得<style=cIsDamage>自動鏈式機槍</style>，造成<style=cIsDamage>6x50%</style>的傷害，可彈射命中<style=cIsDamage>1</style>名敵人。"
+    },
+    "ITEM_FRAGILEDAMAGEBONUS_PICKUP_RISKYMOD": {
+      "en": "Deal bonus damage while outside of danger.",
+      "zh-TW": "脫離危險時造成額外傷害。"
+    },
+    "ITEM_FRAGILEDAMAGEBONUS_DESC_RISKYMOD": {
+      "en": "Increase damage by <style=cIsDamage>15%</style> <style=cStack>(+15% per stack)</style> while outside of danger.",
+      "zh-TW": "脫離危險時，傷害提高<style=cIsDamage>15%</style><style=cStack>（每層增加15%）</style>。"
+    },
+    "ITEM_CHAINLIGHTNINGVOID_DESC_RISKYMOD": {
+      "en": "<style=cIsDamage>25%</style> chance to fire <style=cIsDamage>lightning</style> for <style=cIsDamage>60%</style> TOTAL damage up to <style=cIsDamage>3 <style=cStack>(+2 per stack)</style></style> times. <style=cIsVoid>Corrupts all Ukuleles</style>.",
+      "zh-TW": "有<style=cIsDamage>25%</style>的機率發射<style=cIsDamage>閃電</style>，合計造成<style=cIsDamage>60%</style>的傷害，最多<style=cIsDamage>3次<style=cStack>（每層增加2次）</style></style>。<style=cIsVoid>使所有尤克里里無效化</style>。"
+    },
+    "ITEM_CAPTAINDEFENSEMATRIX_PICKUP_RISKYMOD": {
+      "en": "Shoot down nearby projectiles. Recharge rate scales with the amount of drones you have.",
+      "zh-TW": "擊落周遭投射物。充能速率隨你擁有的無人機數量提高。"
+    },
+    "ITEM_CAPTAINDEFENSEMATRIX_DESC_RISKYMOD": {
+      "en": "Shoot down <style=cIsDamage>1</style> <style=cStack>(+1 per stack)</style> projectiles within <style=cIsDamage>20m</style> every <style=cIsDamage>0.5 seconds</style>. <style=cIsUtility>Recharge rate scales with the amount of drones you have</style>.",
+      "zh-TW": "每隔<style=cIsDamage>0.5秒</style>擊落<style=cIsDamage>20米</style>內的<style=cIsDamage>1枚</style><style=cStack>（每層增加1枚）</style>投射物。<style=cIsUtility>充能速率隨你擁有的無人機數量提高</style>。"
+    },
+    "ITEM_MINORCONSTRUCTONKILL_DESC_RISKYMOD": {
+      "en": "Killing elite monsters spawns an <style=cIsDamage>Alpha Construct</style> with <style=cIsHealing>400% <style=cStack>(+200% per stack)</style> health</style> and <style=cIsDamage>400% <style=cStack>(+200% per stack)</style> damage</style> that <style=cIsUtility>distracts</style> nearby enemies. Limited to <style=cIsUtility>4</style>.",
+      "zh-TW": "擊敗精英怪物會生成一個<style=cIsDamage>阿爾法結構體</style>，擁有<style=cIsHealing>400%<style=cStack>（每層增加200%）</style>生命值</style>和<style=cIsDamage>400%<style=cStack>（每層增加200%）</style>傷害</style>，可<style=cIsUtility>吸引</style>附近敵人的注意力。至多生成<style=cIsUtility>4</style>個。"
+    },
+    "ITEM_PERMANENTDEBUFFONHIT_DESC_RISKYMOD": {
+      "en": "<style=cIsDamage>100%</style> chance on hit to reduce <style=cIsDamage>armor</style> by <style=cIsDamage>1</style> <style=cStack>(+1 per stack)</style> <style=cIsDamage>permanently</style>.",
+      "zh-TW": "命中時有<style=cIsDamage>100%</style>機率使敵人的<style=cIsDamage>護甲</style><style=cIsDamage>永久</style>降低<style=cIsDamage>1</style>點<style=cStack>（每層增加1點）</style>。"
+    },
+    "ITEM_TITANGOLDDURINGTP_DESC_RISKYMOD": {
+      "en": "Summon <style=cIsDamage>Aurelionite</style> during the teleporter event. It has <style=cIsDamage>100% <style=cStack>(+50% per stack)</style> damage</style> and <style=cIsHealing>200% <style=cStack>(+100% per stack)</style> health</style>.",
+      "zh-TW": "在傳送器事件期間召喚<style=cIsDamage>奧利雷奧尼特</style>，它具有<style=cIsDamage>100%<style=cStack>（每層增加50%）</style>傷害</style>和<style=cIsHealing>200%<style=cStack>（每層增加100%）</style>生命值</style>。"
+    },
+    "ITEM_IMMUNETODEBUFF_DESC_RISKYMOD": {
+      "en": "Prevents <style=cIsUtility>1 <style=cStack>(+1 per stack)</style></style> <style=cIsDamage>debuff</style> and instead grants a <style=cIsHealing>temporary barrier</style> for <style=cIsHealing>25%</style> of <style=cIsHealing>maximum health</style>. Recharges every <style=cIsUtility>5</style> seconds</style>.",
+      "zh-TW": "防止<style=cIsUtility>1個<style=cStack>（每層增加1個）</style></style><style=cIsDamage>減益效果</style>，並改為施加一道<style=cIsHealing>臨時屏障</style>，數值為<style=cIsHealing>最大生命值</style>的<style=cIsHealing>25%</style>。每<style=cIsUtility>5</style>秒充能一次</style>。"
+    },
+    "ITEM_HEALINGPOTION_PICKUP_RISKYMOD": {
+      "en": "Gain a massive barrier at low health. Consumed on use.",
+      "zh-TW": "生命值較低時獲得大量屏障。使用即消耗。"
+    },
+    "ITEM_HEALINGPOTION_DESC_RISKYMOD": {
+      "en": "Gain a <style=cIsHealing>temporary barrier</style> for <style=cIsHealing>50% of your health</style> when falling below <style=cIsHealth>50% health</style>.",
+      "zh-TW": "<style=cIsHealth>生命值降到50%</style>以下時，獲得相當於<style=cIsHealing>50%生命值</style>的<style=cIsHealing>臨時屏障</style>。"
+    },
+    "ITEM_BEARVOID_DESC_RISKYMOD": {
+      "en": "<style=cIsHealing>Blocks</style> incoming damage once. Recharges after <style=cIsUtility>20 seconds</style> <style=cStack>(-10% per stack)</style>. <style=cIsVoid>Corrupts all Tougher Times</style>.",
+      "zh-TW": "<style=cIsHealing>格擋</style>一次來襲的傷害。充能時間<style=cIsUtility>20秒</style><style=cStack>（每層減少10%）</style>。<style=cIsVoid>使所有更艱難的時光無效化</style>。"
+    },
+    "ITEM_BARRIERONOVERHEAL_DESC_RISKYMOD": {
+      "en": "Healing past full grants you a <style=cIsHealing>temporary barrier</style> for <style=cIsHealing>50% <style=cStack>(+50% per stack)</style></style> of the amount you <style=cIsHealing>healed</style>. Divides <style=cIsHealing>barrier decay rate</style> by <style=cIsHealing>2 <style=cStack>(+1 per stack)</style></style>.",
+      "zh-TW": "過量治療會使你獲得一道<style=cIsHealing>臨時屏障</style>，數值相當於<style=cIsHealing>治療</style>量的<style=cIsHealing>50%<style=cStack>（每層增加50%）</style></style>。<style=cIsHealing>屏障衰減速度</style>除以<style=cIsHealing>2<style=cStack>（每層增加1）</style></style>。"
+    },
+    "ITEM_LUNARDAGGER_DESC_RISKYMOD": {
+      "en": "Increase base damage by <style=cIsDamage>100%</style> <style=cStack>(+100% per stack)</style>. <style=cIsHealth>Divide maximum health by 2</style> <style=cStack>(+1 per stack)</style>.",
+      "zh-TW": "使基礎傷害提高<style=cIsDamage>100%</style><style=cStack>（每層增加100%）</style>。<style=cIsHealth>最大生命值除以2</style><style=cStack>（每層增加1）</style>。"
+    },
+    "ITEM_STRENGTHENBURN_DESC_RISKYMOD": {
+      "en": "<style=cIsDamage>5%</style> chance on hit to <style=cIsDamage>ignite</style> for <style=cIsDamage>50%</style> TOTAL damage. <style=cIsDamage>Ignite</style> effects deal <style=cIsDamage>+300%</style> <style=cStack>(+300% per stack)</style> more damage over time.",
+      "zh-TW": "命中時有<style=cIsDamage>5%</style>的機率<style=cIsDamage>點燃</style>敵人，合計造成<style=cIsDamage>50%</style>的傷害。<style=cIsDamage>點燃</style>效果造成的持續傷害<style=cIsDamage>+300%</style><style=cStack>（每層增加300%）</style>。"
+    },
+    "ITEM_CRITDAMAGE_DESC_RISKYMOD": {
+      "en": "Gain <style=cIsDamage>5% critical chance</style>. <style=cIsDamage>Critical Strikes</style> deal an additional <style=cIsDamage>100% damage</style><style=cStack>(+100% per stack)</style>.",
+      "zh-TW": "獲得<style=cIsDamage>5%暴擊機率</style>。<style=cIsDamage>暴擊</style>額外造成<style=cIsDamage>100%的傷害</style><style=cStack>（每層增加100%）</style>。"
+    },
+    "ITEM_BARRAGEONBOSS_DESC_RISKYMOD": {
+      "en": "During boss events, <style=cIsUtility>5</style> missiles bombard the area, dealing <style=cIsDamage>2.5% <style=cStack>(+2.5% per stack)</style> of boss' Max Health in damage</style>. Before the boss event, gain additional missiles, up to a maximum of <style=cIsUtility>20</style> <style=cStack>(+5 per stack)</style>, per <style=cIsUtility>25</style> gold gained. <style=cIsUtility>Gold requirement scales over time.</style>",
+      "zh-TW": "在首領事件期間，<style=cIsUtility>5</style>發導彈轟炸該區域，造成首領最大生命值<style=cIsDamage>2.5%<style=cStack>（每層增加2.5%）</style>的傷害</style>。在首領事件之前，每獲得<style=cIsUtility>25</style>金錢即可獲得額外的導彈，最多累積至<style=cIsUtility>20</style>發<style=cStack>（每層增加5發）</style>。<style=cIsUtility>所需金錢會隨時間變化。</style>"
+    },
+    "ITEM_TELEPORTONLOWHEALTH_DESC_RISKYMOD": {
+      "en": "Falling below <style=cIsHealth>25% health</style> gives you <style=cIsHealing>100%</style> of your <style=cIsHealing>maximum health</style> as a <style=cIsHealing>temporary barrier</style>. Gain a dimensional aura for <style=cIsUtility>8s</style> that <style=cIsDamage>bleeds</style> and <style=cIsUtility>teleports</style> away enemies. <style=cIsDamage>Enemies killed</style> by the aura <style=cIsUtility>extend</style> the duration by <style=cIsUtility>1s</style>. At the start of each stage, it regenerates.",
+      "zh-TW": "生命值降至<style=cIsHealth>25%</style>以下時，你將獲得相當於<style=cIsHealing>最大生命值</style><style=cIsHealing>100%</style>的<style=cIsHealing>臨時屏障</style>，並獲得一個次元光環，持續<style=cIsUtility>8秒</style>，使敵人<style=cIsDamage>流血</style>並將其向遠處<style=cIsUtility>傳送</style>。光環每<style=cIsDamage>擊敗一個敵人</style>，持續時間會<style=cIsUtility>延長</style><style=cIsUtility>1秒</style>。在每個關卡開始時，它都會再生。"
+    },
+    "ITEM_KNOCKBACKHITENEMIES_DESC_RISKYMOD": {
+      "en": "Grounded enemies hit with any <style=cIsUtility>skill</style> are <style=cIsUtility>launched</style> and <style=cIsUtility>stunned</style>. Enemies hit while airborne are <style=cIsUtility>launched</style> again up to <style=cIsUtility>2 times</style> <style=cStack>(+1 per stack)</style>. Launched enemies take increased damage by <style=cIsDamage>15%</style> from all sources per launch. Recharges after <style=cIsUtility>15s</style>.",
+      "zh-TW": "地面敵人被任意<style=cIsUtility>技能</style>命中都會被<style=cIsUtility>擊飛</style>並<style=cIsUtility>眩暈</style>。空中敵人被擊中將被再次<style=cIsUtility>擊飛</style>，最多<style=cIsUtility>2次</style><style=cStack>（每層增加1次）</style>。被擊飛的敵人每次被擊飛都會使受到的所有來源傷害提高<style=cIsDamage>15%</style>。<style=cIsUtility>15秒</style>後充能。"
+    },
+    "ITEM_BOOSTALLSTATS_DESC_RISKYMOD": {
+      "en": "Grants <style=cIsUtility>5%</style> increase to <style=cIsUtility>ALL stats</style> for each buff, up to a maximum of <style=cIsUtility>4</style> <style=cStack>(+4 per stack)</style>.",
+      "zh-TW": "每有一個強化效果，獲得<style=cIsUtility>5%</style><style=cIsUtility>全屬性</style>加成，最多疊加<style=cIsUtility>4</style>次<style=cStack>（每層增加4次）</style>。"
+    },
+    "ITEM_TRIGGERENEMYDEBUFFS_DESC_RISKYMOD": {
+      "en": "Gain <style=cIsDamage>10%</style> chance to <style=cIsDamage>bleed</style> an enemy. On killing an enemy, <style=cIsDamage>transfer 33%</style> of every debuff stack to <style=cIsDamage>1 enemy</style> <style=cStack>(+1 per stack)</style> within <style=cIsUtility>25m</style>.",
+      "zh-TW": "有<style=cIsDamage>10%</style>的機率使一名敵人<style=cIsDamage>流血</style>。擊敗一名敵人時，將每個減益效果的層數<style=cIsDamage>轉移33%</style>至<style=cIsUtility>25米</style>內的<style=cIsDamage>1名敵人</style><style=cStack>（每層增加1名）</style>身上。"
+    },
+    "ITEM_COOKEDSTEAK_DESC_RISKYMOD": {
+      "en": "Increases <style=cIsHealing>maximum health</style> by <style=cIsHealing>1.5</style><style=cStack> (+1.5 per stack)</style> levels, plus an additional <style=cIsHealing>5% <style=cStack>(+5% per stack)</style></style> of your <style=cIsHealing>max health</style>.",
+      "zh-TW": "增加相當於升<style=cIsHealing>1.5</style><style=cStack>（每層增加1.5）</style>級的<style=cIsHealing>最大生命值</style>，並額外增加<style=cIsHealing>5%<style=cStack>（每層增加5%）</style></style><style=cIsHealing>最大生命值</style>。"
+    },
+    "ITEM_COOKEDSTEAK_PICKUP_RISKYMOD": {
+      "en": "Gain 1.5 levels of max health plus a percentage of your max health. Cooked to perfection.",
+      "zh-TW": "增加相當於升1.5級的最大生命值，外加一定比例的最大生命值。烹飪至完美。"
+    },
+    "ITEM_SHIELDBOOSTER_DESC_RISKYMOD": {
+      "en": "Increases armor by <style=cIsUtility>30<style=cStack> (+30 per stack)</style></style> while you have a shield. When shield breaks, release a stunning pulse for <style=cIsDamage>100% damage</style> plus an amount <style=cIsDamage>equal to 100% <style=cStack>(+50% per stack)</style> of your max shield</style>. Grants a shield for <style=cIsHealing>10% of your max health</style>.",
+      "zh-TW": "當你擁有護盾時，護甲值提升<style=cIsUtility>30<style=cStack>（每層增加30）</style></style>。當護盾被打破時，會釋放一道眩暈脈衝：造成<style=cIsDamage>100%傷害</style>，額外附加<style=cIsDamage>等同於你最大護盾值100%<style=cStack>（每層增加50%）</style>的傷害</style>。同時還會為你提供一層護盾，相當於你<style=cIsHealing>最大生命值的10%</style>。"
+    },
+    "ITEM_POWERCUBE_PICKUP_RISKYMOD": {
+      "en": "Gain <style=cIsUtility>10 armor</style>, and increase <style=cIsUtility>all armor</style> by <style=cIsUtility>+50%</style>. Can be placed in a Matrix Terminal.",
+      "zh-TW": "獲得<style=cIsUtility>10點護甲</style>，並使<style=cIsUtility>所有護甲</style>提高<style=cIsUtility>50%</style>。可放入矩陣終端。"
+    },
+    "ITEM_POWERCUBE_DESC_RISKYMOD": {
+      "en": "Gain <style=cIsUtility>10 armor</style>, and increase <style=cIsUtility>all armor</style> by <style=cIsUtility>+50%</style>. Can be placed in a Matrix Terminal.",
+      "zh-TW": "獲得<style=cIsUtility>10點護甲</style>，並使<style=cIsUtility>所有護甲</style>提高<style=cIsUtility>50%</style>。可放入矩陣終端。"
+    },
+    "ITEM_STUNCHANCEONHIT_DESC_RISKYMOD": {
+      "en": "<style=cIsUtility>5%</style> <style=cStack>(+5% per stack)</style> chance on hit to deal <style=cIsDamage>50%</style> TOTAL damage and <style=cIsUtility>stun</style> enemies for <style=cIsUtility>2 seconds</style>.",
+      "zh-TW": "命中時有<style=cIsUtility>5%</style><style=cStack>（每層增加5%）</style>的機率合計造成<style=cIsDamage>50%</style>的傷害並<style=cIsUtility>眩暈</style>敵人，持續<style=cIsUtility>2秒</style>。"
+    },
+    "ITEM_CRITGLASSESVOID_PICKUP_RISKYMOD": {
+      "en": "Gain <style=cIsDamage>10% critical chance</style>. Critical Strikes hit twice... <style=cIsHealth>BUT deal less damage.</style> <style=cIsVoid>Corrupts all Lens-Maker's Glasses</style>.",
+      "zh-TW": "獲得<style=cIsDamage>10%暴擊機率</style>。暴擊會命中兩次……<style=cIsHealth>但是造成的傷害降低。</style><style=cIsVoid>使所有透鏡製作者的眼鏡無效化</style>。"
+    },
+    "ITEM_CRITGLASSESVOID_DESC_RISKYMOD": {
+      "en": "Gain a <style=cIsDamage>10%</style> <style=cStack>(+10% per stack)</style> chance to <style=cIsDamage>Critically Strike</style>. <style=cIsDamage>Critical Strikes</style> hit <style=cIsDamage>twice</style>... <style=cIsHealth>BUT deal 60% less damage.</style> <style=cIsVoid>Corrupts all Lens-Maker's Glasses</style>.",
+      "zh-TW": "獲得<style=cIsDamage>10%</style><style=cStack>（每層增加10%）</style>的機率發動<style=cIsDamage>暴擊</style>。<style=cIsDamage>暴擊</style>會命中<style=cIsDamage>兩次</style>……<style=cIsHealth>但是造成的傷害降低60%。</style><style=cIsVoid>使所有透鏡製作者的眼鏡無效化</style>。"
+    },
+    "ITEM_VILECENSER_DESC_RISKYMOD": {
+      "en": "Gain a <style=cIsDamage>10%</style> chance on hit to <style=cIsDamage>stun</style>. Hitting a <style=cIsDamage>stunned</style> target with a <style=cIsUtility>skill</style> releases tendrils of black smoke, dealing <style=cIsDamage>200% <style=cStack>(+100% per stack)</style></style> damage and <style=cIsDamage>chaining to all other enemies</style> within <style=cIsUtility>20m</style>. This effect can repeat.",
+      "zh-TW": "命中時有<style=cIsDamage>10%</style>的機率造成<style=cIsDamage>眩暈</style>。用<style=cIsUtility>技能</style>命中<style=cIsDamage>眩暈</style>中的目標會釋放出黑煙觸鬚，造成<style=cIsDamage>200%<style=cStack>（每層增加100%）</style></style>傷害，並連鎖至<style=cIsUtility>20米</style>內的<style=cIsDamage>所有其他敵人</style>。此效果可以重複觸發。"
+    },
+    "EQUIPMENT_FIREBALLDASH_DESC_RISKYMOD": {
+      "en": "Turn into a <style=cIsDamage>draconic fireball</style> for <style=cIsDamage>5</style> seconds. Deal <style=cIsDamage>600% damage</style> on impact. Detonates at the end for <style=cIsDamage>1200% damage</style> and <style=cIsDamage>stuns</style> nearby monsters.",
+      "zh-TW": "變成<style=cIsDamage>龍之火球</style>，持續<style=cIsDamage>5</style>秒，撞擊時造成<style=cIsDamage>600%的傷害</style>。結束時會引爆，造成<style=cIsDamage>1200%的傷害</style>並<style=cIsDamage>眩暈</style>附近的怪物。"
+    },
+    "EQUIPMENT_BFG_DESC_RISKYMOD": {
+      "en": "Fires preon tendrils, zapping enemies within 35m for up to <style=cIsDamage>1180% damage/second</style>. On contact, detonate in an enormous 20m explosion for <style=cIsDamage>8000% damage</style>.",
+      "zh-TW": "發射前子卷鬚，對35米範圍內的敵人造成最高<style=cIsDamage>每秒1180%的傷害</style>。接觸目標時會引爆，產生20米的巨大爆炸，造成<style=cIsDamage>8000%的傷害</style>。"
+    },
+    "EQUIPMENT_CRITONUSE_DESC_RISKYMOD": {
+      "en": "Gain <style=cIsDamage>+100% Critical Strike Chance</style> for 8 seconds. Excess chance is converted into <style=cIsDamage>Critical Strike Damage</style>.",
+      "zh-TW": "<style=cIsDamage>暴擊機率增加100%</style>，持續8秒。超出的機率會轉化為<style=cIsDamage>暴擊傷害</style>。"
+    },
+    "EQUIPMENT_GUMMYCLONE_DESC_RISKYMOD": {
+      "en": "Spawn a gummy clone that has <style=cIsDamage>300% damage</style> and <style=cIsHealing>600% health</style>. Expires in <style=cIsUtility>30</style> seconds.",
+      "zh-TW": "製造一個膠黏分身，可造成<style=cIsDamage>300%的傷害</style>，擁有<style=cIsHealing>600%的生命值</style>。<style=cIsUtility>30</style>秒後消失。"
+    },
+    "KEYWORD_CROCOREWORK_RISKYMOD": {
+      "en": "<style=cKeywordName>Contagion</style><style=cSub>Primary: Poisonous\nSecondary: Blighted\nUtility: Blighted\nSpecial: Infects for 6x100% damage and can trigger item effects.",
+      "zh-TW": "<style=cKeywordName>接觸傳染</style><style=cSub>主要技能：毒化\n次要技能：枯萎\n輔助技能：枯萎\n特殊技能：感染敵人，造成6x100%傷害，並可觸發物品效果。"
+    },
+    "KEYWORD_CONTAGION_PRIMARY_RISKYMOD": {
+      "en": "<style=cKeywordName>Primary</style><style=cIsHealing>Poison</style> on 3rd hit.",
+      "zh-TW": "<style=cKeywordName>主要技能</style>第三次命中時施加<style=cIsHealing>毒化</style>。"
+    },
+    "KEYWORD_CONTAGION_SECONDARY_RISKYMOD": {
+      "en": "<style=cKeywordName>Secondary</style><color=#B1387F>Blight</color>.",
+      "zh-TW": "<style=cKeywordName>次要技能</style>施加<color=#B1387F>枯萎</color>。"
+    },
+    "KEYWORD_CONTAGION_UTILITY_RISKYMOD": {
+      "en": "<style=cKeywordName>Utility</style><color=#B1387F>Blight</color>.",
+      "zh-TW": "<style=cKeywordName>輔助技能</style>施加<color=#B1387F>枯萎</color>。"
+    },
+    "KEYWORD_CONTAGION_SPECIAL_RISKYMOD": {
+      "en": "<style=cKeywordName>Special</style><style=cSub><style=cIsDamage>Infects</style> for <style=cIsDamage>6x100% damage</style> and can trigger item effects.",
+      "zh-TW": "<style=cKeywordName>特殊技能</style><style=cSub><style=cIsDamage>感染</style>敵人，造成<style=cIsDamage>6x100%傷害</style>，並可觸發物品效果。"
+    },
+    "KEYWORD_CONTAGION_SPECIAL_RISKYMOD_BLIGHT": {
+      "en": "<style=cKeywordName>Special</style><color=#B1387F>Blight</color>.",
+      "zh-TW": "<style=cKeywordName>特殊技能</style>施加<color=#B1387F>枯萎</color>。"
+    },
+    "KEYWORD_RAPID_REGEN_RISKYMOD": {
+      "en": "<style=cKeywordName>Regenerative</style><style=cSub>Heal for <style=cIsHealing>10%</style> of your maximum health over 3s.",
+      "zh-TW": "<style=cKeywordName>自我恢復</style><style=cSub>在3秒內，恢復最大生命值的<style=cIsHealing>10%</style>。"
+    },
+    "KEYWORD_BLIGHT_RISKYMOD": {
+      "en": "<style=cKeywordName>Blighted</style><style=cSub>Deal <style=cIsDamage>360%</style> base damage over 6s. <i>Blight can stack.</i></style>",
+      "zh-TW": "<style=cKeywordName>枯萎</style><style=cSub>在6秒內造成<style=cIsDamage>360%</style>的基礎傷害。<i>枯萎可以疊加。</i></style>"
+    },
+    "KEYWORD_POISON_RISKYMOD": {
+      "en": "<style=cKeywordName>Poisonous</style><style=cSub>Deal damage equal to <style=cIsDamage>6%</style> of their maximum health over 6s. <i>Poison cannot kill enemies.</i></style>",
+      "zh-TW": "<style=cKeywordName>毒化</style><style=cSub>在6秒內，造成相當於敵人最大生命值<style=cIsDamage>6%</style>的傷害。<i>敵人將不會因為毒化而被擊敗。</i></style>"
+    },
+    "KEYWORD_INTERRUPT_RISKYMOD": {
+      "en": "<style=cKeywordName>Interrupting</style><style=cSub>Briefly interrupts an enemy's actions.",
+      "zh-TW": "<style=cKeywordName>打斷</style><style=cSub>短暫打斷敵人的行動。"
+    },
+    "KEYWORD_SHOCKING_RISKYMOD": {
+      "en": "<style=cKeywordName>Shocking</style><style=cSub>Interrupts enemies and stuns them for 5 seconds.",
+      "zh-TW": "<style=cKeywordName>震盪</style><style=cSub>打斷並眩暈敵人，持續5秒。"
+    },
+    "KEYWORD_MAGNETIC_RISKYMOD": {
+      "en": "<style=cKeywordName>Magnetic</style><style=cSub>Pulls light airborne enemies towards its center.",
+      "zh-TW": "<style=cKeywordName>磁力</style><style=cSub>將空中的輕型敵人拉向中心。"
+    },
+    "KEYWORD_VOIDCORRUPTION_RISKYMOD": {
+      "en": "<style=cKeywordName>Corruption</style><style=cSub>Gain Corruption by recieving damage, killing enemies, or holding Void Items.",
+      "zh-TW": "<style=cKeywordName>腐化</style><style=cSub>通過受到傷害、擊敗敵人或持有虛空物品來獲得腐化。"
+    },
+    "KEYWORD_LOWHEALTHPROTECTION_RISKYMOD": {
+      "en": "<style=cKeywordName>Saving Grace</style><style=cSub>All living Survivors gain +7% to all stats.",
+      "zh-TW": "<style=cKeywordName>救贖賜福</style><style=cSub>所有活著的倖存者獲得+7%的全部屬性。"
+    },
+    "SEEKER_SECONDARY_TRANQUILITY_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cKeywordName>Tranquility</style><style=cSub>Increases the damage of Unseen Hand by <style=cIsDamage>100%</style> for every Tranquility.",
+      "zh-TW": "<style=cKeywordName>寧靜</style><style=cSub>每層寧靜使隱秘之手的傷害增加<style=cIsDamage>100%</style>。"
+    },
+    "CAPTAIN_PRIMARY_DESCRIPTION_RISKYMOD": {
+      "en": "Fire a blast of pellets that deal <style=cIsDamage>7x110% damage</style>. Charging narrows the <style=cIsUtility>spread</style>. The number of pellets increases with attack speed.",
+      "zh-TW": "噴射一大團彈丸，造成<style=cIsDamage>7x110%的傷害</style>。為攻擊充能將縮小<style=cIsUtility>擴散範圍</style>。彈丸數量隨攻擊速度增加。"
+    },
+    "CAPTAIN_PRIMARY_DESCRIPTION_VANILLA_RISKYMOD": {
+      "en": "Fire a blast of pellets that deal <style=cIsDamage>7x110% damage</style>. Charging narrows the <style=cIsUtility>spread</style>.",
+      "zh-TW": "噴射一大團彈丸，造成<style=cIsDamage>7x110%的傷害</style>。為攻擊充能將縮小<style=cIsUtility>擴散範圍</style>。"
+    },
+    "CAPTAIN_SECONDARY_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsDamage>Shocking</style>. Fire a fast tazer that deals <style=cIsDamage>100% damage</style>. Spreads to up to <style=cIsDamage>6</style> targets.",
+      "zh-TW": "<style=cIsDamage>震盪</style>。發射一枚造成<style=cIsDamage>100%傷害</style>的快速電鏢。最多擴散至<style=cIsDamage>6</style>個目標。"
+    },
+    "CAPTAIN_SPECIAL_DESCRIPTION_RISKYMOD": {
+      "en": "Request a <style=cIsUtility>Supply Beacon</style>. Can request up to 2.",
+      "zh-TW": "呼叫一個<style=cIsUtility>補給信標</style>。最多可呼叫2個。"
+    },
+    "CAPTAIN_SUPPLY_PRICE_REDUCTION_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsUtility>Hack</style> all nearby purchasables to reduce their cost by <style=cIsUtility>50%</style>.",
+      "zh-TW": "<style=cIsUtility>破解</style>附近所有可購買物品，使其價格降低<style=cIsUtility>50%</style>。"
+    },
+    "CAPTAIN_SUPPLY_SKILL_RESTOCK_INTERACTION_RISKYMOD": {
+      "en": "Take Skill Charge",
+      "zh-TW": "拾取技能充能"
+    },
+    "CAPTAIN_SUPPLY_SKILL_RESTOCK_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsUtility>Recharge Skills</style> and reduce <style=cIsUtility>Equipment</style> cooldown by <style=cIsUtility>20s</style> on use.",
+      "zh-TW": "使用時<style=cIsUtility>為技能充能</style>，並使<style=cIsUtility>裝備</style>冷卻時間減少<style=cIsUtility>20秒</style>。"
+    },
+    "CAPTAIN_SUPPLY_HEAL_DESCRIPTION_RISKYMOD_PERMANENT": {
+      "en": "<style=cIsHealth>Permanent</style>. <style=cIsHealing>Heal</style> all nearby allies for <style=cIsHealing>10%</style></style> of their <style=cIsHealing>maximum health</style> every second.",
+      "zh-TW": "<style=cIsHealth>永久</style>。每秒為附近所有友方<style=cIsHealing>恢復</style>等同於各個角色<style=cIsHealing>最大生命值</style><style=cIsHealing>10%</style></style>的生命值。"
+    },
+    "CAPTAIN_SUPPLY_SHOCKING_DESCRIPTION_RISKYMOD_PERMANENT": {
+      "en": "<style=cIsHealth>Permanent</style>. Periodically <style=cIsDamage>Shock</style> all nearby enemies, immobilizing them.",
+      "zh-TW": "<style=cIsHealth>永久</style>。間歇性<style=cIsDamage>震盪</style>所有附近的敵人，使其無法移動。"
+    },
+    "CAPTAIN_SUPPLY_HACKING_DESCRIPTION_RISKYMOD_PERMANENT": {
+      "en": "<style=cIsHealth>Permanent</style>. <style=cIsUtility>Hack</style> all nearby purchasables to a cost of <style=cIsUtility>$0</style> over time.",
+      "zh-TW": "<style=cIsHealth>永久</style>。<style=cIsUtility>破解</style>附近所有可購買物品，這些物品的價格將逐漸下降至<style=cIsUtility>$0</style>。"
+    },
+    "CAPTAIN_SUPPLY_EQUIPMENT_RESTOCK_DESCRIPTION_RISKYMOD_PERMANENT": {
+      "en": "<style=cIsHealth>Permanent</style>. <style=cIsUtility>Recharge Equipment</style> on use.",
+      "zh-TW": "<style=cIsHealth>永久</style>。使用時<style=cIsUtility>為裝備充能</style>。"
+    },
+    "CAPTAIN_SUPPLY_PRICE_REDUCTION_DESCRIPTION_RISKYMOD_PERMANENT": {
+      "en": "<style=cIsHealth>Permanent</style>. <style=cIsUtility>Hack</style> all nearby purchasables to reduce their cost by <style=cIsUtility>50%</style>.",
+      "zh-TW": "<style=cIsHealth>永久</style>。<style=cIsUtility>破解</style>附近所有可購買物品，使其價格降低<style=cIsUtility>50%</style>。"
+    },
+    "CAPTAIN_SUPPLY_SKILL_RESTOCK_DESCRIPTION_RISKYMOD_PERMANENT": {
+      "en": "<style=cIsHealth>Permanent</style>. <style=cIsUtility>Recharge Skills</style> and reduce <style=cIsUtility>Equipment</style> cooldown by <style=cIsUtility>20s</style> on use.",
+      "zh-TW": "<style=cIsHealth>永久</style>。使用時<style=cIsUtility>為技能充能</style>，並使<style=cIsUtility>裝備</style>冷卻時間減少<style=cIsUtility>20秒</style>。"
+    },
+    "BANDIT2_PRIMARY_DESC_RISKYMOD": {
+      "en": "Fire a shotgun burst for <style=cIsDamage>5x90% damage</style>. Can hold up to 4 shells.",
+      "zh-TW": "使用霰彈槍射擊，造成<style=cIsDamage>5x90%的傷害</style>。最多可發射4發子彈。"
+    },
+    "BANDIT2_PRIMARY_ALT_DESC_RISKYMOD": {
+      "en": "Fire a rifle blast that pierces for <style=cIsDamage>360% damage</style>. Can hold up to 4 bullets.",
+      "zh-TW": "使用步槍射擊，子彈可穿透敵人，造成<style=cIsDamage>360%的傷害</style>。最多可發射4發子彈。"
+    },
+    "BANDIT2_PASSIVE_DESCRIPTION_RISKYMOD": {
+      "en": "All attacks from <style=cIsDamage>behind</style> are <style=cIsDamage>Mini Critical Strikes</style>. All <style=cIsDamage>Critical Strike Chance</style> is converted into <style=cIsDamage>Critical Strike Damage</style>.",
+      "zh-TW": "所有從<style=cIsDamage>背後</style>發起的攻擊都會造成<style=cIsDamage>小暴擊</style>。所有<style=cIsDamage>暴擊機率</style>轉化為<style=cIsDamage>暴擊傷害</style>。"
+    },
+    "BANDIT2_REVOLVER_NAME_RISKYMOD": {
+      "en": "Gunslinger",
+      "zh-TW": "槍手"
+    },
+    "BANDIT2_REVOLVER_DESCRIPTION_RISKYMOD": {
+      "en": "Revolver kills <style=cIsUtility>reset all your cooldowns</style>.",
+      "zh-TW": "使用左輪手槍擊敗敵人可以<style=cIsUtility>重置所有能力的冷卻時間</style>。"
+    },
+    "BANDIT2_REVOLVER_ALT_DESCRIPTION_RISKYMOD": {
+      "en": "Revolver kills grant <style=cIsDamage>stacking tokens</style> for <style=cIsDamage>10%</style> more revolver damage.",
+      "zh-TW": "使用左輪手槍擊敗敵人可以<style=cIsDamage>疊加效果</style>，使左輪手槍的傷害提高<style=cIsDamage>10%</style>。"
+    },
+    "BANDIT2_REVOLVER_ALT_PERSIST_DESCRIPTION_RISKYMOD": {
+      "en": "Revolver kills grant <style=cIsDamage>stacking tokens</style> for more revolver damage.",
+      "zh-TW": "使用左輪手槍擊敗敵人可以<style=cIsDamage>疊加效果</style>，提高左輪手槍的傷害。"
+    },
+    "BANDIT2_SPECIAL_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsDamage>Slayer</style>. Fire a revolver shot for <style=cIsDamage>600% damage</style>.",
+      "zh-TW": "<style=cIsDamage>屠戮者</style>。使用左輪手槍進行射擊，造成<style=cIsDamage>600%的傷害</style>。"
+    },
+    "BANDIT2_SPECIAL_ALT_NAME_RISKYMOD": {
+      "en": "Rack Em Up",
+      "zh-TW": "排隊槍斃"
+    },
+    "BANDIT2_SPECIAL_ALT_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsDamage>Slayer</style>. Rapidly fire revolver shots for <style=cIsDamage>6x100% damage</style>. Each consecutive hit deals <style=cIsDamage>20%</style> extra damage.",
+      "zh-TW": "<style=cIsDamage>屠戮者</style>。使用左輪手槍快速射擊，造成<style=cIsDamage>6x100%的傷害</style>。每次連續命中都會額外造成<style=cIsDamage>20%</style>的傷害。"
+    },
+    "BANDIT2_SECONDARY_ALT_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsDamage>Stunning</style>. Throw a hidden blade for <style=cIsDamage>2x240% damage</style>. Critical Strikes also cause <style=cIsHealth>hemorrhaging</style>.",
+      "zh-TW": "<style=cIsDamage>眩暈</style>。擲出一把暗藏的小刀，造成<style=cIsDamage>2x240%的傷害</style>。暴擊還可以造成<style=cIsHealth>出血</style>。"
+    },
+    "BANDIT2_REVOLVER_STANDOFF_NAME_RISKYMOD": {
+      "en": "Standoff",
+      "zh-TW": "對峙"
+    },
+    "BANDIT2_REVOLVER_STANDOFF_DESCRIPTION_RISKYMOD": {
+      "en": "Revolver kills <style=cIsDamage>increase damage by 20%</style> for 15 seconds. Stacks up to <style=cIsDamage>5</style> times.",
+      "zh-TW": "使用左輪手槍擊敗敵人可使<style=cIsDamage>傷害提高20%</style>，持續15秒。最多疊加<style=cIsDamage>5</style>次。"
+    },
+    "BANDIT2_REVOLVER_LOADOUT_TITLE_RISKYMOD": {
+      "en": "Revolver",
+      "zh-TW": "左輪手槍"
+    },
+    "BANDIT2_SPECIAL_SCEPTER_NAME_RISKYMOD": {
+      "en": "Assassinate",
+      "zh-TW": "刺殺"
+    },
+    "BANDIT2_SPECIAL_SCEPTER_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsDamage>Slayer</style>. Fire two revolver shots for <style=cIsDamage>2x900% damage</style>.",
+      "zh-TW": "<style=cIsDamage>屠戮者</style>。使用左輪手槍射出兩發子彈，造成<style=cIsDamage>2x900%的傷害</style>。"
+    },
+    "BANDIT2_SPECIAL_ALT_SCEPTER_NAME_RISKYMOD": {
+      "en": "Fistful of Lead",
+      "zh-TW": "荒野大槍手"
+    },
+    "BANDIT2_SPECIAL_ALT_SCEPTER_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsDamage>Slayer</style>. Rapidly fire revolver shots for <style=cIsDamage>12x100% damage</style>. Each consecutive hit deals <style=cIsDamage>20%</style> extra damage.",
+      "zh-TW": "<style=cIsDamage>屠戮者</style>。使用左輪手槍快速射擊，造成<style=cIsDamage>12x100%的傷害</style>。每次連續命中都會額外造成<style=cIsDamage>20%</style>的傷害。"
+    },
+    "COMMANDO_SECONDARY_DESCRIPTION_RISKYMOD": {
+      "en": "Fire a <style=cIsDamage>piercing</style> bullet for <style=cIsDamage>450% damage</style>. Deals <style=cIsDamage>40%</style> more damage every time it passes through an enemy.",
+      "zh-TW": "發射一枚<style=cIsDamage>穿甲</style>彈，造成<style=cIsDamage>450%的傷害</style>。每次穿透敵人，造成的傷害提高<style=cIsDamage>40%</style>。"
+    },
+    "COMMANDO_SECONDARY_LIGHTNING_NAME_RISKYMOD": {
+      "en": "Phase Lightning",
+      "zh-TW": "相位閃電"
+    },
+    "COMMANDO_SECONDARY_LIGHTNING_DESCRIPTION_RISKYMOD": {
+      "en": "Fire a piercing round for <style=cIsDamage>450% damage</style>. Zaps nearby enemies for an additional <style=cIsDamage>150% damage</style>.",
+      "zh-TW": "發射一枚穿甲彈，造成<style=cIsDamage>450%的傷害</style>，並電擊附近的敵人，額外造成<style=cIsDamage>150%的傷害</style>。"
+    },
+    "COMMANDO_UTILITY_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsUtility>Roll</style> a short distance and reduce skill cooldowns by <style=cIsUtility>1s</style>.",
+      "zh-TW": "<style=cIsUtility>翻滾</style>一小段距離，並使技能冷卻時間減少<style=cIsUtility>1秒</style>。"
+    },
+    "COMMANDO_SPECIAL_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsDamage>Stunning</style>. Fire repeatedly for <style=cIsDamage>7x120% damage</style>. The number of shots increases with attack speed.",
+      "zh-TW": "<style=cIsDamage>眩暈</style>。連續射擊，造成<style=cIsDamage>7x120%的傷害</style>。射擊次數隨攻擊速度增加。"
+    },
+    "COMMANDO_SPECIAL_EXPL_NAME_RISKYMOD": {
+      "en": "Shrapnel Barrage",
+      "zh-TW": "破片彈幕"
+    },
+    "COMMANDO_SPECIAL_EXPL_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsDamage>Stunning</style>. Fire fragmentation rounds for <style=cIsDamage>6x120% damage</style>. The number of shots increases with attack speed.",
+      "zh-TW": "<style=cIsDamage>眩暈</style>。發射破片彈，造成<style=cIsDamage>6x120%的傷害</style>。射擊次數隨攻擊速度增加。"
+    },
+    "COMMANDO_SPECIAL_EXPL_SCEPTER_NAME_RISKYMOD": {
+      "en": "Shrapnel Volley",
+      "zh-TW": "破片齊射"
+    },
+    "COMMANDO_SPECIAL_EXPL_SCEPTER_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsDamage>Stunning</style>. Fire fragmentation rounds for <style=cIsDamage>12x150% damage</style>. The number of shots increases with attack speed.",
+      "zh-TW": "<style=cIsDamage>眩暈</style>。發射破片彈，造成<style=cIsDamage>12x150%的傷害</style>。射擊次數隨攻擊速度增加。"
+    },
+    "COMMANDO_SPECIAL_ALT1_SCEPTER_NAME_RISKYMOD": {
+      "en": "Carpet Bomb",
+      "zh-TW": "地毯式轟炸"
+    },
+    "COMMANDO_SPECIAL_ALT1_SCEPTER_DESCRIPTION_RISKYMOD": {
+      "en": "Throw multiple grenades that explode for <style=cIsDamage>5x700% damage</style>. Can hold up to 2.",
+      "zh-TW": "扔出多枚手雷，爆炸可造成<style=cIsDamage>5x700%的傷害</style>。最多可投擲2次。"
+    },
+    "HUNTRESS_PRIMARY_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsUtility>Agile</style>. Quickly fire a seeking arrow for <style=cIsDamage>200% damage</style>.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。快速射出一支跟蹤箭，造成<style=cIsDamage>200%的傷害</style>。"
+    },
+    "HUNTRESS_PRIMARY_ALT_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsUtility>Agile</style>. Draw back a volley of <style=cIsDamage>3</style> seeking arrows for <style=cIsDamage>3x120% damage</style>. Critical Strikes fire <style=cIsDamage>6</style> arrows.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。拉弓射出<style=cIsDamage>3枚</style>跟蹤箭並造成<style=cIsDamage>3x120%的傷害</style>。如果暴擊則發射<style=cIsDamage>6枚</style>跟蹤箭。"
+    },
+    "HUNTRESS_SPECIAL_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsUtility>Teleport</style> into the sky. Target an area to rain arrows, <style=cIsUtility>slowing</style> all enemies and dealing <style=cIsDamage>420% damage per second</style>.",
+      "zh-TW": "<style=cIsUtility>傳送</style>至空中，向目標區域射下箭雨，使區域內所有敵人<style=cIsUtility>減速</style>，並造成<style=cIsDamage>每秒420%的傷害</style>。"
+    },
+    "HUNTRESS_SPECIAL_SCEPTER_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsUtility>Teleport</style> into the sky. Target an area to rain arrows, <style=cIsDamage>igniting</style> all enemies and dealing <style=cIsDamage>420% damage per second</style>.",
+      "zh-TW": "<style=cIsUtility>傳送</style>至空中，向目標區域射下箭雨，<style=cIsDamage>點燃</style>區域內所有敵人，並造成<style=cIsDamage>每秒420%的傷害</style>。"
+    },
+    "TOOLBOT_PRIMARY_ALT1_DESCRIPTION_RISKYMOD": {
+      "en": "Fire a piercing rebar that deals <style=cIsDamage>660% damage</style>.",
+      "zh-TW": "發射一條具有穿透效果的鋼筋，造成<style=cIsDamage>660%的傷害</style>。"
+    },
+    "TOOLBOT_PRIMARY_ALT3_DESCRIPTION_RISKYMOD": {
+      "en": "Saw nearby enemies for <style=cIsDamage>1000% damage per second</style>. Hitting enemies grants a <style=cIsHealing>temporary barrier</style>.",
+      "zh-TW": "鋸傷周圍敵人，造成<style=cIsDamage>每秒1000%的傷害</style>。擊中敵人可獲得<style=cIsHealing>臨時屏障</style>。"
+    },
+    "TOOLBOT_SPECIAL_ALT_DESCRIPTION_RISKYMOD": {
+      "en": "Enter a heavy stance, equipping both your <style=cIsDamage>primary attacks</style> at once. Gain <style=cIsUtility>60 armor</style>, but lose <style=cIsHealth>-60% movement speed</style>.",
+      "zh-TW": "進入重裝姿態，同時裝備兩種<style=cIsDamage>主要攻擊技能</style>。增加<style=cIsUtility>60點護甲</style>，但失去<style=cIsHealth>60%的移動速度</style>。"
+    },
+    "MERC_UTILITY_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsDamage>Stunning</style>. Dash forward, dealing <style=cIsDamage>450% damage</style>. If you hit an enemy, <style=cIsDamage>you can dash again</style>, up to <style=cIsDamage>3</style> total.",
+      "zh-TW": "<style=cIsDamage>眩暈</style>。向前衝鋒並造成<style=cIsDamage>450%的傷害</style>。只要命中敵人，<style=cIsDamage>就可以再次發起衝鋒</style>，最多<style=cIsDamage>3</style>次。"
+    },
+    "TREEBOT_UTILITY_DESCRIPTION_RISKYMOD": {
+      "en": "Fire a <style=cIsUtility>Sonic Boom</style> that <style=cIsDamage>Weakens</style> enemies. <style=cIsHealing>Heals for every target hit</style>.",
+      "zh-TW": "發射一次<style=cIsUtility>音爆</style>，<style=cIsDamage>弱化</style>命中的敵人。<style=cIsHealing>每命中一個目標便會對你進行一次治療</style>。"
+    },
+    "TREEBOT_SPECIAL_ALT1_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsDamage>Inject</style> an enemy for <style=cIsDamage>330% damage</style>. Allies <style=cIsHealing>heal</style> for <style=cIsHealing>10%</style> of the damage dealt to <style=cIsDamage>Injected</style> enemies. <style=cIsDamage>Injected</style> enemies are <style=cIsHealth>instantly killed</style> below <style=cIsHealth>20% health</style> and drop <style=cIsHealing>healing fruits</style>.",
+      "zh-TW": "<style=cIsDamage>注入</style>一名敵人，造成<style=cIsDamage>330%的傷害</style>。友方可<style=cIsHealing>恢復</style>相當於對被<style=cIsDamage>注入</style>敵人所造成傷害<style=cIsHealing>10%</style>的生命值。被<style=cIsDamage>注入</style>的敵人在<style=cIsHealth>生命值低於20%</style>時將被<style=cIsHealth>一擊斃命</style>，並掉落<style=cIsHealing>治療果實</style>。"
+    },
+    "CROCO_PASSIVE_CONTAGION_NAME_RISKYMOD": {
+      "en": "Contagion",
+      "zh-TW": "接觸傳染"
+    },
+    "CROCO_PASSIVE_CONTAGION_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsHealth>Reduce base damage by 20%</style>.\nEach skill applies a different <style=cIsDamage>damage over time</style> effect.\n<style=cIsHealing>Poison</style> and <color=#B1387F>Blight</color> spread to <style=cIsDamage>1</style> nearby enemy on kill.",
+      "zh-TW": "<style=cIsHealth>基礎傷害降低20%</style>。\n每個技能都會施加不同的<style=cIsDamage>持續傷害</style>效果。\n擊敗敵人時，<style=cIsHealing>毒化</style>和<color=#B1387F>枯萎</color>會擴散到附近的<style=cIsDamage>1</style>名敵人身上。"
+    },
+    "CROCO_PASSIVE_CONTAGION_DESCRIPTION_RISKYMOD_NOSPREAD": {
+      "en": "<style=cIsHealth>Reduce base damage by 20%</style>.\nEach skill applies a different <style=cIsDamage>damage over time</style> effect.",
+      "zh-TW": "<style=cIsHealth>基礎傷害降低20%</style>。\n每個技能都會施加不同的<style=cIsDamage>持續傷害</style>效果。"
+    },
+    "CROCO_UTILITY_ALT1_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsDamage>Stunning</style>. Leap in the air, dealing <style=cIsDamage>550% damage</style>. <style=cIsUtility>Reduce</style> the cooldown by <style=cIsUtility>1s</style> for every enemy hit.",
+      "zh-TW": "<style=cIsDamage>眩暈</style>。躍至半空，造成<style=cIsDamage>550%的傷害</style>。每命中一名敵人，可<style=cIsUtility>縮減</style><style=cIsUtility>1秒</style>的冷卻時間。"
+    },
+    "CROCO_PASSIVE_ALT_DESCRIPTION_RISKYMOD": {
+      "en": "Attacks that apply <style=cIsHealing>Poison</style> apply <color=#B1387F>Blight</color> instead, dealing <style=cIsDamage>60% damage per second</style> and increasing damage taken by <style=cIsDamage>5%</style> per stack.",
+      "zh-TW": "施加<style=cIsHealing>毒化</style>的攻擊改為施加<color=#B1387F>枯萎</color>，造成<style=cIsDamage>每秒60%的傷害</style>，且每層使敵人承受的傷害增加<style=cIsDamage>5%</style>。"
+    },
+    "MAGE_PRIMARY_FIRE_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsDamage>Ignite</style>. Fire a bolt for <style=cIsDamage>4x70% damage</style>. Hold up to 4.</style>",
+      "zh-TW": "<style=cIsDamage>點燃</style>。發射一道能量矢，造成<style=cIsDamage>4x70%的傷害</style>。最多可發射4次。</style>"
+    },
+    "MAGE_PRIMARY_LIGHTNING_DESCRIPTION_RISKYMOD": {
+      "en": "Fire a bolt that <style=cIsUtility>slows</style> and zaps enemies for <style=cIsDamage>4x85% damage</style>. Hold up to 4.</style>",
+      "zh-TW": "發射一道能量矢，<style=cIsUtility>減速</style>並電擊敵人，造成<style=cIsDamage>4x85%的傷害</style>。最多可發射4次。</style>"
+    },
+    "MAGE_SECONDARY_ICE_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsUtility>Freezing</style>. Charge up a <style=cIsDamage>piercing</style> nano-spear that deals <style=cIsDamage>400%-1600%</style> damage.",
+      "zh-TW": "<style=cIsUtility>冰凍</style>。使用擁有<style=cIsDamage>穿透</style>效果的奈米槍發動攻擊，充能後能造成<style=cIsDamage>400%-1600%</style>的傷害。"
+    },
+    "MAGE_SPECIAL_LIGHTNING_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsDamage>Shocking</style>. Burst into the sky, dealing <style=cIsDamage>800% damage</style>.",
+      "zh-TW": "<style=cIsDamage>震盪</style>。一飛沖天，造成<style=cIsDamage>800%的傷害</style>。"
+    },
+    "MAGE_UTILITY_ICE_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsUtility>Freezing</style>. Create a barrier that hurts enemies for <style=cIsDamage>100% damage</style>. <style=cIsUtility>Pushes you backwards</style> if you are airborne.",
+      "zh-TW": "<style=cIsUtility>冰凍</style>。創造一道能夠對敵人造成<style=cIsDamage>100%傷害</style>的屏障。如果你身處半空，則會被<style=cIsUtility>向後推去</style>。"
+    },
+    "MAGE_UTILITY_ICE_DESCRIPTION_NOPUSH_RISKYMOD": {
+      "en": "<style=cIsUtility>Freezing</style>. Create a barrier that hurts enemies for <style=cIsDamage>100% damage</style>.",
+      "zh-TW": "<style=cIsUtility>冰凍</style>。創造一道能夠對敵人造成<style=cIsDamage>100%傷害</style>的屏障。"
+    },
+    "MAGE_UTILITY_FIRE_NAME_RISKYMOD": {
+      "en": "Blaze Storm",
+      "zh-TW": "烈焰風暴"
+    },
+    "MAGE_UTILITY_FIRE_DESCRIPTION_RISKYMOD": {
+      "en": "<style=cIsDamage>Ignite</style>. Create a fire tornado that deals <style=cIsDamage>360% damage per second</style>. <style=cIsUtility>Pushes you backwards</style> if you are airborne.",
+      "zh-TW": "<style=cIsDamage>點燃</style>。製造一道火焰龍捲風，造成<style=cIsDamage>每秒360%的傷害</style>。如果你身處半空，則會被<style=cIsUtility>向後推去</style>。"
+    },
+    "MAGE_UTILITY_FIRE_DESCRIPTION_NOPUSH_RISKYMOD": {
+      "en": "<style=cIsDamage>Ignite</style>. Create a fire tornado that deals <style=cIsDamage>360% damage per second</style>.",
+      "zh-TW": "<style=cIsDamage>點燃</style>。製造一道火焰龍捲風，造成<style=cIsDamage>每秒360%的傷害</style>。"
+    },
+    "MAGE_SPECIAL_SITHLIGHTNING_NAME_RISKYMOD": {
+      "en": "Electrocute",
+      "zh-TW": "電殛"
+    },
+    "MAGE_SPECIAL_SITHLIGHTNING_DESCRIPTION_RISKYMOD": {
+      "en": "Electrocute all enemies in front of you for <style=cIsDamage>1000% damage</style>.",
+      "zh-TW": "電擊面前的所有敵人，對其造成<style=cIsDamage>1000%的傷害</style>。"
+    },
+    "MAGE_SPECIAL_SITHLIGHTNING_SCEPTER_NAME_RISKYMOD": {
+      "en": "Unlimited Power",
+      "zh-TW": "無限力量"
+    },
+    "MAGE_SPECIAL_SITHLIGHTNING_SCEPTER_DESCRIPTION_RISKYMOD": {
+      "en": "Electrocute all enemies in front of you for <style=cIsDamage>2000% damage</style>.",
+      "zh-TW": "電擊面前的所有敵人，對其造成<style=cIsDamage>2000%的傷害</style>。"
+    },
+    "LOADER_SPECIAL_DESCRIPTION_RISKYMOD": {
+      "en": "Throw a <style=cIsUtility>Magnetic</style> pylon that <style=cIsDamage>zaps</style> up to <style=cIsDamage>6</style> nearby enemies for <style=cIsDamage>100% damage</style>. Can be <style=cIsUtility>grappled</style>.",
+      "zh-TW": "扔出一座<style=cIsUtility>磁力</style>電塔，可<style=cIsDamage>電擊</style>最多<style=cIsDamage>6</style>名周圍的敵人，造成<style=cIsDamage>100%的傷害</style>。可被<style=cIsUtility>爪鉤勾住</style>。"
+    },
+    "ENGI_SECONDARY_DESCRIPTION_RISKYMOD": {
+      "en": "Place a mine that deals <style=cIsDamage>900% damage</style> when fully armed. Can place up to 4.",
+      "zh-TW": "放置一枚地雷，完全引爆時造成<style=cIsDamage>900%的傷害</style>。最多放置4枚。"
+    },
+    "FALSESON_PASSIVE_DESCRIPTION_RISKYMOD": {
+      "en": "Unused Lunar Spikes give <style=cIsUtility>+5% attack speed</style> and <style=cIsUtility>+5 armor</style>. Used spikes give <style=cIsUtility>+5% movement speed</style> and <style=cIshealing>+0.8 health regeneration</style>.",
+      "zh-TW": "未使用的月之刺將提供<style=cIsUtility>+5%攻擊速度</style>以及<style=cIsUtility>+5護甲</style>。使用過的尖刺將提供<style=cIsUtility>+5%移動速度</style>以及<style=cIshealing>+0.8生命值再生</style>。"
+    }
+  }
+}

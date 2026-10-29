@@ -115,7 +115,7 @@ uv run ror2_s2t.py --zip RoR2_zh-TW_1.5.1.zip
 uv run ror2_s2t.py --profile Purist_v4
 ```
 
-目前有這三十一個模組：
+目前有這三十二個模組：
 
 | 模組 | 版本 | 翻譯內容 | 條數 |
 |---|---|---|---|
@@ -150,10 +150,11 @@ uv run ror2_s2t.py --profile Purist_v4
 | Ivory Bastion | 1.2.3 | 角色名稱與介紹、技能名稱、無人機名稱、buff；技能與關鍵字說明、工程面板、HUD、升級樹、畫面提示（外掛） | 22＋212 |
 | PlayerRespawnSystem | 2.2.0 | 兩條禁止重生的聊天訊息；死亡後的重生倒數（外掛） | 2＋10 |
 | Survariants | 1.0.9 | 選角畫面 Variants 分頁的標籤；變體清單的 Default 項目（外掛） | 1＋2 |
+| RiskyMod | 2.12.3 | 平衡性改動後的物品與裝備說明、倖存者技能說明、關鍵字 | 181 |
 
 條數裡「＋」後面的是由外掛替換的寫死文字，見[寫死在程式裡的文字](#寫死在程式裡的文字)。
 
-Heretic、Dante、Miner Unearthed、Pilot、Rocket 與 Paladin 自帶簡體翻譯（Dante、Miner Unearthed 與 Paladin 只有一部分），那些條目是把簡體轉成繁體後對照英文修訂的，其餘由英文翻譯。
+Heretic、Dante、Miner Unearthed、Pilot、Rocket、Paladin 與 RiskyMod 自帶簡體翻譯（Dante、Miner Unearthed、Paladin 與 RiskyMod 只有一部分），那些條目是把簡體轉成繁體後對照英文修訂的，其餘由英文翻譯。
 
 Seamstress、Paladin、Cadet、Scout、Spy、Xenologist 的技能數字（傷害、冷卻秒數）和 HUNK 的五條說明會跟著模組設定變動，英文是模組執行時算出來的；譯文是固定的，收錄的是預設設定的版本，改過那些設定的話要自己修改對應的譯文。各檔案開頭的 `notes` 有說明。
 
