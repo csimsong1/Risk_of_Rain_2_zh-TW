@@ -1,0 +1,222 @@
+{
+  "mod": "Bog-Pathfinder",
+  "version": "0.5.4",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式（Tokens.AddTokens）取得的，技能傷害與數值是模組設定的預設值；改過設定的話，譯文的數字要自己修改。"
+  ],
+  "strings": {
+    "BOG_SQUALL_BODY_NAME": {
+      "en": "Squall",
+      "zh-TW": "疾風"
+    },
+    "BOG_SQUALL_BODY_PICKUP": {
+      "en": "The Pathfinder's loyal robotic falcon.",
+      "zh-TW": "探路者忠誠的機械獵鷹。"
+    },
+    "BOG_SQUALL_BODY_DESCRIPTION": {
+      "en": "A robotic falcon that accompanies the Pathfinder. Squall inherits most of the Pathfinder's items, and <style=cIsUtility>cannot be destroyed</style>.",
+      "zh-TW": "陪伴探路者的機械獵鷹。疾風會繼承探路者大部分的物品，而且<style=cIsUtility>不會被摧毀</style>。"
+    },
+    "BOG_SQUALL_BODY_SKILL_DESCRIPTION": {
+      "en": "Fires mounted guns and missiles at enemies while in <color=#FF0000>Attack Mode</color>, and repeatedly strikes targets when ordered to <style=cIsDamage>Go for the Throat</style>.",
+      "zh-TW": "處於<color=#FF0000>攻擊模式</color>時，會用搭載的機槍與導彈攻擊敵人；收到<style=cIsDamage>直取咽喉</style>的命令時，會反覆攻擊目標。"
+    },
+    "BOG_PATHFINDER_BODY_NAME": {
+      "en": "Pathfinder",
+      "zh-TW": "探路者"
+    },
+    "BOG_PATHFINDER_BODY_DESCRIPTION": {
+      "en": "The Pathfinder is a crafty, evasive skirmisher who fights alongside his trusty falcon, Squall.<color=#CCD3E0>\r\n\r\n< ! > You are quite fragile compared to other melee survivors; use your quick feet, long reach, and Squall's distractions to stay alive.\r\n\r\n< ! > Alternate between Fleetfoot and your javelin toss to throw as many javelins as possible, but make sure to reserve a skill charge to dodge when necessary.\r\n\r\n< ! > Shock Bolas are a great way to lock down large groups of enemies at once, while Rending Talons can deal brutal damage when combined with items that increase your air time.\r\n\r\n< ! > Squall is a highly capable fighter; command him liberally and prioritize attack speed and critical chance items to help speed up the battery meter.\r\n\r\n\r\n<style=cShrine>Modder's Note:</style> <style=cUserSetting>Thank you so much for showing interest in <color=#3ea252>The Pathfinder</color>! For feedback and bug reports, please contact <style=cIsUtility>bog_rtm</style> on Discord, or post an issue on the github repo.",
+      "zh-TW": "探路者是一名狡黠、善於閃避的遊擊戰士，與他可靠的獵鷹疾風並肩作戰。<color=#CCD3E0>\r\n\r\n< ! >與其他近戰倖存者相比，你相當脆弱；善用你敏捷的步伐、長距離的攻擊範圍，以及疾風的牽制來保住性命。\r\n\r\n< ! >交替使用迅足與擲出標槍，盡可能多擲出標槍，但務必保留一次技能充能，以便在必要時閃避。\r\n\r\n< ! >電擊流星索非常適合一次控制住大群敵人，而撕裂鷹爪搭配能延長滯空時間的物品，可以造成驚人的傷害。\r\n\r\n< ! >疾風是非常能幹的戰士；儘管多對他下達指令，並優先選擇攻擊速度與暴擊機率類的物品，以加快電池量表的回復。\r\n\r\n\r\n<style=cShrine>模組作者的話：</style><style=cUserSetting>非常感謝你對<color=#3ea252>探路者</color>感興趣！如有意見回饋或錯誤回報，請在Discord上聯絡<style=cIsUtility>bog_rtm</style>，或到GitHub儲存庫提交問題回報。"
+    },
+    "BOG_PATHFINDER_BODY_SUBTITLE": {
+      "en": "Birds of Prey",
+      "zh-TW": "猛禽"
+    },
+    "BOG_PATHFINDER_BODY_LORE": {
+      "en": "\"You bloody idiot, that's not a Red Snubtail, that's a Rosy Quillback rat! You caught the wrong rodent.\"\n\n\"So what? It's got red fur and a stubby tail, I say we just take it and finish the job.\"\n\n\"We've been over this; snubtails mimic quillbacks to deter predators, so you have to check their fur for tiny spines. Also, quillbacks are strict insectivores; that's why I told you not to use the live insect bait, so you wouldn't accidentally attract one. Did you even read the bestiary entries that I showed you?\"\n\n\"So it's got some puny needles on its arse, big deal. We've been chasing after a damn rat for three days now. Besides, our client's just some rich snob looking for a fancy exotic pet to show off in front of their other rich snob friends; they'll never tell the difference. This one's just a tiny bit prickly, they won't mind.\"\n\n\"Did you forget that quillbacks are <i>poisonous</i>, genius? They'll damn well be able to tell the bloody difference when they pet the bugger, then wake up the next morning, paralyzed head to toe. Do you want to earn us a manslaughter charge, you mongrel?\"\n\n\"They're poisonous?\"\n\n\"................... Where are your gloves?\"\n\n\"...\"\n\n\"I'm finding a new partner.\"\n\n",
+      "zh-TW": "「你這該死的白痴，那不是紅鈍尾鼠，那是玫瑰刺背鼠！你抓錯老鼠了。」\n\n「那又怎樣？牠一樣是紅毛、短尾巴，要我說，直接把牠帶走，把工作做完就好。」\n\n「這我們講過了：鈍尾鼠會模仿刺背鼠來嚇阻掠食者，所以你得檢查牠們的毛裡有沒有細小的刺。還有，刺背鼠是嚴格的食蟲動物，所以我才叫你別用活蟲當誘餌，免得不小心引來一隻。我給你看的那些生物圖鑑條目，你到底有沒有讀？」\n\n「所以牠屁股上長了幾根小針，有什麼大不了的。我們追一隻該死的老鼠已經追了三天了。再說，我們的客戶不過是個有錢的勢利鬼，想找隻花俏的異國寵物，在其他有錢的勢利鬼朋友面前炫耀；他們根本分不出差別。這隻只是稍微扎手一點，他們不會在意的。」\n\n「你忘了刺背鼠是<i>有毒的</i>嗎，天才？等他們摸了那隻小混蛋，隔天早上醒來從頭到腳都癱瘓了，他們他媽的絕對分得出差別。你是想害我們背上過失殺人罪嗎，你這雜種？」\n\n「牠們有毒？」\n\n「…………………………你的手套呢？」\n\n「……」\n\n「我要去找新搭檔了。」\n\n"
+    },
+    "BOG_PATHFINDER_BODY_OUTRO_FLAVOR": {
+      "en": "..and so they left, as the new kings of the food chain.",
+      "zh-TW": "……於是他們走了，成為食物鏈的新王者。"
+    },
+    "BOG_PATHFINDER_BODY_OUTRO_FAILURE": {
+      "en": "..and so they vanished, forever lost to the uncaring wilderness.",
+      "zh-TW": "……於是他們就這樣消逝了，永遠迷失在冷漠無情的荒野之中。"
+    },
+    "BOG_PATHFINDER_BODY_DEFAULT_SKIN_NAME": {
+      "en": "Default",
+      "zh-TW": "預設"
+    },
+    "BOG_PATHFINDER_BODY_MASTERY_SKIN_NAME": {
+      "en": "Headhunter",
+      "zh-TW": "獵頭者"
+    },
+    "BOG_PATHFINDER_BODY_PASSIVE_NAME": {
+      "en": "Falconer",
+      "zh-TW": "鷹匠"
+    },
+    "BOG_PATHFINDER_BODY_PASSIVE_DESCRIPTION": {
+      "en": "You are accompanied by your robot falcon, Squall. Squall inherits <style=cIsDamage>most</style> of your items and is immune to damage, but runs on a <style=cIsUtility>battery</style>.",
+      "zh-TW": "你的機械獵鷹疾風會與你同行。疾風會繼承你<style=cIsDamage>大部分</style>的物品，且不會受到傷害，但要靠<style=cIsUtility>電池</style>運作。"
+    },
+    "KEYWORD_BATTERY": {
+      "en": "<style=cKeywordName>Battery</style><style=cSub>Squall has two modes: <color=#FF0000>Attack</color>, and <color=#00FF00>Follow</color>. In <color=#FF0000>Attack Mode</color>, Squall rapidly <style=cIsDamage>drains</style> battery. In <color=#00FF00>Follow Mode</color>, Squall <style=cIsHealing>regenerates</style> battery at a rate proportional with <style=cIsUtility>his attack speed.</style>",
+      "zh-TW": "<style=cKeywordName>電池</style><style=cSub>疾風有兩種模式：<color=#FF0000>攻擊</color>與<color=#00FF00>跟隨</color>。在<color=#FF0000>攻擊模式</color>下，疾風會快速<style=cIsDamage>消耗</style>電池電量。在<color=#00FF00>跟隨模式</color>下，疾風會<style=cIsHealing>回復</style>電池電量，速度與<style=cIsUtility>他的攻擊速度成正比。</style>"
+    },
+    "KEYWORD_PIERCE": {
+      "en": "<style=cKeywordName>Piercing</style><style=cSub>Striking with the <style=cIsUtility>tip</style> deals <style=cIsDamage>325% damage</style> and <style=cIsDamage>bypasses armor</style> instead.</style>",
+      "zh-TW": "<style=cKeywordName>穿刺</style><style=cSub>以<style=cIsUtility>矛尖</style>命中時，改為造成<style=cIsDamage>325%傷害</style>並<style=cIsDamage>無視護甲</style>。</style>"
+    },
+    "KEYWORD_ELECTROCUTE": {
+      "en": "<style=cKeywordName>Electrocute</style><style=cSub>Targets have their movespeed reduced by 50%, and take <style=cIsDamage>120% damage</style> per second.</style>",
+      "zh-TW": "<style=cKeywordName>電擊</style><style=cSub>目標的移動速度降低50%，且每秒受到<style=cIsDamage>120%傷害</style>。</style>"
+    },
+    "KEYWORD_ATTACK": {
+      "en": "<style=cKeywordName><color=#FF0000>Attack</color></style><style=cSub>Direct Squall's attention to the targeted enemy, and activate <color=#FF0000>Attack Mode</color>, granting access to machine guns that deal <style=cIsDamage>2x30% damage</style>, and a missile launcher that deals <style=cIsDamage>150% damage</style>.</style>",
+      "zh-TW": "<style=cKeywordName><color=#FF0000>攻擊</color></style><style=cSub>讓疾風鎖定瞄準的敵人，並啟動<color=#FF0000>攻擊模式</color>，使其能使用造成<style=cIsDamage>2x30%傷害</style>的機槍，以及造成<style=cIsDamage>150%傷害</style>的導彈發射器。</style>"
+    },
+    "KEYWORD_FOLLOW": {
+      "en": "<style=cKeywordName><color=#00FF00>Follow</color></style><style=cSub>Return Squall to yourself, and activate <color=#00FF00>Follow Mode</color>, causing him to stay close to you.</style>",
+      "zh-TW": "<style=cKeywordName><color=#00FF00>跟隨</color></style><style=cSub>召回疾風，並啟動<color=#00FF00>跟隨模式</color>，讓他待在你身邊。</style>"
+    },
+    "KEYWORD_SQUALL_SPECIAL": {
+      "en": "<style=cKeywordName><color=#efeb1c>Special - Go for the Throat!</color></style><style=cSub>Order Squall to repeatedly strike the targeted enemy for <style=cIsDamage>70% damage</style>. Each strike briefly shreds <style=cIsDamage>armor</style>, and <style=cIsUtility>regenerates 1%</style> battery, doubled on Critical Strikes. This skill can briefly <style=cIsUtility>overcharge</style> the battery.</style>",
+      "zh-TW": "<style=cKeywordName><color=#efeb1c>特殊：直取咽喉！</color></style><style=cSub>命令疾風反覆攻擊瞄準的敵人，造成<style=cIsDamage>70%傷害</style>。每次攻擊都會短暫削減<style=cIsDamage>護甲</style>，並<style=cIsUtility>回復1%</style>電池電量，暴擊時加倍。此技能可讓電池短暫<style=cIsUtility>超量充電</style>。</style>"
+    },
+    "KEYWORD_UNPOLISHED": {
+      "en": "<style=cKeywordName>Unpolished</style> <style=cSub>This skill is missing VFX and SFX, and is also probably buggier than the others.",
+      "zh-TW": "<style=cKeywordName>未完善</style> <style=cSub>這個技能缺少視覺特效與音效，而且大概也比其他技能更容易出錯。"
+    },
+    "BOG_PATHFINDER_BODY_PRIMARY_THRUST_NAME": {
+      "en": "Thrust",
+      "zh-TW": "突刺"
+    },
+    "BOG_PATHFINDER_BODY_PRIMARY_THRUST_DESCRIPTION": {
+      "en": "<style=cIsUtility>Piercing</style>. Thrust your spear forward for <style=cIsDamage>250% damage</style>.",
+      "zh-TW": "<style=cIsUtility>穿刺</style>。將長矛向前刺出，造成<style=cIsDamage>250%傷害</style>。"
+    },
+    "BOG_PATHFINDER_BODY_SECONDARY_DASH_NAME": {
+      "en": "Fleetfoot",
+      "zh-TW": "迅足"
+    },
+    "BOG_PATHFINDER_BODY_SECONDARY_DASH_DESCRIPTION": {
+      "en": "<style=cIsUtility>Dash</style> a short distance. The next time you use your primary skill, throw an <style=cIsDamage>explosive</style> javelin for <style=cIsDamage>800% damage</style>.",
+      "zh-TW": "<style=cIsUtility>衝刺</style>一小段距離。下一次使用主要技能時，會擲出一支<style=cIsDamage>爆裂</style>標槍，造成<style=cIsDamage>800%傷害</style>。"
+    },
+    "BOG_PATHFINDER_BODY_SECONDARY_JAVELIN_NAME": {
+      "en": "Explosive Javelin",
+      "zh-TW": "爆裂標槍"
+    },
+    "BOG_PATHFINDER_BODY_SECONDARY_JAVELIN_DESCRIPTION": {
+      "en": "Throw an <style=cIsDamage>explosive</style> javelin for <style=cIsDamage>800% damage</style>.",
+      "zh-TW": "擲出一支<style=cIsDamage>爆裂</style>標槍，造成<style=cIsDamage>800%傷害</style>。"
+    },
+    "BOG_PATHFINDER_BODY_UTILITY_SPIN_NAME": {
+      "en": "Rending Talons",
+      "zh-TW": "撕裂鷹爪"
+    },
+    "BOG_PATHFINDER_BODY_UTILITY_SPIN_DESCRIPTION": {
+      "en": "Rise into the air, spinning rapidly for <style=cIsDamage>300% damage</style>. Upon landing, perform a horizontal sweep for <style=cIsDamage>800% damage</style>.",
+      "zh-TW": "升上空中並快速旋轉，造成<style=cIsDamage>300%傷害</style>。落地時進行一次水平橫掃，造成<style=cIsDamage>800%傷害</style>。"
+    },
+    "BOG_PATHFINDER_BODY_UTILITY_BOLAS_NAME": {
+      "en": "Shock Bolas",
+      "zh-TW": "電擊流星索"
+    },
+    "BOG_PATHFINDER_BODY_UTILITY_BOLAS_DESCRIPTION": {
+      "en": "Throw electrically charged bolas, which <style=cIsUtility>shock</style> nearby enemies, and leave behind an <style=cIsUtility>electrocuting</style> field for <style=cIsUtility>10 seconds</style>.",
+      "zh-TW": "擲出帶電的流星索，<style=cIsUtility>震盪</style>附近的敵人，並留下持續<style=cIsUtility>10秒</style>的<style=cIsUtility>電擊</style>力場。"
+    },
+    "BOG_PATHFINDER_BODY_SPECIAL_COMMAND_NAME": {
+      "en": "Issue Command",
+      "zh-TW": "下達指令"
+    },
+    "BOG_PATHFINDER_BODY_SPECIAL_COMMAND2_NAME": {
+      "en": "Issue Command - Utility Override",
+      "zh-TW": "下達指令：輔助技能覆寫"
+    },
+    "BOG_PATHFINDER_BODY_SPECIAL_COMMAND_DESCRIPTION": {
+      "en": "Prepare a command for Squall. You can issue an <color=#FF0000>Attack</color>, <color=#00FF00>Follow</color>, or <color=#efeb1c>Special</color> command by pressing the Primary, Secondary, or Special skill keys, respectively.",
+      "zh-TW": "準備向疾風下達指令。分別按下主要技能、次要技能或特殊技能鍵，即可下達<color=#FF0000>攻擊</color>、<color=#00FF00>跟隨</color>或<color=#efeb1c>特殊</color>指令。"
+    },
+    "BOG_PATHFINDER_BODY_SPECIAL_ATTACK_NAME": {
+      "en": "Attack Command",
+      "zh-TW": "攻擊指令"
+    },
+    "BOG_PATHFINDER_BODY_SPECIAL_ATTACK_DESCRIPTION": {
+      "en": "Direct Squall's attention to the targeted enemy, and activate <color=#FF0000>Attack Mode</color>, granting access to machine guns that deal <style=cIsDamage>2x30% damage</style>, and a missile launcher that deals <style=cIsDamage>150% damage</style>.",
+      "zh-TW": "讓疾風鎖定瞄準的敵人，並啟動<color=#FF0000>攻擊模式</color>，使其能使用造成<style=cIsDamage>2x30%傷害</style>的機槍，以及造成<style=cIsDamage>150%傷害</style>的導彈發射器。"
+    },
+    "BOG_PATHFINDER_BODY_SPECIAL_FOLLOW_NAME": {
+      "en": "Follow Command",
+      "zh-TW": "跟隨指令"
+    },
+    "BOG_PATHFINDER_BODY_SPECIAL_FOLLOW_DESCRIPTION": {
+      "en": "Return Squall to yourself, and activate <color=#00FF00>Follow Mode</color>, causing him to stay close to you.",
+      "zh-TW": "召回疾風，並啟動<color=#00FF00>跟隨模式</color>，讓他待在你身邊。"
+    },
+    "BOG_PATHFINDER_BODY_SPECIAL_CANCEL_NAME": {
+      "en": "Cancel Command Mode",
+      "zh-TW": "取消指令模式"
+    },
+    "BOG_PATHFINDER_BODY_SPECIAL_CANCEL_DESCRIPTION": {
+      "en": "Cancel Command Mode.",
+      "zh-TW": "取消指令模式。"
+    },
+    "BOGSQUALL_SPECIAL_GOFORTHROAT_NAME": {
+      "en": "Go for the Throat!",
+      "zh-TW": "直取咽喉！"
+    },
+    "BOGSQUALL_SPECIAL_GOFORTHROAT_DESCRIPTION": {
+      "en": "Order Squall to repeatedly strike the targeted enemy for <style=cIsDamage>70% damage</style>. Each strike briefly shreds <style=cIsDamage>armor</style>, and <style=cIsUtility>regenerates 1%</style> battery, doubled on Critical Strikes. This skill can briefly <style=cIsUtility>overcharge</style> the battery.",
+      "zh-TW": "命令疾風反覆攻擊瞄準的敵人，造成<style=cIsDamage>70%傷害</style>。每次攻擊都會短暫削減<style=cIsDamage>護甲</style>，並<style=cIsUtility>回復1%</style>電池電量，暴擊時加倍。此技能可讓電池短暫<style=cIsUtility>超量充電</style>。"
+    },
+    "BOG_SQUALL_PRIMARY_GUNS_NAME": {
+      "en": "Mounted Guns",
+      "zh-TW": "搭載機槍"
+    },
+    "BOG_SQUALL_PRIMARY_GUNS_DESCRIPTION": {
+      "en": "Fire your turrets for <style=cIsDamage>2x30% damage</style>.",
+      "zh-TW": "用你的炮塔開火，造成<style=cIsDamage>2x30%傷害</style>。"
+    },
+    "BOG_SQUALL_SECONDARY_MISSILE_NAME": {
+      "en": "Missile Launcher",
+      "zh-TW": "導彈發射器"
+    },
+    "BOG_SQUALL_SECONDARY_MISSILE_DESCRIPTION": {
+      "en": "Fire a volley of 4 missiles for <style=cIsDamage>150% damage</style> each.",
+      "zh-TW": "齊射4枚導彈，每枚造成<style=cIsDamage>150%傷害</style>。"
+    },
+    "BOG_SQUALL_UTILITY_DONOTHING_NAME": {
+      "en": "Do Nothing",
+      "zh-TW": "什麼都不做"
+    },
+    "BOG_SQUALL_UTILITY_DONOTHING_DESCRIPTION": {
+      "en": "This skill does nothing.",
+      "zh-TW": "這個技能沒有任何作用。"
+    },
+    "BOG_SQUALL_SPECIAL_GOFORTHROAT_NAME": {
+      "en": "Go for the Throat!",
+      "zh-TW": "直取咽喉！"
+    },
+    "BOG_SQUALL_SPECIAL_GOFORTHROAT_DESCRIPTION": {
+      "en": "Order Squall to repeatedly strike the targeted enemy for <style=cIsDamage>70% damage</style>. Each strike briefly shreds <style=cIsDamage>armor</style>, and <style=cIsUtility>regenerates 1%</style> battery, doubled on Critical Strikes. This skill can briefly <style=cIsUtility>overcharge</style> the battery.",
+      "zh-TW": "命令疾風反覆攻擊瞄準的敵人，造成<style=cIsDamage>70%傷害</style>。每次攻擊都會短暫削減<style=cIsDamage>護甲</style>，並<style=cIsUtility>回復1%</style>電池電量，暴擊時加倍。此技能可讓電池短暫<style=cIsUtility>超量充電</style>。"
+    },
+    "BOG_PATHFINDER_BODY_MASTERYUNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Pathfinder: Mastery",
+      "zh-TW": "探路者：精通"
+    },
+    "BOG_PATHFINDER_BODY_MASTERYUNLOCKABLE_ACHIEVEMENT_DESC": {
+      "en": "As Pathfinder, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為探路者，在季風難度下通關遊戲或抹除自己。"
+    },
+    "BOG_PATHFINDER_BODY_MASTERYUNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Pathfinder: Mastery",
+      "zh-TW": "探路者：精通"
+    }
+  }
+}

@@ -49,6 +49,7 @@ MOD_TEXT = "zh-TW"  # 模組翻譯檔裡譯文的鍵名
 # R2API 會讀取 plugins 底下所有 *.language 檔，我們的檔案集中放在這個資料夾
 MOD_PLUGIN_DIR = "RoR2_zh-TW"
 MOD_FILE_PREFIX = "mod_"  # 放進遊戲語言資料夾的模組翻譯檔名開頭
+MSU_LANGUAGES = "languages"  # 用 MoonstormSharedUtils 載入文字的模組（Starstorm 2）放語言檔的資料夾
 # 模組寫死在程式裡的文字（mods 檔案的 literals）由這個 BepInEx 外掛在遊戲裡替換，原始碼在 plugin 資料夾
 PLUGIN_DLL = Path(__file__).resolve().parent / "plugin" / "RoR2_zh-TW.HardcodedText.dll"
 LITERALS_SUFFIX = ".literals"  # 外掛讀取的翻譯表副檔名
@@ -360,6 +361,10 @@ def install_mods(
         if mod["loader"] == "r2api":
             # R2API 裡語言專屬的字串優先於模組寫死的英文，頂層的鍵就是語言名稱
             output, root = plugins / MOD_PLUGIN_DIR / f"{name}.language", language
+        elif mod["loader"] == "msu":
+            # MSU 讀模組自己 languages 底下以語言命名的資料夾，載入後才把 {0} 換成設定值，
+            # 所以譯文要放進那裡；用 R2API 的語言檔會蓋過它，{0} 就不會被替換
+            output, root = plugins / name / MSU_LANGUAGES / language / f"{MOD_PLUGIN_DIR}.json", "strings"
         else:
             # 模組直接查遊戲語言資料夾載入的內容（例如 LookingGlass），不經過 R2API
             output, root = target_dir / f"{MOD_FILE_PREFIX}{name}.json", "strings"

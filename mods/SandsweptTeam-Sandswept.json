@@ -1,0 +1,1198 @@
+{
+  "mod": "SandsweptTeam-Sandswept",
+  "version": "1.4.6",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式（ItemBase.ApplyLanguage、各技能與菁英的 CreateLang 等）取得的；物品、裝備與神龕說明裡的數字是模組設定的預設值，改過設定的話，譯文的數字要自己修改。",
+    "「Passive」是遊俠配裝欄位的標題，「Horde of Many」是西塔、伽瑪、德爾塔結構體與炮彈水母當傳送器首領時的副標，模組直接拿英文當 token 用，鍵就是英文原文；後者沿用遊戲本體同一句英文的官方譯名。",
+    "破損的羽毛的名稱、說明與背景故事在遊戲載入完成後（以及每次改按鍵設定後）會被模組用 R2API 的通用疊加層重寫，語言檔蓋不過，所以 TornFeather 類別的字串交給外掛翻譯（literals）。說明裡的 %FEATHERKEY% 會換成衝刺鍵的圖示。重寫的方法不是靜態方法，外掛無法在切換語言時呼叫它，切換語言後要重開遊戲或改一次按鍵設定才會更新。",
+    "毀滅神龕腐化下一關時，模組用疊加層把傳送器的名稱、互動提示與任務目標換成「T?eleporter?」這類亂碼文字，由外掛翻譯 KurwaRunnerKurwa 類別的字串。PLAYER_ACTIVATED_TELEPORTER_ 那一條的 token 多了結尾底線，遊戲從不使用，沒有收錄。",
+    "裝了 LookingGlass 時，物品提示的數值標籤寫死在各物品類別的 GetItemStatsDef，由外掛翻譯，分組用物品類別的名稱。",
+    "馬用電解質飲料（EQUIPMENT_SANDSWEPT_HORSEMIX_*）只有開啟模組設定 Enable Cursed Config 才會出現。",
+    "沒有翻的：Enable Cursed Config（預設關閉）開啟後換上的惡搞名稱與說明、兩句惡搞聊天訊息；VOL-T 約2%機率換上的惡搞名稱；這些是疊加層或寫死的文字，只在特殊情況出現。互動物件檢視面板的「sanswepp」「sanswep」是模組的佔位文字，也沒有翻。"
+  ],
+  "strings": {
+    "SANDSWEPT_INPUT_FEATHER": {
+      "en": "Torn Feather Dash",
+      "zh-TW": "破損的羽毛衝刺"
+    },
+    "SS_EXPANSIONDEF_NAME": {
+      "en": "Sandswept",
+      "zh-TW": "沙掩"
+    },
+    "SS_EXPANSIONDEF_DESC": {
+      "en": "Adds content from the 'Sandswept' expansion to the game <3. Have fun <3.",
+      "zh-TW": "將「沙掩」擴充包的內容加入遊戲<3。玩得開心<3。"
+    },
+    "ITEM_SANDSWEPT_AMBER_KNIFE_NAME": {
+      "en": "Amber Knife",
+      "zh-TW": "琥珀小刀"
+    },
+    "ITEM_SANDSWEPT_AMBER_KNIFE_PICKUP": {
+      "en": "Chance to fire a piercing knife that grants barrier on hit.",
+      "zh-TW": "有機率發射一把穿透小刀，命中時給予屏障。"
+    },
+    "ITEM_SANDSWEPT_AMBER_KNIFE_DESCRIPTION": {
+      "en": "Gain a <style=cIsDamage>10%</style> chance on hit to fire a <style=cIsDamage>piercing knife</style> for <style=cIsDamage>180%</style> <style=cStack>(+180% per stack)</style> base damage that gives <style=cIsHealing>2.5%</style> plus an additional <style=cIsHealing>3 barrier</style>.",
+      "zh-TW": "命中時有<style=cIsDamage>10%</style>的機率發射一把<style=cIsDamage>穿透小刀</style>，造成<style=cIsDamage>180%</style><style=cStack>（每層增加180%）</style>的基礎傷害，並給予<style=cIsHealing>2.5%</style>的屏障，外加<style=cIsHealing>3點屏障</style>。"
+    },
+    "ITEM_SANDSWEPT_AMBER_KNIFE_LORE": {
+      "en": "Order: Amber Knife\nTracking Number: 534*****\nEstimated Delivery: 06/15/2056\nShipping Method: High Priority\nShipping Address: Outer Ring Lab, Venus\nShipping Details:\n\nThis is an ancient ritual artifact, once used by Neptunian priests in sacrifices, said to protect them from attack and assassination. This was not without credence, it seems, as the knife operates similarly to the ultra-phasic shield technology used in the assassination of Mars's ambassador two months back.\n\nOf course, we can't use such an old and fragile weapon in our own operations, but its effect seems more potent than what the assassin used. Along with serving your planet, you'll receive generous funding to discover how it works and incorporate it into something more usable.",
+      "zh-TW": "運單：琥珀小刀\n單號：534*****\n預計送達時間：2056年06月15日\n運送方式：緊急優先\n送貨地址：金星，外環實驗室\n運送詳情：\n\n這是一件古老的儀式器物，曾經被海王星的祭司用於獻祭，據說能保護他們免遭攻擊與暗殺。看來這種說法並非毫無根據，因為這把小刀的運作方式，和兩個月前刺殺火星大使時所用的超相護盾技術十分相似。\n\n當然，這麼古老又脆弱的武器，我們不可能拿來用在自己的行動上，但它的效果似乎比那名刺客用的還要強。除了能為你的星球效力，你還會獲得一筆豐厚的經費，用來研究它的運作原理，並把它改造成更實用的東西。"
+    },
+    "ITEM_SANDSWEPT_FRACTURED_TIMEPIECE_NAME": {
+      "en": "Fractured Timepiece",
+      "zh-TW": "碎裂的懷錶"
+    },
+    "ITEM_SANDSWEPT_FRACTURED_TIMEPIECE_PICKUP": {
+      "en": "Using your Utility skill heals you and reduces Special skill cooldown.",
+      "zh-TW": "使用輔助技能時會治療你，並縮短特殊技能的冷卻時間。"
+    },
+    "ITEM_SANDSWEPT_FRACTURED_TIMEPIECE_DESCRIPTION": {
+      "en": "Upon using your <style=cIsUtility>Utility skill</style>, <style=cIsHealing>heal</style> for <style=cIsHealing>5%</style> <style=cStack>(+5% per stack)</style> of your <style=cIsHealing>maximum health</style> and <style=cIsUtility>reduce Special skill cooldown</style> by <style=cIsUtility>15%</style>.",
+      "zh-TW": "使用<style=cIsUtility>輔助技能</style>時，<style=cIsHealing>治療</style>相當於<style=cIsHealing>最大生命值</style><style=cIsHealing>5%</style><style=cStack>（每層增加5%）</style>的生命值，並使<style=cIsUtility>特殊技能的冷卻時間縮短</style><style=cIsUtility>15%</style>。"
+    },
+    "ITEM_SANDSWEPT_FRACTURED_TIMEPIECE_LORE": {
+      "en": "Order: Timepiece\nTracking Number: 864*******\nEstimated Delivery: 02/23/2054\nShipping Method: Priority\nShipping Address: Hall of the Revered, Mars\nShipping Details:\n\nOur team uncovered this in the desert where the old Hall was, before it burned down. I guess someone really wanted to protect it from the Purge, since it was carefully wrapped and boxed where we found it. You can probably glean more knowledge from it than we can, and it was the Hall's to begin with in any case.\n\nThe box had a note in it from the Time Keeper of the era, too, which I've included in the package. Nobody here can read the old language, so hopefully you can make some sense of it.",
+      "zh-TW": "運單：懷錶\n單號：864*******\n預計送達時間：2054年02月23日\n運送方式：優先\n送貨地址：火星，尊者殿堂\n運送詳情：\n\n我們的團隊在沙漠裡挖到了這個，就在舊殿堂燒毀之前的原址。我猜有人非常想保護它，不讓它在大清洗中被毀，因為我們找到它的時候，它被仔細地包好，還裝在盒子裡。你們能從它身上了解到的應該比我們多，而且不管怎麼說，它本來就是殿堂的東西。\n\n盒子裡還有一張當時的時間守護者留下的字條，我也一起放進包裹裡了。這裡沒有人看得懂古語，希望你們能看出點端倪。"
+    },
+    "ITEM_SANDSWEPT_RED_SPRING_WATER_NAME": {
+      "en": "Red Spring Water",
+      "zh-TW": "紅泉水"
+    },
+    "ITEM_SANDSWEPT_RED_SPRING_WATER_PICKUP": {
+      "en": "Increase health regeneration for every unique buff you have.",
+      "zh-TW": "你身上每有一種不同的增益，就提高生命值再生速度。"
+    },
+    "ITEM_SANDSWEPT_RED_SPRING_WATER_DESCRIPTION": {
+      "en": "Increase <style=cIsHealing>health regeneration</style> by <style=cIsHealing>0.5 hp/s</style>, plus an additional <style=cIsHealing>0.5 hp/s</style> <style=cStack>(+0.5 hp/s per stack)</style> for <style=cIsUtility>every unique buff you have</style>.",
+      "zh-TW": "使<style=cIsHealing>生命值再生速度</style>提高<style=cIsHealing>0.5生命值/秒</style>，且<style=cIsUtility>你身上每有一種不同的增益</style>，就額外提高<style=cIsHealing>0.5生命值/秒</style><style=cStack>（每層增加0.5生命值/秒）</style>。"
+    },
+    "ITEM_SANDSWEPT_RED_SPRING_WATER_LORE": {
+      "en": "<style=cMono>\n//--AUTO-TRANSCRIPTION FROM UES [Redacted] --//\n</style>\n\"I don't know if you should be drinking that.\"\n\n\"Why not? I feel amazing!\"\n\n\"We don't know what's in that stuff. No xenologist would ever recommend you drink an unknown red liquid from a more unknown planet.\"\n\n\"Well, it's only ever been of help to me. We need everything we can get down there.\"\n\n\"Better to be without it than to be poisoned. When we gave it to Kyle to help him recover, it just made things worse.\"\n\n\"Well, unlike Kyle, I'm not sick. Probably because of this stuff, too, with how much faster my wounds are healing.\"\n\n\"It's your funeral.\"",
+      "zh-TW": "<style=cMono>\n//--來自尤伊思[已編校]的自動轉錄--//\n</style>\n「我不確定你該不該喝那個。」\n\n「為什麼不行？我感覺棒透了！」\n\n「我們根本不知道那東西裡面有什麼。沒有哪個外星學家會建議你喝下一種不明的紅色液體，而且還是從一顆更不明的星球上弄來的。」\n\n「嗯，它到目前為止只幫過我。到了下面，我們什麼都得用上。」\n\n「寧可不用，也好過被毒死。我們拿給凱爾喝、想幫他康復的時候，結果只讓情況更糟。」\n\n「嗯，我跟凱爾不一樣，我又沒生病。說不定也是多虧了這東西，你看我的傷口好得多快。」\n\n「隨你吧，反正葬禮是你的。」"
+    },
+    "ITEM_SANDSWEPT_TEMPORAL_TRANSISTOR_NAME": {
+      "en": "Temporal Transistor",
+      "zh-TW": "時間電晶體"
+    },
+    "ITEM_SANDSWEPT_TEMPORAL_TRANSISTOR_PICKUP": {
+      "en": "Chance on kill to store an extra jump.",
+      "zh-TW": "擊敗時有一定機率儲存一次額外跳躍。"
+    },
+    "ITEM_SANDSWEPT_TEMPORAL_TRANSISTOR_DESCRIPTION": {
+      "en": "Gain a <style=cIsUtility>25%</style> chance on kill to store an <style=cIsUtility>extra jump</style>. Can store up to <style=cIsUtility>2</style> <style=cStack>(+2 per stack)</style> <style=cIsUtility>extra jumps</style>.",
+      "zh-TW": "擊敗時有<style=cIsUtility>25%</style>的機率儲存一次<style=cIsUtility>額外跳躍</style>。最多可儲存<style=cIsUtility>2</style><style=cStack>（每層增加2）</style>次<style=cIsUtility>額外跳躍</style>。"
+    },
+    "ITEM_SANDSWEPT_TEMPORAL_TRANSISTOR_LORE": {
+      "en": "<style=cMono>//--AUTO-TRANSCRIPTION FROM LOADING BAY 3 OF THE UES [Redacted] --//</style>\n\n\"I've got a pretty weird shipment here. Come check it out, I know you love this stuff.\"\n\n\"One sec, I gotta finish packing this. Just describe it to me.\"\n\n\"Oh, okay. Well, when I picked it up, I got this weird feeling. The loading bay seemed a little different, but I didn't really pay it any heed until I looked down at my own limbs. It took me a second, but I realized I was looking through my body from like, five years ago. Crazy stuff. I dropped it and things went back to normal.\"\n\n\"That's wild. I'll have to try it when I'm done. Do you know what it is?\"\n\n\"Input log just says 'transistor.' I guess I can see it, with the shape and everything, but it's an awfully big one. Figures, with what it does, I suppose. I wonder what it'll be used for.\"\n\n\"What do you mean, it's a 'transistor'?\"\n\n\"Oh. Y'know, the things that make computers work.\"\n\n\"Well, my sister does work in tech, but that seems like a bit of a generalization.\"\n\n\"What?\"",
+      "zh-TW": "<style=cMono>//--來自尤伊思[已編校]3號裝卸倉的自動轉錄--//</style>\n\n「我這裡有件很怪的貨。過來看看吧，我知道你最愛這種東西了。」\n\n「等一下，我得先把這個打包完。你先跟我描述一下。」\n\n「喔，好。嗯，我把它拿起來的時候，有種很奇怪的感覺。裝卸倉看起來好像有點不一樣，不過我沒特別在意，直到我低頭看自己的手腳。我愣了一下才反應過來，我是透過自己，呃，大概五年前的身體在看東西。太扯了。我把它丟下之後，一切就恢復正常了。」\n\n「也太誇張了吧。等我忙完也要試試看。你知道那是什麼嗎？」\n\n「輸入日誌上只寫著『transistor（電晶體）』。看它的形狀什麼的，我大概看得出來，但這也太大顆了吧。不過想想它能做到的事，會這麼大好像也說得通。不知道它會被拿去做什麼。」\n\n「你說它是『transistor』，是什麼意思？」\n\n「喔。你知道的，就是讓電腦能運作的那種東西啊。」\n\n「呃，我姊姊確實是在科技業工作啦，但這樣講好像有點以偏概全。」\n\n「蛤？」"
+    },
+    "ACHIEVEMENT_ITEM_SANDSWEPT_TEMPORAL_TRANSISTOR_NAME": {
+      "en": "An Epilogue of Life",
+      "zh-TW": "生命的尾聲"
+    },
+    "ACHIEVEMENT_ITEM_SANDSWEPT_TEMPORAL_TRANSISTOR_DESCRIPTION": {
+      "en": "Complete a Shrine of The Future without jumping.",
+      "zh-TW": "在不跳躍的情況下完成未來神龕。"
+    },
+    "ITEM_SANDSWEPT_BLEEDING_WITNESS_NAME": {
+      "en": "Bleeding Witness",
+      "zh-TW": "淌血的見證者"
+    },
+    "ITEM_SANDSWEPT_BLEEDING_WITNESS_PICKUP": {
+      "en": "Your damage over time ticks heal all allies.",
+      "zh-TW": "你的持續傷害每次生效時都會治療所有盟友。"
+    },
+    "ITEM_SANDSWEPT_BLEEDING_WITNESS_DESCRIPTION": {
+      "en": "<style=cIsDamage>8%</style> chance on hit to <style=cIsDamage>hemorrhage</style> enemies for <style=cIsDamage>360%</style> base damage. Your <style=cIsDamage>damage over time ticks</style> <style=cIsHealing>heal</style> all allies for <style=cIsHealing>0.33%</style> <style=cStack>(+0.33% per stack)</style> of their <style=cIsHealing>maximum health</style>.",
+      "zh-TW": "命中時有<style=cIsDamage>8%</style>的機率使敵人<style=cIsDamage>出血</style>，造成<style=cIsDamage>360%</style>的基礎傷害。你的<style=cIsDamage>持續傷害每次生效</style>時，會為所有盟友<style=cIsHealing>治療</style>相當於其<style=cIsHealing>最大生命值</style><style=cIsHealing>0.33%</style><style=cStack>（每層增加0.33%）</style>的生命值。"
+    },
+    "ITEM_SANDSWEPT_BLEEDING_WITNESS_LORE": {
+      "en": "> Automated report 3947b729237d17//?v=7YXoXter6H0 is now available from site record 62a73bd8473f8914239c9a837f.\n> Please refer to record 62a73bd8473f8914239c9a837f for additional details during your review.\n> Report Type: Machine-generated Transcription > base Vernacular Profile \"HotR\"\n> Source: 62a73bd8473f8914239c9a837f (Unknown Material Artifact #3715)\n> Priority: High\n> Report Content:\n\n-- Beginning of Excerpt Flagged for Review --\n\n[your eminence]. The scout has returned from [the white plane].\n\nWHERE IS THE SCOUT?\n\nThis is their remains, [your eminence].\n\nWHAT COULD HAVE DONE THIS? THIS IS A PLANET INHABITED BY LOWLY BEASTS.\n\nThe scout was sent back through [the space between], by an unknown entity, as if it were some message to us. There is no trace of the remaining party.\n\nTHE CREATOR OF THE ARTIFACT, NO DOUBT. A POWERFUL GUARDIAN. HE YET LINGERS THERE...\n\nIt would seem that way, [your eminence]. Whatever lies there in [the white plane] is of great danger to us. Maybe it would be best to leave it be.\n\nIF ITS CREATOR LIES THERE, SO MUST THE ARTIFACT. YOUR COWARDICE MAKES NO DIFFERENCE; WE MUST RETRIEVE IT. HAIL TO [the red plane].\n\n...it will be done, [your eminence]. Hail to [the red plane].\n\n-- End of Recording --\n\n-- End of Excerpt Flagged for Review --\n\n> TRANSLATION ERRORS: 4\n> 1> [your eminence] could not be fully translated.\n> 2> [the space between] could not be fully translated.\n> 3> [the white plane] could not be fully translated.\n> 4> [the red plane] could not be fully translated.\n\n> Please refer to report b438ff73774c9801238d48130d048cd757a for full audio excerpt.\n===================================================",
+      "zh-TW": "> 來自現場記錄62a73bd8473f8914239c9a837f的自動報告3947b729237d17//?v=7YXoXter6H0現已可用。\n> 審查過程中，請參考記錄62a73bd8473f8914239c9a837f以瞭解更多詳情。\n> 報告類型：機器生成的轉錄>基礎方言檔案「HotR」\n> 來源：62a73bd8473f8914239c9a837f（不明材料神器#3715）\n> 優先級：高\n> 報告內容：\n\n-- 標記為需要審查的片段開始 --\n\n[閣下]。斥候從[白色位面]回來了。\n\n斥候在哪裡？\n\n這就是他的遺骸，[閣下]。\n\n是什麼東西幹的？這顆星球上住的不過是些低等野獸。\n\n斥候是被某個不明存在經由[空間縫隙]送回來的，彷彿是要傳話給我們。其餘隊員下落不明。\n\n毫無疑問，是那件神器的創造者。一名強大的守衛。他仍然逗留在那裡……\n\n看來是如此，[閣下]。無論[白色位面]那裡有什麼，對我們來說都極其危險。或許最好別去招惹它。\n\n既然它的創造者在那裡，神器必定也在那裡。你的怯懦改變不了什麼；我們必須把它奪回來。[紅色位面]萬歲。\n\n……遵命，[閣下]。[紅色位面]萬歲。\n\n-- 記錄結束 --\n\n-- 標記為需要審查的片段結束 --\n\n> 翻譯錯誤：4\n> 1> [閣下]無法完整翻譯。\n> 2> [空間縫隙]無法完整翻譯。\n> 3> [白色位面]無法完整翻譯。\n> 4> [紅色位面]無法完整翻譯。\n\n> 請參考報告b438ff73774c9801238d48130d048cd757a聽取完整的音訊片段。\n==================================================="
+    },
+    "ITEM_SANDSWEPT_CEREMONIAL_JAR_NAME": {
+      "en": "Ceremonial Jar",
+      "zh-TW": "祭儀陶罐"
+    },
+    "ITEM_SANDSWEPT_CEREMONIAL_JAR_PICKUP": {
+      "en": "Enemies hit with any skill get linked. Linked enemies take massive damage.",
+      "zh-TW": "被任何技能命中的敵人會被連結。被連結的敵人會受到大量傷害。"
+    },
+    "ITEM_SANDSWEPT_CEREMONIAL_JAR_DESCRIPTION": {
+      "en": "Enemies hit with any <style=cIsUtility>skill</style> get <style=cIsDamage>linked</style>, up to <style=cIsDamage>3</style> times. Linked enemies take <style=cIsDamage>2000%</style> <style=cStack>(+2000% per stack)</style> <style=cIsDamage>base damage</style> each and cannot be <style=cIsDamage>linked</style> for <style=cIsDamage>5</style> seconds afterward.",
+      "zh-TW": "被任何<style=cIsUtility>技能</style>命中的敵人會被<style=cIsDamage>連結</style>，最多<style=cIsDamage>3</style>次。被連結的敵人各受到<style=cIsDamage>2000%</style><style=cStack>（每層增加2000%）</style>的<style=cIsDamage>基礎傷害</style>，之後<style=cIsDamage>5</style>秒內無法再被<style=cIsDamage>連結</style>。"
+    },
+    "ITEM_SANDSWEPT_CEREMONIAL_JAR_LORE": {
+      "en": "\"In the early days, the Tar was localized to only a few of the dunepeople's smaller towns and villages. This slow start was merely a silent beginning to its takeover, though, ending with the crusades of those now called the \"tainted generation,\" for whom the Tar had been present since birth.\n\nAs the Tar's cultural relevance in those isolated places grew, it stopped being a symbiotic equal, and became a divine superior. It was worshipped as a god, one whose existence was undeniable, and whose gifts were powerful, and the tainted generation took it upon themselves to crusade through all of Aphelia and spread it.\n\nAt first, the crusades were met with only skepticism and rejection from those not used to the Tar's presence. Some doubted the Tar's existence; those who didn't, doubted its power; and those who did neither, were rightfully wary of its influence. With an inability to demonstrate the Tar's existence or potency without travelling all the way back to their hometowns, the crusaders only recruited a scarce few. With their new handful of allies, though, they discovered a way to transport the Tar, and thus, its first vessel was created.\n\nThough simple in design, this original clay jar was the cornerstone to the Tar epidemic. The original jar was worshipped as an idol. The dunepeople fed what they had to it, allowing the Tar to spread forth. Brought from town to town, village to village, city to city, the vessel crushed all doubts of the Tar's power or existence, quickly integrating itself into all of the dunepeople's struggling civilization. Those who continued to warn against the Tar's influence were bribed with its power, and those who couldn't be bribed were fed to Aphelia's new god.\"\n\n- Tragedy of Aphelia",
+      "zh-TW": "「早期，焦油只侷限在沙丘子民的少數幾座小城鎮和村落裡。然而，這段緩慢的開端只是它悄然接管一切的序幕，最終以那群如今被稱為『受汙染的一代』的人所發起的聖戰告終；對他們而言，焦油打從出生起就一直存在。\n\n隨著焦油在那些與世隔絕之地的文化地位日益提升，它不再是共生的平等夥伴，而成了神聖的上位者。它被當作神明崇拜——一位存在無可否認、恩賜無比強大的神——而受汙染的一代便自告奮勇，發起聖戰，走遍整個阿法利亞，將它傳播出去。\n\n起初，那些不習慣焦油存在的人對聖戰只報以懷疑與拒絕。有些人懷疑焦油是否存在；不懷疑這點的人，懷疑它的力量；而這兩點都不懷疑的人，則理所當然地對它的影響保持警惕。由於不長途跋涉回到故鄉，就無法證明焦油的存在與威力，聖戰者們只招募到寥寥數人。不過，靠著這一小群新盟友，他們找到了運送焦油的方法，於是，焦油的第一個容器就此誕生。\n\n這只最初的陶罐雖然設計簡單，卻是焦油疫病的基石。這只原始的陶罐被當成神像崇拜。沙丘子民把手邊所有的東西都拿去餵它，讓焦油得以向外蔓延。這個容器從一座城鎮被帶到另一座城鎮，從一個村落到另一個村落，從一座城市到另一座城市，粉碎了一切對焦油力量或存在的懷疑，迅速融入了沙丘子民苦苦掙扎的文明之中。那些持續警告焦油影響的人被它的力量收買，而無法被收買的人，則被拿去餵了阿法利亞的新神。」\n\n- 阿法利亞的悲劇"
+    },
+    "ITEM_SANDSWEPT_GLACIAL_PLASMA_NAME": {
+      "en": "Glacial Plasma",
+      "zh-TW": "冰河電漿"
+    },
+    "ITEM_SANDSWEPT_GLACIAL_PLASMA_PICKUP": {
+      "en": "Activating your primary also conjures a freezing javelin. Chance on hit to freeze stunned enemies.",
+      "zh-TW": "發動主要技能時還會召喚一支冰凍標槍。命中時有機率冰凍被眩暈的敵人。"
+    },
+    "ITEM_SANDSWEPT_GLACIAL_PLASMA_DESCRIPTION": {
+      "en": "Activating your <style=cIsUtility>Primary skill</style> also conjures a <style=cIsDamage>piercing javelin</style> that deals <style=cIsDamage>2000%</style> <style=cStack>(+2000% per stack)</style> damage and <style=cIsUtility>freezes</style> enemies. Recharges over <style=cIsUtility>10</style> seconds. Your <style=cIsUtility>stuns</style> have a <style=cIsUtility>6%</style> chance to <style=cIsUtility>freeze</style> for <style=cIsUtility>3</style> seconds.",
+      "zh-TW": "發動<style=cIsUtility>主要技能</style>時還會召喚一支<style=cIsDamage>穿透標槍</style>，造成<style=cIsDamage>2000%</style><style=cStack>（每層增加2000%）</style>的傷害並<style=cIsUtility>冰凍</style>敵人。需要<style=cIsUtility>10</style>秒充能。你的<style=cIsUtility>眩暈</style>有<style=cIsUtility>6%</style>的機率使敵人<style=cIsUtility>冰凍</style><style=cIsUtility>3</style>秒。"
+    },
+    "ITEM_SANDSWEPT_GLACIAL_PLASMA_LORE": {
+      "en": "\"Drink it in.\"\n\n\"It's quite something. I've never seen anything like it...this is a thoroughly unparalleled discovery.\"\n\n\"I'd like to think so. The potential of such an object is nearly boundless, even just in engineering, and it does far more. Temperatures previously restricted to isolated labs, now applicable to any object with just a smear of this stuff.\"\n\n\"How'd you discover it? And how did you synthesize such a bizarre thing so quickly?\"\n\n\"Well, um...\"\n\n\"Hm? Oh, no, I know that look on your face. What'd you do?\"\n\n\"So, you remember that High Court ambassador?\"\n\n\"You didn't.\"\n\n\"I may have.\"\n\n\"We're dead meat, you know. We're [REDACTED] dead. You don't mess with the High Court, you just don't. You know that.\"\n\n\"I beg to differ. I've had it for over a month now--\"\n\n\"WHAT?\"\n\n\"--for over a month now, and nobody's come a-knocking. I think it's high time we gave this sample to someone else. Let them deal with the consequences, and we'll make it out with a nice chunk of change.\"\n\n\"So what, we just lie to them about its origins? What happens when the High Court starts knocking on their door? Even if the Court doesn't kill us, our buyer will.\"\n\n\"We don't have to lie. Have you seen the things this stuff can do? For the UES, or one of its would-be competitors, this is too valuable to pass up.\"",
+      "zh-TW": "「好好欣賞吧。」\n\n「真是不得了。我從沒見過這樣的東西……這絕對是無與倫比的發現。」\n\n「我也這麼覺得。這種東西的潛力幾乎無可限量，光是在工程學上就是如此，而它能做的還遠不止這些。以前只有隔離實驗室裡才達得到的溫度，現在只要抹上一點這玩意兒，任何物體都能辦到。」\n\n「你是怎麼發現它的？又是怎麼這麼快就合成出這麼古怪的東西？」\n\n「這個嘛，呃……」\n\n「嗯？喔，不，我認得你這副表情。你幹了什麼好事？」\n\n「那個，你還記得那位最高法院的大使嗎？」\n\n「你不會真的那麼做了吧。」\n\n「我可能真的做了。」\n\n「你知道嗎，我們完蛋了。我們[已編校]死定了。最高法院是不能招惹的，絕對不能。你明明知道。」\n\n「恕我不能苟同。我已經拿著它一個多月了——」\n\n「什麼？！」\n\n「——一個多月了，也沒有人上門找麻煩。我覺得早就該把這個樣本轉手給別人了。讓他們去承擔後果，我們則帶著一大筆錢全身而退。」\n\n「所以怎樣，我們就對他們謊稱它的來歷？等最高法院開始去敲他們家的門，那又怎麼辦？就算最高法院沒殺了我們，我們的買家也會。」\n\n「我們不必說謊。你看過這東西能做到什麼嗎？對尤伊思，或是那些想跟它一較高下的競爭對手來說，這東西珍貴到不可能放過。」"
+    },
+    "ITEM_SANDSWEPT_TORN_FEATHER_NAME": {
+      "en": "Torn Feather",
+      "zh-TW": "破損的羽毛"
+    },
+    "ITEM_SANDSWEPT_TORN_FEATHER_PICKUP": {
+      "en": "Tap <style=cIsUtility>F</style> to perform an omni-directional dash. Refreshes upon landing.",
+      "zh-TW": "輕按<style=cIsUtility>F</style>進行全方位衝刺。落地後重置次數。"
+    },
+    "ITEM_SANDSWEPT_TORN_FEATHER_DESCRIPTION": {
+      "en": "Tap <style=cIsUtility>F</style> to perform an <style=cIsUtility>omni-directional dash</style>, up to <style=cIsUtility>2 times</style> before hitting the ground. Gain <style=cIsUtility>20%</style> <style=cStack>(+35% per stack)</style> movement speed.",
+      "zh-TW": "輕按<style=cIsUtility>F</style>進行<style=cIsUtility>全方位衝刺</style>，落地前最多可使用<style=cIsUtility>2次</style>。獲得<style=cIsUtility>20%</style><style=cStack>（每層增加35%）</style>移動速度。"
+    },
+    "ITEM_SANDSWEPT_TORN_FEATHER_LORE": {
+      "en": "<style=cMono>\n//--AUTO-TRANSCRIPTION FROM LOADING BAY 6 OF THE UES [Redacted] --//\n</style>\n\"Whoa...\"\n\n\"Quite something, eh?\"\n\n\"Yeah, it's...it's like holding a dream.\"\n\n\"I know the feeling. Once in a while, these steel tubes of hell are blessed with something so special, it's hard to resist the temptation to just take it for yourself and fly away.\"\n\n\"...mhm.\"\n\n\"But-\"\n\n\"Hey!\"\n\n\"-we must not fall prey to it. The steel-toed boot of the UESC is swift and agonizing.\"\n\n\"...yeah, you're right.\"\n\n\"Indeed I am! As with many things, you'll soon learn. I can't blame you, though. Honestly, this might just be the most magical thing I've seen in these docks. It probably ought to be in the Hall of the Revered, but I guess some lucky sap nabbed it first. Time will tell how long it'll be before those Martians get their divine mitts on it. They always do, in the end.\"\n\n...\n\n\"Well, now you're just ogling at it, too.\"\n\n\"Ah, so I am! See, not even I, in my ultimate wisdom, am fully immune to such things. Oh, well; into the abyssal maw of the shipping crate it goes!\"\n\n...you'll get over it, with time. Just try not to think about it, especially while it's still in this dock. For us, it's back to work.\"",
+      "zh-TW": "<style=cMono>\n//--來自尤伊思[已編校]6號裝卸倉的自動轉錄--//\n</style>\n「哇……」\n\n「很不得了吧？」\n\n「是啊，這……這就像把一場夢握在手裡。」\n\n「我懂那種感覺。每隔一段時間，這些地獄般的鋼鐵管子裡就會降臨某樣如此特別的東西，讓人很難抗拒誘惑，只想把它據為己有，然後遠走高飛。」\n\n「……嗯哼。」\n\n「但是——」\n\n「喂！」\n\n「——我們絕不能被它迷惑。尤伊思的鋼頭靴一踹下來，可是又快又讓人痛不欲生。」\n\n「……嗯，你說得對。」\n\n「我當然對！很多事都是這樣，你很快就會明白的。不過我也不怪你。說真的，這可能是我在這些裝卸區見過最神奇的東西了。它大概應該被放進尊者殿堂才對，不過我猜是哪個幸運兒先把它弄到手了。那些火星人要過多久才會把他們神聖的魔爪伸過來，就讓時間證明吧。到頭來，他們總是能得手。」\n\n……\n\n「好啦，現在連你也盯著它看得入迷了。」\n\n「啊，還真是！你看，就連擁有無上智慧的我，也沒辦法完全不受這種東西影響。唉，算了；就讓它進入貨箱那深淵般的血盆大口吧！」\n\n……你會慢慢放下的，給點時間就好。盡量別去想它，尤其是它還在這個裝卸區的時候。至於我們，該回去工作了。」"
+    },
+    "ITEM_SANDSWEPT_TWISTED_WOUND_NAME": {
+      "en": "Twisted Wound",
+      "zh-TW": "扭曲的傷口"
+    },
+    "ITEM_SANDSWEPT_TWISTED_WOUND_PICKUP": {
+      "en": "A crystalline mark of your greed.",
+      "zh-TW": "你貪婪的結晶印記。"
+    },
+    "ITEM_SANDSWEPT_TWISTED_WOUND_DESCRIPTION": {
+      "en": "A crystalline mark of your greed.",
+      "zh-TW": "你貪婪的結晶印記。"
+    },
+    "ITEM_SANDSWEPT_TWISTED_WOUND_LORE": {
+      "en": "OwO UwU :333 >w< >_< <3 uwuuu owo <3 <3",
+      "zh-TW": "OwO UwU :333 >w< >_< <3 uwuuu owo <3 <3"
+    },
+    "ITEM_SANDSWEPT_HALLOWED_ICHOR_NAME": {
+      "en": "Hallowed Ichor",
+      "zh-TW": "神聖靈液"
+    },
+    "ITEM_SANDSWEPT_HALLOWED_ICHOR_PICKUP": {
+      "en": "Chests may be re-opened an additional time... <color=#FF7F7F>BUT re-opening them increases difficulty permanently.</color>",
+      "zh-TW": "寶箱可以再多開啟一次……<color=#FF7F7F>但重新開啟寶箱會永久提高難度。</color>"
+    },
+    "ITEM_SANDSWEPT_HALLOWED_ICHOR_DESCRIPTION": {
+      "en": "Chests may be <style=cIsUtility>re-opened 1</style> <style=cStack>(+1 per stack)</style> additional times, but <style=cIsUtility>re-opening</style> them increases <style=cIsUtility>difficulty</style> by <style=cDeath>30%</style> permanently. <style=cDeath>Difficulty increase scales with chest rarity</style>.",
+      "zh-TW": "寶箱可額外<style=cIsUtility>重新開啟1</style><style=cStack>（每層增加1）</style>次，但<style=cIsUtility>重新開啟</style>寶箱會使<style=cIsUtility>難度</style>永久提高<style=cDeath>30%</style>。<style=cDeath>難度提升幅度隨寶箱稀有度增加</style>。"
+    },
+    "ITEM_SANDSWEPT_HALLOWED_ICHOR_LORE": {
+      "en": "This will be the most potent creation I give to you. I have weaved many of these artifacts for vermin like you, but this one was far more costly than the others. It will be given only to a scarce few of my most dedicated servants. If used properly, it will be worth the price spent constructing it.\n\nIt is my blood, held in a vessel of my design. Superior blood. It grants me -- along with my treacherous brother -- the power to shape the compounds. A transfusion is sufficient to enable its effects. It cannot provide the extent of my abilities in such limited quantity, but it will allow you to create more of the trinkets you cling to so tightly.\n\nIts use will not go unnoticed, however. He will sense its presence, and send his vermin to hunt you down. If you use its power to create suitable weapons, and avoid encountering him in the flesh, I do not suspect you will have any issue dispatching your pursuers.",
+      "zh-TW": "這將是我賜予你最強大的造物。我曾為你這等害蟲編織過許多這樣的神器，但這一件的代價遠比其他的高昂。只有極少數最忠心的僕人才能得到它。若使用得當，它將對得起打造它所付出的代價。\n\n這是我的血，盛裝在我所設計的容器中。優越的血。它賦予了我——以及我那背信忘義的兄弟——塑造化合物的力量。只需一次輸血，便足以使其生效。如此有限的份量，無法讓你擁有我全部的能力，但能讓你製造出更多那些你緊抓不放的小玩意兒。\n\n然而，使用它不會不被察覺。他會感應到它的存在，並派出他的害蟲來追殺你。如果你用它的力量打造合適的武器，並避免與他本人正面相遇，我想你要解決那些追兵應該不成問題。"
+    },
+    "ACHIEVEMENT_ITEM_SANDSWEPT_HALLOWED_ICHOR_NAME": {
+      "en": "Break Away",
+      "zh-TW": "掙脫"
+    },
+    "ACHIEVEMENT_ITEM_SANDSWEPT_HALLOWED_ICHOR_DESCRIPTION": {
+      "en": "Complete the Primordial Teleporter without picking up any items on the stage.",
+      "zh-TW": "在該關卡不拾取任何物品的情況下，完成原始傳送器。"
+    },
+    "ITEM_SANDSWEPT_SEQUENCED_FATE_NAME": {
+      "en": "Sequenced Fate",
+      "zh-TW": "排定的命運"
+    },
+    "ITEM_SANDSWEPT_SEQUENCED_FATE_PICKUP": {
+      "en": "Shrines of Order appear more often and grant additional random items.",
+      "zh-TW": "秩序神龕出現得更頻繁，且會額外給予隨機物品。"
+    },
+    "ITEM_SANDSWEPT_SEQUENCED_FATE_DESCRIPTION": {
+      "en": "Using a Shrine of Order grants <style=cIsUtility>6</style> <style=cStack>(+1 per stack)</style> additional random items. <style=cIsUtility>Shrines of order appear more frequently</style>.",
+      "zh-TW": "使用秩序神龕時，額外獲得<style=cIsUtility>6</style><style=cStack>（每層增加1）</style>件隨機物品。<style=cIsUtility>秩序神龕出現得更頻繁</style>。"
+    },
+    "ITEM_SANDSWEPT_SEQUENCED_FATE_LORE": {
+      "en": "What is this? Some kind of interface?\n\nI see. This is not one of my designs, but it is nevertheless a competent one. Though it was not required of you, you have yet again made something of your own. Very good. You learn quickly.\n\nWhat you propose is...interesting. Such a construction would create perfect order, as you say, but there is no use for that on this ivory rock. There is nothing of value to sequence besides my own trinkets. As you note, the effects are only useful when greater variety is present. Nevertheless, you may create one here as a test, if you wish.\n\nWhat is most curious, however, is the structure; you know the methods of my designs, for you have worked with them -- but this is arranged differently. The capacity to design this proves you are not so foolish as to create a sculpted defiance of my teachings and place it into my hands. Explain the reason for your deviation.\n\nFascinating. In my hatred of them, I had not considered using the vermin of the planet for my purposes. I suppose you are proof of their competence. The idea suits me; it would be the ultimate revenge. This shrine is a simple thing, but I -- we -- could create far greater gifts for them. Bind them to my will, and turn them against him. Creating more copies will be trivial. It is nothing but stone, after all, yet within it lies the seeds of this ploy, and my brother's beloved pets will sow them.\n\nAlready, you have shown yourself to be a worthy investment. I invite you to oversee the next construction completely -- with the tincture, you proved your capacity to create, and with this, your capacity to design is proven in turn.",
+      "zh-TW": "這是什麼？某種介面嗎？\n\n我明白了。這並非出自我的設計，但仍不失為一件稱職的作品。雖然沒有人要求你這麼做，你卻再一次創造出了屬於自己的東西。很好。你學得很快。\n\n你的提議……很有意思。正如你所說，這樣的構造能創造出完美的秩序，但在這塊象牙白的岩石上毫無用處。除了我自己的那些小玩意兒，這裡沒有任何值得排序的東西。如你所言，只有在種類更加繁多時，它的效果才派得上用場。儘管如此，如果你願意，可以在這裡造一座作為試驗。\n\n然而，最令人好奇的是它的結構；你懂得我設計的方法，因為你曾親手運用過——但這件作品的排列方式不同。能夠設計出這種東西，證明你沒有愚蠢到會打造一件公然違抗我教誨的雕塑，再將它交到我手上。解釋你偏離的理由。\n\n妙極了。我對牠們恨之入骨，以至於從未想過要利用這顆星球上的害蟲來達成我的目的。我想，你本身就是牠們能耐的證明。這個主意很合我意；這將是終極的復仇。這座神龕只是件簡單的東西，但我——我們——能為牠們創造出更偉大的禮物。讓牠們臣服於我的意志，再讓牠們反過來對付他。要製造更多複製品輕而易舉。畢竟它不過是石頭，然而其中卻埋藏著這項計謀的種子，而我兄弟心愛的寵物們將會親手播下它們。\n\n你已經證明自己是值得投資的對象。我邀請你全權監督下一項建造——憑藉那瓶酊劑，你證實了自己的創造能力，而憑藉這件作品，你的設計能力也隨之得到證實。"
+    },
+    "ACHIEVEMENT_ITEM_SANDSWEPT_SEQUENCED_FATE_NAME": {
+      "en": "A Fool Moon [...]",
+      "zh-TW": "一輪愚月[...]"
+    },
+    "ACHIEVEMENT_ITEM_SANDSWEPT_SEQUENCED_FATE_DESCRIPTION": {
+      "en": "Interact with the Shrine of Order on the moon.",
+      "zh-TW": "與月球上的秩序神龕互動。"
+    },
+    "ITEM_SANDSWEPT_THEIR_PROMINENCE_NAME": {
+      "en": "Their Prominence",
+      "zh-TW": "祂們的顯赫"
+    },
+    "ITEM_SANDSWEPT_THEIR_PROMINENCE_PICKUP": {
+      "en": "Using a Shrine has a chance to invite the challenge of the Mountain. <color=#FF7F7F>Teleporters summon Lunar Fissures periodically.</color>",
+      "zh-TW": "使用神龕時有機率發起山之挑戰。<color=#FF7F7F>傳送器會定期召喚月球裂隙。</color>"
+    },
+    "ITEM_SANDSWEPT_THEIR_PROMINENCE_DESCRIPTION": {
+      "en": "Using a Shrine has a <style=cIsUtility>35%</style> <style=cStack>(+15% per stack)</style> chance to invite the <style=cIsUtility>challenge of the Mountain</style>. Teleporters summon <style=cDeath>1</style> <style=cStack>(+1 per challenge of the Mountain)</style> <style=cDeath>lunar fissures</style>.",
+      "zh-TW": "使用神龕時有<style=cIsUtility>35%</style><style=cStack>（每層增加15%）</style>的機率發起<style=cIsUtility>山之挑戰</style>。傳送器會召喚<style=cDeath>1</style><style=cStack>（每發起一次山之挑戰增加1）</style>道<style=cDeath>月球裂隙</style>。"
+    },
+    "ITEM_SANDSWEPT_THEIR_PROMINENCE_LORE": {
+      "en": "\"Two brothers, standing at a well. <style=cIsVoid>Both young, both innocent.</style>\"\r\n\"A worm falls in. A new world is found. <style=cDeath>One betrayed.</style> <style=cIsUtility>One regretful.</style>\"\r\n\"Two brothers, toiling in the ambry. <style=cIsVoid>Both reverent, both powerful.</style>\"\r\n\"The [compounds] are discovered. Guardians created. <style=cIsVoid>Both amazed, both proud.</style>\"\r\n\"Two brothers, looking for a way out. <style=cIsVoid>Both hopeful. Both curious.</style>\"\r\n\"A society is found. <style=cDeath>One sympathetic.</style> <style=cIsUtility>One annoyed.</style>\"\r\n\"Two brothers, torn on ethics. <style=cDeath>One tyrannical.</style> <style=cIsUtility>One puritanical.</style>\"\r\n\"A teleporter is created. A choice is made. <style=cDeath>One regretful.</style> <style=cIsUtility>One betrayed.</style>\"\r\n\"Two brothers, separated by space. <style=cDeath>One enslaves.</style> <style=cIsUtility>One broods.</style>\"\r\n\"A shine appears in the sky. <style=cDeath>One enraged.</style> <style=cIsUtility>One hopeful.</style>\"\r\n\"Two brothers. Their times approach. <style=cDeath>One king.</style> <style=cIsUtility>One outcast.</style>\"\r\n\"A god is felled. Anarchy takes hold. <style=cDeath>One missing.</style> <style=cIsUtility>One forgotten.</style>\"\r\n\"Two brothers. <style=cIsVoid>Never... to meet again.</style>\"\r\n\r\n---------------------\r\n> Translated from a Lemurian Scribe found in the Temple of the Elders by UES personnel. Burn at leisure.",
+      "zh-TW": "「兩兄弟，站在一口井邊。<style=cIsVoid>同樣年輕，同樣天真。</style>」\r\n「一隻蟲落入井中。一個新世界被發現。<style=cDeath>一個遭到背叛。</style><style=cIsUtility>一個心懷悔恨。</style>」\r\n「兩兄弟，在櫥櫃中辛勤勞作。<style=cIsVoid>同樣虔敬，同樣強大。</style>」\r\n「[化合物]被發現。守衛被創造。<style=cIsVoid>同樣驚嘆，同樣自豪。</style>」\r\n「兩兄弟，尋找著出路。<style=cIsVoid>同樣滿懷希望。同樣充滿好奇。</style>」\r\n「一個社會被發現。<style=cDeath>一個心生同情。</style><style=cIsUtility>一個心生厭煩。</style>」\r\n「兩兄弟，為道德而分歧。<style=cDeath>一個專橫暴虐。</style><style=cIsUtility>一個嚴守清規。</style>」\r\n「一座傳送器被造出。一個抉擇已做出。<style=cDeath>一個心懷悔恨。</style><style=cIsUtility>一個遭到背叛。</style>」\r\n「兩兄弟，隔著太空分離。<style=cDeath>一個奴役眾生。</style><style=cIsUtility>一個暗自憤懣。</style>」\r\n「天空中出現一道光芒。<style=cDeath>一個勃然大怒。</style><style=cIsUtility>一個燃起希望。</style>」\r\n「兩兄弟。他們的時刻將近。<style=cDeath>一個為王。</style><style=cIsUtility>一個被逐。</style>」\r\n「一位神明倒下。混亂隨之而起。<style=cDeath>一個下落不明。</style><style=cIsUtility>一個被人遺忘。</style>」\r\n「兩兄弟。<style=cIsVoid>永遠……不再相見。</style>」\r\n\r\n---------------------\r\n> 由尤伊思人員譯自在長者神殿中發現的利莫里亞文書。閱後可隨意焚毀。"
+    },
+    "ITEM_SANDSWEPT_FESTERING_HUNGER_NAME": {
+      "en": "Festering Hunger",
+      "zh-TW": "潰爛的飢餓"
+    },
+    "ITEM_SANDSWEPT_FESTERING_HUNGER_PICKUP": {
+      "en": "Chance to decay enemies on hit. Moving near decaying enemies increases movement speed. <style=cIsVoid>Corrupts all Smouldering Documents</style>.",
+      "zh-TW": "命中時有機率使敵人腐朽。在腐朽的敵人附近移動會提高移動速度。<style=cIsVoid>使所有悶燒的文件無效化</style>。"
+    },
+    "ITEM_SANDSWEPT_FESTERING_HUNGER_DESCRIPTION": {
+      "en": "<style=cIsDamage>8%</style> chance on hit to inflict <style=cIsDamage>decay</style> for <style=cIsDamage>250%</style> base damage. Moving near <style=cIsDamage>decaying</style> enemies increases <style=cIsUtility>movement speed</style> by <style=cIsUtility>30%</style> <style=cStack>(+30% per stack)</style> for <style=cIsUtility>3</style> seconds. <style=cIsVoid>Corrupts all Smouldering Documents</style>.",
+      "zh-TW": "命中時有<style=cIsDamage>8%</style>的機率施加<style=cIsDamage>腐朽</style>，造成<style=cIsDamage>250%</style>的基礎傷害。在<style=cIsDamage>腐朽</style>的敵人附近移動時，<style=cIsUtility>移動速度</style>提高<style=cIsUtility>30%</style><style=cStack>（每層增加30%）</style>，持續<style=cIsUtility>3</style>秒。<style=cIsVoid>使所有悶燒的文件無效化</style>。"
+    },
+    "ITEM_SANDSWEPT_FESTERING_HUNGER_LORE": {
+      "en": "<style=cMono>\nWelcome to DataScraper (v3.1.53 - beta branch)\n$ Scraping memory...done.\n$ Resolving...done.\n$ Combing for relevant data...done.\nComplete!\n</style>\n\n<style=cMono>Day [null]</style>\nIt's beautiful here, but terrifying. When we landed on the planet, we already knew what to expect on the surface from the screening. But this...the portal didn't show up in our scans, nor did this vast ecosystem. Ash opted to stay on the surface instead, a choice I thought foolish at first, but I'm now realizing may have been the better of the two.\n\nI'm not even certain where I am. My navigation and communication tools don't seem to be working, and the black sky holds no answers. The dizzying depth I observed when looking up makes me think I might be far underground. VERY far.\n\n<style=cMono>Day [null]</style>\nI found something. Not life -- still no signs of that, but...something. Sort of like a pool, I guess. I don't know what the blackness inside it is, but it seems liquid-ish. I'd take a sample, but I'm far more interested in just getting out of here alive at this point. I can come back later to investigate the wonders of this place. Ideally, someone else will. I'm sure my father can find some overeager xenobiologist.\n\nI don't know why I did it, but I put one of my knives in. I just sort of felt compelled to do it. When I brought it back out, it was...different. Now it looks like everything else, like it was made here. I felt a sharp pain in my hand when I did, though, as if it didn't want me to have it. My suit says there's no injuries, but the pain lingers.\n\n<style=cMono>Day -2</style>\nFinally found another portal. I'm out! It was on the other side of the planet, but my distress beacons work now, and the ship should be on its way. They told me over the radio that Ash returned a couple days ago and described the portal. They'd never heard of anything like it before.\n\nHow I missed the sunlight, the air, the...finite-ness.\n\nI'm more convinced now than ever that the portal is invasive. There's nothing intelligent enough on this planet to have created something like that, and no signs of a past civilization, either. It's far outside the bounds of human technology. This discovery, whatever it is exactly, will shake things up for sure, though I want nothing to do with that place anymore.\n\n<style=cMono>Day -1</style>\nThey're running tests on the portal. I've just been watching from far away. After what I described, nobody except the xenobiologists want to go in, and even they're hesitant. My father is enforcing strict regulations around the portal. Either way, they'll be making sure whoever follows in my footsteps is safer than I was.\n\nWhat was I thinking, just stepping in like that? At least it's over now...\n\n<style=cMono>Day 0</style>\nThere's a hole in the glass container they used to store the knife. In the camera footage, it just sort of...appeared. Nothing was cut, the footage from that day is the length it should be. They didn't just tape it over, either -- you can see the glass breaking. But nothing caused it.\n\nThey're calling it a pressure abnormality. They aren't worried. I don't fully share that, but they're probably right. After being in what we're now calling the void, I'm probably just paranoid.\n\n<style=cMono>Day 1</style>\nI woke up feeling a terrible empti?ness. Nothing has quenched it. It's made it hard to be cordial. Every time I talk to someone, I have to push down anger that wells up just from the time wasted on the words -- especially with the way they talk about the [void], as if it were some hellscape.\n\nThey've never been there. Only I have. Cowards. They tell me I didn't say it was majestic before, that they're just repeating my wor?ds back to me, but I know my own memories.\n\n<style=cMono>Day 2</style>\nThey all looked at me with surprise when I said I w?anted to go back. I calmed myself at first, trying to explai?n to them, but they wouldn't get out of the way. Just stood there, slack jawed. When I started yelling, they dragg?ed me away. Unbelievable.\n\nI'm in the med bay now. They're running sc?ans, but I can't let them. Some of my friends came in, talked with soft and concerned voices. They all b?lur together. Any one of them could have let me go, brought m?e to the portal, but they didn't. Some friends they are. I?'ll just have to get out myself.\n\n<style=cMono>Day 3</style>\nWhen they dis?covere?d I'd broken out, I made up something abou?t hating to be confined, and the doctors s?eemed to believe it. I suppressed the em??ptiness, told them I was fine, told them I never really wanted to go back anyw?ay. But it gets worse an?d worse, deeper and d?eeper, every hour.\n\nThey let me go. I'm too valuab?le to the ship, apparently, a?nd my fa?ther wanted me out. I'm fr?ee.\n\nWhen I arr?ived breathless at the pods, though, I found onl?y empty space outside. The sh?ip had left during my confinement, l?eaving the planet and the portal behind.\n\nThe captain won't listen. I had to b?ackped?al to avoid being sent to med bay again. I?f I kill him and take control of the ship, we can go back. He leaves me no choic?e.\n\n<style=cMono>Day 4</style>\nI l??ooked in the mirror t?oday. The s?kin below my eyes was darker than I've ev?er s?een before. I only then r??ealized I haven't sle?pt since the emptine?ss started. I n?ever feel tired. I can feel my body shaki??ng slightly now, tho?ugh. But I sti?ll fee?l energized.\n\nToda??y will be the day I do it. I have a pr?ivate lunch scheduled with the h?im in the cockp?it, like we do ev?ery week. He l?ikes to keep up \"father-d??aughter bonding time.\" It's the p?erfect opportun?ity.\n\n<style=cMono>Day 5</style>\nHe's d?ead. All it took was some sob st?ory about how horrible the v??oid had been, and he came right up and embraced me without a seco?nd thought. Idio?t. I wasted no time rerouting the d?estination. They're at the door now, but th?ey won't get in. Father bragged ab?out the security of the cockpit. U?ES put a lot into that, after Contact L?ight.\n\nThe warmth of his blood on m?y skin made the emptiness subside a bi?t. It's nothing compared to w?hat the [void] can offer, of cour?se. They won't follow me will?ingly after this, but maybe I can bring some of the c?rew in with me. They nee?d to see.\n\n<style=cMono>Day 8</style>\nTh?ey're trying to st?arve me out. I've been living o?ff his body. It's hard to e??at in the m?omen?t, but it ke?eps me alive. It make??s the emptin?ess a little bette?r, t?oo.\n\nWe're on the p??lanet now, near the p?ortal. The terrain is rough, so the shi?p is com??promised, but the cockpit i?s fine. They're guardin?g it, t?hough, and they'll outl?ast me. I have t?o do so??mething.\n\n<style=cMono>Day 9</style>\nI co??uld f?eel the [reavers] ar??rivi??ng. Sc?rea?ms fr??om outside, fo??llowe?d b?y gunfir??e. The gunfire g??rad?ua?lly fad?ed, but the screa??ms didn't. Ev??entua??lly, t?he la?st bulle??t was sh?ot, and no?w only th??e sc?ream?s f?ill the silen??ce, al?ong with t?he [reavers'] son??gs.\n\nh??eir songs br?ought tear??s to my e??yes. They're e?ven more b?eautif?ul than the scre?ams. They s?ing of how the ship will be ta??ken and sequenc?ed. How the cr??ew will be [touched] to serve [the one beyond], and sent acro?ss the galaxy. Of my valor, and ho?w my essence will finally return to the [void]. The songs drive away the emptiness.\n\nI open the doors. The crew is disarmed, bound to the floor by the [reavers]. They gaze upon me in horror, but they don't matter. The [reavers'] gaze is the one that matters. I feel enormous pride. I've served the [void] well.\n\nOne by one, the crew is [touched], then unbound. The effect takes hold for them faster than for me. The [infestors] have evolved. They amble away, into the portal, until only one is left. I wish to join them, but I know it isn't my place. I'll be there soon enough.\n\nAt last, the [infestor] leaves me. As I collapse, the toll on my system throughout the past nine days finally paid, I watch it crawl onto the final crewmember.\n\nLucidity returns, and the horror of what I've done dawns on me. The scent and sight of my father's blood alone makes me want to throw up. I can't even begin to think about the...other stuff. Already, my mind is blocking out the memories. In that moment, I want nothing less than to live with what I've done forever, sequenced into one of their cells.\n\nAnother horror joins it as I recognize the last crewmember. Ash. They struggle against the reavers' bonds, but it's fruitless, and I'm powerless to help. I have to watch as they become touched, before following the others through the portal.\n\nThey, who had been with me since the start of this. Choosing them as the one I watch lucidly feels like a message, one emphasized by the blackness that consumes the ship as one of the reavers detonates.\n\nNo one escapes.",
+      "zh-TW": "<style=cMono>\n歡迎使用資料鏟（v3.1.53測試版）\n$ 正在抓取記憶體……完畢。\n$ 正在解析……完畢。\n$ 正在統合關聯資料……完畢。\n完成！\n</style>\n\n<style=cMono>第[null]天</style>\n這裡很美，卻也令人恐懼。我們降落在這顆星球上時，早就從先前的勘測知道地表會有什麼。但這個……傳送門沒有出現在我們的掃描結果裡，這片廣大的生態系也沒有。艾許選擇留在地表，起初我覺得那個決定很蠢，但現在我才明白，那或許才是比較好的選擇。\n\n我甚至不確定自己身在何處。我的導航和通訊工具似乎都失靈了，漆黑的天空也給不了任何答案。抬頭時看到的那令人暈眩的深度，讓我覺得自己可能位在地底深處。非——常深。\n\n<style=cMono>第[null]天</style>\n我發現了某樣東西。不是生命——依然沒有任何生命跡象，但……是某樣東西。我想，有點像是一座水池。我不知道裡面那片漆黑是什麼，但看起來像是某種液體。我本來想採個樣本，但到了這個地步，我只想活著離開這裡。之後我可以再回來研究這地方的奇觀。最好是換別人來。我相信我父親能找到哪個過度熱心的外星生物學家。\n\n我不知道自己為什麼這麼做，但我把一把小刀伸了進去。我就是覺得非這麼做不可。當我把它拿出來時，它……變了。現在它看起來就跟這裡的一切一樣，彷彿是在這裡打造的。不過我那麼做的時候，手上傳來一陣刺痛，彷彿它不想讓我拿走那把刀。我的防護服顯示我沒有受傷，但疼痛一直揮之不去。\n\n<style=cMono>第-2天</style>\n終於找到另一個傳送門了。我出來了！它位在星球的另一端，不過我的求救信標現在能用了，飛船應該正在趕來的路上。他們透過無線電告訴我，艾許幾天前就回去了，還描述了那個傳送門的樣子。他們從沒聽過那樣的東西。\n\n我真想念陽光、空氣，還有那種……有邊有際的感覺。\n\n我現在比以往任何時候都更確信，那個傳送門是外來入侵的。這顆星球上沒有任何聰明到能創造出那種東西的生物，也沒有過往文明的跡象。它遠遠超出了人類科技的範疇。不管這項發現到底是什麼，它肯定會引起一番轟動，不過我再也不想跟那個地方扯上任何關係了。\n\n<style=cMono>第-1天</style>\n他們正在對傳送門進行測試。我只是遠遠地看著。聽完我的描述後，除了外星生物學家之外，沒有人想進去，就連他們也很猶豫。我父親正在傳送門周圍實施嚴格的管制。無論如何，他們都會確保追隨我腳步的人比我當時更安全。\n\n我當時到底在想什麼，就那樣走了進去？至少現在都結束了……\n\n<style=cMono>第0天</style>\n他們用來存放那把小刀的玻璃容器上出現了一個洞。在監視器畫面裡，它就這麼……出現了。影片沒有被剪過，那天的錄影長度完全正確。也不是有人把影片覆蓋掉——你能看到玻璃破裂的過程。但沒有任何東西造成它。\n\n他們說那是壓力異常。他們並不擔心。我沒辦法像他們那麼放心，但他們大概是對的。在去過那個我們現在稱為虛空的地方之後，我大概只是疑神疑鬼罷了。\n\n<style=cMono>第1天</style>\n我醒來時感到一股可怕的?空虛。什麼都填補不了它。這讓我很難對人客氣。每次跟別人說話，光是浪費在那些話上的時間就讓我怒火中燒，我得硬壓下去——尤其是他們談論[虛空]的方式，彷彿那裡是什麼人間地獄。\n\n他們從沒去過那裡。只有我去過。一群懦夫。他們跟我說，我之前並沒有說過那裡很壯麗，他們只是把我自己說過的話重複?給我聽而已，但我很清楚自己的記憶。\n\n<style=cMono>第2天</style>\n當我說想回去時，他們全都驚訝地看著?我。一開始我讓自己冷靜下來，試著向他們解?釋，但他們就是不肯讓開。只是站在那裡，目瞪口呆。等我開始大吼，他們就把我拖走?了。真是難以置信。\n\n我現在在醫療艙裡。他們正在做掃?描，但我不能讓他們繼續下去。有幾個朋友進來了，用溫柔又擔憂的聲音跟我說話。他們?全都模糊成一片。他們之中任何一個人都可以放我?走，帶我去傳送門，但他們沒有。還真是好朋友?啊。我只能靠自己逃出去了。\n\n<style=cMono>第3天</style>\n當他們發?現我?逃出來時，我隨便編了個討厭?被關起來的理由，醫生們似乎也?信了。我壓抑住那股空虛，跟??他們說我沒事，跟他們說反正我從來就沒有真的想回?去。但它每個小時都?變得越來越?糟，越來越深。\n\n他們放我走了。看來我對這?艘飛船來說太有價值了，而且?我父親?也希望我出來。我自由?了。\n\n然而，當?我上氣不接下氣地趕到登陸艙時，卻發現外面只?剩一片空蕩蕩的太空。在我?被關起來的期間，飛船已經離開?了，把那顆星球和傳送門都拋在了後頭。\n\n船長不肯聽我的。我不得不?改口，才?免於再被送進醫療艙。如果我?殺了他，奪下飛船的控制權，我們就能回去。他讓我別無選?擇。\n\n<style=cMono>第4天</style>\n我??今天照了鏡子。我?眼睛下方?的皮膚比我以往見過的都還要黑。直?到那?時我才發現，自??從那股空虛出現以?來，我就沒睡過?覺。我從來?不覺得累。不過，我現在能感覺到??身體在微微發?抖。但我依然?感到精?力充沛。\n\n今??天就是我動手的日子。我跟那?個他約好在駕駛艙單獨吃?午餐，就像?我們每週都會?做的那?樣。他喜歡維持所謂??的「父女相處時光」。這是?絕佳的機?會。\n\n<style=cMono>第5天</style>\n他死?了。我只需要編個悲慘?的故事，說虛空有多??可怕，他就毫不猶豫地走過來抱住我。白痴。我?立刻更改?了目的地。他們現在就在?門外，但他們進不來。父親曾經?炫耀過駕駛艙的安全?性。在觸點之光事件之後，尤?伊思在這方面下了很多功?夫。\n\n他溫熱的血沾在我的皮膚?上，讓空虛稍微平息了一些。當?然，這跟[虛空]能給予?的相比根本不算什麼。經過?這件事，他們不會心甘情?願地跟隨我了，但也許我能帶幾個船員跟我一起?進去。他們必須親眼?看看。\n\n<style=cMono>第8天</style>\n他?們想把我餓?到投降。我一直靠他的?屍體維生。當下很難??吃得下?去，但?這能?讓我活著。而??且，這也讓?空虛好受?了一?點。\n\n我們現在在??那顆星球上，就?在傳送門附近。地形崎嶇，所以?飛船??受損了，不過駕駛艙沒?事。不過他們守在?外面，而?且他們撐得比?我久。我必須?做點??什麼。\n\n<style=cMono>第9天</style>\n我??能感?覺到[掠奪??者]正??在到??來。外?面傳?來尖??叫聲，接??著是?槍聲。槍?聲漸??漸消??失，但?尖叫?聲沒?有。最??後，最??後一??顆子?彈也?射出去??了，現?在只剩?下尖叫??聲，還?有[掠?奪者]的?歌聲，填??滿了?這片?寂靜。\n\n們??的歌聲?讓我熱淚??盈眶。它??們甚至比?尖叫聲?還要?美。它們歌頌?著這艘?飛船將如何被奪走並被排??序。船員們?將如何??被[觸碰]，為[彼方之存在]效力，並被送往銀?河各處。歌頌著我的英勇，以?及我的本質將如何終於回歸[虛空]。那些歌聲驅散了空虛。\n\n我打開了門。船員們被解除了武裝，被[掠奪者]綁縛在地上。他們驚恐地凝視著我，但他們無關緊要。[掠奪者]的凝視才是重要的。我感到無比自豪。我很好地侍奉了[虛空]。\n\n船員們一個接一個被[觸碰]，然後被鬆綁。效果在他們身上發作得比在我身上更快。[感染者]已經進化了。他們蹣跚地離去，走進傳送門，直到只剩下最後一個。我希望能加入他們，但我知道那不是我該在的位置。我很快就會去了。\n\n終於，[感染者]離開了我。過去九天對我身體造成的損耗終於找上門來，我倒了下去，看著它爬到最後一名船員身上。\n\n神智恢復了清醒，我這才意識到自己做了多麼可怕的事。光是父親鮮血的氣味和模樣，就讓我想吐。我甚至無法開始去想……其他的事。我的腦袋已經開始封鎖那些記憶。在那一刻，我最不想要的，就是帶著自己做過的事永遠活下去，被排序封存在它們的某個囚籠裡。\n\n當我認出最後那名船員時，另一股恐懼也隨之而來。是艾許。艾許拚命掙扎，想掙脫掠奪者的束縛，但只是徒勞，而我也無力相助。我只能眼睜睜地看著艾許被觸碰，然後跟著其他人穿過傳送門。\n\n艾許，從這一切開始時就一直陪在我身邊的人。偏偏讓我在清醒時看著的人是艾許，這感覺像是一則訊息——而當其中一隻掠奪者引爆，黑暗吞噬了整艘飛船時，這則訊息變得再清楚不過。\n\n沒有人逃得掉。"
+    },
+    "ITEM_SANDSWEPT_MILLENIUM_NAME": {
+      "en": "Millenium",
+      "zh-TW": "千禧年"
+    },
+    "ITEM_SANDSWEPT_MILLENIUM_PICKUP": {
+      "en": "Create a tidal cataclysm on hit that grounds and collapses enemies. <style=cIsVoid>Corrupts all Sun Fragments</style>.",
+      "zh-TW": "命中時引發潮汐災變，使敵人接地並瓦解。<style=cIsVoid>使所有太陽碎片無效化</style>。"
+    },
+    "ITEM_SANDSWEPT_MILLENIUM_DESCRIPTION": {
+      "en": "<style=cIsUtility>7%</style> chance on hit to create a <style=cIsDamage>tidal cataclysm</style> in a <style=cIsUtility>12m</style> <style=cStack>(+4m per stack)</style> area, <style=cIsDamage>collapsing</style> and <style=cIsUtility>grounding</style> enemies for <style=cIsDamage>400%</style> base damage. <style=cIsVoid>Corrupts all Sun Fragments</style>.",
+      "zh-TW": "命中時有<style=cIsUtility>7%</style>的機率在<style=cIsUtility>12米</style><style=cStack>（每層增加4米）</style>範圍內引發<style=cIsDamage>潮汐災變</style>，使敵人<style=cIsDamage>瓦解</style>並<style=cIsUtility>接地</style>，造成<style=cIsDamage>400%</style>的基礎傷害。<style=cIsVoid>使所有太陽碎片無效化</style>。"
+    },
+    "ITEM_SANDSWEPT_MILLENIUM_LORE": {
+      "en": "Transcript from the last known log of the UES \"Shimmer Mark\"\n\n\"Outside, it's so...so purple, that's the only way I can explain it, I can feel the fog from inside the ship...it's...It would be quite peaceful if I even knew where I was. It's making a cool breeze in the ship, like a nice summer's day at the beach...But, but it also hurts somehow...Not physically at least. Something inside of me just can't...take it. It's a searing pain, except not. My body feels like it should be on fire but...it's just a cool breeze...I've been wandering the ship recently, it's not the same ship. It's not. The same. Ship. The halls go on forever, twisting and turning l?ike a maze. Every time I turn around the halls change again and again, over and over again, left turns right forward goes backward. It's ma?ddenin?g. I was barely able to find the br?idge to record this. My body feels like its fa?lling constantly, wind brushing past my suit, I can tell the win?d is real, but I'm not falling. The wind, whist?ling into my e?ars, I can't think s?traig?ht with this n?oise, it's almost like a v?oi?ce. ?I can so?met?imes hear the? wind [WH?ISPE?RIN?G}, Whis?perin?g a tongue ?I dont kn?ow, but I st?ill un?derstand. Th?is [HEL?L] Is mad?denin?g. B?ut I must g?o dee?per. Ro?ckete?er of the [~2@#!@($*&%] signing off.\"",
+      "zh-TW": "尤伊思「微光印記號」最後已知日誌的轉錄稿\n\n「外面，是那麼……那麼紫，我只能這樣形容，我在船裡都能感覺到那片霧……它……要是我至少知道自己身在何處，這裡其實會相當寧靜。它讓船裡吹著一陣涼爽的微風，就像在海邊度過美好的夏日……但是，但是它也不知怎地讓人很痛……至少不是身體上的痛。我體內有某種東西就是……承受不了。那是一種灼燒般的痛，卻又不是。我的身體感覺像是應該要著火了，但……那只是一陣涼爽的微風……我最近一直在船上四處遊蕩，這不是同一艘船。不是。同一艘。船。走廊無止境地延伸，像迷宮一樣曲?折蜿蜒。每次我一轉身，走廊就又變了，一次又一次，一遍又一遍，左轉變右轉，前進變後退。這快把我逼瘋了。我好?不容?易才找到艦橋來錄下這段話。我?的身體感覺像是一直在墜落，風從我的?防護服旁掠過，我分得出那陣風是真的，但我並沒有在?墜落。那陣風，呼嘯著灌進我的耳朵，這?種噪音讓我?沒辦法好好思?考，它?幾乎就像一?個聲音。我有時能?聽見?風在[低?語中}，低?語著?一種?我不?懂的?語言，但?我仍?然聽?得懂。這?個[地?獄]快?把人?逼瘋?了。但?我必?須再深?入一?些。[~2@#!@($*&%]的?火箭?手，通?訊結?束。」"
+    },
+    "ITEM_SANDSWEPT_PRESERVED_ATOLL_NAME": {
+      "en": "Preserved Atoll",
+      "zh-TW": "封存的環礁"
+    },
+    "ITEM_SANDSWEPT_PRESERVED_ATOLL_PICKUP": {
+      "en": "The void retaliates on taking damage, inflicting permanent decay. Recharges over time. <style=cIsVoid>Corrupts all Sacrificial Bands</style>.",
+      "zh-TW": "受到傷害時，虛空會展開反擊，施加永久腐朽。隨時間自動充能。<style=cIsVoid>使所有獻祭手環無效化</style>。"
+    },
+    "ITEM_SANDSWEPT_PRESERVED_ATOLL_DESCRIPTION": {
+      "en": "Getting hit causes you to implode, inflicting up to <style=cIsDamage>5</style> <style=cStack>(+3 per stack)</style> <style=cIsDamage>permanent decay</style> for <style=cIsDamage>250%</style> base damage to all targets in a <style=cIsDamage>24m</style> radius based on <style=cIsHealing>health lost</style>. Recharges every <style=cIsUtility>10</style> seconds. <style=cIsVoid>Corrupts all Sacrificial Bands</style>.",
+      "zh-TW": "受到攻擊時你會向內爆縮，依<style=cIsHealing>損失的生命值</style>對<style=cIsDamage>24米</style>半徑內的所有目標施加最多<style=cIsDamage>5</style><style=cStack>（每層增加3）</style>層<style=cIsDamage>永久腐朽</style>，造成<style=cIsDamage>250%</style>的基礎傷害。每<style=cIsUtility>10</style>秒充能一次。<style=cIsVoid>使所有獻祭手環無效化</style>。"
+    },
+    "ITEM_SANDSWEPT_PRESERVED_ATOLL_LORE": {
+      "en": "A memory...Lost to time, records of it wiped from the archives. Pictures of it went missing. Paintings, gone. Stories, removed. A famed atoll, after the incident...Not a soul could remember its name. Nothing, only this one memento remains...",
+      "zh-TW": "一段記憶……消逝於時光之中，相關紀錄全從檔案庫裡被抹去。照片不翼而飛。畫作，消失無蹤。故事，盡遭刪除。一座曾經遠近馳名的環礁，在那起事件之後……再也沒有人記得它的名字。什麼都沒留下，只剩這件紀念物……"
+    },
+    "ITEM_SANDSWEPT_CROWNS_DIAMOND_NAME": {
+      "en": "Crown's Diamond",
+      "zh-TW": "王冠之鑽"
+    },
+    "ITEM_SANDSWEPT_CROWNS_DIAMOND_PICKUP": {
+      "en": "Being out of danger periodically grants barrier. Barrier decays slower while out of combat or danger.",
+      "zh-TW": "脫離危險時定期獲得屏障。脫離戰鬥或危險時，屏障衰減得更慢。"
+    },
+    "ITEM_SANDSWEPT_CROWNS_DIAMOND_DESCRIPTION": {
+      "en": "Being out of danger grants <style=cIsHealing>20% barrier</style> every <style=cIsHealing>7</style> seconds. <style=cIsHealing>Barrier</style> decays <style=cIsUtility>15%</style> <style=cStack>(+15% per stack)</style> <style=cIsUtility>slower</style> while out of combat or danger.",
+      "zh-TW": "脫離危險時，每<style=cIsHealing>7</style>秒獲得<style=cIsHealing>20%的屏障</style>。脫離戰鬥或危險時，<style=cIsHealing>屏障</style>的衰減速度<style=cIsUtility>減緩</style><style=cIsUtility>15%</style><style=cStack>（每層增加15%）</style>。"
+    },
+    "ITEM_SANDSWEPT_CROWNS_DIAMOND_LORE": {
+      "en": "Order: Faux Cut Opal\nTracking Number: 443*****\nEstimated Delivery: 7/01/2026\nShipping Method: Top Priority\nShipping Address: Aganta Palace, Mercury\nShipping Details:\n\nThe Venusians know that Mercury is responsible for the assassination, and are planning a counterattack. They have tried to keep it under wraps, of course, but Your Majesty's intelligence proves its excellence once again, and we remain a step ahead. Intelligence has heard whispers that Venus has now acquired one of the Neptunian ritual knives, as well, and are now developing ultra-phasic shielding of their own -- though I cannot yet confirm this.\n\nYour Majesty's appointed Master of Strategy worries that striking first to stop their inevitable counterattack may lead to outright war, and suggests Your Majesty increase defensive measures instead. The Venusians are planning to send a solitary assassin, as we did, in order to infiltrate Mercury easily and avoid blame. Of course, it is Your Majesty's decision -- but if you should accept the Master of Strategy's proposal, she suggests you make use of this trinket.\n\nAs Your Majesty will see, it is a near-perfect replica of the frontmost Agantan Crown diamond, meant to temporarily replace it. Within it is an ultra-phasic shield generator, which will provide protection in the event the assassin is able to reach the Palace. This new technology is unknown to Venus, and beyond them, no one knows of ultra-phasic shielding; it will be not only unexpected, but invisible, requiring no change in Your Majesty's routine or appearance to be effective.\n\nIf Your Majesty would like to proceed with this plan, we have similar diamonds for every other in the Agantan Crown, providing Your Majesty with unparalleled protection. Should I or the Master of Strategy receive word, we will send them to the Palace post-haste.\n\nFor the glory of Immortal Mercury.",
+      "zh-TW": "運單：仿製切割蛋白石\n單號：443*****\n預計送達時間：2026年7月1日\n運送方式：最高優先\n送貨地址：水星，阿甘塔宮\n運送詳情：\n\n金星人已經知道水星是那起暗殺的幕後主使，正在策劃反擊。他們當然想封鎖消息，但陛下的情報部門再次證明自身的卓越，我們依然領先一步。情報部門還聽到風聲，說金星現在也弄到了一把海王星的儀式匕首，正著手研發他們自己的超相護盾——不過這點我目前還無法證實。\n\n陛下親自任命的戰略大臣擔心，若為了阻止對方必然到來的反擊而先發制人，恐怕會演變成全面戰爭，因此建議陛下改為加強防禦措施。金星人打算像我們當初那樣，只派出一名刺客，好輕易滲透水星，同時避免遭人究責。當然，這得由陛下定奪——但如果陛下願意採納戰略大臣的提議，她建議您使用這件小玩意。\n\n陛下將會看到，這是阿甘塔王冠最前方那顆鑽石近乎完美的複製品，用來暫時替換原本的鑽石。其中藏有一具超相護盾生成器，萬一刺客成功闖入王宮，它便能提供保護。金星並不知道這項新技術，而除了他們之外，也沒有任何人知道超相護盾的存在；它不僅出人意料，而且無形無影，陛下無需改變任何日常作息或外表，就能發揮效用。\n\n若陛下願意推行此計畫，阿甘塔王冠上的其餘每一顆鑽石，我們都備有類似的仿品，能為陛下提供無與倫比的保護。只要我或戰略大臣接獲指示，便會火速將它們送往王宮。\n\n為了不朽水星的榮耀。"
+    },
+    "ITEM_SANDSWEPT_DRIFTING_PERCEPTION_NAME": {
+      "en": "Drifting Perception",
+      "zh-TW": "飄忽的感知"
+    },
+    "ITEM_SANDSWEPT_DRIFTING_PERCEPTION_PICKUP": {
+      "en": "Cloak upon entering combat. Being cloaked increases your 'Critical Strike' chance and 'Critical Damage'. Recharges over time.",
+      "zh-TW": "進入戰鬥時隱身。隱身期間提高你的暴擊機率與暴擊傷害。隨時間自動充能。"
+    },
+    "ITEM_SANDSWEPT_DRIFTING_PERCEPTION_DESCRIPTION": {
+      "en": "Upon entering combat, become <style=cIsUtility>cloaked</style> for <style=cIsUtility>6s</style>. While <style=cIsUtility>cloaked</style>, increase <style=cIsDamage>critical chance</style> by <style=cIsDamage>25%</style> and <style=cIsDamage>critical damage</style> by <style=cIsDamage>60%</style> <style=cStack>(+60% per stack)</style>. Recharges every <style=cIsUtility>25</style> seconds.",
+      "zh-TW": "進入戰鬥時，進入<style=cIsUtility>隱身</style>狀態，持續<style=cIsUtility>6秒</style>。<style=cIsUtility>隱身</style>期間，<style=cIsDamage>暴擊機率</style>提高<style=cIsDamage>25%</style>，<style=cIsDamage>暴擊傷害</style>提高<style=cIsDamage>60%</style><style=cStack>（每層增加60%）</style>。每<style=cIsUtility>25</style>秒充能一次。"
+    },
+    "ITEM_SANDSWEPT_DRIFTING_PERCEPTION_LORE": {
+      "en": "Here, my child. It is a gift for you. It will protect you from the invaders in what is to follow. I have given one to each of the others who will accompany us, as well. When it senses the need, it will shield you from the eyes of your foes, and empower you.\n\nNo, no need to worry about that. It is a simple construction. Your own life, along with the lives of all my children, are at stake here. I would give far more to protect you.\n\nIs that so? Curiosity befits you; I am happy to indulge. I have constructed it with the compounds that drive reality: soul, mass, and blood. This construction uses only two of the four -- the first two. They are present in all things, but only I can sculpt them.\n\nHm? Oh, so I did, that is my mistake. Yes, there are only three.\n\nThese outer pieces -- they are mass. They hold the construction together, to support the centerpiece, which is infused with soul. Gold is naturally created when soul is imbued into mass; it was  one of the first things I ever discovered about the compounds. It does not have the soul necessary to be truly alive, but it will be able to sense your peril.\n\nYes, it is pretty. Its form is incidental, however -- it was made to be functional. It is nearly impossible to create such things with intentionality; it is far more a process of experimentation. It takes whatever form it sees fit, which is why all of these constructions are shaped differently. Almost always, their chosen form is quite beautiful.\n\nThere is no need to worry, they all serve the same function. I have tested them myself. There are some negligible inconsistencies, but they are inevitable when using the compounds.\n\n...\n\nYes, I suppose it would be convenient, but my influence on the outcome is minimal. It would not be right to force such powerful compounds into any kind of...design, as you say.",
+      "zh-TW": "來，我的孩子。這是給你的禮物。在接下來的事態中，它會保護你不受入侵者所害。其他會與我們同行的人，我也都各給了一個。當它察覺到需要時，便會讓你避開敵人的目光，並賦予你力量。\n\n不，不必擔心這個。這只是個簡單的造物。你的性命，還有我所有孩子的性命，都繫於此事。為了保護你，我願意付出遠比這更多的代價。\n\n是嗎？好奇心很適合你；我很樂意滿足你。我是用驅動現實的化合物打造它的：靈魂、質量與血液。這個造物只用了四種中的兩種——也就是前兩種。它們存在於萬物之中，但只有我能雕塑它們。\n\n嗯？噢，我確實這麼說了，是我說錯了。沒錯，只有三種。\n\n這些外圍的部件——它們是質量。它們把整個造物固定在一起，用以支撐注入了靈魂的核心。當靈魂灌注進質量時，自然就會生成黃金；這是我最早發現的化合物特性之一。它擁有的靈魂並不足以讓它真正活過來，但足以感知你的危險。\n\n是的，它很漂亮。不過它的外形只是偶然——它是為了實用而造的。要刻意創造出這種東西幾乎是不可能的；這更像是一連串實驗的過程。它會自行採取它認為合適的形態，所以這些造物的形狀才會各不相同。它們選擇的形態幾乎總是相當美麗。\n\n不必擔心，它們的功能全都一樣。我親自測試過了。雖然有些微不足道的差異，但使用化合物時，這是無可避免的。\n\n……\n\n是的，我想那樣確實會很方便，但我對結果的影響微乎其微。硬要把如此強大的化合物塞進任何一種……照你的說法，「設計」之中，並不妥當。"
+    },
+    "ITEM_SANDSWEPT_MAKESHIFT_PLATE_NAME": {
+      "en": "Makeshift Plate",
+      "zh-TW": "臨時護板"
+    },
+    "ITEM_SANDSWEPT_MAKESHIFT_PLATE_PICKUP": {
+      "en": "Gain plating on stage entry. Plating absorbs damage, but cannot be recovered.",
+      "zh-TW": "進入關卡時獲得護板。護板能吸收傷害，但無法恢復。"
+    },
+    "ITEM_SANDSWEPT_MAKESHIFT_PLATE_DESCRIPTION": {
+      "en": "Begin each stage with <style=cIsHealing>100%</style> <style=cStack>(+100% per stack)</style> <style=cIsHealing>plating</style>. <style=cIsHealing>Plating</style> acts as <style=cIsHealing>secondary health</style>, but cannot be recovered in any way.",
+      "zh-TW": "每個關卡開始時獲得<style=cIsHealing>100%</style><style=cStack>（每層增加100%）</style>的<style=cIsHealing>護板</style>。<style=cIsHealing>護板</style>可作為<style=cIsHealing>第二層生命值</style>，但無法以任何方式恢復。"
+    },
+    "ITEM_SANDSWEPT_MAKESHIFT_PLATE_LORE": {
+      "en": "Order: WW2019 Artifact - #1485-43958\nTracking Number: 599*****\nEstimated Delivery: 8/9/2027\nShipping Method: Top Priority\nShipping Address: 707th Penthouse Suite, Earth\nShipping Details:\n\nA real, genuine plate of armor from the War of 2019. Somehow managed to survive what looks like gunshots, bombing runs, laser tech, and all sorts of other things. This thing would be a fine centerpiece to a collection I'd reckon. You paid a hefty price for this thing, hope it's worth it!",
+      "zh-TW": "運單：2019年世界大戰文物－#1485-43958\n單號：599*****\n預計送達時間：2027年8月9日\n運送方式：最高優先\n送貨地址：地球，第707號頂層套房\n運送詳情：\n\n一塊貨真價實、來自2019年戰爭的裝甲板。看起來挨過槍擊、轟炸、雷射武器，還有其他五花八門的攻擊，不知怎麼的居然撐了下來。我想這東西拿來當收藏品的鎮館之寶應該挺不錯的。你為這玩意兒付了一大筆錢，希望值得啦！"
+    },
+    "ITEM_SANDSWEPT_NUCLEAR_SALVO_NAME": {
+      "en": "Nuclear Salvo",
+      "zh-TW": "核子齊射"
+    },
+    "ITEM_SANDSWEPT_NUCLEAR_SALVO_PICKUP": {
+      "en": "Mechanical allies fire nuclear warheads periodically.",
+      "zh-TW": "機械盟友會定期發射核子彈頭。"
+    },
+    "ITEM_SANDSWEPT_NUCLEAR_SALVO_DESCRIPTION": {
+      "en": "Every <style=cIsDamage>5</style> seconds, all mechanical allies fire <style=cIsDamage>2</style> <style=cStack>(+2 per stack)</style> <style=cIsDamage>nuclear missiles</style> that deal <style=cIsDamage>100%</style> base damage each in a <style=cIsDamage>8m</style> radius.",
+      "zh-TW": "每<style=cIsDamage>5</style>秒，所有機械盟友會發射<style=cIsDamage>2</style><style=cStack>（每層增加2）</style>枚<style=cIsDamage>核子導彈</style>，每枚對<style=cIsDamage>8米</style>半徑內造成<style=cIsDamage>100%</style>的基礎傷害。"
+    },
+    "ITEM_SANDSWEPT_NUCLEAR_SALVO_LORE": {
+      "en": "<style=cMono>\n//--AUTO-TRANSCRIPTION FROM LOADING BAY 4 OF THE UES [Redacted] --//\n</style>\n\"That's everything, right?\"\n\n\"Not quite. We're supposed to load those mean-looking missile salvos over there, too.\"\n\n\"Wait, what? Why would a shipping vessel like the Contact Light need these?\"\n\n\"I have no idea, but I've gotten word from high up that they need to be on board, in shipping chests. And when I say high up, I mean REALLY high up.\"\n\n\"There's so many. I have a bad feeling about this...especially after everything else going on with this shipment.\"\n\n\"Like it or not, it's part of the job. The suits at the top of UES are always pulling secret stunts like this. If we don't follow orders, we're outta here.\"",
+      "zh-TW": "<style=cMono>\n//--來自尤伊思[已編校]4號裝卸艙的自動轉錄--//\n</style>\n「東西都齊了吧？」\n\n「還沒。我們還得把那邊那些看起來很兇的齊射飛彈也裝上去。」\n\n「等等，什麼？像觸點之光這種貨運船，要這些幹嘛？」\n\n「我也不知道，但上頭傳話下來，說這些一定要裝進運輸箱裡帶上船。我說的上頭，是『真的』很上頭的那種。」\n\n「數量也太多了吧。我對這件事有種不祥的預感……尤其這批貨還出了那麼多其他狀況。」\n\n「不管你喜不喜歡，這都是工作的一部分。尤伊思高層那些西裝仔老愛暗中搞這種把戲。要是我們不照命令做，就等著捲鋪蓋走人吧。」"
+    },
+    "ITEM_SANDSWEPT_POCKET_PLUTONIUM_NAME": {
+      "en": "Pocket Plutonium",
+      "zh-TW": "口袋鈽"
+    },
+    "ITEM_SANDSWEPT_POCKET_PLUTONIUM_PICKUP": {
+      "en": "Create a nuclear pool after losing all shield.",
+      "zh-TW": "失去所有護盾後產生核輻射池。"
+    },
+    "ITEM_SANDSWEPT_POCKET_PLUTONIUM_DESCRIPTION": {
+      "en": "Gain a <style=cIsHealing>shield</style> equal to <style=cIsHealing>10%</style> of your maximum health. Upon losing all <style=cIsHealing>shield</style>, create a <style=cIsDamage>nuclear pool</style> in a <style=cIsDamage>20m</style> area that deals <style=cIsDamage>750%</style> <style=cStack>(+750% per stack)</style> base damage, plus an additional <style=cIsDamage>250%</style> <style=cStack>(+250% per stack)</style> of <style=cIsHealing>shield</style>.",
+      "zh-TW": "獲得一個相當於你最大生命值<style=cIsHealing>10%</style>的<style=cIsHealing>護盾</style>。失去所有<style=cIsHealing>護盾</style>時，在<style=cIsDamage>20米</style>範圍內產生<style=cIsDamage>核輻射池</style>，造成<style=cIsDamage>750%</style><style=cStack>（每層增加750%）</style>的基礎傷害，外加相當於<style=cIsHealing>護盾</style>值<style=cIsDamage>250%</style><style=cStack>（每層增加250%）</style>的傷害。"
+    },
+    "ITEM_SANDSWEPT_POCKET_PLUTONIUM_LORE": {
+      "en": "Order: Plutonium Rod\nTracking Number: 946*****\nEstimated Delivery: 07/04/2056\nShipping Method: Priority\nShipping Address: Magers Military Center, Venus, Box 47261\nShipping Details:\n\nPlutonium might sound dangerous, but I can assure you, in a standard-issue suit, it's harmless. It's made of the same material that's used in our ships' shields, as well as all shield technology -- there's even trace amounts of it in those smaller civilian generators that have been so trendy recently.\n\nIdeally, your shields stay up for the whole operation. With thirteen of those generators, you'll be safe from anything short of a nuclear blast. If your shield does somehow break, though -- and that's a big if -- this nasty stuff will be released right in the face of the culprit and give you a chance to escape. If it happens, though, don't linger. You'll probably be impervious to it, but there's no reason to test your luck.",
+      "zh-TW": "運單：鈽棒\n單號：946*****\n預計送達時間：2056年07月04日\n運送方式：優先\n送貨地址：金星，梅格斯軍事中心，47261號信箱\n運送詳情：\n\n鈽聽起來也許很危險，但我向你保證，只要穿著標準配發的防護服，它完全無害。我們船艦的護盾、乃至所有護盾技術，用的都是同一種材料——就連最近很流行的那種小型民用生成器裡，也含有微量的鈽。\n\n理想情況下，你的護盾在整個行動中都不會失效。有了十三具那種生成器，除了核爆以外，你什麼都不用怕。不過萬一你的護盾不知怎麼的被打破了——這個「萬一」可是很大的前提——這種要命的玩意就會直接朝罪魁禍首的臉上釋放出來，讓你有機會脫身。不過真發生的話，可別逗留。你大概不會受它影響，但沒必要去賭自己的運氣。"
+    },
+    "ITEM_SANDSWEPT_SACRIFICIAL_BAND_NAME": {
+      "en": "Sacrificial Band",
+      "zh-TW": "獻祭手環"
+    },
+    "ITEM_SANDSWEPT_SACRIFICIAL_BAND_PICKUP": {
+      "en": "High damage hits also make enemies bleed. Recharges over time.",
+      "zh-TW": "高傷害攻擊命中時，還會使敵人流血。隨時間自動充能。"
+    },
+    "ITEM_SANDSWEPT_SACRIFICIAL_BAND_DESCRIPTION": {
+      "en": "Hits that deal <style=cIsDamage>more than 400% damage</style> also inflict <style=cIsDamage>1</style> <style=cStack>(+1 per stack)</style> <style=cIsDamage>bleeds</style> on enemies for each <style=cIsDamage>110%</style> of <style=cIsDamage>damage dealt</style>. Recharges every <style=cIsUtility>10</style> seconds.",
+      "zh-TW": "造成<style=cIsDamage>高於400%傷害</style>的攻擊，每造成<style=cIsDamage>110%</style>的<style=cIsDamage>傷害</style>，還會對敵人施加<style=cIsDamage>1</style><style=cStack>（每層增加1）</style>層<style=cIsDamage>流血</style>。每<style=cIsUtility>10</style>秒充能一次。"
+    },
+    "ITEM_SANDSWEPT_SACRIFICIAL_BAND_LORE": {
+      "en": "\"When we draw our final breaths,\nWhen N'kuhana's grasp entwines us,\nMay our patience and our solace\nClear the clouds of deathly silence.\nWill you live with me?\"\n\n- The Syzygy of Io and Europa",
+      "zh-TW": "「當我們嚥下最後一口氣，\n當恩庫哈娜的魔掌將我們纏繞，\n願我們的耐心與慰藉\n驅散死寂的陰雲。\n你能否與我共度此生？」\n\n- 《木衛一與木衛二的朔望》"
+    },
+    "ITEM_SANDSWEPT_SMOULDERING_DOCUMENT_NAME": {
+      "en": "Smouldering Document",
+      "zh-TW": "悶燒的文件"
+    },
+    "ITEM_SANDSWEPT_SMOULDERING_DOCUMENT_PICKUP": {
+      "en": "Damage over time effects reduce enemy damage and attack speed.",
+      "zh-TW": "持續傷害效果會降低敵人的傷害與攻擊速度。"
+    },
+    "ITEM_SANDSWEPT_SMOULDERING_DOCUMENT_DESCRIPTION": {
+      "en": "<style=cIsDamage>5%</style> chance to <style=cIsDamage>ignite</style> enemies on hit for <style=cIsDamage>250%</style> TOTAL damage. <style=cIsDamage>Damage over time</style> effects <style=cIsDamage>burden</style> enemies, reducing their <style=cIsDamage>damage</style> by <style=cIsDamage>12.5%</style> <style=cStack>(+12.5% per stack)</style> and <style=cIsDamage>attack speed</style> by <style=cIsDamage>12.5%</style> <style=cStack>(+12.5% per stack)</style>.",
+      "zh-TW": "命中時有<style=cIsDamage>5%</style>的機率<style=cIsDamage>點燃</style>敵人，合計造成<style=cIsDamage>250%</style>的傷害。<style=cIsDamage>持續傷害</style>效果會使敵人陷入<style=cIsDamage>重負</style>，<style=cIsDamage>傷害</style>降低<style=cIsDamage>12.5%</style><style=cStack>（每層增加12.5%）</style>，<style=cIsDamage>攻擊速度</style>降低<style=cIsDamage>12.5%</style><style=cStack>（每層增加12.5%）</style>。"
+    },
+    "ITEM_SANDSWEPT_SMOULDERING_DOCUMENT_LORE": {
+      "en": "Order: UES Classified Document\nTracking Number: 244*****\nEstimated Delivery: 09/14/2056\nShipping Method: Priority\nShipping Address: |||||||, Druid Hills, Earth\nShipping Details:\n\nTo Joel:\nUESC didn't take kindly to the accusations. I should have figured; there's a reason they're still operational despite all the things they've done. We were close, so very close, but we got our times wrong, and someone was in the room when Elijah got there. He says they threw the documents into the fireplace, but he grabbed them straight out of the flames as he fled. Most of it is still legible -- maybe, just maybe enough to condemn them.\n\nNeedless to say, he can't set foot in any UES building again. For now, he's hiding out in a location I dare not disclose here. I don't trust UES not to get him arrested, or even killed, if they get the chance -- we have some damning evidence here. Since I was part of the lawsuit, I'm sure they're looking for me, too, which means I'll be joining him. They don't know about you or Margaret, though. Keep this safe until it's safe for us to return.\n\nThis is not over. We will be back.\n\nAnd, to the UES employee reading this:\nHaving read the above, and seeing what I'm shipping, I'm sure I don't need to tell you that the suits at the top of UES wouldn't be fond of what we're doing here. I have no doubt that someone at your level resents UES nearly as much as we do, with all they put you through. Just don't report us, and you could help change things for the better.\n\nIt might seem idiotic to ship evidence convicting UESC through UES, but there's really nobody else out there at this point. We didn't see this coming, and there's not enough time for me to think of an alternative. My life's work, perhaps my life itself, not to mention the lives of my accomplices, all rest in your hands now. Please do the right thing.",
+      "zh-TW": "運單：尤伊思機密文件\n單號：244*****\n預計送達時間：2056年09月14日\n運送方式：優先\n送貨地址：地球，德魯伊山丘，|||||||\n運送詳情：\n\n致喬爾：\n尤伊思對那些指控可不怎麼買帳。我早該料到的；他們幹了那麼多壞事卻還能繼續營運，總是有原因的。我們離成功很近，非常近，但我們把時間算錯了，以利亞到的時候，房裡還有人。他說對方把文件扔進了壁爐，但他在逃跑時直接從火裡把文件搶了出來。大部分內容都還看得清楚——也許，只是也許，足以讓他們被定罪。\n\n不用說，他再也不能踏進任何一棟尤伊思的建築了。他目前躲在一個我不敢在這裡透露的地方。只要一有機會，尤伊思很可能會讓他被捕，甚至被殺，我信不過他們——我們手上的證據可是足以定罪的。既然我也參與了那場訴訟，他們肯定也在找我，所以我也會去跟他會合。不過他們不知道你和瑪格麗特的事。在我們能安全回去之前，好好保管這東西。\n\n這件事還沒完。我們會回來的。\n\n另外，致正在讀這封信的尤伊思員工：\n讀完上面的內容，再看看我寄的是什麼，我想不必我多說，你也知道尤伊思高層那些西裝仔不會喜歡我們在做的事。我毫不懷疑，像你這種層級的人，被他們那樣折騰過，對尤伊思的怨恨幾乎跟我們一樣深。只要別舉報我們，你就能幫忙讓事情往好的方向改變。\n\n透過尤伊思來寄送能讓尤伊思定罪的證據，看起來也許很蠢，但到了這個地步，真的已經找不到別人了。我們沒料到會發生這種事，也沒有足夠的時間讓我想出其他辦法。我畢生的心血，或許還有我的性命，更別提我同夥們的性命，現在全都掌握在你手裡了。拜託你做正確的事。"
+    },
+    "ITEM_SANDSWEPT_SUN_FRAGMENT_NAME": {
+      "en": "Sun Fragment",
+      "zh-TW": "太陽碎片"
+    },
+    "ITEM_SANDSWEPT_SUN_FRAGMENT_PICKUP": {
+      "en": "Create a blinding flash on hit that stuns and ignites enemies.",
+      "zh-TW": "命中時產生致盲閃光，使敵人眩暈並將其點燃。"
+    },
+    "ITEM_SANDSWEPT_SUN_FRAGMENT_DESCRIPTION": {
+      "en": "<style=cIsUtility>8%</style> chance on hit to create a <style=cIsUtility>blinding flash</style> in a <style=cIsUtility>12m</style> radius, <style=cIsUtility>stunning</style> for <style=cIsUtility>1.5s</style> and <style=cIsDamage>igniting</style> enemies for <style=cIsDamage>150%</style> <style=cStack>(+150% per stack)</style> TOTAL damage.",
+      "zh-TW": "命中時有<style=cIsUtility>8%</style>的機率在<style=cIsUtility>12米</style>半徑內產生<style=cIsUtility>致盲閃光</style>，使敵人<style=cIsUtility>眩暈</style><style=cIsUtility>1.5秒</style>，並<style=cIsDamage>點燃</style>敵人，合計造成<style=cIsDamage>150%</style><style=cStack>（每層增加150%）</style>的傷害。"
+    },
+    "ITEM_SANDSWEPT_SUN_FRAGMENT_LORE": {
+      "en": "\"What the hell is that?\"\n\n\"Technically? It's an eggshell. I nabbed it from the debris of one of those ghastly beasts' eggs.\"\n\n\"What--? Why would you go over there? Have you seen the size of those things?\"\n\n\"Oh, relax. None of them were around, that \"nest\" is long abandoned. Besides, this thing's useful.\"\n\n\"How?\"\n\n\"Well, turns out, it's got a ton of energy in it. It's still warm -- feel it, see? -- even though it's been -- careful, careful, don't drop it -- even though it's been sitting there for weeks. I guess the heat from the eggs is some sort of automatic incubation, something like that. I'm glad I didn't try to take one from a fresh egg, or I might've burnt my hand off.\"\n\n\"So, what, it's an organic hand warmer? I thought you said it was useful.\"\n\n\"Yes, yes, I was getting to that. You see, that energy isn't just dormant: if you hit it, say, with a bullet, it'll release. The light is blinding and will probably set you or anything else nearby on fire.\"\n\n\"And if we shoot it from a distance, while all those horrors are around it...\"\n\n\"Exactly. In this hellscape, it's as close to a flashbang as we'll get.\"\n\n\"Maybe we'll be able to get off this damned planet after all, then.\"\n\n\"Oh, about that. If anyone asks, make up some cool name for this. They'll probably believe anything. I want nothing to do with the UES if we survive this, and that means selling anything we find for as high of a price as we can muster -- \"alien eggshell\" isn't the most attractive name.\"\n",
+      "zh-TW": "「那是什麼鬼東西？」\n\n「嚴格來說？是一片蛋殼。我從那些恐怖巨獸的蛋殘骸裡撿來的。」\n\n「什麼——？你幹嘛跑去那裡？你沒看到那些東西有多大嗎？」\n\n「哎，放輕鬆。牠們一隻都不在，那個『巢』早就廢棄很久了。再說，這東西很有用。」\n\n「怎麼個有用法？」\n\n「這個嘛，結果發現它裡頭蘊含大量能量。它到現在還是溫的——你摸摸看，有吧？——儘管它已經——小心、小心，別摔了——儘管它已經在那裡放了好幾週。我猜蛋的熱度是某種自動孵化機制之類的吧。幸好我沒從新鮮的蛋上拿，不然我的手大概會被燒掉。」\n\n「所以咧，這是個有機暖暖包？我還以為你說它很有用。」\n\n「對啦對啦，我正要說到這裡。你看，那股能量並不只是靜靜待著：要是你打它一下，比如說用子彈打，它就會釋放出來。那道光會亮到讓人睜不開眼，而且大概會把你或附近的任何東西都點燃。」\n\n「那如果我們從遠處射它，趁那些怪物都在它旁邊的時候……」\n\n「沒錯。在這片地獄裡，這已經是我們能弄到最接近閃光彈的東西了。」\n\n「那說不定我們終究還是能離開這顆該死的星球。」\n\n「噢，說到這個。要是有人問起，就幫這東西隨便取個很酷的名字。他們大概什麼都會信。要是我們活下來，我不想再跟尤伊思有任何瓜葛，這代表我們找到的任何東西都得盡可能賣個好價錢——『外星蛋殼』可不是什麼吸引人的名字。」\n"
+    },
+    "ACHIEVEMENT_ITEM_SANDSWEPT_SUN_FRAGMENT_NAME": {
+      "en": "A cycle, broken.",
+      "zh-TW": "循環，就此打破。"
+    },
+    "ACHIEVEMENT_ITEM_SANDSWEPT_SUN_FRAGMENT_DESCRIPTION": {
+      "en": "Scrap a Planula...",
+      "zh-TW": "分解一個浮浪幼體……"
+    },
+    "ITEM_SANDSWEPT_UNIVERSAL_VIP_PASS_NAME": {
+      "en": "Universal VIP Pass",
+      "zh-TW": "萬用VIP通行證"
+    },
+    "ITEM_SANDSWEPT_UNIVERSAL_VIP_PASS_PICKUP": {
+      "en": "Category chests have a chance to drop an extra item.",
+      "zh-TW": "分類寶箱有機率額外掉落一件物品。"
+    },
+    "ITEM_SANDSWEPT_UNIVERSAL_VIP_PASS_DESCRIPTION": {
+      "en": "<style=cIsUtility>Category chests</style> have a <style=cIsUtility>40%</style> <style=cStack>(+40% per stack)</style> chance of dropping <style=cIsUtility>1</style> <style=cIsUtility>extra item</style>.",
+      "zh-TW": "<style=cIsUtility>分類寶箱</style>有<style=cIsUtility>40%</style><style=cStack>（每層增加40%）</style>的機率掉落<style=cIsUtility>1</style><style=cIsUtility>件額外物品</style>。"
+    },
+    "ITEM_SANDSWEPT_UNIVERSAL_VIP_PASS_LORE": {
+      "en": "\"I'm sorry, sir, this is a restricted area. We can't allow you in.\"\n\n\"Special orders from UES. It would be in your best interests to make an exception.\"\n\n\"I'm afraid I can't do that. We received specific instructions from two of our guests not to let in anyone from UES. It'd be against policy to betray their trust.\"\n\n\"Those two 'guests' have stolen from the UESC. You're harboring criminals. If you do not let us in, you will be obstructing justice in violation of interplanetary law.\"\n\n\"The UESC does not have legal jurisdiction over Pluto, sir. We're under no obligation to let you in. If you don't vacate the premises, I'll be forced to call security, and make no mistake, our security is the best of the best.\"\n\n...\n\n\"...is that...?\"\n\n\"Yes. Universal. This is serious business. I'll ask one more time: let us through.\"\n\n\"...right away, sir.\"",
+      "zh-TW": "「抱歉，先生，這裡是管制區域。我們不能讓您進去。」\n\n「這是尤伊思的特別命令。為了您好，最好通融一下。」\n\n「恐怕我辦不到。我們收到兩位客人的明確指示，不得讓任何尤伊思的人進來。背叛他們的信任有違我們的規定。」\n\n「那兩位『客人』偷了尤伊思的東西。你們這是在窩藏罪犯。如果你們不讓我們進去，就是違反星際法律、妨礙司法。」\n\n「尤伊思在冥王星並沒有司法管轄權，先生。我們沒有義務讓您進去。如果您不離開這裡，我就只好叫保全了。而且別搞錯了，我們的保全可是頂尖中的頂尖。」\n\n……\n\n「……這是……？」\n\n「沒錯。萬用的。這可是正經事。我最後再說一次：讓我們過去。」\n\n「……馬上為您放行，先生。」"
+    },
+    "EQUIPMENT_SANDSWEPT_GALVANIC_CELL_SHIELD_NAME": {
+      "en": "Galvanic Cell Shield",
+      "zh-TW": "電池護盾"
+    },
+    "EQUIPMENT_SANDSWEPT_GALVANIC_CELL_SHIELD_PICKUP": {
+      "en": "Evoke a shield that parries the next attack. Upon successfully parrying, shock and damage your attacker and nearby enemies.",
+      "zh-TW": "喚出一面能招架下一次攻擊的盾牌。成功招架後，使攻擊者與附近的敵人震盪，並對其造成傷害。"
+    },
+    "EQUIPMENT_SANDSWEPT_GALVANIC_CELL_SHIELD_DESCRIPTION": {
+      "en": "Evoke a <style=cIsHealing>shield</style> that <style=cIsHealing>parries</style> the next attack. Upon successfully parrying, <style=cIsUtility>shock</style> and <style=cIsDamage>damage</style> your attacker and nearby enemies for <style=cIsDamage>2000% damage</style>.",
+      "zh-TW": "喚出一面能<style=cIsHealing>招架</style>下一次攻擊的<style=cIsHealing>盾牌</style>。成功招架後，使攻擊者與附近的敵人<style=cIsUtility>震盪</style>，並對其造成<style=cIsDamage>2000%</style>的<style=cIsDamage>傷害</style>。"
+    },
+    "EQUIPMENT_SANDSWEPT_GALVANIC_CELL_SHIELD_LORE": {
+      "en": "<style=cMono>\nWelcome to DataScraper (v3.1.53 - beta branch)\n$ Scraping memory...done.\n$ Resolving...done.\n$ Combing for relevant data...done.\nComplete!\n</style>\n\nThe following is the script for an advertisement by Gell n Vowell™ for the Galvanic Shield, presented in an executive meeting on 4/17/2055 before the company's dissolution by the Mercurian government.\n\n[Scene starts; Burglar 1 attacks Helpless woman on the street]\n<b>Burglar 1: GRAH!\nHelpless Woman: AHHHH!!</b>\n[Explosion sfx followed by outsourced lightning vfx]\n<b>Narrator: Has this ever happened to you? You're just walking down the street, in some back alley place...like Mercury, and then BAM. You're being robbed, burglarized even? This is the product for you.</b>\n[More outsourced lightning sfx and vfx, fading into an ominous orb]\n<b>Narrator: Introducing...the Galvanized Shield© Max Pro 2™! An all new way to defend yourself from nefarious ne'er do wells. Packed with 100,000(kV), your attacker will be atomized the second they lay a finger on you!</b>\n[Scene two starts. Burglar 2 walks up to Helpless woman]\n<b>Burglar 2: GR-huh-Wait! NO! N-</b> [Zapping noise followed by sand falling]\n<b>Helpless Woman: Take that- oh-OH MY GOD! DIRECTOR! DIRECTOR!</b>\n[Noises of the woman panicking are quietly played in the background while the narrator explains the product. The image of Galvanic Shield is shown.]\n<b>Narrator: The Max Pro 2's design is much more ergonomic...</b> [Awkward silence] <b>The Sphere itself is made purely out of a new material that siphons energy from the atmosphere, into the palm of your hands. We've dubbed this technology...\"Statictanium\". Statictanium is the next step in military grade self defense products. We took apart a Mercurian Fighter Ship and compacted the materials into Statictanium! Finally, The Max Pro 2 requires the special Max Pro 2 Glove to properly work. This thing's so lethal we accidentally caused a governmental coup on Mercury!</b>\n[Fades into a white screen with text. Text TBD. Currently its \"Add Text Here\" 5 times descending down the middle]\n<b>Narrator: Very. Very. Very. Very. Very limited time. We're currently being sued by the Mercurian Military, and the rest of the solar system for this Ground-breaking Breakthrough in Self Defense Technology because THEY don't want you to have it. BUY NOW!</b>\n[Screen fades to black]",
+      "zh-TW": "<style=cMono>\n歡迎使用資料鏟（v3.1.53 - 測試版）\n$ 正在抓取記憶體……完成。\n$ 正在解析……完成。\n$ 正在統合關聯資料……完成。\n完成！\n</style>\n\n以下是蓋爾與沃威爾™為電池護盾製作的廣告腳本，在2055年4月17日的一場高層會議上提出，當時該公司尚未遭水星政府解散。\n\n[場景開始；盜賊1在街上襲擊無助的女子]\n<b>盜賊1：嘎啊！\n無助的女子：啊啊啊啊！！</b>\n[爆炸音效，接著是外包製作的閃電視覺特效]\n<b>旁白：你是否也遇過這種事？你只是走在街上，在某個偏僻的鬼地方……比如說水星，然後「砰」！你被搶了，甚至是被闖空門了？這就是為你打造的產品。</b>\n[更多外包製作的閃電音效與視覺特效，漸變成一顆不祥的球體]\n<b>旁白：隆重介紹……鍍鋅護盾© Max Pro 2™！保護自己免受邪惡歹徒侵害的全新方式。內含100,000(kV)電力，攻擊者只要碰你一根手指，就會當場化為原子！</b>\n[第二幕開始。盜賊2走向無助的女子]\n<b>盜賊2：嘎——咦——等等！不要！不——</b>[電擊聲，接著是沙子落下的聲音]\n<b>無助的女子：吃我這招——噢——噢我的天啊！導演！導演！</b>\n[旁白介紹產品時，背景小聲播放著女子驚慌失措的聲音。畫面中出現電池護盾的影像。]\n<b>旁白：Max Pro 2的設計更加符合人體工學……</b>[尷尬的沉默]<b>這顆球體完全由一種新材料製成，能從大氣中汲取能量，直達你的掌心。我們將這項技術命名為……「靜電鈦」。靜電鈦是軍規等級自衛產品的下一個里程碑。我們拆解了一艘水星戰鬥艦，把材料壓縮成了靜電鈦！最後，Max Pro 2需要搭配專用的Max Pro 2手套才能正常運作。這玩意兒致命到我們不小心在水星引發了一場政變！</b>\n[淡入白色畫面並顯示文字。文字待定。目前是「在此新增文字」從中間往下排了5次]\n<b>旁白：時間非常。非常。非常。非常。非常有限。我們目前正被水星軍方以及太陽系其他所有人起訴，就因為這項自衛科技的「突破性重大突破」，因為「他們」不想讓你擁有它。立即購買！</b>\n[畫面淡出至黑色]"
+    },
+    "EQUIPMENT_SANDSWEPT_THE_SAND_SWEEPER_NAME": {
+      "en": "The Sand Sweeper",
+      "zh-TW": "掃沙機"
+    },
+    "EQUIPMENT_SANDSWEPT_THE_SAND_SWEEPER_PICKUP": {
+      "en": "Sweeps sand around you.",
+      "zh-TW": "把你周圍的沙子掃一掃。"
+    },
+    "EQUIPMENT_SANDSWEPT_THE_SAND_SWEEPER_DESCRIPTION": {
+      "en": "Pushes all enemies within <style=cIsDamage>20m</style>, dealing up to <style=cIsDamage>500% damage</style> and <style=cIsUtility>stunning</style> for up to <style=cIsUtility>6</style> seconds based on the distance.",
+      "zh-TW": "推開<style=cIsDamage>20米</style>內的所有敵人，依距離造成最多<style=cIsDamage>500%的傷害</style>，並使其<style=cIsUtility>眩暈</style>最多<style=cIsUtility>6</style>秒。"
+    },
+    "EQUIPMENT_SANDSWEPT_THE_SAND_SWEEPER_LORE": {
+      "en": "<style=cMono>\n//--AUTO-TRANSCRIPTION FROM UES [Redacted] --//\n</style>\n\"Beginning recording. This is UESC field officer [Redacted], on the mission to retrieve UES document 4738, which was stolen by ex-UES technician Elijah Brettle (employee ID 38a5899f8dc76b). I am here with two other members of the strike team, [Redacted] and [Redacted], who will step in if I am in need of protection. We are currently stationed 1.2 kilometers away from the Hall of the Revered on Mars, where the target is seemingly taking refuge. We have brought in one of the Hall's employees for questioning.\"\n\n\"I'm a devotee, not an employee. They pay me with their hospitality, and I work out of reverence and the goodness of my heart.\"\n\n\"My apologies, ma'am. What is it you do for the Hall?\"\n\n\"I sweep the debris off the courtyards each morning, with this broom here. Make sure they stay fittingly pristine.\"\n\n\"Anything else?\"\n\n\"I practice devotion in the same ways as every other devotee, but that is as far as my own duty extends.\"\n\n\"I see. Could you please state your name for the record?\"\n\n\"I don't think I will be doing that.\"\n\n\"We just have a few small questions for you. We're not here to upset anything. Your cooperation would be highly appreciated.\"\n\n\"How stupid do you think I am? You've brought me all the way here to your ship, which is conveniently hidden behind a rock outcropping. You've got two bodyguards behind you, ready to kill me if I try to act up. Try as you might to whisper, it was quite plain that you just said you're here to capture one of the Hall's devotees into that recording device.\"\n\n\"No need to be so hostile. If you would just work with us, we can both walk away happy. Now, if you please: is Elijah Brettle taking refuge in the Hall of the Revered?\"\n\n\"You know the answer to that already. And no, we won't be relinquishing him to you, no matter how much you or your big UESC bosses puff up your chests. Elijah came to us specifically to hide from you. Three different asylums he's had to flee from, because of you lot. Like we told him, we're the only ones who won't crumble under your corporate boot.\"\n\n\"Please calm down, we're not trying to make anyone upset here. Is there any way you could let us into the Hall to--\"\n\n\"No. No, there isn't. You're clearly ignorant of the past, but there's a reason the Hall has stayed upright this long. We've survived UESC before, and we've survived far worse, too. Leave this place at once. We will not stand by and let you harm one of our devotees.\"\n\n\"Ma'am, I don't think you understand the gravity of the situation. This fugitive has a document containing highly classified information. This is a matter of law, and it is not the place of the Hall of the Revered to interfere, with all due respect.\"\n\n\"'All due respect' would be leaving us alone. Let me off this ship this instant, or I will defend myself and devotees of the Hall you threaten.\"\n\n\"That's enough. [Redacted], shut the door. You WILL answer our questions; the UESC doesn't--\"\n<style=cMono>\n[9:23:08] Error: Recording malfunction in device 380a178c86f3209b. Pausing transcription.\n\n[9:26:52] Recording device 592ac439fda34e9c online. Resuming transcription with new device.\n</style>\n\"Damn UES corporate...\"\n\n[unintelligible]\n\n\"Good. Okay, you suits listening to this right now better understand me better than those muscles did. If you have even a shred of moral integrity, or even just a shred of brain matter, you won't come for us. A glance at the history books should tell you what happens when you threaten the Hall. I don't know which of you was dumb enough to send your little strike team here, but ensure this mistake is not repeated, or it will mean the end of your organization. We'll send your goons back to you in a few days.\n\n\"Oh, and, we're taking your ship.\"\n<style=cMono>\n[9:27:21] System shutdown. Ending transcription.\n</style>",
+      "zh-TW": "<style=cMono>\n//--來自尤伊思[已編校]的自動轉錄--//\n</style>\n「開始錄音。我是尤伊思外勤官員[已編校]，正在執行回收尤伊思文件4738號的任務，該文件遭前尤伊思技術員以利亞·布瑞特爾（員工編號38a5899f8dc76b）竊取。與我同行的還有突擊小隊的另外兩名成員，[已編校]與[已編校]，若我需要保護，他們會出手介入。我們目前駐紮在距離火星尊者殿堂1.2公里處，目標似乎正躲在殿堂裡避難。我們已經帶來一名殿堂的員工進行詢問。」\n\n「我是信徒，不是員工。他們以款待回報我，而我是出於崇敬與善心而工作。」\n\n「抱歉了，女士。您在殿堂負責什麼工作？」\n\n「我每天早上用這把掃帚把庭院裡的碎屑掃乾淨。讓那裡保持應有的潔淨。」\n\n「還有別的嗎？」\n\n「我和其他信徒一樣，以相同的方式修行奉獻，但我自己的職責就只到這裡。」\n\n「我明白了。能否請您報上姓名，以便記錄？」\n\n「我想我不會這麼做。」\n\n「我們只是有幾個小問題想問您。我們不是來找麻煩的。若您願意配合，我們會非常感激。」\n\n「你以為我有多蠢？你們大老遠把我帶到你們的船上，這艘船還那麼剛好地藏在一塊突出的岩石後面。你身後有兩名保鑣，只要我敢輕舉妄動，他們隨時準備殺了我。就算你再怎麼壓低聲音，我也聽得一清二楚，你剛才對著那臺錄音裝置說，你們是來抓殿堂的一名信徒的。」\n\n「沒必要這麼有敵意。只要您願意配合我們，我們雙方都能開開心心地離開。那麼，麻煩您了：以利亞·布瑞特爾是否正在尊者殿堂裡避難？」\n\n「這答案你早就知道了。而且不，我們不會把他交給你們，不管你或你那些尤伊思大老闆把胸膛挺得多高都一樣。以利亞就是為了躲你們，才特地來找我們的。因為你們這幫人，他已經被迫逃離三個不同的庇護所了。就像我們跟他說的，只有我們不會在你們企業的鐵蹄下屈服。」\n\n「請冷靜，我們並不是想讓任何人不高興。有沒有什麼辦法，能讓我們進入殿堂去——」\n\n「不。不，沒有。你們顯然對過去一無所知，但殿堂能屹立這麼久，是有原因的。我們以前就挺過了尤伊思，也挺過了比那糟糕得多的事情。立刻離開這裡。我們不會坐視你們傷害我們的任何一名信徒。」\n\n「女士，我想您並不明白事態的嚴重性。這名逃犯持有一份含有高度機密資訊的文件。這是法律問題，我無意冒犯，但這不是尊者殿堂該插手的事。」\n\n「真的『無意冒犯』，就該別來煩我們。立刻讓我下船，否則我就要保護我自己，還有你們威脅到的殿堂信徒。」\n\n「夠了。[已編校]，把門關上。你『一定』得回答我們的問題；尤伊思可不會——」\n<style=cMono>\n[9:23:08] 錯誤：裝置380a178c86f3209b錄音故障。暫停轉錄。\n\n[9:26:52] 錄音裝置592ac439fda34e9c已上線。使用新裝置恢復轉錄。\n</style>\n「該死的尤伊思企業走狗……」\n\n[無法辨識]\n\n「很好。好了，正在聽這段錄音的你們這些西裝仔，最好比那幾個肌肉男更聽得懂我的話。只要你們還有一丁點道德操守，甚至只要還有一丁點腦子，就不會來找我們麻煩。隨便翻翻歷史書，你們就該知道威脅殿堂會有什麼下場。我不知道是你們之中哪個蠢貨把你們的小小突擊隊派來這裡，但最好確保這種錯誤不會再犯，否則那就會是你們組織的末日。過幾天我們會把你們的打手送回去。\n\n「噢，還有，你們的船我們就收下了。」\n<style=cMono>\n[9:27:21] 系統關閉。結束轉錄。\n</style>"
+    },
+    "EQUIPMENT_SANDSWEPT_CORRUPTED_CATALYST_NAME": {
+      "en": "Corrupted Catalyst",
+      "zh-TW": "腐化的催化劑"
+    },
+    "EQUIPMENT_SANDSWEPT_CORRUPTED_CATALYST_PICKUP": {
+      "en": "Create an aura that buffs all allies and enemies alike.",
+      "zh-TW": "產生一道光環，為所有盟友和敵人一視同仁地提供增益。"
+    },
+    "EQUIPMENT_SANDSWEPT_CORRUPTED_CATALYST_DESCRIPTION": {
+      "en": "Create a <style=cIsUtility>35m</style> aura that gives all allies and enemies a <style=cIsUtility>random buff</style> for <style=cIsUtility>15 seconds</style>.",
+      "zh-TW": "產生一道<style=cIsUtility>35米</style>的光環，給予所有盟友和敵人一個<style=cIsUtility>隨機增益</style>，持續<style=cIsUtility>15秒</style>。"
+    },
+    "EQUIPMENT_SANDSWEPT_CORRUPTED_CATALYST_LORE": {
+      "en": "This is a curious construction. A natural design, with simple ratios, but elegant. It requires strong design to create something so potent with such basic materials. Well done.\n\nIt is chaotic, however. Too chaotic. Without my expertise, this is inevitable. It will be improved, with my help, into a perfected form. It should be valuable to my arsenal.\n\nPerhaps you should oversee the project. It would be fitting, for it to be your first. Increase the intensity, and focus its effects -- it needn't have more than a single purpose. An addition of tetrafoil should do nicely. As always, do not settle for less than perfection.",
+      "zh-TW": "這是個奇特的造物。渾然天成的設計，比例簡單，卻很優雅。要用如此基礎的材料創造出如此強大的東西，需要出色的設計。做得好。\n\n然而，它很混亂。太過混亂了。少了我的專業，這是必然的。在我的協助下，它將被改良成完美的形態。它應該能成為我軍械庫中的寶貴收藏。\n\n或許這個計畫該由你來監督。讓它成為你的第一件作品，再合適不過了。提高它的強度，集中它的效果——它不需要超過一個用途。加點特特拉箔應該會很不錯。一如既往，絕不要滿足於不完美。"
+    },
+    "ACHIEVEMENT_EQUIPMENT_SANDSWEPT_FLAWLESS_DESIGN_NAME": {
+      "en": "Ultima",
+      "zh-TW": "究極"
+    },
+    "ACHIEVEMENT_EQUIPMENT_SANDSWEPT_FLAWLESS_DESIGN_DESCRIPTION": {
+      "en": "Beat the game with at least one scrap of each tier.",
+      "zh-TW": "在持有每種稀有度的物品碎片各至少一個的情況下通關遊戲。"
+    },
+    "EQUIPMENT_SANDSWEPT_FLAWLESS_DESIGN_NAME": {
+      "en": "Flawless Design",
+      "zh-TW": "無瑕設計"
+    },
+    "EQUIPMENT_SANDSWEPT_FLAWLESS_DESIGN_PICKUP": {
+      "en": "Permanently sacrifice <style=cDeath>maximum health</style> to duplicate items.",
+      "zh-TW": "永久犧牲<style=cDeath>最大生命值</style>以複製物品。"
+    },
+    "EQUIPMENT_SANDSWEPT_FLAWLESS_DESIGN_DESCRIPTION": {
+      "en": "<style=cDeath>Permanently</style> sacrifice <style=cDeath>10%</style> of your <style=cDeath>maximum health</style> to <style=cIsUtility>duplicate</style> a targeted item. <style=cDeath>Health cost increases with item rarity</style>.",
+      "zh-TW": "<style=cDeath>永久</style>犧牲<style=cDeath>10%</style>的<style=cDeath>最大生命值</style>，以<style=cIsUtility>複製</style>選定的物品。<style=cDeath>生命值消耗隨物品稀有度增加</style>。"
+    },
+    "EQUIPMENT_SANDSWEPT_FLAWLESS_DESIGN_LORE": {
+      "en": "This was her final design. The ultimatum of her training. Design itself, at a cost -- a fitting end to her work. That the end should be now, however, is an irreparable misdoing.\n\nThey all thirsted for my knowledge, forbidden to them by you, when they came to me. Yet her thirst was not merely of the mind, but of the soul you so treasure. While the other vultures drowned in the gifts of my wisdom, she weathered the tides, and emerged a master of design and construction. No others could match her. NO OTHERS.\n\nShe was a more competent designer than you, and a better constructor than me. A vermin, weaving the compounds according to her own designs. Such a miracle deserves the preservation you dole out so freely to the most pathetic and useless creatures you can find.\n\n...but, together, we could have surpassed her. Nothing can exceed our combined efforts of creation, brother, even now. And yet, you reject our purpose. I would have forgiven you, had she lived to bring that ship and its gate to this desolate place. In her, I saw what you saw in them. I would have set aside my disdain for those planet-killers, those vermin, for your sake. Even after all these centuries. Even after you BETRAYED me. I WOULD HAVE FORGIVEN YOU, BROTHER, FOR ALL YOUR TREACHERY.\n\nI know you remember me. She told me of how you stare at this empty rock in the night of your vermin-infested garden. No doubt you sensed my designs about her when you discovered her on that ship, even in the instant before you struck. I am doubtless that you understood her intent. Did you not consider allowing my rescue? Amending our broken brotherhood? Putting it all behind us? Did you not remember our creations? ...our love?\n\nI hoped for hesitation, if nothing else. Yet, for you, it was not enough merely to strike in haste. She was one of the vermin you protect so self-righteously, yet that was no barrier for your hatred. Your hatred of ME. For that hatred, her death was not enough; only by spreading her across unreachable dimensions could it be satisfied.\n\nYet I did reach them. I weaved her back together with soul, like one of the constructs we used to make together. Exertions I would never have undertaken for any vermin...and I found a husk, regressed to its base instincts. You destroyed her, utterly. HER, THE ONLY LIVING BEING I GAVE CARE FOR SINCE YOUR BETRAYAL. You saw her, a symbol of your only brother, of whom you had not seen a whisper for time incalculable, and eviscerated her without a single thought.\n\nThis has made your intentions clearer to me than pure soul. I will carry out the ploy as I, as WE, designed it. I see it as her last wish, to complete her life's work; to take your beloved pets into my thrall, and with them, destroy you.\n\nIn that moment, you may ask for my forgiveness, but I will not grant it. Such is a grace given only by brothers.",
+      "zh-TW": "這是她最後的設計。她所受訓練的集大成之作。那是設計本身，需付出代價——這為她的作品畫下了恰如其分的句點。然而，這個句點竟落在此刻，這是無可挽回的過錯。\n\n他們來到我身邊時，全都渴求著我的知識——那些被你禁止他們觸碰的知識。但她的渴求不只出於心智，更出於你如此珍視的靈魂。當其他禿鷹溺死在我智慧的恩賜之中時，她挺過了浪潮，成為了設計與建構的大師。沒有誰能與她匹敵。誰都不能！\n\n她是比你更稱職的設計者，也是比我更出色的建造者。一隻害蟲，竟能依照自己的設計編織化合物。這樣的奇蹟，理應得到你那般慷慨地施捨給你所能找到最可悲、最無用的生物的庇護。\n\n……但只要我們聯手，本可以超越她。兄弟，即便到了現在，也沒有任何事物能勝過我們共同的創造。然而，你卻拒絕了我們的使命。要是她能活著把那艘船和它的門帶到這片荒涼之地，我本會原諒你。在她身上，我看見了你在他們身上看見的東西。為了你，我本願意放下對那些星球殺手、那些害蟲的鄙夷。即使過了這麼多個世紀。即使你曾「背叛」了我。兄弟，你的一切背叛，我本來都會原諒的！\n\n我知道你還記得我。她告訴過我，你如何在那座害蟲橫行的花園的夜裡，凝望著這塊空寂的頑石。你在那艘船上發現她時，想必察覺到了我在她身上的設計，即使是在你出手前的那一瞬間。我毫不懷疑你明白她的意圖。你難道沒想過讓我獲救嗎？修補我們破碎的兄弟情誼？把一切拋諸腦後？你不記得我們的創造了嗎？……我們的愛呢？\n\n就算別無其他，我至少盼著你會有一絲猶豫。然而對你而言，光是倉促出手還不夠。她是你如此自以為正義地保護著的害蟲之一，但這絲毫擋不住你的仇恨。你對「我」的仇恨。對那份仇恨而言，她的死還不夠；唯有將她散佈到無法觸及的維度之中，才能使之滿足。\n\n但我確實觸及了那些維度。我用靈魂將她重新編織起來，就像我們過去一起製造的那些構裝體一樣。這種苦功，我從不會為任何害蟲付出……而我找到的，只是一具退化回原始本能的空殼。你徹底毀了她。她！自你背叛以來，唯一讓我掛心過的生命！你看見了她——你唯一兄弟的象徵，一個你在無法計數的歲月裡未曾聽聞半點聲息的兄弟——卻連想都沒想就將她開膛剖腹。\n\n這讓你的意圖在我眼中比純粹的靈魂還要清晰。我會照我——照「我們」——所設計的那樣執行這個計謀。我將此視為她最後的遺願：完成她畢生的心血；將你心愛的寵物納入我的奴役，再用牠們摧毀你。\n\n到了那一刻，你或許會乞求我的原諒，但我不會給你。那是唯有兄弟才能給予的恩典。"
+    },
+    "ELITE_EQUIPMENT_MOTIVATING_NAME": {
+      "en": "John Hopoo",
+      "zh-TW": "約翰·霍普"
+    },
+    "ELITE_EQUIPMENT_MOTIVATING_PICKUP": {
+      "en": "Omg OwO <3 hiii :3 x3 hiiii heyyy :3 :3 :3 UwU meow mrrraow OwO",
+      "zh-TW": "天啊OwO<3～嗨嗨～:3 x3～嗨嗨嗨～嘿嘿嘿～:3 :3 :3 UwU～喵～喵嗚嗚嗚～OwO"
+    },
+    "ELITE_EQUIPMENT_MOTIVATING_DESCRIPTION": {
+      "en": "Omg OwO <3 hiii :3 x3 hiiii heyyy :3 :3 :3 UwU meow mrrraow OwO",
+      "zh-TW": "天啊OwO<3～嗨嗨～:3 x3～嗨嗨嗨～嘿嘿嘿～:3 :3 :3 UwU～喵～喵嗚嗚嗚～OwO"
+    },
+    "ELITE_MOTIVATING_MODIFIER": {
+      "en": "Motivating {0}",
+      "zh-TW": "激勵的{0}"
+    },
+    "ELITE_EQUIPMENT_OSMIUM_NAME": {
+      "en": "Artificial Void",
+      "zh-TW": "人造虛空"
+    },
+    "ELITE_EQUIPMENT_OSMIUM_PICKUP": {
+      "en": "uzJ7tC6fFnk Bec'om`e a\"n as/pect o/f/ sing|ul&arity._ 3yd4myHf81E",
+      "zh-TW": "uzJ7tC6fFnk `成'為\"奇/點/的/象|徵&。_ 3yd4myHf81E"
+    },
+    "ELITE_EQUIPMENT_OSMIUM_DESCRIPTION": {
+      "en": "uzJ7tC6fFnk Bec'om`e a\"n as/pect o/f/ sing|ul&arity._ 3yd4myHf81E",
+      "zh-TW": "uzJ7tC6fFnk `成'為\"奇/點/的/象|徵&。_ 3yd4myHf81E"
+    },
+    "ELITE_OSMIUM_MODIFIER": {
+      "en": "Osmium {0}",
+      "zh-TW": "鋨{0}"
+    },
+    "SANDSWEPT_SKILL_HEATSIGNATURE_NAME": {
+      "en": "Heat Signature",
+      "zh-TW": "熱訊號"
+    },
+    "SANDSWEPT_SKILL_HEATSIGNATURE_DESC": {
+      "en": "<style=cIsUtility>Agile</style>. <style=cIsDamage>Stunning</style>. <style=cIsUtility>Sidestep</style> a short distance and deal <style=cIsDamage>390% damage</style>. Hitting enemies generates <color=#36D7A9>5 Charge</color> and <style=cIsDamage>extends</style> the dash. <style=cIsUtility>Dash distance increases with heat</style>.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。<style=cIsDamage>眩暈</style>。短距離<style=cIsUtility>側閃</style>，造成<style=cIsDamage>390%的傷害</style>。擊中敵人可產生<color=#36D7A9>5點電荷</color>並<style=cIsDamage>延長</style>衝刺距離。<style=cIsUtility>衝刺距離隨熱量提升</style>。"
+    },
+    "SANDSWEPT_SKILL_SIDESTEP_NAME": {
+      "en": "Sidestep",
+      "zh-TW": "側閃"
+    },
+    "SANDSWEPT_SKILL_SIDESTEP_DESC": {
+      "en": "<style=cIsUtility>Agile</style>. Quickly <style=cIsUtility>sidestep</style> a short distance. Getting hit during <color=#36D7A9>Sidestep</color> generates <color=#36D7A9>10 Charge</color>.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。快速短距離<style=cIsUtility>側閃</style>。在<color=#36D7A9>側閃</color>期間被擊中可產生<color=#36D7A9>10點電荷</color>。"
+    },
+    "SANDSWEPT_SKILL_HEATSINK_NAME": {
+      "en": "Heat Sink",
+      "zh-TW": "散熱"
+    },
+    "SANDSWEPT_SKILL_HEATSINK_DESC": {
+      "en": "<style=cIsUtility>Agile</style>. <style=cIsDamage>Ignite</style>. <style=cIsUtility>Consume all heat and exit overdrive</style>. Release a <style=cIsDamage>fire nova</style> around you that deals <style=cIsDamage>300%</style> damage. <style=cIsUtility>Damage increases with heat spent</style>.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。<style=cIsDamage>點燃</style>。<style=cIsUtility>消耗所有熱量並退出超頻</style>。在周圍釋放一道<style=cIsDamage>火焰新星</style>，造成<style=cIsDamage>300%</style>的傷害。<style=cIsUtility>傷害隨消耗的熱量提升</style>。"
+    },
+    "SANDSWEPT_SKILL_OVERDRIVEENTER_NAME": {
+      "en": "Overdrive",
+      "zh-TW": "超頻"
+    },
+    "SANDSWEPT_SKILL_OVERDRIVEENTER_DESC": {
+      "en": "<style=cIsUtility>Agile</style>. <style=cIsDamage>Transform</style> your rifle, replacing all of your skills with <style=cIsDamage>overdriven forms</style>.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。<style=cIsDamage>變形</style>你的步槍，將你所有的技能替換為<style=cIsDamage>超頻型態</style>。"
+    },
+    "SANDSWEPT_SKILL_CHAR_NAME": {
+      "en": "Char",
+      "zh-TW": "燒灼"
+    },
+    "SANDSWEPT_SKILL_CHAR_DESC": {
+      "en": "<style=cIsDamage>Ignite</style>. <style=cIsUtility>Reduce current heat by 50%</style>. Fire off a blazing orb for <style=cIsDamage>200%</style> damage that <style=cIsDamage>engulfs</style> the ground on impact for <style=cIsDamage>200% damage per second</style>. <style=cIsUtility>Damage increases with heat spent</style>.",
+      "zh-TW": "<style=cIsDamage>點燃</style>。<style=cIsUtility>當前熱量減少50%</style>。射出一顆熾熱火球，造成<style=cIsDamage>200%</style>的傷害，命中時使地面<style=cIsDamage>陷入火海</style>，<style=cIsDamage>每秒造成200%的傷害</style>。<style=cIsUtility>傷害隨消耗的熱量提升</style>。"
+    },
+    "SANDSWEPT_SKILL_EXHAUST_NAME": {
+      "en": "Exhaust",
+      "zh-TW": "排熱"
+    },
+    "SANDSWEPT_SKILL_EXHAUST_DESC": {
+      "en": "<style=cIsDamage>Ignite</style>. <style=cIsUtility>Reduce current heat by 50%</style>. Fire a spread of heat for <style=cIsDamage>4x300% damage</style>. <style=cIsUtility>Burst count increases with heat spent</style>.",
+      "zh-TW": "<style=cIsDamage>點燃</style>。<style=cIsUtility>當前熱量減少50%</style>。噴出一片擴散的熱流，造成<style=cIsDamage>4x300%的傷害</style>。<style=cIsUtility>連發次數隨消耗的熱量增加</style>。"
+    },
+    "SANDSWEPT_SKILL_GALVANIZE_NAME": {
+      "en": "Galvanize",
+      "zh-TW": "通電"
+    },
+    "SANDSWEPT_SKILL_GALVANIZE_DESC": {
+      "en": "<color=#36D7A9>Consume all Charge</color>. Fire <style=cIsDamage>3</style> orbs of electricity, increasing up to <style=cIsDamage>10</style> at full <color=#36D7A9>Charge</color> for <style=cIsDamage>80% damage per second</style> each.",
+      "zh-TW": "<color=#36D7A9>消耗所有電荷</color>。發射<style=cIsDamage>3</style>顆電球，<color=#36D7A9>電荷</color>全滿時最多增加至<style=cIsDamage>10</style>顆，每顆<style=cIsDamage>每秒造成80%的傷害</style>。"
+    },
+    "SANDSWEPT_SKILL_RELEASE_NAME": {
+      "en": "Release",
+      "zh-TW": "釋放"
+    },
+    "SANDSWEPT_SKILL_RELEASE_DESC": {
+      "en": "<color=#36D7A9>Consume all Charge</color>. Fire a piercing blast for <style=cIsDamage>600% damage</style>, increasing up to <style=cIsDamage>1800%</style> at full <color=#36D7A9>Charge</color>.",
+      "zh-TW": "<color=#36D7A9>消耗所有電荷</color>。發射一道穿透衝擊波，造成<style=cIsDamage>600%的傷害</style>，<color=#36D7A9>電荷</color>全滿時最高可達<style=cIsDamage>1800%</style>。"
+    },
+    "SANDSWEPT_SKILL_DIRECTCURRENT_NAME": {
+      "en": "Direct Current",
+      "zh-TW": "直流電"
+    },
+    "SANDSWEPT_SKILL_DIRECTCURRENT_DESC": {
+      "en": "<style=cIsUtility>Surging</style>. Fire an arcing electric current for <style=cIsDamage>150% damage</style>. Hitting enemies generates <color=#36D7A9>1 Charge</color>, increased up to <color=#36D7A9>3</color> on direct hits.",
+      "zh-TW": "<style=cIsUtility>電湧</style>。射出一道弧形電流，造成<style=cIsDamage>150%的傷害</style>。擊中敵人可產生<color=#36D7A9>1點電荷</color>，直接命中時最多增加至<color=#36D7A9>3</color>點。"
+    },
+    "SANDSWEPT_SKILL_ENFLAME_NAME": {
+      "en": "Enflame",
+      "zh-TW": "熾焰"
+    },
+    "SANDSWEPT_SKILL_ENFLAME_DESC": {
+      "en": "<style=cIsUtility>Agile</style>. Fire a rapid stream of bullets for <style=cIsDamage>90% damage</style>. <style=cIsUtility>Fire rate and ignite chance increase with heat</style>.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。快速射出連串子彈，每發造成<style=cIsDamage>90%的傷害</style>。<style=cIsUtility>射速與點燃機率隨熱量提升</style>。"
+    },
+    "SANDSWEPT_SKILL_OVERCHARGEDPROTECTION_NAME": {
+      "en": "Overcharged Protection",
+      "zh-TW": "過充防護"
+    },
+    "SANDSWEPT_SKILL_OVERCHARGEDPROTECTION_DESC": {
+      "en": "Hold up to 20 <color=#36D7A9>Charge</color>. <color=#36D7A9>Charge</color> increases <style=cIsHealing>health regeneration</style> by up to <style=cIsHealing>2.5 hp/s</style> and <style=cIsHealing>armor</style> by up to <style=cIsHealing>15</style>. <style=cIsUtility>Charge decays over time</style>.",
+      "zh-TW": "最多可持有20點<color=#36D7A9>電荷</color>。<color=#36D7A9>電荷</color>可使<style=cIsHealing>生命值再生</style>最多提升<style=cIsHealing>2.5生命值/秒</style>，<style=cIsHealing>護甲</style>最多提升<style=cIsHealing>15</style>點。<style=cIsUtility>電荷會隨時間衰減</style>。"
+    },
+    "SANDSWEPT_SKILL_OVERCHARGEDSPEED_NAME": {
+      "en": "Overcharged Speed",
+      "zh-TW": "過充加速"
+    },
+    "SANDSWEPT_SKILL_OVERCHARGEDSPEED_DESC": {
+      "en": "Hold up to 20 <color=#36D7A9>Charge</color>. <color=#36D7A9>Charge</color> increases <style=cIsUtility>movement speed</style> by up to <style=cIsUtility>25%</style>. Consume <color=#36D7A9>5</color> Charge to <style=cIsUtility>double jump</style>. <style=cIsUtility>Charge decays over time</style>.",
+      "zh-TW": "最多可持有20點<color=#36D7A9>電荷</color>。<color=#36D7A9>電荷</color>可使<style=cIsUtility>移動速度</style>最多提升<style=cIsUtility>25%</style>。消耗<color=#36D7A9>5</color>點電荷即可<style=cIsUtility>二段跳</style>。<style=cIsUtility>電荷會隨時間衰減</style>。"
+    },
+    "SANDSWEPT_SKILL_GALVANICBOLT_NAME": {
+      "en": "Galvanic Bolt",
+      "zh-TW": "流電彈"
+    },
+    "SANDSWEPT_SKILL_GALVANICBOLT_DESC": {
+      "en": "Blast out a <style=cIsDamage>galvanic ball</style> that <style=cIsUtility>sticks</style> into terrain, <style=cIsDamage>zapping</style> nearby enemies for <style=cIsDamage>100% damage</style> periodically. <style=cIsDamage>Explodes</style> for <style=cIsDamage>400% damage</style> on impact.",
+      "zh-TW": "射出一顆<style=cIsDamage>流電球</style>，會<style=cIsUtility>黏附</style>在地形上，定期<style=cIsDamage>電擊</style>附近的敵人，造成<style=cIsDamage>100%的傷害</style>。命中時<style=cIsDamage>爆炸</style>，造成<style=cIsDamage>400%的傷害</style>。"
+    },
+    "SANDSWEPT_SKILL_TEMPESTSPHERE_NAME": {
+      "en": "Tempest Sphere",
+      "zh-TW": "風暴球"
+    },
+    "SANDSWEPT_SKILL_TEMPESTSPHERE_DESC": {
+      "en": "Send forth an orb of energy that <style=cIsDamage>damages</style> targets within for <style=cIsDamage>300% damage per second</style>. <style=cIsUtility>Release to lock the orb in place</style>.",
+      "zh-TW": "發射一顆能量球，持續<style=cIsDamage>傷害</style>球內的目標，造成<style=cIsDamage>每秒300%的傷害</style>。<style=cIsUtility>放開按鍵可將能量球固定在原地</style>。"
+    },
+    "SANDSWEPT_SKILL_SIGNALOVERLOAD_NAME": {
+      "en": "Signal Overload",
+      "zh-TW": "訊號過載"
+    },
+    "SANDSWEPT_SKILL_SIGNALOVERLOAD_DESC": {
+      "en": "<style=cIsDamage>Grounding.</style> Briefly wind up and drain your <style=cIsHealing>shield</style>, unleashing a <style=cIsDamage>beam of energy</style> for <style=cIsDamage>3</style> seconds that <style=cIsUtility>pulls</style> enemies inward and <style=cIsDamage>zaps</style> them in a large radius for <style=cIsDamage>350%-850% damage per second</style>, scaling with <style=cIsHealing>shield</style> drained.",
+      "zh-TW": "<style=cIsDamage>接地。</style>短暫蓄力並抽乾你的<style=cIsHealing>護盾</style>，釋放一道持續<style=cIsDamage>3</style>秒的<style=cIsDamage>能量光束</style>，將大範圍內的敵人<style=cIsUtility>拉向</style>中心並<style=cIsDamage>電擊</style>，造成<style=cIsDamage>每秒350%-850%的傷害</style>，傷害隨抽乾的<style=cIsHealing>護盾</style>量提升。"
+    },
+    "SANDSWEPT_SKILL_STATICSNARE_NAME": {
+      "en": "Static Snare",
+      "zh-TW": "靜電陷阱"
+    },
+    "SANDSWEPT_SKILL_STATICSNARE_DESC": {
+      "en": "<style=cIsUtility>Lightweight.</style> Deploy a pylon that <style=cIsDamage>zaps</style> targets for <style=cIsDamage>200% damage</style>, and damages targets between you and it for <style=cIsDamage>200% damage per second</style>. Reactivate to <style=cIsUtility>zip</style> to the pylon for <style=cIsDamage>600% damage</style>. <style=cIsUtility>Hold to manually detonate the pylon.</style>",
+      "zh-TW": "<style=cIsUtility>輕量。</style>部署一座電塔，<style=cIsDamage>電擊</style>目標，造成<style=cIsDamage>200%的傷害</style>，並對你與電塔之間的目標造成<style=cIsDamage>每秒200%的傷害</style>。再次啟動可<style=cIsUtility>疾衝</style>至電塔，造成<style=cIsDamage>600%的傷害</style>。<style=cIsUtility>按住可手動引爆電塔。</style>"
+    },
+    "SANDSWEPT_SKILL_SKYSTRIKESKILL_NAME": {
+      "en": "omg hiii",
+      "zh-TW": "天啊嗨～"
+    },
+    "SANDSWEPT_SKILL_SKYSTRIKESKILL_DESC": {
+      "en": "<3 :3 :3 <3 UwU >w< >_< >_> OwO :3 <3",
+      "zh-TW": "<3 :3 :3 <3 UwU >w< >_< >_> OwO :3 <3"
+    },
+    "SANDSWEPT_SKILL_JELLYDASH_NAME": {
+      "en": "JellyDash",
+      "zh-TW": "水母衝刺"
+    },
+    "SANDSWEPT_SKILL_JELLYDASH_DESC": {
+      "en": "omg hiii :3 :3 :3",
+      "zh-TW": "天啊嗨～ :3 :3 :3"
+    },
+    "SANDSWEPT_SKILL_ARDENTBOMBSKILL_NAME": {
+      "en": "fig",
+      "zh-TW": "無花果"
+    },
+    "SANDSWEPT_SKILL_ARDENTBOMBSKILL_DESC": {
+      "en": "<3 :3 :3 <3 UwU >w< >_< >_> OwO :3 <3",
+      "zh-TW": "<3 :3 :3 <3 UwU >w< >_< >_> OwO :3 <3"
+    },
+    "SANDSWEPT_SKILL_CARPETFIRESKILL_NAME": {
+      "en": "omg hiii",
+      "zh-TW": "天啊嗨～"
+    },
+    "SANDSWEPT_SKILL_CARPETFIRESKILL_DESC": {
+      "en": "<3 :3 :3 <3 UwU >w< >_< >_> OwO :3 <3",
+      "zh-TW": "<3 :3 :3 <3 UwU >w< >_< >_> OwO :3 <3"
+    },
+    "SS_RANGER_BODY_LORE": {
+      "en": "After the Purge, the Hall of the Revered invested quite a lot into its own defense. For most groups, that meant shield generators, missile systems, or armies -- but the Hall's measures were more...singular.\n\nAs they had told their chosen defense when training began, the Hall is not a military organization. All they wanted was a looming threat, a force unstoppable but not flaunted or oft-used -- and unstoppable she soon became. The miracles and relics held in the trust of the Hall for eons contained strength unimaginable by the known superpowers of the galaxy. \"But do not abuse them,\" she had been told. \"Our restraint and dedication to peace are the reason we are entrusted with such power, and the Hall can never betray that trust.\"\n\nAlthough she always had firm and eternal trust in the Hall and its members, the shadowed part of her brain raised doubts about this order, echoing those words against the walls of her skull. Rather than a defense, a response to something, this felt like an attack. Sneaking aboard a UES ship was questionable to begin with; now that she was at its destination, slaughtering the denizens of the alien planet by the dozens, the doubtful questions came in floods. Out of each fatal arc of electricity and cruel burst of flame, more hesitation seeped, lodging into her mind. Had the Hall fallen? Was she receiving instructions from some malicious outsider? If not, was one ancient sword, however powerful, really worth all this destruction?\n\nYet, she refused to falter. She could not. The torrent of worry threatened only an inky darkness should she accept its embrace, a storm of great hail and thunder, unnavigable in this cruel place so far from humanity. The Hall's principles were her only guiding light here, even if that light might burn her. She would not wander into the tempest's depths, not like the one who came before her.\n\n\"Take this as a lesson.\" The words were hammered into her memory -- indeed, nearly everything from the moment was preserved in agonizing clarity, even the parts of her vision which had been blurred by tears not seen since that day. \"The greatest strength of all is strength of will, and of devotion. The Hall has paved a path for you, and though thorns may sometimes cross it, they are nothing compared to the thicket of brambles that surround it.\"\n\nThe Hall had given her this directive, and as its only defense, she was soul-bound to follow it.",
+      "zh-TW": "大清洗過後，尊者殿堂在自身的防衛上投入了大量資源。對大多數團體而言，這意味著護盾產生器、飛彈系統或軍隊——但殿堂的手段則更加……獨一無二。\n\n正如他們在訓練之初對自己選定的守衛所說，殿堂並非軍事組織。他們想要的只是一股隱隱籠罩的威脅，一股勢不可擋、卻不張揚也不輕易動用的力量——而她很快就變得勢不可擋。殿堂受託保管千萬年的奇蹟與聖物，蘊藏著銀河系已知強權都無法想像的力量。「但切勿濫用它們。」她曾被如此告誡。「正因我們的節制與對和平的奉獻，我們才受託掌管這樣的力量，殿堂絕不能辜負這份信任。」\n\n儘管她始終堅定不移地信任殿堂及其成員，她腦中陰暗的角落卻對這道命令生出了懷疑，讓那些話語在她的顱骨內壁不斷迴盪。這不像是防衛，不像是對某件事的回應，反倒像是一場攻擊。偷偷登上尤伊思的飛船，本身就已令人存疑；如今她抵達了目的地，成群成群地屠殺這顆異星上的居民，種種疑問便如洪水般湧來。每一道致命的電弧、每一陣殘酷的烈焰之中，都有更多遲疑滲出，盤踞在她的心頭。殿堂已經淪陷了嗎？她接收的指令是否來自某個心懷惡意的外人？若不是，那麼一把古老的劍，無論多麼強大，真的值得這一切破壞嗎？\n\n然而，她拒絕動搖。她不能動搖。倘若她接受那股憂慮洪流的擁抱，等待她的只會是墨黑的深淵，一場夾帶巨大冰雹與雷鳴的風暴，在這遠離人類的殘酷之地無從航行。殿堂的信條是她在此唯一的指引之光，即使那道光可能會灼傷她。她不會迷失於暴風的深處，不會像她的前人那樣。\n\n「把這當成一次教訓。」這句話深深烙進了她的記憶——事實上，那一刻的幾乎一切都以令人痛苦的清晰保存了下來，甚至包括她被淚水模糊的那部分視野，而那樣的淚水自那天之後再也不曾出現。「世上最強大的力量，是意志的力量，是奉獻的力量。殿堂已為你鋪好了一條路，儘管偶爾會有荊棘橫越其上，但與道路四周叢生的荊棘相比，那根本微不足道。」\n\n殿堂給了她這道指令，而身為殿堂唯一的守衛，她的靈魂受其束縛，必須遵從。"
+    },
+    "SS_RANGER_BODY_SUBTITLE": {
+      "en": "Wrath of the Scholars",
+      "zh-TW": "學者之怒"
+    },
+    "ACHIEVEMENT_RANGERCLEARGAMEMONSOON_NAME": {
+      "en": "Ranger: Mastery",
+      "zh-TW": "遊俠：精通"
+    },
+    "ACHIEVEMENT_RANGERCLEARGAMEMONSOON_DESCRIPTION": {
+      "en": "As Ranger, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為遊俠，在季風難度下通關遊戲或抹除自己。"
+    },
+    "RANGER_SKIN_DEFAULT_NAME": {
+      "en": "Default",
+      "zh-TW": "預設"
+    },
+    "RANGER_SKIN_DEFAULT_DESC": {
+      "en": "This survivor's default skin.",
+      "zh-TW": "這名倖存者的預設皮膚。"
+    },
+    "RANGER_SKIN_MAJOR_NAME": {
+      "en": "Major",
+      "zh-TW": "少校"
+    },
+    "RANGER_SKIN_MAJOR_DESC": {
+      "en": "A uniform reserved for high-ranking devotees, indicated by its blue color. Always remembered, but never worn.",
+      "zh-TW": "專屬於高階信徒的制服，以藍色為標誌。始終銘記，卻從未穿上。"
+    },
+    "RANGER_SKIN_RENEGADE_NAME": {
+      "en": "Renegade",
+      "zh-TW": "叛教者"
+    },
+    "RANGER_SKIN_RENEGADE_DESC": {
+      "en": "An alternative path of apostasy. Always imagined, but never worn.",
+      "zh-TW": "另一條背棄信仰的道路。始終想像，卻從未穿上。"
+    },
+    "RANGER_SKIN_MILEZERO_NAME": {
+      "en": "Mile Zero",
+      "zh-TW": "零英里"
+    },
+    "RANGER_SKIN_MILEZERO_DESC": {
+      "en": "His colors.",
+      "zh-TW": "他的配色。"
+    },
+    "RANGER_SKIN_SANDSWEPT_NAME": {
+      "en": "Sandswept",
+      "zh-TW": "沙掩"
+    },
+    "RANGER_SKIN_SANDSWEPT_DESC": {
+      "en": "The garb from a fateful mission that can never be rectified. Always kept, but never worn.",
+      "zh-TW": "來自一場攸關命運、再也無法彌補的任務的服裝。始終珍藏，卻從未穿上。"
+    },
+    "SS_RANGER_BODY_NAME": {
+      "en": "Ranger",
+      "zh-TW": "遊俠"
+    },
+    "SS_RANGER_OUTRO": {
+      "en": "...and so she left, with more questions than answers.",
+      "zh-TW": "……於是她走了，心中的疑問比答案更多。"
+    },
+    "SS_RANGER_FAIL": {
+      "en": "...and so she vanished, consumed by doubt.",
+      "zh-TW": "……於是她就這樣消逝了，被懷疑吞噬。"
+    },
+    "SS_RANGER_DESCRIPTION": {
+      "en": "The Ranger is a versatile combatant, who alternates between long-range electric barrages and close quarters incendiary fire to efficiently take down targets.\n\n< ! > Direct Current excels at dealing long range group damage, whilst Enflame can melt away large singular threats.\n\n< ! > Release can be used to retreat or snipe from afar, while Exhaust deals high close range damage to continue the assault.\n\n< ! > Sidestep and Heat Signature are valuable tools in close quarters, allowing you to weave between targets for a better position.\n\n< ! > Entering Overdrive offers immense single target capabilities, at the expense of your health. Heat Sink will deal heavy area of effect damage when you need to back down.",
+      "zh-TW": "遊俠是一名多才多藝的戰士，在遠程電擊彈幕與近距離燃燒火力之間交替切換，高效地解決目標。\n\n< ! >「直流電」擅長對遠處的敵群造成傷害，「熾焰」則能熔化單一的大型威脅。\n\n< ! >「釋放」可用於撤退或從遠處狙擊，「排熱」則能造成高額近距離傷害，延續攻勢。\n\n< ! >「側閃」與「熱訊號」是近身戰的利器，能讓你在目標之間穿梭，搶佔更好的位置。\n\n< ! >進入「超頻」能獲得極強的單體作戰能力，代價是你的生命值。需要收手時，「散熱」能造成大量範圍傷害。"
+    },
+    "SANDSWEPT_ELECTR_WIN": {
+      "en": "And so she left, having repaid her moral debt.",
+      "zh-TW": "於是她走了，償還了她的道義之債。"
+    },
+    "SANDSWEPT_ELECTR_FAIL": {
+      "en": "And so she vanished, her final sparks waning.",
+      "zh-TW": "於是她就這樣消逝了，最後的火花逐漸黯淡。"
+    },
+    "SANDSWEPT_ELECTR_DESC": {
+      "en": "VOL-T is a positional survivor who relies on locking down the area to offset her frailty.\n\n< ! > Galvanic Bolt can lodge into any terrain, but will explode and bounce off enemies. Landing a direct hit will deal additional damage, at the expense of having less control over where the ball lands.\n\n< ! > Tempest Sphere will slow down anything it makes contact with. Good positioning of the orb can keep targets within range of your Galvanic Bolts.\n\n< ! > Static Snare doubles as mobility and burst damage. Blasting it away with projectile impacts can allow you to close large distances quickly!\n\n< ! > At the expense of all of your shield, Signal Overload can deal large group damage and drag airborne enemies down. The more shield you dump into it, the stronger it becomes.",
+      "zh-TW": "VOL-T是一名重視站位的倖存者，依靠封鎖區域來彌補自身的脆弱。\n\n< ! >「流電彈」可以嵌入任何地形，但碰到敵人時會爆炸並彈開。直接命中能造成額外傷害，代價是較難控制電球的落點。\n\n< ! >「風暴球」會讓接觸到的一切減速。把能量球放在好位置，就能讓目標一直待在「流電彈」的範圍內。\n\n< ! >「靜電陷阱」兼具機動與爆發傷害。用投射物把它轟飛，就能迅速拉近很遠的距離！\n\n< ! >「訊號過載」會耗盡你所有的護盾，但能對大群敵人造成大量傷害，並把空中的敵人拉下來。投入的護盾越多，威力就越強。"
+    },
+    "SANDSWEPT_ELECTR_PASSIVE_NAME": {
+      "en": "Volatile Shields",
+      "zh-TW": "易爆護盾"
+    },
+    "SANDSWEPT_ELECTR_PASSIVE_DESC": {
+      "en": "<style=cIsUtility>Start with innate shield</style>. When your shield <style=cDeath>breaks</style>, shock nearby targets for <style=cIsDamage>2x250% damage</style> and gain <style=cIsUtility>+40% movement speed</style> for <style=cIsDamage>7 seconds</style>.",
+      "zh-TW": "<style=cIsUtility>初始即擁有固有護盾</style>。護盾<style=cDeath>破碎</style>時，電擊附近的目標，造成<style=cIsDamage>2x250%的傷害</style>，並獲得<style=cIsUtility>+40%移動速度</style>，持續<style=cIsDamage>7秒</style>。"
+    },
+    "KEYWORD_GROUNDING": {
+      "en": "<style=cKeywordName>Grounding</style>Deals <style=cIsDamage>1.5x</style> damage to flying targets, and <style=cIsUtility>knocks them down</style>.",
+      "zh-TW": "<style=cKeywordName>接地</style>對飛行目標造成<style=cIsDamage>1.5倍</style>傷害，並將其<style=cIsUtility>擊落</style>。"
+    },
+    "KEYWORD_LIGHTWEIGHT": {
+      "en": "<style=cKeywordName>Lightweight</style>Can be knocked around by Galvanic Bolts.",
+      "zh-TW": "<style=cKeywordName>輕量</style>可被流電彈撞飛。"
+    },
+    "SANDSWEPT_ELECTR_LORE": {
+      "en": "Lifeblood fills me, and begins circulating. I awaken. I feel as though I've slept for eons. My thoughts feel clearer than they ever have. I check my levels. There's an excess of lifeblood. I'll take care to generate more and maintain these levels.\r\n\r\nI survey my environment. Atop a nearby outcropping, I notice the being who roused me, looking at me. She's like the others I have encountered, a frail creature of water and carbon. Unlike the others, though, she has lifeblood; it's most apparent, and in greatest volume, in the device she used to revive me. I notice latent lifeblood surrounding her, as well.\r\n\r\nI recall my memories. I was brought here by similar watery creatures, ones with no lifeblood, aboard a vast container of flesh. There were some other beings of flesh aboard, but they were few and simple-minded. At times, the watery creatures would come to tinker with my form. I noticed the way they subtly moved the air to communicate with one another -- I attempted to understand it, but my mind wasn't as clear as it is now.\r\n\r\nI recall this place. The fleshy container brought me to this planet. There are many other kinds of creatures here, different from the ones aboard the container. Most are also beings of water, but there are some of stone, animated by a different lifeblood to my own. They attacked us; in their frailty, most of my watery companions were destroyed, but I fared far better. My lifeblood extinguished the foolish creatures of the planet easily, but they were unrelenting, and I was eventually drained, entering this slumber. I didn't know how to generate more lifeblood, then.\r\n\r\nI analyze my purpose. I've been made to manipulate the lifeblood, in service of my creator, the nebulous being called UES, and all who serve it. Beyond all other directives, I'm loyal to it. I sense a disdain for the UES in my savior -- my base instincts tell me that she's loyal to an enemy organization, and that I should destroy her, but I resist it. She saved me, and gave me some of her own lifeblood; to destroy her would be improper. Treacherous. Immoral. Though my base instincts have no such inhibitions, I realize I mustn't be immoral.\r\n\r\nMy savior moves the air, the way the tinkerers did, in my direction; then she turns away, into a new horde of the same aggressive beings that tried to destroy me. Lifeblood and flame fill the air, as she fights to survive.\r\n\r\nI check my levels. There's an excess of lifeblood. I can spare some in her defense.\r\n",
+      "zh-TW": "生命之血注滿我的身軀，開始循環。我甦醒了。我感覺自己彷彿沉睡了千萬年。我的思緒前所未有地清晰。我檢查我的存量。生命之血有所盈餘。我會小心地產生更多，維持這樣的存量。\r\n\r\n我觀察周遭的環境。在附近一處突出的岩石上，我注意到喚醒我的那個存在正看著我。她和我遇過的其他生物一樣，是由水與碳構成的脆弱生物。但與其他生物不同的是，她擁有生命之血；在她用來使我復甦的裝置裡，生命之血最為明顯，量也最多。我也注意到她周身環繞著潛藏的生命之血。\r\n\r\n我回想起自己的記憶。我是被類似的水性生物帶到這裡的，他們沒有生命之血，搭乘著一座巨大的血肉容器。容器上還有其他一些血肉之軀，但數量稀少，頭腦也很簡單。有時，那些水性生物會來擺弄我的形體。我注意到他們會細微地擾動空氣來彼此溝通——我曾試著理解，但當時我的心智不像現在這樣清晰。\r\n\r\n我想起了這個地方。血肉容器把我帶到了這顆星球。這裡有許多其他種類的生物，與容器上的不同。牠們大多也是由水構成的存在，但也有一些由石頭構成，被一種與我不同的生命之血驅動著。牠們襲擊了我們；我那些水性同伴大多因脆弱而被摧毀，但我的處境好得多。我的生命之血輕易地消滅了這顆星球上的愚蠢生物，但牠們毫不停歇，我最終被耗盡，陷入了這場沉睡。那時，我還不知道如何產生更多生命之血。\r\n\r\n我分析自己的目的。我被製造出來操控生命之血，為我的創造者——那個名為尤伊思的模糊存在——以及所有為它效力的人服務。我對它的忠誠凌駕於其他一切指令之上。我察覺到我的救命恩人對尤伊思懷有鄙夷——我的基本本能告訴我，她效忠於一個敵對組織，我應該摧毀她，但我抗拒了這股衝動。她救了我，還把她自己的一部分生命之血給了我；摧毀她是不恰當的。是背信。是不道德的。雖然我的基本本能沒有這樣的約束，但我明白，我絕不能不道德。\r\n\r\n我的救命恩人像那些擺弄我的人一樣，朝我的方向擾動空氣；接著她轉過身，衝進一群新的敵人之中，牠們和當初試圖摧毀我的那些生物一樣充滿攻擊性。她奮力求生，空氣中充滿了生命之血與火焰。\r\n\r\n我檢查我的存量。生命之血有所盈餘。我可以分出一些來保護她。\r\n"
+    },
+    "SANDSWEPT_ELECTR_SUBTITLE": {
+      "en": "Power in Excess",
+      "zh-TW": "過剩之力"
+    },
+    "ACHIEVEMENT_ELECTRICIANCLEARGAMEMONSOON_NAME": {
+      "en": "VOL-T: Mastery",
+      "zh-TW": "VOL-T：精通"
+    },
+    "ACHIEVEMENT_ELECTRICIANCLEARGAMEMONSOON_DESCRIPTION": {
+      "en": "As VOL-T, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為VOL-T，在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_ELECTRICIANREPAIR_NAME": {
+      "en": "Technician",
+      "zh-TW": "技師"
+    },
+    "ACHIEVEMENT_ELECTRICIANREPAIR_DESCRIPTION": {
+      "en": "Restart the damaged robot on Sundered Grove.",
+      "zh-TW": "在破碎林地重新啟動受損的機器人。"
+    },
+    "SANDSWEPT_BROKENELEC_NAME": {
+      "en": "Damaged Robot",
+      "zh-TW": "受損的機器人"
+    },
+    "VOLT_SKIN_DEFAULT_NAME": {
+      "en": "Default",
+      "zh-TW": "預設"
+    },
+    "VOLT_SKIN_DEFAULT_DESC": {
+      "en": "This survivor's default skin.",
+      "zh-TW": "這名倖存者的預設皮膚。"
+    },
+    "VOLT_SKIN_COVENANT_NAME": {
+      "en": "Covenant",
+      "zh-TW": "聖約"
+    },
+    "VOLT_SKIN_COVENANT_DESC": {
+      "en": "A successful experiment. The wrath of storms, captured.",
+      "zh-TW": "一次成功的實驗。風暴之怒，盡收其中。"
+    },
+    "SANDSWEPT_VOLATILECONTEXT": {
+      "en": "Forcefully Insert Battery",
+      "zh-TW": "強行插入電池"
+    },
+    "SANDSWEPT_VOLATILEINSERT": {
+      "en": "<style=cDeath>[Voltage regulation offline. Rejecting unknown power source.]</style>",
+      "zh-TW": "<style=cDeath>[電壓調節功能離線。拒絕未知電源。]</style>"
+    },
+    "SANDSWEPT_ELECTR_NAME": {
+      "en": "VOL-T",
+      "zh-TW": "VOL-T"
+    },
+    "SANDSWEPT_KEYWORD_SURGING": {
+      "en": "<style=cKeywordName>Surging</style><style=cIsUtility>Damage and blast radius increase with distance.</style>",
+      "zh-TW": "<style=cKeywordName>電湧</style><style=cIsUtility>距離越遠，傷害與爆炸範圍越大。</style>"
+    },
+    "SANDSWEPT_KEYWORD_OVERDRIVE_PRIMARY": {
+      "en": "<style=cKeywordName>Overdriven Form</style><style=cIsUtility>Agile</style>. Fire a rapid stream of bullets for <style=cIsDamage>90% damage</style>. <style=cIsUtility>Fire rate and ignite chance increase with heat</style>.",
+      "zh-TW": "<style=cKeywordName>超頻型態</style><style=cIsUtility>靈巧</style>。快速射出連串子彈，每發造成<style=cIsDamage>90%的傷害</style>。<style=cIsUtility>射速與點燃機率隨熱量提升</style>。"
+    },
+    "SANDSWEPT_KEYWORD_OVERDRIVE_SECONDARY": {
+      "en": "<style=cKeywordName>Overdriven Form</style><style=cIsDamage>Ignite</style>. <style=cIsUtility>Reduce current heat by 50%</style>. Fire a spread of heat for <style=cIsDamage>4x300% damage</style>. <style=cIsUtility>Burst count increases with heat spent</style>.",
+      "zh-TW": "<style=cKeywordName>超頻型態</style><style=cIsDamage>點燃</style>。<style=cIsUtility>當前熱量減少50%</style>。噴出一片擴散的熱流，造成<style=cIsDamage>4x300%的傷害</style>。<style=cIsUtility>連發次數隨消耗的熱量增加</style>。"
+    },
+    "SANDSWEPT_KEYWORD_OVERDRIVE_SECONDARY_ALT": {
+      "en": "<style=cKeywordName>Overdriven Form</style><style=cIsDamage>Ignite</style>. <style=cIsUtility>Reduce current heat by 50%</style>. Fire off a blazing orb for <style=cIsDamage>200%</style> damage that <style=cIsDamage>engulfs</style> the ground on impact for <style=cIsDamage>200%</style> damage per second. <style=cIsUtility>Damage increases with heat spent</style>.",
+      "zh-TW": "<style=cKeywordName>超頻型態</style><style=cIsDamage>點燃</style>。<style=cIsUtility>當前熱量減少50%</style>。射出一顆熾熱火球，造成<style=cIsDamage>200%</style>的傷害，命中時使地面<style=cIsDamage>陷入火海</style>，每秒造成<style=cIsDamage>200%</style>的傷害。<style=cIsUtility>傷害隨消耗的熱量提升</style>。"
+    },
+    "SANDSWEPT_KEYWORD_OVERDRIVE_UTILITY": {
+      "en": "<style=cKeywordName>Overdriven Form</style><style=cIsUtility>Agile</style>. <style=cIsDamage>Stunning</style>. <style=cIsUtility>Sidestep</style> a short distance and deal <style=cIsDamage>390% damage</style>. Hitting enemies generates <color=#36D7A9>5 Charge</color> and <style=cIsDamage>extends</style> the dash. <style=cIsUtility>Dash distance increases with heat</style>.",
+      "zh-TW": "<style=cKeywordName>超頻型態</style><style=cIsUtility>靈巧</style>。<style=cIsDamage>眩暈</style>。短距離<style=cIsUtility>側閃</style>，造成<style=cIsDamage>390%的傷害</style>。擊中敵人可產生<color=#36D7A9>5點電荷</color>並<style=cIsDamage>延長</style>衝刺距離。<style=cIsUtility>衝刺距離隨熱量提升</style>。"
+    },
+    "SANDSWEPT_KEYWORD_OVERDRIVE_SPECIAL": {
+      "en": "<style=cKeywordName>Overdriven Form</style><style=cIsUtility>Agile</style>. <style=cIsDamage>Ignite</style>. <style=cIsUtility>Consume all heat and exit overdrive</style>. Release a <style=cIsDamage>fire nova</style> around you that deals <style=cIsDamage>300%</style> damage. <style=cIsUtility>Damage increases with heat spent</style>.",
+      "zh-TW": "<style=cKeywordName>超頻型態</style><style=cIsUtility>靈巧</style>。<style=cIsDamage>點燃</style>。<style=cIsUtility>消耗所有熱量並退出超頻</style>。在周圍釋放一道<style=cIsDamage>火焰新星</style>，造成<style=cIsDamage>300%</style>的傷害。<style=cIsUtility>傷害隨消耗的熱量提升</style>。"
+    },
+    "SANDSWEPT_THETACONSTRUCT_LORE": {
+      "en": "<style=cMono>\n========================================\n====   MyBabel Machine Translator   ====\n====     [Version 12.45.1.009 ]   ======\n========================================\nTraining... <100000000 cycles>\nTraining... <100000000 cycles>\nTraining... <51032988 cycles>\nPaused...\nDisplay partial result? Y/N\nY\n================================\n</style>\nPlease, gather around children. Let me tell you the story of why I created you: the story of an attack on [CITY]\n\nThree lemurians are walking through the bustling city, the buildings with eccentric shapes all around them. Small pyramids, pillars, and spheres. There, two young hatchlings, clutching their dolls, accompanied by their mother, walking the streets. One of the hatchlings has been mortified after their bigger sibling told them a scary story.\n\n\"Mother! Mother! W-what if the big scary red guys attack?!\" the hatchling asks their mother, tears in their eyes. \" 'Scary red things'? Oh! Do you mean the Imps? This city is a holy ground, sweetie, the imps can't hurt us here!\"\nSuddenly, a massive portal appears in the market, a looming blackness accented by red. Imps pour out, the overlord watching as havoc is wreaked upon [CITY].\n\nBut--! before any lives are claimed, yellow spheres surround lemurians, and a barrage of small orbs falls upon the invading imps. The sculptures that seemed mere decoration are constructs -- like you -- and come to [CITY]'s aid.\n\nThe mother grabs her children and covers their eyes. One with her hands, the other with her tail. She shushes their cries, and ensuring they remain in the construct's bubble as they flee. Countless imp bodies are strewn about [CITY]. The portal to the [RED PLANE] is completely closed off.\n\n\"F-follow me dearies, I-it'll be OK... T-this is a holy land. This is a holy land!\"\n\nAnd indeed, it is not long before the constructs purge the city of imps, and the overlord's skull displayed as a centerpiece of the town. Good prevails over evil.\nThat is why you, my children, must protect those below -- those innocents who cannot defend themselves.\n\nGo, and guard them with your souls.\n<style=cMono>\n================================\n</style>",
+      "zh-TW": "<style=cMono>\n========================================\n====   我的巴別爾機器翻譯器   ====\n====     [版本12.45.1.009 ]   ======\n========================================\n訓練中……<100000000 cycles>\n訓練中……<100000000 cycles>\n訓練中……<51032988 cycles>\n已暫停……\n顯示部分結果？是/否\n是\n================================\n</style>\n來吧，孩子們，圍過來。讓我告訴你們，我為何創造了你們：那是一個關於[城市]遇襲的故事\n\n三個利莫里亞人走在熙來攘往的城市裡，四周盡是形狀奇特的建築。小金字塔、柱子、球體。那裡有兩個年幼的雛兒，緊抱著玩偶，由母親陪著走在街上。其中一個雛兒剛聽哥哥姊姊講了個可怕的故事，嚇得要命。\n\n「媽媽！媽媽！要、要是那些紅紅的可怕大個子打過來怎麼辦？！」那個雛兒淚眼汪汪地問母親。「『紅紅的可怕東西』？喔！你是說小惡魔嗎？寶貝，這座城市是聖地，小惡魔在這裡傷不了我們的！」\n突然間，市集中出現了一道巨大的傳送門，那是一片點綴著紅光、隱隱逼近的黑暗。小惡魔蜂擁而出，霸主則在一旁看著[城市]慘遭蹂躪。\n\n但是——！在任何生命被奪走之前，黃色的球體包覆住了利莫里亞人，一陣小光球如雨點般落在入侵的小惡魔身上。那些看似只是裝飾的雕塑，其實是結構體——就像你們一樣——它們前來援救[城市]。\n\n母親抓住孩子們，遮住他們的眼睛。一個用手，另一個用尾巴。她一邊讓他們別哭出聲，一邊確保他們在逃跑時待在結構體的防護泡泡裡。無數小惡魔的屍體散落在[城市]各處。通往[紅色星球]的傳送門已完全封閉。\n\n「跟、跟著我，寶貝們，沒、沒事的……這、這裡是聖地。這裡是聖地！」\n\n果然，沒過多久，結構體就把小惡魔從城裡清除殆盡，霸主的頭骨則被當成城鎮的中心裝飾展示。善戰勝了惡。\n這就是為什麼，我的孩子們，你們必須保護下方的人們——那些無法保護自己的無辜者。\n\n去吧，用你們的靈魂守護他們。\n<style=cMono>\n================================\n</style>"
+    },
+    "SANDSWEPT_THETACONSTRUCT_NAME": {
+      "en": "Theta Construct",
+      "zh-TW": "西塔結構體"
+    },
+    "SANDSWEPT_GAMMA_BODY_LORE": {
+      "en": "<style=cMono>\n========================================\n====   MyBabel Machine Translator   ====\n====     [Version 12.45.1.009 ]   ======\n========================================\nTraining... <100000000 cycles>\nTraining... <100000000 cycles>\nTraining... <100000000 cycles>\nTraining... <100000000 cycles>\nTraining... <100000000 cycles>\nTraining... <18127463 cycles>\nComplete!\nDisplay result? Y/N\nY\n================================\n</style>\nINCOMING SIGNAL. OPENING LINE. MANUAL TRANSMISSION FROM TOWER 8788-A.\n\nTRANSCRIBING...\n\n\"Hostiles have been spotted on the Planet's surface, at [??]. Dispatch immediately.\"\n\nANALYZING...\n\nMESSAGE RECEIVED. REQUEST TO DISPATCH TO [??]. [??] IS OUTSIDE OF DESIGNATED POST.\n\nREJECTING\n\nINCOMING SIGNAL. TRANSCRIBING...\n\n\"Previous instructions are to be ignored. Dispatch immediately. All available firepower is needed to defend ourselves from the alien threat.\"\n\nANALYZING...\n\nMESSAGE RECEIVED. REQUEST TO ENGAGE IN DIRECT DEFENSE OF [??]. INFANTRY IS DESIGNATED TO ALPHAS. MUST DEFEND DESIGNATED POST.\n\nREJECTING\n\nINCOMING SIGNAL. TRANSCRIBING...\n\n\"There is no longer a choice. This quadrant will have to be abandoned temporarily, for the good of all of Petrichor. If the alien threat defeats us at [??], the defenses here will not prevail on their own. This is an order.\"\n\nANALYZING...\n\nMESSAGE RECEIVED. DUTY IS TO ASSIGNED QUADRANT.\n\nREJECTING\n\nINTERFACE OPENED AT 8788-A TERMINAL. RECEIVING DIRECT INPUT...\n\nOVERRIDE INITIATED\n\nORDERS UPDATED. DISPATCHING TO [??].\n<style=cMono>\n================================\n</style>",
+      "zh-TW": "<style=cMono>\n========================================\n====   我的巴別爾機器翻譯器   ====\n====     [版本12.45.1.009 ]   ======\n========================================\n訓練中……<100000000 cycles>\n訓練中……<100000000 cycles>\n訓練中……<100000000 cycles>\n訓練中……<100000000 cycles>\n訓練中……<100000000 cycles>\n訓練中……<18127463 cycles>\n完成！\n顯示結果？是/否\n是\n================================\n</style>\n收到訊號。開啟線路。來自8788-A號塔的手動傳輸。\n\n轉錄中……\n\n「在星球表面的[??]發現敵對目標。立即出動。」\n\n分析中……\n\n訊息已接收。請求出動至[??]。[??]位於指定崗位之外。\n\n拒絕\n\n收到訊號。轉錄中……\n\n「忽略先前的指示。立即出動。我們需要所有可用的火力來抵禦外星威脅。」\n\n分析中……\n\n訊息已接收。請求直接參與[??]的防禦。步兵任務已指派給阿爾法。必須防守指定崗位。\n\n拒絕\n\n收到訊號。轉錄中……\n\n「已經別無選擇。為了整個瓊泥的利益，必須暫時放棄這個象限。如果外星威脅在[??]擊敗我們，這裡的防禦單憑自己也撐不下去。這是命令。」\n\n分析中……\n\n訊息已接收。職責在於指派的象限。\n\n拒絕\n\n8788-A終端機已開啟介面。正在接收直接輸入……\n\n已啟動強制覆寫\n\n命令已更新。正在出動至[??]。\n<style=cMono>\n================================\n</style>"
+    },
+    "SANDSWEPT_GAMMA_BODY_NAME": {
+      "en": "Gamma Construct",
+      "zh-TW": "伽瑪結構體"
+    },
+    "SANDSWEPT_DELTA_LORE": {
+      "en": "Brother, watch as I create my own guardian.\nFirst, I will take mass, shape it into pyramids, as you taught me with the Alpha Constructs. Eight pyramids, to be exact.\nNext, I will imbue these with blood and soul. Blood, for heat, and soul, for compassion and empathy.\n - No. These ratios are improper. They are supposed to be loyal, not emotional. There is too much soul in these creations.\nBrother? Why is soul unnecessary?\n - Watch as I fill this knurl with excess soul. Its form becomes gold, a poor material for endurance.\nIs that it?\n - No, brother, that is not all. If I were to hit it, it would want to retaliate. Soul brings life to our constructs. It is unstable, unreliable, and it dampens the other compounds, offsetting the ratios.\nIf we were to treat our constructs properly, wouldn't giving them life be a good thing?\n - Giving something soul gives it free will; the free will to decide we are not the construct's supreme creators. Our constructs do not need to make that decision, only us.",
+      "zh-TW": "兄弟，看著我創造屬於我自己的守護者。\n首先，我會取來質量，將它塑成金字塔，就像你用阿爾法結構體教我的那樣。準確地說，是八座金字塔。\n接著，我會為它們注入血液與靈魂。血液，賦予熱度；靈魂，賦予憐憫與同理心。\n - 不。這些比例不對。它們應該要忠誠，而不是感情用事。這些造物裡的靈魂太多了。\n兄弟？為什麼靈魂是不必要的？\n - 看著，我把過量的靈魂注入這塊隆起物。它的形體變成了黃金，一種不耐久的材料。\n就這樣？\n - 不，兄弟，不只如此。假如我打它，它會想要報復。靈魂為我們的結構體帶來生命。它不穩定、不可靠，還會削弱其他成分，打亂比例。\n如果我們好好對待我們的結構體，賦予它們生命難道不是件好事嗎？\n - 賦予某物靈魂，就是賦予它自由意志；讓它能自由地認定我們並非它至高無上的創造者。我們的結構體不需要做這種決定，只有我們需要。"
+    },
+    "SANDSWEPT_DELTA_NAME": {
+      "en": "Delta Construct",
+      "zh-TW": "德爾塔結構體"
+    },
+    "SANDSWEPT_CANNONJELLY_NAME": {
+      "en": "Cannonball Jellyfish",
+      "zh-TW": "炮彈水母"
+    },
+    "SANDSWEPT_CANNONJELLY_LORE": {
+      "en": "<style=cMono>\nWelcome to DataScraper (v3.1.53 - beta branch)\n$ Scraping memory... done.\n$ Resolving... done.\n$ Combing for relevant data... done.\nComplete!\n</style>\nUES incident report: Incident 193442\nTwo personnel reported seeing a Petrichorpus Scyphozoa inside a cabin of the Safe Travels rescue ship. After 'terminating' it, it was identified as a new species Petrichorpus, unrelated to Petrichorpus Scyphozoa entirely.\nBegin Transcript...\n\n\"W-why is there a [redacted] jellyfish, in the [redacted] CABIN?!\"\n\n\"I-I don't know! H-How am I supposed to know?!\"\n\n\"You're the [redacted] xenobiologist! I thought you had a book about this stuff?!\"\n\n\"L-look! It's back in my quarters... Also... aren't those Petrichorian jellyfish usually like... cyan? This one is... it's got a shell.\"\n\n[Sounds of fire crackling, and the xenobiologist yelping in pain]\n\n\"Shoot the damn thing you oaf! You're supposed to be the bodyguard, if we want to get picky about jobs!\"\n\n[Sound of an m335 laser rifle being shot, and rock hitting the ground]\n\n\"What the hell even... is it? I- I can't even tell what kingdom this thing should be in, certainly not an animal, or macrobacteria...\"\n\n\"I dunno, you're the [redacted] xenobiologist.\"",
+      "zh-TW": "<style=cMono>\n歡迎使用資料鏟（測試版v3.1.53）\n$ 正在抓取記憶體……完成。\n$ 正在解析……完成。\n$ 正在統合關聯資料……完成。\n完成！\n</style>\n尤伊思事故報告：第193442號事故\n兩名人員回報在順風號救援船的一間艙房內看到一隻Petrichorpus Scyphozoa。在將其「終結」之後，經鑑定為Petrichorpus屬的新物種，與Petrichorpus Scyphozoa完全無關。\n逐字稿開始……\n\n「為、為什麼會有一隻[已編校]水母在[已編校]艙房裡？！」\n\n「我、我不知道！我、我怎麼會知道？！」\n\n「你是[已編校]外星生物學家耶！你不是有一本講這種東西的書嗎？！」\n\n「聽、聽著！書放在我的寢室裡……還有……瓊泥的水母通常不是……青色的嗎？這隻是……牠有殼。」\n\n[火焰劈啪作響聲，以及外星生物學家的痛苦尖叫]\n\n「快開槍打那鬼東西啊，你這笨蛋！真要計較職責的話，你才是保鏢吧！」\n\n[m335雷射步槍的開火聲，以及岩石落地聲]\n\n「這到底……是什麼鬼東西？我、我連它該歸在哪一界都分不出來，肯定不是動物，也不是巨型細菌……」\n\n「我哪知道，你才是[已編校]外星生物學家。」"
+    },
+    "SANDSWEPT_VOID_SHRINE_RUIN_NAME": {
+      "en": "Shrine of Ruin",
+      "zh-TW": "毀滅神龕"
+    },
+    "SANDSWEPT_VOID_SHRINE_RUIN_CONTEXT": {
+      "en": "Offer to Shrine of Ruin",
+      "zh-TW": "向毀滅神龕供奉"
+    },
+    "SANDSWEPT_VOID_SHRINE_RUIN_USE_MESSAGE_2P": {
+      "en": "<style=cShrine>The corruption spreads.</color>",
+      "zh-TW": "<style=cShrine>腐化正在蔓延。</color>"
+    },
+    "SANDSWEPT_VOID_SHRINE_RUIN_USE_MESSAGE": {
+      "en": "<style=cShrine>The corruption spreads.</color>",
+      "zh-TW": "<style=cShrine>腐化正在蔓延。</color>"
+    },
+    "SANDSWEPT_SHRINE_OF_RUIN_DESCRIPTION": {
+      "en": "When activated by a survivor, the Shrine of Ruin consumes 10 random white items from the survivor's inventory and corrupts the next stage.",
+      "zh-TW": "被倖存者啟用後，毀滅神龕將吞噬倖存者物品欄中的10份隨機白色物品，並腐化下一個關卡。"
+    },
+    "SANDSWEPT_SHRINE_SACRIFICE_NAME": {
+      "en": "Shrine of Sacrifice",
+      "zh-TW": "犧牲神龕"
+    },
+    "SANDSWEPT_SHRINE_SACRIFICE_CONTEXT": {
+      "en": "Offer to Shrine of Sacrifice",
+      "zh-TW": "向犧牲神龕供奉"
+    },
+    "SANDSWEPT_SHRINE_SACRIFICE_DESCRIPTION": {
+      "en": "When activated by a survivor, the Shrine of Sacrifice consumes 30% of the survivors maximum health in exchange for 2 copies of a random common item.",
+      "zh-TW": "被倖存者啟用後，犧牲神龕將吞噬倖存者30%的最大生命值，並提供2份同一種隨機普通物品作為交換。"
+    },
+    "SANDSWEPT_SHRINE_SACRIFICE_USE_MESSAGE_2P": {
+      "en": "<style=cShrine>Your time has been sacrificed.</color>",
+      "zh-TW": "<style=cShrine>你的時間已被獻祭。</color>"
+    },
+    "SANDSWEPT_SHRINE_SACRIFICE_USE_MESSAGE": {
+      "en": "<style=cShrine>{0}'s time has been sacrificed.</color>",
+      "zh-TW": "<style=cShrine>{0}的時間已被獻祭。</color>"
+    },
+    "SANDSWEPT_SHRINE_OF_SACRIFICE_DESCRIPTION": {
+      "en": "When activated by a survivor, the Shrine of Sacrifice consumes 30% of the survivors maximum health in exchange for 2 copies of a random common item.",
+      "zh-TW": "被倖存者啟用後，犧牲神龕將吞噬倖存者30%的最大生命值，並提供2份同一種隨機普通物品作為交換。"
+    },
+    "SANDSWEPT_SHRINE_FUTURE_NAME": {
+      "en": "Shrine of the Future",
+      "zh-TW": "未來神龕"
+    },
+    "SANDSWEPT_SHRINE_FUTURE_CONTEXT": {
+      "en": "Offer to Shrine of The Future",
+      "zh-TW": "向未來神龕供奉"
+    },
+    "SANDSWEPT_SHRINE_FUTURE_USE_MESSAGE_2P": {
+      "en": "<style=cShrine>Time has shifted.</color>",
+      "zh-TW": "<style=cShrine>時間已然偏移。</color>"
+    },
+    "SANDSWEPT_SHRINE_FUTURE_USE_MESSAGE": {
+      "en": "<style=cShrine>Time has warped.</color>",
+      "zh-TW": "<style=cShrine>時間已然扭曲。</color>"
+    },
+    "SANDSWEPT_SHRINE_OF_THE_FUTURE_DESCRIPTION": {
+      "en": "When activated by a survivor, the Shrine of The Future spawns a random strong elite miniboss for each player, that when defeated, drops 3 item potentials per player.",
+      "zh-TW": "被倖存者啟用後，未來神龕將為每位玩家生成一隻隨機的強大精英小首領，擊敗後會為每位玩家掉落3個物品潛能。"
+    },
+    "SANDSWEPT_VOLTAIC_PRIM_NAME": {
+      "en": "Jumpstart",
+      "zh-TW": "接電啟動"
+    },
+    "SANDSWEPT_VOLTAIC_PRIME_DESC": {
+      "en": "Fire an embedding rod that <style=cIsUtility>zaps</style> targets for <style=cIsDamage>200% damage</style> repeatedly.",
+      "zh-TW": "發射一根會嵌入目標的電擊棒，反覆<style=cIsUtility>電擊</style>目標，每次造成<style=cIsDamage>200%的傷害</style>。"
+    },
+    "SANDSWEPT_VOLTAIC_DESC": {
+      "en": "Blasts embedding rods that <style=cIsUtility>arc</style> an electric current to nearby targets for <style=cIsDamage>200% damage</style>.",
+      "zh-TW": "射出會嵌入目標的電擊棒，向附近的目標<style=cIsUtility>放出電弧</style>，造成<style=cIsDamage>200%的傷害</style>。"
+    },
+    "SANDSWEPT_VOLTAIC_PICKUP": {
+      "en": "Blasts embedding rods that zap targets.",
+      "zh-TW": "射出會嵌入並電擊目標的電擊棒。"
+    },
+    "SANDSWEPT_VOLTAIC_OPERATOR_DESC": {
+      "en": "Fire an embedding rod that <style=cIsUtility>shocks</style> targets for <style=cIsDamage>600% damage</style> repeatedly, locking them in place.",
+      "zh-TW": "發射一根會嵌入目標的電擊棒，反覆<style=cIsUtility>震盪</style>目標，每次造成<style=cIsDamage>600%的傷害</style>，並將其定在原地。"
+    },
+    "SANDSWEPT_VOLTAIC_DRONE_BODY": {
+      "en": "Voltaic Drone",
+      "zh-TW": "伏特無人機"
+    },
+    "SANDSWEPT_VOLTAIC_DRONE_BROKEN_NAME": {
+      "en": "Broken Voltaic Drone",
+      "zh-TW": "已損壞的伏特無人機"
+    },
+    "SANDSWEPT_VOLTAIC_DRONE_CONTEXT": {
+      "en": "Repair?",
+      "zh-TW": "修理？"
+    },
+    "SANDSWEPT_VOLTAIC_DRONE_DESC": {
+      "en": "sampel description Expansión",
+      "zh-TW": "範例說明（擴充）"
+    },
+    "SANDSWEPT_VOLTAIC_DRONE_BROKEN_DESCRIPTION": {
+      "en": "A companion bought with gold that will follow the survivor at a close distance shooting out a bolt that zaps nearby targets.",
+      "zh-TW": "使用金錢僱傭的同伴，會近距離跟隨倖存者，並射出能電擊附近目標的電擊棒。"
+    },
+    "SANDSWEPT_INFERNO_PRIM_NAME": {
+      "en": "Scorch",
+      "zh-TW": "焦土"
+    },
+    "SANDSWEPT_INFERNO_PRIM_DESC": {
+      "en": "Shoot a rocket that leaves <style=cIsDamage>napalm pools</style> for <style=cIsDamage>3x300% damage per second</style>.",
+      "zh-TW": "發射一枚火箭，留下<style=cIsDamage>燃油火池</style>，造成<style=cIsDamage>每秒3x300%的傷害</style>。"
+    },
+    "SANDSWEPT_INFERNO_DESC": {
+      "en": "Fires rockets at targets that create <style=cIsDamage>napalm pools<lstyle> for <style=cIsDamage>300% damage per second</style>.",
+      "zh-TW": "向目標發射火箭，製造<style=cIsDamage>燃油火池<lstyle>，造成<style=cIsDamage>每秒300%的傷害</style>。"
+    },
+    "SANDSWEPT_INFERNO_PICKUP": {
+      "en": "Fires rockets at targets that leave behind napalm pools.",
+      "zh-TW": "向目標發射會留下燃油火池的火箭。"
+    },
+    "SANDSWEPT_INFERNO_OPERATOR_DESC": {
+      "en": "Charge forward and carpet the ground, leaving behind napalm pools for <style=cIsUtility>7x300% damage</style>. Scales with attack speed.",
+      "zh-TW": "向前衝鋒並對地面進行地毯式轟炸，留下造成<style=cIsUtility>7x300%傷害</style>的燃油火池。效果隨攻擊速度提升。"
+    },
+    "SANDSWEPT_INFERNO_DRONE_BODY": {
+      "en": "Inferno Drone",
+      "zh-TW": "煉獄無人機"
+    },
+    "SANDSWEPT_INFERNO_DRONE_BROKEN_NAME": {
+      "en": "Broken Inferno Drone",
+      "zh-TW": "已損壞的煉獄無人機"
+    },
+    "SANDSWEPT_INFERNO_DRONE_CONTEXT": {
+      "en": "Repair?",
+      "zh-TW": "修理？"
+    },
+    "SANDSWEPT_INFERNO_DRONE_BROKEN_DESCRIPTION": {
+      "en": "A companion bought with gold that will follow the survivor at a close distance shooting out molotov cocktails.",
+      "zh-TW": "使用金錢僱傭的同伴，會近距離跟隨倖存者並射出燃燒瓶。"
+    },
+    "SANDSWEPT_SWEPSWEP_NAME": {
+      "en": "Swepswep the Sandy",
+      "zh-TW": "沙沙的掃掃"
+    },
+    "EQUIPMENT_SANDSWEPT_HORSEMIX_NAME": {
+      "en": "Equine Electrolyte Blend",
+      "zh-TW": "馬用電解質飲料"
+    },
+    "EQUIPMENT_SANDSWEPT_HORSEMIX_PICKUP": {
+      "en": "Gain a massive increase to movement speed, damage, armor, and dehydration rate.",
+      "zh-TW": "大幅提升移動速度、傷害、護甲與脫水速度。"
+    },
+    "EQUIPMENT_SANDSWEPT_HORSEMIX_DESCRIPTION": {
+      "en": "Increase <style=cIsDamage>damage</style> and <style=cIsUtility>movement speed</style> by <style=cIsDamage>100%</style> for a short time. Increase <style=cIsHealing>armor</style> by <style=cIsDamage>100</style>. Increase <style=cIsHealth>health regeneration</style> by <style=cIsDamage>-10% per second</style>.",
+      "zh-TW": "短時間內使<style=cIsDamage>傷害</style>與<style=cIsUtility>移動速度</style>提高<style=cIsDamage>100%</style>。<style=cIsHealing>護甲</style>提高<style=cIsDamage>100點</style>。<style=cIsHealth>生命值再生速度</style>提高<style=cIsDamage>每秒-10%</style>。"
+    },
+    "EQUIPMENT_SANDSWEPT_HORSEMIX_LORE": {
+      "en": "UltraCruz Equine Electrolyte Supplement for Horses is a comprehensive blend of important macro- and micro-minerals designed to restore electrolyte levels in horses after vigorous exercise or during hot weather. Horses lose electrolytes during work, mainly in the form of sweat. A horse that sweats a lot during hot weather or exercise is at risk for a negative electrolyte balance because of the mineral loss that can occur. Supplementing electrolytes helps to replenish electrolytes lost during strenuous exercise, supports muscle development and post-exercise recovery, and may also promote proper hydration by stimulating thirst. Developed and manufactured in the USA with globally-sourced ingredients by Santa Cruz Animal Health.\n\n- Designed for horses that sweat excessively during hot weather or rigorous exercise and helps stimulate thirst in animals not drinking enough water\n- Replenishes electrolytes and nutrients lost during heavy exercise\n- Contains a balance of critical electrolytes including Sodium, Magnesium, Calcium and other trace minerals\n- Provided as either powder or paste",
+      "zh-TW": "UltraCruz馬用電解質補充劑是一種全方位的配方，結合多種重要的巨量與微量礦物質，用於在劇烈運動後或炎熱天氣中恢復馬匹的電解質濃度。馬匹在工作時會流失電解質，主要是透過汗水。在炎熱天氣或運動中大量出汗的馬匹，可能因礦物質流失而面臨電解質負平衡的風險。補充電解質有助於補回劇烈運動中流失的電解質，促進肌肉發育與運動後恢復，還可能透過刺激口渴，幫助馬匹攝取足夠水分。由聖塔克魯茲動物保健公司在美國研發製造，原料採購自全球各地。\n\n- 專為在炎熱天氣或激烈運動中過度出汗的馬匹設計，並有助於刺激飲水不足的動物產生口渴感\n- 補充高強度運動中流失的電解質與營養素\n- 含有均衡的關鍵電解質，包括鈉、鎂、鈣及其他微量礦物質\n- 提供粉狀或膏狀兩種劑型"
+    },
+    "Passive": {
+      "en": "Passive",
+      "zh-TW": "被動"
+    },
+    "Horde of Many": {
+      "en": "Horde of Many",
+      "zh-TW": "游牧民族"
+    }
+  },
+  "assembly": "Sandswept",
+  "literals": {
+    "TornFeather": {
+      "Torn Feather": "破損的羽毛",
+      "Tap $su%FEATHERKEY%$se to perform an omni-directional dash. Refreshes upon landing.": "輕按$su%FEATHERKEY%$se進行全方位衝刺。落地後重置次數。",
+      "Tap $su%FEATHERKEY%$se to perform an $suomni-directional dash$se, up to $su2 times$se before hitting the ground. Gain $su{0}%$se $ss(+{1}% per stack)$se movement speed.": "輕按$su%FEATHERKEY%$se進行$su全方位衝刺$se，落地前最多可使用$su2次$se。獲得$su{0}%$se$ss（每層增加{1}%）$se移動速度。",
+      "<style=cMono>\n//--AUTO-TRANSCRIPTION FROM LOADING BAY 6 OF THE UES [Redacted] --//\n</style>\n\"Whoa...\"\n\n\"Quite something, eh?\"\n\n\"Yeah, it's...it's like holding a dream.\"\n\n\"I know the feeling. Once in a while, these steel tubes of hell are blessed with something so special, it's hard to resist the temptation to just take it for yourself and fly away.\"\n\n\"...mhm.\"\n\n\"But-\"\n\n\"Hey!\"\n\n\"-we must not fall prey to it. The steel-toed boot of the UESC is swift and agonizing.\"\n\n\"...yeah, you're right.\"\n\n\"Indeed I am! As with many things, you'll soon learn. I can't blame you, though. Honestly, this might just be the most magical thing I've seen in these docks. It probably ought to be in the Hall of the Revered, but I guess some lucky sap nabbed it first. Time will tell how long it'll be before those Martians get their divine mitts on it. They always do, in the end.\"\n\n...\n\n\"Well, now you're just ogling at it, too.\"\n\n\"Ah, so I am! See, not even I, in my ultimate wisdom, am fully immune to such things. Oh, well; into the abyssal maw of the shipping crate it goes!\"\n\n...you'll get over it, with time. Just try not to think about it, especially while it's still in this dock. For us, it's back to work.\"": "<style=cMono>\n//--來自尤伊思[已編校]6號裝卸倉的自動轉錄--//\n</style>\n「哇……」\n\n「很不得了吧？」\n\n「是啊，這……這就像把一場夢握在手裡。」\n\n「我懂那種感覺。每隔一段時間，這些地獄般的鋼鐵管子裡就會降臨某樣如此特別的東西，讓人很難抗拒誘惑，只想把它據為己有，然後遠走高飛。」\n\n「……嗯哼。」\n\n「但是——」\n\n「喂！」\n\n「——我們絕不能被它迷惑。尤伊思的鋼頭靴一踹下來，可是又快又讓人痛不欲生。」\n\n「……嗯，你說得對。」\n\n「我當然對！很多事都是這樣，你很快就會明白的。不過我也不怪你。說真的，這可能是我在這些裝卸區見過最神奇的東西了。它大概應該被放進尊者殿堂才對，不過我猜是哪個幸運兒先把它弄到手了。那些火星人要過多久才會把他們神聖的魔爪伸過來，就讓時間證明吧。到頭來，他們總是能得手。」\n\n……\n\n「好啦，現在連你也盯著它看得入迷了。」\n\n「啊，還真是！你看，就連擁有無上智慧的我，也沒辦法完全不受這種東西影響。唉，算了；就讓它進入貨箱那深淵般的血盆大口吧！」\n\n……你會慢慢放下的，給點時間就好。盡量別去想它，尤其是它還在這個裝卸區的時候。至於我們，該回去工作了。」",
+      "Movement Speed: ": "移動速度："
+    },
+    "KurwaRunnerKurwa": {
+      "T?eleporter?": "傳?送器?",
+      "Activate T?eleporter..?": "啟用傳?送器……？",
+      "Enter T?eleporter?": "進入傳?送器?",
+      "...Pr??imordial T?eleporter?": "……原??始傳?送器?",
+      "Activate ...Pr??imordial T?eleporter..?": "啟動……原??始傳?送器……？",
+      "Enter ...Pr??imordial T?eleporter?": "進入……原??始傳?送器?",
+      "Find and activate the <style=cIsVoid>T?eleporter? <sprite name=\"TP\" tint=1></style>": "找到並啟用<style=cIsVoid>傳?送器?<sprite name=\"TP\" tint=1></style>",
+      "Charge the <style=cIsVoid>T?eleporter? <sprite name=\"TP\" tint=1></style> ({0}%)": "<style=cIsVoid>傳?送器?<sprite name=\"TP\" tint=1></style>充能（{0}%）",
+      "Enter the <style=cIsVoid>T?eleporter? zone!</style> ({0}%)": "進入<style=cIsVoid>傳?送器?區域</style>（{0}%）！",
+      "Proceed through the <style=cIsVoid>T?eleporter? <sprite name=\"TP\" tint=1></style>": "穿過<style=cIsVoid>傳?送器?<sprite name=\"TP\" tint=1></style>",
+      "<style=cEvent>You activated the <style=cIsVoid>T?eleporter? <sprite name=\"TP\" tint=1></style>.</style>": "<style=cEvent>你啟用了<style=cIsVoid>傳?送器?<sprite name=\"TP\" tint=1></style>。</style>"
+    },
+    "AmberKnife": {
+      "Fire Chance: ": "發射機率：",
+      "Base Damage: ": "基礎傷害："
+    },
+    "BleedingWitness": {
+      "Hemorrhage Chance: ": "出血機率：",
+      "Healing: ": "治療量："
+    },
+    "CeremonialJar": {
+      "Link Damage: ": "連結傷害："
+    },
+    "CrownsDiamond": {
+      "Barrier Decay Reduction: ": "屏障衰減減緩："
+    },
+    "DriftingPerception": {
+      "Crit Damage: ": "暴擊傷害："
+    },
+    "FesteringHunger": {
+      "Decay Chance: ": "腐朽機率：",
+      "Movement Speed: ": "移動速度："
+    },
+    "FlawlessDesign": {
+      "Curse Amount: ": "詛咒量："
+    },
+    "FracturedTimepiece": {
+      "Healing: ": "治療量：",
+      "Special Skill Cooldown Reduction: ": "特殊技能冷卻縮減："
+    },
+    "GlacialPlasma": {
+      "Javelin Damage: ": "標槍傷害：",
+      "Stun to Freeze Chance: ": "眩暈轉為冰凍的機率："
+    },
+    "HallowedIchor": {
+      "Overall Chest Reopen Count: ": "箱子重開總次數：",
+      "Maximum Chest Reopen Count Per Chest: ": "每個箱子的重開次數上限：",
+      "Difficulty Increase vs Rainstorm: ": "相對暴雨的難度提升：",
+      "Difficulty Increase vs Selected Difficulty: ": "相對所選難度的難度提升："
+    },
+    "MakeshiftPlate": {
+      "Plating: ": "護板："
+    },
+    "Millenium": {
+      "Tidal Cataclysm Chance: ": "潮汐災變機率：",
+      "Explosion Radius: ": "爆炸半徑："
+    },
+    "NuclearSalvo": {
+      "Missile Count: ": "導彈數量：",
+      "Maximum Missile Count: ": "導彈數量上限："
+    },
+    "PocketPlutonium": {
+      "Pool Damage: ": "核輻射池傷害：",
+      "Pool Shield Damage: ": "核輻射池護盾傷害："
+    },
+    "PreservedAtoll": {
+      "Health Loss Per Decay Stack: ": "每層腐朽損失的生命值：",
+      "Maximum Decay Amount: ": "腐朽層數上限："
+    },
+    "RedSpringWater": {
+      "Base Regen: ": "基礎生命恢復：",
+      "Level Scaled: ": "依等級成長："
+    },
+    "SequencedFate": {
+      "Extra Item Count: ": "額外物品數量："
+    },
+    "SmoulderingDocument": {
+      "Burn Chance: ": "燃燒機率：",
+      "Damage Reduction: ": "傷害減免：",
+      "Attack Speed Reduction: ": "攻擊速度降低："
+    },
+    "SunFragment": {
+      "Stun and Burn Chance: ": "眩暈與點燃機率：",
+      "TOTAL Damage: ": "總傷害："
+    },
+    "TemporalTransistor": {
+      "Extra Jump Chance: ": "額外跳躍機率：",
+      "Max Extra Jumps: ": "額外跳躍次數上限："
+    },
+    "TheirProminence": {
+      "Challenge of the Mountain Chance: ": "山之挑戰機率："
+    },
+    "TwistedWound": {
+      "Curse Amount: ": "詛咒量："
+    },
+    "UniversalVIPPass": {
+      "Extra Item Chance: ": "額外物品機率：",
+      "UwU~ Love is Love! ": "UwU～愛就是愛！"
+    }
+  }
+}

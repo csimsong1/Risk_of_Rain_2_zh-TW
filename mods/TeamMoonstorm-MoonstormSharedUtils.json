@@ -1,0 +1,34 @@
+{
+  "mod": "TeamMoonstorm-MoonstormSharedUtils",
+  "version": "2.6.3",
+  "loader": "msu",
+  "notes": [
+    "MSU 自己的文字只有模組初始化出錯時的對話框，同樣從它的 languages 資料夾載入，所以和 Starstorm 2 一樣裝進 languages\\zh-TW。"
+  ],
+  "strings": {
+    "MSU_INIT_ERROR_DIALOG_BOX_HEADER": {
+      "en": "Exception during Module Initialization",
+      "zh-TW": "模組初始化時發生例外狀況"
+    },
+    "MSU_INIT_ERROR_DIALOG_BOX_DESC": {
+      "en": "A total of \"{0}\" Mod(s) threw exceptions during MSU's module initialization procedure. The game may be in an unstable state, we'd recommend contacting the mod developers for a fix.\r\n{1}",
+      "zh-TW": "共有{0}個模組在MSU的模組初始化程序中擲出例外狀況。遊戲可能處於不穩定的狀態，建議聯絡模組開發者尋求修正。\n{1}"
+    },
+    "MSU_INIT_ERROR_DIALOG_BOX_CANCEL": {
+      "en": "Continue playing",
+      "zh-TW": "繼續遊戲"
+    },
+    "MSU_INIT_ERROR_DIALOG_BOX_QUIT": {
+      "en": "Quit game",
+      "zh-TW": "結束遊戲"
+    },
+    "MSU_INIT_ERROR_DIALOG_BOX_EXCEPTION": {
+      "en": "Exception",
+      "zh-TW": "例外狀況"
+    },
+    "MSU_INIT_ERROR_DIALOG_BOX_EXCEPTIONS": {
+      "en": "Exceptions",
+      "zh-TW": "例外狀況"
+    }
+  }
+}

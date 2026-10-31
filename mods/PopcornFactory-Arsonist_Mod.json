@@ -1,0 +1,318 @@
+{
+  "mod": "PopcornFactory-Arsonist_Mod",
+  "version": "3.0.9",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式（Tokens.AddTokens）取得的，技能傷害、熱能消耗與 Masochism 的層數是模組設定的預設值；改過設定的話，譯文的數字要自己修改。"
+  ],
+  "strings": {
+    "POPCORN_ARSONIST_BODY_NAME": {
+      "en": "Arsonist",
+      "zh-TW": "縱火犯"
+    },
+    "POPCORN_ARSONIST_BODY_DESCRIPTION": {
+      "en": "The Arsonist is a close-ranged tank who uses fire as a means to an end. Managing his Overheat meter allows him to deal high amounts of damage to groups of enemies. Balance is crucial to victory.\r\n\r\n< ! > Your attacks will be weaker when you're overheating. If you're in a tight spot, Cleanse can immediately end the overheating period in exchange for extending its cooldown duration.\r\n\r\n< ! > Masochism's Anticipation stacks still build during the ability's duration, meaning you can activate it early and exit with the max duration.\r\n\r\n< ! > Cleanse can remove the fire debuff from your passive. Use it to get out of a pinch.",
+      "zh-TW": "縱火犯是一名近距離坦克，把火焰當作達成目的的手段。妥善管理過熱量表，就能對成群的敵人造成大量傷害。保持平衡是勝利的關鍵。\r\n\r\n< ! >過熱時你的攻擊會變弱。陷入困境時，淨化可以立即結束過熱狀態，代價是延長淨化的冷卻時間。\r\n\r\n< ! >受虐癖的期待層數在技能持續期間仍會累積，這代表你可以提早啟動它，並以最長持續時間結束。\r\n\r\n< ! >淨化可以移除被動技能造成的燃燒減益效果。用它來脫離險境吧。"
+    },
+    "POPCORN_ARSONIST_BODY_SUBTITLE": {
+      "en": "Manic Incendiary",
+      "zh-TW": "狂熱縱火魔"
+    },
+    "POPCORN_ARSONIST_BODY_LORE": {
+      "en": "A u d i o  r e c o r d i n g  t a k e n  f r o m  p e r s o n a l  r e c o r d i n g  d e v i c e .\r\n\r\nP r i n t i n g  t r a n s c r i p t . . .\r\n\r\nJoining the UES proved to be easy. Especially with their job listings. \r\n\r\nA demolitions expert is not much different from the type of work that I already do. And yes, arson is work. The military had been kind enough to leave the old equipment of the Incendiary Unit lying around for keen eyes like mine to find. It wasn’t difficult learning exactly what they were trying to do with that unit, and it was a damned shame that they shut it down.\r\n\r\nThey were brilliant. They were brilliant, and the UES told them they were psychopaths. I was only able to barely salvage the remnants of what little hadn’t been completely destroyed. Even then, I haven’t gotten much of a chance to test my restorations with the high security of my division.\r\n\r\nI heard from a colleague that there was a job happening. Some sort of rescue mission aboard the UES Safe Travels to an uncharted planet. I’ve heard stories of that place, not so nice ones about the creatures that live there.\r\n\r\nHm.\r\n\r\nMaybe I’ll go. Sounds like I’ll find some very good lab rats.\r\n\r\nE n d  o f  r e c o r d i n g .\r\n\r\n",
+      "zh-TW": "取 自 個 人 錄 音 裝 置 的 錄 音 。\r\n\r\n正 在 列 印 逐 字 稿 ……\r\n\r\n要加入尤伊思很容易，尤其是看過他們的徵才清單之後。\r\n\r\n爆破專家跟我本來就在做的工作沒什麼兩樣。沒錯，縱火也是一種工作。軍方很好心，把燃燒部隊的舊裝備隨處亂丟，正好讓我這種眼尖的人找到。要弄清楚他們當初想用那支部隊做什麼並不難，而他們把它解散了，真是他媽的可惜。\r\n\r\n他們是天才。他們是天才，尤伊思卻說他們是精神病態。我只勉強搶救到一小部分還沒被完全銷毀的殘骸。即便如此，由於我所屬部門戒備森嚴，我也沒什麼機會測試我修復的成果。\r\n\r\n我聽一位同事說有份工作要開始了，好像是搭乘尤伊思順風號前往一顆未知星球的救援任務。我聽過那個地方的傳聞，都是關於住在那裡的生物，而且不是什麼好聽的故事。\r\n\r\n嗯。\r\n\r\n也許我會去吧。聽起來我能在那裡找到一些非常好的實驗白老鼠。\r\n\r\n錄 音 結 束 。\r\n\r\n"
+    },
+    "POPCORN_ARSONIST_BODY_OUTRO_FLAVOR": {
+      "en": "..and so he left, with new bloodlust set ablaze.",
+      "zh-TW": "……於是他走了，心中燃起了新的嗜血慾望。"
+    },
+    "POPCORN_ARSONIST_BODY_OUTRO_FAILURE": {
+      "en": "..and so he vanished, his only regret: a job left unfinished.",
+      "zh-TW": "……於是他就這樣消逝了，唯一的遺憾是：工作沒能完成。"
+    },
+    "POPCORN_ARSONIST_BODY_DEFAULT_SKIN_NAME": {
+      "en": "Arsonist",
+      "zh-TW": "縱火犯"
+    },
+    "POPCORN_ARSONIST_BODY_MASTERY_SKIN_NAME": {
+      "en": "Yuppie",
+      "zh-TW": "雅痞"
+    },
+    "POPCORN_ARSONIST_BODY_GRANDMASTERY_SKIN_NAME": {
+      "en": "Firebug",
+      "zh-TW": "縱火狂"
+    },
+    "POPCORN_ARSONIST_BODY_SURVIVAL_SKIN_NAME": {
+      "en": "Anarchist",
+      "zh-TW": "無政府主義者"
+    },
+    "POPCORN_ARSONIST_BODY_PASSIVE_NAME": {
+      "en": "Pyromania",
+      "zh-TW": "嗜火癖"
+    },
+    "POPCORN_ARSONIST_BODY_PASSIVE_DESCRIPTION": {
+      "en": "Resist fire damage from all sources. Convert one attack dealing greater than <style=cIsDamage>30%</style> of total health into <style=cIsDamage>50%</style> fire damage over time.",
+      "zh-TW": "抵抗所有來源的火焰傷害。將單次超過總生命值<style=cIsDamage>30%</style>的攻擊，轉換為<style=cIsDamage>50%</style>的火焰持續傷害。"
+    },
+    "POPCORN_ARSONIST_BODY_PASSIVE_NORMAL_GAUGE_NAME": {
+      "en": "Normal Gauge",
+      "zh-TW": "標準量表"
+    },
+    "POPCORN_ARSONIST_BODY_PASSIVE_NORMAL_GAUGE_DESCRIPTION": {
+      "en": "Deal <style=cIsDamage>100%</style> damage in white portion. Base Gauge is resistant to Overheating.",
+      "zh-TW": "在白色區段造成<style=cIsDamage>100%</style>傷害。基礎量表較不容易過熱。"
+    },
+    "POPCORN_ARSONIST_BODY_PASSIVE_BLUE_GAUGE_NAME": {
+      "en": "Supercritical Gauge",
+      "zh-TW": "超臨界量表"
+    },
+    "POPCORN_ARSONIST_BODY_PASSIVE_BLUE_GAUGE_DESCRIPTION": {
+      "en": "Deal <style=cIsDamage>70%</style> damage in white portion, deal <style=cIsDamage>250%</style> damage in blue portion. Maximum heat is fixed.",
+      "zh-TW": "在白色區段造成<style=cIsDamage>70%</style>傷害，在藍色區段造成<style=cIsDamage>250%</style>傷害。熱量上限固定不變。"
+    },
+    "POPCORN_ARSONIST_BODY_PRIMARY_FIRESPRAY_NAME": {
+      "en": "Fireball",
+      "zh-TW": "火球"
+    },
+    "POPCORN_ARSONIST_BODY_PRIMARY_FIRESPRAY_DESCRIPTION": {
+      "en": "<style=cIsUtility>Heat. </style>Fire a ball of fire that deals <style=cIsDamage>225% damage and ignites</style> enemies on hit. ",
+      "zh-TW": "<style=cIsUtility>熱量。</style>發射一顆火球，造成<style=cIsDamage>225%傷害，並在命中時點燃</style>敵人。"
+    },
+    "POPCORN_ARSONIST_BODY_ALT_PRIMARY_FIRESPRAY_NAME": {
+      "en": "Overdrive",
+      "zh-TW": "超頻"
+    },
+    "POPCORN_ARSONIST_BODY_ALT_PRIMARY_FIRESPRAY_DESCRIPTION": {
+      "en": "<style=cIsUtility>Heat. </style><style=cIsUtility>Supercritical. </style>Fire a ball of fire that deals <style=cIsDamage>160% damage and ignites</style> enemies on hit. ",
+      "zh-TW": "<style=cIsUtility>熱量。</style><style=cIsUtility>超臨界。</style>發射一顆火球，造成<style=cIsDamage>160%傷害，並在命中時點燃</style>敵人。"
+    },
+    "POPCORN_ARSONIST_BODY_PRIMARY_FLAMETHROWER_NAME": {
+      "en": "Dragon's Breath",
+      "zh-TW": "龍息"
+    },
+    "POPCORN_ARSONIST_BODY_PRIMARY_FLAMETHROWER_DESCRIPTION": {
+      "en": "Fire a beam of fire that deals <style=cIsDamage>90%</style> damage. Has increased chance to ignite the closer you are to the target.",
+      "zh-TW": "噴出一道火焰光束，造成<style=cIsDamage>90%</style>傷害。離目標越近，點燃的機率越高。"
+    },
+    "POPCORN_ARSONIST_BODY_PRIMARY_FIRESPRAY_SCEPTER_NAME": {
+      "en": "Firestorm",
+      "zh-TW": "火焰風暴"
+    },
+    "POPCORN_ARSONIST_BODY_PRIMARY_FIRESPRAY_SCEPTER_DESCRIPTION": {
+      "en": "<style=cIsUtility>Heat. </style>Fire a piercing beam of intense heat that deals <style=cIsDamage>300% damage and ignites</style> enemies on hit.If held held for short time, fire a destructive beam that deals <style=cIsDamage>450% damage</style> when released.",
+      "zh-TW": "<style=cIsUtility>熱量。</style>發射一道貫穿敵人的高熱光束，造成<style=cIsDamage>300%傷害，並在命中時點燃</style>敵人。若按住一小段時間，放開時會發射一道毀滅性的光束，造成<style=cIsDamage>450%傷害</style>。"
+    },
+    "POPCORN_ARSONIST_BODY_PRIMARY_FLAMETHROWER_SCEPTER_NAME": {
+      "en": "Dante's Rebuke",
+      "zh-TW": "但丁的斥責"
+    },
+    "POPCORN_ARSONIST_BODY_PRIMARY_FLAMETHROWER_SCEPTER_DESCRIPTION": {
+      "en": "Fire an intense beam that deals <style=cIsDamage>140% damage.</style> Has increased chance to ignite the closer you are to the target. If held for 2 seconds or more, Fire a final beam on release for <style=cIsDamage>150% damage.</style> ",
+      "zh-TW": "發射一道強烈的光束，造成<style=cIsDamage>140%傷害。</style>離目標越近，點燃的機率越高。若按住2秒以上，放開時會發射最後一道光束，造成<style=cIsDamage>150%傷害。</style>"
+    },
+    "POPCORN_ARSONIST_BODY_SECONDARY_FLAREGUN_NAME": {
+      "en": "Signal Flare",
+      "zh-TW": "信號彈"
+    },
+    "POPCORN_ARSONIST_BODY_SECONDARY_FLAREGUN_DESCRIPTION": {
+      "en": "Fire a flare that deals <style=cIsDamage>400%</style> damage over 5 seconds, then explodes for <style=cIsDamage>400%</style> damage, launching 5 flares that deal <style=cIsDamage>200%</style> damage each. ",
+      "zh-TW": "發射一枚信號彈，在5秒內造成<style=cIsDamage>400%</style>傷害，接著爆炸造成<style=cIsDamage>400%</style>傷害，並射出5枚信號彈，每枚造成<style=cIsDamage>200%</style>傷害。"
+    },
+    "POPCORN_ARSONIST_BODY_SECONDARY_PUNCH_NAME": {
+      "en": "Zero Point Blast",
+      "zh-TW": "零點爆破"
+    },
+    "POPCORN_ARSONIST_BODY_SECONDARY_PUNCH_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile. Heat. </style>Propel yourself forwards, blasting enemies behind you for <style=cIsDamage>200% damage</style>. Colliding shortly after launching into the first enemy and deals <style=cIsDamage>200% damage</style> in a blast around you. ",
+      "zh-TW": "<style=cIsUtility>靈巧。熱量。</style>將自己向前推進，轟擊身後的敵人，造成<style=cIsDamage>200%傷害</style>。發射後不久撞上第一名敵人時，會在你周圍引發爆炸，造成<style=cIsDamage>200%傷害</style>。"
+    },
+    "POPCORN_ARSONIST_BODY_UTILITY_CLEANSE_NAME": {
+      "en": "Cleanse",
+      "zh-TW": "淨化"
+    },
+    "POPCORN_ARSONIST_BODY_UTILITY_CLEANSE_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile. Heat. </style><style=cIsDamage>Ignite</style> the area around you, dealing <style=cIsDamage>50%</style> to enemies around you and burning away other status effects. Grants a small boost of speed. ",
+      "zh-TW": "<style=cIsUtility>靈巧。熱量。</style><style=cIsDamage>點燃</style>你周圍的區域，對周圍的敵人造成<style=cIsDamage>50%</style>傷害，並燒除其他狀態效果。提供少量速度加成。"
+    },
+    "POPCORN_ARSONIST_BODY_SPECIAL_MASOCHIST_NAME": {
+      "en": "Masochism",
+      "zh-TW": "受虐癖"
+    },
+    "POPCORN_ARSONIST_BODY_SPECIAL_MASOCHIST_DESCRIPTION": {
+      "en": "<style=cIsUtility>Agile. Heat. </style>Damage from being <style=cIsDamage>Ignited</style> turns into <style=cIsHealing>healing</style> for 6.5 seconds. Increases attack speed <style=cIsDamage>125%</style>.",
+      "zh-TW": "<style=cIsUtility>靈巧。熱量。</style>6.5秒內，被<style=cIsDamage>點燃</style>所受的傷害會轉為<style=cIsHealing>治療</style>。攻擊速度提高<style=cIsDamage>125%</style>。"
+    },
+    "POPCORN_ARSONIST_BODY_SPECIAL_MASOCHISM_NAME": {
+      "en": "Masochism",
+      "zh-TW": "受虐癖"
+    },
+    "POPCORN_ARSONIST_BODY_SPECIAL_MASOCHISM_DESCRIPTION": {
+      "en": "Upon reaching the <color=#FF9402>Anticipation</color> threshold, periodically damage yourself in exchange for area of effect burning <color=#9FFF02>Lifesteal</color>. After a maximum of 10 seconds, <style=cIsDamage>Detonate</style>, then <color=#E40000>Overheat</color>.",
+      "zh-TW": "達到<color=#FF9402>期待</color>門檻後，會週期性地傷害自己，以換取帶有<color=#9FFF02>生命偷取</color>的範圍燃燒效果。最多10秒後<style=cIsDamage>引爆</style>，接著進入<color=#E40000>過熱</color>。"
+    },
+    "POPCORN_ARSONIST_BODY_SPECIAL_MASOCHISM_SURGE_NAME": {
+      "en": "Spite",
+      "zh-TW": "怨恨"
+    },
+    "POPCORN_ARSONIST_BODY_SPECIAL_MASOCHISM_SURGE_DESCRIPTION": {
+      "en": "Upon reaching the <color=#FF9402>Anticipation</color> threshold, you move faster, and are granted <color=#FF9402>Double Tap</color> and <color=#9FFF02>Lifesteal</color>. After a maximum of 10 seconds, <style=cIsDamage>Detonate</style>, then <color=#E40000>Overheat</color>.",
+      "zh-TW": "達到<color=#FF9402>期待</color>門檻後，你的移動速度會提高，並獲得<color=#FF9402>雙擊</color>與<color=#9FFF02>生命偷取</color>。最多10秒後<style=cIsDamage>引爆</style>，接著進入<color=#E40000>過熱</color>。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_PASSIVE": {
+      "en": "<style=cKeywordName>Heat</style>Skills increase/decrease heat. At max heat, arsonist overheats, weakening their skills and causing longer cooldowns. Attack speed increases cooling rate. The selected primary chosen alters the heat gauge. ",
+      "zh-TW": "<style=cKeywordName>熱量</style>技能會增加或減少熱量。熱量達到上限時，縱火犯會過熱，技能變弱且冷卻時間變長。攻擊速度可提高散熱速度。選擇的主要技能會改變熱量表。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_BASEGAUGE": {
+      "en": "<style=cKeywordName>Base Gauge</style>Heat gauge increase per level as well as with stock-based items. Cooling rate also increases at higher %s of heat.",
+      "zh-TW": "<style=cKeywordName>基礎量表</style>熱量表會隨等級以及增加技能充能次數的物品擴大。熱量百分比越高，散熱速度也越快。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_CRITICALGAUGE": {
+      "en": "<style=cKeywordName>Supercritical Gauge</style>Heat gauge does not increase, instead supercritical gauge increases per level as well as with stock-based items. Gain 2.5x damage while heat is in the blue portion of the gauge. ",
+      "zh-TW": "<style=cKeywordName>超臨界量表</style>熱量表不會擴大，改為超臨界區段會隨等級以及增加技能充能次數的物品擴大。熱量處於量表的藍色區段時，傷害變為2.5倍。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_FIRESPRAYHEAT": {
+      "en": "<style=cKeywordName>Heat</style>Costs <style=cIsDamage>10 heat</style>. Reduced damage and speed in overheat.",
+      "zh-TW": "<style=cKeywordName>熱量</style>消耗<style=cIsDamage>10點熱量</style>。過熱時傷害與速度降低。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_PRIMARYHEAT": {
+      "en": "<style=cKeywordName>Heat</style>Primary fire raises heat, all other skills lower heat. At maximum heat, Arsonist Overheats, reducing attack speed and damage temporarily.",
+      "zh-TW": "<style=cKeywordName>熱量</style>主要攻擊會提高熱量，其他所有技能則會降低熱量。熱量達到上限時，縱火犯會過熱，暫時降低攻擊速度與傷害。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_FLAREHEAT": {
+      "en": "<style=cKeywordName>Heat</style>Reduces Heat by <style=cIsDamage>0.3x</style> of current heat accumulated. Half damage in overheat.",
+      "zh-TW": "<style=cKeywordName>熱量</style>減少相當於目前累積熱量<style=cIsDamage>0.3倍</style>的熱量。過熱時傷害減半。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_ZEROPOINTHEAT": {
+      "en": "<style=cKeywordName>Heat</style>Cools <style=cIsUtility>half of CURRENT heat</style>. Half damage in overheat.",
+      "zh-TW": "<style=cKeywordName>熱量</style>冷卻<style=cIsUtility>「目前」熱量的一半</style>。過熱時傷害減半。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_CLEANSEHEAT": {
+      "en": "<style=cKeywordName>Heat</style>Cools <style=cIsUtility>half of TOTAL heat</style>. Accelerates cooling in overheat, however, no ignite.",
+      "zh-TW": "<style=cKeywordName>熱量</style>冷卻<style=cIsUtility>「總」熱量的一半</style>。過熱時可加速冷卻，但不會點燃。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_MASOCHISMHEAT": {
+      "en": "<style=cKeywordName>Heat</style>Costs <style=cIsDamage>50 heat</style>. Half healing in overheat.",
+      "zh-TW": "<style=cKeywordName>熱量</style>消耗<style=cIsDamage>50點熱量</style>。過熱時治療量減半。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_FLARENOTE": {
+      "en": "The flare won't split unless it hits a target, is stepped on or an enemy is hit by the blast.",
+      "zh-TW": "除非信號彈命中目標、被踩到，或有敵人被爆炸波及，否則信號彈不會分裂。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_PYROMANIAPASSIVE": {
+      "en": "Pyromania does not affect fall damage unless Frailty is active.",
+      "zh-TW": "除非啟用了脆弱神器，否則嗜火癖不會影響跌落傷害。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_BASEGAUGEPASSIVE": {
+      "en": "Stock-based items increase maximum heat. Increasing attack speed increases heat dissipation.",
+      "zh-TW": "增加技能充能次數的物品會提高熱量上限。提高攻擊速度可加快散熱。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_SUPERCRITICALPASSIVE": {
+      "en": "Stock-based items increase blue portion. Increasing attack speed increases heat dissipation.",
+      "zh-TW": "增加技能充能次數的物品會擴大藍色區段。提高攻擊速度可加快散熱。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_MASO_ANTICIPATION": {
+      "en": "<style=cKeywordName>Anticipation</style>For every 100 heat lost and/or gained, Arsonist gains 1 stack of Anticipation; After gaining 5 stacks, he may activate Masochism; Additional stacks increase damage and duration; All stacks are exhausted at the end.",
+      "zh-TW": "<style=cKeywordName>期待</style>每失去或獲得100點熱量，縱火犯就會獲得1層期待；累積5層後即可啟動受虐癖；額外的層數會提高傷害並延長持續時間；結束時會耗盡所有層數。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_MASO_ANTICIPATION_SPITE": {
+      "en": "<style=cKeywordName>Anticipation</style>For every 100 heat lost and/or gained, Arsonist gains 1 stack of Anticipation; After gaining 5 stacks, he may activate Spite. Additional stacks increase damage and duration. The amount of stacks removed at the end correlates with how long you stay in the state.",
+      "zh-TW": "<style=cKeywordName>期待</style>每失去或獲得100點熱量，縱火犯就會獲得1層期待；累積5層後即可啟動怨恨。額外的層數會提高傷害並延長持續時間。結束時移除的層數取決於你維持該狀態的時間長短。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_MASO_LIFESTEAL": {
+      "en": "<style=cKeywordName>Lifesteal</style>Arsonist heals <color=#9FFF02>18%</color> of his damage dealt while Masochism is active.",
+      "zh-TW": "<style=cKeywordName>生命偷取</style>受虐癖啟動期間，縱火犯會回復所造成傷害的<color=#9FFF02>18%</color>。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_MASO_SURGE_LIFESTEAL": {
+      "en": "<style=cKeywordName>Lifesteal</style>Arsonist heals <color=#9FFF02>5%</color> of his damage dealt while Masochism is active.",
+      "zh-TW": "<style=cKeywordName>生命偷取</style>受虐癖啟動期間，縱火犯會回復所造成傷害的<color=#9FFF02>5%</color>。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_MASO_DETONATE": {
+      "en": "<style=cKeywordName>Detonate</style>Arsonist explodes, dealing <style=cIsDamage>150% damage</style> times the amount of Anticipation Stacks accumulated.",
+      "zh-TW": "<style=cKeywordName>引爆</style>縱火犯會爆炸，造成<style=cIsDamage>150%傷害</style>乘以累積的期待層數。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_MASO_DETONATE_SPITE": {
+      "en": "<style=cKeywordName>Detonate</style>Arsonist explodes, dealing <style=cIsDamage>70% damage</style> times the amount of Anticipation Stacks accumulated.",
+      "zh-TW": "<style=cKeywordName>引爆</style>縱火犯會爆炸，造成<style=cIsDamage>70%傷害</style>乘以累積的期待層數。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_MASO_DOUBLE_TAP": {
+      "en": "<style=cKeywordName>Double Tap</style>Shoot two projectiles for the heat cost of one.",
+      "zh-TW": "<style=cKeywordName>雙擊</style>以一發的熱量消耗射出兩枚投射物。"
+    },
+    "POPCORN_ARSONIST_BODY_KEYWORD_OVERHEAT_MASO": {
+      "en": "<style=cKeywordName>Overheat: Masochism</style>If Arsonist exits Masochism due to too much heat buildup, EX Overheat is applied, reducing your Move Speed and Damage to 70%. Cancelling, or otherwise letting the move run it's course applies Overheat, reducing your Attack speed to 50%",
+      "zh-TW": "<style=cKeywordName>過熱：受虐癖</style>如果縱火犯因熱量累積過多而結束受虐癖，會進入EX過熱，移動速度與傷害降為70%。主動取消，或讓招式自然結束，則會進入過熱，攻擊速度降為50%。"
+    },
+    "POPCORN_ARSONIST_BODY_OVERHEAT_TEXT": {
+      "en": "OVERHEAT!",
+      "zh-TW": "過熱！"
+    },
+    "POPCORN_ARSONIST_BODY_OVERHEAT_EX_TEXT": {
+      "en": "OVERHEAT:EX!",
+      "zh-TW": "過熱：EX！"
+    },
+    "POPCORN_ARSONIST_BODY_COOLING_TEXT": {
+      "en": "COOLING...!",
+      "zh-TW": "冷卻中……！"
+    },
+    "ACHIEVEMENT_POPCORN_ARSONIST_BODY_MASTERYUNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Arsonist: Mastery",
+      "zh-TW": "縱火犯：精通"
+    },
+    "ACHIEVEMENT_POPCORN_ARSONIST_BODY_MASTERYUNLOCKABLE_ACHIEVEMENT_DESCRIPTION": {
+      "en": "As Arsonist, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為縱火犯，在季風難度下通關遊戲或抹除自己。"
+    },
+    "POPCORN_ARSONIST_BODY_MASTERYUNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Arsonist: Mastery",
+      "zh-TW": "縱火犯：精通"
+    },
+    "ACHIEVEMENT_POPCORN_ARSONIST_BODY_ECLIPSE5UNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Arsonist: Grandmastery",
+      "zh-TW": "縱火犯：大師級精通"
+    },
+    "ACHIEVEMENT_POPCORN_ARSONIST_BODY_ECLIPSE5UNLOCKABLE_ACHIEVEMENT_DESCRIPTION": {
+      "en": "As Arsonist, beat the game on Eclipse 5 or higher, OR beat the game on Typhoon (Starstorm 2 mod Required).",
+      "zh-TW": "作為縱火犯，在日食5或更高難度下通關遊戲，或者在颱風難度下通關遊戲（需要安裝Starstorm 2模組）。"
+    },
+    "POPCORN_ARSONIST_BODY_ECLIPSE5UNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Arsonist: Grandmastery",
+      "zh-TW": "縱火犯：大師級精通"
+    },
+    "ACHIEVEMENT_POPCORN_ARSONIST_BODY_ECLIPSE8UNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Arsonist: Survival",
+      "zh-TW": "縱火犯：生存"
+    },
+    "ACHIEVEMENT_POPCORN_ARSONIST_BODY_ECLIPSE8UNLOCKABLE_ACHIEVEMENT_DESCRIPTION": {
+      "en": "As Arsonist, beat the game on Eclipse 8, OR beat the game on Inferno (Inferno mod Required).",
+      "zh-TW": "作為縱火犯，在日食8難度下通關遊戲，或者在煉獄難度下通關遊戲（需要安裝Inferno模組）。"
+    },
+    "POPCORN_ARSONIST_BODY_ECLIPSE8UNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Arsonist: Survival",
+      "zh-TW": "縱火犯：生存"
+    },
+    "ACHIEVEMENT_POPCORN_ARSONIST_BODY_FLAMETHROWERUNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Arsonist: Pyromaniac",
+      "zh-TW": "縱火犯：嗜火狂"
+    },
+    "ACHIEVEMENT_POPCORN_ARSONIST_BODY_FLAMETHROWERUNLOCKABLE_ACHIEVEMENT_DESCRIPTION": {
+      "en": "As Arsonist, beat a stage without overheating.",
+      "zh-TW": "作為縱火犯，在不過熱的情況下完成一個關卡。"
+    },
+    "POPCORN_ARSONIST_BODY_FLAMETHROWERUNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Arsonist: Pyromaniac",
+      "zh-TW": "縱火犯：嗜火狂"
+    },
+    "ACHIEVEMENT_POPCORN_ARSONIST_BODY_ARSONISTUNLOCKABLE_ACHIEVEMENT_NAME": {
+      "en": "Embers",
+      "zh-TW": "餘燼"
+    },
+    "ACHIEVEMENT_POPCORN_ARSONIST_BODY_ARSONISTUNLOCKABLE_ACHIEVEMENT_DESCRIPTION": {
+      "en": "Kill a teleporter boss while it is ignited.",
+      "zh-TW": "在傳送器頭目被點燃時將其擊敗。"
+    },
+    "POPCORN_ARSONIST_BODY_ARSONISTUNLOCKABLE_UNLOCKABLE_NAME": {
+      "en": "Embers",
+      "zh-TW": "餘燼"
+    }
+  }
+}

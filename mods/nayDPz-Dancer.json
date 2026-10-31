@@ -1,0 +1,146 @@
+{
+  "mod": "nayDPz-Dancer",
+  "version": "0.11.1",
+  "loader": "r2api",
+  "notes": [
+    "英文是在遊戲外執行模組註冊文字的程式（Tokens.AddTokens）取得的，數字是模組設定的預設值。"
+  ],
+  "strings": {
+    "NDP_DANCER_BODY_GOLD_SKIN_NAME": {
+      "en": "Gold",
+      "zh-TW": "黃金"
+    },
+    "NDP_DANCER_BODY_DEFAULT_SKIN_NAME": {
+      "en": "Default",
+      "zh-TW": "預設"
+    },
+    "NDP_DANCER_BODY_NAME": {
+      "en": "Dancer",
+      "zh-TW": "舞者"
+    },
+    "NDP_DANCER_BODY_DESCRIPTION": {
+      "en": "lole<color=#CCD3E0>\r\n\r\n",
+      "zh-TW": "笑死<color=#CCD3E0>\r\n\r\n"
+    },
+    "NDP_DANCER_BODY_SUBTITLE": {
+      "en": "idk",
+      "zh-TW": "不知道"
+    },
+    "NDP_DANCER_BODY_LORE": {
+      "en": "sample lore",
+      "zh-TW": "範例背景故事"
+    },
+    "NDP_DANCER_BODY_OUTRO_FLAVOR": {
+      "en": "..and so you beat the game with a borken unfinished character ur not even good lol i havent finished the lore because you dont deserver it",
+      "zh-TW": "……於是你用一個壞掉又沒做完的角色破關了，你根本就不強好嗎笑死，背景故事我還沒寫完，因為你不配看"
+    },
+    "NDP_DANCER_BODY_OUTRO_FAILURE": {
+      "en": "..and so",
+      "zh-TW": "……於是"
+    },
+    "KEYWORD_DANCER_CANCELS": {
+      "en": "Sprinting <style=cIsUtility>cancels</style> Jabs into a Dash Attack. Jumping <style=cIsUtility>cancels</style> ground moves into aerials.",
+      "zh-TW": "奔跑可將刺擊<style=cIsUtility>取消</style>為衝刺攻擊。跳躍可將地面招式<style=cIsUtility>取消</style>為空中攻擊。"
+    },
+    "KEYWORD_DANCER_JAB": {
+      "en": "<style=cKeywordName>Jab</style> <style=cIsUtility>Input: ground, aim forward.</style> <style=cSub>Dash forward and deal <style=cIsDamage>180%</style> damage",
+      "zh-TW": "<style=cKeywordName>刺擊</style> <style=cIsUtility>輸入：地面，向前瞄準。</style> <style=cSub>向前衝刺並造成<style=cIsDamage>180%</style>傷害"
+    },
+    "KEYWORD_DANCER_DASH": {
+      "en": "<style=cKeywordName>Dash Attack</style> <style=cIsUtility>Input: ground, sprinting.</style> <style=cSub>Dash forward, interrupt enemies and deal <style=cIsDamage>250%</style> damage.",
+      "zh-TW": "<style=cKeywordName>衝刺攻擊</style> <style=cIsUtility>輸入：地面，奔跑中。</style> <style=cSub>向前衝刺，打斷敵人並造成<style=cIsDamage>250%</style>傷害。"
+    },
+    "KEYWORD_DANCER_DOWNTILT": {
+      "en": "<style=cKeywordName>Down Tilt</style> <style=cIsUtility>Input: ground, aim down.</style> <style=cSub>Knock enemies upwards and deal <style=cIsDamage>200%</style> damage.</style>",
+      "zh-TW": "<style=cKeywordName>下強攻擊</style> <style=cIsUtility>輸入：地面，向下瞄準。</style> <style=cSub>將敵人向上擊飛並造成<style=cIsDamage>200%</style>傷害。</style>"
+    },
+    "KEYWORD_DANCER_UPAIR": {
+      "en": "<style=cKeywordName>Up Air</style> <style=cIsUtility>Input: aim up.</style> <style=cSub>Two attacks that deal <style=cIsDamage>150%</style> and <style=cIsDamage>200%</style> damage. Second attack is narrow and deals up to <style=cIsDamage>3x</style> damage to low health enemies.</style>",
+      "zh-TW": "<style=cKeywordName>上空中攻擊</style> <style=cIsUtility>輸入：向上瞄準。</style> <style=cSub>兩段攻擊，分別造成<style=cIsDamage>150%</style>與<style=cIsDamage>200%</style>傷害。第二段攻擊範圍狹窄，對生命值較低的敵人最多造成<style=cIsDamage>3x</style>傷害。</style>"
+    },
+    "KEYWORD_DANCER_FORWARDAIR": {
+      "en": "<style=cKeywordName>Forward Air</style> <style=cIsUtility>Input: air, aim forward.</style> <style=cSub>Heavy swing that deals <style=cIsDamage>180%</style> damage and spikes enemies to the ground, <style=cIsDamage>stunning</style> and dealing up to <style=cIsDamage>300%</style> damage</style>",
+      "zh-TW": "<style=cKeywordName>前空中攻擊</style> <style=cIsUtility>輸入：空中，向前瞄準。</style> <style=cSub>沉重的揮擊，造成<style=cIsDamage>180%</style>傷害並將敵人砸向地面，使其<style=cIsDamage>眩暈</style>並造成最多<style=cIsDamage>300%</style>傷害。</style>"
+    },
+    "KEYWORD_DANCER_DOWNAIR": {
+      "en": "<style=cKeywordName>Down Air</style> <style=cIsUtility>Input: air, aim down.</style> <style=cSub>Dive downwards and repeatedly deal <style=cIsDamage>125%</style> damage. If you hit the ground, start a <style=cIsDamage>Down Tilt</style></style>",
+      "zh-TW": "<style=cKeywordName>下空中攻擊</style> <style=cIsUtility>輸入：空中，向下瞄準。</style> <style=cSub>向下俯衝，反覆造成<style=cIsDamage>125%</style>傷害。落地時會接著施展<style=cIsDamage>下強攻擊</style>。</style>"
+    },
+    "NDP_DANCER_BODY_PRIMARY_SLASH_NAME": {
+      "en": "Primary (Aim Inputs)",
+      "zh-TW": "主要技能（瞄準輸入）"
+    },
+    "NDP_DANCER_BODY_PRIMARY_SLASH_DESCRIPTION": {
+      "en": "<style=cIsDamage>Melee attack</style> with effects based on your aim input. <style=cIsUtility>(Hover for more details)</style>",
+      "zh-TW": "<style=cIsDamage>近戰攻擊</style>，效果取決於你的瞄準輸入。<style=cIsUtility>（將滑鼠移到這裡查看詳情）</style>"
+    },
+    "KEYWORD_DANCER_INPUTS": {
+      "en": "<style=cKeywordName>Inputs</style> <style=cSub>Movement Direction, Sprint, and Jump have input attacks. Some inputs have different attacks if pressed repeatedly. ill make a better explanation soon sry.",
+      "zh-TW": "<style=cKeywordName>輸入</style> <style=cSub>移動方向、奔跑與跳躍都有對應的輸入攻擊。部分輸入連續按下時會使出不同的攻擊。我之後會寫個更好的說明，抱歉啦。"
+    },
+    "NDP_DANCER_BODY_PRIMARY_SLASH2_NAME": {
+      "en": "Primary (Movement Inputs)",
+      "zh-TW": "主要技能（移動輸入）"
+    },
+    "NDP_DANCER_BODY_PRIMARY_SLASH2_DESCRIPTION": {
+      "en": "Hold to turn your <style=cIsUtility>movement inputs</style> into <style=cIsDamage>melee attacks</style>. <style=cIsUtility>(Hover for more details)</style>",
+      "zh-TW": "按住時，<style=cIsUtility>移動輸入</style>會變成<style=cIsDamage>近戰攻擊</style>。<style=cIsUtility>（將滑鼠移到這裡查看詳情）</style>"
+    },
+    "NDP_DANCER_BODY_SECONDARY_SLASH_NAME": {
+      "en": "Secondary",
+      "zh-TW": "次要技能"
+    },
+    "NDP_DANCER_BODY_SECONDARY_SLASH_DESCRIPTION": {
+      "en": "Dash in a target direction and strike <style=cIsDamage>3</style> times, each dealing <style=cIsDamage>250% damage</style>.",
+      "zh-TW": "朝目標方向衝刺並攻擊<style=cIsDamage>3</style>次，每次造成<style=cIsDamage>250%傷害</style>。"
+    },
+    "NDP_DANCER_BODY_UTILITY_PULL_NAME": {
+      "en": "Utility (Pull)",
+      "zh-TW": "輔助技能（拉扯）"
+    },
+    "NDP_DANCER_BODY_UTILITY_PULL_DESCRIPTION": {
+      "en": "Extend your lance, dealing <style=cIsDamage>550% damage</style>. Hold to <style=cIsUtility>pull</style> yourself and enemies to the tip. <style=cIsUtility>Jump</style> to exit early",
+      "zh-TW": "伸長你的長槍，造成<style=cIsDamage>550%傷害</style>。按住可將自己與敵人<style=cIsUtility>拉</style>向槍尖。<style=cIsUtility>跳躍</style>可提早結束。"
+    },
+    "NDP_DANCER_BODY_UTILITY_DRILL_NAME": {
+      "en": "Utility (Drill)",
+      "zh-TW": "輔助技能（鑽擊）"
+    },
+    "NDP_DANCER_BODY_UTILITY_DRILL_DESCRIPTION": {
+      "en": "Lunge horizontally, dealing <style=cIsDamage>3x180% damage</style>, then start a <style=cIsDamage>Down Tilt.</style> Can store up two <style=cIsUtility>2</style> charges.",
+      "zh-TW": "水平突進，造成<style=cIsDamage>3x180%傷害</style>，接著施展<style=cIsDamage>下強攻擊。</style>最多可儲存<style=cIsUtility>2</style>次充能。"
+    },
+    "KEYWORD_DANCER_RIBBON": {
+      "en": "<color=#611221><style=cKeywordName>Ribbon</style></color><style=cSub>Ribboned enemies bleed for <style=cIsDamage>0%</style> damage per second and are <style=cIsDamage>unable to act.</style>",
+      "zh-TW": "<color=#611221><style=cKeywordName>緞帶</style></color><style=cSub>被緞帶纏住的敵人每秒流血，受到<style=cIsDamage>0%</style>傷害，且<style=cIsDamage>無法行動。</style>"
+    },
+    "NDP_DANCER_BODY_SPECIAL_RIBBON_NAME": {
+      "en": "Special",
+      "zh-TW": "特殊技能"
+    },
+    "NDP_DANCER_BODY_SPECIAL_RIBBON_DESCRIPTION": {
+      "en": "<style=cIsDamage>Stunning.</style> Fire a projectile that <color=#b50727>ribbons</color> enemies for <style=cIsDamage>8</style> seconds. Attacking <color=#b50727>ribboned</color> enemies grants a <style=cIsHealing>temporary barrier</style> and <style=cIsDamage>extends</style> the ribbon.",
+      "zh-TW": "<style=cIsDamage>眩暈。</style>發射一枚投射物，以<color=#b50727>緞帶</color>纏住敵人<style=cIsDamage>8</style>秒。攻擊被<color=#b50727>緞帶纏住</color>的敵人可獲得<style=cIsHealing>臨時屏障</style>，並<style=cIsDamage>延長</style>緞帶的持續時間。"
+    },
+    "NDP_DANCER_BODY_SPECIAL_RIBBON_LOCK_NAME": {
+      "en": "Ribboned",
+      "zh-TW": "緞帶纏身"
+    },
+    "NDP_DANCER_BODY_SPECIAL_RIBBON_LOCK_DESCRIPTION": {
+      "en": "You cannot use this skill.",
+      "zh-TW": "你無法使用這個技能。"
+    },
+    "NDP_DANCER_BODY_DANCER_RESCUEMAGE_ACHIEVEMENT_NAME": {
+      "en": "Dancer: Rescue Mission",
+      "zh-TW": "舞者：救援任務"
+    },
+    "NDP_DANCER_BODY_DANCER_RESCUEMAGE_ACHIEVEMENT_DESC": {
+      "en": "As Dancer, successfully recover the lost ENV Suit",
+      "zh-TW": "作為舞者，成功找回遺失的環境防護服。"
+    },
+    "NDP_DANCER_BODY_DANCER_RESCUEMAGE_UNLOCKABLE_NAME": {
+      "en": "Dancer: Rescue Mission",
+      "zh-TW": "舞者：救援任務"
+    }
+  }
+}

@@ -48,6 +48,17 @@ def test_install_writes_language_folder_mod_into_game_language_folder(tmp_path):
     assert not (tmp_path / "profile" / "BepInEx" / "plugins" / "RoR2_zh-TW").exists()
 
 
+def test_install_writes_msu_mod_into_the_mods_own_languages_folder(tmp_path):
+    write_mod(tmp_path / "mods", "Author-Pack", "msu", SKILL)
+    add_plugin(tmp_path / "profile", "Author-Pack")
+
+    ror2_s2t.install_mods(tmp_path / "mods", tmp_path / "profile", tmp_path / "zh-TW", "zh-TW")
+
+    written = tmp_path / "profile" / "BepInEx" / "plugins" / "Author-Pack" / "languages" / "zh-TW" / "RoR2_zh-TW.json"
+    assert read_json(written) == {"strings": {"SKILL_NAME": "鎖鏈斬"}}
+    assert not (tmp_path / "profile" / "BepInEx" / "plugins" / "RoR2_zh-TW").exists()
+
+
 def test_install_skips_mod_that_is_not_in_the_profile(tmp_path):
     write_mod(tmp_path / "mods", "Author-Survivor", "r2api", SKILL)
     add_plugin(tmp_path / "profile", "Someone-Else")

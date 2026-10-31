@@ -115,7 +115,7 @@ uv run ror2_s2t.py --zip RoR2_zh-TW_1.5.1.zip
 uv run ror2_s2t.py --profile Purist_v4
 ```
 
-目前有這三十二個模組：
+目前有這四十一個模組：
 
 | 模組 | 版本 | 翻譯內容 | 條數 |
 |---|---|---|---|
@@ -151,19 +151,29 @@ uv run ror2_s2t.py --profile Purist_v4
 | PlayerRespawnSystem | 2.2.0 | 兩條禁止重生的聊天訊息；死亡後的重生倒數（外掛） | 2＋10 |
 | Survariants | 1.0.9 | 選角畫面 Variants 分頁的標籤；變體清單的 Default 項目（外掛） | 1＋2 |
 | RiskyMod | 2.12.3 | 平衡性改動後的物品與裝備說明、倖存者技能說明、關鍵字 | 181 |
+| RiskyTweaks | 1.11.2 | 戰鬥神龕、月球柱與深空訊號掉落物品的聊天訊息 | 3 |
+| Starstorm 2 | 0.6.46 | 倖存者（含復仇系列）與技能、物品、裝備、菁英、神器、難度、風暴事件、互動物件、怪物、無人機、造型、成就、背景故事 | 1182 |
+| MoonstormSharedUtils | 2.6.3 | 模組初始化出錯時的對話框 | 6 |
+| Enforcer | 3.11.10 | 執法者與復仇執法者的角色、技能、關鍵字、造型、成就、背景故事、首領戰訊息 | 143 |
+| Enforcer_Variants | 1.1.2 | 選角畫面 Variants 分頁裡執法者變體的名稱與說明 | 3 |
+| Dancer | 0.11.1 | 角色、技能、關鍵字、造型、成就、背景故事 | 34 |
+| Pathfinder | 0.5.4 | 角色、技能、獵鷹的指令、關鍵字、造型、成就、背景故事 | 53 |
+| Arsonist | 3.0.9 | 角色、技能、熱量量表、關鍵字、造型、成就、背景故事 | 77 |
+| Sandswept | 1.4.6 | 倖存者遊俠與 VOL-T 的技能、關鍵字、造型、成就、背景故事；物品、裝備、菁英、敵人、神龕、無人機；破損的羽毛的說明、毀滅神龕腐化的傳送器文字、LookingGlass 物品數值標籤（外掛） | 268＋57 |
 
 條數裡「＋」後面的是由外掛替換的寫死文字，見[寫死在程式裡的文字](#寫死在程式裡的文字)。
 
-Heretic、Dante、Miner Unearthed、Pilot、Rocket、Paladin 與 RiskyMod 自帶簡體翻譯（Dante、Miner Unearthed、Paladin 與 RiskyMod 只有一部分），那些條目是把簡體轉成繁體後對照英文修訂的，其餘由英文翻譯。
+Heretic、Dante、Miner Unearthed、Pilot、Rocket、Paladin、RiskyMod、RiskyTweaks、Starstorm 2 與 Enforcer 自帶簡體翻譯（Dante、Miner Unearthed、Paladin、RiskyMod、Starstorm 2 與 Enforcer 只有一部分），那些條目是把簡體轉成繁體後對照英文修訂的，其餘由英文翻譯。
 
-Seamstress、Paladin、Cadet、Scout、Spy、Xenologist 的技能數字（傷害、冷卻秒數）和 HUNK 的五條說明會跟著模組設定變動，英文是模組執行時算出來的；譯文是固定的，收錄的是預設設定的版本，改過那些設定的話要自己修改對應的譯文。各檔案開頭的 `notes` 有說明。
+Seamstress、Paladin、Cadet、Scout、Spy、Xenologist、Enforcer、Pathfinder、Arsonist 的技能數字（傷害、冷卻秒數）、Sandswept 物品、裝備與神龕說明裡的數值，以及 HUNK 的五條說明會跟著模組設定變動，英文是模組執行時算出來的；譯文是固定的，收錄的是預設設定的版本，改過那些設定的話要自己修改對應的譯文。各檔案開頭的 `notes` 有說明。Starstorm 2 不受這個限制：它的說明數字是遊戲裡依設定填進譯文的。
 
 Celestial War Tank 的車體、炮塔數值和技能說明裡的重量，是模組從自帶的資源包算出來的；技能說明最後的「技能數值」只在模組設定 Show Extra Skill Info 開啟（預設）時出現，關掉的話英文會少這一段，譯文仍會顯示。
 
 安裝時會寫入這些地方：
 
-- `設定檔\BepInEx\plugins\RoR2_zh-TW\*.language`：LookingGlass 以外的模組。R2API 會自動讀取，並蓋過模組寫死的英文。
+- `設定檔\BepInEx\plugins\RoR2_zh-TW\*.language`：大部分的模組。R2API 會自動讀取，並蓋過模組寫死的英文。
 - 遊戲的 `Language\zh-TW\mod_*.json`：LookingGlass。它直接查語言資料夾的內容，不經過 R2API。
+- `設定檔\BepInEx\plugins\<模組>\languages\zh-TW\RoR2_zh-TW.json`：Starstorm 2 和 MoonstormSharedUtils。它們用 MoonstormSharedUtils 從模組自己的 `languages` 資料夾載入文字，載入後才把說明裡的 `{0}` 換成設定值；用 R2API 的語言檔會蓋過這一步，數字就會變成 `{0}`。r2modman 更新這兩個模組時會整個換掉資料夾，更新後要再執行一次腳本。
 - `設定檔\BepInEx\plugins\RoR2_zh-TW\*.literals` 和 `RoR2_zh-TW.HardcodedText.dll`：寫死在程式裡的文字（火影系列、Ivory Bastion、LookingGlass、HUNK 等），見下一節。只有裝了這類模組的設定檔才會有。
 
 要移除就刪掉這些檔案。模組更新後版本對不上時，腳本會提醒，新增或改過的文字會顯示英文，其餘照常。
@@ -177,10 +187,11 @@ Celestial War Tank 的車體、炮塔數值和技能說明裡的重量，是模�
   - Ivory Bastion：工程（Engineering）升級面板、升級樹與升級卡片、HUD 的狀態列與護盾量表、畫面中央的提示訊息、重設設定的確認對話框。它的技能說明、關鍵字說明和兩個技能名稱是用 R2API 的通用疊加層寫入的，優先於任何語言的翻譯，也交給外掛處理。
   - LookingGlass：物品提示的數值標籤（`Proc Coefficient:` 這類）、技能與裝備圖示提示的冷卻時間和觸發係數、屬性面板的傳送門追蹤、指令選單的無效化提示。
   - HUNK：彈藥名稱、畫面中央的提示訊息（背包已滿、需要鑰匙卡等）、無線電對話、突變提示、降落傘提示。
+  - Sandswept：破損的羽毛（Torn Feather）的名稱、說明與背景故事，模組在遊戲載入完成後用通用疊加層重寫，語言檔蓋不過；毀滅神龕腐化關卡後，傳送器換上的亂碼名稱、互動提示與任務目標；裝了 LookingGlass 時物品提示的數值標籤。
   - PlayerRespawnSystem 死亡後畫面上的重生倒數、Survariants 變體清單的 Default 項目、Celestial War Tank 的燃料量表與坦克編輯器的炮塔選單。
 - 譯文寫在各模組檔案的 `literals`，安裝時轉成外掛讀的 `*.literals` 翻譯表，和外掛一起放進 `RoR2_zh-TW` 資料夾。
 - 遊戲啟動時，外掛把模組裡對應的英文字串換成譯文。只有語言選「繁體中文」時才顯示譯文，切到其他語言會恢復原文；它不改模組的檔案，也不影響連線的其他玩家。
-- 模組把算好的文字存在別處的（Ivory Bastion 的疊加層），外掛切換語言後會呼叫模組檔案 `refresh` 列出的方法，讓模組依目前的語言重算一次。
+- 模組把算好的文字存在別處的（Ivory Bastion 的疊加層），外掛切換語言後會呼叫模組檔案 `refresh` 列出的方法，讓模組依目前的語言重算一次。Sandswept 的破損的羽毛不行：模組重寫它的方法不是靜態方法，切換語言後要重開遊戲或改一次按鍵設定才會更新。
 - 模組在啟動時就把文字存進資料的（HUNK 的彈藥名稱），等外掛啟動時已經來不及改寫方法；模組檔案的 `walk` 列出存放資料的類別，外掛直接從那個類別的靜態欄位往下找到字串替換。
 - 模組更新改了某句英文，那一句就會變回英文，其他照常。BepInEx 的記錄檔（`LogOutput.log`）會寫出改寫了多少地方、有幾條原文找不到。
 
@@ -198,6 +209,7 @@ dotnet build plugin -c Release
 - Celestial War Tank 坦克編輯器的其他文字：在模組資源包的介面裡，不是程式裡的字串。充能條的名稱同時被模組當成識別用的鍵，也沒有翻。
 - 各模組的設定名稱與說明（Risk of Options 選單裡看到的）：模組在啟動時就交給 Risk of Options，外掛來不及替換；設定名稱也是設定檔裡的鍵，改了會讓設定失效。
 - Risk of Options 選單本身的按鈕與標題：用的是語言 token，理論上語言檔翻得到，但 Risk of Options 自己攔截了 token 查詢，要在遊戲裡試過才知道。
+- Sandswept 的惡搞文字：開啟模組設定 Enable Cursed Config（預設關閉）後換上的名稱與說明、兩句聊天訊息，以及 VOL-T 每次開遊戲約2%機率換上的名稱。這些是疊加層或寫死的文字，只在特殊情況出現，沒有翻。
 
 LookingGlass 的屬性面板是例外，它的文字存在設定裡，可以自己改。關閉遊戲後，用 r2modman 的 Config editor 開啟 `droppod.lookingglass.cfg`（或直接編輯設定檔的 `BepInEx\config\droppod.lookingglass.cfg`），把 `[Stats Display]` 底下這兩個設定值換成下面的內容：
 
@@ -229,7 +241,7 @@ LookingGlass 的屬性面板是例外，它的文字存在設定裡，可以自�
 ```
 
 - `mod` 是模組在 `plugins` 底下的資料夾名稱，`version` 是翻譯所依據的版本。
-- `loader` 填 `r2api`（模組用 R2API 註冊文字，絕大多數是這種）或 `language-folder`（模組自己查語言資料夾，例如 LookingGlass）。
+- `loader` 填 `r2api`（模組用 R2API 註冊文字，絕大多數是這種）、`language-folder`（模組自己查語言資料夾，例如 LookingGlass）或 `msu`（模組用 MoonstormSharedUtils 從自己的 `languages` 資料夾載入文字，例如 Starstorm 2）。
 - 沒有 `zh-TW` 的條目會略過，遊戲顯示英文。
 - 有些模組沒有另外註冊 token，而是直接把英文句子當 token 用（例如 HUNK 的專長 `Marathon Runner`）。這種文字用英文原文當鍵就翻得到，`en` 和鍵相同；原文只要差一個字就對不上。
 - 譯文裡的 `<style=...>` 標籤和 `{0}` 佔位符要和原文一致，順序可以不同；不一致時腳本不會安裝那個模組。

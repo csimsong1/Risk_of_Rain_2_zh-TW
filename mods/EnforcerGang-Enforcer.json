@@ -1,0 +1,585 @@
+{
+  "mod": "EnforcerGang-Enforcer",
+  "version": "3.11.10",
+  "loader": "r2api",
+  "notes": [
+    "模組自帶 Language 資料夾（english、zh-CN 等），依遊戲的語言名稱載入同名資料夾；沒有 zh-TW，選繁體中文時會顯示英文。english 資料夾名稱和遊戲的 en 對不上，實際的英文是程式用 R2API 註冊的，這裡的 en 取自程式。",
+    "有簡體翻譯的條目以模組自帶的 zh-CN 轉成繁體後對照英文修訂，其餘由英文翻譯。",
+    "技能說明裡的傷害倍率與彈數來自模組設定（預設值）；改過設定的話，譯文的數字要自己修改。",
+    "遊戲本體也有官方的 Enforcer（執行者）；這個模組的角色依模組自己的簡體翻譯叫「執法者」，兩者可以分辨。"
+  ],
+  "strings": {
+    "ENFORCER_NAME": {
+      "en": "Enforcer",
+      "zh-TW": "執法者"
+    },
+    "ENFORCER_DESCRIPTION": {
+      "en": "The Enforcer is a defensive juggernaut who can take and give a beating.<color=#CCD3E0>\r\n\r\n< ! > Riot Shotgun can pierce through many enemies at once.\r\n\r\n< ! > Batting away enemies with Shield Bash guarantees you will keep enemies at a safe range.\r\n\r\n< ! > Use Tear Gas to weaken large crowds of enemies, then get in close and crush them.\r\n\r\n< ! > When you can, use Protect and Serve against walls to prevent enemies from flanking you.\r\n\r\n",
+      "zh-TW": "執法者是一名防禦型的重裝巨漢，既能承受痛擊，也能痛毆敵人。<color=#CCD3E0>\n\n< ! > 鎮暴霰彈槍可以一次穿透多名敵人。\n\n< ! > 用盾擊把敵人打飛，就能確保敵人始終與你保持安全距離。\n\n< ! > 使用催淚瓦斯削弱大群敵人，再貼近將他們粉碎。\n\n< ! > 情況允許時，背靠牆壁使用保護與服務，防止敵人從側翼包抄你。\n\n"
+    },
+    "ENFORCER_SUBTITLE": {
+      "en": "Unwavering Bastion",
+      "zh-TW": "堅定不移的堡壘"
+    },
+    "ENFORCER_LORE": {
+      "en": "\n<style=cMono>\"You don't have to do this.\"</style>\r\n\r\nThe words echoed in his head, yet he pushed forward. The pod was only a few steps away — he had a chance to leave — but something in his core kept him moving. He didn't know what it was, but he didn't question it. It was a natural force: the same force that always drove him to follow orders.\n\nThis time, however, it didn't seem so natural. There were no orders. The heavy trigger and its rhythmic thunder were his — and his alone.",
+      "zh-TW": "\n<style=cMono>「你不必這麼做。」</style>\n\n這句話在他腦海中迴響，但他仍舊向前邁進。逃生艙只在幾步之外——他有機會離開——但他內心深處的某種東西驅使他繼續前進。他不知道那是什麼，但他沒有質疑。那是一股自然而然的力量：正是那股一直驅使他服從命令的力量。\n\n然而這一次，它似乎沒那麼自然了。沒有任何命令。那沉重的扳機與它節奏分明的雷鳴，是屬於他的——只屬於他一個人。"
+    },
+    "ENFORCER_OUTRO_FLAVOR": {
+      "en": "..and so he left, unsure of his title as protector.",
+      "zh-TW": "……於是他走了，不再確定自己是否還稱得上是守護者。"
+    },
+    "ENFORCER_OUTRO_FAILURE": {
+      "en": "..and so he vanished, the planet's minorities finally at peace.",
+      "zh-TW": "……於是他消失了，這顆星球上的少數族群終於得以安寧。"
+    },
+    "ENFORCER_PRIMARY_SHOTGUN_NAME": {
+      "en": "Riot Shotgun",
+      "zh-TW": "鎮暴霰彈槍"
+    },
+    "ENFORCER_PRIMARY_SHOTGUN_DESCRIPTION": {
+      "en": "Fire a short-range blast that <style=cIsUtility>pierces</style> for <style=cIsDamage>6x60% damage.</style>",
+      "zh-TW": "發射一道短程霰彈，<style=cIsUtility>穿透</style>敵人並造成<style=cIsDamage>6x60%傷害。</style>"
+    },
+    "ENFORCER_PRIMARY_SUPERSHOTGUN_NAME": {
+      "en": "Super Shotgun",
+      "zh-TW": "超級霰彈槍"
+    },
+    "ENFORCER_PRIMARY_SUPERSHOTGUN_DESCRIPTION": {
+      "en": "Fire up to 2 shotgun blasts for <style=cIsDamage>8x80% damage</style>.\nWhile using <style=cIsUtility>Protect and Serve</style>, fire <style=cIsDamage>both barrels at once.</style>",
+      "zh-TW": "最多可連續發射2發霰彈，每發造成<style=cIsDamage>8x80%傷害</style>。\n使用<style=cIsUtility>保護與服務</style>時，改為<style=cIsDamage>雙管齊發。</style>"
+    },
+    "ENFORCER_PRIMARY_RIFLE_NAME": {
+      "en": "Heavy Machine Gun",
+      "zh-TW": "重機槍"
+    },
+    "ENFORCER_PRIMARY_RIFLE_DESCRIPTION": {
+      "en": "Unload a barrage of bullets for <style=cIsDamage>130% damage</style>.\nWhile using <style=cIsUtility>Protect and Serve</style>, has <style=cIsDamage>increased accuracy</style>, but <style=cIsHealth>slower movement speed</style>.",
+      "zh-TW": "傾瀉彈雨，每發造成<style=cIsDamage>130%傷害</style>。\n使用<style=cIsUtility>保護與服務</style>時，<style=cIsDamage>精準度提高</style>，但<style=cIsHealth>移動速度變慢</style>。"
+    },
+    "ENFORCER_PRIMARY_HAMMER_NAME": {
+      "en": "Breaching Hammer",
+      "zh-TW": "破門錘"
+    },
+    "ENFORCER_PRIMARY_HAMMER_DESCRIPTION": {
+      "en": "Swing your hammer for <style=cIsDamage>500% damage</style>.\nWhile using Protect and Serve, swing in a <style=cIsUtility>larger area</style>, for <style=cIsDamage>1000% damage</style> instead.",
+      "zh-TW": "揮動錘子，造成<style=cIsDamage>500%傷害</style>。\n使用保護與服務時，揮擊<style=cIsUtility>範圍更大</style>，並改為造成<style=cIsDamage>1000%傷害</style>。"
+    },
+    "KEYWORD_BASH": {
+      "en": "<style=cKeywordName>Bash</style><style=cSub>Applies <style=cIsDamage>stun</style> and <style=cIsUtility>heavy knockback</style>.",
+      "zh-TW": "<style=cKeywordName>衝撞</style><style=cSub>造成<style=cIsDamage>眩暈</style>與<style=cIsUtility>強力擊退</style>。"
+    },
+    "KEYWORD_SPRINTBASH": {
+      "en": "<style=cKeywordName>Shoulder Bash</style><style=cSub><style=cIsDamage>Stunning.</style> A short charge that deals <style=cIsDamage>450% damage</style>.\nHitting <style=cIsDamage>heavier enemies</style> deals <style=cIsDamage>700% damage</style>.",
+      "zh-TW": "<style=cKeywordName>肩撞</style><style=cSub><style=cIsDamage>眩暈。</style>向前短距離衝撞，造成<style=cIsDamage>450%傷害</style>。\n撞擊<style=cIsDamage>較重的敵人</style>時改為造成<style=cIsDamage>700%傷害</style>。"
+    },
+    "ENFORCER_SECONDARY_BASH_NAME": {
+      "en": "Shield Bash",
+      "zh-TW": "盾擊"
+    },
+    "ENFORCER_SECONDARY_BASH_DESCRIPTION": {
+      "en": "<style=cIsDamage>Stunning</style>. Knock back enemies for <style=cIsDamage>350% damage</style> and <style=cIsUtility>deflect projectiles</style>.\nWhile <style=cIsUtility>sprinting</style>, perform a <style=cIsDamage>Shoulder Bash</style> instead.",
+      "zh-TW": "<style=cIsDamage>眩暈</style>。擊退敵人並造成<style=cIsDamage>350%傷害</style>，同時<style=cIsUtility>反彈射彈</style>。\n<style=cIsUtility>衝刺</style>時改為施展<style=cIsDamage>肩撞</style>。"
+    },
+    "KEYWORD_BLINDED": {
+      "en": "<style=cKeywordName>Impaired</style><style=cSub>Reduce movement speed by <style=cIsDamage>75%</style>, attack speed by <style=cIsDamage>25%</style> and armor by <style=cIsDamage>30</style>.</style></style>",
+      "zh-TW": "<style=cKeywordName>失能</style><style=cSub>使移動速度降低<style=cIsDamage>75%</style>、攻擊速度降低<style=cIsDamage>25%</style>，護甲降低<style=cIsDamage>30</style>。</style></style>"
+    },
+    "ENFORCER_UTILITY_TEARGAS_NAME": {
+      "en": "Tear Gas",
+      "zh-TW": "催淚瓦斯"
+    },
+    "ENFORCER_UTILITY_TEARGAS_DESCRIPTION": {
+      "en": "Toss a grenade that covers an area in <style=cIsDamage>Impairing</style> gas.",
+      "zh-TW": "投擲一枚手雷，使一片區域籠罩在<style=cIsDamage>失能</style>氣體中。"
+    },
+    "ENFORCER_UTILITY_STUNGRENADE_NAME": {
+      "en": "Stun Grenade",
+      "zh-TW": "眩暈手雷"
+    },
+    "ENFORCER_UTILITY_STUNGRENADE_DESCRIPTION": {
+      "en": "<style=cIsDamage>Stunning</style>. Launch a grenade that concusses enemies for <style=cIsDamage>540% damage</style>. Hold up to 3.",
+      "zh-TW": "<style=cIsDamage>眩暈</style>。發射一枚震撼敵人的手雷，造成<style=cIsDamage>540%傷害</style>。最多可持有3枚。"
+    },
+    "ENFORCER_UTILITY_TEARGASSCEPTER_NAME": {
+      "en": "Mustard Gas",
+      "zh-TW": "芥子毒氣"
+    },
+    "ENFORCER_UTILITY_TEARGASSCEPTER_DESCRIPTION": {
+      "en": "Toss a grenade that covers an area in <style=cIsDamage>Impairing</style> gas, choking enemies for <style=cIsDamage>200% damage per second</style>.",
+      "zh-TW": "投擲一枚手雷，使一片區域籠罩在<style=cIsDamage>失能</style>氣體中，令敵人窒息並造成<style=cIsDamage>每秒200%傷害</style>。"
+    },
+    "ENFORCER_UTILITY_SHOCKGRENADE_NAME": {
+      "en": "Shock Grenade",
+      "zh-TW": "震盪手雷"
+    },
+    "ENFORCER_UTILITY_SHOCKGRENADE_DESCRIPTION": {
+      "en": "<style=cIsDamage>Shocking</style>. Launch a grenade that electrocutes enemies for <style=cIsDamage>720% damage</style>. Hold up to 3.",
+      "zh-TW": "<style=cIsDamage>震盪</style>。發射一枚電擊敵人的手雷，造成<style=cIsDamage>720%傷害</style>。最多可持有3枚。"
+    },
+    "ENFORCER_SPECIAL_SHIELDUP_NAME": {
+      "en": "Protect and Serve",
+      "zh-TW": "保護與服務"
+    },
+    "ENFORCER_SPECIAL_SHIELDUP_DESCRIPTION": {
+      "en": "Take a defensive stance, <style=cIsUtility>blocking all damage from the front</style>. <style=cIsUtility>Enhances primary fire</style>, but <style=cIsHealth>prevents sprinting and jumping</style>.",
+      "zh-TW": "採取防禦姿態，<style=cIsUtility>格擋來自前方的所有傷害</style>。<style=cIsUtility>強化主要攻擊</style>，但<style=cIsHealth>無法衝刺和跳躍</style>。"
+    },
+    "ENFORCER_SPECIAL_SHIELDDOWN_NAME": {
+      "en": "Protect and Serve",
+      "zh-TW": "保護與服務"
+    },
+    "ENFORCER_SPECIAL_SHIELDDOWN_DESCRIPTION": {
+      "en": "Take a defensive stance, <style=cIsUtility>blocking all damage from the front</style>. <style=cIsDamage>Increases attack speed</style>, but <style=cIsHealth>prevents sprinting and jumping</style>.",
+      "zh-TW": "採取防禦姿態，<style=cIsUtility>格擋來自前方的所有傷害</style>。<style=cIsDamage>提高攻擊速度</style>，但<style=cIsHealth>無法衝刺和跳躍</style>。"
+    },
+    "ENFORCER_SPECIAL_SHIELDON_NAME": {
+      "en": "Project and Swerve",
+      "zh-TW": "投射與閃避"
+    },
+    "ENFORCER_SPECIAL_SHIELDON_DESCRIPTION": {
+      "en": "Take a defensive stance, <style=cIsUtility>projecting an Energy Shield in front of you</style>. <style=cIsDamage>Increases your rate of fire</style>, but <style=cIsUtility>prevents sprinting and jumping</style>.",
+      "zh-TW": "採取防禦姿態，<style=cIsUtility>在你前方投射一面能量盾</style>。<style=cIsDamage>提高射速</style>，但<style=cIsUtility>無法衝刺和跳躍</style>。"
+    },
+    "ENFORCER_SPECIAL_SHIELDOFF_NAME": {
+      "en": "Project and Swerve",
+      "zh-TW": "投射與閃避"
+    },
+    "ENFORCER_SPECIAL_SHIELDOFF_DESCRIPTION": {
+      "en": "Take a defensive stance, <style=cIsUtility>projecting an Energy Shield in front of you</style>. <style=cIsDamage>Increases your rate of fire</style>, but <style=cIsUtility>prevents sprinting and jumping</style>.",
+      "zh-TW": "採取防禦姿態，<style=cIsUtility>在你前方投射一面能量盾</style>。<style=cIsDamage>提高射速</style>，但<style=cIsUtility>無法衝刺和跳躍</style>。"
+    },
+    "ENFORCER_SPECIAL_BOARDUP_NAME": {
+      "en": "Skateboard",
+      "zh-TW": "滑板"
+    },
+    "ENFORCER_SPECIAL_BOARDUP_DESCRIPTION": {
+      "en": "Swag.",
+      "zh-TW": "耍帥。"
+    },
+    "ENFORCER_SPECIAL_BOARDDOWN_NAME": {
+      "en": "Skateboard",
+      "zh-TW": "滑板"
+    },
+    "ENFORCER_SPECIAL_BOARDDOWN_DESCRIPTION": {
+      "en": "Unswag.",
+      "zh-TW": "不耍帥了。"
+    },
+    "ENFORCERBODY_DEFAULT_SKIN_NAME": {
+      "en": "Default",
+      "zh-TW": "預設"
+    },
+    "ENFORCERBODY_MASTERY_SKIN_NAME": {
+      "en": "Peacekeeper",
+      "zh-TW": "維和者"
+    },
+    "ENFORCERBODY_TYPHOON_SKIN_NAME": {
+      "en": "Lawbringer",
+      "zh-TW": "律法使者"
+    },
+    "ENFORCERBODY_BOT_SKIN_NAME": {
+      "en": "N-4CR",
+      "zh-TW": "N-4CR"
+    },
+    "ENFORCERBODY_CLASSIC_SKIN_NAME": {
+      "en": "Classic",
+      "zh-TW": "經典"
+    },
+    "ENFORCERBODY_NEMESIS_SKIN_NAME": {
+      "en": "Nemesis",
+      "zh-TW": "復仇"
+    },
+    "ENFORCERBODY_STORM_SKIN_NAME": {
+      "en": "Monsoontrooper",
+      "zh-TW": "季風兵"
+    },
+    "ENFORCERBODY_ENGI_SKIN_NAME": {
+      "en": "Engineer?",
+      "zh-TW": "工程師？"
+    },
+    "ENFORCERBODY_DOOM_SKIN_NAME": {
+      "en": "Doom Slayer",
+      "zh-TW": "毀滅戰士"
+    },
+    "ENFORCERBODY_DESPERADO_SKIN_NAME": {
+      "en": "Desperado",
+      "zh-TW": "亡命之徒"
+    },
+    "ENFORCERBODY_FEMFORCER_SKIN_NAME": {
+      "en": "Rushed",
+      "zh-TW": "衝鋒"
+    },
+    "ENFORCERBODY_FUCKINGSTEVE_SKIN_NAME": {
+      "en": "Blocked",
+      "zh-TW": "此路不通"
+    },
+    "ENFORCERBODY_FUCKINGFROG_SKIN_NAME": {
+      "en": "Zero Suit",
+      "zh-TW": "零裝甲服"
+    },
+    "ACHIEVEMENT_ENFORCER_CHARACTERUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Riot",
+      "zh-TW": "鎮暴"
+    },
+    "ACHIEVEMENT_ENFORCER_CHARACTERUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "Kill a Magma Worm, a Wandering Vagrant and a Stone Titan in a single run.",
+      "zh-TW": "在一輪遊戲中擊敗一隻岩漿蠕蟲、一隻漫遊者和一隻石巨人。"
+    },
+    "ACHIEVEMENT_ENFORCER_MASTERYUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Enforcer: Mastery",
+      "zh-TW": "執法者：精通"
+    },
+    "ACHIEVEMENT_ENFORCER_MASTERYUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Enforcer, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為執法者，在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_ENFORCER_GRANDMASTERYUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Enforcer: Grand Mastery",
+      "zh-TW": "執法者：大師級精通"
+    },
+    "ACHIEVEMENT_ENFORCER_GRANDMASTERYUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Enforcer, beat the game or obliterate on Typhoon or Eclipse.\n<color=#8888>(Counts any difficulty Typhoon or higher)</color>",
+      "zh-TW": "作為執法者，在颱風或日食難度下通關遊戲或抹除自己。\n<color=#8888>（颱風以上的任何難度皆計入）</color>"
+    },
+    "ACHIEVEMENT_ENFORCER_DOOMUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Enforcer: Rip and Tear...",
+      "zh-TW": "執法者：撕碎、扯爛……"
+    },
+    "ACHIEVEMENT_ENFORCER_DOOMUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Enforcer, kill 20 imps in a single run.",
+      "zh-TW": "作為執法者，在一輪遊戲中擊敗20隻小惡魔。"
+    },
+    "ACHIEVEMENT_ENFORCER_RIFLEUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Enforcer: Rapidfire",
+      "zh-TW": "執法者：急速射擊"
+    },
+    "ACHIEVEMENT_ENFORCER_RIFLEUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Enforcer, reach +400% attack speed.",
+      "zh-TW": "作為執法者，攻擊速度達到+400%。"
+    },
+    "ACHIEVEMENT_ENFORCER_STUNGRENADEUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Enforcer: Crowd Control",
+      "zh-TW": "執法者：人群控制"
+    },
+    "ACHIEVEMENT_ENFORCER_STUNGRENADEUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Enforcer, have 20 enemies under the effects of Tear Gas at once.",
+      "zh-TW": "作為執法者，同時讓20名敵人受到催淚瓦斯影響。"
+    },
+    "ACHIEVEMENT_ENFORCER_ROBITUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Enforcer: We Have the Technology",
+      "zh-TW": "執法者：我們有技術"
+    },
+    "ACHIEVEMENT_ENFORCER_ROBITUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Enforcer, fall and be brought back to life.",
+      "zh-TW": "作為執法者，倒下後被救活。"
+    },
+    "ACHIEVEMENT_ENFORCER_NEMESISSKINUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Enforcer: Clearance",
+      "zh-TW": "執法者：淨空"
+    },
+    "ACHIEVEMENT_ENFORCER_NEMESISSKINUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Enforcer, stabilize the Cell in the Void Fields.",
+      "zh-TW": "作為執法者，穩定虛空之境的牢房。"
+    },
+    "ACHIEVEMENT_ENFORCER_DOOMINTERNALUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Enforcer: ...Until it is done",
+      "zh-TW": "執法者：……直到一切結束"
+    },
+    "ACHIEVEMENT_ENFORCER_DOOMINTERNALUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Enforcer, kill 10 imp overlords in a single run.",
+      "zh-TW": "作為執法者，在一輪遊戲中擊敗10隻小惡魔霸主。"
+    },
+    "ACHIEVEMENT_ENFORCER_CLASSICUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Enforcer: Schmoovin'",
+      "zh-TW": "執法者：靈動"
+    },
+    "ACHIEVEMENT_ENFORCER_CLASSICUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Enforcer, show off your dance moves.",
+      "zh-TW": "作為執法者，展示你的舞步。"
+    },
+    "ACHIEVEMENT_ENFORCER_DESPERADOUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Enforcer: Rules of Nature",
+      "zh-TW": "執法者：自然法則"
+    },
+    "ACHIEVEMENT_ENFORCER_DESPERADOUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Enforcer, Defeat the unique guardian of Gilded Coast by pushing it off the edge of the map.",
+      "zh-TW": "作為執法者，將鍍金海岸的獨特守護者推出地圖邊緣，以此將它擊敗。"
+    },
+    "ACHIEVEMENT_ENFORCER_BUNGUSUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Enforcer: Enforcing Perfection",
+      "zh-TW": "執法者：完美執行"
+    },
+    "ACHIEVEMENT_ENFORCER_BUNGUSUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Enforcer, become one with the Bungus.",
+      "zh-TW": "作為執法者，與爆裂真菌合而為一。"
+    },
+    "ACHIEVEMENT_ENFORCER_STORMTROOPERUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Enforcer: Long Live the Empire",
+      "zh-TW": "執法者：帝國萬歲"
+    },
+    "ACHIEVEMENT_ENFORCER_STORMTROOPERUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Enforcer, defeat an elite Solus Control Unit.",
+      "zh-TW": "作為執法者，擊敗一個精英單獨控制單元。"
+    },
+    "ACHIEVEMENT_ENFORCER_FROGUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Enforcer: Through Thick and Thin",
+      "zh-TW": "執法者：不離不棄"
+    },
+    "ACHIEVEMENT_ENFORCER_FROGUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Enforcer, make a friend on the moon.",
+      "zh-TW": "作為執法者，在月球上交一個朋友。"
+    },
+    "ACHIEVEMENT_ENFORCER_STEVEUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Enforcer: Blocks",
+      "zh-TW": "執法者：格擋"
+    },
+    "ACHIEVEMENT_ENFORCER_STEVEUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Enforcer, block an attack with your shield.",
+      "zh-TW": "作為執法者，用盾牌格擋一次攻擊。"
+    },
+    "ENFORCER_PRIMARY_SHOTGUN_NAME_UPGRADE_DESCRIPTION": {
+      "en": "<style=cIsUtility>+5%</style> damage, <style=cIsUtility>+10%</style> bullet thickness, and <style=cIsUtility>+0.1</style> bullet spread",
+      "zh-TW": "傷害<style=cIsUtility>+5%</style>、子彈粗細<style=cIsUtility>+10%</style>、子彈擴散<style=cIsUtility>+0.1</style>"
+    },
+    "ENFORCER_PROC_BULLET": {
+      "en": "Bullet",
+      "zh-TW": "子彈"
+    },
+    "ENFORCER_PROC_HAMMER": {
+      "en": "Hammer",
+      "zh-TW": "錘子"
+    },
+    "ENFORCER_PROC_BASH": {
+      "en": "Bash",
+      "zh-TW": "衝撞"
+    },
+    "ENFORCER_PROC_GRENADE": {
+      "en": "Grenade",
+      "zh-TW": "手雷"
+    },
+    "ENFORCER_PROC_DAMAGING_GAS": {
+      "en": "Damaging Gas",
+      "zh-TW": "傷害性氣體"
+    },
+    "ENFORCER_PROC_SKATEBOARD": {
+      "en": "Skateboard",
+      "zh-TW": "滑板"
+    },
+    "NEMFORCER_NAME": {
+      "en": "Nemesis Enforcer",
+      "zh-TW": "復仇執法者"
+    },
+    "NEMFORCER_DESCRIPTION": {
+      "en": "Nemesis Enforcer is an incarnation of valiance and strength, a supernatural kind who is nobody to take lightly.<color=#CCD3E0>\r\n\r\n< ! > Golden Hammer can hit many enemies at once.\r\n\r\n< ! > Use Dominance from high up to perform a devastating slam.\r\n\r\n< ! > Strafing with Golden Minigun is key to taking down powerful bosses.\r\n\r\n< ! > Shields are for pussies.\r\n\r\n",
+      "zh-TW": "復仇執法者是勇氣與力量的化身，是絕對不容小覷的超自然存在。<color=#CCD3E0>\n\n< ! > 黃金之錘可以一次擊中多名敵人。\n\n< ! > 從高處使用統治，就能施展毀滅性的猛砸。\n\n< ! > 拿著黃金迷你炮邊移動邊掃射，是擊倒強大頭目的關鍵。\n\n< ! > 盾牌是給膽小鬼用的。\n\n"
+    },
+    "NEMFORCER_SUBTITLE": {
+      "en": "Incorruptible Shadow",
+      "zh-TW": "剛正不阿的暗影"
+    },
+    "NEMFORCER_LORE": {
+      "en": "\nheavy tf2\n\n",
+      "zh-TW": "\n絕地要塞2的重裝兵\n\n"
+    },
+    "NEMFORCER_OUTRO_FLAVOR": {
+      "en": "..and so he left, with newfound might to honor.",
+      "zh-TW": "……於是他走了，帶著新獲得的力量去捍衛榮耀。"
+    },
+    "NEMFORCER_OUTRO_FAILURE": {
+      "en": "..and so he returned, infallible bastion truly immortalized.",
+      "zh-TW": "……於是他回來了，永不陷落的堡壘從此真正永垂不朽。"
+    },
+    "NEMFORCER_BOSS_NAME": {
+      "en": "Ultra Nemesis Enforcer",
+      "zh-TW": "究極復仇執法者"
+    },
+    "NEMFORCER_BOSS_SUBTITLE": {
+      "en": "End of the Line",
+      "zh-TW": "終局"
+    },
+    "DEDEDE_NAME": {
+      "en": "King Dedede",
+      "zh-TW": "帝帝帝大王"
+    },
+    "DEDEDE_BOSS_SUBTITLE": {
+      "en": "King of Dreamland",
+      "zh-TW": "夢之國度的國王"
+    },
+    "ENFORCER_EVENT_NEMFORCERBOSS_START": {
+      "en": "An unnatural force emanates from the void... </style>",
+      "zh-TW": "一股不自然的力量從虛空中散發而出……</style>"
+    },
+    "ENFORCER_EVENT_NEMFORCERBOSS_END": {
+      "en": "The void's influence fades...</style>",
+      "zh-TW": "虛空的影響逐漸消散……</style>"
+    },
+    "NEMFORCER_PASSIVE_NAME": {
+      "en": "Colossus",
+      "zh-TW": "巨像"
+    },
+    "NEMFORCER_PASSIVE_DESCRIPTION": {
+      "en": "Nemesis Enforcer gains <style=cIsHealing>bonus health regen</style>, based on his current <style=cIsHealth>missing health</style>, up to <style=cIsHealth>2.5% max health</style>.",
+      "zh-TW": "復仇執法者會依目前<style=cIsHealth>已損失的生命值</style>獲得<style=cIsHealing>額外生命值再生</style>，最多為<style=cIsHealth>最大生命值的2.5%</style>。"
+    },
+    "NEMFORCER_PASSIVE_REWORK_DESCRIPTION": {
+      "en": "Nemesis Enforcer regenerates <style=cIsHealing>0.02%</style> of his <style=cIsHealing>maximum health</style> over 3s when striking enemies with <style=cIsDamage>melee attacks</style>.",
+      "zh-TW": "復仇執法者以<style=cIsDamage>近戰攻擊</style>擊中敵人時，會在3秒內再生<style=cIsHealing>最大生命值</style>的<style=cIsHealing>0.02%</style>。"
+    },
+    "NEMFORCER_PRIMARY_HAMMER_NAME": {
+      "en": "Golden Hammer",
+      "zh-TW": "黃金之錘"
+    },
+    "NEMFORCER_PRIMARY_HAMMER_DESCRIPTION": {
+      "en": "Swing your hammer for <style=cIsDamage>500%</style> damage.",
+      "zh-TW": "揮動錘子，造成<style=cIsDamage>500%</style>傷害。"
+    },
+    "NEMFORCER_PRIMARY_THROWHAMMER_NAME": {
+      "en": "Throwing Hammer",
+      "zh-TW": "飛錘"
+    },
+    "NEMFORCER_PRIMARY_THROWHAMMER_DESCRIPTION": {
+      "en": "Throw a hammer for <style=cIsDamage>620%</style> damage.",
+      "zh-TW": "擲出錘子，造成<style=cIsDamage>620%</style>傷害。"
+    },
+    "NEMFORCER_PRIMARY_MINIGUN_NAME": {
+      "en": "Golden Minigun",
+      "zh-TW": "黃金迷你炮"
+    },
+    "NEMFORCER_PRIMARY_MINIGUN_DESCRIPTION": {
+      "en": "Rev up and fire a hail of bullets dealing <style=cIsDamage>65% damage</style> per bullet. <style=cIsUtility>Slows your movement while shooting.</style>",
+      "zh-TW": "預熱槍管後射出密集彈雨，每發子彈造成<style=cIsDamage>65%傷害</style>。<style=cIsUtility>射擊時移動速度降低。</style>"
+    },
+    "KEYWORD_SLAM": {
+      "en": "<style=cKeywordName>Downward Slam</style><style=cIsDamage>Stunning.</style> Viciously <style=cIsHealth>crash down</style> with your hammer, dealing <style=cIsDamage>300%-2500% damage</style> and dealing an extra <style=cIsDamage>30%</style> of that on impact. <style=cIsUtility>Impact radius scales with speed.</style>",
+      "zh-TW": "<style=cKeywordName>下砸</style><style=cIsDamage>眩暈。</style>揮錘狠狠<style=cIsHealth>砸向地面</style>，造成<style=cIsDamage>300%-2500%傷害</style>，並在衝擊時額外造成其<style=cIsDamage>30%</style>的傷害。<style=cIsUtility>衝擊半徑隨速度增加。</style>"
+    },
+    "NEMFORCER_SECONDARY_BASH_NAME": {
+      "en": "Dominance",
+      "zh-TW": "統治"
+    },
+    "NEMFORCER_SECONDARY_BASH_DESCRIPTION": {
+      "en": "<style=cIsUtility>Charge up</style>, then lunge forward and unleash a <style=cIsDamage>rising uppercut</style> for <style=cIsDamage>450%-2500% damage</style>. Use while <style=cIsUtility>falling and looking down</style> to perform a <style=cIsUtility>Downward Slam</style> instead.",
+      "zh-TW": "<style=cIsUtility>蓄力</style>後向前猛衝，打出一記<style=cIsDamage>上勾拳</style>，造成<style=cIsDamage>450%-2500%傷害</style>。在<style=cIsUtility>下墜且朝下看</style>時使用，則改為施展<style=cIsUtility>下砸</style>。"
+    },
+    "NEMFORCER_SECONDARY_SLAM_NAME": {
+      "en": "Dominance (Minigun)",
+      "zh-TW": "統治（迷你炮）"
+    },
+    "NEMFORCER_SECONDARY_SLAM_DESCRIPTION": {
+      "en": "<style=cIsDamage>Stunning.</style> While in minigun stance, violently <style=cIsHealth>slam</style> down your hammer, dealing <style=cIsDamage>600% damage</style> and <style=cIsDamage>knocking back</style> enemies hit. <style=cIsUtility>Explodes projectiles.</style>",
+      "zh-TW": "<style=cIsDamage>眩暈。</style>在迷你炮姿態下，揮錘猛力<style=cIsHealth>砸地</style>，造成<style=cIsDamage>600%傷害</style>並<style=cIsDamage>擊退</style>被擊中的敵人。<style=cIsUtility>引爆射彈。</style>"
+    },
+    "NEMFORCER_UTILITY_GAS_NAME": {
+      "en": "XM47 Grenade",
+      "zh-TW": "XM47手雷"
+    },
+    "NEMFORCER_UTILITY_GAS_DESCRIPTION": {
+      "en": "Throw a grenade that explodes into a cloud of <style=cIsUtility>corrosive gas</style> that <style=cIsUtility>slows</style> and deals <style=cIsDamage>200% damage per second</style> and lasts for <style=cIsDamage>16 seconds</style>.",
+      "zh-TW": "投擲一枚手雷，爆炸後形成一團<style=cIsUtility>腐蝕性氣體</style>，能<style=cIsUtility>減速</style>敵人並造成<style=cIsDamage>每秒200%傷害</style>，持續<style=cIsDamage>16秒</style>。"
+    },
+    "NEMFORCER_UTILITY_JUMP_NAME": {
+      "en": "Super Dedede Jump",
+      "zh-TW": "帝帝帝超級跳"
+    },
+    "NEMFORCER_UTILITY_JUMP_DESCRIPTION": {
+      "en": "Jump into the air, then slam down for <style=cIsDamage>3200% damage</style>. <style=cIsUtility>Deals reduced damage outside the center of the impact.</style>",
+      "zh-TW": "躍向空中，然後重砸地面，造成<style=cIsDamage>3200%傷害</style>。<style=cIsUtility>衝擊中心以外的傷害會降低。</style>"
+    },
+    "KEYWORD_GRAPPLE": {
+      "en": "<style=cKeywordName>Grappling</style><style=cSub>Applies <style=cIsDamage>stun</style> and attempts to <style=cIsUtility>grab</style> a nearby enemy.",
+      "zh-TW": "<style=cKeywordName>擒拿</style><style=cSub>造成<style=cIsDamage>眩暈</style>，並嘗試<style=cIsUtility>抓住</style>附近的一名敵人。"
+    },
+    "NEMFORCER_UTILITY_CRASH_NAME": {
+      "en": "Heat Crash",
+      "zh-TW": "灼熱衝擊"
+    },
+    "NEMFORCER_UTILITY_CRASH_DESCRIPTION": {
+      "en": "<style=cIsUtility>Grappling.</style> Jump into the air, then slam down for <style=cIsDamage>2400% damage</style>. <style=cIsUtility>Deals reduced damage outside the center of the impact.</style>",
+      "zh-TW": "<style=cIsUtility>擒拿。</style>躍向空中，然後重砸地面，造成<style=cIsDamage>2400%傷害</style>。<style=cIsUtility>衝擊中心以外的傷害會降低。</style>"
+    },
+    "NEMFORCER_SPECIAL_MINIGUNUP_NAME": {
+      "en": "Suppression Stance",
+      "zh-TW": "鎮壓姿態"
+    },
+    "NEMFORCER_SPECIAL_MINIGUNUP_DESCRIPTION": {
+      "en": "Take an offensive stance, <style=cIsDamage>readying your minigun</style>. <style=cIsHealth>Prevents sprinting</style>.",
+      "zh-TW": "採取進攻姿態，<style=cIsDamage>架起迷你炮</style>。期間<style=cIsHealth>無法衝刺</style>。"
+    },
+    "NEMFORCERBODY_DEFAULT_SKIN_NAME": {
+      "en": "Nemesis",
+      "zh-TW": "復仇"
+    },
+    "NEMFORCERBODY_ENFORCER_SKIN_NAME": {
+      "en": "Enforcer",
+      "zh-TW": "執法者"
+    },
+    "NEMFORCERBODY_CLASSIC_SKIN_NAME": {
+      "en": "Classic",
+      "zh-TW": "經典"
+    },
+    "NEMFORCERBODY_TYPHOON_SKIN_NAME": {
+      "en": "Champion",
+      "zh-TW": "冠軍"
+    },
+    "NEMFORCERBODY_DRIP_SKIN_NAME": {
+      "en": "Dripforcer",
+      "zh-TW": "潮流執法者"
+    },
+    "NEMFORCERBODY_DEDEDE_SKIN_NAME": {
+      "en": "King Dedede",
+      "zh-TW": "帝帝帝大王"
+    },
+    "NEMFORCERBODY_MINECRAFT_SKIN_NAME": {
+      "en": "Minecraft",
+      "zh-TW": "當個創世神"
+    },
+    "NEMFORCERBODY_FEM_SKIN_NAME": {
+      "en": "Spiked",
+      "zh-TW": "尖刺"
+    },
+    "ACHIEVEMENT_ENFORCER_NEMESIS2UNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "???",
+      "zh-TW": "？？？"
+    },
+    "ACHIEVEMENT_ENFORCER_NEMESIS2UNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Enforcer, on monsoon or higher, stabilize the Void Fields and defeat Enforcer's Vestige.",
+      "zh-TW": "作為執法者，在季風或更高難度下穩定虛空之境，並擊敗執法者的殘象。"
+    },
+    "ACHIEVEMENT_NEMFORCER_MASTERYUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Nemesis Enforcer: Mastery",
+      "zh-TW": "復仇執法者：精通"
+    },
+    "ACHIEVEMENT_NEMFORCER_MASTERYUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Nemesis Enforcer, beat the game or obliterate on Monsoon.",
+      "zh-TW": "作為復仇執法者，在季風難度下通關遊戲或抹除自己。"
+    },
+    "ACHIEVEMENT_NEMFORCER_TYPHOONUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Nemesis Enforcer: Grand Mastery",
+      "zh-TW": "復仇執法者：大師級精通"
+    },
+    "ACHIEVEMENT_NEMFORCER_TYPHOONUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Nemesis Enforcer, beat the game or obliterate on Typhoon or Eclipse.\n<color=#8888>(Counts any difficulty Typhoon or higher)</color>",
+      "zh-TW": "作為復仇執法者，在颱風或日食難度下通關遊戲或抹除自己。\n<color=#8888>（颱風以上的任何難度皆計入）</color>"
+    },
+    "ACHIEVEMENT_NEMFORCER_DOMINANCEUNLOCKABLE_ACHIEVEMENT_ID_NAME": {
+      "en": "Nemesis Enforcer: Demolition",
+      "zh-TW": "復仇執法者：拆除"
+    },
+    "ACHIEVEMENT_NEMFORCER_DOMINANCEUNLOCKABLE_ACHIEVEMENT_ID_DESCRIPTION": {
+      "en": "As Nemesis Enforcer, destroy 5 projectiles at once with Dominance.",
+      "zh-TW": "作為復仇執法者，使用統治一次摧毀5枚射彈。"
+    },
+    "NEMFORCER_PROC_UPPERCUT": {
+      "en": "Uppercut",
+      "zh-TW": "上勾拳"
+    },
+    "NEMFORCER_PROC_SLAM": {
+      "en": "Slam",
+      "zh-TW": "猛砸"
+    },
+    "NEMFORCER_PROC_JAM": {
+      "en": "Jam",
+      "zh-TW": "跳砸"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "mod": "Risky_Lives-RiskyTweaks",
+  "version": "1.11.2",
+  "loader": "r2api",
+  "notes": [
+    "模組自帶 language 資料夾，依遊戲的語言名稱載入同名資料夾；沒有 zh-TW，所以另外用 R2API 語言檔補上。這三條是戰鬥神龕、月球柱與深空訊號掉落物品的聊天訊息，每個玩家依自己的語言顯示。"
+  ],
+  "strings": {
+    "SHRINE_COMBAT_END_TRIAL_RISKYMOD": {
+      "en": "<style=cShrine>Shrine of Combat has dropped </style>{0}",
+      "zh-TW": "<style=cShrine>戰鬥神龕掉落了</style>{0}"
+    },
+    "MOON_PILLAR_COMPLETE_RISKYMOD": {
+      "en": "<color=#c6d5ff>{0} has dropped </color>{1}",
+      "zh-TW": "<color=#c6d5ff>{0}掉落了</color>{1}"
+    },
+    "VOID_SIGNAL_COMPLETE_RISKYMOD": {
+      "en": "<style=cWorldEvent>Deep Void Signal has dropped </style>{0}",
+      "zh-TW": "<style=cWorldEvent>深空訊號掉落了</style>{0}"
+    }
+  }
+}

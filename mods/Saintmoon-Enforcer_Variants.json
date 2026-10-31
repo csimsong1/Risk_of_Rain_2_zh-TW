@@ -1,0 +1,22 @@
+{
+  "mod": "Saintmoon-Enforcer_Variants",
+  "version": "1.1.2",
+  "loader": "r2api",
+  "notes": [
+    "把 EnforcerGang 的執法者與復仇執法者放進官方執行者的 Survariants 變體清單。變體名稱與說明直接用英文當 token，鍵就是英文原文；復仇執法者的名稱用 Enforcer 模組的 NEMFORCER_NAME。"
+  ],
+  "strings": {
+    "Classic Enforcer": {
+      "en": "Classic Enforcer",
+      "zh-TW": "經典執法者"
+    },
+    "The classic Enforcer joins the Hallowed Concepts Enforcer as a selectable variant.": {
+      "en": "The classic Enforcer joins the Hallowed Concepts Enforcer as a selectable variant.",
+      "zh-TW": "經典的執法者成為官方執行者的可選變體。"
+    },
+    "The Nemesis Enforcer joins the Hallowed Concepts Enforcer as a selectable variant.": {
+      "en": "The Nemesis Enforcer joins the Hallowed Concepts Enforcer as a selectable variant.",
+      "zh-TW": "復仇執法者成為官方執行者的可選變體。"
+    }
+  }
+}
