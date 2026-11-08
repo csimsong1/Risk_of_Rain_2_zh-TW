@@ -1,6 +1,6 @@
 {
   "mod": "Zerneas-ZabuzaMod",
-  "version": "0.6.3",
+  "version": "0.7.1",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
@@ -54,16 +54,16 @@
       "zh-TW": "劍術"
     },
     "ZERNEAS_ZABUZA_PRIMARY_KENJUTSU_DESCRIPTION": {
-      "en": "Three wide sweeps of the Kubikiribocho that cut everything in front of you: <style=cIsDamage>220%</style>, <style=cIsDamage>260%</style> and <style=cIsDamage>2x200%</style>. In the air, <style=cIsDamage>180%</style>; looking down, a <style=cIsDamage>dive</style> for <style=cIsDamage>450%</style> in 6m.",
-      "zh-TW": "以斬首大刀大範圍橫掃三次，斬開前方的一切：分別造成<style=cIsDamage>220%</style>、<style=cIsDamage>260%</style>與<style=cIsDamage>2x200%</style>傷害。在空中時造成<style=cIsDamage>180%</style>傷害；朝下看時改為<style=cIsDamage>俯衝</style>：在半徑6米內造成<style=cIsDamage>450%</style>傷害。"
+      "en": "Three wide sweeps of the Kubikiribocho that step you at your target and cut everything in front of you:<style=cIsDamage>220%</style>, <style=cIsDamage>260%</style> and <style=cIsDamage>2x200%</style>. In the air, <style=cIsDamage>180%</style>; looking down, a <style=cIsDamage>dive</style> for <style=cIsDamage>450%</style> in 6m.",
+      "zh-TW": "以斬首大刀大範圍橫掃三次，每一刀都會踏步逼近目標，斬開前方的一切：分別造成<style=cIsDamage>220%</style>、<style=cIsDamage>260%</style>與<style=cIsDamage>2x200%</style>傷害。在空中時造成<style=cIsDamage>180%</style>傷害；朝下看時改為<style=cIsDamage>俯衝</style>：在半徑6米內造成<style=cIsDamage>450%</style>傷害。"
     },
     "ZERNEAS_ZABUZA_SECONDARY_DRAGON_NAME": {
       "en": "Suiryudan",
       "zh-TW": "水龍彈"
     },
     "ZERNEAS_ZABUZA_SECONDARY_DRAGON_DESCRIPTION": {
-      "en": "A water dragon rams ahead: <style=cIsDamage>900%</style> to everything in its way, leaving it <style=cIsUtility>wet</style>. It leaves <style=cIsUtility>mist</style> all along its way.",
-      "zh-TW": "水龍向前衝撞：對路徑上的一切造成<style=cIsDamage>900%</style>傷害，並使其<style=cIsUtility>濕透</style>。水龍經過的路徑上都會留下<style=cIsUtility>霧氣</style>。"
+      "en": "A water dragon rams ahead, bending after the enemy at your crosshair: <style=cIsDamage>900%</style> to everything in its way, leaving it <style=cIsUtility>wet</style>. It leaves <style=cIsUtility>mist</style> all along its way.",
+      "zh-TW": "水龍向前衝撞，並轉向追擊準星上的敵人：對路徑上的一切造成<style=cIsDamage>900%</style>傷害，並使其<style=cIsUtility>濕透</style>。水龍經過的路徑上都會留下<style=cIsUtility>霧氣</style>。"
     },
     "ZERNEAS_ZABUZA_UTILITY_MIST_NAME": {
       "en": "Kirigakure no Jutsu",

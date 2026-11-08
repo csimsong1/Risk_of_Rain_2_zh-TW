@@ -1,6 +1,6 @@
 {
   "mod": "Zerneas-KizunaMod",
-  "version": "0.21.1",
+  "version": "0.29.2",
   "loader": "r2api",
   "notes": [
     "英文是模組程式裡寫死的字串：選角畫面 Variants 分頁（Survariants）裡，火影各角色變體的一句話說明。模組用 Language.SetStringByToken 直接寫入英文（或西班牙文）；R2API 語言檔的譯文會優先於它。",
@@ -235,8 +235,8 @@
       "It throws you back and costs some health: use it with care.": "會把你往後推並消耗一些生命值：小心使用。",
       "Four-Tails": "四尾",
       "Taking damage and killing fill Kurama's chakra. X transforms you, but costs your clones.": "受到傷害和擊敗敵人會累積九喇嘛的查克拉。按X鍵變身，但會失去所有分身。",
-      "Meditate": "冥想",
-      "Keep still to fill your four charges of natural energy; your hidden clones bring charges too.": "保持靜止即可填滿四次自然能量充能；潛伏的分身也會帶來充能。",
+      "Clone relay": "分身接力",
+      "Spend your three charges freely: once the last is gone, a hidden clone hands you all three back. Fighting brings it sooner; keeping still gathers charges too.": "放心消耗三次充能：用完最後一次後，潛伏的分身會把三次充能全部還給你。戰鬥能讓它更早回來；保持靜止也能累積充能。",
       "Sage Arts": "仙法",
       "Tap one to use it at once, or hold it to pour charges in: bigger, and it catches more enemies.": "輕按立即施放，按住則可灌注充能：術變得更大，波及更多敵人。",
       "Meteor": "隕石",

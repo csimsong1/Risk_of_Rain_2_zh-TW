@@ -1,10 +1,11 @@
 {
   "mod": "Zerneas-NarutoShippudenMod",
-  "version": "0.30.1",
+  "version": "0.37.0",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
     "ACHIEVEMENT_ 開頭的是解鎖造型或技能的成就。",
+    "RENDAN 與 TALK 是用成就（永不放棄、我們談談吧）解鎖的隱藏技能。",
     "literals 是寫死在程式裡、語言檔翻不到的形態熟練度（Mastery）的提示，由專案的外掛 RoR2_zh-TW.HardcodedText 在遊戲裡替換。Kizuna 羈絆模組的介面翻在 Zerneas-KizunaMod 的檔案裡。"
   ],
   "strings": {
@@ -84,6 +85,22 @@
       "en": "Form it with <style=cIsUtility>2 of your clones</style> and charge up to 20m: a 7m sphere drags enemies in, <style=cIsDamage>cuts 8 times for 80%</style> (+2 a clone) and bursts for <style=cIsDamage>800%</style>. Spends your experience: <style=cIsDamage>+70% a point</style>. Every cut gives 1 point. <style=cIsHealth>Throws you back and costs 10% of your max health.</style>",
       "zh-TW": "與<style=cIsUtility>2個分身</style>一同凝聚，並衝鋒最多20米：7米的球體會將敵人吸入，<style=cIsDamage>斬擊8次，每次80%</style>（每個分身+2次），最後爆發造成<style=cIsDamage>800%</style>傷害。消耗你的經驗：<style=cIsDamage>每點+70%</style>。每次斬擊給予1點。<style=cIsHealth>會將你震退，並消耗你10%的最大生命值。</style>"
     },
+    "ZERNEAS_NARUTOSHIPPUDEN_SPECIAL_RENDAN_NAME": {
+      "en": "Uzumaki Naruto Rendan",
+      "zh-TW": "漩渦鳴人連彈"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_SPECIAL_RENDAN_DESCRIPTION": {
+      "en": "Rush the enemy nearest the crosshair: 4 clones kick it into the air for <style=cIsDamage>150%</style> each (+1 kick per real clone of yours), then your heel comes down for <style=cIsDamage>800%</style> and a <style=cIsDamage>600%</style> shockwave in 8m. Bosses aren't lifted.",
+      "zh-TW": "衝向離準星最近的敵人：4個分身將它踢上空中，每腳造成<style=cIsDamage>150%</style>傷害（你每有一個真正的分身就多踢1腳），接著你以腳跟落下，造成<style=cIsDamage>800%</style>傷害，並在半徑8米內產生<style=cIsDamage>600%</style>的衝擊波。首領不會被踢起。"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_UTILITY_TALK_NAME": {
+      "en": "Talk no Jutsu",
+      "zh-TW": "嘴遁之術"
+    },
+    "ZERNEAS_NARUTOSHIPPUDEN_UTILITY_TALK_DESCRIPTION": {
+      "en": "Hold out your hand and talk for 3s, <style=cIsUtility>invulnerable</style>: enemies within 40m are <style=cIsUtility>stunned</style>, listening (not bosses). Your clones keep hitting them. Jump or press again to stop; after 0.5s, moving or any skill stops it too.",
+      "zh-TW": "伸出手說話3秒，期間<style=cIsUtility>無敵</style>：40米內的敵人會停下來聽你說話而<style=cIsUtility>眩暈</style>（首領除外）。你的分身會繼續攻擊它們。跳躍或再按一次即可停止；0.5秒後，移動或使用任何技能也會停止。"
+    },
     "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_NAME": {
       "en": "Four-Tails",
       "zh-TW": "四尾"
@@ -123,6 +140,22 @@
     "ZERNEAS_NARUTOSHIPPUDEN_FOURTAILS_ROAR_DESCRIPTION": {
       "en": "Roar, <style=cIsUtility>invincible</style>: <style=cIsDamage>3 shockwaves</style> of <style=cIsDamage>300%</style> in 13m, <style=cIsDamage>igniting</style>; the last pushes back.",
       "zh-TW": "咆哮，期間<style=cIsUtility>無敵</style>：發出<style=cIsDamage>3道衝擊波</style>，各在半徑13米內造成<style=cIsDamage>300%</style>傷害並<style=cIsDamage>點燃</style>；最後一道會擊退敵人。"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSHIPPUDENNEVERGIVEUP_NAME": {
+      "en": "Naruto: Never Give Up",
+      "zh-TW": "鳴人：永不放棄"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSHIPPUDENNEVERGIVEUP_DESCRIPTION": {
+      "en": "As Naruto, defeat a Teleporter boss after falling below 10% health during that fight.",
+      "zh-TW": "作為鳴人，在與傳送器頭目的戰鬥中生命值降到10%以下後，擊敗該頭目。"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSHIPPUDENTALK_NAME": {
+      "en": "Naruto: Let's Talk",
+      "zh-TW": "鳴人：我們談談吧"
+    },
+    "ACHIEVEMENT_ZERNEASNARUTOSHIPPUDENTALK_DESCRIPTION": {
+      "en": "As Naruto, fully charge a Teleporter without leaving its zone and without hurting its boss yourself (your drones, allies and clones don't count).",
+      "zh-TW": "作為鳴人，在不離開傳送區域、也不親自傷害傳送器頭目的情況下，對一臺傳送器進行完全充能（你的無人機、盟友與分身造成的傷害不算）。"
     },
     "ACHIEVEMENT_ZERNEASNARUTOSHIPPUDENCLEARGAMEMONSOON_NAME": {
       "en": "Naruto (Shippuden): Mastery",

@@ -1,6 +1,6 @@
 {
   "mod": "Risky_Lives-RiskyMod",
-  "version": "2.12.3",
+  "version": "2.12.4",
   "loader": "r2api",
   "notes": [
     "模組自帶語言檔（language/en、language/zh-CN 等），依遊戲的語言名稱載入同名資料夾；沒有 zh-TW 資料夾，選繁體中文時會顯示英文，所以另外用 R2API 語言檔補上。",

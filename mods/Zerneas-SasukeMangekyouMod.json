@@ -1,10 +1,11 @@
 {
   "mod": "Zerneas-SasukeMangekyouMod",
-  "version": "0.25.2",
+  "version": "0.30.2",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
     "ACHIEVEMENT_ 開頭的是解鎖造型或技能的成就。",
+    "ENTON 與 NAGASHI 是用成就（一團火焰、碰不到我）解鎖的隱藏技能。",
     "literals 是寫死在程式裡、語言檔翻不到的形態熟練度（Mastery）的提示，由專案的外掛 RoR2_zh-TW.HardcodedText 在遊戲裡替換。Kizuna 羈絆模組的介面翻在 Zerneas-KizunaMod 的檔案裡。"
   ],
   "strings": {
@@ -63,6 +64,22 @@
     "ZERNEAS_SASUKEMANGEKYOU_SECONDARY_CHIDORI_DESCRIPTION": {
       "en": "<style=cIsDamage>Stunning.</style> Charge up to 14m: <style=cIsDamage>500%</style> in 3.5m. Hold for <style=cIsUtility>Chidori-to</style>: 20m cutting through every enemy for <style=cIsDamage>800%</style>.",
       "zh-TW": "<style=cIsDamage>眩暈</style>。衝鋒最多14米：在半徑3.5米內造成<style=cIsDamage>500%</style>傷害。按住則改為<style=cIsUtility>千鳥刀</style>：貫穿20米內的所有敵人，造成<style=cIsDamage>800%</style>傷害。"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_SECONDARY_ENTON_NAME": {
+      "en": "Enton: Kagutsuchi",
+      "zh-TW": "炎遁·加具土命"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_SECONDARY_ENTON_DESCRIPTION": {
+      "en": "<style=cIsDamage>Ignite.</style> An arrow of Amaterasu where you look: <style=cIsDamage>300%</style>, setting the enemy alight. If it already burns, a <style=cIsDamage>stake of black fire</style> runs it through as well: <style=cIsDamage>300%</style> plus its flame's growth. Hold for <style=cIsUtility>Detonate</style>: every burning enemy bursts in 6m, spending its flame: <style=cIsDamage>760%</style> plus its growth, and it stops burning. 2 charges.",
+      "zh-TW": "<style=cIsDamage>點燃</style>。朝注視的方向射出一支天照之箭：造成<style=cIsDamage>300%</style>傷害並點燃敵人。若敵人已在燃燒，還會有一根<style=cIsDamage>黑炎之樁</style>貫穿它：造成<style=cIsDamage>300%</style>傷害，再加上其火焰累積的成長。按住則改為<style=cIsUtility>引爆</style>：每個燃燒中的敵人都會在半徑6米內爆炸，消耗其火焰：造成<style=cIsDamage>760%</style>傷害加上火焰的成長，並停止燃燒。2次充能。"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_UTILITY_NAGASHI_NAME": {
+      "en": "Chidori Nagashi",
+      "zh-TW": "千鳥流"
+    },
+    "ZERNEAS_SASUKEMANGEKYOU_UTILITY_NAGASHI_DESCRIPTION": {
+      "en": "Current through your body for 2s: <style=cIsUtility>can't be frozen</style>, <style=cIsHealing>35% less damage</style>, and enemies within 6m take <style=cIsDamage>100%</style> every 0.4s. Then it bursts in 8m: <style=cIsDamage>300%</style> plus the damage you took, <style=cIsUtility>stunning</style> 1.5s (bosses are slowed).",
+      "zh-TW": "讓電流流經全身2秒：<style=cIsUtility>不會被冰凍</style>、<style=cIsHealing>受到的傷害減少35%</style>，6米內的敵人每0.4秒受到<style=cIsDamage>100%</style>傷害。接著在半徑8米內爆發：造成<style=cIsDamage>300%</style>傷害加上期間你受到的傷害，並<style=cIsUtility>眩暈</style>1.5秒（首領則改為減速）。"
     },
     "ZERNEAS_SASUKEMANGEKYOU_UTILITY_SHUNSHIN_NAME": {
       "en": "Shunshin",
@@ -123,6 +140,22 @@
     "ZERNEAS_SASUKEMANGEKYOU_MANGEKYOU_SPECIAL_DESCRIPTION": {
       "en": "<style=cIsDamage>Ignite.</style> Tap: Amaterasu. <style=cIsUtility>Hold</style> (up to 3s): whatever you look at burns, for 10% of the gauge a second. Up to 12 flames while awakened.",
       "zh-TW": "<style=cIsDamage>點燃</style>。輕按：施放天照。<style=cIsUtility>按住</style>（最多3秒）：注視的一切都會燃燒，每秒消耗10%量表。開眼期間最多同時存在12團火焰。"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKEMANGEKYOUFLAME_NAME": {
+      "en": "Sasuke (Taka): A Single Flame",
+      "zh-TW": "佐助（鷹）：一團火焰"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKEMANGEKYOUFLAME_DESCRIPTION": {
+      "en": "As Sasuke (Taka), make one of your black flames grow to +500%.",
+      "zh-TW": "作為佐助（鷹），讓你的一團黑炎成長到+500%。"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKEMANGEKYOUDODGES_NAME": {
+      "en": "Sasuke (Taka): Untouchable",
+      "zh-TW": "佐助（鷹）：碰不到我"
+    },
+    "ACHIEVEMENT_ZERNEASSASUKEMANGEKYOUDODGES_DESCRIPTION": {
+      "en": "As Sasuke (Taka), make 15 perfect dodges with the Shunshin in a single run.",
+      "zh-TW": "作為佐助（鷹），一輪遊戲中用瞬身完成15次完美閃避。"
     },
     "ACHIEVEMENT_ZERNEASSASUKEMANGEKYOUCLEARGAMEMONSOON_NAME": {
       "en": "Sasuke (Taka): Mastery",

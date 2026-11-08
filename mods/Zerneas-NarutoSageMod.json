@@ -1,6 +1,6 @@
 {
   "mod": "Zerneas-NarutoSageMod",
-  "version": "0.32.1",
+  "version": "0.36.1",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
@@ -14,8 +14,8 @@
       "zh-TW": "仙人模式鳴人"
     },
     "ZERNEAS_NARUTOSAGE_DESCRIPTION": {
-      "en": "Sage Naruto fights with the patience of the toads: calm gathers natural energy, and natural energy makes his jutsu enormous.<color=#CCD3E0>\r\n\r\n< ! > Keep still to meditate and fill your four charges of natural energy; your hidden clones bring charges too.\r\n\r\n< ! > Every Frog Kumite blow gives you a point of natural energy, with no limit. Your next Sage Art spends them all.\r\n\r\n< ! > Tap a Sage Art to use it at once, or hold it to pour charges in: bigger, it catches more enemies.\r\n\r\n< ! > Clone Catapult, then Big Ball Rasengan aimed down: a meteor onto the crowd.\r\n\r\n< ! > Chakra control: hold Jump against a wall to run on it.\r\n\r\n< ! > Fighting fills your fury: from a quarter, press X to become the Six-Tails. Let it run out and Sage Mode breaks.\r\n\r\n",
-      "zh-TW": "仙人模式鳴人以蛤蟆般的耐心作戰：心靜才能匯聚自然能量，而自然能量能讓他的忍術變得無比巨大。<color=#CCD3E0>\r\n\r\n< ! >保持靜止即可冥想，填滿四次自然能量充能；潛伏的分身也會為你帶來充能。\r\n\r\n< ! >蛙組手每次命中都會給你1點自然能量，沒有上限。下一次仙法會將其全數消耗。\r\n\r\n< ! >輕按仙法可立即施放，按住則可灌注充能：術越大，波及的敵人越多。\r\n\r\n< ! >先用分身投擲，再朝下施放大玉螺旋丸：彷彿一顆隕石砸向敵群。\r\n\r\n< ! >查克拉控制：貼著牆按住跳躍鍵就能在牆上奔跑。\r\n\r\n< ! >戰鬥會累積怒氣：累積到四分之一後，按X鍵化為六尾。若任怒氣耗盡，仙人模式就會解除。\r\n\r\n"
+      "en": "Sage Naruto fights with the patience of the toads: calm gathers natural energy, and natural energy makes his jutsu enormous.<color=#CCD3E0>\r\n\r\n< ! > Spend your three charges of natural energy freely: once the last is gone, a hidden clone comes back from Mount Myoboku and hands you all three. Your Frog Kumite brings it sooner; keeping still gathers charges too.\r\n\r\n< ! > Every Frog Kumite blow gives you a point of natural energy, with no limit. Your next Sage Art spends them all.\r\n\r\n< ! > Tap a Sage Art to use it at once, or hold it to pour your charges in, one right after another: bigger and stronger with each.\r\n\r\n< ! > Clone Catapult, then Big Ball Rasengan aimed down: a meteor onto the crowd.\r\n\r\n< ! > Chakra control: hold Jump against a wall to run on it.\r\n\r\n< ! > Fighting fills your fury: from a quarter, press X to become the Six-Tails. Let it run out and Sage Mode breaks.\r\n\r\n",
+      "zh-TW": "仙人模式鳴人以蛤蟆般的耐心作戰：心靜才能匯聚自然能量，而自然能量能讓他的忍術變得無比巨大。<color=#CCD3E0>\r\n\r\n< ! >放心消耗三次自然能量充能：用完最後一次後，潛伏的分身會從妙木山回來，把三次充能全部交給你。蛙組手能讓它更早回來；保持靜止也能累積充能。\r\n\r\n< ! >蛙組手每次命中都會給你1點自然能量，沒有上限。下一次仙法會將其全數消耗。\r\n\r\n< ! >輕按仙法可立即施放，按住則會接連灌注充能：每灌注一次，術就更大、更強。\r\n\r\n< ! >先用分身投擲，再朝下施放大玉螺旋丸：彷彿一顆隕石砸向敵群。\r\n\r\n< ! >查克拉控制：貼著牆按住跳躍鍵就能在牆上奔跑。\r\n\r\n< ! >戰鬥會累積怒氣：累積到四分之一後，按X鍵化為六尾。若任怒氣耗盡，仙人模式就會解除。\r\n\r\n"
     },
     "ZERNEAS_NARUTOSAGE_SUBTITLE": {
       "en": "The Toad Sage's Disciple",
@@ -46,24 +46,24 @@
       "zh-TW": "仙人模式"
     },
     "ZERNEAS_NARUTOSAGE_PASSIVE_DESCRIPTION": {
-      "en": "Up to <style=cIsUtility>4 charges of natural energy</style>, full every stage: <style=cIsUtility>meditating</style> (still, on the ground) gives 1 a second, your hidden clones 1 every 8s. Every Frog Kumite blow that lands gives <style=cIsDamage>1 point of natural energy</style> (15s, no limit) and reaches 50% farther. <style=cIsUtility>Sage Arts</style>: your Secondary and Special spend every point as they land, <style=cIsDamage>70% damage a point</style>; hold them to pour charges in and make them bigger.",
-      "zh-TW": "最多<style=cIsUtility>4次自然能量充能</style>，每個關卡都會充滿：<style=cIsUtility>冥想</style>（在地面上保持靜止）每秒獲得1次，潛伏的分身每8秒帶來1次。蛙組手每次命中都會給予<style=cIsDamage>1點自然能量</style>（持續15秒，沒有上限），且攻擊距離增加50%。<style=cIsUtility>仙法</style>：你的次要技能與特殊技能命中時會消耗所有點數，<style=cIsDamage>每點增加70%傷害</style>；按住技能可灌注充能，使其變得更大。"
+      "en": "Up to <style=cIsUtility>3 charges of natural energy</style>, full every stage. <style=cIsUtility>Clone relay</style>: once your last charge is spent, a hidden clone hands you all 3 (ready every 12s, sooner with each blow that lands). <style=cIsUtility>Meditating</style> (still, on the ground) gives 1 a second. Every Frog Kumite blow that lands gives <style=cIsDamage>1 point of natural energy</style> (15s, no limit) and reaches 50% farther. <style=cIsUtility>Sage Arts</style>: your Secondary and Special spend every point as they land, <style=cIsDamage>70% damage a point</style>; hold them to pour your charges in (each bigger and stronger). <style=cIsHealing>Sage Body</style>: a hit over 15% of your health is halved (once every 10s).",
+      "zh-TW": "最多<style=cIsUtility>3次自然能量充能</style>，每個關卡都會充滿。<style=cIsUtility>分身接力</style>：用完最後一次充能後，潛伏的分身會把3次充能全部交給你（每12秒準備好一次，每次命中都會讓它更早準備好）。<style=cIsUtility>冥想</style>（在地面上保持靜止）每秒獲得1次。蛙組手每次命中都會給予<style=cIsDamage>1點自然能量</style>（持續15秒，沒有上限），且攻擊距離增加50%。<style=cIsUtility>仙法</style>：你的次要技能與特殊技能命中時會消耗所有點數，<style=cIsDamage>每點增加70%傷害</style>；按住技能可灌注充能（每灌注一次都會更大、更強）。<style=cIsHealing>仙人之體</style>：單次超過你15%生命值的傷害會減半（每10秒一次）。"
     },
     "ZERNEAS_NARUTOSAGE_PRIMARY_KUMITE_NAME": {
       "en": "Frog Kumite",
       "zh-TW": "蛙組手"
     },
     "ZERNEAS_NARUTOSAGE_PRIMARY_KUMITE_DESCRIPTION": {
-      "en": "<style=cIsUtility>Agile.</style> Four blows for <style=cIsDamage>150%</style> (a clone joins the 2nd and 3rd for <style=cIsDamage>80%</style>) and a finisher for <style=cIsDamage>320%</style> that knocks back. In the air, blows for <style=cIsDamage>150%</style>; looking down, a diving Rasengan Barrage: <style=cIsDamage>300%</style> in 5m.",
-      "zh-TW": "<style=cIsUtility>靈巧</style>。四連擊，每擊造成<style=cIsDamage>150%</style>傷害（第2、3擊會有分身加入，造成<style=cIsDamage>80%</style>傷害），再以終結技造成<style=cIsDamage>320%</style>傷害並擊退敵人。在空中時連擊造成<style=cIsDamage>150%</style>傷害；朝下看時改為俯衝施放螺旋連丸：在半徑5米內造成<style=cIsDamage>300%</style>傷害。"
+      "en": "<style=cIsUtility>Agile.</style> Four blows for <style=cIsDamage>150%</style> (a clone joins the 2nd and 3rd for <style=cIsDamage>80%</style>) and a finisher for <style=cIsDamage>320%</style> that knocks back. Each sends a <style=cIsUtility>wave of natural energy</style> over the ground (6m) that strikes everything again for <style=cIsDamage>50%</style> (the finisher's, 8m and <style=cIsDamage>100%</style>). In the air, blows for <style=cIsDamage>150%</style>; looking down, a diving Rasengan Barrage: <style=cIsDamage>300%</style> in 5m.",
+      "zh-TW": "<style=cIsUtility>靈巧</style>。四連擊，每擊造成<style=cIsDamage>150%</style>傷害（第2、3擊會有分身加入，造成<style=cIsDamage>80%</style>傷害），再以終結技造成<style=cIsDamage>320%</style>傷害並擊退敵人。每一擊都會沿地面送出一道<style=cIsUtility>自然能量波</style>（6米），對範圍內的一切再造成<style=cIsDamage>50%</style>傷害（終結技的能量波為8米、<style=cIsDamage>100%</style>）。在空中時連擊造成<style=cIsDamage>150%</style>傷害；朝下看時改為俯衝施放螺旋連丸：在半徑5米內造成<style=cIsDamage>300%</style>傷害。"
     },
     "ZERNEAS_NARUTOSAGE_SECONDARY_RASENGAN_NAME": {
       "en": "Sage Art: Big Ball Rasengan",
       "zh-TW": "仙法·大玉螺旋丸"
     },
     "ZERNEAS_NARUTOSAGE_SECONDARY_RASENGAN_DESCRIPTION": {
-      "en": "Charge up to 12m with a Big Ball Rasengan: <style=cIsDamage>900%</style> in 6m, <style=cIsDamage>stunning</style>. <style=cIsUtility>Sage Art</style>: <style=cIsDamage>+70%</style> a point; each charge poured, <style=cIsDamage>+450%</style> and +2.25m.",
-      "zh-TW": "帶著大玉螺旋丸衝鋒最多12米：在半徑6米內造成<style=cIsDamage>900%</style>傷害並<style=cIsDamage>眩暈</style>。<style=cIsUtility>仙法</style>：每點<style=cIsDamage>+70%</style>；每灌注1次充能，<style=cIsDamage>+450%</style>且範圍+2.25米。"
+      "en": "Charge up to 12m with a Big Ball Rasengan: <style=cIsDamage>900%</style> in 6m, <style=cIsDamage>stunning</style>. <style=cIsUtility>Sage Art</style>: <style=cIsDamage>+70%</style> a point; each charge poured, <style=cIsDamage>+600%</style> and +3m.",
+      "zh-TW": "帶著大玉螺旋丸衝鋒最多12米：在半徑6米內造成<style=cIsDamage>900%</style>傷害並<style=cIsDamage>眩暈</style>。<style=cIsUtility>仙法</style>：每點<style=cIsDamage>+70%</style>；每灌注1次充能，<style=cIsDamage>+600%</style>且範圍+3米。"
     },
     "ZERNEAS_NARUTOSAGE_UTILITY_CATAPULT_NAME": {
       "en": "Clone Catapult",
@@ -86,16 +86,16 @@
       "zh-TW": "仙法·螺旋手裡劍"
     },
     "ZERNEAS_NARUTOSAGE_SPECIAL_RASENSHURIKEN_DESCRIPTION": {
-      "en": "A 8m sphere of wind blades that <style=cIsUtility>pulls enemies in</style>: <style=cIsDamage>10x100%</style>, then <style=cIsDamage>500%</style> as it bursts. <style=cIsUtility>Sage Art</style>: <style=cIsDamage>+70%</style> a point; each charge poured, <style=cIsDamage>+35%</style> and +1.88m.",
-      "zh-TW": "產生8米的風刃球體，將敵人<style=cIsUtility>吸入</style>：造成<style=cIsDamage>10x100%</style>傷害，爆炸時再造成<style=cIsDamage>500%</style>傷害。<style=cIsUtility>仙法</style>：每點<style=cIsDamage>+70%</style>；每灌注1次充能，<style=cIsDamage>+35%</style>且範圍+1.88米。"
+      "en": "A 8m sphere of wind blades that <style=cIsUtility>pulls enemies in</style>: <style=cIsDamage>10x100%</style>, then <style=cIsDamage>500%</style> as it bursts. <style=cIsUtility>Sage Art</style>: <style=cIsDamage>+70%</style> a point; each charge poured, <style=cIsDamage>+47%</style> and +2.5m.",
+      "zh-TW": "產生8米的風刃球體，將敵人<style=cIsUtility>吸入</style>：造成<style=cIsDamage>10x100%</style>傷害，爆炸時再造成<style=cIsDamage>500%</style>傷害。<style=cIsUtility>仙法</style>：每點<style=cIsDamage>+70%</style>；每灌注1次充能，<style=cIsDamage>+47%</style>且範圍+2.5米。"
     },
     "ZERNEAS_NARUTOSAGE_SPECIAL_ODAMA_NAME": {
       "en": "Sage Art: Twin Big Ball Rasengan",
       "zh-TW": "仙法·雙大玉螺旋丸"
     },
     "ZERNEAS_NARUTOSAGE_SPECIAL_ODAMA_DESCRIPTION": {
-      "en": "Two clones plunge onto the crosshair with a giant Rasengan each: <style=cIsDamage>2x800%</style> in 7m, one blow each. <style=cIsUtility>Sage Art</style>: <style=cIsDamage>+70%</style> a point; each charge poured, <style=cIsDamage>+250%</style> per ball and +1.5m.",
-      "zh-TW": "兩個分身各帶著一顆巨大的螺旋丸衝向準星位置：在半徑7米內造成<style=cIsDamage>2x800%</style>傷害，每顆只會擊中一次。<style=cIsUtility>仙法</style>：每點<style=cIsDamage>+70%</style>；每灌注1次充能，每顆<style=cIsDamage>+250%</style>且範圍+1.5米。"
+      "en": "Two clones plunge onto the crosshair with a giant Rasengan each: <style=cIsDamage>2x1000%</style> in 7m, one blow each. Held, your <style=cIsUtility>chakra sense locks</style> the enemies near the crosshair (up to 4): the balls chase them, one each, and ricochet on to the next for <style=cIsDamage>60%</style>. <style=cIsUtility>Sage Art</style>: <style=cIsDamage>+70%</style> a point; each charge poured, <style=cIsDamage>+420%</style> per ball and +2m.",
+      "zh-TW": "兩個分身各帶著一顆巨大的螺旋丸衝向準星位置：在半徑7米內造成<style=cIsDamage>2x1000%</style>傷害，每顆只會擊中一次。按住時，你的<style=cIsUtility>查克拉感知會鎖定</style>準星附近的敵人（最多4個）：螺旋丸會各自追擊一個目標，再彈向下一個敵人，造成<style=cIsDamage>60%</style>傷害。<style=cIsUtility>仙法</style>：每點<style=cIsDamage>+70%</style>；每灌注1次充能，每顆<style=cIsDamage>+420%</style>且範圍+2米。"
     },
     "ZERNEAS_NARUTOSAGE_SIXTAILS_NAME": {
       "en": "Six-Tails",

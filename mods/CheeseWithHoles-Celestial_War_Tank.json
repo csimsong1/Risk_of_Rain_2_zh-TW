@@ -1,9 +1,9 @@
 {
   "mod": "CheeseWithHoles-Celestial_War_Tank",
-  "version": "2.3.12",
+  "version": "2.3.13",
   "loader": "r2api",
   "notes": [
-    "英文是在遊戲外執行模組註冊文字的程式記錄下來的。車體與炮塔的名稱、數值，以及技能說明最後「技能數值」裡的重量，是模組從內嵌資源包的零件資料算出來的，這裡依 2.3.12 版資源包的內容。",
+    "英文是在遊戲外執行模組註冊文字的程式記錄下來的。車體與炮塔的名稱、數值，以及技能說明最後「技能數值」裡的重量，是模組從內嵌資源包的零件資料算出來的，這裡依 2.3.13 版資源包的內容。",
     "技能說明的「技能數值」區塊（冷卻時間、爆炸半徑、重量）只在設定 Show Extra Skill Info 開啟（預設）時出現；關掉的話英文會少這一段，譯文仍會顯示。",
     "XTRA_ 開頭的是 Mega War Tank（設定 Add Xtra Tank，預設關閉）；SCEPTER 是裝了 Ancient Scepter 模組時的強化技能。",
     "鍵是英文的兩條（Celestial War Tank、War Tank）：模組直接把英文當作 AI 坦克的名稱 token，用英文原文當鍵來翻譯。",
@@ -69,6 +69,10 @@
     "CHEESEWITHHOLES_BASICTANK_BODY_YELLOW_SKIN_NAME": {
       "en": "YELLOW",
       "zh-TW": "黃色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_NEON_YELLOW_SKIN_NAME": {
+      "en": "NEON YELLOW",
+      "zh-TW": "螢光黃"
     },
     "CHEESEWITHHOLES_BASICTANK_BODY_MAGENTA_SKIN_NAME": {
       "en": "MAGENTA",
@@ -183,8 +187,8 @@
       "zh-TW": "Somua S35車體"
     },
     "CHEESEWITHHOLES_BASICTANK_BODY_Somua_S35_DESCRIPTION": {
-      "en": "<color=#FFFF00>Engine Power: </color>950\n<color=#00FFFF>Speed: </color>10\nTraverse Speed: 3.5\n\n<color=#00FF00>Health: </color>50\n<color=#FF0000>Armor: </color>9\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>105\nWeight: 59\n",
-      "zh-TW": "<color=#FFFF00>引擎功率：</color>950\n<color=#00FFFF>速度：</color>10\n轉向速度：3.5\n\n<color=#00FF00>生命值：</color>50\n<color=#FF0000>護甲：</color>9\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>105\n重量：59\n"
+      "en": "<color=#FFFF00>Engine Power: </color>950\n<color=#00FFFF>Speed: </color>10\nTraverse Speed: 3.5\n\n<color=#00FF00>Health: </color>60\n<color=#FF0000>Armor: </color>9\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>105\nWeight: 60\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>950\n<color=#00FFFF>速度：</color>10\n轉向速度：3.5\n\n<color=#00FF00>生命值：</color>60\n<color=#FF0000>護甲：</color>9\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>105\n重量：60\n"
     },
     "CHEESEWITHHOLES_BASICTANK_BODY_Churchill_NAME": {
       "en": "Churchill Hull",
@@ -207,24 +211,24 @@
       "zh-TW": "Tetrarch車體"
     },
     "CHEESEWITHHOLES_BASICTANK_BODY_Tetrarch_DESCRIPTION": {
-      "en": "<color=#FFFF00>Engine Power: </color>1000\n<color=#00FFFF>Speed: </color>10.5\nTraverse Speed: 4.5\n\n<color=#00FF00>Health: </color>40\n<color=#FF0000>Armor: </color>8\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>95\nWeight: 48\n",
-      "zh-TW": "<color=#FFFF00>引擎功率：</color>1000\n<color=#00FFFF>速度：</color>10.5\n轉向速度：4.5\n\n<color=#00FF00>生命值：</color>40\n<color=#FF0000>護甲：</color>8\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>95\n重量：48\n"
+      "en": "<color=#FFFF00>Engine Power: </color>1000\n<color=#00FFFF>Speed: </color>10.5\nTraverse Speed: 4.5\n\n<color=#00FF00>Health: </color>50\n<color=#FF0000>Armor: </color>8\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>95\nWeight: 58\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>1000\n<color=#00FFFF>速度：</color>10.5\n轉向速度：4.5\n\n<color=#00FF00>生命值：</color>50\n<color=#FF0000>護甲：</color>8\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>95\n重量：58\n"
     },
     "CHEESEWITHHOLES_BASICTANK_BODY_APC_NAME": {
       "en": "APC Hull",
       "zh-TW": "APC車體"
     },
     "CHEESEWITHHOLES_BASICTANK_BODY_APC_DESCRIPTION": {
-      "en": "<color=#FFFF00>Engine Power: </color>970\n<color=#00FFFF>Speed: </color>10\nTraverse Speed: 4\n\n<color=#00FF00>Health: </color>65\n<color=#FF0000>Armor: </color>2\n\n<color=#AA00FF>Thrust Power: </color>37.5\n<color=#ffc080>Fuel Amount: </color>120\nWeight: 67\n",
-      "zh-TW": "<color=#FFFF00>引擎功率：</color>970\n<color=#00FFFF>速度：</color>10\n轉向速度：4\n\n<color=#00FF00>生命值：</color>65\n<color=#FF0000>護甲：</color>2\n\n<color=#AA00FF>推進力：</color>37.5\n<color=#ffc080>燃料量：</color>120\n重量：67\n"
+      "en": "<color=#FFFF00>Engine Power: </color>970\n<color=#00FFFF>Speed: </color>10\nTraverse Speed: 4\n\n<color=#00FF00>Health: </color>80\n<color=#FF0000>Armor: </color>2\n\n<color=#AA00FF>Thrust Power: </color>37.5\n<color=#ffc080>Fuel Amount: </color>120\nWeight: 82\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>970\n<color=#00FFFF>速度：</color>10\n轉向速度：4\n\n<color=#00FF00>生命值：</color>80\n<color=#FF0000>護甲：</color>2\n\n<color=#AA00FF>推進力：</color>37.5\n<color=#ffc080>燃料量：</color>120\n重量：82\n"
     },
     "CHEESEWITHHOLES_BASICTANK_BODY_Staghound_NAME": {
       "en": "Staghound Hull",
       "zh-TW": "Staghound車體"
     },
     "CHEESEWITHHOLES_BASICTANK_BODY_Staghound_DESCRIPTION": {
-      "en": "<color=#FFFF00>Engine Power: </color>900\n<color=#00FFFF>Speed: </color>10.5\nTraverse Speed: 5.5\n\n<color=#00FF00>Health: </color>15\n<color=#FF0000>Armor: </color>0\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>90\nWeight: 15\n",
-      "zh-TW": "<color=#FFFF00>引擎功率：</color>900\n<color=#00FFFF>速度：</color>10.5\n轉向速度：5.5\n\n<color=#00FF00>生命值：</color>15\n<color=#FF0000>護甲：</color>0\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>90\n重量：15\n"
+      "en": "<color=#FFFF00>Engine Power: </color>900\n<color=#00FFFF>Speed: </color>10.5\nTraverse Speed: 5.5\n\n<color=#00FF00>Health: </color>20\n<color=#FF0000>Armor: </color>0\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>90\nWeight: 20\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>900\n<color=#00FFFF>速度：</color>10.5\n轉向速度：5.5\n\n<color=#00FF00>生命值：</color>20\n<color=#FF0000>護甲：</color>0\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>90\n重量：20\n"
     },
     "CHEESEWITHHOLES_BASICTANK_BODY_T-34-85_NAME": {
       "en": "T-34-85 Hull",
@@ -263,8 +267,8 @@
       "zh-TW": "BobSemple車體"
     },
     "CHEESEWITHHOLES_BASICTANK_BODY_BobSemple_DESCRIPTION": {
-      "en": "<color=#FFFF00>Engine Power: </color>1000\n<color=#00FFFF>Speed: </color>9\nTraverse Speed: 4\n\n<color=#00FF00>Health: </color>55\n<color=#FF0000>Armor: </color>5\n\n<color=#AA00FF>Thrust Power: </color>50\n<color=#ffc080>Fuel Amount: </color>100\nWeight: 60\n",
-      "zh-TW": "<color=#FFFF00>引擎功率：</color>1000\n<color=#00FFFF>速度：</color>9\n轉向速度：4\n\n<color=#00FF00>生命值：</color>55\n<color=#FF0000>護甲：</color>5\n\n<color=#AA00FF>推進力：</color>50\n<color=#ffc080>燃料量：</color>100\n重量：60\n"
+      "en": "<color=#FFFF00>Engine Power: </color>1000\n<color=#00FFFF>Speed: </color>9\nTraverse Speed: 4\n\n<color=#00FF00>Health: </color>70\n<color=#FF0000>Armor: </color>5\n\n<color=#AA00FF>Thrust Power: </color>50\n<color=#ffc080>Fuel Amount: </color>100\nWeight: 75\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>1000\n<color=#00FFFF>速度：</color>9\n轉向速度：4\n\n<color=#00FF00>生命值：</color>70\n<color=#FF0000>護甲：</color>5\n\n<color=#AA00FF>推進力：</color>50\n<color=#ffc080>燃料量：</color>100\n重量：75\n"
     },
     "CHEESEWITHHOLES_BASICTANK_BODY_Prototype_NAME": {
       "en": "Prototype Hull",
@@ -279,8 +283,8 @@
       "zh-TW": "Scorpion車體"
     },
     "CHEESEWITHHOLES_BASICTANK_BODY_Scorpion_DESCRIPTION": {
-      "en": "<color=#FFFF00>Engine Power: </color>1200\n<color=#00FFFF>Speed: </color>8\nTraverse Speed: 4\n\n<color=#00FF00>Health: </color>35\n<color=#FF0000>Armor: </color>2\n\n<color=#AA00FF>Thrust Power: </color>42\n<color=#ffc080>Fuel Amount: </color>110\nWeight: 37\n",
-      "zh-TW": "<color=#FFFF00>引擎功率：</color>1200\n<color=#00FFFF>速度：</color>8\n轉向速度：4\n\n<color=#00FF00>生命值：</color>35\n<color=#FF0000>護甲：</color>2\n\n<color=#AA00FF>推進力：</color>42\n<color=#ffc080>燃料量：</color>110\n重量：37\n"
+      "en": "<color=#FFFF00>Engine Power: </color>1200\n<color=#00FFFF>Speed: </color>8\nTraverse Speed: 4\n\n<color=#00FF00>Health: </color>45\n<color=#FF0000>Armor: </color>2\n\n<color=#AA00FF>Thrust Power: </color>42\n<color=#ffc080>Fuel Amount: </color>110\nWeight: 47\n",
+      "zh-TW": "<color=#FFFF00>引擎功率：</color>1200\n<color=#00FFFF>速度：</color>8\n轉向速度：4\n\n<color=#00FF00>生命值：</color>45\n<color=#FF0000>護甲：</color>2\n\n<color=#AA00FF>推進力：</color>42\n<color=#ffc080>燃料量：</color>110\n重量：47\n"
     },
     "CHEESEWITHHOLES_BASICTANK_TURRET_Bruiser_NAME": {
       "en": "Bruiser",
@@ -319,8 +323,8 @@
       "zh-TW": "Somua S35"
     },
     "CHEESEWITHHOLES_BASICTANK_TURRET_Somua_S35_DESCRIPTION": {
-      "en": "\n<color=#00FF00>Health: </color>25\n<color=#FF0000>Armor: </color>8\n\nRotation Speed: 45\n\nWeight: 33\n",
-      "zh-TW": "\n<color=#00FF00>生命值：</color>25\n<color=#FF0000>護甲：</color>8\n\n旋轉速度：45\n\n重量：33\n"
+      "en": "\n<color=#00FF00>Health: </color>30\n<color=#FF0000>Armor: </color>8\n\nRotation Speed: 45\n\nWeight: 33\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>30\n<color=#FF0000>護甲：</color>8\n\n旋轉速度：45\n\n重量：33\n"
     },
     "CHEESEWITHHOLES_BASICTANK_TURRET_Churchill_NAME": {
       "en": "Churchill",
@@ -343,16 +347,16 @@
       "zh-TW": "Tetrarch"
     },
     "CHEESEWITHHOLES_BASICTANK_TURRET_Tetrarch_DESCRIPTION": {
-      "en": "\n<color=#00FF00>Health: </color>15\n<color=#FF0000>Armor: </color>7\n\nRotation Speed: 50\n\nWeight: 22\n",
-      "zh-TW": "\n<color=#00FF00>生命值：</color>15\n<color=#FF0000>護甲：</color>7\n\n旋轉速度：50\n\n重量：22\n"
+      "en": "\n<color=#00FF00>Health: </color>20\n<color=#FF0000>Armor: </color>7\n\nRotation Speed: 50\n\nWeight: 27\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>20\n<color=#FF0000>護甲：</color>7\n\n旋轉速度：50\n\n重量：27\n"
     },
     "CHEESEWITHHOLES_BASICTANK_TURRET_APC_NAME": {
       "en": "APC",
       "zh-TW": "APC"
     },
     "CHEESEWITHHOLES_BASICTANK_TURRET_APC_DESCRIPTION": {
-      "en": "\n<color=#00FF00>Health: </color>15\n<color=#FF0000>Armor: </color>2\n\nRotation Speed: 40\n\nWeight: 17\n",
-      "zh-TW": "\n<color=#00FF00>生命值：</color>15\n<color=#FF0000>護甲：</color>2\n\n旋轉速度：40\n\n重量：17\n"
+      "en": "\n<color=#00FF00>Health: </color>20\n<color=#FF0000>Armor: </color>2\n\nRotation Speed: 40\n\nWeight: 20\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>20\n<color=#FF0000>護甲：</color>2\n\n旋轉速度：40\n\n重量：20\n"
     },
     "CHEESEWITHHOLES_BASICTANK_TURRET_Staghound_NAME": {
       "en": "Staghound",
@@ -375,8 +379,8 @@
       "zh-TW": "Tank MK.II"
     },
     "CHEESEWITHHOLES_BASICTANK_TURRET_Tank_MK.II_DESCRIPTION": {
-      "en": "\n<color=#00FF00>Health: </color>60\n<color=#FF0000>Armor: </color>23\n\nRotation Speed: 29\n\nWeight: 83\n",
-      "zh-TW": "\n<color=#00FF00>生命值：</color>60\n<color=#FF0000>護甲：</color>23\n\n旋轉速度：29\n\n重量：83\n"
+      "en": "\n<color=#00FF00>Health: </color>120\n<color=#FF0000>Armor: </color>23\n\nRotation Speed: 29\n\nWeight: 143\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>120\n<color=#FF0000>護甲：</color>23\n\n旋轉速度：29\n\n重量：143\n"
     },
     "CHEESEWITHHOLES_BASICTANK_TURRET_FV4005_NAME": {
       "en": "FV4005",
@@ -399,8 +403,8 @@
       "zh-TW": "BobSemple"
     },
     "CHEESEWITHHOLES_BASICTANK_TURRET_BobSemple_DESCRIPTION": {
-      "en": "\n<color=#00FF00>Health: </color>20\n<color=#FF0000>Armor: </color>15\n\nRotation Speed: 35\n\nWeight: 35\n",
-      "zh-TW": "\n<color=#00FF00>生命值：</color>20\n<color=#FF0000>護甲：</color>15\n\n旋轉速度：35\n\n重量：35\n"
+      "en": "\n<color=#00FF00>Health: </color>35\n<color=#FF0000>Armor: </color>15\n\nRotation Speed: 35\n\nWeight: 50\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>35\n<color=#FF0000>護甲：</color>15\n\n旋轉速度：35\n\n重量：50\n"
     },
     "CHEESEWITHHOLES_BASICTANK_TURRET_Prototype_NAME": {
       "en": "Prototype",
@@ -450,6 +454,10 @@
       "en": "PINK",
       "zh-TW": "粉紅色"
     },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_HOT_PINK_NAME": {
+      "en": "HOT PINK",
+      "zh-TW": "亮粉紅色"
+    },
     "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_MEGENTA_NAME": {
       "en": "MEGENTA",
       "zh-TW": "洋紅色"
@@ -457,6 +465,14 @@
     "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_YELLOW_NAME": {
       "en": "YELLOW",
       "zh-TW": "黃色"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_NEON_YELLOW_NAME": {
+      "en": "NEON YELLOW",
+      "zh-TW": "螢光黃"
+    },
+    "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_NEON_PURPLE_NAME": {
+      "en": "NEON PURPLE",
+      "zh-TW": "螢光紫"
     },
     "CHEESEWITHHOLES_BASICTANK_BODY_GLOW_ORANGE_NAME": {
       "en": "ORANGE",
@@ -962,6 +978,10 @@
       "en": "YELLOW",
       "zh-TW": "黃色"
     },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_NEON_YELLOW_SKIN_NAME": {
+      "en": "NEON YELLOW",
+      "zh-TW": "螢光黃"
+    },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_MAGENTA_SKIN_NAME": {
       "en": "MAGENTA",
       "zh-TW": "洋紅色"
@@ -1043,72 +1063,88 @@
       "zh-TW": "Rogue車體"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Rogue_DESCRIPTION": {
-      "en": "\n<color=#FFFF00>Engine Power: </color>3000\n<color=#00FFFF>Speed: </color>10\nTraverse Speed: 0.8\n\n<color=#00FF00>Health: </color>1000\n<color=#FF0000>Armor: </color>75\n\n<color=#AA00FF>Thrust Power: </color>35\n<color=#ffc080>Fuel Amount: </color>500\nWeight: 1000\n",
-      "zh-TW": "\n<color=#FFFF00>引擎功率：</color>3000\n<color=#00FFFF>速度：</color>10\n轉向速度：0.8\n\n<color=#00FF00>生命值：</color>1000\n<color=#FF0000>護甲：</color>75\n\n<color=#AA00FF>推進力：</color>35\n<color=#ffc080>燃料量：</color>500\n重量：1000\n"
+      "en": "\n<color=#FFFF00>Engine Power: </color>3000\n<color=#00FFFF>Speed: </color>10\nTraverse Speed: 0.8\n\n<color=#00FF00>Health: </color>1000\n<color=#FF0000>Armor: </color>75\n\n<color=#AA00FF>Thrust Power: </color>35\n<color=#ffc080>Fuel Amount: </color>500\nWeight: 1000\n\nHull Type: Tank",
+      "zh-TW": "\n<color=#FFFF00>引擎功率：</color>3000\n<color=#00FFFF>速度：</color>10\n轉向速度：0.8\n\n<color=#00FF00>生命值：</color>1000\n<color=#FF0000>護甲：</color>75\n\n<color=#AA00FF>推進力：</color>35\n<color=#ffc080>燃料量：</color>500\n重量：1000\n\n車體類型：戰車"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Griffon_NAME": {
       "en": "Griffon Hull",
       "zh-TW": "Griffon車體"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Griffon_DESCRIPTION": {
-      "en": "<color=#80fc80>- Turret compatible</color>.\n\n<color=#FFFF00>Engine Power: </color>2300\n<color=#00FFFF>Speed: </color>11\nTraverse Speed: 1\n\n<color=#00FF00>Health: </color>800\n<color=#FF0000>Armor: </color>25\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>500\nWeight: 800\n",
-      "zh-TW": "<color=#80fc80>- 可安裝炮塔</color>。\n\n<color=#FFFF00>引擎功率：</color>2300\n<color=#00FFFF>速度：</color>11\n轉向速度：1\n\n<color=#00FF00>生命值：</color>800\n<color=#FF0000>護甲：</color>25\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>500\n重量：800\n"
+      "en": "<color=#80fc80>Turret compatible</color>.\n\n<color=#FFFF00>Engine Power: </color>2300\n<color=#00FFFF>Speed: </color>11\nTraverse Speed: 1\n\n<color=#00FF00>Health: </color>800\n<color=#FF0000>Armor: </color>25\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>500\nWeight: 800\n\nHull Type: Car",
+      "zh-TW": "<color=#80fc80>可安裝炮塔</color>。\n\n<color=#FFFF00>引擎功率：</color>2300\n<color=#00FFFF>速度：</color>11\n轉向速度：1\n\n<color=#00FF00>生命值：</color>800\n<color=#FF0000>護甲：</color>25\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>500\n重量：800\n\n車體類型：輪式車輛"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_TONK_NAME": {
       "en": "TONK Hull",
       "zh-TW": "TONK車體"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_TONK_DESCRIPTION": {
-      "en": "\n<color=#FFFF00>Engine Power: </color>1100\n<color=#00FFFF>Speed: </color>12\nTraverse Speed: 2\n\n<color=#00FF00>Health: </color>500\n<color=#FF0000>Armor: </color>25\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>300\nWeight: 450\n",
-      "zh-TW": "\n<color=#FFFF00>引擎功率：</color>1100\n<color=#00FFFF>速度：</color>12\n轉向速度：2\n\n<color=#00FF00>生命值：</color>500\n<color=#FF0000>護甲：</color>25\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>300\n重量：450\n"
+      "en": "\n<color=#FFFF00>Engine Power: </color>1200\n<color=#00FFFF>Speed: </color>12\nTraverse Speed: 2\n\n<color=#00FF00>Health: </color>500\n<color=#FF0000>Armor: </color>25\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>300\nWeight: 450\n\nHull Type: Tank",
+      "zh-TW": "\n<color=#FFFF00>引擎功率：</color>1200\n<color=#00FFFF>速度：</color>12\n轉向速度：2\n\n<color=#00FF00>生命值：</color>500\n<color=#FF0000>護甲：</color>25\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>300\n重量：450\n\n車體類型：戰車"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Type_5_Heavy_NAME": {
       "en": "Type 5 Heavy Hull",
       "zh-TW": "Type 5 Heavy車體"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Type_5_Heavy_DESCRIPTION": {
-      "en": "\n<color=#FFFF00>Engine Power: </color>3500\n<color=#00FFFF>Speed: </color>8\nTraverse Speed: 0.6\n\n<color=#00FF00>Health: </color>1400\n<color=#FF0000>Armor: </color>100\n\n<color=#AA00FF>Thrust Power: </color>34\n<color=#ffc080>Fuel Amount: </color>750\nWeight: 1250\n",
-      "zh-TW": "\n<color=#FFFF00>引擎功率：</color>3500\n<color=#00FFFF>速度：</color>8\n轉向速度：0.6\n\n<color=#00FF00>生命值：</color>1400\n<color=#FF0000>護甲：</color>100\n\n<color=#AA00FF>推進力：</color>34\n<color=#ffc080>燃料量：</color>750\n重量：1250\n"
+      "en": "\n<color=#FFFF00>Engine Power: </color>3500\n<color=#00FFFF>Speed: </color>8\nTraverse Speed: 0.6\n\n<color=#00FF00>Health: </color>1400\n<color=#FF0000>Armor: </color>100\n\n<color=#AA00FF>Thrust Power: </color>34\n<color=#ffc080>Fuel Amount: </color>750\nWeight: 1250\n\nHull Type: Tank",
+      "zh-TW": "\n<color=#FFFF00>引擎功率：</color>3500\n<color=#00FFFF>速度：</color>8\n轉向速度：0.6\n\n<color=#00FF00>生命值：</color>1400\n<color=#FF0000>護甲：</color>100\n\n<color=#AA00FF>推進力：</color>34\n<color=#ffc080>燃料量：</color>750\n重量：1250\n\n車體類型：戰車"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Bigfoot_NAME": {
       "en": "Bigfoot Hull",
       "zh-TW": "Bigfoot車體"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Bigfoot_DESCRIPTION": {
-      "en": "Provides more <style=cIsUtility>air control</style>.\n\n\n<color=#FFFF00>Engine Power: </color>2000\n<color=#00FFFF>Speed: </color>13\nTraverse Speed: 1.4\n\n<color=#00FF00>Health: </color>600\n<color=#FF0000>Armor: </color>20\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>450\nWeight: 750\n",
-      "zh-TW": "提供更好的<style=cIsUtility>空中操控</style>。\n\n\n<color=#FFFF00>引擎功率：</color>2000\n<color=#00FFFF>速度：</color>13\n轉向速度：1.4\n\n<color=#00FF00>生命值：</color>600\n<color=#FF0000>護甲：</color>20\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>450\n重量：750\n"
+      "en": "Provides more <style=cIsUtility>air control</style>.\n\n\n<color=#FFFF00>Engine Power: </color>2000\n<color=#00FFFF>Speed: </color>13\nTraverse Speed: 1.4\n\n<color=#00FF00>Health: </color>600\n<color=#FF0000>Armor: </color>20\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>450\nWeight: 750\n\nHull Type: Car",
+      "zh-TW": "提供更好的<style=cIsUtility>空中操控</style>。\n\n\n<color=#FFFF00>引擎功率：</color>2000\n<color=#00FFFF>速度：</color>13\n轉向速度：1.4\n\n<color=#00FF00>生命值：</color>600\n<color=#FF0000>護甲：</color>20\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>450\n重量：750\n\n車體類型：輪式車輛"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_AMX50B_NAME": {
       "en": "AMX50B Hull",
       "zh-TW": "AMX50B車體"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_AMX50B_DESCRIPTION": {
-      "en": "<style=cIsUtility>- Speed is not affected by weight</style>.\n\n<color=#FFFF00>Engine Power: </color>700\n<color=#00FFFF>Speed: </color>9\nTraverse Speed: 0.7\n\n<color=#00FF00>Health: </color>900\n<color=#FF0000>Armor: </color>50\n\n<color=#AA00FF>Thrust Power: </color>35\n<color=#ffc080>Fuel Amount: </color>370\nWeight: 1100\n",
-      "zh-TW": "<style=cIsUtility>- 速度不受重量影響</style>。\n\n<color=#FFFF00>引擎功率：</color>700\n<color=#00FFFF>速度：</color>9\n轉向速度：0.7\n\n<color=#00FF00>生命值：</color>900\n<color=#FF0000>護甲：</color>50\n\n<color=#AA00FF>推進力：</color>35\n<color=#ffc080>燃料量：</color>370\n重量：1100\n"
+      "en": "<style=cIsUtility>Speed is not affected by weight</style>.\n\n<color=#FFFF00>Engine Power: </color>700\n<color=#00FFFF>Speed: </color>9\nTraverse Speed: 0.7\n\n<color=#00FF00>Health: </color>900\n<color=#FF0000>Armor: </color>50\n\n<color=#AA00FF>Thrust Power: </color>35\n<color=#ffc080>Fuel Amount: </color>370\nWeight: 1100\n\nHull Type: Tank",
+      "zh-TW": "<style=cIsUtility>速度不受重量影響</style>。\n\n<color=#FFFF00>引擎功率：</color>700\n<color=#00FFFF>速度：</color>9\n轉向速度：0.7\n\n<color=#00FF00>生命值：</color>900\n<color=#FF0000>護甲：</color>50\n\n<color=#AA00FF>推進力：</color>35\n<color=#ffc080>燃料量：</color>370\n重量：1100\n\n車體類型：戰車"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_TOG_II_NAME": {
       "en": "TOG II Hull",
       "zh-TW": "TOG II車體"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_TOG_II_DESCRIPTION": {
-      "en": "\n<color=#FFFF00>Engine Power: </color>3700\n<color=#00FFFF>Speed: </color>8\nTraverse Speed: 0.4\n\n<color=#00FF00>Health: </color>1150\n<color=#FF0000>Armor: </color>60\n\n<color=#AA00FF>Thrust Power: </color>32\n<color=#ffc080>Fuel Amount: </color>1000\nWeight: 1200\n",
-      "zh-TW": "\n<color=#FFFF00>引擎功率：</color>3700\n<color=#00FFFF>速度：</color>8\n轉向速度：0.4\n\n<color=#00FF00>生命值：</color>1150\n<color=#FF0000>護甲：</color>60\n\n<color=#AA00FF>推進力：</color>32\n<color=#ffc080>燃料量：</color>1000\n重量：1200\n"
+      "en": "\n<color=#FFFF00>Engine Power: </color>3700\n<color=#00FFFF>Speed: </color>8\nTraverse Speed: 0.5\n\n<color=#00FF00>Health: </color>1150\n<color=#FF0000>Armor: </color>60\n\n<color=#AA00FF>Thrust Power: </color>34\n<color=#ffc080>Fuel Amount: </color>1000\nWeight: 1200\n\nHull Type: Tank",
+      "zh-TW": "\n<color=#FFFF00>引擎功率：</color>3700\n<color=#00FFFF>速度：</color>8\n轉向速度：0.5\n\n<color=#00FF00>生命值：</color>1150\n<color=#FF0000>護甲：</color>60\n\n<color=#AA00FF>推進力：</color>34\n<color=#ffc080>燃料量：</color>1000\n重量：1200\n\n車體類型：戰車"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Pigeon_NAME": {
+      "en": "Pigeon Hull",
+      "zh-TW": "Pigeon車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Pigeon_DESCRIPTION": {
+      "en": "<color=#80fc80>Turret compatible</color>.\n\n<color=#FFFF00>Engine Power: </color>1500\n<color=#00FFFF>Speed: </color>7\nTraverse Speed: 1.4\n\n<color=#00FF00>Health: </color>150\n<color=#FF0000>Armor: </color>5\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>300\nWeight: 100\n\nHull Type: Car",
+      "zh-TW": "<color=#80fc80>可安裝炮塔</color>。\n\n<color=#FFFF00>引擎功率：</color>1500\n<color=#00FFFF>速度：</color>7\n轉向速度：1.4\n\n<color=#00FF00>生命值：</color>150\n<color=#FF0000>護甲：</color>5\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>300\n重量：100\n\n車體類型：輪式車輛"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Pontera_AC_NAME": {
+      "en": "Pontera AC Hull",
+      "zh-TW": "Pontera AC車體"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Pontera_AC_DESCRIPTION": {
+      "en": "<style=cIsUtility>Can climb walls</style>. Jump is delayed by a second, and <color=#fc8080>ram damage is reduced by 50%</color>.\n\n\n<color=#FFFF00>Engine Power: </color>2750\n<color=#00FFFF>Speed: </color>9\nTraverse Speed: 0.8\n\n<color=#00FF00>Health: </color>1300\n<color=#FF0000>Armor: </color>90\n\n<color=#AA00FF>Thrust Power: </color>31\n<color=#ffc080>Fuel Amount: </color>550\nWeight: 1300\n\nHull Type: Mech",
+      "zh-TW": "<style=cIsUtility>可以攀爬牆壁</style>。跳躍會延遲一秒，且<color=#fc8080>衝撞傷害降低50%</color>。\n\n\n<color=#FFFF00>引擎功率：</color>2750\n<color=#00FFFF>速度：</color>9\n轉向速度：0.8\n\n<color=#00FF00>生命值：</color>1300\n<color=#FF0000>護甲：</color>90\n\n<color=#AA00FF>推進力：</color>31\n<color=#ffc080>燃料量：</color>550\n重量：1300\n\n車體類型：機甲"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_TANKDOZER_NAME": {
       "en": "TANKDOZER Hull",
       "zh-TW": "TANKDOZER車體"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_TANKDOZER_DESCRIPTION": {
-      "en": "Plow <style=cIsUtility>blocks</style> all <style=cIsDamage>incoming damage</style>.\n\n- Tank Destroyer Mode: <color=#fc8080>Cannot mount turret</color>.\n\n<color=#FFFF00>Engine Power: </color>2500\n<color=#00FFFF>Speed: </color>8.5\nTraverse Speed: 0.9\n\n<color=#00FF00>Health: </color>1250\n<color=#FF0000>Armor: </color>80\n\n<color=#AA00FF>Thrust Power: </color>34\n<color=#ffc080>Fuel Amount: </color>500\nWeight: 1200\n",
-      "zh-TW": "推土鏟會<style=cIsUtility>擋下</style>所有<style=cIsDamage>來襲的傷害</style>。\n\n- 驅逐戰車模式：<color=#fc8080>無法安裝炮塔</color>。\n\n<color=#FFFF00>引擎功率：</color>2500\n<color=#00FFFF>速度：</color>8.5\n轉向速度：0.9\n\n<color=#00FF00>生命值：</color>1250\n<color=#FF0000>護甲：</color>80\n\n<color=#AA00FF>推進力：</color>34\n<color=#ffc080>燃料量：</color>500\n重量：1200\n"
+      "en": "Plow <style=cIsUtility>blocks</style> all <style=cIsDamage>incoming damage</style>.\n\nTank Destroyer Mode: <color=#fc8080>Cannot mount turret</color>.\n\n<color=#FFFF00>Engine Power: </color>2500\n<color=#00FFFF>Speed: </color>8.5\nTraverse Speed: 0.9\n\n<color=#00FF00>Health: </color>1250\n<color=#FF0000>Armor: </color>80\n\n<color=#AA00FF>Thrust Power: </color>34\n<color=#ffc080>Fuel Amount: </color>500\nWeight: 1200\n\nHull Type: Tank",
+      "zh-TW": "推土鏟會<style=cIsUtility>擋下</style>所有<style=cIsDamage>來襲的傷害</style>。\n\n驅逐戰車模式：<color=#fc8080>無法安裝炮塔</color>。\n\n<color=#FFFF00>引擎功率：</color>2500\n<color=#00FFFF>速度：</color>8.5\n轉向速度：0.9\n\n<color=#00FF00>生命值：</color>1250\n<color=#FF0000>護甲：</color>80\n\n<color=#AA00FF>推進力：</color>34\n<color=#ffc080>燃料量：</color>500\n重量：1200\n\n車體類型：戰車"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Truck_Kan_NAME": {
       "en": "Truck Kan Hull",
       "zh-TW": "Truck Kan車體"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_Truck_Kan_DESCRIPTION": {
-      "en": "Ram damage is increased by <color=#80fc80>100.0%</color>\n\n<color=#80fc80>- Turret compatible</color>.\n<style=cIsUtility>- Speed is not affected by weight</style>.\n\n<color=#FFFF00>Engine Power: </color>1000\n<color=#00FFFF>Speed: </color>12\nTraverse Speed: 0.9\n\n<color=#00FF00>Health: </color>450\n<color=#FF0000>Armor: </color>15\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>600\nWeight: 600\n",
-      "zh-TW": "衝撞傷害提高<color=#80fc80>100.0%</color>\n\n<color=#80fc80>- 可安裝炮塔</color>。\n<style=cIsUtility>- 速度不受重量影響</style>。\n\n<color=#FFFF00>引擎功率：</color>1000\n<color=#00FFFF>速度：</color>12\n轉向速度：0.9\n\n<color=#00FF00>生命值：</color>450\n<color=#FF0000>護甲：</color>15\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>600\n重量：600\n"
+      "en": "Ram damage is increased by <color=#80fc80>100.0%</color>\n\n<color=#80fc80>Turret compatible</color>.\n<style=cIsUtility>Speed is not affected by weight</style>.\n\n<color=#FFFF00>Engine Power: </color>1000\n<color=#00FFFF>Speed: </color>12\nTraverse Speed: 0.9\n\n<color=#00FF00>Health: </color>450\n<color=#FF0000>Armor: </color>15\n\n<color=#AA00FF>Thrust Power: </color>40\n<color=#ffc080>Fuel Amount: </color>600\nWeight: 600\n\nHull Type: Car",
+      "zh-TW": "衝撞傷害提高<color=#80fc80>100.0%</color>\n\n<color=#80fc80>可安裝炮塔</color>。\n<style=cIsUtility>速度不受重量影響</style>。\n\n<color=#FFFF00>引擎功率：</color>1000\n<color=#00FFFF>速度：</color>12\n轉向速度：0.9\n\n<color=#00FF00>生命值：</color>450\n<color=#FF0000>護甲：</color>15\n\n<color=#AA00FF>推進力：</color>40\n<color=#ffc080>燃料量：</color>600\n重量：600\n\n車體類型：輪式車輛"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Rogue_NAME": {
       "en": "Rogue",
@@ -1139,8 +1175,8 @@
       "zh-TW": "Type 5 Heavy"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Type 5 Heavy_DESCRIPTION": {
-      "en": "\n<color=#00FF00>Health: </color>350\n<color=#FF0000>Armor: </color>50\n\nRotation Speed: 5\n\nWeight: 500\n",
-      "zh-TW": "\n<color=#00FF00>生命值：</color>350\n<color=#FF0000>護甲：</color>50\n\n旋轉速度：5\n\n重量：500\n"
+      "en": "\n<color=#00FF00>Health: </color>400\n<color=#FF0000>Armor: </color>50\n\nRotation Speed: 5\n\nWeight: 500\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>400\n<color=#FF0000>護甲：</color>50\n\n旋轉速度：5\n\n重量：500\n"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Bigfoot_NAME": {
       "en": "Bigfoot",
@@ -1166,13 +1202,21 @@
       "en": "\n<color=#00FF00>Health: </color>200\n<color=#FF0000>Armor: </color>30\n\nRotation Speed: 9\n\nWeight: 200\n",
       "zh-TW": "\n<color=#00FF00>生命值：</color>200\n<color=#FF0000>護甲：</color>30\n\n旋轉速度：9\n\n重量：200\n"
     },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Pontera_AC_NAME": {
+      "en": "Pontera AC",
+      "zh-TW": "Pontera AC"
+    },
+    "CHEESEWITHHOLES_BASICTANK_XTRA_TURRET_Pontera_AC_DESCRIPTION": {
+      "en": "\n<color=#00FF00>Health: </color>300\n<color=#FF0000>Armor: </color>35\n\nRotation Speed: 7\n\nWeight: 350\n",
+      "zh-TW": "\n<color=#00FF00>生命值：</color>300\n<color=#FF0000>護甲：</color>35\n\n旋轉速度：7\n\n重量：350\n"
+    },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PASSIVE_NAME": {
       "en": "Heavy Weight",
       "zh-TW": "重量級"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_PASSIVE_DESCRIPTION": {
-      "en": "The tank can <style=cIsUtility>run enemies over</style>, with <style=cIsDamage>damage dependent on speed</style>.  Falling 20 m/s or faster causes your weight to create a <style=cIsUtility>shockwave</style>, harming foes nearby.",
-      "zh-TW": "戰車可以<style=cIsUtility>輾過敵人</style>，<style=cIsDamage>傷害取決於速度</style>。以20米/秒以上的速度墜落時，你的重量會產生<style=cIsUtility>衝擊波</style>，傷害附近的敵人。"
+      "en": "The tank can <style=cIsUtility>run enemies over</style>, with <style=cIsDamage>damage dependent on speed</style>.  Falling with a heavy configuration causes your weight to create a <style=cIsUtility>shockwave</style>, harming foes nearby.",
+      "zh-TW": "戰車可以<style=cIsUtility>輾過敵人</style>，<style=cIsDamage>傷害取決於速度</style>。以重型配置墜落時，你的重量會產生<style=cIsUtility>衝擊波</style>，傷害附近的敵人。"
     },
     "CHEESEWITHHOLES_BASICTANK_XTRA_BODY_EMPTY_PRIMARY_NAME": {
       "en": "None",

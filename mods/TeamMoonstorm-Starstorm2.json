@@ -1,6 +1,6 @@
 {
   "mod": "TeamMoonstorm-Starstorm2",
-  "version": "0.6.46",
+  "version": "0.6.47",
   "loader": "msu",
   "notes": [
     "模組用 MoonstormSharedUtils（MSU）從自己的 languages 資料夾載入文字，資料夾以語言命名（en、zh-CN 等）；沒有 zh-TW 資料夾，選繁體中文時會顯示英文。",

@@ -1,6 +1,6 @@
 {
   "mod": "Zerneas-HakuMod",
-  "version": "0.18.1",
+  "version": "0.19.1",
   "loader": "r2api",
   "notes": [
     "英文是在遊戲外執行模組註冊文字的程式記錄下來的；模組另外內建西班牙文，那部分不收錄。",
@@ -54,8 +54,8 @@
       "zh-TW": "千殺水翔"
     },
     "ZERNEAS_HAKU_SECONDARY_SENSATSU_DESCRIPTION": {
-      "en": "A sphere of water needles closes on your target: <style=cIsDamage>400%</style> in 6m. Lets go every ice needle into it, <style=cIsDamage>+50%</style> each, and takes 1s off your other cooldowns.",
-      "zh-TW": "水針聚成的球體朝目標合攏：在半徑6米內造成<style=cIsDamage>400%</style>傷害。同時把所有冰針射向目標，每根<style=cIsDamage>+50%</style>，並使你其他技能的冷卻時間減少1秒。"
+      "en": "A sphere of water needles closes on the enemy nearest your crosshair, drawing in what's round it: <style=cIsDamage>400%</style> in 8m. Lets go every ice needle into it, <style=cIsDamage>+50%</style> and +0.2m each, and takes 1s off your other cooldowns.",
+      "zh-TW": "水針聚成的球體朝離準星最近的敵人合攏，並把它周圍的敵人一起吸進來：在半徑8米內造成<style=cIsDamage>400%</style>傷害。同時把所有冰針射向目標，每根<style=cIsDamage>+50%</style>且範圍+0.2米，並使你其他技能的冷卻時間減少1秒。"
     },
     "ZERNEAS_HAKU_UTILITY_MIRROR_NAME": {
       "en": "Ice Mirror",
@@ -78,8 +78,8 @@
       "zh-TW": "魔鏡冰晶"
     },
     "ZERNEAS_HAKU_DOME_DESCRIPTION": {
-      "en": "Needs 3 of your mirrors near (each extra: +1s, +10%). A dome of ice mirrors traps your target and what's round it for 8s. Strike a mirror: the attack comes out of all of them. <style=cIsUtility>Interact</style> by one: you dance through every mirror, striking. It bursts inward at its end.",
-      "zh-TW": "附近需要有3面你的冰鏡（每多一面：+1秒、+10%）。冰鏡穹頂會困住目標與它周圍的敵人8秒。攻擊其中一面冰鏡：這次攻擊會從所有冰鏡射出。在冰鏡旁<style=cIsUtility>互動</style>：你會在每一面冰鏡之間穿梭攻擊。穹頂結束時會向內爆裂。"
+      "en": "Needs 3 of your mirrors near (each extra: +1s, +10%). A dome of ice mirrors traps your target and what's round it for 8s. Strike a mirror: the attack comes out of all of them. <style=cIsUtility>Interact</style> by one: you dance through every mirror, striking. It bursts inward at its end, <style=cIsDamage>harder for every blow</style> struck into it.",
+      "zh-TW": "附近需要有3面你的冰鏡（每多一面：+1秒、+10%）。冰鏡穹頂會困住目標與它周圍的敵人8秒。攻擊其中一面冰鏡：這次攻擊會從所有冰鏡射出。在冰鏡旁<style=cIsUtility>互動</style>：你會在每一面冰鏡之間穿梭攻擊。穹頂結束時會向內爆裂，冰鏡每受到一次攻擊，<style=cIsDamage>爆裂威力就更強</style>。"
     },
     "ZERNEAS_HAKU_MIRROR_ENTER": {
       "en": "Go into the mirror",
