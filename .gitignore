@@ -7,3 +7,5 @@ __pycache__/
 # 外掛的建置輸出（成品會複製到 plugin\RoR2_zh-TW.HardcodedText.dll）
 plugin/bin/
 plugin/obj/
+# 模組文字擷取工具的輸出（IL 匯出、改寫過的 DLL、錄製結果、模擬安裝）
+tools/work/

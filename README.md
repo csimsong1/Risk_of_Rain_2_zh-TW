@@ -18,6 +18,7 @@
 | `test_make_bundle.py` | 打包流程的測試 |
 | `ror2_update.py` | 安裝包的「安裝.bat」執行的程式：先從 GitHub [更新翻譯](#自動更新)，再執行 `ror2_s2t.py` |
 | `test_ror2_update.py` | 更新程式的測試 |
+| `tools/` | 維護用：模組更新時從模組 DLL 取得英文、比對新舊版、檢查譯文的工具，見 [tools/README.md](tools/README.md)；不會打包給朋友 |
 | `RoR2_zh-TW_1.5.0.zip` | 用 `--zip` 打包的語言包（只有遊戲本體），可直接分享給別人；不在 repo 裡，見[遊戲更新之後](#遊戲更新之後) |
 
 ## 安裝打包好的語言包
@@ -227,7 +228,7 @@ LookingGlass 的屬性面板是例外，它的文字存在設定裡，可以自�
 
 ### 修改或新增翻譯
 
-`mods/` 裡每個檔案對應一個模組，`en` 是從模組擷取的英文原文，`zh-TW` 是譯文，改完重跑腳本即可：
+`mods/` 裡每個檔案對應一個模組，`en` 是從模組擷取的英文原文，`zh-TW` 是譯文，改完重跑腳本即可（模組更新後重新取得英文的流程見 [tools/README.md](tools/README.md)）：
 
 ```json
 {
